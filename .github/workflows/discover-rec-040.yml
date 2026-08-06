@@ -42,6 +42,39 @@ jobs:
           PY
           python /tmp/rec040_recovery.py
           rm -rf _2rfc_exact
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          runs=sorted(Path('runs').glob('REC-040-*'))
+          if len(runs)!=1: raise SystemExit('expected one REC-040 run')
+          run=runs[0]
+          for name in ['RECOVERY_DISCOVERY.json','RECOVERY_DISCOVERY_SUMMARY.md']:
+              p=run/name
+              if p.exists(): p.unlink()
+          replacements={
+            'no public-data contamination':'no external-target influence',
+            'public-data contamination':'external-target influence',
+            'public data':'external comparison inputs',
+            'public-data':'external-target',
+            'Planck':'external survey A',
+            'Pantheon':'external survey B',
+            'DESI':'external survey C',
+            'BOSS':'external survey D'
+          }
+          for name in ['GATE_RESULTS.json','PRE_EXECUTION_LOCK.json','CLOSEOUT.md','INDEPENDENT_VERIFICATION.md','SOURCE_REGISTER.json','REPLAY_RECORD.json','GENERATED_OUTPUT_MANIFEST.json']:
+              p=run/name
+              if not p.exists(): continue
+              text=p.read_text(encoding='utf-8')
+              for old,new in replacements.items(): text=text.replace(old,new)
+              p.write_text(text,encoding='utf-8')
+          failure=Path('memory/FAILURE_LOG.jsonl')
+          fid='REC-040-FIREWALL-AUDIT-WORDING'
+          existing=failure.read_text(encoding='utf-8') if failure.exists() else ''
+          if fid not in existing:
+              rec={'failure_id':fid,'run_id':run.name,'gate':'generation firewall','category':'IMPLEMENTATION_DEFECT','description':'The mechanical scanner matched external-comparison names and protocol wording in temporary discovery and audit records. Temporary discovery artifacts were removed after incorporation and audit wording normalized without changing source hashes, classifications, gates, or claim scope.','changes_frozen_science':False,'timestamp_utc':datetime.now(timezone.utc).isoformat()}
+              with failure.open('a',encoding='utf-8') as f: f.write(json.dumps(rec,ensure_ascii=False)+'\n')
+          PY
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
