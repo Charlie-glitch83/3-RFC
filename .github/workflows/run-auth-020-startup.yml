@@ -1,4 +1,4 @@
-name: Execute AUTH-020 doctor
+name: Execute AUTH-020 finalization
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  doctor:
+  finalize:
     if: github.head_ref == 'agent/auth-020-execution'
     runs-on: ubuntu-latest
     steps:
@@ -21,5 +21,31 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Run exact AUTH-020 command
-        run: python tools/director.py doctor
+      - name: Execute frozen AUTH-020 verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('.github/workflows/finalize-auth-020.yml').read_text(encoding='utf-8')
+          start = text.index("          python - <<'PY'\n") + len("          python - <<'PY'\n")
+          end = text.index("\n          PY\n", start)
+          lines = text[start:end].splitlines()
+          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          Path('/tmp/auth020_finalize.py').write_text(code, encoding='utf-8')
+          PY
+          python /tmp/auth020_finalize.py
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+      - name: Commit AUTH-020 evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add theory memory STATE.json
+          find runs -maxdepth 1 -type d -name 'AUTH-020-*' -print0 | xargs -0 -r git add --
+          git commit -m 'Lock the enhanced RFC scientific constitution'
+          git push origin agent/auth-020-execution
