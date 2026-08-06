@@ -1,21 +1,77 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
+  "run_id": "REC-040-20260806T135256Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-06T14:04:49.633933+00:00",
+  "authority_hashes": [
+    "c707ce074bd79b2863b98b0a8a0bb5f91a93b9c3f7909e4041bb9940c81a0bae",
+    "e82fea7382da9efe80d14c9d17b0c25799589b90b5ed482aba5fce3634658b8a",
+    "94806bd82173e79d2886ece7643c22234a3864a1d2b6461474972e18ec7dd2c5",
+    "b1720660fa46a7c6158eb993f351b041987ded80febe8622b50ca26af0831440",
+    "14062b48305010c2c5394e755577ef5785264f6f438ab4b1cebc9df57c2f412e"
+  ],
+  "parent_hashes": [
+    "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+    "3dff7f9626752dc48d6101629c0646935e6c18e0"
+  ],
   "definition_hashes": [],
-  "candidate_classes": [],
+  "candidate_classes": [
+    "CANONICAL_PARENT",
+    "ADMITTED_SOURCE",
+    "REPLAY_REQUIRED",
+    "COMPARISON_ONLY",
+    "HISTORICAL_WARNING",
+    "QUARANTINED",
+    "SUPERSEDED",
+    "EXCLUDED"
+  ],
   "equations_and_laws": [],
   "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "methods": [
+    "nine-branch discovery",
+    "exact commit checkout",
+    "full-tree SHA-256",
+    "scope phrase checks",
+    "byte-copy verification",
+    "validator replay"
+  ],
+  "tolerances": [
+    "exact equality only"
+  ],
+  "stopping_rules": [
+    "commit mismatch",
+    "missing object",
+    "hash mismatch",
+    "scope boundary absent"
+  ],
+  "expected_invariants": [
+    "five source-only objects",
+    "zero old PASS promotion",
+    "zero canonical parents",
+    "lineage disagreement preserved"
+  ],
+  "tests": [
+    "exact commit/file hashes",
+    "no old PASS auto-promoted",
+    "no external-target influence",
+    "replay evidence"
+  ],
+  "gates": [
+    "exact commit/file hashes",
+    "no old PASS auto-promoted",
+    "no external-target influence",
+    "replay evidence"
+  ],
+  "falsifiers": [
+    "unhashed object",
+    "state promoted",
+    "target-driven admission",
+    "replay omitted"
+  ],
+  "claim_boundary": "Recovers exact Module L source objects only; does not establish physical execution, final recurrence, universe completion, or empirical validity.",
+  "independent_verifier_design": "Recheckout exact commit, rebuild tree hashes, compare copies, reread limits, and replay stale validator without trusting its conclusion.",
+  "allowed_implementation_only_corrections": [
+    "path normalization",
+    "evidence formatting",
+    "run bookkeeping"
+  ]
 }

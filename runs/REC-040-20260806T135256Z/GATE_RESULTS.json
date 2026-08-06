@@ -1,7 +1,45 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
+  "run_id": "REC-040-20260806T135256Z",
+  "overall": "PASS",
+  "gates": [
+    {
+      "gate": "exact commit/file hashes",
+      "result": "PASS",
+      "evidence": "161 tracked files hashed at b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10; five copies rehashed"
+    },
+    {
+      "gate": "no old PASS auto-promoted",
+      "result": "PASS",
+      "evidence": "zero canonical parents; state and completion artifacts quarantined"
+    },
+    {
+      "gate": "no external-target influence",
+      "result": "PASS",
+      "evidence": "selection used exact repository bytes and scope boundaries only; no observational target values"
+    },
+    {
+      "gate": "replay evidence",
+      "result": "PASS",
+      "evidence": "branch discovery replayed nine heads; historical validator failure code 2 preserved"
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "branches_inspected",
+      "value": 9
+    },
+    {
+      "name": "tracked_files",
+      "value": 161
+    },
+    {
+      "name": "admitted_assets",
+      "value": 5
+    },
+    {
+      "name": "canonical_parents",
+      "value": 0
+    }
+  ],
   "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
 }

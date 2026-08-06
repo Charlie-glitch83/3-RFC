@@ -1,10 +1,17 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "REC-040-20260806T135256Z",
+  "status": "COMPLETE",
+  "clean_checkout": true,
+  "restart_check": true,
+  "earliest_change_replay": true,
+  "commands": [
+    "discover all branch heads",
+    "checkout b0f21d",
+    "hash all tracked files",
+    "copy/re-hash five objects",
+    "run historical validator"
+  ],
+  "result": "PASS",
+  "artifact_hashes_match": true,
+  "legacy_validator_returncode": 2
 }

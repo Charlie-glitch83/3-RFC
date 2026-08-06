@@ -1,8 +1,69 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "REC-040-20260806T135256Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-06T14:04:49.633933+00:00",
+  "outputs": [
+    {
+      "path": "recovery/LINEAGE_CROSSWALK.json",
+      "sha256": "a23dd84624d6cd5a21b0097a27109a94bb2f666218525d1bd9481541503c40c9",
+      "bytes": 408524
+    },
+    {
+      "path": "recovery/ADMITTED_ASSET_MANIFEST.json",
+      "sha256": "c61a92b472d165044f9b976159aeee0ad5cfc363e097a416b0cc127ecf2b5287",
+      "bytes": 3861
+    },
+    {
+      "path": "recovery/QUARANTINE.md",
+      "sha256": "6831ba26182e3b501eb004b08d8e4aca14780da4b354830a6eb25129da7d97bc",
+      "bytes": 771
+    },
+    {
+      "path": "runs/REC-040-20260806T135256Z/GATE_RESULTS.json",
+      "sha256": "e8ca8342a1b3cfacba5c5a6c7b4b9c622f73f806ff9de2bc0a16805552dc3ea8",
+      "bytes": 1170
+    },
+    {
+      "path": "runs/REC-040-20260806T135256Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "d79409cd3bbef95d77a765463a916ddd154c45f7dc496851a8dcd31032e41e2c",
+      "bytes": 525
+    },
+    {
+      "path": "runs/REC-040-20260806T135256Z/REPLAY_RECORD.json",
+      "sha256": "1b76a90593defd2c05c3a3d2ec6c96d26cf7a73a0ca6193b8abbb1629fa62c54",
+      "bytes": 412
+    },
+    {
+      "path": "runs/REC-040-20260806T135256Z/CLOSEOUT.md",
+      "sha256": "5a7113de6d46efcd85acba2267366d8c98e990a8a4b1af254bc5b9ffb6f14260",
+      "bytes": 1423
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/BARYONIC_STELLAR_UNIVERSE.md",
+      "sha256": "c707ce074bd79b2863b98b0a8a0bb5f91a93b9c3f7909e4041bb9940c81a0bae",
+      "bytes": 28271
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/BARYONIC_STELLAR_UNIVERSE.md",
+      "sha256": "e82fea7382da9efe80d14c9d17b0c25799589b90b5ed482aba5fce3634658b8a",
+      "bytes": 9493
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/L/MODULE_L_WOLFRAM_VERIFICATION.md",
+      "sha256": "94806bd82173e79d2886ece7643c22234a3864a1d2b6461474972e18ec7dd2c5",
+      "bytes": 2738
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/L/MODULE_L_TO_M_SCIENTIFIC_HANDOFF.md",
+      "sha256": "b1720660fa46a7c6158eb993f351b041987ded80febe8622b50ca26af0831440",
+      "bytes": 23259
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/evidence/MODULE_MAP.md",
+      "sha256": "14062b48305010c2c5394e755577ef5785264f6f438ab4b1cebc9df57c2f412e",
+      "bytes": 2417
+    }
+  ],
+  "tree_sha256": "4a92bbbaffdd87fda0b1bc96c8f054814d43f9748aef606b8c067c4a3a312a28",
+  "note": "Manifest excludes itself."
 }

@@ -1,11 +1,9 @@
 {
-  "run_id": "REC-040-20260806T135256Z",
-  "exact_parents": [
-    "recovery/CANDIDATE_ASSET_DISPOSITION.json",
-    "theory/ENHANCEMENT_CROSSWALK.json",
-    "runs/REC-040-20260806T135256Z/RECOVERY_DISCOVERY.json"
-  ],
-  "admitted_sources": [
+  "schema_version": "1.0",
+  "status": "EXACT_OBJECTS_ADMITTED_AT_LIMITED_SCOPE",
+  "repository": "Charlie-glitch83/2-RFC",
+  "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+  "assets": [
     {
       "name": "first-pass Module L scientific specification",
       "repository": "Charlie-glitch83/2-RFC",
@@ -92,19 +90,6 @@
       ]
     }
   ],
-  "imports": [
-    "hashlib",
-    "json",
-    "pathlib",
-    "subprocess",
-    "shutil"
-  ],
-  "files": [
-    "recovery/LINEAGE_CROSSWALK.json",
-    "recovery/ADMITTED_ASSET_MANIFEST.json",
-    "recovery/QUARANTINE.md"
-  ],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "canonical_parents": [],
+  "boundary": "No state, PASS label, numerical output, fitted target, or final-completion claim admitted."
 }

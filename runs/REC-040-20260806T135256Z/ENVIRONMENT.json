@@ -1,13 +1,27 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
+  "run_id": "REC-040-20260806T135256Z",
+  "status": "FINAL",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
+  "software": [
+    "Python 3.11.15",
+    "git"
+  ],
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
+  "imports": [
+    "hashlib",
+    "json",
+    "pathlib",
+    "subprocess",
+    "shutil"
+  ],
+  "commands": [
+    "nine-branch discovery",
+    "exact commit checkout",
+    "python validation/validate_repo.py",
+    "python tools/director.py doctor"
+  ],
+  "network_policy": "GITHUB_EXACT_OBJECT_FETCH_ONLY",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true
 }

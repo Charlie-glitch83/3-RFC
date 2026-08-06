@@ -1,0 +1,7 @@
+{
+  "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+  "returncode": 2,
+  "stdout": "",
+  "stderr": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python: can't open file '/home/runner/work/3-RFC/3-RFC/_2rfc_exact/_2rfc_exact/validation/validate_repo.py': [Errno 2] No such file or directory\n",
+  "interpretation": "Preserved replay failure; validator checks stale state and cannot validate Module L."
+}
