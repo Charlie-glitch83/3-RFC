@@ -2,9 +2,11 @@
   "run_id": "AUTH-020-20260806T071800Z",
   "module": "THEORY",
   "task_id": "AUTH-020",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-06T07:18:00.259522+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "runs/AUTH-020-20260806T071800Z"
+  "workspace": "runs/AUTH-020-20260806T071800Z",
+  "closed_utc": "2026-08-06T07:23:40.205043+00:00",
+  "closeout": "runs/AUTH-020-20260806T071800Z/CLOSEOUT.md"
 }

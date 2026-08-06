@@ -8,6 +8,14 @@
       "created_utc": "2026-08-06T07:09:09.127429+00:00",
       "work_unit": "SRC-010",
       "run_id": "SRC-010-20260806T065702Z"
+    },
+    {
+      "path": "runs/AUTH-020-20260806T071800Z",
+      "sha256": "57eb7268210733f67ca72a0c28214268ca43e0a7d1c97ae5ce96cc8cb8523c18",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-06T07:23:40.206401+00:00",
+      "work_unit": "AUTH-020",
+      "run_id": "AUTH-020-20260806T071800Z"
     }
   ]
 }

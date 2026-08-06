@@ -61,7 +61,7 @@
       "id": "AUTH-020",
       "title": "Lock Canonical Authority, Terminology, and Claims",
       "module": "THEORY",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "SRC-010"
       ],
@@ -91,7 +91,7 @@
       "id": "XWALK-030",
       "title": "P29/P30/N-body Preservation and Enhancement Crosswalk",
       "module": "THEORY",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "AUTH-020"
       ],
