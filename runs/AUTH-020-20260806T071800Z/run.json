@@ -1,0 +1,10 @@
+{
+  "run_id": "AUTH-020-20260806T071800Z",
+  "module": "THEORY",
+  "task_id": "AUTH-020",
+  "status": "CREATED",
+  "created_utc": "2026-08-06T07:18:00.259522+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "runs/AUTH-020-20260806T071800Z"
+}

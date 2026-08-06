@@ -1,42 +1,43 @@
-# ACTIVE WORK PACKET — SRC-010
+# ACTIVE WORK PACKET — AUTH-020
 
 **This is the only authorized work. Execute it in order.**
 
-- Module: `SOURCES`
-- Objective: Admit exact source bytes from source_seed into immutable sources/frozen, classify authority, and create a reproducible source manifest.
-- Run workspace: `runs/SRC-010-20260806T065702Z`
+- Module: `THEORY`
+- Objective: Produce the concise scientific constitution from admitted sources and lock claim ownership, failure policy, no-tuning firewall, and proof-versus-physical order.
+- Run workspace: `runs/AUTH-020-20260806T071800Z`
 
 ## Exact sequence
 
-1. Read `work_units/SRC-010/WORK_ORDER.md` and `work_units/SRC-010/recipe.json`.
+1. Read `work_units/AUTH-020/WORK_ORDER.md` and `work_units/AUTH-020/recipe.json`.
 2. Execute the frozen sequence below without redesigning it:
 
-   1. Recompute every source-seed SHA-256 independently.
-   2. Promote only exact original source bytes; analysis files remain advisory.
-   3. Write a source-role record for P29, P30, N-body proof, and N-body metadata.
-   4. Verify source_seed manifest.
-   5. Admit P29, N-body, P30 and metadata first.
-   6. Classify historical, explanatory, candidate-addendum, recovery, and interpretation sources.
-   7. Hash every admitted object and reconstruct manifest independently.
+   1. Use the prebuilt constitution, terminology lock, and claim map.
+   2. Trace every material assertion to admitted source bytes.
+   3. Record disagreements; do not silently reconcile source conflict.
+   4. Use exact admitted sources.
+   5. Verify canonical CIF/QV/RFL meanings.
+   6. Separate common ancestry from identical equations.
+   7. Lock P29 + N-body + P30 roles.
+   8. Register countermodels and claim boundaries.
 
 3. Run the exact commands:
 
-   - `python tools/rfc.py admit-seed`
-   - `python tools/rfc.py doctor`
+   - `python tools/director.py doctor`
 
 ## Required deliverables
 
-- sources/SOURCE_MANIFEST.json
-- memory/SOURCE_REGISTRY.json
-- runs/SRC-010/CLOSEOUT.md
+- theory/SCIENTIFIC_CONSTITUTION.md
+- theory/TERMINOLOGY_LOCK.json
+- theory/CLAIM_MAP.json
+- runs/AUTH-020/CLOSEOUT.md
 
 ## Componentwise gates
 
-- all core bytes resolvable
-- hashes match
-- authority class explicit
-- no summary used as parent
+- no terminology drift
+- no N-body over-universalization
+- no inherited failure parentage
+- independent source trace
 
 ## Commit message
 
-`Admit and lock the core RFC source corpus`
+`Lock the enhanced RFC scientific constitution`

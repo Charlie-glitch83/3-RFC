@@ -11,6 +11,14 @@
       "closed_utc": "2026-08-06T07:09:09.126107+00:00",
       "tree_sha256": "ffaf33fa4f65c1319986f29e0118ce744b06cf291366c9bc84e938e1a05c9592",
       "closeout": "runs/SRC-010-20260806T065702Z/CLOSEOUT.md"
+    },
+    {
+      "run_id": "AUTH-020-20260806T071800Z",
+      "module": "THEORY",
+      "task_id": "AUTH-020",
+      "status": "CREATED",
+      "path": "runs/AUTH-020-20260806T071800Z",
+      "created_utc": "2026-08-06T07:18:00.259781+00:00"
     }
   ]
 }

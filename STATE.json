@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "AUTH-020",
   "current_module": "THEORY",
-  "current_run": null,
+  "current_run": "AUTH-020-20260806T071800Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -263,7 +263,7 @@
     }
   },
   "last_verified_commit": "c369a10cd01c222edbb1cef216002c51fbc99ed6",
-  "last_updated_utc": "2026-08-06T07:09:09.189121+00:00",
+  "last_updated_utc": "2026-08-06T07:18:00.260010+00:00",
   "strongest_supported_claim": "A governed scaffold and source seed have been prepared; no new 3-RFC scientific result has been executed.",
   "strongest_unsupported_claim": "The enhanced RFC universe is complete, physically executed, or empirically validated.",
   "last_verified_branch": "agent/src-010-execution"
