@@ -1,1 +1,1 @@
-Trigger the installed one-use XWALK-030 startup runner.
+Trigger the installed one-use XWALK-030 finalizer.
