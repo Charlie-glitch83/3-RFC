@@ -1,3 +1,4 @@
 A-100 verified evidence trigger
 archive_sha256=f4b1ea136c7b26fd6d587ae11d5470521092392d9c371801172919e2b3a33102
-contents_api_retry=1
+contents_api_retry=2
+workflow_registered_via_contents_api=true
