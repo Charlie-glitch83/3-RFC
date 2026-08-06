@@ -1,17 +1,16 @@
 name: Finalize FRONTIER-050 once
 
 on:
-  pull_request:
-    types: [edited]
-    branches: [main]
+  push:
+    branches: [agent/frontier-050-execution]
+    paths:
+      - '.github/frontier050-finalize-trigger.txt'
 
 permissions:
   contents: write
-  pull-requests: read
 
 jobs:
   finalize:
-    if: github.event.pull_request.head.ref == 'agent/frontier-050-execution'
     runs-on: ubuntu-latest
     env:
       RUN_ID: FRONTIER-050-20260806T142549Z
@@ -44,7 +43,6 @@ jobs:
           gates = json.loads(Path(f'runs/{run_id}/GATE_RESULTS.json').read_text())
           replay = json.loads(Path(f'runs/{run_id}/REPLAY_RECORD.json').read_text())
           frontier = json.loads(Path('audit/PHYSICAL_FRONTIER.json').read_text())
-
           assert state['active_work_unit'] == 'FRONTIER-050'
           assert state['current_module'] == 'AUDIT'
           assert state['current_run'] == run_id
@@ -57,26 +55,21 @@ jobs:
           assert frontier['selected_frontier']['module'] == 'A'
           assert frontier['selected_frontier']['authorized_child'] == 'A-100'
           PY
-      - name: Record verified evidence commit and finalize stable run files
+      - name: Record evidence and finalize stable run files
         shell: bash
         run: |
           set -euo pipefail
           run="runs/$RUN_ID"
           python tools/rfc.py record-commit "$EVIDENCE_SHA" --branch "$EXECUTION_BRANCH" --note 'FRONTIER-050 exact evidence commit verified after external SHA and diff review.'
           python - <<'PY'
-          import hashlib
-          import json
           import os
-          from datetime import datetime, timezone
           from pathlib import Path
-
           run_id = os.environ['RUN_ID']
           evidence_sha = os.environ['EVIDENCE_SHA']
           closeout = Path(f'runs/{run_id}/CLOSEOUT.md')
           text = closeout.read_text()
-          marker = 'PENDING_EVIDENCE_STAGE'
-          assert text.count(marker) == 1
-          closeout.write_text(text.replace(marker, evidence_sha))
+          assert text.count('PENDING_EVIDENCE_STAGE') == 1
+          closeout.write_text(text.replace('PENDING_EVIDENCE_STAGE', evidence_sha))
           PY
           python tools/director.py doctor | tee "$run/FINAL_DOCTOR.txt"
           python -m unittest discover -s tests -v 2>&1 | tee "$run/UNIT_TESTS.txt"
@@ -87,7 +80,6 @@ jobs:
           import os
           from datetime import datetime, timezone
           from pathlib import Path
-
           run_id = os.environ['RUN_ID']
           selected = [
               'audit/PHYSICAL_FRONTIER.json',
@@ -102,8 +94,7 @@ jobs:
           ]
           outputs = []
           for rel in selected:
-              p = Path(rel)
-              data = p.read_bytes()
+              data = Path(rel).read_bytes()
               outputs.append({'path': rel, 'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data)})
           canonical = json.dumps(outputs, sort_keys=True, separators=(',', ':')).encode()
           manifest = {
@@ -116,7 +107,7 @@ jobs:
           }
           Path(f'runs/{run_id}/GENERATED_OUTPUT_MANIFEST.json').write_text(json.dumps(manifest, indent=2) + '\n')
           PY
-      - name: Close exactly FRONTIER-050 and activate only A-100
+      - name: Close FRONTIER-050 and activate only A-100
         shell: bash
         run: |
           set -euo pipefail
@@ -127,14 +118,11 @@ jobs:
           import json
           import os
           from pathlib import Path
-
-          evidence_sha = os.environ['EVIDENCE_SHA']
           state_path = Path('STATE.json')
           state = json.loads(state_path.read_text())
           state['strongest_supported_claim'] = 'A governed exact-object audit identifies Module A as the unique earliest missing physical parent: the authority and formal architecture exist, but no frozen typed H_A_to_B execution packet exists.'
           state['strongest_unsupported_claim'] = 'No Module A physical execution, Module B Big Implosion, manifested universe, downstream A-J validation, empirical agreement, or universe completion has been established.'
           state_path.write_text(json.dumps(state, indent=2) + '\n')
-
           queue = json.loads(Path('WORK_QUEUE.json').read_text())['items']
           active = [x['id'] for x in queue if x.get('status') == 'ACTIVE']
           state = json.loads(state_path.read_text())
@@ -143,7 +131,7 @@ jobs:
           assert state['current_module'] == 'A'
           assert state['current_run'] is None
           assert state['generation_mode'] == 'GENERATION_SEALED'
-          assert state['last_verified_commit'] == evidence_sha
+          assert state['last_verified_commit'] == os.environ['EVIDENCE_SHA']
           assert state['last_verified_branch'] == os.environ['EXECUTION_BRANCH']
           run_index = json.loads(Path('memory/RUN_INDEX.json').read_text())['runs']
           rec = [x for x in run_index if x.get('run_id') == os.environ['RUN_ID']]
@@ -154,11 +142,11 @@ jobs:
             exit 1
           fi
           python tools/rfc.py context
-      - name: Remove one-use finalizer and verify final repository state
+      - name: Remove one-use machinery and verify final state
         shell: bash
         run: |
           set -euo pipefail
-          rm -f .github/workflows/finalize-frontier050-once.yml
+          rm -f .github/frontier050-finalize-trigger.txt .github/workflows/finalize-frontier050-once.yml
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
@@ -170,8 +158,8 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          if git ls-files -- .github/workflows/finalize-frontier050-once.yml | grep -q .; then
-            echo 'One-use finalizer remains in final index' >&2
+          if git ls-files -- .github/frontier050-finalize-trigger.txt .github/workflows/finalize-frontier050-once.yml | grep -q .; then
+            echo 'One-use finalization machinery remains in final index' >&2
             exit 1
           fi
           git diff --cached --quiet && { echo 'No transition changes produced' >&2; exit 1; }
