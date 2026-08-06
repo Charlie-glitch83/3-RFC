@@ -1,4 +1,4 @@
-name: Discover REC-040 exact candidates
+name: Execute REC-040 exact recovery
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  discover:
+  recover:
     if: github.head_ref == 'agent/rec-040-execution'
     runs-on: ubuntu-latest
     steps:
@@ -16,120 +16,44 @@ jobs:
         with:
           ref: agent/rec-040-execution
           fetch-depth: 0
-          path: current
       - uses: actions/checkout@v4
         with:
           repository: Charlie-glitch83/2-RFC
-          ref: main
+          ref: b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10
+          path: _2rfc_exact
           fetch-depth: 0
-          path: upstream
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Inspect every exact upstream branch and replay validation where present
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Execute frozen reconciled REC-040 script
         shell: bash
         run: |
           set -euo pipefail
-          cd "$GITHUB_WORKSPACE/current"
           python - <<'PY'
-          import hashlib, json, re, shutil, subprocess, tempfile
-          from datetime import datetime, timezone
           from pathlib import Path
-
-          current = Path.cwd()
-          upstream = current.parent / 'upstream'
-          runs = sorted(current.glob('runs/REC-040-*'))
-          if len(runs) != 1:
-              raise SystemExit(f'expected one REC-040 run, found {len(runs)}')
-          run_dir = runs[0]
-
-          def cmd(args, cwd=None):
-              p = subprocess.run(args, cwd=cwd, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-              return p.returncode, p.stdout
-          def blob_bytes(ref, path):
-              p = subprocess.run(['git','show',f'{ref}:{path}'], cwd=upstream, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-              if p.returncode != 0:
-                  return None
-              return p.stdout
-          def sha_bytes(data):
-              return hashlib.sha256(data).hexdigest()
-
-          _, remote_lines = cmd(['git','for-each-ref','--format=%(refname:short)','refs/remotes/origin'], upstream)
-          branches = sorted(x.removeprefix('origin/') for x in remote_lines.splitlines() if x and not x.endswith('/HEAD'))
-          text_ext = {'.md','.txt','.json','.py','.toml','.yaml','.yml','.wl','.m','.csv'}
-          patterns = {
-              'module_l': re.compile(r'(?i)(module[ _-]*l|first.?pass.*module.?l|module.?l.*first.?pass|repaired.*module.?l)'),
-              'kernel': re.compile(r'(?i)(recursive kernel|triad kernel|directed lane|witness|route class|no-loss|reopening)'),
-              'physical_bridge': re.compile(r'(?i)(genesis realization|physical realization|bridge lemma|Big Implosion)'),
-              'public_data': re.compile(r'(?i)(planck|pantheon|desi|sdss|public[_ -]?data|observational target|empirical comparison)'),
-              'pass_state': re.compile(r'(?i)(\bPASS\b|score.?1\.0000|state\.json|closeout)'),
-          }
-          branch_reports = []
-          global_candidates = []
-          for branch in branches:
-              ref = f'origin/{branch}'
-              _, commit = cmd(['git','rev-parse',ref], upstream)
-              commit = commit.strip()
-              _, listing = cmd(['git','ls-tree','-r','--name-only',ref], upstream)
-              files = [x for x in listing.splitlines() if x]
-              records = []
-              hits = {k: [] for k in patterns}
-              for rel in files:
-                  data = blob_bytes(ref, rel)
-                  if data is None:
-                      continue
-                  rec = {'path':rel,'sha256':sha_bytes(data),'bytes':len(data)}
-                  records.append(rec)
-                  if Path(rel).suffix.lower() in text_ext and len(data) <= 2_000_000:
-                      text = data.decode('utf-8', errors='replace')
-                      for key, rx in patterns.items():
-                          if rx.search(rel) or rx.search(text):
-                              hits[key].append(rel)
-              validation = {'present':False,'returncode':None,'output':''}
-              if 'validation/validate_repo.py' in files:
-                  tmp = Path(tempfile.mkdtemp(prefix='rec040-'))
-                  try:
-                      rc, out = cmd(['git','worktree','add','--detach',str(tmp),ref], upstream)
-                      if rc == 0:
-                          vrc, vout = cmd(['python','validation/validate_repo.py'], tmp)
-                          validation = {'present':True,'returncode':vrc,'output':vout[-12000:]}
-                      else:
-                          validation = {'present':True,'returncode':rc,'output':out[-12000:]}
-                  finally:
-                      cmd(['git','worktree','remove','--force',str(tmp)], upstream)
-                      shutil.rmtree(tmp, ignore_errors=True)
-              shortlist_paths = sorted(set(hits['module_l'] + hits['kernel'] + hits['physical_bridge'] + [p for p in ['README.md','STATE.json','PLAN.md','HANDOFF.md','evidence/SOURCE_AUDIT.md'] if p in files]))
-              shortlist = [r for r in records if r['path'] in shortlist_paths]
-              for r in shortlist:
-                  global_candidates.append({'branch':branch,'commit':commit,**r,'indicators':[k for k,v in hits.items() if r['path'] in v]})
-              branch_reports.append({
-                  'branch':branch,'commit':commit,'tracked_file_count':len(records),
-                  'validation':validation,'candidate_hits':hits,'shortlist':shortlist
-              })
-
-          report = {
-              'schema_version':'2.0','generated_utc':datetime.now(timezone.utc).isoformat(),
-              'repository':'Charlie-glitch83/2-RFC','branches':branch_reports,
-              'global_candidates':global_candidates,
-              'admission_status':'DISCOVERY_ONLY_NOT_ADMITTED'
-          }
-          (run_dir/'RECOVERY_DISCOVERY.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
-          lines = ['# REC-040 Lineage Discovery','',f'- Branches inspected: {len(branch_reports)}',f'- Exact candidate objects: {len(global_candidates)}','', '| Branch | Commit | Files | Validation | Module-L | Kernel | Bridge | Public-data | PASS/state |','|---|---|---:|---|---:|---:|---:|---:|---:|']
-          for b in branch_reports:
-              v = 'absent' if not b['validation']['present'] else ('PASS' if b['validation']['returncode']==0 else f'FAIL({b["validation"]["returncode"]})')
-              h = b['candidate_hits']
-              lines.append(f"| {b['branch']} | `{b['commit'][:12]}` | {b['tracked_file_count']} | {v} | {len(h['module_l'])} | {len(h['kernel'])} | {len(h['physical_bridge'])} | {len(h['public_data'])} | {len(h['pass_state'])} |")
-          lines += ['', 'Discovery only. No object is admitted by this report.']
-          (run_dir/'RECOVERY_DISCOVERY_SUMMARY.md').write_text('\n'.join(lines)+'\n', encoding='utf-8')
+          text = Path('.github/workflows/run-rec-040-startup.yml').read_text(encoding='utf-8')
+          start = text.index("          python - <<'PY'\n") + len("          python - <<'PY'\n")
+          end = text.index("\n          PY\n", start)
+          lines = text[start:end].splitlines()
+          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          Path('/tmp/rec040_recovery.py').write_text(code, encoding='utf-8')
           PY
-      - name: Commit discovery evidence
+          python /tmp/rec040_recovery.py
+          rm -rf _2rfc_exact
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+      - name: Commit REC-040 evidence
         shell: bash
         run: |
           set -euo pipefail
-          cd "$GITHUB_WORKSPACE/current"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add runs/REC-040-*/RECOVERY_DISCOVERY.json runs/REC-040-*/RECOVERY_DISCOVERY_SUMMARY.md
-          git commit -m 'Record exact 2-RFC branch-lineage discovery'
+          git add recovery memory STATE.json
+          find runs -maxdepth 1 -type d -name 'REC-040-*' -print0 | xargs -0 -r git add --
+          git commit -m 'Recover verified RFC assets without inheriting failures'
           git pull --rebase origin agent/rec-040-execution
           git push origin agent/rec-040-execution
