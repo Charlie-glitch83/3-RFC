@@ -1,0 +1,103 @@
+name: Apply FRONTIER-050 verified evidence once
+
+on:
+  pull_request:
+    types: [edited, reopened, synchronize, ready_for_review]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  apply:
+    if: github.event.pull_request.head.ref == 'agent/frontier-050-execution'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install locked dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Reconstruct and verify fixed evidence bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .frontier050_bundle/chunk-* | base64 -d > /tmp/frontier050-evidence.tgz
+          echo 'ad922f3dbe51ea149acdda0a36c0b127f6b57ac65aa458b90d4e4b0f706be5a4  /tmp/frontier050-evidence.tgz' | sha256sum -c -
+          tar -xzf /tmp/frontier050-evidence.tgz -C .
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          run_id = 'FRONTIER-050-20260806T142549Z'
+          state = json.loads(Path('STATE.json').read_text())
+          frontier = json.loads(Path('audit/PHYSICAL_FRONTIER.json').read_text())
+          gates = json.loads(Path(f'runs/{run_id}/GATE_RESULTS.json').read_text())
+          replay = json.loads(Path(f'runs/{run_id}/REPLAY_RECORD.json').read_text())
+
+          assert state['generation_mode'] == 'GENERATION_SEALED'
+          assert state['active_work_unit'] == 'FRONTIER-050'
+          assert state['current_module'] == 'AUDIT'
+          assert state['current_run'] == run_id
+          assert frontier['selected_frontier']['module'] == 'A'
+          assert frontier['selected_frontier']['authorized_child'] == 'A-100'
+          assert gates['overall'] == 'PASS'
+          assert all(g['result'] == 'PASS' and g['score'] >= 0.95 for g in gates['gates'])
+          assert replay['result'] == 'PASS'
+          assert replay['artifact_hashes_match'] is True
+          PY
+      - name: Remove temporary execution machinery
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .frontier050_bundle
+          rm -f \
+            .github/frontier-050-readme-start-trigger.txt \
+            .github/frontier-050-startup-main-trigger.txt \
+            .github/frontier-050-startup-trigger.txt \
+            .github/frontier050-pr-trigger.txt \
+            .github/frontier050-startup-trigger.txt \
+            .github/xwalk-030-close-trigger.txt \
+            .github/xwalk-030-startup-trigger-2.txt \
+            .github/workflows/apply-frontier050-evidence-once.yml \
+            .github/workflows/export-pr-working-tree-once.yml \
+            .github/workflows/export-working-tree-once.yml \
+            .github/workflows/frontier-050-startup.yml \
+            .github/workflows/frontier-start-once.yml \
+            .github/workflows/frontier050-start-once.yml \
+            .github/workflows/run-frontier050-startup-main-once.yml \
+            .github/workflows/run-frontier050-startup-once.yml
+      - name: Run README end-session checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          run='runs/FRONTIER-050-20260806T142549Z'
+          python tools/director.py doctor | tee "$run/FINAL_DOCTOR.txt"
+          python -m unittest discover -s tests -v 2>&1 | tee "$run/UNIT_TESTS.txt"
+          python tools/rfc.py firewall-scan | tee "$run/FIREWALL_SCAN.txt"
+          python tools/rfc.py context | tee "$run/CONTEXT_REBUILD.txt"
+      - name: Commit exact verified evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f audit/PHYSICAL_FRONTIER.json
+          test -f audit/PHYSICAL_FRONTIER.md
+          test -f runs/FRONTIER-050-20260806T142549Z/CLOSEOUT.md
+          test ! -e .frontier050_bundle
+          test ! -e .github/workflows/apply-frontier050-evidence-once.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --name-only | grep -E '(^\.frontier050_bundle/|apply-frontier050-evidence-once\.yml$)'; then
+            echo 'Temporary evidence machinery remains staged' >&2
+            exit 1
+          fi
+          git diff --cached --quiet && { echo 'No evidence changes produced' >&2; exit 1; }
+          git commit -m 'Locate the exact RFC physical execution frontier'
+          git push origin HEAD:agent/frontier-050-execution
