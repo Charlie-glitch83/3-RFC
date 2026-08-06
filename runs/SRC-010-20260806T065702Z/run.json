@@ -1,0 +1,10 @@
+{
+  "run_id": "SRC-010-20260806T065702Z",
+  "module": "SOURCES",
+  "task_id": "SRC-010",
+  "status": "CREATED",
+  "created_utc": "2026-08-06T06:57:02.685341+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "runs/SRC-010-20260806T065702Z"
+}
