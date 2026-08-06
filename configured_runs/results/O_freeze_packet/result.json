@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "classification": "CONTENT_ADDRESSED_UNIVERSE_FREEZE",
+  "universe_hash": "cfcb51d5a522e01f4d31623115d1e3f4b203be19fc3d602a8f2f5a3e543d7c94",
+  "file_count": 2,
+  "total_bytes": 74,
+  "missing_required_paths": [],
+  "manifest": {
+    "root": "/mnt/data/3RFC_Execution_Ready_Universe_Builder_20260805/manufactured_cases/freeze_example",
+    "sha256": "cfcb51d5a522e01f4d31623115d1e3f4b203be19fc3d602a8f2f5a3e543d7c94",
+    "files": [
+      {
+        "path": "state.json",
+        "bytes": 39,
+        "sha256": "654ee04a1e967043638f4fd19971aab4825fa295c6e3c2757c9d3f579ced35d4"
+      },
+      {
+        "path": "truth.txt",
+        "bytes": 35,
+        "sha256": "e213774475a5924bb7d33dd063fb639885e97f23ac95020f6c2055eb9abf8531"
+      }
+    ]
+  }
+}

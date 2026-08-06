@@ -1,0 +1,34 @@
+{
+  "module": "B",
+  "componentwise": [
+    {
+      "gate": "no pre-event physical time",
+      "required": "PASS"
+    },
+    {
+      "gate": "exact parent bytes",
+      "required": "PASS"
+    },
+    {
+      "gate": "strict nontrivial compression or derived equivalent",
+      "required": "PASS"
+    },
+    {
+      "gate": "total ledger preservation",
+      "required": "PASS"
+    },
+    {
+      "gate": "no-loss reopening",
+      "required": "PASS"
+    },
+    {
+      "gate": "no later physics smuggled into B",
+      "required": "PASS"
+    },
+    {
+      "gate": "ablation, replay, restart, and independent reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

@@ -1,0 +1,37 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "transport",
+  "model": {
+    "state_names": [
+      "x",
+      "y"
+    ],
+    "parameters": {
+      "k": 1.7
+    },
+    "rhs_expressions": [
+      "-k*(x-y)",
+      "k*(x-y)"
+    ],
+    "initial_state": [
+      0.9,
+      0.1
+    ],
+    "t_span": [
+      0.0,
+      5.0
+    ],
+    "method": "BDF",
+    "rtol": 1e-10,
+    "atol": 1e-12,
+    "linear_invariants": {
+      "total": [
+        1,
+        1
+      ]
+    },
+    "positivity_required": true,
+    "positivity_tolerance": 1e-09,
+    "invariant_tolerance": 1e-08
+  }
+}

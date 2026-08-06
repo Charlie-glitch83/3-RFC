@@ -1,0 +1,9 @@
+{
+  "solver": "covariance",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "f543bf727ef401c83e9d75c06e65243e85d92a2cfc9144bca9fe29bb7ddcbd18",
+  "result_sha256": "069b066cf349a114d6fe5ad30d148fd0bd8cf35f3072ff9d4b8c1d163e497a3a",
+  "environment_sha256": "e02ce7df1314933b0c640e24ac460fffb025f5eff3bdd44856c7576413051c66",
+  "success": true,
+  "classification": "COVARIANCE_SAMPLE_EXECUTION"
+}

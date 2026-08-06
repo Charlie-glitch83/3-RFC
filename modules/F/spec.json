@@ -1,0 +1,31 @@
+{
+  "module": "F",
+  "title": "Post-Nuclear Plasma and Radiation Persistence",
+  "parents": [
+    "E"
+  ],
+  "children": [
+    "G"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Carry isotope, plasma, radiation, neutrino, and transport states from nucleosynthesis into recombination without losing lineage or covariance.",
+  "required_outputs": [
+    "plasma composition and ionization state",
+    "radiation/neutrino persistence",
+    "opacity and transport state",
+    "source-transfer ownership",
+    "H_F_to_G"
+  ],
+  "gates": [
+    "charge neutrality where derived",
+    "energy and particle accounting",
+    "covariance positive semidefinite",
+    "replay from E"
+  ],
+  "forbidden_shortcuts": [
+    "resetting to a textbook plasma",
+    "dropping isotope or uncertainty channels"
+  ],
+  "claim_boundary": "Post-nuclear RFC plasma state.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

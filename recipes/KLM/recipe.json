@@ -1,0 +1,95 @@
+{
+  "schema_version": "2.0",
+  "module": "KLM",
+  "title": "Causal K\u2013L\u2013M Recurrence and Classification",
+  "parents": [
+    "K",
+    "L",
+    "M"
+  ],
+  "children": [
+    "K",
+    "L",
+    "M",
+    "N"
+  ],
+  "objective": "Replay causal backreaction among gravity, baryons/stars, and chemistry until the system reaches a lawfully classified state without forcing convergence.",
+  "nbody_mode": "DIRECT_MANY_BODY_ACTIVE",
+  "triadic_descent": {
+    "CIF": "admissible gravity/baryon/composition return states",
+    "QV": "causal backreaction and earliest-change replay",
+    "RFL": "classified coupled-state memory"
+  },
+  "derive_exactly": [
+    "typed K->L, L->M, M->K/L return maps",
+    "causal witnesses and earliest affected checkpoints",
+    "componentwise convergence metrics and covariance updates",
+    "classification without forced fixed point"
+  ],
+  "wolfram_calls": [
+    "KLM-WL-001",
+    "KLM-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module KLM --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module KLM --solver affine_recurrence --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/KLM_recurrence.template.json --binding-sheet <RUN_DIR>/binding_sheets/KLM_recurrence.bindings.json --output <RUN_DIR>/solver_configs/KLM_recurrence.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/KLM_recurrence.json --output-dir <RUN_DIR>/solver_outputs/affine_recurrence"
+  ],
+  "numerical_execution": [
+    "fixed-point, cycle, attractor and nonconvergence tests",
+    "restart/replay across earliest-change checkpoints",
+    "independent recurrence implementation"
+  ],
+  "required_outputs": [
+    "iteration history",
+    "causal return witnesses",
+    "earliest affected checkpoints",
+    "conservation/covariance updates",
+    "restart/replay",
+    "classification: fixed point, finite cycle, attractor, branch family, obstruction, or nonconvergence",
+    "certified K*, L*, M* or certified alternative"
+  ],
+  "mandatory_gates": [
+    "no target-driven stopping",
+    "componentwise convergence metrics",
+    "return ownership",
+    "clean replay",
+    "independent implementation",
+    "preserved failed attempts"
+  ],
+  "forbidden_shortcuts": [
+    "promoting reduced dimensionless F0 to physical recurrence",
+    "forcing a fixed point",
+    "ignoring nonconvergent lawful behavior"
+  ],
+  "hard_stop_conditions": [
+    "reduced F0 promoted to physical recurrence",
+    "target-driven stopping",
+    "fixed point forced despite other lawful class"
+  ],
+  "claim_boundary": "Physical coupled-universe classification at executed fidelity.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "affine_recurrence",
+      "template": "configured_runs/templates/KLM_recurrence.template.json",
+      "purpose": "Classify the frozen recurrence without forcing convergence.",
+      "copy_command": "python tools/director.py solver-copy --module KLM --solver affine_recurrence --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/KLM_recurrence.json --output-dir <RUN_DIR>/solver_outputs/affine_recurrence",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/KLM_recurrence.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/KLM_recurrence.template.json --binding-sheet <RUN_DIR>/binding_sheets/KLM_recurrence.bindings.json --output <RUN_DIR>/solver_configs/KLM_recurrence.json"
+    }
+  ]
+}

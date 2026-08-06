@@ -1,0 +1,106 @@
+{
+  "schema_version": "2.0",
+  "module": "N",
+  "title": "Manifested Observer-Ready Universe",
+  "parents": [
+    "K",
+    "L",
+    "M",
+    "KLM"
+  ],
+  "children": [
+    "O"
+  ],
+  "objective": "Prove and construct that all executed sectors coexist in one compatible causal, conservation-bearing universe and generate truth-level observer interfaces.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "all compatible sector states",
+    "QV": "cross-sector compatibility and observer projection",
+    "RFL": "one universe identity and truth products"
+  },
+  "derive_exactly": [
+    "single global causal/conservation graph",
+    "cross-sector compatibility and covariance",
+    "truth metric/lightcone/maps/spectra/signals/catalogues",
+    "multimessenger/transient and observer-record interfaces",
+    "complete ancestry to A"
+  ],
+  "wolfram_calls": [
+    "N-WL-001",
+    "N-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module N --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module N --solver global_ledger --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/N_global_ledger.template.json --binding-sheet <RUN_DIR>/binding_sheets/N_global_ledger.bindings.json --output <RUN_DIR>/solver_configs/N_global_ledger.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/N_global_ledger.json --output-dir <RUN_DIR>/solver_outputs/global_ledger",
+    "python tools/director.py solver-copy --module N --solver synthetic_observation --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/N_synthetic_observation.template.json --binding-sheet <RUN_DIR>/binding_sheets/N_synthetic_observation.bindings.json --output <RUN_DIR>/solver_configs/N_synthetic_observation.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/N_synthetic_observation.json --output-dir <RUN_DIR>/solver_outputs/synthetic_observation"
+  ],
+  "numerical_execution": [
+    "global ledger closure",
+    "synthetic observation reconstruction",
+    "independent end-to-end replay"
+  ],
+  "required_outputs": [
+    "single universe identity",
+    "cross-sector causal graph",
+    "truth lightcones/maps/spectra/signals/catalogues",
+    "multimessenger/transient products",
+    "environment and observer-record interfaces",
+    "global uncertainty/covariance",
+    "complete ancestry to the triad"
+  ],
+  "mandatory_gates": [
+    "no directory-merge substitution",
+    "cross-domain compatibility",
+    "global conservation",
+    "lineage completeness",
+    "synthetic observation closure",
+    "independent end-to-end reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "assembling incompatible module snapshots",
+    "calling formal N law a physical universe"
+  ],
+  "hard_stop_conditions": [
+    "directory merge substituted for one universe",
+    "incompatible snapshots combined",
+    "lineage or global conservation incomplete"
+  ],
+  "claim_boundary": "One manifested RFC universe, not yet frozen or empirically validated.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "global_ledger",
+      "template": "configured_runs/templates/N_global_ledger.template.json",
+      "purpose": "Close the one-universe global conservation and ownership ledger.",
+      "copy_command": "python tools/director.py solver-copy --module N --solver global_ledger --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/N_global_ledger.json --output-dir <RUN_DIR>/solver_outputs/global_ledger",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/N_global_ledger.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/N_global_ledger.template.json --binding-sheet <RUN_DIR>/binding_sheets/N_global_ledger.bindings.json --output <RUN_DIR>/solver_configs/N_global_ledger.json"
+    },
+    {
+      "solver": "synthetic_observation",
+      "template": "configured_runs/templates/N_synthetic_observation.template.json",
+      "purpose": "Generate truth-to-observation products without public comparison data.",
+      "copy_command": "python tools/director.py solver-copy --module N --solver synthetic_observation --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/N_synthetic_observation.json --output-dir <RUN_DIR>/solver_outputs/synthetic_observation",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/N_synthetic_observation.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/N_synthetic_observation.template.json --binding-sheet <RUN_DIR>/binding_sheets/N_synthetic_observation.bindings.json --output <RUN_DIR>/solver_configs/N_synthetic_observation.json"
+    }
+  ]
+}

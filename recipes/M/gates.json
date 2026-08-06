@@ -1,0 +1,26 @@
+{
+  "module": "M",
+  "componentwise": [
+    {
+      "gate": "nuclear/species conservation",
+      "required": "PASS"
+    },
+    {
+      "gate": "yield source/derivation audit",
+      "required": "PASS"
+    },
+    {
+      "gate": "network convergence",
+      "required": "PASS"
+    },
+    {
+      "gate": "return causality and earliest-change replay",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

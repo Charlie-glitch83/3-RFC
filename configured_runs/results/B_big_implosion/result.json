@@ -1,0 +1,120 @@
+{
+  "success": true,
+  "classification": "BIG_IMPLOSION_OPERATOR_EXECUTION",
+  "laplacian": [
+    [
+      1.0,
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      -1.0,
+      2.0,
+      -1.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      2.0,
+      -1.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0,
+      1.0
+    ]
+  ],
+  "operator": [
+    [
+      0.7491262051613989,
+      0.18815534612895088,
+      0.04791263137083886,
+      0.014805817338811441
+    ],
+    [
+      0.18815534612895088,
+      0.6088834904032869,
+      0.15504853209692346,
+      0.04791263137083886
+    ],
+    [
+      0.04791263137083886,
+      0.15504853209692349,
+      0.6088834904032869,
+      0.18815534612895088
+    ],
+    [
+      0.01480581733881144,
+      0.04791263137083885,
+      0.18815534612895085,
+      0.7491262051613988
+    ]
+  ],
+  "operator_eigenvalues": [
+    0.395744523829532,
+    0.5278640450004208,
+    0.7924108222994186,
+    1.0000000000000002
+  ],
+  "initial_state": [
+    [
+      1.5
+    ],
+    [
+      -0.5
+    ],
+    [
+      0.75
+    ],
+    [
+      -1.75
+    ]
+  ],
+  "manifested_state": [
+    [
+      1.039635927862832
+    ],
+    [
+      0.010230568165507437
+    ],
+    [
+      0.12173544308459766
+    ],
+    [
+      -1.171601939112937
+    ]
+  ],
+  "reopened_state": [
+    [
+      1.5
+    ],
+    [
+      -0.4999999999999999
+    ],
+    [
+      0.75
+    ],
+    [
+      -1.75
+    ]
+  ],
+  "nontrivial_norm_before": 2.4748737341529163,
+  "nontrivial_norm_after": 1.571120030062757,
+  "compression_ratio": 0.634828358465936,
+  "reopening_error": 1.1102230246251565e-16,
+  "conserved_mode_error": 0.0,
+  "total_relative_change": 0.0,
+  "sector_result": null,
+  "pass_flags": {
+    "symmetric_laplacian": true,
+    "positive_semidefinite_laplacian": true,
+    "conserved_constant_mode": true,
+    "strict_nontrivial_compression": true,
+    "reopening": true,
+    "operator_eigenvalues_in_unit_interval": true,
+    "no_pre_event_clock_imported": true
+  }
+}

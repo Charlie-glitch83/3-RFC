@@ -1,0 +1,30 @@
+{
+  "module": "L",
+  "componentwise": [
+    {
+      "gate": "mass/momentum/energy/species conservation",
+      "required": "PASS"
+    },
+    {
+      "gate": "resolution and subgrid convergence",
+      "required": "PASS"
+    },
+    {
+      "gate": "feedback ownership",
+      "required": "PASS"
+    },
+    {
+      "gate": "uncertainty/covariance",
+      "required": "PASS"
+    },
+    {
+      "gate": "replay locality",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent implementation",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

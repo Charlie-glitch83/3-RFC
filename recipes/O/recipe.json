@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0",
+  "module": "O",
+  "title": "Immutable Universe and Prediction Freeze",
+  "parents": [
+    "N"
+  ],
+  "children": [
+    "P",
+    "Q"
+  ],
+  "objective": "Create one immutable content-addressed universe, environment, prediction, falsifier, and observation-interface packet and seal generation.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "all generated truth and prediction objects",
+    "QV": "content-addressed sealing",
+    "RFL": "immutable universe identity"
+  },
+  "derive_exactly": [
+    "canonical serialization and full artifact manifest",
+    "prediction/falsifier registries before reveal",
+    "P/Q branch isolation and replay environment"
+  ],
+  "wolfram_calls": [
+    "O-WL-001",
+    "O-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module O --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module O --solver freeze_packet --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/O_freeze_packet.template.json --binding-sheet <RUN_DIR>/binding_sheets/O_freeze_packet.bindings.json --output <RUN_DIR>/solver_configs/O_freeze_packet.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/O_freeze_packet.json --output-dir <RUN_DIR>/solver_outputs/freeze_packet"
+  ],
+  "numerical_execution": [
+    "clean replay and exact hashes",
+    "mutation test",
+    "firewall scan"
+  ],
+  "required_outputs": [
+    "content-addressed universe bundle",
+    "prediction registry",
+    "falsifier registry",
+    "public comparison manifest without values",
+    "environment and replay package",
+    "isolated P and Q branch authorizations"
+  ],
+  "mandatory_gates": [
+    "all files stopped changing before manifest",
+    "full clean replay",
+    "hash verification",
+    "P and Q isolation",
+    "no public data present"
+  ],
+  "forbidden_shortcuts": [
+    "freezing before N passes",
+    "allowing P to rewrite O",
+    "changing predictions after reveal"
+  ],
+  "hard_stop_conditions": [
+    "N not independently reproduced",
+    "files still changing",
+    "public data present"
+  ],
+  "claim_boundary": "Frozen generative universe and predictions.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "freeze_packet",
+      "template": "configured_runs/templates/O_freeze_packet.template.json",
+      "purpose": "Content-address the immutable universe and prediction packet.",
+      "copy_command": "python tools/director.py solver-copy --module O --solver freeze_packet --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/O_freeze_packet.json --output-dir <RUN_DIR>/solver_outputs/freeze_packet",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/O_freeze_packet.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/O_freeze_packet.template.json --binding-sheet <RUN_DIR>/binding_sheets/O_freeze_packet.bindings.json --output <RUN_DIR>/solver_configs/O_freeze_packet.json"
+    }
+  ]
+}

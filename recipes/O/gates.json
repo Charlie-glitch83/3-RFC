@@ -1,0 +1,26 @@
+{
+  "module": "O",
+  "componentwise": [
+    {
+      "gate": "all files stopped changing before manifest",
+      "required": "PASS"
+    },
+    {
+      "gate": "full clean replay",
+      "required": "PASS"
+    },
+    {
+      "gate": "hash verification",
+      "required": "PASS"
+    },
+    {
+      "gate": "P and Q isolation",
+      "required": "PASS"
+    },
+    {
+      "gate": "no public data present",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

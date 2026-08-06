@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "work_unit": "SRC-010",
+  "title": "Hash and Admit the Core Source Corpus",
+  "module": "SOURCES",
+  "objective": "Admit exact source bytes from source_seed into immutable sources/frozen, classify authority, and create a reproducible source manifest.",
+  "depends_on": [
+    "BOOT-000"
+  ],
+  "exact_commands": [
+    "python tools/rfc.py admit-seed",
+    "python tools/rfc.py doctor"
+  ],
+  "exact_sequence": [
+    "Recompute every source-seed SHA-256 independently.",
+    "Promote only exact original source bytes; analysis files remain advisory.",
+    "Write a source-role record for P29, P30, N-body proof, and N-body metadata.",
+    "Verify source_seed manifest.",
+    "Admit P29, N-body, P30 and metadata first.",
+    "Classify historical, explanatory, candidate-addendum, recovery, and interpretation sources.",
+    "Hash every admitted object and reconstruct manifest independently."
+  ],
+  "deliverables": [
+    "sources/SOURCE_MANIFEST.json",
+    "memory/SOURCE_REGISTRY.json",
+    "runs/SRC-010/CLOSEOUT.md"
+  ],
+  "componentwise_gates": [
+    "all core bytes resolvable",
+    "hashes match",
+    "authority class explicit",
+    "no summary used as parent"
+  ],
+  "commit_message": "Admit and lock the core RFC source corpus",
+  "hard_stops": [
+    "required source or parent hash is missing",
+    "a public target would influence a generation decision",
+    "a claimed artifact cannot be fetched and independently verified",
+    "a componentwise gate fails"
+  ]
+}

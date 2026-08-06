@@ -1,0 +1,9 @@
+{
+  "solver": "freeze_packet",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "5d9fd93dbed69fd1827165cb83df3468009171e68fdd04cddc5cdf3be76ec56f",
+  "result_sha256": "815dbb0d5ab44f3db0ac74469d05c6307a1e1f868be604a0b2cbfeb99669f157",
+  "environment_sha256": "28fc5debf22fc94040054e3bfdc66aaf84b92d13dc1d3cb6a65d4a841909353c",
+  "success": true,
+  "classification": "CONTENT_ADDRESSED_UNIVERSE_FREEZE"
+}

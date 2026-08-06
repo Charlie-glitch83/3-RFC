@@ -1,0 +1,9 @@
+{
+  "solver": "affine_recurrence",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "565f9b40508d0274046f33a22c1ae61f18defe4783fe6ce1393086295586da0d",
+  "result_sha256": "01bf7b402dd6f69533f4b47c790bd023833956f40a9c5f7f530eef7911e25144",
+  "environment_sha256": "f61a0169a5a82153e530155e055f2ef6a7bd49278eb35a41d977d8ee9cbe769a",
+  "success": true,
+  "classification": "FIXED_POINT"
+}

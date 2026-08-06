@@ -1,0 +1,35 @@
+{
+  "module": "O",
+  "title": "Immutable Universe and Prediction Freeze",
+  "parents": [
+    "N"
+  ],
+  "children": [
+    "P",
+    "Q"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Create one immutable content-addressed universe, environment, prediction, falsifier, and observation-interface packet and seal generation.",
+  "required_outputs": [
+    "content-addressed universe bundle",
+    "prediction registry",
+    "falsifier registry",
+    "public comparison manifest without values",
+    "environment and replay package",
+    "isolated P and Q branch authorizations"
+  ],
+  "gates": [
+    "all files stopped changing before manifest",
+    "full clean replay",
+    "hash verification",
+    "P and Q isolation",
+    "no public data present"
+  ],
+  "forbidden_shortcuts": [
+    "freezing before N passes",
+    "allowing P to rewrite O",
+    "changing predictions after reveal"
+  ],
+  "claim_boundary": "Frozen generative universe and predictions.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

@@ -1,0 +1,59 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "reaction_network",
+  "model": {
+    "species": [
+      "n",
+      "p",
+      "d"
+    ],
+    "stoichiometry": [
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "rate_expressions": [
+      "kf*n*p",
+      "kr*d"
+    ],
+    "parameters": {
+      "kf": 0.8,
+      "kr": 0.2
+    },
+    "invariants": {
+      "baryon": [
+        1,
+        1,
+        2
+      ],
+      "charge": [
+        0,
+        1,
+        1
+      ]
+    }
+  },
+  "initial_state": [
+    0.55,
+    0.45,
+    0.0
+  ],
+  "t_span": [
+    0.0,
+    5.0
+  ],
+  "method": "BDF",
+  "rtol": 1e-10,
+  "atol": 1e-12,
+  "positivity_tolerance": 1e-08,
+  "invariant_tolerance": 1e-08
+}

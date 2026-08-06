@@ -1,0 +1,9 @@
+{
+  "solver": "fourier_field",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "7d9604e67a31400ebc0627dd313f6ed981fa9a5bfd67e5920180403ea6285af9",
+  "result_sha256": "ec13f1b634d72f2d7cfd6faa9c77ae0275392484a0fcfa2f49c55741fe2e19af",
+  "environment_sha256": "dd0d6463b087215715eac1ed5760ffca34446787bcca2eb7e062a167a6d887b4",
+  "success": true,
+  "classification": "FINITE_VOLUME_GAUSSIAN_FIELD_REALIZATION"
+}

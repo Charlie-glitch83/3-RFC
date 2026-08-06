@@ -1,0 +1,30 @@
+{
+  "module": "KLM",
+  "componentwise": [
+    {
+      "gate": "no target-driven stopping",
+      "required": "PASS"
+    },
+    {
+      "gate": "componentwise convergence metrics",
+      "required": "PASS"
+    },
+    {
+      "gate": "return ownership",
+      "required": "PASS"
+    },
+    {
+      "gate": "clean replay",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent implementation",
+      "required": "PASS"
+    },
+    {
+      "gate": "preserved failed attempts",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

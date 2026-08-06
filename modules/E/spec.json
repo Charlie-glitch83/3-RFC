@@ -1,0 +1,34 @@
+{
+  "module": "E",
+  "title": "Primordial Nuclear Network",
+  "parents": [
+    "D"
+  ],
+  "children": [
+    "F"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.",
+  "required_outputs": [
+    "reaction graph and rates with source lineage",
+    "abundance trajectories",
+    "isotope covariance",
+    "conservation and positivity ledger",
+    "freeze-out/event witnesses",
+    "H_E_to_F"
+  ],
+  "gates": [
+    "baryon/charge/energy accounting",
+    "network convergence",
+    "rate-source audit",
+    "no scalar-channel collapse",
+    "withheld reaction and independent implementation checks"
+  ],
+  "forbidden_shortcuts": [
+    "targeting public abundances",
+    "inheriting the old Li7 failure",
+    "using fitted abundance corrections"
+  ],
+  "claim_boundary": "Internally generated primordial nuclear state; observations remain sealed.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

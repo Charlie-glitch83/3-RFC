@@ -1,0 +1,26 @@
+{
+  "module": "P",
+  "componentwise": [
+    {
+      "gate": "O hash unchanged",
+      "required": "PASS"
+    },
+    {
+      "gate": "no target deletion",
+      "required": "PASS"
+    },
+    {
+      "gate": "no covariance inflation",
+      "required": "PASS"
+    },
+    {
+      "gate": "no branch/seed/tolerance changes",
+      "required": "PASS"
+    },
+    {
+      "gate": "reproducible independent comparison",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

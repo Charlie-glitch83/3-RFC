@@ -1,0 +1,33 @@
+{
+  "module": "J",
+  "title": "Primordial Covariance, Linear Spectra, and Finite-Volume Fields",
+  "parents": [
+    "HI"
+  ],
+  "children": [
+    "K"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.",
+  "required_outputs": [
+    "positive-semidefinite covariance",
+    "linear spectra and growth",
+    "finite-volume fields",
+    "phase/seed provenance",
+    "promotion witnesses",
+    "restartable P_J_to_K"
+  ],
+  "gates": [
+    "covariance PSD",
+    "reality/Hermitian conditions",
+    "resolution and volume tests",
+    "no public initial-condition file",
+    "independent field reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "synthetic representative covariance as physical parent",
+    "selecting seeds for observational agreement"
+  ],
+  "claim_boundary": "One realized RFC linear universe and its uncertainty state.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

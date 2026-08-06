@@ -1,0 +1,9 @@
+{
+  "solver": "global_ledger",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "fe3b69a03ecd9843c966617eaed310b0ccf7341fee7fdd115340de918ef3e663",
+  "result_sha256": "63c280dbb930591944ba27cb45ae1ead2075ed06328f02a4c52b628d6a70a935",
+  "environment_sha256": "ab4ca79e90c8f81893fccf560eee267958f2d33d9da1059161b6f43a123d4375",
+  "success": true,
+  "classification": "GLOBAL_CONSERVATION_LEDGER_AUDIT"
+}

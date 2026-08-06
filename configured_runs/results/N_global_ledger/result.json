@@ -1,0 +1,87 @@
+{
+  "success": true,
+  "classification": "GLOBAL_CONSERVATION_LEDGER_AUDIT",
+  "quantities": [
+    "energy",
+    "charge"
+  ],
+  "sectors": [
+    "K",
+    "L",
+    "M"
+  ],
+  "predicted_final": [
+    [
+      8.5,
+      0.0
+    ],
+    [
+      3.5,
+      2.5
+    ],
+    [
+      1.0,
+      -2.5
+    ]
+  ],
+  "declared_final": [
+    [
+      8.5,
+      0.0
+    ],
+    [
+      3.5,
+      2.5
+    ],
+    [
+      1.0,
+      -2.5
+    ]
+  ],
+  "local_residual": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ]
+  ],
+  "global_before": [
+    13.0,
+    0.0
+  ],
+  "global_after": [
+    13.0,
+    0.0
+  ],
+  "owners": {
+    "energy": "K",
+    "charge": "L"
+  },
+  "transfers": [
+    {
+      "source": "K",
+      "target": "L",
+      "quantity": "energy",
+      "amount": 1.5
+    },
+    {
+      "source": "L",
+      "target": "M",
+      "quantity": "charge",
+      "amount": 0.5
+    }
+  ],
+  "pass_flags": {
+    "transfer_pairing": true,
+    "local_closure": true,
+    "global_conservation": true,
+    "ownership_complete": true
+  }
+}

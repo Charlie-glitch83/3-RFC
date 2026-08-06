@@ -1,0 +1,119 @@
+{
+  "success": true,
+  "classification": "LINEAR_TRANSFER_EXECUTION",
+  "operators": [
+    [
+      [
+        0.870398990387898,
+        0.029398994893833602
+      ],
+      [
+        0.05879798978766721,
+        0.8116010006002309
+      ]
+    ],
+    [
+      [
+        0.8048609713431847,
+        0.041839682360628426
+      ],
+      [
+        0.08367936472125685,
+        0.7211816066219278
+      ]
+    ]
+  ],
+  "states": [
+    [
+      0.8630492416644396,
+      -0.14410226036239052
+    ],
+    [
+      0.7944010507530276,
+      -0.09661603693422509
+    ]
+  ],
+  "covariances": [
+    [
+      [
+        0.7684349552884142,
+        0.2095089471831138
+      ],
+      [
+        0.2095089471831138,
+        0.48363273546375896
+      ]
+    ],
+    [
+      [
+        0.6624966254597078,
+        0.2052624706048318
+      ],
+      [
+        0.20526247060483177,
+        0.3952134803673139
+      ]
+    ]
+  ],
+  "initial_covariance_audit": {
+    "shape": [
+      2,
+      2
+    ],
+    "symmetry_error": 0.0,
+    "symmetric": true,
+    "eigenvalues": [
+      0.6,
+      1.1
+    ],
+    "minimum_eigenvalue": 0.6,
+    "positive_semidefinite": true,
+    "positive_definite": true,
+    "tolerance": 1e-10
+  },
+  "output_covariance_audits": [
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "symmetry_error": 0.0,
+      "symmetric": true,
+      "eigenvalues": [
+        0.3727117676685966,
+        0.8793559230835765
+      ],
+      "minimum_eigenvalue": 0.3727117676685966,
+      "positive_semidefinite": true,
+      "positive_definite": true,
+      "tolerance": 1e-10
+    },
+    {
+      "shape": [
+        2,
+        2
+      ],
+      "symmetry_error": 2.7755575615628914e-17,
+      "symmetric": true,
+      "eigenvalues": [
+        0.28392087450751574,
+        0.7737892313195059
+      ],
+      "minimum_eigenvalue": 0.28392087450751574,
+      "positive_semidefinite": true,
+      "positive_definite": true,
+      "tolerance": 1e-10
+    }
+  ],
+  "semigroup_error": 1.1102230246251565e-16,
+  "tolerance": 1e-10,
+  "generator_eigenvalues": [
+    -0.16339745962155613,
+    -0.33660254037844384
+  ],
+  "pass_flags": {
+    "semigroup": true,
+    "covariance_preserved": true,
+    "finite_outputs": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "covariance",
+  "model": {
+    "covariance": [
+      [
+        1.0,
+        0.35,
+        0.1
+      ],
+      [
+        0.35,
+        0.8,
+        0.2
+      ],
+      [
+        0.1,
+        0.2,
+        0.5
+      ]
+    ],
+    "seed": 20260805,
+    "sample_count": 20000,
+    "tolerance": 1e-12,
+    "sample_covariance_tolerance": 0.06
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "module": "N",
+  "componentwise": [
+    {
+      "gate": "no directory-merge substitution",
+      "required": "PASS"
+    },
+    {
+      "gate": "cross-domain compatibility",
+      "required": "PASS"
+    },
+    {
+      "gate": "global conservation",
+      "required": "PASS"
+    },
+    {
+      "gate": "lineage completeness",
+      "required": "PASS"
+    },
+    {
+      "gate": "synthetic observation closure",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent end-to-end reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

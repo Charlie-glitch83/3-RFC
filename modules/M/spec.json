@@ -1,0 +1,38 @@
+{
+  "module": "M",
+  "title": "Stellar/Explosive Nucleosynthesis, Chemistry, Dust, Cooling, and Opacity",
+  "parents": [
+    "L"
+  ],
+  "children": [
+    "KLM",
+    "N"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Generate element/isotope production, chemical enrichment, dust, cooling, opacity, and composition-dependent returns from the executed stellar history.",
+  "required_outputs": [
+    "stellar/explosive yields with provenance",
+    "element/isotope histories",
+    "galactic/cosmic chemical evolution",
+    "dust and molecular state",
+    "cooling/opacity returns",
+    "M_to_K and M_to_L interfaces"
+  ],
+  "gates": [
+    "nuclear/species conservation",
+    "yield source/derivation audit",
+    "network convergence",
+    "return causality and earliest-change replay",
+    "independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "fitting yields to solar abundances",
+    "using public abundance patterns during generation",
+    "dropping covariance"
+  ],
+  "claim_boundary": "Generated RFC chemical and composition state.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md",
+  "return_inputs": [
+    "KLM"
+  ]
+}

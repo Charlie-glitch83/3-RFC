@@ -1,0 +1,1 @@
+<|"call" -> "A-WL-001", "laneIncrement" -> "2*n", "lanePass" -> True, "infiniteWeightSum" -> "(-1 + delta*E^(alpha*t))^(-1)", "normalization" -> "1", "normalizationPass" -> True|>

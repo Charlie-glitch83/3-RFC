@@ -1,0 +1,9 @@
+{
+  "solver": "synthetic_observation",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "30eaa1e6523b305e790622fc2cae9a3fd2286da043681e3122870c52259cdf61",
+  "result_sha256": "9735acf666518b20c68a7493239b51f50aba2c4592b07b3fb33ef94ce8c5c03c",
+  "environment_sha256": "888d5fd6c582122571eba999c74a5e970d162cc6079ed49bac4e358a19ce50cf",
+  "success": true,
+  "classification": "SYNTHETIC_OBSERVATION_GENERATION"
+}
