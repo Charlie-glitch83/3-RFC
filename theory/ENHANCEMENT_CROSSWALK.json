@@ -1,102 +1,335 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "rule": "Preserve valid architecture and theorem objects; strengthen or rederive inadequate mechanisms; keep failures only as history/regression evidence.",
+  "allowed_classifications": [
+    "PRESERVE",
+    "REDERIVE",
+    "REGRESSION_ONLY",
+    "QUARANTINE",
+    "EXCLUDE"
+  ],
+  "source_manifest_sha256": "d6f8b697050cf62e5e189a19b471488f80bbc78a85903f0b83511b1dc77971e3",
+  "generated_by_work_unit": "XWALK-030",
   "objects": [
     {
       "object": "Ordered CIF/QV/RFL triad",
       "source": "P29",
       "disposition": "PRESERVE_CANONICAL",
-      "target": "A"
+      "target": "A",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "P29 metadata and reproducibility context",
+        "Triadic emergence and theorem architecture"
+      ],
+      "claim_owner": "C-P29-EMERGENCE / C-NBODY-RELATIONAL",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "First Action QV(CIF)->RFL",
       "source": "P29",
       "disposition": "PRESERVE_AND_FORMALIZE",
-      "target": "A"
+      "target": "A",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "P29 metadata and reproducibility context",
+        "Triadic emergence and theorem architecture"
+      ],
+      "claim_owner": "C-P29-EMERGENCE / C-NBODY-RELATIONAL",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Recursive kernel K_f(t)=Sum delta^-j f_j(t) exp(-alpha j t)",
       "source": "P29",
       "disposition": "PRESERVE_WITH_DOMAIN_ADMISSION",
-      "target": "A"
+      "target": "A",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "P29 metadata and reproducibility context",
+        "Triadic emergence and theorem architecture"
+      ],
+      "claim_owner": "C-P29-EMERGENCE / C-NBODY-RELATIONAL",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Frozen-source/no-retune architecture",
       "source": "P29/P30",
       "disposition": "PRESERVE_AND_STRENGTHEN",
-      "target": "A-O"
+      "target": "A-O",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+        "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "P29 metadata and reproducibility context",
+        "Triadic emergence and theorem architecture",
+        "Universe architecture and full ledger",
+        "Universe reproducibility metadata candidate"
+      ],
+      "claim_owner": "module-specific claims; no aggregate completion claim",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Generic weighted triad coefficients used across every old module",
       "source": "P30",
       "disposition": "HISTORICAL_REGRESSION_ONLY",
-      "target": "history"
+      "target": "history",
+      "classification": "REGRESSION_ONLY",
+      "evidence_state": "HISTORICAL_WARNING",
+      "source_hashes": [
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+        "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+      ],
+      "source_labels": [
+        "Universe architecture and full ledger",
+        "Universe reproducibility metadata candidate"
+      ],
+      "claim_owner": "no active scientific claim",
+      "inherited_as_scientific_parent": false
     },
     {
       "object": "Internal closure scores as universe completion proof",
       "source": "P30",
       "disposition": "SUPERSEDE",
-      "target": "evidence states"
+      "target": "evidence states",
+      "classification": "EXCLUDE",
+      "evidence_state": "EXCLUDED",
+      "source_hashes": [
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+        "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+      ],
+      "source_labels": [
+        "Universe architecture and full ledger",
+        "Universe reproducibility metadata candidate"
+      ],
+      "claim_owner": "repository governance only",
+      "inherited_as_scientific_parent": false
     },
     {
       "object": "Universe dependency and handoff order",
       "source": "P30",
       "disposition": "PRESERVE_AND_PHYSICALLY_EXECUTE",
-      "target": "B-Q"
+      "target": "B-Q",
+      "classification": "REDERIVE",
+      "evidence_state": "DESIGN",
+      "source_hashes": [
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+        "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+      ],
+      "source_labels": [
+        "Universe architecture and full ledger",
+        "Universe reproducibility metadata candidate"
+      ],
+      "claim_owner": "C-A-N-UNIVERSE only after independent reproduction",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Directed lanes and 2N lane increment",
       "source": "N-body",
       "disposition": "PRESERVE_AND_VERIFY",
-      "target": "A"
+      "target": "A",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+        "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+      ],
+      "source_labels": [
+        "N-body metadata",
+        "Revised triadic N-body proof"
+      ],
+      "claim_owner": "C-P29-EMERGENCE / C-NBODY-RELATIONAL",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Local witness, route, gauge/multiroute, event and branch classes",
       "source": "N-body",
       "disposition": "PRESERVE_AND_PROPAGATE",
-      "target": "A-Q"
+      "target": "A-Q",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+        "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+      ],
+      "source_labels": [
+        "N-body metadata",
+        "Revised triadic N-body proof"
+      ],
+      "claim_owner": "Module A-Q at its frozen claim boundary",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "No-loss memory and reopening",
       "source": "N-body/P29",
       "disposition": "PRESERVE_AND_PROPAGATE",
-      "target": "A-Q"
+      "target": "A-Q",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "N-body metadata",
+        "P29 metadata and reproducibility context",
+        "Revised triadic N-body proof",
+        "Triadic emergence and theorem architecture"
+      ],
+      "claim_owner": "Module A-Q at its frozen claim boundary",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Direct N-body mechanics in every domain",
       "source": "misread integration",
       "disposition": "FORBID",
-      "target": "all"
+      "target": "all",
+      "classification": "EXCLUDE",
+      "evidence_state": "EXCLUDED",
+      "source_hashes": [
+        "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+        "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "N-body metadata",
+        "P29 metadata and reproducibility context",
+        "Revised triadic N-body proof",
+        "Triadic emergence and theorem architecture",
+        "Universe architecture and full ledger",
+        "Universe reproducibility metadata candidate"
+      ],
+      "claim_owner": "forbidden shortcut; no owner",
+      "inherited_as_scientific_parent": false
     },
     {
       "object": "Old failed scalar lanes and weak-lensing tension",
       "source": "prior RFC",
       "disposition": "REGRESSION_TEST_ONLY",
-      "target": "relevant modules"
+      "target": "relevant modules",
+      "classification": "REGRESSION_ONLY",
+      "evidence_state": "HISTORICAL_WARNING",
+      "source_hashes": [
+        "01c15530f437d0dd37937e7789e410f85fb4417a049357eb31f140c345b954f5",
+        "52ff9b4a79f0a052d17d5592c32a44d471cdfb209ed803f7f12253c4c0f50599",
+        "9a8e0bb8fcbaeb3ab391b5ccb1213b83318685a54953b0d1b1ba9e0eca26a086",
+        "9f6f05a297e95ef01813fd6eb9532c8ee41d6feb7f4d7cb723da87ff5858a9da",
+        "c89cdfa633961934306cc03121c4fe911b0140610f7a1da6be97d220de8b2540",
+        "e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad",
+        "f3c1f848255334fcefc5eae6a8110a7e463e244fa605c1d9e56faa8ecd7aad17"
+      ],
+      "source_labels": [
+        "Consolidated prior triadic rebuild",
+        "Deterministic rebuild and no-retune lineage",
+        "Historical closeout ledgers",
+        "Historical simulation logs",
+        "Mathematical codex",
+        "One kernel, many modal manifestations",
+        "Original ontology and explanatory vision"
+      ],
+      "claim_owner": "negative-control evidence only",
+      "inherited_as_scientific_parent": false
     },
     {
       "object": "Repaired Module L law/first-pass architecture",
       "source": "2-RFC",
       "disposition": "RECOVER_AT_EXACT_VERIFIED_SCOPE",
-      "target": "L"
+      "target": "L",
+      "classification": "REDERIVE",
+      "evidence_state": "DESIGN",
+      "source_hashes": [
+        "9f6f05a297e95ef01813fd6eb9532c8ee41d6feb7f4d7cb723da87ff5858a9da",
+        "e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad"
+      ],
+      "source_labels": [
+        "Historical closeout ledgers",
+        "Historical simulation logs"
+      ],
+      "claim_owner": "Module L at exact recovered scope",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Reduced dimensionless K-L-M F0 recurrence",
       "source": "2-RFC",
       "disposition": "MANUFACTURED_REGRESSION_ONLY",
-      "target": "KLM"
+      "target": "KLM",
+      "classification": "REGRESSION_ONLY",
+      "evidence_state": "HISTORICAL_WARNING",
+      "source_hashes": [
+        "9f6f05a297e95ef01813fd6eb9532c8ee41d6feb7f4d7cb723da87ff5858a9da",
+        "e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad"
+      ],
+      "source_labels": [
+        "Historical closeout ledgers",
+        "Historical simulation logs"
+      ],
+      "claim_owner": "KLM manufactured regression only",
+      "inherited_as_scientific_parent": false
     },
     {
       "object": "Public comparison after immutable generation freeze",
       "source": "P29/P30",
       "disposition": "PRESERVE_STRICTLY",
-      "target": "O/P"
+      "target": "O/P",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+        "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "P29 metadata and reproducibility context",
+        "Triadic emergence and theorem architecture",
+        "Universe architecture and full ledger",
+        "Universe reproducibility metadata candidate"
+      ],
+      "claim_owner": "C-O-FREEZE then C-P-EMPIRICAL",
+      "inherited_as_scientific_parent": true
     },
     {
       "object": "Terminal collapse/rebirth and qualified memory",
       "source": "P29/addendum",
       "disposition": "PRESERVE_AS_Q_TARGET",
-      "target": "Q"
+      "target": "Q",
+      "classification": "PRESERVE",
+      "evidence_state": "FORMALIZED",
+      "source_hashes": [
+        "522da698be7c70b17e327d54fe5825321934550c0ee3a8a187fcce9098895d3a",
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+      ],
+      "source_labels": [
+        "Collapse/rebirth addendum",
+        "P29 metadata and reproducibility context",
+        "Triadic emergence and theorem architecture"
+      ],
+      "claim_owner": "C-Q-RECURRENCE",
+      "inherited_as_scientific_parent": true
     }
   ]
 }

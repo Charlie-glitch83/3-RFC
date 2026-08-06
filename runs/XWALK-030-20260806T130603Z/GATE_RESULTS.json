@@ -1,7 +1,41 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
+  "run_id": "XWALK-030-20260806T130603Z",
+  "overall": "PASS",
+  "gates": [
+    {
+      "gate": "all major objects classified",
+      "result": "PASS",
+      "evidence": "16 of 16 prebuilt objects retained and normalized"
+    },
+    {
+      "gate": "claim overlap removed",
+      "result": "PASS",
+      "evidence": "unique objects, explicit claim owners, and domain/non-overlap boundaries verified"
+    },
+    {
+      "gate": "source hashes present",
+      "result": "PASS",
+      "evidence": "every row has exact hashes resolving to admitted frozen objects"
+    },
+    {
+      "gate": "independent review",
+      "result": "PASS",
+      "evidence": "crosswalk reconstructed from manifest, claim map, and prebuilt dispositions without trusting summary output"
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "objects",
+      "value": 16
+    },
+    {
+      "name": "unique_source_hashes",
+      "value": 14
+    },
+    {
+      "name": "invalid_parentage",
+      "value": 0
+    }
+  ],
   "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
 }

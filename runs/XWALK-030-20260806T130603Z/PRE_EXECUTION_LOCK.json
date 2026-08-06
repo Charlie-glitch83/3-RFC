@@ -1,21 +1,74 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
+  "run_id": "XWALK-030-20260806T130603Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-06T13:10:50.541942+00:00",
+  "authority_hashes": [
+    "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+    "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+    "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+    "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+    "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+  ],
+  "parent_hashes": [
+    "d6f8b697050cf62e5e189a19b471488f80bbc78a85903f0b83511b1dc77971e3"
+  ],
+  "definition_hashes": [
+    "ce506bfbeb753e61c52d16ec5b3cb67f138928929d5d061941ca31c408f71ea0",
+    "9e9e9c62bab48aeb56595531bb5818f373b9faae22f77364a92c7f45d7f34c55"
+  ],
+  "candidate_classes": [
+    "PRESERVE",
+    "REDERIVE",
+    "REGRESSION_ONLY",
+    "QUARANTINE",
+    "EXCLUDE"
+  ],
   "equations_and_laws": [],
   "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "methods": [
+    "prebuilt disposition preservation",
+    "exact source-hash binding",
+    "claim-owner separation",
+    "independent reconstruction"
+  ],
+  "tolerances": [
+    "exact equality only"
+  ],
+  "stopping_rules": [
+    "missing source hash",
+    "unclassified object",
+    "claim overlap",
+    "failed mechanism inherited as parent"
+  ],
+  "expected_invariants": [
+    "16 prebuilt objects retained",
+    "N-body universalization excluded",
+    "all hashes resolve",
+    "no invalid parentage"
+  ],
+  "tests": [
+    "all major objects classified",
+    "claim overlap removed",
+    "source hashes present",
+    "independent review"
+  ],
+  "gates": [
+    "all major objects classified",
+    "claim overlap removed",
+    "source hashes present",
+    "independent review"
+  ],
+  "falsifiers": [
+    "missing object",
+    "missing hash",
+    "duplicate claim owner without boundary",
+    "regression-only item used as parent"
+  ],
+  "claim_boundary": "Classifies inherited architecture and parentage only; does not validate or physically execute downstream module laws.",
+  "independent_verifier_design": "Rebuild every row from the admitted manifest and locked claim map without trusting the generated Markdown summary.",
+  "allowed_implementation_only_corrections": [
+    "formatting",
+    "relocation-safe paths",
+    "run bookkeeping"
+  ]
 }

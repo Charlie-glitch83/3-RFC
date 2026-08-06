@@ -1,10 +1,13 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "XWALK-030-20260806T130603Z",
+  "status": "COMPLETE",
+  "clean_checkout": true,
+  "restart_check": true,
+  "earliest_change_replay": true,
+  "commands": [
+    "python tools/director.py doctor",
+    "independent crosswalk reconstruction"
+  ],
+  "result": "PASS",
+  "artifact_hashes_match": true
 }

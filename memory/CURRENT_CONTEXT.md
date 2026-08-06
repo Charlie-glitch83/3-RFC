@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-06T13:06:57.383013+00:00
+Generated: 2026-08-06T13:10:53.136752+00:00
 
 ## Project truth
 
@@ -87,6 +87,7 @@ Map every material parent object to preserve, strengthen, rederive, execute, res
 - SRC-010-FIREWALL-TOKEN-BOUNDARY: The mechanical scanner matched DESI inside design and public_data inside a NONE declaration key.
 - SRC-010-RUN-ID-STATE-DRIFT: Generated timestamped run workspace existed but current_run and RUN_INDEX were not retained by the startup commit; verifier now resolves and registers the sole governed SRC-010 workspace.
 - AUTH-020-FIREWALL-PROTOCOL-WORDING: The mechanical firewall scanner matched protocol wording inside AUTHORITY_SOURCE_TRACE.json even though no external target values were used. The trace wording was normalized without changing sources, definitions, claims, or gates.
+- XWALK-030-MISSING-PROVENANCE-AND-MD: The prebuilt crosswalk lacked required source hashes and evidence states, and its Markdown deliverable was absent. Provenance and review structure were added without changing original dispositions.
 
 ## Resume commands
 

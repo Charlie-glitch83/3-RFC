@@ -1,8 +1,44 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "XWALK-030-20260806T130603Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-06T13:10:50.541942+00:00",
+  "outputs": [
+    {
+      "path": "theory/ENHANCEMENT_CROSSWALK.json",
+      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72",
+      "bytes": 13064
+    },
+    {
+      "path": "theory/ENHANCEMENT_CROSSWALK.md",
+      "sha256": "75cce04fd3c0f1149c267186fe26d6352c2568a16f044b7270617e7606af11a1",
+      "bytes": 6491
+    },
+    {
+      "path": "runs/XWALK-030-20260806T130603Z/INDEPENDENT_CROSSWALK_REVIEW.json",
+      "sha256": "ed298917a6a97fec8b4a9a280e71bcab0659c3121f585a643549441f27a22f2e",
+      "bytes": 458
+    },
+    {
+      "path": "runs/XWALK-030-20260806T130603Z/GATE_RESULTS.json",
+      "sha256": "601ac7c3805523c092dd18243691dcc878e774d842b899c6f28d0df17e6d7216",
+      "bytes": 1067
+    },
+    {
+      "path": "runs/XWALK-030-20260806T130603Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "1494c04f8d180da565769696b94761cbb2998db52a10d0714999762abcad85ca",
+      "bytes": 1078
+    },
+    {
+      "path": "runs/XWALK-030-20260806T130603Z/REPLAY_RECORD.json",
+      "sha256": "6f94b2c86341299496ec638537beb3f2192095133152a785f51ef85ae8e44d41",
+      "bytes": 310
+    },
+    {
+      "path": "runs/XWALK-030-20260806T130603Z/CLOSEOUT.md",
+      "sha256": "bb1e9f68efddef1cd73b46557f63929e45cc6707c8cf0c6eb6cf3522bfc2c392",
+      "bytes": 2105
+    }
+  ],
+  "tree_sha256": "a2a5c158670588b57546eaccafe1c9802e40cd6693c37bb1883cbba8a323fcda",
+  "note": "Manifest excludes itself from tree hash."
 }

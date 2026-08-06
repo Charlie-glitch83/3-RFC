@@ -1,0 +1,16 @@
+{
+  "run_id": "XWALK-030-20260806T130603Z",
+  "method": "Independent reconstruction from the admitted source manifest, frozen byte hashes, prebuilt dispositions, and locked claim map.",
+  "object_count": 16,
+  "classification_counts": {
+    "PRESERVE": 9,
+    "REDERIVE": 2,
+    "REGRESSION_ONLY": 3,
+    "QUARANTINE": 0,
+    "EXCLUDE": 2
+  },
+  "source_hashes_verified": 14,
+  "overlap_findings": 0,
+  "invalid_parentage_findings": 0,
+  "verdict": "PASS"
+}
