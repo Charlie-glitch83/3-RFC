@@ -1,4 +1,4 @@
-name: Execute AUTH-020 startup
+name: Execute AUTH-020 doctor
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  startup:
+  doctor:
     if: github.head_ref == 'agent/auth-020-execution'
     runs-on: ubuntu-latest
     steps:
@@ -21,22 +21,5 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Run exact README startup commands
-        shell: bash
-        run: |
-          set -euo pipefail
-          bash bootstrap.sh
-          bash tools/start_work.sh
-      - name: Commit generated startup state
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add STATE.json memory work_packets runs
-          if git diff --cached --quiet; then
-            echo 'No generated startup changes.'
-          else
-            git commit -m 'Prepare AUTH-020 governed workspace'
-            git push origin agent/auth-020-execution
-          fi
+      - name: Run exact AUTH-020 command
+        run: python tools/director.py doctor
