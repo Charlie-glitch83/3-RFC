@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-06T13:52:56.130775+00:00
+Generated: 2026-08-06T13:53:22.124913+00:00
 
 ## Project truth
 
@@ -62,13 +62,14 @@ Inspect old repository branches and libraries, admit only exact valid scientific
 
 - admitted sources: 29
 - frozen artifacts: 3
-- indexed runs: 3
+- indexed runs: 4
 
 ## Recent runs
 
 - SRC-010-20260806T065702Z: PASS (SOURCES)
 - AUTH-020-20260806T071800Z: PASS (THEORY)
 - XWALK-030-20260806T130603Z: PASS (THEORY)
+- REC-040-20260806T135256Z: CREATED (RECOVERY)
 
 ## Recent decisions
 
