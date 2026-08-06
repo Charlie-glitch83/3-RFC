@@ -1,0 +1,42 @@
+name: Run SRC-010 startup
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  startup:
+    if: github.head_ref == 'agent/src-010-execution'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/src-010-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Run exact README startup sequence
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash bootstrap.sh
+          bash tools/start_work.sh
+      - name: Commit generated startup state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add memory/CURRENT_CONTEXT.md work_packets/ACTIVE_WORK_PACKET.md runs/SRC-010
+          if git diff --cached --quiet; then
+            echo 'No generated startup changes to commit.'
+          else
+            git commit -m 'Prepare SRC-010 governed workspace'
+            git push origin agent/src-010-execution
+          fi
