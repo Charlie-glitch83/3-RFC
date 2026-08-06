@@ -1,0 +1,11 @@
+{
+  "failure_id": "",
+  "run_id": "",
+  "gate": "",
+  "category": "",
+  "description": "",
+  "earliest_affected_object": "",
+  "changes_frozen_science": false,
+  "required_replay_scope": "",
+  "strongest_claim_remaining": ""
+}

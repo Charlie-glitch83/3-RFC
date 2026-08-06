@@ -1,0 +1,13 @@
+{
+  "claim_id": "",
+  "text": "",
+  "owner": "",
+  "evidence_state": "DESIGN",
+  "fidelity": "TOY",
+  "supported": false,
+  "domain": "",
+  "assumptions": [],
+  "evidence": [],
+  "falsifiers": [],
+  "unsupported_extensions": []
+}

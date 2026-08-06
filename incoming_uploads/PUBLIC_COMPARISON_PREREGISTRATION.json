@@ -1,0 +1,14 @@
+{
+  "status": "DRAFT",
+  "universe_hash": "",
+  "dataset_identities_and_versions": [],
+  "observables": [],
+  "selection_and_window_operators": [],
+  "statistics": [],
+  "covariance_treatment": [],
+  "thresholds": [],
+  "baseline_comparators": [],
+  "missing_data_policy": "",
+  "claim_language": [],
+  "frozen_utc": null
+}

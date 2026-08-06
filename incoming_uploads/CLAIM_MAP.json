@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "claims": [
+    {
+      "id": "C-P29-EMERGENCE",
+      "owner": "Presentation 29 / Module A",
+      "text": "Existence emerges from the ordered triad through recursive, domain-specific lawful manifestations.",
+      "minimum_evidence": "FORMALIZED",
+      "non_overlap": "Does not claim one identical equation or physical execution."
+    },
+    {
+      "id": "C-NBODY-RELATIONAL",
+      "owner": "Revised N-body theorem / Module A",
+      "text": "The RFC kernel admits constituted finite relational carriers with directed lanes, witnesses, routes, events, branches, conservation, memory, reopening, and controlled finite-N refinement.",
+      "minimum_evidence": "VERIFIED",
+      "non_overlap": "Does not claim every domain is direct N-body mechanics."
+    },
+    {
+      "id": "C-B-GENESIS",
+      "owner": "Module B",
+      "text": "The Big Implosion generates the first physical RFC state from the exact prephysical parent.",
+      "minimum_evidence": "PHYSICALLY_EXECUTED",
+      "non_overlap": "Does not claim later cosmology."
+    },
+    {
+      "id": "C-A-N-UNIVERSE",
+      "owner": "Modules B-N",
+      "text": "One complete RFC universe is constructively realized with auditable ancestry to the triad.",
+      "minimum_evidence": "INDEPENDENTLY_REPRODUCED",
+      "non_overlap": "Does not claim empirical agreement until Module P."
+    },
+    {
+      "id": "C-O-FREEZE",
+      "owner": "Module O",
+      "text": "The generated universe and prediction packet are immutable and content addressed.",
+      "minimum_evidence": "FROZEN",
+      "non_overlap": "Does not claim empirical success."
+    },
+    {
+      "id": "C-P-EMPIRICAL",
+      "owner": "Module P",
+      "text": "The frozen universe survives, exhibits tension with, or is falsified by preregistered public comparisons at the tested scope.",
+      "minimum_evidence": "BLIND_VALIDATED",
+      "non_overlap": "Cannot revise O."
+    },
+    {
+      "id": "C-Q-RECURRENCE",
+      "owner": "Module Q",
+      "text": "Terminal evolution and qualified memory determine a next-cycle condition, branch family, obstruction, or nonconvergence independently of Module P.",
+      "minimum_evidence": "PHYSICALLY_EXECUTED",
+      "non_overlap": "Does not identify RFL memory with a new CIF."
+    }
+  ]
+}

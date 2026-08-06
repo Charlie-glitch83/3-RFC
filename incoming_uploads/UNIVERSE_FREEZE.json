@@ -1,0 +1,13 @@
+{
+  "universe_id": "",
+  "status": "DRAFT",
+  "source_manifest_sha256": "",
+  "module_artifacts": [],
+  "prediction_registry_sha256": "",
+  "falsifier_registry_sha256": "",
+  "environment_sha256": "",
+  "tree_sha256": "",
+  "frozen_utc": null,
+  "public_comparison_authorized": false,
+  "terminal_branch_authorized": false
+}

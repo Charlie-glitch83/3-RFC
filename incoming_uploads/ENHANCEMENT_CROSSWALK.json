@@ -1,0 +1,102 @@
+{
+  "version": "1.0",
+  "rule": "Preserve valid architecture and theorem objects; strengthen or rederive inadequate mechanisms; keep failures only as history/regression evidence.",
+  "objects": [
+    {
+      "object": "Ordered CIF/QV/RFL triad",
+      "source": "P29",
+      "disposition": "PRESERVE_CANONICAL",
+      "target": "A"
+    },
+    {
+      "object": "First Action QV(CIF)->RFL",
+      "source": "P29",
+      "disposition": "PRESERVE_AND_FORMALIZE",
+      "target": "A"
+    },
+    {
+      "object": "Recursive kernel K_f(t)=Sum delta^-j f_j(t) exp(-alpha j t)",
+      "source": "P29",
+      "disposition": "PRESERVE_WITH_DOMAIN_ADMISSION",
+      "target": "A"
+    },
+    {
+      "object": "Frozen-source/no-retune architecture",
+      "source": "P29/P30",
+      "disposition": "PRESERVE_AND_STRENGTHEN",
+      "target": "A-O"
+    },
+    {
+      "object": "Generic weighted triad coefficients used across every old module",
+      "source": "P30",
+      "disposition": "HISTORICAL_REGRESSION_ONLY",
+      "target": "history"
+    },
+    {
+      "object": "Internal closure scores as universe completion proof",
+      "source": "P30",
+      "disposition": "SUPERSEDE",
+      "target": "evidence states"
+    },
+    {
+      "object": "Universe dependency and handoff order",
+      "source": "P30",
+      "disposition": "PRESERVE_AND_PHYSICALLY_EXECUTE",
+      "target": "B-Q"
+    },
+    {
+      "object": "Directed lanes and 2N lane increment",
+      "source": "N-body",
+      "disposition": "PRESERVE_AND_VERIFY",
+      "target": "A"
+    },
+    {
+      "object": "Local witness, route, gauge/multiroute, event and branch classes",
+      "source": "N-body",
+      "disposition": "PRESERVE_AND_PROPAGATE",
+      "target": "A-Q"
+    },
+    {
+      "object": "No-loss memory and reopening",
+      "source": "N-body/P29",
+      "disposition": "PRESERVE_AND_PROPAGATE",
+      "target": "A-Q"
+    },
+    {
+      "object": "Direct N-body mechanics in every domain",
+      "source": "misread integration",
+      "disposition": "FORBID",
+      "target": "all"
+    },
+    {
+      "object": "Old failed scalar lanes and weak-lensing tension",
+      "source": "prior RFC",
+      "disposition": "REGRESSION_TEST_ONLY",
+      "target": "relevant modules"
+    },
+    {
+      "object": "Repaired Module L law/first-pass architecture",
+      "source": "2-RFC",
+      "disposition": "RECOVER_AT_EXACT_VERIFIED_SCOPE",
+      "target": "L"
+    },
+    {
+      "object": "Reduced dimensionless K-L-M F0 recurrence",
+      "source": "2-RFC",
+      "disposition": "MANUFACTURED_REGRESSION_ONLY",
+      "target": "KLM"
+    },
+    {
+      "object": "Public comparison after immutable generation freeze",
+      "source": "P29/P30",
+      "disposition": "PRESERVE_STRICTLY",
+      "target": "O/P"
+    },
+    {
+      "object": "Terminal collapse/rebirth and qualified memory",
+      "source": "P29/addendum",
+      "disposition": "PRESERVE_AS_Q_TARGET",
+      "target": "Q"
+    }
+  ]
+}

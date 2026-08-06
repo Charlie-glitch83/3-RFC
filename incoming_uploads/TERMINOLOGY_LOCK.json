@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "canonical": {
+    "CIF": "Cosmic Infinite Field",
+    "QV": "Quantum Vacuum",
+    "RFL": "Recursive Fractal Lattice",
+    "first_action": "QV(CIF) -> RFL",
+    "first_physical_event": "Big Implosion"
+  },
+  "forbidden_silent_redefinitions": {
+    "CIF": [
+      "Complete Infinite Field"
+    ],
+    "QV": [
+      "Quantum Vector"
+    ]
+  },
+  "rule": "Source-local alternative wording must be namespaced and cannot overwrite canonical RFC terminology."
+}

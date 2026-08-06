@@ -1,0 +1,13 @@
+{
+  "edge_id": "",
+  "from_module": "",
+  "to_module": "",
+  "causal_witness": "",
+  "source_quantity": "",
+  "destination_quantity": "",
+  "conservation_partner": "",
+  "uncertainty_update": "",
+  "earliest_affected_checkpoint": "",
+  "replay_instruction": "",
+  "provenance": []
+}

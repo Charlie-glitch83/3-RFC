@@ -1,0 +1,1 @@
+<|"call" -> "KLM-WL-002", "twoCycleIdentity" -> True, "nonFixedGeneric" -> "x < 1/2 || x > 1/2", "divergentTenthIterate" -> "1 + 2*(1 + 2*(1 + 2*(1 + 2*(1 + 2*(1 + 2*(1 + 2*(1 + 2*(1 + 2*(1 + 2*x)))))))))", "pass" -> True|>
