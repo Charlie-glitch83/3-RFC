@@ -1,1 +1,0 @@
-Trigger one-use deletion of the completed SRC-010 execution branch.
