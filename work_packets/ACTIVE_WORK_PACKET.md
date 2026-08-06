@@ -1,25 +1,22 @@
-# ACTIVE WORK PACKET — REC-040
+# ACTIVE WORK PACKET — FRONTIER-050
 
 **This is the only authorized work. Execute it in order.**
 
-- Module: `RECOVERY`
-- Objective: Inspect old repository branches and libraries, admit only exact valid scientific objects, and quarantine obsolete machinery and failed outputs.
-- Run workspace: `runs/REC-040-20260806T135256Z`
+- Module: `AUDIT`
+- Objective: Audit A–J and choose the earliest exact break between formal law and one physically executed parent chain.
+- Run workspace: `runs/FRONTIER-050-20260806T142549Z`
 
 ## Exact sequence
 
-1. Read `work_units/REC-040/WORK_ORDER.md` and `work_units/REC-040/recipe.json`.
+1. Read `work_units/FRONTIER-050/WORK_ORDER.md` and `work_units/FRONTIER-050/recipe.json`.
 2. Execute the frozen sequence below without redesigning it:
 
-   1. Fetch candidate objects from 2-RFC by exact commit and path.
-   2. Hash, replay, and independently inspect each object.
-   3. Do not import an old PASS label, state file, numerical output, or public-data-contaminated artifact as authority.
-   4. Treat repaired Module L as a recovery candidate at its exact verified scope only.
-   5. Inspect Charlie-glitch83/2-RFC and known lineages.
-   6. Verify exact commits and files.
-   7. Replay or reconstruct candidate assets.
-   8. Classify each object: CANONICAL_PARENT, ADMITTED_SOURCE, REPLAY_REQUIRED, COMPARISON_ONLY, HISTORICAL_WARNING, QUARANTINED, SUPERSEDED, EXCLUDED.
-   9. Preserve Module L first-pass work only at its verified scope.
+   1. Populate one row per A-J boundary with exact hashes and evidence.
+   2. Distinguish law, implementation, representative test, physical state, restart, covariance, and independent reconstruction.
+   3. Select the earliest missing parent and authorize exactly one child.
+   4. For each boundary, record source, law, representative test, physical parent, solver, output, restart, covariance, independent reconstruction, and evidence state.
+   5. Select the earliest missing object.
+   6. Authorize exactly one next module.
 
 3. Run the exact commands:
 
@@ -27,18 +24,16 @@
 
 ## Required deliverables
 
-- recovery/LINEAGE_CROSSWALK.json
-- recovery/ADMITTED_ASSET_MANIFEST.json
-- recovery/QUARANTINE.md
-- runs/REC-040/CLOSEOUT.md
+- audit/PHYSICAL_FRONTIER.json
+- audit/PHYSICAL_FRONTIER.md
+- runs/FRONTIER-050/CLOSEOUT.md
 
 ## Componentwise gates
 
-- exact commit/file hashes
-- no old PASS auto-promoted
-- no public-data contamination
-- replay evidence
+- no status word hides a missing object
+- one frontier selected
+- recovered parents verified
 
 ## Commit message
 
-`Recover verified RFC assets without inheriting failures`
+`Locate the exact RFC physical execution frontier`
