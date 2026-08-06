@@ -1,1 +1,1 @@
-Trigger the installed one-use REC-040 startup runner.
+Trigger the installed REC-040 exact lineage verifier.
