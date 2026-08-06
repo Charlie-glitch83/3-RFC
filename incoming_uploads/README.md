@@ -1,38 +1,44 @@
-# Module I — Realized Background Geometry and Expansion
+# Module K — Nonlinear Relational Gravity, Structures, Metric, and Lightcones
 
-**Objective:** Generate the universe's realized geometry, expansion, clocks, horizons, and distance structure from the accumulated physical state.
+**Objective:** Evolve the realized fields into nonlinear structure while preserving relativistic/metric, route, event, branch, conservation, lightcone, and lensing truth.
 
-**Parents:** G
+**Primary parents:** J
 
-**Children:** HI
+**Causal recurrence returns:** KLM
 
-**N-body mode:** `RELATIONAL_GRAMMAR_ACTIVE`
+**Children:** L, KLM, N
+
+**N-body mode:** `DIRECT_MANY_BODY_ACTIVE`
 
 ## Required outputs
 
-- metric/background state
-- expansion and clock histories
-- horizons and distances
-- constraint and conservation ledgers
-- covariance
-- H_I_to_HI
+- particle/field nonlinear state
+- halos and structures
+- metric and Weyl products
+- lightcones
+- ray/Jacobi/lensing products
+- merger/event trees
+- return interface to L and KLM
 
 ## Mandatory gates
 
-- equation/constraint derivation
-- gauge/frame consistency
-- no observed expansion history used as target
-- numerical convergence and independent reconstruction
+- force/field accuracy
+- constraint closure
+- mass-energy conservation
+- resolution/volume convergence
+- restart/replay
+- independent critical implementation
 
 ## Forbidden shortcuts
 
-- inserting LambdaCDM best-fit parameters
-- calling a standard background RFC-derived without proof
+- gravity-only toy labeled hyper-realistic
+- dropping metric/lightcone truth
+- tuning initial phases
 
 ## Claim boundary
 
-Realized RFC background geometry.
+Nonlinear RFC gravitational universe at stated fidelity.
 
 ## Working rule
 
-Create run workspaces only with `python tools/rfc.py new-run I`. State is held centrally in `STATE.json`.
+Create run workspaces only with `python tools/rfc.py new-run K`. State is held centrally in `STATE.json`.

@@ -1,32 +1,41 @@
 {
-  "module": "HU",
-  "title": "Frozen Universal Linear Transfer Operator",
+  "module": "K",
+  "title": "Nonlinear Relational Gravity, Structures, Metric, and Lightcones",
   "parents": [
-    "G"
+    "J"
   ],
   "children": [
-    "HI"
+    "L",
+    "KLM",
+    "N"
   ],
-  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
-  "objective": "Derive and freeze the background-independent portion of the linear transfer machinery before instantiation on a realized geometry.",
+  "nbody_mode": "DIRECT_MANY_BODY_ACTIVE",
+  "objective": "Evolve the realized fields into nonlinear structure while preserving relativistic/metric, route, event, branch, conservation, lightcone, and lensing truth.",
   "required_outputs": [
-    "typed operator",
-    "domain and codomain",
-    "gauge/frame contracts",
-    "conservation and constraint identities",
-    "operator uncertainty",
-    "frozen H_HU_to_HI"
+    "particle/field nonlinear state",
+    "halos and structures",
+    "metric and Weyl products",
+    "lightcones",
+    "ray/Jacobi/lensing products",
+    "merger/event trees",
+    "return interface to L and KLM"
   ],
   "gates": [
-    "no realized-background values smuggled into universal operator",
-    "linearity-domain proof",
-    "symbolic identity verification",
-    "hash freeze"
+    "force/field accuracy",
+    "constraint closure",
+    "mass-energy conservation",
+    "resolution/volume convergence",
+    "restart/replay",
+    "independent critical implementation"
   ],
   "forbidden_shortcuts": [
-    "importing a public Boltzmann transfer table",
-    "retuning after I"
+    "gravity-only toy labeled hyper-realistic",
+    "dropping metric/lightcone truth",
+    "tuning initial phases"
   ],
-  "claim_boundary": "Universal RFC transfer law at declared linear scope.",
-  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+  "claim_boundary": "Nonlinear RFC gravitational universe at stated fidelity.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md",
+  "return_inputs": [
+    "KLM"
+  ]
 }
