@@ -1,0 +1,6 @@
+3-RFC EXECUTION DIRECTOR: PASS
+Recipe packs: 19
+Wolfram calls: 38
+Local solver templates: 26
+Administrative work-unit packs: 8
+Active work unit: FRONTIER-050

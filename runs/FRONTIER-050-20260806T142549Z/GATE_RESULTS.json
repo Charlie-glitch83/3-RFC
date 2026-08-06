@@ -1,7 +1,73 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "overall": "PASS",
+  "gates": [
+    {
+      "gate": "no status word hides a missing object",
+      "result": "PASS",
+      "score": 1.0,
+      "evidence": "Every row separately records law, manufactured test, exact parent, solver binding, output, restart, covariance, and independent reconstruction; manufactured success is explicitly non-physical."
+    },
+    {
+      "gate": "one frontier selected",
+      "result": "PASS",
+      "score": 1.0,
+      "evidence": "frontier_count=1; selected=A"
+    },
+    {
+      "gate": "recovered parents verified",
+      "result": "PASS",
+      "score": 1.0,
+      "evidence": "All five REC-040 objects rehashed exactly; canonical_parents remains empty; none is used as an A-J physical parent."
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "admitted_sources_rehashed",
+      "value": 29,
+      "expected": 29
+    },
+    {
+      "name": "recovered_objects_rehashed",
+      "value": 5,
+      "expected": 5
+    },
+    {
+      "name": "A_J_rows",
+      "value": 11,
+      "expected": 11
+    },
+    {
+      "name": "manufactured_results_verified_limited",
+      "value": 9,
+      "expected": 9
+    },
+    {
+      "name": "registered_A_J_module_artifacts",
+      "value": 0,
+      "expected": 0
+    },
+    {
+      "name": "indexed_A_J_module_runs",
+      "value": 0,
+      "expected": 0
+    },
+    {
+      "name": "selected_frontier",
+      "value": "A",
+      "expected": "A"
+    },
+    {
+      "name": "authorized_child",
+      "value": "A-100",
+      "expected": "A-100"
+    },
+    {
+      "name": "independent_verdict",
+      "value": "PASS",
+      "expected": "PASS"
+    }
+  ],
+  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis",
+  "completed_utc": "2026-08-06T14:39:12.175101+00:00"
 }

@@ -1,13 +1,39 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "status": "FINAL",
+  "operating_system": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "hardware": {
+    "machine": "x86_64",
+    "processor": ""
+  },
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.13.5"
+    }
+  ],
+  "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+  "imports": [
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "commands": [
+    "bash bootstrap.sh",
+    "bash tools/start_work.sh",
+    "python runs/FRONTIER-050-20260806T142549Z/primary_frontier_audit.py",
+    "python runs/FRONTIER-050-20260806T142549Z/independent_frontier_reconstruction.py",
+    "python tools/director.py doctor",
+    "python -m unittest discover -s tests -v",
+    "python tools/rfc.py firewall-scan",
+    "python tools/rfc.py context"
+  ],
   "network_policy": "DISABLED_DURING_GENERATION",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true,
+  "working_tree_export": {
+    "artifact": "frontier-pr-working-tree.zip",
+    "sha256": "dd4879005c49db5fb1637c115458241a59ca3c3a10b864852811e974c2cfd19d"
+  }
 }

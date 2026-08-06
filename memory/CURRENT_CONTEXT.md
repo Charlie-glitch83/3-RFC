@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-06T14:25:49.184056+00:00
+Generated: 2026-08-06T15:00:16.976225+00:00
 
 ## Project truth
 
@@ -60,7 +60,7 @@ Audit A–J and choose the earliest exact break between formal law and one physi
 
 - admitted sources: 29
 - frozen artifacts: 4
-- indexed runs: 4
+- indexed runs: 5
 
 ## Recent runs
 
@@ -68,6 +68,7 @@ Audit A–J and choose the earliest exact break between formal law and one physi
 - AUTH-020-20260806T071800Z: PASS (THEORY)
 - XWALK-030-20260806T130603Z: PASS (THEORY)
 - REC-040-20260806T135256Z: PASS (RECOVERY)
+- FRONTIER-050-20260806T142549Z: CREATED (AUDIT)
 
 ## Recent decisions
 

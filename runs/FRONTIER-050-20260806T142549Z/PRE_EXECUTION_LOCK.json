@@ -1,21 +1,395 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-06T14:38:43.046639+00:00",
+  "authority_hashes": [
+    {
+      "path": "work_units/FRONTIER-050/WORK_ORDER.md",
+      "sha256": "4e7cf10a7f6fd629138028a4b2e6efe289b1a82070e0b996ba788cf05cf7a6d5",
+      "bytes": 1278
+    },
+    {
+      "path": "work_units/FRONTIER-050/recipe.json",
+      "sha256": "e062bef11d488b5cba24ced4083fad72225f0ebafd8156d238b51e832a571fb5",
+      "bytes": 1512
+    },
+    {
+      "path": "theory/SCIENTIFIC_CONSTITUTION.md",
+      "sha256": "ce506bfbeb753e61c52d16ec5b3cb67f138928929d5d061941ca31c408f71ea0",
+      "bytes": 3036
+    },
+    {
+      "path": "theory/ENHANCEMENT_CROSSWALK.json",
+      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72",
+      "bytes": 13064
+    },
+    {
+      "path": "sources/SOURCE_MANIFEST.json",
+      "sha256": "7204e0540e06604b1635a2f222bcc504aa1f93e92cdb77643926135e68d186e4",
+      "bytes": 16475
+    },
+    {
+      "path": "audit/PHYSICAL_FRONTIER_SEED.json",
+      "sha256": "66b9f595130ed18a10f3c2e6ced7870a562c33e5014189740552df8806668c17",
+      "bytes": 2572
+    }
+  ],
+  "parent_hashes": [
+    {
+      "object": "last verified scientific commit",
+      "sha256": "c29b124760302471c55dbf0fe49582af5f8cc10a"
+    },
+    {
+      "object": "REC-040 run bundle",
+      "sha256": "f31c01a7826809d1962a36dc1d1303eed794d01bf5a4269b4a1ba3edcb14585b"
+    },
+    {
+      "object": "source manifest declared hash",
+      "sha256": "d6f8b697050cf62e5e189a19b471488f80bbc78a85903f0b83511b1dc77971e3"
+    },
+    {
+      "object": "pre-execution input snapshot",
+      "sha256": "9cdc3fdb428140ff0af4d7b82d65316fbfef8b7f0097286fbcb221ce8f29c3dc"
+    }
+  ],
+  "definition_hashes": [
+    {
+      "path": "modules/A/spec.json",
+      "sha256": "c0ecc12e47bccc1859afed211bbf5d0aa75e056ece7a39403b26d59b55080ee1",
+      "bytes": 1589
+    },
+    {
+      "path": "modules/B/spec.json",
+      "sha256": "70f00fd579bc6463972b046890af53caf17da0377edc20f67475c84ebee84473",
+      "bytes": 1467
+    },
+    {
+      "path": "modules/C/spec.json",
+      "sha256": "ca8e81068e8bc9b7c5711738f3c45e2751f30f6e5a9cff2a0c65ef4ef7b8dacb",
+      "bytes": 1209
+    },
+    {
+      "path": "modules/D/spec.json",
+      "sha256": "895114ac15efd3dfc5859ceba6e855012f8950217626f339346a245a9f49820c",
+      "bytes": 1067
+    },
+    {
+      "path": "modules/E/spec.json",
+      "sha256": "3a73e6482152d8d2d465e711be19d634e170f5a6bcee2b564fa046b133014cc8",
+      "bytes": 1060
+    },
+    {
+      "path": "modules/F/spec.json",
+      "sha256": "9108762324e581e48493e81d8cbaf7efb115f3d78b3756ebe3b4270f01292a8d",
+      "bytes": 952
+    },
+    {
+      "path": "modules/G/spec.json",
+      "sha256": "69b5c7cbf6faca7f6487bc70201f321ee873474e2240e02dea5887027d0da992",
+      "bytes": 997
+    },
+    {
+      "path": "modules/HI/spec.json",
+      "sha256": "9533bf859961ec26cdc69e39fc6febc64ba1d184a6fe89b126aa2b00143bd21a",
+      "bytes": 860
+    },
+    {
+      "path": "modules/HU/spec.json",
+      "sha256": "ca2547a8d219db6b1c3992097fa84db29cc7085860f66a233a0fab8d2826c8da",
+      "bytes": 976
+    },
+    {
+      "path": "modules/I/spec.json",
+      "sha256": "ef572702335c6c533cbceafd662795c24ea8fec38462b2794c76a3a6acf2a39d",
+      "bytes": 1016
+    },
+    {
+      "path": "modules/J/spec.json",
+      "sha256": "7c3198e07239f5fbec7fd452ee086492233bd014607edcc162011daac5d814ab",
+      "bytes": 1064
+    },
+    {
+      "path": "recipes/A/gates.json",
+      "sha256": "e932278e9fcce8573f9ab95db376f2789d1e3cb7768a34a4e77ac063d2c353c9",
+      "bytes": 867
+    },
+    {
+      "path": "recipes/A/recipe.json",
+      "sha256": "5f7d4b77bcbf9e379c6ab22a377b5dde64295b742a028556302bfc58562a2b73",
+      "bytes": 4825
+    },
+    {
+      "path": "recipes/A/wolfram/A-WL-001.wl",
+      "sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+      "bytes": 698
+    },
+    {
+      "path": "recipes/A/wolfram/A-WL-002.wl",
+      "sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+      "bytes": 618
+    },
+    {
+      "path": "recipes/B/gates.json",
+      "sha256": "4e8dba70be95fedd41b72e15f2976d465b07c5fc624976afb35bf8795bdf7edf",
+      "bytes": 707
+    },
+    {
+      "path": "recipes/B/recipe.json",
+      "sha256": "10ea5c76a470cc58cfc58a27a3de9d82c9754b763b34adcc35a021fcbf4c86d3",
+      "bytes": 4538
+    },
+    {
+      "path": "recipes/B/wolfram/B-WL-001.wl",
+      "sha256": "1b44c82c8d7cfbaf95afa72f4b54c3a556e66df0846caf40bf3bda882f5989fa",
+      "bytes": 619
+    },
+    {
+      "path": "recipes/B/wolfram/B-WL-002.wl",
+      "sha256": "0297bdc846ef0d0b435680525501a9ae3a6ee84b387ed72138ef910e1b6333cc",
+      "bytes": 632
+    },
+    {
+      "path": "recipes/C/gates.json",
+      "sha256": "c3904dadee5019da0dbabdfcb3ea4e30e793502b24dfe02daabbb3f957f40c0b",
+      "bytes": 569
+    },
+    {
+      "path": "recipes/C/recipe.json",
+      "sha256": "6451efceef8b53659fb58c4d591648e2e24b1340e43d1a62e364c5d98f0d9ad8",
+      "bytes": 4292
+    },
+    {
+      "path": "recipes/C/wolfram/C-WL-001.wl",
+      "sha256": "d0ae5feced49a969069ea0d4c8f5749595517e4a18d405a9572a623927f56c7c",
+      "bytes": 542
+    },
+    {
+      "path": "recipes/C/wolfram/C-WL-002.wl",
+      "sha256": "21f29d05d58f46ae8c29f85a6cd185f63fc89f3c48146a668436507a46d393cf",
+      "bytes": 360
+    },
+    {
+      "path": "recipes/D/gates.json",
+      "sha256": "610391ea4c95139954b54d251bb2bc5010330bff455e075b4f313c464df9e60f",
+      "bytes": 493
+    },
+    {
+      "path": "recipes/D/recipe.json",
+      "sha256": "1ad9720aa394d62df35bf6161414522f7a5563e8a8f94f5c8cd0c5e0b466cb16",
+      "bytes": 3906
+    },
+    {
+      "path": "recipes/D/wolfram/D-WL-001.wl",
+      "sha256": "2b79fea2537665d78d41026231229eb2bf132725f8e42b732ce1a491ea2818e3",
+      "bytes": 578
+    },
+    {
+      "path": "recipes/D/wolfram/D-WL-002.wl",
+      "sha256": "65647a0c42124403f9898a76cb82f929f3f941af358c04476f514cb77af2c099",
+      "bytes": 333
+    },
+    {
+      "path": "recipes/E/gates.json",
+      "sha256": "1452d72412a6570ebd9c571734c6da0a34148076a10507e23c50927c8b0df04b",
+      "bytes": 517
+    },
+    {
+      "path": "recipes/E/recipe.json",
+      "sha256": "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f",
+      "bytes": 3965
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-001.wl",
+      "sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
+      "bytes": 333
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-002.wl",
+      "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43",
+      "bytes": 329
+    },
+    {
+      "path": "recipes/F/gates.json",
+      "sha256": "c58ea01462adf69ca992d47a9a962edbf17b4be9064bbfa8c7d15d74f006f58a",
+      "bytes": 419
+    },
+    {
+      "path": "recipes/F/recipe.json",
+      "sha256": "b4aa226ef4185da09330375afc51ff1959147bce1d3b4770226876840984403d",
+      "bytes": 5067
+    },
+    {
+      "path": "recipes/F/wolfram/F-WL-001.wl",
+      "sha256": "a0515c449609d8ccc1b4c3632e3e995fa4190ee368470e1bc349eef25fb9d6f0",
+      "bytes": 207
+    },
+    {
+      "path": "recipes/F/wolfram/F-WL-002.wl",
+      "sha256": "3f96f7879700b9d124f0ec51652561bf03c76bf620ded89dd7a1af4d162ad89d",
+      "bytes": 416
+    },
+    {
+      "path": "recipes/G/gates.json",
+      "sha256": "6b84271435e3a5277536848725b81ecf88cbcd6cd5cb7ea44cf542ea2044bbc3",
+      "bytes": 408
+    },
+    {
+      "path": "recipes/G/recipe.json",
+      "sha256": "b800ffef478be6131fd1c83993931f150ba794024c8f3be845696bb254ec0293",
+      "bytes": 5245
+    },
+    {
+      "path": "recipes/G/wolfram/G-WL-001.wl",
+      "sha256": "e883fd6ef2fcd8d772c8e818a8dfcd6af67bfa3a363a8f065be01c407d836735",
+      "bytes": 375
+    },
+    {
+      "path": "recipes/G/wolfram/G-WL-002.wl",
+      "sha256": "93ea411a631de605bc9349e6269d47b5353c67fd6ba3fe51669a1b3f9351bbca",
+      "bytes": 307
+    },
+    {
+      "path": "recipes/HI/gates.json",
+      "sha256": "c820ec7370f8672b399bfacc90f2fb67136ed4cf1e67c70610bfb05d6adabc43",
+      "bytes": 408
+    },
+    {
+      "path": "recipes/HI/recipe.json",
+      "sha256": "a75977151e79de588728817b6e4871c962192481067c1364fd5d260485f28493",
+      "bytes": 3696
+    },
+    {
+      "path": "recipes/HI/wolfram/HI-WL-001.wl",
+      "sha256": "91221b34350782f28234606d9a3e5e262c66fca733cfa3079d4ace4e5298d419",
+      "bytes": 290
+    },
+    {
+      "path": "recipes/HI/wolfram/HI-WL-002.wl",
+      "sha256": "aa9fa701c86c6b4846a05a7c607091009562defec3a75773821d709e30478acb",
+      "bytes": 334
+    },
+    {
+      "path": "recipes/HU/gates.json",
+      "sha256": "01d1de77736d942c7f2185cb3447cddea8535720690603ddf9bcc24de58fbfc2",
+      "bytes": 439
+    },
+    {
+      "path": "recipes/HU/recipe.json",
+      "sha256": "f603d753ed1c396af6e0fec65d36fda56c2574b63ac3833ede030f8ecd574955",
+      "bytes": 3745
+    },
+    {
+      "path": "recipes/HU/wolfram/HU-WL-001.wl",
+      "sha256": "b3301818a314729fb79d515b74b0d62577ef9989120a02c181cb17359fdd0a5b",
+      "bytes": 411
+    },
+    {
+      "path": "recipes/HU/wolfram/HU-WL-002.wl",
+      "sha256": "ccc158b3ef6f410076c46cbf7e33a9fa215837e9619ef909bf8899ff79be04c1",
+      "bytes": 264
+    },
+    {
+      "path": "recipes/I/gates.json",
+      "sha256": "f95d44818dfcf4519f00bc026fdd916bbc8e4bcb9e24f4fdbfdd586920d21f5d",
+      "bytes": 462
+    },
+    {
+      "path": "recipes/I/recipe.json",
+      "sha256": "61c3048ceb4ad6167dfb9b6d8a60d51c5b607b4c2c6ad7e7b4bd13b022a56a34",
+      "bytes": 3854
+    },
+    {
+      "path": "recipes/I/wolfram/I-WL-001.wl",
+      "sha256": "5704712400b385c00a7c83785e5ef624b060a7ff96e8cd892d65af7515cfde02",
+      "bytes": 396
+    },
+    {
+      "path": "recipes/I/wolfram/I-WL-002.wl",
+      "sha256": "90ce68f618e34da84f761f503dcaabe09151bceb259ffdc8a9b6f79790e91add",
+      "bytes": 325
+    },
+    {
+      "path": "recipes/J/gates.json",
+      "sha256": "cdd11a55e53f60a25e8ce242985a0ff459dc495ab5643983a387a44504b6c5ed",
+      "bytes": 502
+    },
+    {
+      "path": "recipes/J/recipe.json",
+      "sha256": "fc0d0a507c7ad2617c32105aa31230235bc77e5ffa250002e29db38623d2284b",
+      "bytes": 5295
+    },
+    {
+      "path": "recipes/J/wolfram/J-WL-001.wl",
+      "sha256": "151748b2f6b71fc558ed03ffa3202eda5fed69eb2c9183c03d2b6e3da1caf061",
+      "bytes": 372
+    },
+    {
+      "path": "recipes/J/wolfram/J-WL-002.wl",
+      "sha256": "12920c07dde75fb72eb155b898861270eaef13781bb144c8526470e373cca4ad",
+      "bytes": 368
+    }
+  ],
+  "candidate_classes": [
+    "FORMAL_LAW",
+    "MANUFACTURED_REFERENCE",
+    "EXACT_PHYSICAL_PARENT",
+    "BOUND_SOLVER",
+    "PHYSICAL_OUTPUT",
+    "RESTART_PACKET",
+    "COVARIANCE_PACKET",
+    "INDEPENDENT_RECONSTRUCTION"
+  ],
+  "equations_and_laws": [
+    "Use each frozen module recipe and source crosswalk only at its declared evidence state; no equation is promoted by this administrative audit."
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "Audit metadata only; no physical values, frames, gauges, clocks, geometry, or constants generated."
+  ],
+  "methods": [
+    "Rehash admitted source bytes.",
+    "Rehash REC-040 admitted objects.",
+    "Inspect raw artifact registry, run index, and module run trees.",
+    "Separate successful manufactured reference checks from governed parent-driven module execution.",
+    "Select first missing module object in topological A-J order."
+  ],
+  "tolerances": [
+    "Byte hashes exact; counts and classifications exact; no numerical tolerance used."
+  ],
+  "stopping_rules": [
+    "Stop on source hash mismatch.",
+    "Stop on recovered object hash mismatch.",
+    "Stop if more or fewer than one frontier is selected.",
+    "Stop if a recovered source-only object is treated as a canonical physical parent."
+  ],
+  "expected_invariants": [
+    "All admitted source hashes match.",
+    "All five REC-040 object hashes match.",
+    "REC-040 canonical_parents remains empty.",
+    "No A-J module run or module artifact exists.",
+    "Module A is the unique earliest frontier.",
+    "Exactly A-100 is eligible as child."
+  ],
+  "tests": [
+    "Primary row-by-row audit.",
+    "Independent raw-registry reconstruction.",
+    "Exact mandatory gate evaluation.",
+    "Repository doctor, unit tests, firewall scan, and context rebuild."
+  ],
+  "gates": [
+    "no status word hides a missing object",
+    "one frontier selected",
+    "recovered parents verified"
+  ],
+  "falsifiers": [
+    "Any missing or mismatched admitted-source byte.",
+    "Any registered A-J parent-driven artifact earlier than the selected frontier.",
+    "Any evidence that H_A_to_B exists as a governed frozen Module A output.",
+    "Any REC-040 canonical parent.",
+    "Any external observational target influencing selection."
+  ],
+  "claim_boundary": "Administrative evidence audit only. May identify the earliest missing governed object and authorize one child; may not execute Module A or B, promote any module, or claim a physical/empirical universe.",
+  "independent_verifier_design": "A separate script rehashes raw sources and recovery assets, reads only raw registries and module run trees, independently selects the earliest absent governed module output, and compares its result only after reconstruction.",
+  "allowed_implementation_only_corrections": [
+    "Serialization, path normalization, and reporting defects only; no change to module order, source admission, evidence definitions, gate criteria, frontier rule, or claim scope."
+  ]
 }

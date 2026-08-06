@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "method": "independent raw-registry reconstruction without using primary gate summaries",
+  "source_bytes_verified": true,
+  "recovered_objects_verified": true,
+  "module_artifacts": {
+    "A": [],
+    "B": [],
+    "C": [],
+    "D": [],
+    "E": [],
+    "F": [],
+    "G": [],
+    "HU": [],
+    "I": [],
+    "HI": [],
+    "J": []
+  },
+  "module_runs": {
+    "A": [],
+    "B": [],
+    "C": [],
+    "D": [],
+    "E": [],
+    "F": [],
+    "G": [],
+    "HU": [],
+    "I": [],
+    "HI": [],
+    "J": []
+  },
+  "module_run_files": {
+    "A": [],
+    "B": [],
+    "C": [],
+    "D": [],
+    "E": [],
+    "F": [],
+    "G": [],
+    "HU": [],
+    "I": [],
+    "HI": [],
+    "J": []
+  },
+  "earliest_missing_module": "A",
+  "manufactured_A_check_verified_but_noncanonical": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,2850 @@
+{
+  "schema_version": "1.0",
+  "work_unit": "FRONTIER-050",
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "generation_mode": "GENERATION_SEALED",
+  "audit_rule": "Select the earliest topological boundary whose exact parent-driven output and reconstruction evidence are absent; formal law and manufactured checks never impersonate physical execution.",
+  "authority": {
+    "last_verified_scientific_commit": "c29b124760302471c55dbf0fe49582af5f8cc10a",
+    "source_manifest": {
+      "path": "sources/SOURCE_MANIFEST.json",
+      "sha256": "7204e0540e06604b1635a2f222bcc504aa1f93e92cdb77643926135e68d186e4",
+      "bytes": 16475
+    },
+    "source_manifest_status": "INDEPENDENTLY_RECONSTRUCTED",
+    "crosswalk": {
+      "path": "theory/ENHANCEMENT_CROSSWALK.json",
+      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72",
+      "bytes": 13064
+    },
+    "artifact_registry": {
+      "path": "memory/ARTIFACT_REGISTRY.json",
+      "sha256": "5baf75084b42e99837bf24a03dc80b5da5cd5d2cd365e114c69b2e4ff72c8444",
+      "bytes": 1268
+    },
+    "run_index": {
+      "path": "memory/RUN_INDEX.json",
+      "sha256": "836d255f1b564e874a31579a0b6409e3cdcfb872682ac419ab1ace19a4d6bfe3",
+      "bytes": 2100
+    },
+    "rec040_manifest": {
+      "path": "recovery/ADMITTED_ASSET_MANIFEST.json",
+      "sha256": "c61a92b472d165044f9b976159aeee0ad5cfc363e097a416b0cc127ecf2b5287",
+      "bytes": 3861
+    },
+    "source_checks": [
+      {
+        "label": "Triadic emergence and theorem architecture",
+        "classification": "CANONICAL_AUTHORITY",
+        "declared_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+        "actual": {
+          "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+          "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+          "bytes": 86724
+        },
+        "match": true
+      },
+      {
+        "label": "P29 metadata and reproducibility context",
+        "classification": "CANONICAL_AUTHORITY",
+        "declared_sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "actual": {
+          "path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+          "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+          "bytes": 10821
+        },
+        "match": true
+      },
+      {
+        "label": "Revised triadic N-body proof",
+        "classification": "CANONICAL_AUTHORITY",
+        "declared_sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+        "actual": {
+          "path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+          "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+          "bytes": 356706
+        },
+        "match": true
+      },
+      {
+        "label": "N-body metadata",
+        "classification": "CANONICAL_AUTHORITY",
+        "declared_sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+        "actual": {
+          "path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+          "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+          "bytes": 257569
+        },
+        "match": true
+      },
+      {
+        "label": "Universe architecture and full ledger",
+        "classification": "CANONICAL_AUTHORITY",
+        "declared_sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+        "actual": {
+          "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+          "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+          "bytes": 951976
+        },
+        "match": true
+      },
+      {
+        "label": "Universe reproducibility metadata candidate",
+        "classification": "ADMITTED_SOURCE",
+        "declared_sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+        "actual": {
+          "path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+          "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+          "bytes": 254488
+        },
+        "match": true
+      },
+      {
+        "label": "Revised W2/BBN closeout metadata candidate",
+        "classification": "ADMITTED_SOURCE",
+        "declared_sha256": "0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f",
+        "actual": {
+          "path": "sources/frozen/0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f/Reproducibility Metadata - Final Revised W2 BBN Closeout.md",
+          "sha256": "0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f",
+          "bytes": 274842
+        },
+        "match": true
+      },
+      {
+        "label": "Consolidated prior triadic rebuild",
+        "classification": "HISTORICAL_WARNING",
+        "declared_sha256": "52ff9b4a79f0a052d17d5592c32a44d471cdfb209ed803f7f12253c4c0f50599",
+        "actual": {
+          "path": "sources/frozen/52ff9b4a79f0a052d17d5592c32a44d471cdfb209ed803f7f12253c4c0f50599/Presentation 28.pdf",
+          "sha256": "52ff9b4a79f0a052d17d5592c32a44d471cdfb209ed803f7f12253c4c0f50599",
+          "bytes": 1251331
+        },
+        "match": true
+      },
+      {
+        "label": "Deterministic rebuild and no-retune lineage",
+        "classification": "HISTORICAL_WARNING",
+        "declared_sha256": "9a8e0bb8fcbaeb3ab391b5ccb1213b83318685a54953b0d1b1ba9e0eca26a086",
+        "actual": {
+          "path": "sources/frozen/9a8e0bb8fcbaeb3ab391b5ccb1213b83318685a54953b0d1b1ba9e0eca26a086/Presentation27.pdf",
+          "sha256": "9a8e0bb8fcbaeb3ab391b5ccb1213b83318685a54953b0d1b1ba9e0eca26a086",
+          "bytes": 580810
+        },
+        "match": true
+      },
+      {
+        "label": "Mathematical codex",
+        "classification": "HISTORICAL_WARNING",
+        "declared_sha256": "01c15530f437d0dd37937e7789e410f85fb4417a049357eb31f140c345b954f5",
+        "actual": {
+          "path": "sources/frozen/01c15530f437d0dd37937e7789e410f85fb4417a049357eb31f140c345b954f5/Presentation 26.pdf",
+          "sha256": "01c15530f437d0dd37937e7789e410f85fb4417a049357eb31f140c345b954f5",
+          "bytes": 362939
+        },
+        "match": true
+      },
+      {
+        "label": "One kernel, many modal manifestations",
+        "classification": "HISTORICAL_WARNING",
+        "declared_sha256": "c89cdfa633961934306cc03121c4fe911b0140610f7a1da6be97d220de8b2540",
+        "actual": {
+          "path": "sources/frozen/c89cdfa633961934306cc03121c4fe911b0140610f7a1da6be97d220de8b2540/Presentation 25.pdf",
+          "sha256": "c89cdfa633961934306cc03121c4fe911b0140610f7a1da6be97d220de8b2540",
+          "bytes": 479693
+        },
+        "match": true
+      },
+      {
+        "label": "Original ontology and explanatory vision",
+        "classification": "HISTORICAL_WARNING",
+        "declared_sha256": "f3c1f848255334fcefc5eae6a8110a7e463e244fa605c1d9e56faa8ecd7aad17",
+        "actual": {
+          "path": "sources/frozen/f3c1f848255334fcefc5eae6a8110a7e463e244fa605c1d9e56faa8ecd7aad17/Presentation 24.pdf",
+          "sha256": "f3c1f848255334fcefc5eae6a8110a7e463e244fa605c1d9e56faa8ecd7aad17",
+          "bytes": 642191
+        },
+        "match": true
+      },
+      {
+        "label": "Narrative synthesis",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "c8b617f643db47c2a520d018bee82328204430ed39a85d7ab918acc001546a18",
+        "actual": {
+          "path": "sources/frozen/c8b617f643db47c2a520d018bee82328204430ed39a85d7ab918acc001546a18/RFC_Story_Arc.md",
+          "sha256": "c8b617f643db47c2a520d018bee82328204430ed39a85d7ab918acc001546a18",
+          "bytes": 11196
+        },
+        "match": true
+      },
+      {
+        "label": "Nucleosynthesis addendum",
+        "classification": "CANDIDATE_ADDENDUM",
+        "declared_sha256": "d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c",
+        "actual": {
+          "path": "sources/frozen/d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c/RFC_Module_X1_Nucleosynthesis_Theorem_Addendum_and_Metadata.md",
+          "sha256": "d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c",
+          "bytes": 10836
+        },
+        "match": true
+      },
+      {
+        "label": "Collapse/rebirth addendum",
+        "classification": "CANDIDATE_ADDENDUM",
+        "declared_sha256": "522da698be7c70b17e327d54fe5825321934550c0ee3a8a187fcce9098895d3a",
+        "actual": {
+          "path": "sources/frozen/522da698be7c70b17e327d54fe5825321934550c0ee3a8a187fcce9098895d3a/RFC_Module_Y_Global_Collapse_Rebirth_Trace_Addendum_and_Metadata.md",
+          "sha256": "522da698be7c70b17e327d54fe5825321934550c0ee3a8a187fcce9098895d3a",
+          "bytes": 8447
+        },
+        "match": true
+      },
+      {
+        "label": "Triad/kernel source book",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "23cf3e0f8c2b125f1733e02cdd1a795738849fa1a5f2951669c1f84d9417fdab",
+        "actual": {
+          "path": "sources/frozen/23cf3e0f8c2b125f1733e02cdd1a795738849fa1a5f2951669c1f84d9417fdab/Triad_and_Triad_Kernel_Markdown_Book.zip",
+          "sha256": "23cf3e0f8c2b125f1733e02cdd1a795738849fa1a5f2951669c1f84d9417fdab",
+          "bytes": 56567
+        },
+        "match": true
+      },
+      {
+        "label": "Source audits and drafting doctrine",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "2166865f16a2daefa1f40ddd80a180c05ba154c8dfb467c1381b8006d01589be",
+        "actual": {
+          "path": "sources/frozen/2166865f16a2daefa1f40ddd80a180c05ba154c8dfb467c1381b8006d01589be/How to build presentation 28.zip",
+          "sha256": "2166865f16a2daefa1f40ddd80a180c05ba154c8dfb467c1381b8006d01589be",
+          "bytes": 240976
+        },
+        "match": true
+      },
+      {
+        "label": "Historical closeout ledgers",
+        "classification": "REPLAY_REQUIRED",
+        "declared_sha256": "e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad",
+        "actual": {
+          "path": "sources/frozen/e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad/1 RFC close out ledgers.zip",
+          "sha256": "e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad",
+          "bytes": 67372
+        },
+        "match": true
+      },
+      {
+        "label": "Historical simulation logs",
+        "classification": "REPLAY_REQUIRED",
+        "declared_sha256": "9f6f05a297e95ef01813fd6eb9532c8ee41d6feb7f4d7cb723da87ff5858a9da",
+        "actual": {
+          "path": "sources/frozen/9f6f05a297e95ef01813fd6eb9532c8ee41d6feb7f4d7cb723da87ff5858a9da/Simulation Meta data 2.zip",
+          "sha256": "9f6f05a297e95ef01813fd6eb9532c8ee41d6feb7f4d7cb723da87ff5858a9da",
+          "bytes": 366558
+        },
+        "match": true
+      },
+      {
+        "label": "Non-cosmological triadic manifestation exemplar",
+        "classification": "COMPARISON_ONLY",
+        "declared_sha256": "ac37b05c67b26c882d171b7986a5c1a5536a4ecbdf1152731897f876972bb7fe",
+        "actual": {
+          "path": "sources/frozen/ac37b05c67b26c882d171b7986a5c1a5536a4ecbdf1152731897f876972bb7fe/Triadic_Completed_Shell_Twin_Prime_Preprint_Clean_Raw_LaTeX_20260626.md",
+          "sha256": "ac37b05c67b26c882d171b7986a5c1a5536a4ecbdf1152731897f876972bb7fe",
+          "bytes": 40865
+        },
+        "match": true
+      },
+      {
+        "label": "Arithmetic proof closeout exemplar",
+        "classification": "COMPARISON_ONLY",
+        "declared_sha256": "21057508fcdb9cbb0fa3a932cc297dc2754b38ed59cab79d460f64ca1f2eb43f",
+        "actual": {
+          "path": "sources/frozen/21057508fcdb9cbb0fa3a932cc297dc2754b38ed59cab79d460f64ca1f2eb43f/T1_T5_Closeout_Ledger.md",
+          "sha256": "21057508fcdb9cbb0fa3a932cc297dc2754b38ed59cab79d460f64ca1f2eb43f",
+          "bytes": 12135
+        },
+        "match": true
+      },
+      {
+        "label": "Arithmetic source map exemplar",
+        "classification": "COMPARISON_ONLY",
+        "declared_sha256": "5d3cdf28aa14fdd2dbcff8307ec2e391a40623148696e1baa5623037d29ba84e",
+        "actual": {
+          "path": "sources/frozen/5d3cdf28aa14fdd2dbcff8307ec2e391a40623148696e1baa5623037d29ba84e/TwinPrime_Zip_Source_Map_REVISED_Triad_Fractal_Weights.md",
+          "sha256": "5d3cdf28aa14fdd2dbcff8307ec2e391a40623148696e1baa5623037d29ba84e",
+          "bytes": 125678
+        },
+        "match": true
+      },
+      {
+        "label": "Prior audit/synthesis; never supersedes exact sources",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
+        "actual": {
+          "path": "sources/frozen/dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b/2RFC_Architecture_Intent_and_Drift_Deep_Soak_20260805.md",
+          "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
+          "bytes": 31773
+        },
+        "match": true
+      },
+      {
+        "label": "Prior audit/synthesis; never supersedes exact sources",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "12575578458a7f908f4c10dcf69eddb095d436e21c9f4b51ea758e380ceda4d8",
+        "actual": {
+          "path": "sources/frozen/12575578458a7f908f4c10dcf69eddb095d436e21c9f4b51ea758e380ceda4d8/2RFC_Canonical_Enhancement_Map_20260805.md",
+          "sha256": "12575578458a7f908f4c10dcf69eddb095d436e21c9f4b51ea758e380ceda4d8",
+          "bytes": 3376
+        },
+        "match": true
+      },
+      {
+        "label": "Prior audit/synthesis; never supersedes exact sources",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+        "actual": {
+          "path": "sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
+          "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+          "bytes": 42775
+        },
+        "match": true
+      },
+      {
+        "label": "Prior audit/synthesis; never supersedes exact sources",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226",
+        "actual": {
+          "path": "sources/frozen/c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226/2RFC_Immediate_Execution_Queue_20260805.md",
+          "sha256": "c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226",
+          "bytes": 7795
+        },
+        "match": true
+      },
+      {
+        "label": "Prior audit/synthesis; never supersedes exact sources",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "af15e723cf93e2cf05873ca74514661393d2d669db502b66838e1ee5979a0f2d",
+        "actual": {
+          "path": "sources/frozen/af15e723cf93e2cf05873ca74514661393d2d669db502b66838e1ee5979a0f2d/2RFC_Integration_Fidelity_Audit_20260805.md",
+          "sha256": "af15e723cf93e2cf05873ca74514661393d2d669db502b66838e1ee5979a0f2d",
+          "bytes": 18368
+        },
+        "match": true
+      },
+      {
+        "label": "Prior audit/synthesis; never supersedes exact sources",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "275ce318acfb84f88e9edb91ca371bcfa8d8dd248172ee9444e4d108fb6472c7",
+        "actual": {
+          "path": "sources/frozen/275ce318acfb84f88e9edb91ca371bcfa8d8dd248172ee9444e4d108fb6472c7/2RFC_Revised_Work_Queue_after_Integration_Audit_20260805.md",
+          "sha256": "275ce318acfb84f88e9edb91ca371bcfa8d8dd248172ee9444e4d108fb6472c7",
+          "bytes": 5346
+        },
+        "match": true
+      },
+      {
+        "label": "Prior audit/synthesis; never supersedes exact sources",
+        "classification": "INTERPRETIVE_SYNTHESIS",
+        "declared_sha256": "c0458d1905da03c21c7a93b1d11c19fa6679c18c5b1a0a95fefacf38e66a8240",
+        "actual": {
+          "path": "sources/frozen/c0458d1905da03c21c7a93b1d11c19fa6679c18c5b1a0a95fefacf38e66a8240/2RFC_Triad_NBody_Enhancement_Lock_DRAFT_20260805.md",
+          "sha256": "c0458d1905da03c21c7a93b1d11c19fa6679c18c5b1a0a95fefacf38e66a8240",
+          "bytes": 9512
+        },
+        "match": true
+      }
+    ],
+    "recovered_checks": [
+      {
+        "name": "first-pass Module L scientific specification",
+        "classification": "ADMITTED_SOURCE",
+        "evidence_state": "SOURCE_OBJECT_ONLY",
+        "actual": {
+          "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/BARYONIC_STELLAR_UNIVERSE.md",
+          "sha256": "c707ce074bd79b2863b98b0a8a0bb5f91a93b9c3f7909e4041bb9940c81a0bae",
+          "bytes": 28271
+        },
+        "match": true
+      },
+      {
+        "name": "conditional theorem stack",
+        "classification": "ADMITTED_SOURCE",
+        "evidence_state": "SOURCE_OBJECT_ONLY",
+        "actual": {
+          "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/BARYONIC_STELLAR_UNIVERSE.md",
+          "sha256": "e82fea7382da9efe80d14c9d17b0c25799589b90b5ed482aba5fce3634658b8a",
+          "bytes": 9493
+        },
+        "match": true
+      },
+      {
+        "name": "representative finite verification with explicit limitations",
+        "classification": "ADMITTED_SOURCE",
+        "evidence_state": "SOURCE_OBJECT_ONLY",
+        "actual": {
+          "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/L/MODULE_L_WOLFRAM_VERIFICATION.md",
+          "sha256": "94806bd82173e79d2886ece7643c22234a3864a1d2b6461474972e18ec7dd2c5",
+          "bytes": 2738
+        },
+        "match": true
+      },
+      {
+        "name": "typed export and ownership boundary",
+        "classification": "ADMITTED_SOURCE",
+        "evidence_state": "SOURCE_OBJECT_ONLY",
+        "actual": {
+          "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/L/MODULE_L_TO_M_SCIENTIFIC_HANDOFF.md",
+          "sha256": "b1720660fa46a7c6158eb993f351b041987ded80febe8622b50ca26af0831440",
+          "bytes": 23259
+        },
+        "match": true
+      },
+      {
+        "name": "first-pass export schema only",
+        "classification": "ADMITTED_SOURCE",
+        "evidence_state": "SOURCE_OBJECT_ONLY",
+        "actual": {
+          "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/evidence/MODULE_MAP.md",
+          "sha256": "14062b48305010c2c5394e755577ef5785264f6f438ab4b1cebc9df57c2f412e",
+          "bytes": 2417
+        },
+        "match": true
+      }
+    ]
+  },
+  "rows": [
+    {
+      "ordinal": 1,
+      "module": "A",
+      "expected_parents": [],
+      "expected_parent_objects": [
+        "admitted canonical authority bytes"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Ordered CIF/QV/RFL triad",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "First Action QV(CIF)->RFL",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Recursive kernel K_f(t)=Sum delta^-j f_j(t) exp(-alpha j t)",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Directed lanes and 2N lane increment",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "FORMALIZED_SOURCE_ARCHITECTURE_NOT_YET_FROZEN_AS_MODULE_A",
+        "files": [
+          {
+            "path": "modules/A/spec.json",
+            "sha256": "c0ecc12e47bccc1859afed211bbf5d0aa75e056ece7a39403b26d59b55080ee1",
+            "bytes": 1589
+          },
+          {
+            "path": "recipes/A/recipe.json",
+            "sha256": "5f7d4b77bcbf9e379c6ab22a377b5dde64295b742a028556302bfc58562a2b73",
+            "bytes": 4825
+          },
+          {
+            "path": "recipes/A/gates.json",
+            "sha256": "e932278e9fcce8573f9ab95db376f2789d1e3cb7768a34a4e77ac063d2c353c9",
+            "bytes": 867
+          },
+          {
+            "path": "recipes/A/wolfram/A-WL-001.wl",
+            "sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+            "bytes": 698
+          },
+          {
+            "path": "recipes/A/wolfram/A-WL-002.wl",
+            "sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+            "bytes": 618
+          }
+        ],
+        "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "A_triad_kernel",
+            "classification": "FINITE_TRIAD_KERNEL_EXECUTION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/A_triad_kernel/manifest.json",
+                "sha256": "316f43e2b104537dff513b2a093061559251ef150882dc1742ee6540aaf306e3",
+                "bytes": 411
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/A_triad_kernel/frozen_config.json",
+                "sha256": "c266dfd20445e47f3321244b65d41fd7de6902a85fc6601a27fe2dc30a787f2c",
+                "bytes": 627
+              },
+              "environment": {
+                "path": "configured_runs/results/A_triad_kernel/environment.json",
+                "sha256": "989633b34cd5ed293e527971ff1b9fa7cd10dcaa6931e1fec2afa13dc8913555",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/A_triad_kernel/result.json",
+                "sha256": "c0800259e4185dac8a2d4ad400d4aba599570d64ba76b004eca1a9ffb8c47417",
+                "bytes": 1336
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ADMITTED_AUTHORITY_BYTES_VERIFIED; TYPED_PREPHYSICAL_PARENT_PACKET_ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "triad_kernel",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Execute recursive depth law, typed constituents, and complete directed non-self carrier.",
+            "template": {
+              "path": "configured_runs/templates/A_triad_kernel.template.json",
+              "sha256": "fa42cc61e866d02c53e641e18861caa399d73aec379cff3cce880eff27c2cbad",
+              "bytes": 647
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/A_triad_kernel.bindings.json",
+              "sha256": "3229538154f925bb2e03af574936e3dbadea5f1c2a732ef9c4a011dd2c510bcb",
+              "bytes": 2256
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "typed CIF/QV/RFL objects and irreducibility proof",
+        "First Action operator and witness law",
+        "recursive kernel with lawful modal-basis admission",
+        "directed-lane carrier, route/gauge/branch/event classes",
+        "no-loss memory and reopening law",
+        "unbounded domain-pluriform manifestation theorem at declared scope",
+        "exact prephysical handoff H_A_to_B",
+        "source, uncertainty, provenance, and claim records"
+      ],
+      "handoff_outputs": [
+        "H_A_to_B"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "FRONTIER"
+    },
+    {
+      "ordinal": 2,
+      "module": "B",
+      "expected_parents": [
+        "A"
+      ],
+      "expected_parent_objects": [
+        "H_A_to_B"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/B/spec.json",
+            "sha256": "70f00fd579bc6463972b046890af53caf17da0377edc20f67475c84ebee84473",
+            "bytes": 1467
+          },
+          {
+            "path": "recipes/B/recipe.json",
+            "sha256": "10ea5c76a470cc58cfc58a27a3de9d82c9754b763b34adcc35a021fcbf4c86d3",
+            "bytes": 4538
+          },
+          {
+            "path": "recipes/B/gates.json",
+            "sha256": "4e8dba70be95fedd41b72e15f2976d465b07c5fc624976afb35bf8795bdf7edf",
+            "bytes": 707
+          },
+          {
+            "path": "recipes/B/wolfram/B-WL-001.wl",
+            "sha256": "1b44c82c8d7cfbaf95afa72f4b54c3a556e66df0846caf40bf3bda882f5989fa",
+            "bytes": 619
+          },
+          {
+            "path": "recipes/B/wolfram/B-WL-002.wl",
+            "sha256": "0297bdc846ef0d0b435680525501a9ae3a6ee84b387ed72138ef910e1b6333cc",
+            "bytes": 632
+          }
+        ],
+        "claim_boundary": "First physical RFC state at declared fidelity; no microscopic or cosmological late-time completion."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "B_big_implosion",
+            "classification": "BIG_IMPLOSION_OPERATOR_EXECUTION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/B_big_implosion/manifest.json",
+                "sha256": "203d1e470f4099664b21b364f376d198c4a62c9f411f8acce41fa12cf9ab84e0",
+                "bytes": 415
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/B_big_implosion/frozen_config.json",
+                "sha256": "7ed27368eba457ae27bcd16731bd06b62980cc87abd4a04177e07fcd94f44f55",
+                "bytes": 568
+              },
+              "environment": {
+                "path": "configured_runs/results/B_big_implosion/environment.json",
+                "sha256": "bbd3fab579b1f8844b7250a063d87645c882546d3c1e7aeac4138409adf5e6d1",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/B_big_implosion/result.json",
+                "sha256": "0b115b0cb02cd8540f074038d5a75832f92d3a7422c977ba16761f03280f7979",
+                "bytes": 1957
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "big_implosion",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Execute the frozen Big Implosion compression operator on the exact A parent.",
+            "template": {
+              "path": "configured_runs/templates/B_big_implosion.template.json",
+              "sha256": "13f90965db1214ce6e7e722b1f8c4af204e001ccfff535672c7718f28dc80242",
+              "bytes": 744
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/B_big_implosion.bindings.json",
+              "sha256": "90900834f000232727700dd43ecc49469a8c0accab8bd213595bad815ad35361",
+              "bytes": 2321
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "physically executed Big Implosion state",
+        "intrinsic physical event order and clock origin",
+        "generated geometry or explicitly typed pregeometry",
+        "field/current/conservation-bearing state",
+        "ordinary, radiative, compression-relic, and dissipative-tail sector seeds only where derived",
+        "route, event, branch, memory, uncertainty, and no-loss ancestry",
+        "restartable H_B_to_C"
+      ],
+      "handoff_outputs": [
+        "H_B_to_C"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 3,
+      "module": "C",
+      "expected_parents": [
+        "B"
+      ],
+      "expected_parent_objects": [
+        "H_B_to_C"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/C/spec.json",
+            "sha256": "ca8e81068e8bc9b7c5711738f3c45e2751f30f6e5a9cff2a0c65ef4ef7b8dacb",
+            "bytes": 1209
+          },
+          {
+            "path": "recipes/C/recipe.json",
+            "sha256": "6451efceef8b53659fb58c4d591648e2e24b1340e43d1a62e364c5d98f0d9ad8",
+            "bytes": 4292
+          },
+          {
+            "path": "recipes/C/gates.json",
+            "sha256": "c3904dadee5019da0dbabdfcb3ea4e30e793502b24dfe02daabbb3f957f40c0b",
+            "bytes": 569
+          },
+          {
+            "path": "recipes/C/wolfram/C-WL-001.wl",
+            "sha256": "d0ae5feced49a969069ea0d4c8f5749595517e4a18d405a9572a623927f56c7c",
+            "bytes": 542
+          },
+          {
+            "path": "recipes/C/wolfram/C-WL-002.wl",
+            "sha256": "21f29d05d58f46ae8c29f85a6cd185f63fc89f3c48146a668436507a46d393cf",
+            "bytes": 360
+          }
+        ],
+        "claim_boundary": "RFC microscopic constitution at the executed scope; empirical identity remains for Module P."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "C_spectral_model",
+            "classification": "SPECTRAL_MODEL_AUDIT",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/C_spectral_model/manifest.json",
+                "sha256": "00dd01c4be9ecb4639e5856a1ea61ea3d22a2f9b5210acadc72c31faafa12385",
+                "bytes": 404
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/C_spectral_model/frozen_config.json",
+                "sha256": "bf1058bd832337dedf545196368dc96399e2af610abfe71de420fffd14a84f3f",
+                "bytes": 625
+              },
+              "environment": {
+                "path": "configured_runs/results/C_spectral_model/environment.json",
+                "sha256": "df459a3ee3bd2c8f9e602dd8b8ae0209bca54d67b81d06f6e62eb6feb0163d5c",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/C_spectral_model/result.json",
+                "sha256": "dc56f468b7eb4fa4bc9a213527570293a5884e0cd539b40efb55305f2fa7c4b3",
+                "bytes": 920
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "spectral_model",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Audit internally derived mass/mixing/interaction matrix candidates and their symmetries.",
+            "template": {
+              "path": "configured_runs/templates/C_spectral_model.template.json",
+              "sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d",
+              "bytes": 568
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/C_spectral_model.bindings.json",
+              "sha256": "f83dc4b548e99ec956f358b401f46bcaf2b6e929e6c45ea87facb16987644a77",
+              "bytes": 1201
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "typed fields and excitations",
+        "interaction and symmetry structure",
+        "mass/mixing generation or lawful branch family",
+        "charge and conservation ownership",
+        "prethermal populations and covariance",
+        "H_C_to_D"
+      ],
+      "handoff_outputs": [
+        "H_C_to_D"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 4,
+      "module": "D",
+      "expected_parents": [
+        "C"
+      ],
+      "expected_parent_objects": [
+        "H_C_to_D"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/D/spec.json",
+            "sha256": "895114ac15efd3dfc5859ceba6e855012f8950217626f339346a245a9f49820c",
+            "bytes": 1067
+          },
+          {
+            "path": "recipes/D/recipe.json",
+            "sha256": "1ad9720aa394d62df35bf6161414522f7a5563e8a8f94f5c8cd0c5e0b466cb16",
+            "bytes": 3906
+          },
+          {
+            "path": "recipes/D/gates.json",
+            "sha256": "610391ea4c95139954b54d251bb2bc5010330bff455e075b4f313c464df9e60f",
+            "bytes": 493
+          },
+          {
+            "path": "recipes/D/wolfram/D-WL-001.wl",
+            "sha256": "2b79fea2537665d78d41026231229eb2bf132725f8e42b732ce1a491ea2818e3",
+            "bytes": 578
+          },
+          {
+            "path": "recipes/D/wolfram/D-WL-002.wl",
+            "sha256": "65647a0c42124403f9898a76cb82f929f3f941af358c04476f514cb77af2c099",
+            "bytes": 333
+          }
+        ],
+        "claim_boundary": "Generated RFC thermal history, not yet primordial abundances."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "D_transport",
+            "classification": "TRANSPORT_ODE_EXECUTION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/D_transport/manifest.json",
+                "sha256": "434b5063978e38344fd02cd8577fba342c4cf752c36ed861b92f7a0d8fcadeed",
+                "bytes": 402
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/D_transport/frozen_config.json",
+                "sha256": "bf2c60dee1294d43b6a0741c976a8aee0f09f3b591a0a6b1d966db19af8b86bd",
+                "bytes": 580
+              },
+              "environment": {
+                "path": "configured_runs/results/D_transport/environment.json",
+                "sha256": "771c40d13ae75aa8cd052fa5703f025fa98e6f18164b2d037780bd9cf5fe401a",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/D_transport/result.json",
+                "sha256": "7da79d267532525b732a507af8d6813f737f516c3cafbe0b05ed2594f0e198de",
+                "bytes": 21804
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "transport",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Integrate the frozen nonequilibrium thermal/transport state with explicit invariants.",
+            "template": {
+              "path": "configured_runs/templates/D_transport.template.json",
+              "sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+              "bytes": 1023
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/D_transport.bindings.json",
+              "sha256": "2bae62066676d0e611f29ebd4410514e1478988360708a467319897b4259cd4c",
+              "bytes": 3869
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "temperature and distribution histories",
+        "phase/event ledger",
+        "transport and collision operators",
+        "entropy and conservation ledger",
+        "uncertainty/covariance",
+        "H_D_to_E"
+      ],
+      "handoff_outputs": [
+        "H_D_to_E"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 5,
+      "module": "E",
+      "expected_parents": [
+        "D"
+      ],
+      "expected_parent_objects": [
+        "H_D_to_E"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/E/spec.json",
+            "sha256": "3a73e6482152d8d2d465e711be19d634e170f5a6bcee2b564fa046b133014cc8",
+            "bytes": 1060
+          },
+          {
+            "path": "recipes/E/recipe.json",
+            "sha256": "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f",
+            "bytes": 3965
+          },
+          {
+            "path": "recipes/E/gates.json",
+            "sha256": "1452d72412a6570ebd9c571734c6da0a34148076a10507e23c50927c8b0df04b",
+            "bytes": 517
+          },
+          {
+            "path": "recipes/E/wolfram/E-WL-001.wl",
+            "sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
+            "bytes": 333
+          },
+          {
+            "path": "recipes/E/wolfram/E-WL-002.wl",
+            "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43",
+            "bytes": 329
+          }
+        ],
+        "claim_boundary": "Internally generated primordial nuclear state; observations remain sealed."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "E_reaction_network",
+            "classification": "REACTION_NETWORK_EXECUTION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/E_reaction_network/manifest.json",
+                "sha256": "a2d71d2f1e54369cf41861fd7cfe2606a7a2607d84725c2c7e02652b62bb0ef6",
+                "bytes": 412
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/E_reaction_network/frozen_config.json",
+                "sha256": "8e7cce75dfd4c3d20b70c12c3058c5df48b5f3b1eee481063e6a7a509b8d4a47",
+                "bytes": 770
+              },
+              "environment": {
+                "path": "configured_runs/results/E_reaction_network/environment.json",
+                "sha256": "1b13a2638c51afe30d380827532881063f0110c419c54b5ae0ed61006c427f20",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/E_reaction_network/result.json",
+                "sha256": "9c465349742614ef65de26ca7155d06aa6e89cb9aef09c3ddca9baaeddd11a25",
+                "bytes": 21252
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "reaction_network",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Execute the internally derived primordial reaction network with stoichiometric invariants.",
+            "template": {
+              "path": "configured_runs/templates/E_reaction_network.template.json",
+              "sha256": "298854bad6d020ece576e3c33376b56380e93495e57cd8c380ef47fa0b531ba7",
+              "bytes": 1037
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/E_reaction_network.bindings.json",
+              "sha256": "6473fba4091a3dfb4460dfc440d198b69d1a910369f0d6b8c23c27e08a65d929",
+              "bytes": 4177
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "reaction graph and rates with source lineage",
+        "abundance trajectories",
+        "isotope covariance",
+        "conservation and positivity ledger",
+        "freeze-out/event witnesses",
+        "H_E_to_F"
+      ],
+      "handoff_outputs": [
+        "H_E_to_F"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 6,
+      "module": "F",
+      "expected_parents": [
+        "E"
+      ],
+      "expected_parent_objects": [
+        "H_E_to_F"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/F/spec.json",
+            "sha256": "9108762324e581e48493e81d8cbaf7efb115f3d78b3756ebe3b4270f01292a8d",
+            "bytes": 952
+          },
+          {
+            "path": "recipes/F/recipe.json",
+            "sha256": "b4aa226ef4185da09330375afc51ff1959147bce1d3b4770226876840984403d",
+            "bytes": 5067
+          },
+          {
+            "path": "recipes/F/gates.json",
+            "sha256": "c58ea01462adf69ca992d47a9a962edbf17b4be9064bbfa8c7d15d74f006f58a",
+            "bytes": 419
+          },
+          {
+            "path": "recipes/F/wolfram/F-WL-001.wl",
+            "sha256": "a0515c449609d8ccc1b4c3632e3e995fa4190ee368470e1bc349eef25fb9d6f0",
+            "bytes": 207
+          },
+          {
+            "path": "recipes/F/wolfram/F-WL-002.wl",
+            "sha256": "3f96f7879700b9d124f0ec51652561bf03c76bf620ded89dd7a1af4d162ad89d",
+            "bytes": 416
+          }
+        ],
+        "claim_boundary": "Post-nuclear RFC plasma state."
+      },
+      "representative_test": {
+        "records": [],
+        "status": "NO_PREBUILT_RESULT",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "reaction_network",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Execute the post-nuclear plasma reaction network.",
+            "template": {
+              "path": "configured_runs/templates/F_reaction_network.template.json",
+              "sha256": "298854bad6d020ece576e3c33376b56380e93495e57cd8c380ef47fa0b531ba7",
+              "bytes": 1037
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/F_reaction_network.bindings.json",
+              "sha256": "09e11d451a4f7de3eeb92f967bae6aa97f74fa3977fec69de70bf14de4a6c2ec",
+              "bytes": 4177
+            }
+          },
+          {
+            "solver": "transport",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Execute coupled plasma/radiation transport.",
+            "template": {
+              "path": "configured_runs/templates/F_transport.template.json",
+              "sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+              "bytes": 1023
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/F_transport.bindings.json",
+              "sha256": "3c262af8c0f0f03cfb9fe9570ea29a704e904265701902b0514853561e3db9a1",
+              "bytes": 3869
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "plasma composition and ionization state",
+        "radiation/neutrino persistence",
+        "opacity and transport state",
+        "source-transfer ownership",
+        "H_F_to_G"
+      ],
+      "handoff_outputs": [
+        "H_F_to_G"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 7,
+      "module": "G",
+      "expected_parents": [
+        "F"
+      ],
+      "expected_parent_objects": [
+        "H_F_to_G"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/G/spec.json",
+            "sha256": "69b5c7cbf6faca7f6487bc70201f321ee873474e2240e02dea5887027d0da992",
+            "bytes": 997
+          },
+          {
+            "path": "recipes/G/recipe.json",
+            "sha256": "b800ffef478be6131fd1c83993931f150ba794024c8f3be845696bb254ec0293",
+            "bytes": 5245
+          },
+          {
+            "path": "recipes/G/gates.json",
+            "sha256": "6b84271435e3a5277536848725b81ecf88cbcd6cd5cb7ea44cf542ea2044bbc3",
+            "bytes": 408
+          },
+          {
+            "path": "recipes/G/wolfram/G-WL-001.wl",
+            "sha256": "e883fd6ef2fcd8d772c8e818a8dfcd6af67bfa3a363a8f065be01c407d836735",
+            "bytes": 375
+          },
+          {
+            "path": "recipes/G/wolfram/G-WL-002.wl",
+            "sha256": "93ea411a631de605bc9349e6269d47b5353c67fd6ba3fe51669a1b3f9351bbca",
+            "bytes": 307
+          }
+        ],
+        "claim_boundary": "Generated RFC last-scattering state, not observed CMB agreement."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "G_visibility",
+            "classification": "VISIBILITY_KERNEL_EXECUTION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/G_visibility/manifest.json",
+                "sha256": "bc84b8a70bed9488b4bc718b7ac2cfd0672bbc520f19049d214991dca0ad9c27",
+                "bytes": 407
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/G_visibility/frozen_config.json",
+                "sha256": "6d7c8d04f3a9378735b7c3c7f41520c72f29dcd44866dc1d70225dc381d5a397",
+                "bytes": 422
+              },
+              "environment": {
+                "path": "configured_runs/results/G_visibility/environment.json",
+                "sha256": "a71a0f3c9136182dcbcac16ffe0fa340eebe6c69b4f08829b0ae4fbcca542ea7",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/G_visibility/result.json",
+                "sha256": "b32907830965ff3b11a6dbbcd0d587174db2a43fbcba75dd5c68958839bf4dee",
+                "bytes": 1144
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "reaction_network",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Execute nonequilibrium recombination chemistry.",
+            "template": {
+              "path": "configured_runs/templates/G_recombination_network.template.json",
+              "sha256": "298854bad6d020ece576e3c33376b56380e93495e57cd8c380ef47fa0b531ba7",
+              "bytes": 1037
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/G_recombination_network.bindings.json",
+              "sha256": "164614c10ecda90a1dbd6fd7845ae4b8d539d0da29b208729642b76bb88ffd37",
+              "bytes": 4182
+            }
+          },
+          {
+            "solver": "visibility",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Construct the physical visibility kernel from the executed opacity history.",
+            "template": {
+              "path": "configured_runs/templates/G_visibility.template.json",
+              "sha256": "f0aeaccc8e6593fe2a026f3ffc40a7f29ddbb0559684a47df716332bc6918e4f",
+              "bytes": 534
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/G_visibility.bindings.json",
+              "sha256": "3281473d832663eadaaee7fc5b1c2a175d06d67c265cb7dc74a065329ad67d65",
+              "bytes": 1580
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "ionization/recombination histories",
+        "visibility and optical-depth functions",
+        "radiation surface",
+        "covariance and restart",
+        "H_G_to_HU",
+        "H_G_to_I"
+      ],
+      "handoff_outputs": [
+        "H_G_to_HU",
+        "H_G_to_I"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 8,
+      "module": "HU",
+      "expected_parents": [
+        "G"
+      ],
+      "expected_parent_objects": [
+        "H_G_to_HU"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/HU/spec.json",
+            "sha256": "ca2547a8d219db6b1c3992097fa84db29cc7085860f66a233a0fab8d2826c8da",
+            "bytes": 976
+          },
+          {
+            "path": "recipes/HU/recipe.json",
+            "sha256": "f603d753ed1c396af6e0fec65d36fda56c2574b63ac3833ede030f8ecd574955",
+            "bytes": 3745
+          },
+          {
+            "path": "recipes/HU/gates.json",
+            "sha256": "01d1de77736d942c7f2185cb3447cddea8535720690603ddf9bcc24de58fbfc2",
+            "bytes": 439
+          },
+          {
+            "path": "recipes/HU/wolfram/HU-WL-001.wl",
+            "sha256": "b3301818a314729fb79d515b74b0d62577ef9989120a02c181cb17359fdd0a5b",
+            "bytes": 411
+          },
+          {
+            "path": "recipes/HU/wolfram/HU-WL-002.wl",
+            "sha256": "ccc158b3ef6f410076c46cbf7e33a9fa215837e9619ef909bf8899ff79be04c1",
+            "bytes": 264
+          }
+        ],
+        "claim_boundary": "Universal RFC transfer law at declared linear scope."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "HU_linear_transfer",
+            "classification": "LINEAR_TRANSFER_EXECUTION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/HU_linear_transfer/manifest.json",
+                "sha256": "3ff73e36d7afd8f23bc1e0efecfcc9664915e19d5779773edc367e4aba116816",
+                "bytes": 410
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/HU_linear_transfer/frozen_config.json",
+                "sha256": "b0eba35930395176481f04363a99ea239b9105dfa5c917c74f086252bd73da4a",
+                "bytes": 443
+              },
+              "environment": {
+                "path": "configured_runs/results/HU_linear_transfer/environment.json",
+                "sha256": "af407f80e087ab9a3d959462e1820304f00cf6ef3c767522cf699f545bed38a7",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/HU_linear_transfer/result.json",
+                "sha256": "924bb1d39f36c3d099bf8f4ac6cbf885cb119bc9784d6ec547f7d82507654ef6",
+                "bytes": 2195
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "linear_transfer",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Execute and freeze the universal linear transfer operator.",
+            "template": {
+              "path": "configured_runs/templates/HU_linear_transfer.template.json",
+              "sha256": "6f7f5ce798ce5b90af1b5c9354461a2d017d7c441c1fe68c69652448543cc77d",
+              "bytes": 660
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/HU_linear_transfer.bindings.json",
+              "sha256": "a19f3cd29d84ba79d2ed9124eff5996c0e3cce4584298180d91e3950607ba017",
+              "bytes": 2331
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "typed operator",
+        "domain and codomain",
+        "gauge/frame contracts",
+        "conservation and constraint identities",
+        "operator uncertainty",
+        "frozen H_HU_to_HI"
+      ],
+      "handoff_outputs": [
+        "H_HU_to_HI"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 9,
+      "module": "I",
+      "expected_parents": [
+        "G"
+      ],
+      "expected_parent_objects": [
+        "H_G_to_I"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/I/spec.json",
+            "sha256": "ef572702335c6c533cbceafd662795c24ea8fec38462b2794c76a3a6acf2a39d",
+            "bytes": 1016
+          },
+          {
+            "path": "recipes/I/recipe.json",
+            "sha256": "61c3048ceb4ad6167dfb9b6d8a60d51c5b607b4c2c6ad7e7b4bd13b022a56a34",
+            "bytes": 3854
+          },
+          {
+            "path": "recipes/I/gates.json",
+            "sha256": "f95d44818dfcf4519f00bc026fdd916bbc8e4bcb9e24f4fdbfdd586920d21f5d",
+            "bytes": 462
+          },
+          {
+            "path": "recipes/I/wolfram/I-WL-001.wl",
+            "sha256": "5704712400b385c00a7c83785e5ef624b060a7ff96e8cd892d65af7515cfde02",
+            "bytes": 396
+          },
+          {
+            "path": "recipes/I/wolfram/I-WL-002.wl",
+            "sha256": "90ce68f618e34da84f761f503dcaabe09151bceb259ffdc8a9b6f79790e91add",
+            "bytes": 325
+          }
+        ],
+        "claim_boundary": "Realized RFC background geometry."
+      },
+      "representative_test": {
+        "records": [],
+        "status": "NO_PREBUILT_RESULT",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "transport",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Integrate the internally derived background geometry/clock system.",
+            "template": {
+              "path": "configured_runs/templates/I_background_ode.template.json",
+              "sha256": "92435e1fb6035e10a3dd2ad400f247b7fe0e49d6255db008d0e803fb45cbceb5",
+              "bytes": 1026
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/I_background_ode.bindings.json",
+              "sha256": "2c58f115826a11c3fc8e1544385b3b47d5ae48f89476ba250fee788cd0a3c012",
+              "bytes": 3874
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "metric/background state",
+        "expansion and clock histories",
+        "horizons and distances",
+        "constraint and conservation ledgers",
+        "covariance",
+        "H_I_to_HI"
+      ],
+      "handoff_outputs": [
+        "H_I_to_HI"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 10,
+      "module": "HI",
+      "expected_parents": [
+        "HU",
+        "I"
+      ],
+      "expected_parent_objects": [
+        "H_HU_to_HI",
+        "H_I_to_HI"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/HI/spec.json",
+            "sha256": "9533bf859961ec26cdc69e39fc6febc64ba1d184a6fe89b126aa2b00143bd21a",
+            "bytes": 860
+          },
+          {
+            "path": "recipes/HI/recipe.json",
+            "sha256": "a75977151e79de588728817b6e4871c962192481067c1364fd5d260485f28493",
+            "bytes": 3696
+          },
+          {
+            "path": "recipes/HI/gates.json",
+            "sha256": "c820ec7370f8672b399bfacc90f2fb67136ed4cf1e67c70610bfb05d6adabc43",
+            "bytes": 408
+          },
+          {
+            "path": "recipes/HI/wolfram/HI-WL-001.wl",
+            "sha256": "91221b34350782f28234606d9a3e5e262c66fca733cfa3079d4ace4e5298d419",
+            "bytes": 290
+          },
+          {
+            "path": "recipes/HI/wolfram/HI-WL-002.wl",
+            "sha256": "aa9fa701c86c6b4846a05a7c607091009562defec3a75773821d709e30478acb",
+            "bytes": 334
+          }
+        ],
+        "claim_boundary": "RFC linear transfer realization."
+      },
+      "representative_test": {
+        "records": [],
+        "status": "NO_PREBUILT_RESULT",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "linear_transfer",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Instantiate the frozen transfer operator on the exact realized background.",
+            "template": {
+              "path": "configured_runs/templates/HI_instantiated_transfer.template.json",
+              "sha256": "6f7f5ce798ce5b90af1b5c9354461a2d017d7c441c1fe68c69652448543cc77d",
+              "bytes": 660
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/HI_instantiated_transfer.bindings.json",
+              "sha256": "2ff922586a8a4c53eafa8cfaa6acd22c407e92cca0fdbf3a3494beae2ee7bb2f",
+              "bytes": 2337
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "instantiated transfer system",
+        "mode/eigenstructure",
+        "gauge/frame mapping",
+        "error/covariance propagation",
+        "H_HI_to_J"
+      ],
+      "handoff_outputs": [
+        "H_HI_to_J"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    },
+    {
+      "ordinal": 11,
+      "module": "J",
+      "expected_parents": [
+        "HI"
+      ],
+      "expected_parent_objects": [
+        "H_HI_to_J"
+      ],
+      "source": {
+        "crosswalk_objects": [
+          {
+            "object": "Frozen-source/no-retune architecture",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          },
+          {
+            "object": "Universe dependency and handoff order",
+            "evidence_state": "DESIGN",
+            "classification": "REDERIVE",
+            "source_hashes": [
+              "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+              "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70"
+            ]
+          },
+          {
+            "object": "Local witness, route, gauge/multiroute, event and branch classes",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+            ]
+          },
+          {
+            "object": "No-loss memory and reopening",
+            "evidence_state": "FORMALIZED",
+            "classification": "PRESERVE",
+            "source_hashes": [
+              "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+              "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+              "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+              "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+            ]
+          }
+        ],
+        "exact_sources": [
+          {
+            "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+            "label": "Revised triadic N-body proof",
+            "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+            "label": "Universe architecture and full ledger",
+            "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+            "verified": true
+          },
+          {
+            "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+            "label": "Universe reproducibility metadata candidate",
+            "frozen_path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+            "label": "P29 metadata and reproducibility context",
+            "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+            "verified": true
+          },
+          {
+            "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+            "label": "N-body metadata",
+            "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+            "verified": true
+          },
+          {
+            "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+            "label": "Triadic emergence and theorem architecture",
+            "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+            "verified": true
+          }
+        ],
+        "all_source_bytes_verified": true
+      },
+      "law": {
+        "status": "DESIGN_AND_INTERFACE_SPECIFIED_NOT_PARENT_DRIVEN_EXECUTED",
+        "files": [
+          {
+            "path": "modules/J/spec.json",
+            "sha256": "7c3198e07239f5fbec7fd452ee086492233bd014607edcc162011daac5d814ab",
+            "bytes": 1064
+          },
+          {
+            "path": "recipes/J/recipe.json",
+            "sha256": "fc0d0a507c7ad2617c32105aa31230235bc77e5ffa250002e29db38623d2284b",
+            "bytes": 5295
+          },
+          {
+            "path": "recipes/J/gates.json",
+            "sha256": "cdd11a55e53f60a25e8ce242985a0ff459dc495ab5643983a387a44504b6c5ed",
+            "bytes": 502
+          },
+          {
+            "path": "recipes/J/wolfram/J-WL-001.wl",
+            "sha256": "151748b2f6b71fc558ed03ffa3202eda5fed69eb2c9183c03d2b6e3da1caf061",
+            "bytes": 372
+          },
+          {
+            "path": "recipes/J/wolfram/J-WL-002.wl",
+            "sha256": "12920c07dde75fb72eb155b898861270eaef13781bb144c8526470e373cca4ad",
+            "bytes": 368
+          }
+        ],
+        "claim_boundary": "One realized RFC linear universe and its uncertainty state."
+      },
+      "representative_test": {
+        "records": [
+          {
+            "name": "J_covariance",
+            "classification": "COVARIANCE_SAMPLE_EXECUTION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/J_covariance/manifest.json",
+                "sha256": "41966d4ed7e2bdc5ead280ae82e35028a4c680c0dc3d39f955eac984e70602bf",
+                "bytes": 407
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/J_covariance/frozen_config.json",
+                "sha256": "f543bf727ef401c83e9d75c06e65243e85d92a2cfc9144bca9fe29bb7ddcbd18",
+                "bytes": 395
+              },
+              "environment": {
+                "path": "configured_runs/results/J_covariance/environment.json",
+                "sha256": "e02ce7df1314933b0c640e24ac460fffb025f5eff3bdd44856c7576413051c66",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/J_covariance/result.json",
+                "sha256": "069b066cf349a114d6fe5ad30d148fd0bd8cf35f3072ff9d4b8c1d163e497a3a",
+                "bytes": 970
+              }
+            }
+          },
+          {
+            "name": "J_fourier_field",
+            "classification": "FINITE_VOLUME_GAUSSIAN_FIELD_REALIZATION",
+            "success": true,
+            "declared_hashes_match": true,
+            "scope": "MANUFACTURED_REFERENCE_ONLY_NOT_PARENT_DRIVEN_MODULE_EXECUTION",
+            "files": {
+              "manifest": {
+                "path": "configured_runs/results/J_fourier_field/manifest.json",
+                "sha256": "da446aa72de38a6ab1c5dac99bd62ff6fbae83f774a3eef70996f53d4703a4b5",
+                "bytes": 423
+              },
+              "frozen_config": {
+                "path": "configured_runs/results/J_fourier_field/frozen_config.json",
+                "sha256": "7d9604e67a31400ebc0627dd313f6ed981fa9a5bfd67e5920180403ea6285af9",
+                "bytes": 308
+              },
+              "environment": {
+                "path": "configured_runs/results/J_fourier_field/environment.json",
+                "sha256": "dd0d6463b087215715eac1ed5760ffca34446787bcca2eb7e062a167a6d887b4",
+                "bytes": 260
+              },
+              "result": {
+                "path": "configured_runs/results/J_fourier_field/result.json",
+                "sha256": "ec13f1b634d72f2d7cfd6faa9c77ae0275392484a0fcfa2f49c55741fe2e19af",
+                "bytes": 1778
+              }
+            }
+          }
+        ],
+        "status": "PRESENT_LIMITED",
+        "cannot_satisfy_physical_execution": true
+      },
+      "physical_parent": {
+        "status": "ABSENT",
+        "registry_matches": [],
+        "run_index_matches": []
+      },
+      "solver": {
+        "bindings": [
+          {
+            "solver": "covariance",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Audit and sample the internally derived primordial covariance.",
+            "template": {
+              "path": "configured_runs/templates/J_covariance.template.json",
+              "sha256": "c2ec4d302ffbf2add77f4845ab13f82a7d4a97b983059c8f4f59873fb6dc81eb",
+              "bytes": 625
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/J_covariance.bindings.json",
+              "sha256": "1482960a1594ffa40c52bc3495dbce8121c7b32230588f4162e6d86839cbb751",
+              "bytes": 1963
+            }
+          },
+          {
+            "solver": "fourier_field",
+            "declared_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+            "purpose": "Generate finite-volume fields with a frozen seed and Hermitian reality.",
+            "template": {
+              "path": "configured_runs/templates/J_fourier_field.template.json",
+              "sha256": "faf6bf0dcbf9f79d5fc495522f1ce455df479f489de8c49be064e18788ef1316",
+              "bytes": 564
+            },
+            "binding_sheet": {
+              "path": "configured_runs/binding_sheets/J_fourier_field.bindings.json",
+              "sha256": "7f867c40a878fd17c1ce2a76a4ffac6143d51be386a9b6179da504288ee4ceaf",
+              "bytes": 1559
+            }
+          }
+        ],
+        "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+      },
+      "required_output_objects": [
+        "positive-semidefinite covariance",
+        "linear spectra and growth",
+        "finite-volume fields",
+        "phase/seed provenance",
+        "promotion witnesses",
+        "restartable P_J_to_K"
+      ],
+      "handoff_outputs": [
+        "P_J_to_K"
+      ],
+      "output": {
+        "status": "ABSENT",
+        "module_run_files": [],
+        "registered_artifacts": [],
+        "indexed_runs": []
+      },
+      "restart": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module run/output packet registered"
+      },
+      "covariance": {
+        "status": "ABSENT",
+        "basis": "no parent-driven module output/covariance packet registered"
+      },
+      "independent_reconstruction": {
+        "status": "ABSENT",
+        "basis": "no module run with independent verification registered"
+      },
+      "state_record": {
+        "evidence_state": "DESIGN",
+        "fidelity": "UNSTARTED"
+      },
+      "boundary_status": "BLOCKED_BY_EARLIER_FRONTIER_AND_LOCALLY_UNEXECUTED"
+    }
+  ],
+  "selected_frontier": {
+    "module": "A",
+    "missing_object": "frozen typed prephysical Module A packet H_A_to_B, derived from exact admitted authority bytes and independently reconstructed",
+    "why_earliest": "A has formalized source architecture and a successful finite manufactured kernel check, but no governed Module A run, registered output, restartable H_A_to_B packet, or independent symbolic reconstruction. Therefore B has no admissible exact parent and no later A-J execution can be physical.",
+    "first_physical_event_remains": "Module B Big Implosion, only after A-100 closes H_A_to_B",
+    "authorized_child": "A-100"
+  },
+  "gates": {
+    "no status word hides a missing object": {
+      "result": "PASS",
+      "basis": "Every row separately records law, manufactured test, exact parent, solver binding, output, restart, covariance, and independent reconstruction; manufactured success is explicitly non-physical."
+    },
+    "one frontier selected": {
+      "result": "PASS",
+      "basis": "frontier_count=1; selected=A"
+    },
+    "recovered parents verified": {
+      "result": "PASS",
+      "basis": "All five REC-040 objects rehashed exactly; canonical_parents remains empty; none is used as an A-J physical parent."
+    }
+  },
+  "strongest_supported_claim": "The exact execution frontier is Module A: admitted authority and formal architecture exist, but the frozen typed prephysical handoff H_A_to_B has not been produced or independently reconstructed in 3-RFC.",
+  "strongest_unsupported_claim": "This audit does not execute Module A or B, does not produce a physical universe state, and does not validate any later module or empirical claim."
+}

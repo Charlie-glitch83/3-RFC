@@ -1,10 +1,29 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "status": "COMPLETE",
+  "clean_checkout": true,
+  "exact_export_checkout": true,
+  "restart_check": true,
+  "earliest_change_replay": true,
+  "commands": [
+    "python runs/FRONTIER-050-20260806T142549Z/primary_frontier_audit.py",
+    "python runs/FRONTIER-050-20260806T142549Z/independent_frontier_reconstruction.py"
+  ],
+  "frozen_input_snapshot_sha256": "9cdc3fdb428140ff0af4d7b82d65316fbfef8b7f0097286fbcb221ce8f29c3dc",
+  "input_hashes_unchanged": true,
+  "output_hashes_before": {
+    "audit/PHYSICAL_FRONTIER.json": "f1615e1ebd12fa29466aa84bb0c3e3134c02623a9a999824c56770688f382fdb",
+    "audit/PHYSICAL_FRONTIER.md": "65fd2eb723f7f3d00279307163607b5931e231a19164b1acb0ecc6d523c31758",
+    "runs/FRONTIER-050-20260806T142549Z/INDEPENDENT_FRONTIER_RECONSTRUCTION.json": "8546e71889ac26acfb0b4eb2f785b985e5b62c28694871abe2deca24b7a8862f",
+    "runs/FRONTIER-050-20260806T142549Z/INDEPENDENT_VERIFICATION.md": "9449e913f4e6d8890535f2712c5f900948b48e8fa4367d32927b2b36cc6e9625"
+  },
+  "output_hashes_after": {
+    "audit/PHYSICAL_FRONTIER.json": "f1615e1ebd12fa29466aa84bb0c3e3134c02623a9a999824c56770688f382fdb",
+    "audit/PHYSICAL_FRONTIER.md": "65fd2eb723f7f3d00279307163607b5931e231a19164b1acb0ecc6d523c31758",
+    "runs/FRONTIER-050-20260806T142549Z/INDEPENDENT_FRONTIER_RECONSTRUCTION.json": "8546e71889ac26acfb0b4eb2f785b985e5b62c28694871abe2deca24b7a8862f",
+    "runs/FRONTIER-050-20260806T142549Z/INDEPENDENT_VERIFICATION.md": "9449e913f4e6d8890535f2712c5f900948b48e8fa4367d32927b2b36cc6e9625"
+  },
+  "result": "PASS",
+  "artifact_hashes_match": true,
+  "note": "Replay used a fresh exported GitHub working tree initialized as a clean local Git checkout; no network access or external observational inputs were used."
 }

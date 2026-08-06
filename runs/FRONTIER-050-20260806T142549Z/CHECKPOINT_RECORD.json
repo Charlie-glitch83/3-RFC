@@ -1,7 +1,14 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "checkpoints": [
+    {
+      "name": "pre_execution_frozen",
+      "created_utc": "2026-08-06T14:38:43.046639+00:00",
+      "state_sha256": "9cdc3fdb428140ff0af4d7b82d65316fbfef8b7f0097286fbcb221ce8f29c3dc",
+      "path": "runs/FRONTIER-050-20260806T142549Z/PRE_EXECUTION_SNAPSHOT.json"
+    }
+  ],
+  "restart_contract": "Rerun both frozen audit scripts against the same exact input snapshot; any input hash change requires a new run.",
+  "state_schema": "PRE_EXECUTION_SNAPSHOT.json schema_version 1.0",
   "hash_algorithm": "sha256"
 }
