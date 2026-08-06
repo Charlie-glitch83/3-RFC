@@ -1,4 +1,4 @@
-name: Run SRC-010 startup
+name: Execute SRC-010 admission
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  startup:
+  execute:
     if: github.head_ref == 'agent/src-010-execution'
     runs-on: ubuntu-latest
     steps:
@@ -21,23 +21,23 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Run exact README startup sequence
+      - name: Run exact SRC-010 commands
         shell: bash
         run: |
           set -euo pipefail
-          bash bootstrap.sh
-          bash tools/start_work.sh
-      - name: Commit generated startup state
+          python tools/rfc.py admit-seed
+          python tools/rfc.py doctor
+      - name: Commit exact SRC-010 outputs
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add memory/CURRENT_CONTEXT.md work_packets/ACTIVE_WORK_PACKET.md
+          git add sources memory/SOURCE_REGISTRY.json
           find runs -maxdepth 1 -type d -name 'SRC-010-*' -print0 | xargs -0 -r git add --
           if git diff --cached --quiet; then
-            echo 'No generated startup changes to commit.'
+            echo 'No SRC-010 output changes to commit.'
           else
-            git commit -m 'Prepare SRC-010 governed workspace'
+            git commit -m 'Admit and lock the core RFC source corpus'
             git push origin agent/src-010-execution
           fi
