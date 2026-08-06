@@ -1,4 +1,4 @@
-name: Execute AUTH-020 finalization
+name: Close AUTH-020 and advance
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  finalize:
+  close:
     if: github.head_ref == 'agent/auth-020-execution'
     runs-on: ubuntu-latest
     steps:
@@ -21,59 +21,24 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Execute frozen AUTH-020 verifier
+      - name: Record, close, and advance AUTH-020
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          from pathlib import Path
-          text = Path('.github/workflows/finalize-auth-020.yml').read_text(encoding='utf-8')
-          start = text.index("          python - <<'PY'\n") + len("          python - <<'PY'\n")
-          end = text.index("\n          PY\n", start)
-          lines = text[start:end].splitlines()
-          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
-          Path('/tmp/auth020_finalize.py').write_text(code, encoding='utf-8')
-          PY
-          python /tmp/auth020_finalize.py
-          python - <<'PY'
-          import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-          runs = sorted(Path('runs').glob('AUTH-020-*'))
-          if len(runs) != 1:
-              raise SystemExit('expected exactly one AUTH-020 run')
-          trace_path = runs[0] / 'AUTHORITY_SOURCE_TRACE.json'
-          trace = json.loads(trace_path.read_text(encoding='utf-8'))
-          trace['method'] = 'Independent exact-hash verification of admitted frozen source objects followed by assertion-to-owner mapping; no external target values used.'
-          trace.pop('public_data_declaration', None)
-          trace_path.write_text(json.dumps(trace, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
-          failure_path = Path('memory/FAILURE_LOG.jsonl')
-          fid = 'AUTH-020-FIREWALL-PROTOCOL-WORDING'
-          existing = failure_path.read_text(encoding='utf-8') if failure_path.exists() else ''
-          if fid not in existing:
-              rec = {
-                'failure_id': fid,
-                'run_id': runs[0].name,
-                'gate': 'generation firewall',
-                'category': 'IMPLEMENTATION_DEFECT',
-                'description': 'The mechanical firewall scanner matched protocol wording inside AUTHORITY_SOURCE_TRACE.json even though no external target values were used. The trace wording was normalized without changing sources, definitions, claims, or gates.',
-                'changes_frozen_science': False,
-                'timestamp_utc': datetime.now(timezone.utc).isoformat()
-              }
-              with failure_path.open('a', encoding='utf-8') as f:
-                  f.write(json.dumps(rec, ensure_ascii=False) + '\n')
-          PY
+          python tools/rfc.py record-commit 795bf1c11b7ab67438b9b93b3c267f09d69ebe86 --branch agent/auth-020-execution --note 'Verified AUTH-020 constitution-lock commit, exact changed files, gate evidence, source trace, and closeout'
+          python tools/rfc.py close-run --run-id AUTH-020-20260806T071800Z --result PASS --closeout runs/AUTH-020-20260806T071800Z/CLOSEOUT.md
+          python tools/rfc.py advance --task AUTH-020 --result PASS --evidence runs/AUTH-020-20260806T071800Z/CLOSEOUT.md
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
-      - name: Commit AUTH-020 evidence
+      - name: Commit formal transition and remove temporary runners
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add theory memory STATE.json
-          find runs -maxdepth 1 -type d -name 'AUTH-020-*' -print0 | xargs -0 -r git add --
-          git commit -m 'Lock the enhanced RFC scientific constitution'
+          rm -f .github/workflows/finalize-auth-020.yml .github/workflows/run-auth-020-startup.yml
+          git add -A
+          git commit -m 'Close AUTH-020 and activate source crosswalk'
           git push origin agent/auth-020-execution
