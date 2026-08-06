@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-06T14:07:22.527165+00:00
+Generated: 2026-08-06T14:08:38.045551+00:00
 
 ## Project truth
 
@@ -84,7 +84,6 @@ Inspect old repository branches and libraries, admit only exact valid scientific
 
 ## Recent failures
 
-- BOOT-000-INSTALL-CONTEXT-HASH-DRIFT: Repeated distribution verification treated legitimately regenerated live context as immutable distribution content.
 - BOOT-000-CI-MISSING-LOCKED-DEPENDENCIES: Validation omitted requirements-lock.txt and lacked numpy/networkx.
 - BOOT-000-ACTIVE-QUEUE-TEST-HARDCODE: The deterministic-next test hardcoded BOOT-000 instead of reading active state.
 - SRC-010-FIREWALL-TOKEN-BOUNDARY: The mechanical scanner matched DESI inside design and public_data inside a NONE declaration key.
@@ -92,6 +91,7 @@ Inspect old repository branches and libraries, admit only exact valid scientific
 - AUTH-020-FIREWALL-PROTOCOL-WORDING: The mechanical firewall scanner matched protocol wording inside AUTHORITY_SOURCE_TRACE.json even though no external target values were used. The trace wording was normalized without changing sources, definitions, claims, or gates.
 - XWALK-030-MISSING-PROVENANCE-AND-MD: The prebuilt crosswalk lacked required source hashes and evidence states, and its Markdown deliverable was absent. Provenance and review structure were added without changing original dispositions.
 - REC-040-FIREWALL-AUDIT-WORDING: The mechanical scanner matched external-comparison names and protocol wording in temporary discovery and audit records. Temporary discovery artifacts were removed after incorporation and audit wording normalized without changing source hashes, classifications, gates, or claim scope.
+- REC-040-DISCOVERY-ORDERING: The temporary discovery record was removed before a later replay attempted to consume it. The record is now reconstructed from all exact remote refs before recovery and removed only after incorporation.
 
 ## Resume commands
 

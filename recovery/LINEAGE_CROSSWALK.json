@@ -1,24 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_utc": "2026-08-06T14:07:18.619193+00:00",
+  "generated_utc": "2026-08-06T14:08:34.090086+00:00",
   "repository": "Charlie-glitch83/2-RFC",
   "discovery_branches": [
     {
       "branch": "agent/complete-enhanced-universe",
-      "commit": "3dff7f9626752dc48d6101629c0646935e6c18e0",
+      "commit": "3dff7f9626759500b708f2fd905df01509ca8c9e",
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
-      }
-    },
-    {
-      "branch": "agent/triadic-proof-rebuild",
-      "commit": "3dff7f9626752dc48d6101629c0646935e6c18e0",
-      "validation": {
-        "present": true,
-        "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-7f4h95lu/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-7f4h95lu/validation/validate_repo.py\", line 64, in main\n    require((ROOT / relative).is_file(), f\"missing required file: {relative}\")\n  File \"/tmp/rec040-replay-7f4h95lu/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: missing required file: modules/N/MODULE_N_DETAILED_SCIENTIFIC_REPAIR_PLAN.md\n"
       }
     },
     {
@@ -27,7 +18,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-jhk_kq4j/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-jhk_kq4j/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-replay-jhk_kq4j/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       }
     },
     {
@@ -36,7 +27,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-iuga8mao/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-iuga8mao/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-replay-iuga8mao/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       }
     },
     {
@@ -45,7 +36,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-d41yrun3/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-d41yrun3/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-replay-d41yrun3/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       }
     },
     {
@@ -54,7 +45,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-r8hn6d2h/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-r8hn6d2h/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-replay-r8hn6d2h/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       }
     },
     {
@@ -63,7 +54,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-qiiixi1p/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-qiiixi1p/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-replay-qiiixi1p/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       }
     },
     {
@@ -72,7 +63,16 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Historical validator failure preserved by exact replay."
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-smplj_q1/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-smplj_q1/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-replay-smplj_q1/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
+      }
+    },
+    {
+      "branch": "agent/triadic-proof-rebuild",
+      "commit": "3dff7f9626759500b708f2fd905df01509ca8c9e",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-replay-70iv62xo/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-replay-70iv62xo/validation/validate_repo.py\", line 64, in main\n    require((ROOT / relative).is_file(), f\"missing required file: {relative}\")\n  File \"/tmp/rec040-replay-70iv62xo/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: missing required file: modules/N/MODULE_N_DETAILED_SCIENTIFIC_REPAIR_PLAN.md\n"
       }
     },
     {

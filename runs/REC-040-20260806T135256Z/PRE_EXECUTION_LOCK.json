@@ -1,7 +1,7 @@
 {
   "run_id": "REC-040-20260806T135256Z",
   "status": "FROZEN",
-  "frozen_utc": "2026-08-06T14:07:18.619193+00:00",
+  "frozen_utc": "2026-08-06T14:08:34.090086+00:00",
   "authority_hashes": [
     "c707ce074bd79b2863b98b0a8a0bb5f91a93b9c3f7909e4041bb9940c81a0bae",
     "e82fea7382da9efe80d14c9d17b0c25799589b90b5ed482aba5fce3634658b8a",
@@ -68,7 +68,7 @@
     "replay omitted"
   ],
   "claim_boundary": "Recovers exact Module L source objects only; does not establish physical execution, final recurrence, universe completion, or empirical validity.",
-  "independent_verifier_external survey cgn": "Recheckout exact commit, rebuild tree hashes, compare copies, reread limits, and replay stale validator without trusting its conclusion.",
+  "independent_verifier_design": "Recheckout exact commit, rebuild tree hashes, compare copies, reread limits, and replay stale validator without trusting its conclusion.",
   "allowed_implementation_only_corrections": [
     "path normalization",
     "evidence formatting",

@@ -3,7 +3,7 @@
   "exact_parents": [
     "recovery/CANDIDATE_ASSET_DISPOSITION.json",
     "theory/ENHANCEMENT_CROSSWALK.json",
-    "recovery/discovery/RECOVERY_DISCOVERY.json"
+    "runs/REC-040-20260806T135256Z/RECOVERY_DISCOVERY.json"
   ],
   "admitted_sources": [
     {
@@ -106,5 +106,5 @@
   ],
   "urls": [],
   "constants": [],
-  "external_input_declaration": "NONE"
+  "public_data_declaration": "NONE"
 }

@@ -1,12 +1,12 @@
 {
   "run_id": "REC-040-20260806T135256Z",
   "status": "FINAL",
-  "finalized_utc": "2026-08-06T14:07:18.619193+00:00",
+  "finalized_utc": "2026-08-06T14:08:34.090086+00:00",
   "outputs": [
     {
       "path": "recovery/LINEAGE_CROSSWALK.json",
-      "sha256": "0a64753d8eee1e6367a27dd1b994f4e01bfb9622b76d8dbd0f4c893d993abab0",
-      "bytes": 64452
+      "sha256": "e1a6eccf9d75c2d899ca9e98497d8956f42f14a8a27ad752a931511af152b242",
+      "bytes": 67864
     },
     {
       "path": "recovery/ADMITTED_ASSET_MANIFEST.json",
@@ -20,7 +20,7 @@
     },
     {
       "path": "runs/REC-040-20260806T135256Z/GATE_RESULTS.json",
-      "sha256": "e8ca8342a1b3cfacba5c5a6c7b4b9c622f73f806ff9de2bc0a16805552dc3ea8",
+      "sha256": "c6f0c9d3437f7b403e1d9f86b3601e7ba0e166f6c9170ebb9447e479fed24a93",
       "bytes": 1170
     },
     {
@@ -64,6 +64,6 @@
       "bytes": 2417
     }
   ],
-  "tree_sha256": "45412f8dda481cc40b03d9de08a0135721f8dae32fd1557349ca4a87ebec1faf",
+  "tree_sha256": "e7a7fa0c9420c64756dd94a96b7a06d941b009ff257a190ed646319cf0e30641",
   "note": "Manifest excludes itself."
 }
