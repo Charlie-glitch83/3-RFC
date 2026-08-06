@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "classification": "UNBOUND_EXECUTION_TEMPLATE",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "reaction_network",
+  "model": {
+    "species": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "stoichiometry": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "rate_expressions": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "parameters": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "invariants": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__"
+  },
+  "initial_state": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+  "t_span": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+  "method": "BDF",
+  "rtol": 1e-09,
+  "atol": 1e-12,
+  "max_step": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+  "positivity_tolerance": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+  "invariant_tolerance": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__"
+}

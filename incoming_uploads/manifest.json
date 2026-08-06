@@ -1,9 +1,9 @@
 {
-  "solver": "nbody",
-  "generation_mode": "GENERATION_SEALED",
-  "config_sha256": "2e642897fbc33d7a2a8c5923564c77dc72ff5fab95f202a5e39f796203ccf6af",
-  "result_sha256": "5171d4376961cf35581a67c17cc4bb1d9a2260edfeec56d74ffa7b8eacaf56e8",
-  "environment_sha256": "f85add1b8093128e7c3a6d71786294e61f64559b5d97a545277247f403bde8bd",
+  "solver": "gaussian_comparison",
+  "generation_mode": "MODULE_P_PUBLIC_COMPARISON",
+  "config_sha256": "0fa0dc2f45201a211b57480aab9796032fca69ad5d89de4e3c002c74b4c9a49a",
+  "result_sha256": "ffee2cd7cc8f28556266e91a3414796775be37beebf938c99c9c54cbf5fbda32",
+  "environment_sha256": "e87ecbf7b472477fcba71a94735c7ea839ff0eb7409279fdfebdb720bb93858d",
   "success": true,
-  "classification": "PAIRWISE_LEAPFROG_EXECUTION"
+  "classification": "READ_ONLY_GAUSSIAN_COMPARISON"
 }

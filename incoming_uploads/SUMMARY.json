@@ -1,0 +1,143 @@
+{
+  "classification": "MANUFACTURED_CONFIGURED_SOLVER_MATRIX",
+  "overall": "PASS",
+  "example_count": 17,
+  "results": [
+    {
+      "example": "A_triad_kernel.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "FINITE_TRIAD_KERNEL_EXECUTION",
+      "manifest": "configured_runs/results/A_triad_kernel/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "B_big_implosion.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "BIG_IMPLOSION_OPERATOR_EXECUTION",
+      "manifest": "configured_runs/results/B_big_implosion/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "C_spectral_model.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "SPECTRAL_MODEL_AUDIT",
+      "manifest": "configured_runs/results/C_spectral_model/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "D_transport.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "TRANSPORT_ODE_EXECUTION",
+      "manifest": "configured_runs/results/D_transport/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "E_reaction_network.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "REACTION_NETWORK_EXECUTION",
+      "manifest": "configured_runs/results/E_reaction_network/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "G_visibility.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "VISIBILITY_KERNEL_EXECUTION",
+      "manifest": "configured_runs/results/G_visibility/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "HU_linear_transfer.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "LINEAR_TRANSFER_EXECUTION",
+      "manifest": "configured_runs/results/HU_linear_transfer/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "J_covariance.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "COVARIANCE_SAMPLE_EXECUTION",
+      "manifest": "configured_runs/results/J_covariance/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "J_fourier_field.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "FINITE_VOLUME_GAUSSIAN_FIELD_REALIZATION",
+      "manifest": "configured_runs/results/J_fourier_field/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "KLM_recurrence.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "FIXED_POINT",
+      "manifest": "configured_runs/results/KLM_recurrence/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "K_nbody.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "PAIRWISE_LEAPFROG_EXECUTION",
+      "manifest": "configured_runs/results/K_nbody/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "K_ray_bundle.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "LINEARIZED_RAY_JACOBI_PROPAGATION",
+      "manifest": "configured_runs/results/K_ray_bundle/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "L_finite_volume.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "PERIODIC_FINITE_VOLUME_UPDATE",
+      "manifest": "configured_runs/results/L_finite_volume/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "N_global_ledger.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "GLOBAL_CONSERVATION_LEDGER_AUDIT",
+      "manifest": "configured_runs/results/N_global_ledger/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "N_synthetic_observation.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "SYNTHETIC_OBSERVATION_GENERATION",
+      "manifest": "configured_runs/results/N_synthetic_observation/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "O_freeze_packet.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "CONTENT_ADDRESSED_UNIVERSE_FREEZE",
+      "manifest": "configured_runs/results/O_freeze_packet/manifest.json",
+      "stderr": ""
+    },
+    {
+      "example": "P_gaussian_comparison_synthetic.json",
+      "returncode": 0,
+      "success": true,
+      "classification": "READ_ONLY_GAUSSIAN_COMPARISON",
+      "manifest": "configured_runs/results/P_gaussian_comparison_synthetic/manifest.json",
+      "stderr": ""
+    }
+  ]
+}

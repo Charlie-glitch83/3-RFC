@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "classification": "UNBOUND_EXECUTION_TEMPLATE",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "ray_bundle",
+  "model": {
+    "screen_tensors": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "distance_weights": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "initial_jacobi": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "finite_tolerance": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__"
+  }
+}

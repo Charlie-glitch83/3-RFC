@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "classification": "UNBOUND_EXECUTION_TEMPLATE",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "freeze_packet",
+  "model": {
+    "root": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "required_relative_paths": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__"
+  }
+}
