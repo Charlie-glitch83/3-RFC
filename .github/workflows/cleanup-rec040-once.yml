@@ -1,0 +1,27 @@
+name: Cleanup REC-040 temporary branch once
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Delete temporary branch and self-remove
+        shell: bash
+        run: |
+          set -euo pipefail
+          git push origin --delete agent/rec-040-execution || true
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm -f .github/workflows/cleanup-rec040-once.yml .github/rec040-cleanup-trigger.txt
+          git add -A
+          git commit -m 'Remove temporary REC-040 execution artifacts'
+          git push origin main
