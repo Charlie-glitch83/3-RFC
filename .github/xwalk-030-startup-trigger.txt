@@ -1,1 +1,2 @@
 Trigger the installed one-use XWALK-030 finalizer.
+Run the frozen finalization workflow after the governed startup commit.
