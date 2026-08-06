@@ -1,0 +1,89 @@
+{
+  "schema_version": "2.0",
+  "repository": "Charlie-glitch83/2-RFC",
+  "branches": [
+    {
+      "branch": "agent/complete-enhanced-universe",
+      "commit": "3dff7f9626752dc48d6101629c0646935e6c18e0",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "agent/triadic-proof-rebuild",
+      "commit": "3dff7f9626752dc48d6101629c0646935e6c18e0",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "agent/module-m-repair-41",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "agent/module-m-repair-41-clean",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "agent/module-m-repair-41-corrected",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "agent/module-o-repair-41",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "agent/module-p-repair-41",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "agent/module-p-repair-41-clean",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "validation": {
+        "present": true,
+        "returncode": 1,
+        "output": "Historical validator failure preserved by exact replay."
+      }
+    },
+    {
+      "branch": "main",
+      "commit": "ff835652f035119f4d0d806957bf92227ae18ab5",
+      "validation": {
+        "present": false,
+        "returncode": null,
+        "output": ""
+      }
+    }
+  ],
+  "global_candidates": [],
+  "admission_status": "DISCOVERY_RECONSTRUCTED_FROM_VERIFIED_REFS"
+}

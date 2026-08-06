@@ -8,7 +8,7 @@ Inspect old repository branches and libraries, admit only exact valid scientific
 
 1. Fetch candidate objects from 2-RFC by exact commit and path.
 2. Hash, replay, and independently inspect each object.
-3. Do not import an old PASS label, state file, numerical output, or public-data-contaminated artifact as authority.
+3. Do not import an old PASS label, state file, numerical output, or external-target-contaminated artifact as authority.
 4. Treat repaired Module L as a recovery candidate at its exact verified scope only.
 5. Inspect Charlie-glitch83/2-RFC and known lineages.
 6. Verify exact commits and files.
@@ -33,7 +33,7 @@ python tools/director.py doctor
 
 - exact commit/file hashes
 - no old PASS auto-promoted
-- no public-data contamination
+- no external-target influence
 - replay evidence
 
 ## Hard stops

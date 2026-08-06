@@ -1,7 +1,7 @@
 {
   "run_id": "REC-040-20260806T135256Z",
   "status": "FINAL",
-  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "operating_system": "Linux-6.17.0-1021-azure-x86_64-with-glibc2.39",
   "hardware": {},
   "software": [
     "Python 3.11.15",

@@ -33,7 +33,7 @@
 
 ## Mandatory gates and falsifiers
 
-## Independent verifier design
+## Independent verifier external survey cgn
 
 ## Allowed implementation-only corrective scope
 
