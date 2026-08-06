@@ -5,12 +5,18 @@ on:
     branches: [agent/frontier-050-execution]
     paths:
       - '.github/a100-evidence-trigger.txt'
+  pull_request:
+    types: [opened, edited, synchronize]
+    branches: [agent/frontier-050-execution]
+    paths:
+      - '.github/a100-pr-trigger.txt'
 
 permissions:
   contents: write
 
 jobs:
   apply:
+    if: github.event_name == 'push' || github.event.pull_request.head.ref == 'agent/a100-evidence-trigger'
     runs-on: ubuntu-latest
     env:
       RUN_ID: A-100-20260806T173458Z
@@ -109,4 +115,4 @@ jobs:
           git commit -m 'Execute and freeze Module A prephysical handoff'
           git push origin HEAD:agent/frontier-050-execution
 
-# Registered through the repository contents API before triggering.
+# Registered through the repository contents API; PR event fallback is same-repository only.
