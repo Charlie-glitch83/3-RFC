@@ -1,8 +1,39 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "SRC-010-20260806T065702Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-06T07:06:54.024110+00:00",
+  "outputs": [
+    {
+      "path": "sources/SOURCE_MANIFEST.json",
+      "sha256": "b4d68b14ed8226d4b4faf8dc42a5e83f4b6f15826bde2276709258b3ff7f42d5",
+      "bytes": 16475
+    },
+    {
+      "path": "memory/SOURCE_REGISTRY.json",
+      "sha256": "cae9bb3383edc8ec40ef6877b593abb7d0a28dab35b07ba85e2833301f79a63b",
+      "bytes": 15978
+    },
+    {
+      "path": "runs/SRC-010-20260806T065702Z/GATE_RESULTS.json",
+      "sha256": "6a0ed53920169bb3e64b84470efca165cbef0dec0a8b252ab11f2756715b2dfb",
+      "bytes": 1015
+    },
+    {
+      "path": "runs/SRC-010-20260806T065702Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "c7b964e32946f0a01cb07244048a06a9c6b4b630b2fb8052fca1280953c4112f",
+      "bytes": 1051
+    },
+    {
+      "path": "runs/SRC-010-20260806T065702Z/REPLAY_RECORD.json",
+      "sha256": "c05b37bf0a168749a09ec92731cb048c7a1a07b810d03333d1cb3f6bed94c462",
+      "bytes": 340
+    },
+    {
+      "path": "runs/SRC-010-20260806T065702Z/CLOSEOUT.md",
+      "sha256": "66b119198f3cc4c4fce498f16e30362d786498625ac3d69217d768cf8a42996a",
+      "bytes": 2025
+    }
+  ],
+  "tree_sha256": "52145db5cfc3eca33097c7b43c983d40f73cc68dba081ab09fbda4a99de06a20",
+  "note": "Manifest excludes itself from tree hash."
 }

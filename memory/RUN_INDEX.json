@@ -1,4 +1,13 @@
 {
   "schema_version": "1.0",
-  "runs": []
+  "runs": [
+    {
+      "run_id": "SRC-010-20260806T065702Z",
+      "module": "SOURCES",
+      "task_id": "SRC-010",
+      "status": "CREATED",
+      "path": "runs/SRC-010-20260806T065702Z",
+      "created_utc": "2026-08-06T06:57:02.685341+00:00"
+    }
+  ]
 }

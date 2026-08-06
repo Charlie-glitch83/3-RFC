@@ -1,7 +1,37 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
+  "run_id": "SRC-010-20260806T065702Z",
+  "overall": "PASS",
+  "gates": [
+    {
+      "gate": "all core bytes resolvable",
+      "result": "PASS",
+      "evidence": "five reading-order 1-5 seed and frozen hashes matched"
+    },
+    {
+      "gate": "hashes match",
+      "result": "PASS",
+      "evidence": "29 seed, manifest, registry, and frozen records matched"
+    },
+    {
+      "gate": "authority class explicit",
+      "result": "PASS",
+      "evidence": "every record matched the frozen seed classification"
+    },
+    {
+      "gate": "no summary used as parent",
+      "result": "PASS",
+      "evidence": "analysis records remain INTERPRETIVE_SYNTHESIS; only declared core records are canonical"
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "source_count",
+      "value": 29
+    },
+    {
+      "name": "reconstruction_sha256",
+      "value": "f13f97f0ff1380dcd924447a32610bf4020850fd326009209dac0a238265f030"
+    }
+  ],
   "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
 }
