@@ -1,0 +1,30 @@
+{
+  "module": "K",
+  "componentwise": [
+    {
+      "gate": "force/field accuracy",
+      "required": "PASS"
+    },
+    {
+      "gate": "constraint closure",
+      "required": "PASS"
+    },
+    {
+      "gate": "mass-energy conservation",
+      "required": "PASS"
+    },
+    {
+      "gate": "resolution/volume convergence",
+      "required": "PASS"
+    },
+    {
+      "gate": "restart/replay",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent critical implementation",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

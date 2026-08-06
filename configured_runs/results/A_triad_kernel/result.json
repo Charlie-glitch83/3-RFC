@@ -1,0 +1,93 @@
+{
+  "success": true,
+  "classification": "FINITE_TRIAD_KERNEL_EXECUTION",
+  "depth": 6,
+  "raw_weights": [
+    0.2887023635081455,
+    0.08334905469518937,
+    0.024063069086670868,
+    0.006947064918581672,
+    0.0020056340614390505,
+    0.0005790312938698951
+  ],
+  "normalized_weights": [
+    0.7117097387027154,
+    0.20547228369523854,
+    0.05932033393823157,
+    0.017125920612059913,
+    0.004944293757954561,
+    0.0014274292938000529
+  ],
+  "normalization_error": 1.1102230246251565e-16,
+  "constituents": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "directed_lanes": [
+    [
+      "a",
+      "b"
+    ],
+    [
+      "a",
+      "c"
+    ],
+    [
+      "a",
+      "d"
+    ],
+    [
+      "b",
+      "a"
+    ],
+    [
+      "b",
+      "c"
+    ],
+    [
+      "b",
+      "d"
+    ],
+    [
+      "c",
+      "a"
+    ],
+    [
+      "c",
+      "b"
+    ],
+    [
+      "c",
+      "d"
+    ],
+    [
+      "d",
+      "a"
+    ],
+    [
+      "d",
+      "b"
+    ],
+    [
+      "d",
+      "c"
+    ]
+  ],
+  "lane_count": 12,
+  "expected_lane_count": 12,
+  "next_constituent_lane_increment": 8,
+  "kernel_state": [
+    0.7302630886085753,
+    0.227542498065253,
+    0.06569205698998618
+  ],
+  "pass_flags": {
+    "normalization": true,
+    "no_self_lanes": true,
+    "lane_count": true,
+    "lane_uniqueness": true,
+    "two_n_increment": true
+  }
+}

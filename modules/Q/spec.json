@@ -1,0 +1,31 @@
+{
+  "module": "Q",
+  "title": "Terminal Evolution, Qualified Memory, and Next-Cycle Conditioning",
+  "parents": [
+    "O"
+  ],
+  "children": [],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Continue the frozen universe physically to terminal evolution, classify collapse/rebirth behavior, and derive the qualified memory packet for a possible next effective CIF without information from P.",
+  "required_outputs": [
+    "terminal physical trajectory",
+    "collapse/rebirth event and branch ledger",
+    "qualified memory packet M_rec",
+    "next-cycle source conditions or obstruction",
+    "independent recurrence classification"
+  ],
+  "gates": [
+    "no P data flow",
+    "conservation and no-loss",
+    "terminal numerical convergence",
+    "memory does not impersonate source",
+    "independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "using empirical comparison to choose terminal branch",
+    "setting RFL_s equal to CIF_s+1",
+    "forcing rebirth"
+  ],
+  "claim_boundary": "Terminal RFC continuation and next-cycle conditioning at executed scope.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

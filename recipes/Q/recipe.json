@@ -1,0 +1,85 @@
+{
+  "schema_version": "2.0",
+  "module": "Q",
+  "title": "Terminal Evolution, Qualified Memory, and Next-Cycle Conditioning",
+  "parents": [
+    "O"
+  ],
+  "children": [],
+  "objective": "Continue the frozen universe physically to terminal evolution, classify collapse/rebirth behavior, and derive the qualified memory packet for a possible next effective CIF without information from P.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "terminal physical possibilities from O",
+    "QV": "collapse/continuation/rebirth dynamics",
+    "RFL": "qualified memory and next-cycle condition"
+  },
+  "derive_exactly": [
+    "terminal evolution law from frozen O only",
+    "collapse/rebirth event and branch ledger",
+    "qualified memory M_rec with no-loss and source distinction",
+    "next-cycle conditions, branch family, obstruction or nonconvergence"
+  ],
+  "wolfram_calls": [
+    "Q-WL-001",
+    "Q-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module Q --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module Q --solver affine_recurrence --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/Q_terminal_recurrence.template.json --binding-sheet <RUN_DIR>/binding_sheets/Q_terminal_recurrence.bindings.json --output <RUN_DIR>/solver_configs/Q_terminal_recurrence.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/Q_terminal_recurrence.json --output-dir <RUN_DIR>/solver_outputs/affine_recurrence"
+  ],
+  "numerical_execution": [
+    "terminal convergence/branch exploration",
+    "memory reopening and conservation",
+    "independent recurrence classification"
+  ],
+  "required_outputs": [
+    "terminal physical trajectory",
+    "collapse/rebirth event and branch ledger",
+    "qualified memory packet M_rec",
+    "next-cycle source conditions or obstruction",
+    "independent recurrence classification"
+  ],
+  "mandatory_gates": [
+    "no P data flow",
+    "conservation and no-loss",
+    "terminal numerical convergence",
+    "memory does not impersonate source",
+    "independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "using empirical comparison to choose terminal branch",
+    "setting RFL_s equal to CIF_s+1",
+    "forcing rebirth"
+  ],
+  "hard_stop_conditions": [
+    "P data are read",
+    "RFL memory is equated with next CIF",
+    "rebirth is forced"
+  ],
+  "claim_boundary": "Terminal RFC continuation and next-cycle conditioning at executed scope.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "affine_recurrence",
+      "template": "configured_runs/templates/Q_terminal_recurrence.template.json",
+      "purpose": "Classify isolated terminal evolution and next-cycle conditioning.",
+      "copy_command": "python tools/director.py solver-copy --module Q --solver affine_recurrence --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/Q_terminal_recurrence.json --output-dir <RUN_DIR>/solver_outputs/affine_recurrence",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/Q_terminal_recurrence.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/Q_terminal_recurrence.template.json --binding-sheet <RUN_DIR>/binding_sheets/Q_terminal_recurrence.bindings.json --output <RUN_DIR>/solver_configs/Q_terminal_recurrence.json"
+    }
+  ]
+}

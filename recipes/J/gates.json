@@ -1,0 +1,26 @@
+{
+  "module": "J",
+  "componentwise": [
+    {
+      "gate": "covariance PSD",
+      "required": "PASS"
+    },
+    {
+      "gate": "reality/Hermitian conditions",
+      "required": "PASS"
+    },
+    {
+      "gate": "resolution and volume tests",
+      "required": "PASS"
+    },
+    {
+      "gate": "no public initial-condition file",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent field reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

@@ -1,0 +1,33 @@
+{
+  "module": "P",
+  "title": "Blind Empirical Comparison",
+  "parents": [
+    "O"
+  ],
+  "children": [],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Ingest public evidence only after O, apply preregistered observation operators/statistics, and classify survival, tension, or falsification without retuning.",
+  "required_outputs": [
+    "version-locked public datasets",
+    "preregistered statistics",
+    "covariance/selection/window treatment",
+    "multi-probe residuals and likelihoods",
+    "baseline comparators",
+    "tension/falsifier ledger",
+    "blind validation report"
+  ],
+  "gates": [
+    "O hash unchanged",
+    "no target deletion",
+    "no covariance inflation",
+    "no branch/seed/tolerance changes",
+    "reproducible independent comparison"
+  ],
+  "forbidden_shortcuts": [
+    "feeding residuals back to generation",
+    "post-hoc statistic selection",
+    "calling internal closure validation"
+  ],
+  "claim_boundary": "Empirical survival, tension, or falsification of the frozen universe at tested scope.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

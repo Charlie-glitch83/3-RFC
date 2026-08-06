@@ -1,0 +1,33 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "visibility",
+  "model": {
+    "time": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "opacity_rate": [
+      3.0,
+      2.5,
+      2.0,
+      1.4,
+      0.9,
+      0.5,
+      0.25,
+      0.12,
+      0.05,
+      0.02,
+      0.005
+    ],
+    "normalization_tolerance": 1e-12
+  }
+}

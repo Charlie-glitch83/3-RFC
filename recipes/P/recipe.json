@@ -1,0 +1,87 @@
+{
+  "schema_version": "2.0",
+  "module": "P",
+  "title": "Blind Empirical Comparison",
+  "parents": [
+    "O"
+  ],
+  "children": [],
+  "objective": "Ingest public evidence only after O, apply preregistered observation operators/statistics, and classify survival, tension, or falsification without retuning.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "preregistered public comparison space",
+    "QV": "read-only statistics and falsifiers",
+    "RFL": "empirical result ledger"
+  },
+  "derive_exactly": [
+    "version-locked datasets only after O",
+    "preregistered observation operators/statistics/covariance",
+    "multi-probe survival/tension/falsification classification",
+    "baseline comparisons without retuning"
+  ],
+  "wolfram_calls": [
+    "P-WL-001",
+    "P-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module P --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module P --solver gaussian_comparison --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/P_gaussian_comparison.template.json --binding-sheet <RUN_DIR>/binding_sheets/P_gaussian_comparison.bindings.json --output <RUN_DIR>/solver_configs/P_gaussian_comparison.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/P_gaussian_comparison.json --output-dir <RUN_DIR>/solver_outputs/gaussian_comparison"
+  ],
+  "numerical_execution": [
+    "reproduce statistics independently",
+    "selection/window/covariance checks",
+    "verify O hash unchanged"
+  ],
+  "required_outputs": [
+    "version-locked public datasets",
+    "preregistered statistics",
+    "covariance/selection/window treatment",
+    "multi-probe residuals and likelihoods",
+    "baseline comparators",
+    "tension/falsifier ledger",
+    "blind validation report"
+  ],
+  "mandatory_gates": [
+    "O hash unchanged",
+    "no target deletion",
+    "no covariance inflation",
+    "no branch/seed/tolerance changes",
+    "reproducible independent comparison"
+  ],
+  "forbidden_shortcuts": [
+    "feeding residuals back to generation",
+    "post-hoc statistic selection",
+    "calling internal closure validation"
+  ],
+  "hard_stop_conditions": [
+    "target or statistic deleted post-reveal",
+    "covariance inflated",
+    "any information flows back to O or Q"
+  ],
+  "claim_boundary": "Empirical survival, tension, or falsification of the frozen universe at tested scope.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "gaussian_comparison",
+      "template": "configured_runs/templates/P_gaussian_comparison.template.json",
+      "purpose": "Perform read-only comparison after the O freeze.",
+      "copy_command": "python tools/director.py solver-copy --module P --solver gaussian_comparison --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/P_gaussian_comparison.json --output-dir <RUN_DIR>/solver_outputs/gaussian_comparison",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/P_gaussian_comparison.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/P_gaussian_comparison.template.json --binding-sheet <RUN_DIR>/binding_sheets/P_gaussian_comparison.bindings.json --output <RUN_DIR>/solver_configs/P_gaussian_comparison.json"
+    }
+  ]
+}

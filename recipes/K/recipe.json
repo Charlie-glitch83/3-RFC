@@ -1,0 +1,105 @@
+{
+  "schema_version": "2.0",
+  "module": "K",
+  "title": "Nonlinear Relational Gravity, Structures, Metric, and Lightcones",
+  "parents": [
+    "J"
+  ],
+  "children": [
+    "L",
+    "KLM",
+    "N"
+  ],
+  "objective": "Evolve the realized fields into nonlinear structure while preserving relativistic/metric, route, event, branch, conservation, lightcone, and lensing truth.",
+  "nbody_mode": "DIRECT_MANY_BODY_ACTIVE",
+  "triadic_descent": {
+    "CIF": "nonlinear relational configurations",
+    "QV": "gravitational/metric evolution, events and mergers",
+    "RFL": "structures, metric, lightcones and lensing memory"
+  },
+  "derive_exactly": [
+    "nonlinear gravity/metric law from J and enhanced relational kernel",
+    "force/field and constraint structure",
+    "event/merger/branch handling",
+    "metric, Weyl, lightcone, ray/Jacobi and lensing truth"
+  ],
+  "wolfram_calls": [
+    "K-WL-001",
+    "K-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module K --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module K --solver nbody --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/K_nbody.template.json --binding-sheet <RUN_DIR>/binding_sheets/K_nbody.bindings.json --output <RUN_DIR>/solver_configs/K_nbody.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/K_nbody.json --output-dir <RUN_DIR>/solver_outputs/nbody",
+    "python tools/director.py solver-copy --module K --solver ray_bundle --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/K_ray_bundle.template.json --binding-sheet <RUN_DIR>/binding_sheets/K_ray_bundle.bindings.json --output <RUN_DIR>/solver_configs/K_ray_bundle.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/K_ray_bundle.json --output-dir <RUN_DIR>/solver_outputs/ray_bundle"
+  ],
+  "numerical_execution": [
+    "force and constraint accuracy",
+    "resolution/volume and integrator convergence",
+    "independent critical implementation and restart"
+  ],
+  "required_outputs": [
+    "particle/field nonlinear state",
+    "halos and structures",
+    "metric and Weyl products",
+    "lightcones",
+    "ray/Jacobi/lensing products",
+    "merger/event trees",
+    "return interface to L and KLM"
+  ],
+  "mandatory_gates": [
+    "force/field accuracy",
+    "constraint closure",
+    "mass-energy conservation",
+    "resolution/volume convergence",
+    "restart/replay",
+    "independent critical implementation"
+  ],
+  "forbidden_shortcuts": [
+    "gravity-only toy labeled hyper-realistic",
+    "dropping metric/lightcone truth",
+    "tuning initial phases"
+  ],
+  "hard_stop_conditions": [
+    "gravity-only toy labeled hyper-realistic",
+    "metric/lightcone/lensing products omitted",
+    "initial phases tuned"
+  ],
+  "claim_boundary": "Nonlinear RFC gravitational universe at stated fidelity.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "nbody",
+      "template": "configured_runs/templates/K_nbody.template.json",
+      "purpose": "Execute the active many-body gravity specialization with explicit coupling and units.",
+      "copy_command": "python tools/director.py solver-copy --module K --solver nbody --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/K_nbody.json --output-dir <RUN_DIR>/solver_outputs/nbody",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/K_nbody.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/K_nbody.template.json --binding-sheet <RUN_DIR>/binding_sheets/K_nbody.bindings.json --output <RUN_DIR>/solver_configs/K_nbody.json"
+    },
+    {
+      "solver": "ray_bundle",
+      "template": "configured_runs/templates/K_ray_bundle.template.json",
+      "purpose": "Propagate metric/lensing truth through frozen ray/Jacobi screens.",
+      "copy_command": "python tools/director.py solver-copy --module K --solver ray_bundle --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/K_ray_bundle.json --output-dir <RUN_DIR>/solver_outputs/ray_bundle",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/K_ray_bundle.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/K_ray_bundle.template.json --binding-sheet <RUN_DIR>/binding_sheets/K_ray_bundle.bindings.json --output <RUN_DIR>/solver_configs/K_ray_bundle.json"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "module": "L",
+  "title": "Baryonic and Stellar Universe",
+  "parents": [
+    "K"
+  ],
+  "children": [
+    "M",
+    "KLM",
+    "N"
+  ],
+  "nbody_mode": "DIRECT_MANY_BODY_ACTIVE",
+  "objective": "Execute hydro/MHD, radiation, thermochemistry, turbulence, collapse, generated stellar birth, stellar/binary populations, feedback, remnants, accretion, cosmic rays, and radiation sources.",
+  "required_outputs": [
+    "gas/MHD/radiation state",
+    "cloud/core/collapse witnesses",
+    "generated stellar birth measure",
+    "stellar/binary/population histories",
+    "feedback/remnant/accretion state",
+    "L_to_M and L_to_K returns"
+  ],
+  "gates": [
+    "mass/momentum/energy/species conservation",
+    "resolution and subgrid convergence",
+    "feedback ownership",
+    "uncertainty/covariance",
+    "replay locality",
+    "independent implementation"
+  ],
+  "forbidden_shortcuts": [
+    "imported IMF as unexplained primitive",
+    "calibrating star formation to public scaling laws",
+    "promoting the old representative first pass to physical L without exact parent execution"
+  ],
+  "claim_boundary": "Physically executed RFC baryonic and stellar state.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md",
+  "return_inputs": [
+    "KLM"
+  ]
+}

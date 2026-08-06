@@ -1,0 +1,38 @@
+{
+  "module": "N",
+  "title": "Manifested Observer-Ready Universe",
+  "parents": [
+    "K",
+    "L",
+    "M",
+    "KLM"
+  ],
+  "children": [
+    "O"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Prove and construct that all executed sectors coexist in one compatible causal, conservation-bearing universe and generate truth-level observer interfaces.",
+  "required_outputs": [
+    "single universe identity",
+    "cross-sector causal graph",
+    "truth lightcones/maps/spectra/signals/catalogues",
+    "multimessenger/transient products",
+    "environment and observer-record interfaces",
+    "global uncertainty/covariance",
+    "complete ancestry to the triad"
+  ],
+  "gates": [
+    "no directory-merge substitution",
+    "cross-domain compatibility",
+    "global conservation",
+    "lineage completeness",
+    "synthetic observation closure",
+    "independent end-to-end reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "assembling incompatible module snapshots",
+    "calling formal N law a physical universe"
+  ],
+  "claim_boundary": "One manifested RFC universe, not yet frozen or empirically validated.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

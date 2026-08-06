@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "classification": "SYNTHETIC_OBSERVATION_GENERATION",
+  "truth_hash": "bceeff7c6a3ce9eb59d0382c979b68f422f8f0cd2c295b6eb5edb15006d57b48",
+  "response_hash": "a2f2ff97234ea667df6c3542f03d3a6a9251de72e87a550ff8b2b6f85f96a8e5",
+  "noiseless_observable": [
+    1.12,
+    0.19999999999999998,
+    0.009999999999999995
+  ],
+  "synthetic_observable": [
+    1.204822696973824,
+    0.272601820061835,
+    0.12467444100212392
+  ],
+  "noise": {
+    "seed": 2026080502,
+    "draw": [
+      0.08482269697382383,
+      0.072601820061835,
+      0.11467444100212393
+    ],
+    "covariance_audit": {
+      "shape": [
+        3,
+        3
+      ],
+      "symmetry_error": 0.0,
+      "symmetric": true,
+      "eigenvalues": [
+        0.009608090813200222,
+        0.014833178582081833,
+        0.020558730604717947
+      ],
+      "minimum_eigenvalue": 0.009608090813200222,
+      "positive_semidefinite": true,
+      "positive_definite": true,
+      "tolerance": 1e-12
+    }
+  }
+}

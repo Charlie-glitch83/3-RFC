@@ -1,0 +1,9 @@
+{
+  "solver": "finite_volume",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "8de8c4d7183e32cc8b50d35eeaac0b0a578f02c630aea7cabf92ef4f7150fe6f",
+  "result_sha256": "160df6991b6ba91037598850cdc266e2ce5d83a08b9247e40f0402bfc8b8a996",
+  "environment_sha256": "4ad4e0a0a36cb23eaf198c1d7b7ad97b1a4b951d40a1516c7242fbddff9db4f3",
+  "success": true,
+  "classification": "PERIODIC_FINITE_VOLUME_UPDATE"
+}

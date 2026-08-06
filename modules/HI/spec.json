@@ -1,0 +1,31 @@
+{
+  "module": "HI",
+  "title": "Transfer Operator Instantiation",
+  "parents": [
+    "HU",
+    "I"
+  ],
+  "children": [
+    "J"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Instantiate the frozen universal transfer operator on the realized background without changing either parent's law.",
+  "required_outputs": [
+    "instantiated transfer system",
+    "mode/eigenstructure",
+    "gauge/frame mapping",
+    "error/covariance propagation",
+    "H_HI_to_J"
+  ],
+  "gates": [
+    "exact parent hashes",
+    "no retune of HU or I",
+    "operator-domain compatibility",
+    "independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "refitting transfer coefficients after seeing spectra"
+  ],
+  "claim_boundary": "RFC linear transfer realization.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

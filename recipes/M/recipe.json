@@ -1,0 +1,102 @@
+{
+  "schema_version": "2.0",
+  "module": "M",
+  "title": "Stellar/Explosive Nucleosynthesis, Chemistry, Dust, Cooling, and Opacity",
+  "parents": [
+    "L"
+  ],
+  "children": [
+    "KLM",
+    "N"
+  ],
+  "objective": "Generate element/isotope production, chemical enrichment, dust, cooling, opacity, and composition-dependent returns from the executed stellar history.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "nuclear/chemical/dust possibilities",
+    "QV": "stellar/explosive processing and transport",
+    "RFL": "composition, cooling and opacity memory"
+  },
+  "derive_exactly": [
+    "stellar/explosive reaction and yield laws from L histories",
+    "element/isotope and chemical-evolution state",
+    "dust/molecular/cooling/opacity state",
+    "causal M->K and M->L returns"
+  ],
+  "wolfram_calls": [
+    "M-WL-001",
+    "M-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module M --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module M --solver reaction_network --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/M_nucleosynthesis.template.json --binding-sheet <RUN_DIR>/binding_sheets/M_nucleosynthesis.bindings.json --output <RUN_DIR>/solver_configs/M_nucleosynthesis.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/M_nucleosynthesis.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+    "python tools/director.py solver-copy --module M --solver transport --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/M_chemical_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/M_chemical_transport.bindings.json --output <RUN_DIR>/solver_configs/M_chemical_transport.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/M_chemical_transport.json --output-dir <RUN_DIR>/solver_outputs/transport"
+  ],
+  "numerical_execution": [
+    "network and yield convergence",
+    "species/nuclear conservation",
+    "earliest-change replay and independent reconstruction"
+  ],
+  "required_outputs": [
+    "stellar/explosive yields with provenance",
+    "element/isotope histories",
+    "galactic/cosmic chemical evolution",
+    "dust and molecular state",
+    "cooling/opacity returns",
+    "M_to_K and M_to_L interfaces"
+  ],
+  "mandatory_gates": [
+    "nuclear/species conservation",
+    "yield source/derivation audit",
+    "network convergence",
+    "return causality and earliest-change replay",
+    "independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "fitting yields to solar abundances",
+    "using public abundance patterns during generation",
+    "dropping covariance"
+  ],
+  "hard_stop_conditions": [
+    "yields fitted to solar/public abundance patterns",
+    "composition covariance dropped",
+    "return causality missing"
+  ],
+  "claim_boundary": "Generated RFC chemical and composition state.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "reaction_network",
+      "template": "configured_runs/templates/M_nucleosynthesis.template.json",
+      "purpose": "Execute stellar/explosive nucleosynthesis and isotope return.",
+      "copy_command": "python tools/director.py solver-copy --module M --solver reaction_network --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/M_nucleosynthesis.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/M_nucleosynthesis.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/M_nucleosynthesis.template.json --binding-sheet <RUN_DIR>/binding_sheets/M_nucleosynthesis.bindings.json --output <RUN_DIR>/solver_configs/M_nucleosynthesis.json"
+    },
+    {
+      "solver": "transport",
+      "template": "configured_runs/templates/M_chemical_transport.template.json",
+      "purpose": "Execute chemical/dust/cooling/opacity transport.",
+      "copy_command": "python tools/director.py solver-copy --module M --solver transport --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/M_chemical_transport.json --output-dir <RUN_DIR>/solver_outputs/transport",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/M_chemical_transport.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/M_chemical_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/M_chemical_transport.bindings.json --output <RUN_DIR>/solver_configs/M_chemical_transport.json"
+    }
+  ]
+}

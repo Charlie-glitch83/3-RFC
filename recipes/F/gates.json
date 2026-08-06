@@ -1,0 +1,22 @@
+{
+  "module": "F",
+  "componentwise": [
+    {
+      "gate": "charge neutrality where derived",
+      "required": "PASS"
+    },
+    {
+      "gate": "energy and particle accounting",
+      "required": "PASS"
+    },
+    {
+      "gate": "covariance positive semidefinite",
+      "required": "PASS"
+    },
+    {
+      "gate": "replay from E",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

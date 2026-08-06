@@ -1,0 +1,9 @@
+{
+  "solver": "transport",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "bf2c60dee1294d43b6a0741c976a8aee0f09f3b591a0a6b1d966db19af8b86bd",
+  "result_sha256": "7da79d267532525b732a507af8d6813f737f516c3cafbe0b05ed2594f0e198de",
+  "environment_sha256": "771c40d13ae75aa8cd052fa5703f025fa98e6f18164b2d037780bd9cf5fe401a",
+  "success": true,
+  "classification": "TRANSPORT_ODE_EXECUTION"
+}

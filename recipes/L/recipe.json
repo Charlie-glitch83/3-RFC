@@ -1,0 +1,105 @@
+{
+  "schema_version": "2.0",
+  "module": "L",
+  "title": "Baryonic and Stellar Universe",
+  "parents": [
+    "K"
+  ],
+  "children": [
+    "M",
+    "KLM",
+    "N"
+  ],
+  "objective": "Execute hydro/MHD, radiation, thermochemistry, turbulence, collapse, generated stellar birth, stellar/binary populations, feedback, remnants, accretion, cosmic rays, and radiation sources.",
+  "nbody_mode": "DIRECT_MANY_BODY_ACTIVE",
+  "triadic_descent": {
+    "CIF": "gas/radiation/cloud/core/stellar possibilities",
+    "QV": "MHD, radiation, chemistry, collapse and star-birth evolution",
+    "RFL": "baryonic, stellar, feedback and remnant histories"
+  },
+  "derive_exactly": [
+    "hydro/MHD/radiation/thermochemistry/turbulence/shock law",
+    "cloud/core/fragmentation/collapse witnesses",
+    "generated stellar birth measure rather than imported IMF",
+    "stellar/binary/population, feedback, remnant, accretion, cosmic-ray and ionizing-source states",
+    "exact L->M and L->K ownership returns"
+  ],
+  "wolfram_calls": [
+    "L-WL-001",
+    "L-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module L --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module L --solver finite_volume --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/L_finite_volume.template.json --binding-sheet <RUN_DIR>/binding_sheets/L_finite_volume.bindings.json --output <RUN_DIR>/solver_configs/L_finite_volume.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/L_finite_volume.json --output-dir <RUN_DIR>/solver_outputs/finite_volume",
+    "python tools/director.py solver-copy --module L --solver reaction_network --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/L_thermochemistry.template.json --binding-sheet <RUN_DIR>/binding_sheets/L_thermochemistry.bindings.json --output <RUN_DIR>/solver_configs/L_thermochemistry.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/L_thermochemistry.json --output-dir <RUN_DIR>/solver_outputs/reaction_network"
+  ],
+  "numerical_execution": [
+    "mass/momentum/energy/species conservation",
+    "resolution/subgrid and birth-measure convergence",
+    "replay locality and independent implementation"
+  ],
+  "required_outputs": [
+    "gas/MHD/radiation state",
+    "cloud/core/collapse witnesses",
+    "generated stellar birth measure",
+    "stellar/binary/population histories",
+    "feedback/remnant/accretion state",
+    "L_to_M and L_to_K returns"
+  ],
+  "mandatory_gates": [
+    "mass/momentum/energy/species conservation",
+    "resolution and subgrid convergence",
+    "feedback ownership",
+    "uncertainty/covariance",
+    "replay locality",
+    "independent implementation"
+  ],
+  "forbidden_shortcuts": [
+    "imported IMF as unexplained primitive",
+    "calibrating star formation to public scaling laws",
+    "promoting the old representative first pass to physical L without exact parent execution"
+  ],
+  "hard_stop_conditions": [
+    "public scaling law calibration",
+    "imported IMF is unexplained primitive",
+    "old first-pass architecture is promoted to physical L without exact K parent"
+  ],
+  "claim_boundary": "Physically executed RFC baryonic and stellar state.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "finite_volume",
+      "template": "configured_runs/templates/L_finite_volume.template.json",
+      "purpose": "Execute conservative baryonic finite-volume updates.",
+      "copy_command": "python tools/director.py solver-copy --module L --solver finite_volume --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/L_finite_volume.json --output-dir <RUN_DIR>/solver_outputs/finite_volume",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/L_finite_volume.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/L_finite_volume.template.json --binding-sheet <RUN_DIR>/binding_sheets/L_finite_volume.bindings.json --output <RUN_DIR>/solver_configs/L_finite_volume.json"
+    },
+    {
+      "solver": "reaction_network",
+      "template": "configured_runs/templates/L_thermochemistry.template.json",
+      "purpose": "Execute gas thermochemistry and composition-aware source terms.",
+      "copy_command": "python tools/director.py solver-copy --module L --solver reaction_network --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/L_thermochemistry.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/L_thermochemistry.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/L_thermochemistry.template.json --binding-sheet <RUN_DIR>/binding_sheets/L_thermochemistry.bindings.json --output <RUN_DIR>/solver_configs/L_thermochemistry.json"
+    }
+  ]
+}

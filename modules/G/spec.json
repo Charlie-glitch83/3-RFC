@@ -1,0 +1,33 @@
+{
+  "module": "G",
+  "title": "Nonequilibrium Recombination and Last-Scattering State",
+  "parents": [
+    "F"
+  ],
+  "children": [
+    "HU",
+    "I"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Generate recombination, visibility, opacity, and radiation-surface histories from the physical plasma state.",
+  "required_outputs": [
+    "ionization/recombination histories",
+    "visibility and optical-depth functions",
+    "radiation surface",
+    "covariance and restart",
+    "H_G_to_HU",
+    "H_G_to_I"
+  ],
+  "gates": [
+    "rate and opacity lineage",
+    "normalization and positivity",
+    "stiff convergence",
+    "independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "using public CMB targets to choose recombination parameters",
+    "declaring a readiness score a CMB surface"
+  ],
+  "claim_boundary": "Generated RFC last-scattering state, not observed CMB agreement.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

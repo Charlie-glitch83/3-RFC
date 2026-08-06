@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "classification": "COVARIANCE_SAMPLE_EXECUTION",
+  "audit": {
+    "shape": [
+      3,
+      3
+    ],
+    "symmetry_error": 0.0,
+    "symmetric": true,
+    "eigenvalues": [
+      0.38758997516450705,
+      0.5983517187300039,
+      1.3140583061054891
+    ],
+    "minimum_eigenvalue": 0.38758997516450705,
+    "positive_semidefinite": true,
+    "positive_definite": true,
+    "tolerance": 1e-12
+  },
+  "seed": 20260805,
+  "sample_count": 20000,
+  "sample_covariance": [
+    [
+      0.9867236278264003,
+      0.3387838006392299,
+      0.10321466449045864
+    ],
+    [
+      0.3387838006392299,
+      0.80045342404535,
+      0.20695815249672622
+    ],
+    [
+      0.10321466449045864,
+      0.20695815249672622,
+      0.5092774916601686
+    ]
+  ],
+  "max_abs_sample_error": 0.013276372173599671,
+  "sample_covariance_tolerance": 0.06,
+  "pass_flags": {
+    "symmetric": true,
+    "positive_semidefinite": true,
+    "sample_reconstruction": true
+  }
+}

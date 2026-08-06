@@ -1,0 +1,33 @@
+{
+  "module": "D",
+  "title": "Nonequilibrium Thermal and Phase History",
+  "parents": [
+    "C"
+  ],
+  "children": [
+    "E"
+  ],
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "objective": "Evolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.",
+  "required_outputs": [
+    "temperature and distribution histories",
+    "phase/event ledger",
+    "transport and collision operators",
+    "entropy and conservation ledger",
+    "uncertainty/covariance",
+    "H_D_to_E"
+  ],
+  "gates": [
+    "positive distributions",
+    "energy/charge conservation",
+    "event ordering",
+    "stiff-solver convergence",
+    "restart and independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "using a standard thermal history as initial data",
+    "fitting transition temperatures to observations"
+  ],
+  "claim_boundary": "Generated RFC thermal history, not yet primordial abundances.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

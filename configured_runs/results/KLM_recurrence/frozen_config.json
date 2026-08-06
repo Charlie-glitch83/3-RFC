@@ -1,0 +1,28 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "affine_recurrence",
+  "model": {
+    "matrix": [
+      [
+        0.4,
+        0.1
+      ],
+      [
+        0.0,
+        0.3
+      ]
+    ],
+    "offset": [
+      0.2,
+      -0.1
+    ],
+    "initial_state": [
+      1.7,
+      0.4
+    ],
+    "max_iterations": 10000,
+    "tolerance": 1e-10,
+    "max_period": 16,
+    "divergence_threshold": 1000000000000.0
+  }
+}

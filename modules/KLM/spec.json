@@ -1,0 +1,41 @@
+{
+  "module": "KLM",
+  "title": "Causal K–L–M Recurrence and Classification",
+  "parents": [
+    "K",
+    "L",
+    "M"
+  ],
+  "children": [
+    "K",
+    "L",
+    "M",
+    "N"
+  ],
+  "nbody_mode": "DIRECT_MANY_BODY_ACTIVE",
+  "objective": "Replay causal backreaction among gravity, baryons/stars, and chemistry until the system reaches a lawfully classified state without forcing convergence.",
+  "required_outputs": [
+    "iteration history",
+    "causal return witnesses",
+    "earliest affected checkpoints",
+    "conservation/covariance updates",
+    "restart/replay",
+    "classification: fixed point, finite cycle, attractor, branch family, obstruction, or nonconvergence",
+    "certified K*, L*, M* or certified alternative"
+  ],
+  "gates": [
+    "no target-driven stopping",
+    "componentwise convergence metrics",
+    "return ownership",
+    "clean replay",
+    "independent implementation",
+    "preserved failed attempts"
+  ],
+  "forbidden_shortcuts": [
+    "promoting reduced dimensionless F0 to physical recurrence",
+    "forcing a fixed point",
+    "ignoring nonconvergent lawful behavior"
+  ],
+  "claim_boundary": "Physical coupled-universe classification at executed fidelity.",
+  "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
+}

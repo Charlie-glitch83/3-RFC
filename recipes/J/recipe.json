@@ -1,0 +1,100 @@
+{
+  "schema_version": "2.0",
+  "module": "J",
+  "title": "Primordial Covariance, Linear Spectra, and Finite-Volume Fields",
+  "parents": [
+    "HI"
+  ],
+  "children": [
+    "K"
+  ],
+  "objective": "Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "covariance and mode possibilities",
+    "QV": "PSD selection, phase realization and finite-volume promotion",
+    "RFL": "actual linear fields and restart memory"
+  },
+  "derive_exactly": [
+    "actual primordial covariance from HI",
+    "linear spectra/growth and uncertainty",
+    "seed/phase provenance not selected for observational agreement",
+    "finite-volume fields and reality constraints"
+  ],
+  "wolfram_calls": [
+    "J-WL-001",
+    "J-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module J --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module J --solver covariance --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_covariance.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_covariance.bindings.json --output <RUN_DIR>/solver_configs/J_covariance.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_covariance.json --output-dir <RUN_DIR>/solver_outputs/covariance",
+    "python tools/director.py solver-copy --module J --solver fourier_field --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_fourier_field.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_fourier_field.bindings.json --output <RUN_DIR>/solver_configs/J_fourier_field.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_fourier_field.json --output-dir <RUN_DIR>/solver_outputs/fourier_field"
+  ],
+  "numerical_execution": [
+    "PSD and Cholesky checks",
+    "volume/resolution ensembles",
+    "independent field reconstruction"
+  ],
+  "required_outputs": [
+    "positive-semidefinite covariance",
+    "linear spectra and growth",
+    "finite-volume fields",
+    "phase/seed provenance",
+    "promotion witnesses",
+    "restartable P_J_to_K"
+  ],
+  "mandatory_gates": [
+    "covariance PSD",
+    "reality/Hermitian conditions",
+    "resolution and volume tests",
+    "no public initial-condition file",
+    "independent field reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "synthetic representative covariance as physical parent",
+    "selecting seeds for observational agreement"
+  ],
+  "hard_stop_conditions": [
+    "public initial-condition files or target phases enter",
+    "covariance non-PSD",
+    "representative spectrum is promoted to actual parent"
+  ],
+  "claim_boundary": "One realized RFC linear universe and its uncertainty state.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "covariance",
+      "template": "configured_runs/templates/J_covariance.template.json",
+      "purpose": "Audit and sample the internally derived primordial covariance.",
+      "copy_command": "python tools/director.py solver-copy --module J --solver covariance --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_covariance.json --output-dir <RUN_DIR>/solver_outputs/covariance",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/J_covariance.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_covariance.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_covariance.bindings.json --output <RUN_DIR>/solver_configs/J_covariance.json"
+    },
+    {
+      "solver": "fourier_field",
+      "template": "configured_runs/templates/J_fourier_field.template.json",
+      "purpose": "Generate finite-volume fields with a frozen seed and Hermitian reality.",
+      "copy_command": "python tools/director.py solver-copy --module J --solver fourier_field --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_fourier_field.json --output-dir <RUN_DIR>/solver_outputs/fourier_field",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/J_fourier_field.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_fourier_field.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_fourier_field.bindings.json --output <RUN_DIR>/solver_configs/J_fourier_field.json"
+    }
+  ]
+}

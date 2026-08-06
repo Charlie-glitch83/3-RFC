@@ -1,0 +1,157 @@
+{
+  "version": "2.0",
+  "modules": {
+    "A": {
+      "recipe": "recipes/A/recipe.json",
+      "work_order": "recipes/A/WORK_ORDER.md",
+      "calls": [
+        "A-WL-001",
+        "A-WL-002"
+      ]
+    },
+    "B": {
+      "recipe": "recipes/B/recipe.json",
+      "work_order": "recipes/B/WORK_ORDER.md",
+      "calls": [
+        "B-WL-001",
+        "B-WL-002"
+      ]
+    },
+    "C": {
+      "recipe": "recipes/C/recipe.json",
+      "work_order": "recipes/C/WORK_ORDER.md",
+      "calls": [
+        "C-WL-001",
+        "C-WL-002"
+      ]
+    },
+    "D": {
+      "recipe": "recipes/D/recipe.json",
+      "work_order": "recipes/D/WORK_ORDER.md",
+      "calls": [
+        "D-WL-001",
+        "D-WL-002"
+      ]
+    },
+    "E": {
+      "recipe": "recipes/E/recipe.json",
+      "work_order": "recipes/E/WORK_ORDER.md",
+      "calls": [
+        "E-WL-001",
+        "E-WL-002"
+      ]
+    },
+    "F": {
+      "recipe": "recipes/F/recipe.json",
+      "work_order": "recipes/F/WORK_ORDER.md",
+      "calls": [
+        "F-WL-001",
+        "F-WL-002"
+      ]
+    },
+    "G": {
+      "recipe": "recipes/G/recipe.json",
+      "work_order": "recipes/G/WORK_ORDER.md",
+      "calls": [
+        "G-WL-001",
+        "G-WL-002"
+      ]
+    },
+    "HU": {
+      "recipe": "recipes/HU/recipe.json",
+      "work_order": "recipes/HU/WORK_ORDER.md",
+      "calls": [
+        "HU-WL-001",
+        "HU-WL-002"
+      ]
+    },
+    "I": {
+      "recipe": "recipes/I/recipe.json",
+      "work_order": "recipes/I/WORK_ORDER.md",
+      "calls": [
+        "I-WL-001",
+        "I-WL-002"
+      ]
+    },
+    "HI": {
+      "recipe": "recipes/HI/recipe.json",
+      "work_order": "recipes/HI/WORK_ORDER.md",
+      "calls": [
+        "HI-WL-001",
+        "HI-WL-002"
+      ]
+    },
+    "J": {
+      "recipe": "recipes/J/recipe.json",
+      "work_order": "recipes/J/WORK_ORDER.md",
+      "calls": [
+        "J-WL-001",
+        "J-WL-002"
+      ]
+    },
+    "K": {
+      "recipe": "recipes/K/recipe.json",
+      "work_order": "recipes/K/WORK_ORDER.md",
+      "calls": [
+        "K-WL-001",
+        "K-WL-002"
+      ]
+    },
+    "L": {
+      "recipe": "recipes/L/recipe.json",
+      "work_order": "recipes/L/WORK_ORDER.md",
+      "calls": [
+        "L-WL-001",
+        "L-WL-002"
+      ]
+    },
+    "M": {
+      "recipe": "recipes/M/recipe.json",
+      "work_order": "recipes/M/WORK_ORDER.md",
+      "calls": [
+        "M-WL-001",
+        "M-WL-002"
+      ]
+    },
+    "KLM": {
+      "recipe": "recipes/KLM/recipe.json",
+      "work_order": "recipes/KLM/WORK_ORDER.md",
+      "calls": [
+        "KLM-WL-001",
+        "KLM-WL-002"
+      ]
+    },
+    "N": {
+      "recipe": "recipes/N/recipe.json",
+      "work_order": "recipes/N/WORK_ORDER.md",
+      "calls": [
+        "N-WL-001",
+        "N-WL-002"
+      ]
+    },
+    "O": {
+      "recipe": "recipes/O/recipe.json",
+      "work_order": "recipes/O/WORK_ORDER.md",
+      "calls": [
+        "O-WL-001",
+        "O-WL-002"
+      ]
+    },
+    "P": {
+      "recipe": "recipes/P/recipe.json",
+      "work_order": "recipes/P/WORK_ORDER.md",
+      "calls": [
+        "P-WL-001",
+        "P-WL-002"
+      ]
+    },
+    "Q": {
+      "recipe": "recipes/Q/recipe.json",
+      "work_order": "recipes/Q/WORK_ORDER.md",
+      "calls": [
+        "Q-WL-001",
+        "Q-WL-002"
+      ]
+    }
+  }
+}

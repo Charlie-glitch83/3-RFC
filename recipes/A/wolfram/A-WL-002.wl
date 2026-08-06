@@ -1,0 +1,18 @@
+ClearAll["Global`*"];
+triad = IdentityMatrix[3];
+roleRanks = Table[MatrixRank[Delete[triad, i]], {i, 1, 3}];
+n = 5;
+lanes = Flatten[Table[If[i == j, Nothing, {i, j}], {i, n}, {j, n}], 1];
+noSelf = And @@ (#[[1]] != #[[2]] & /@ lanes);
+unique = DuplicateFreeQ[lanes];
+result = <|
+ "call" -> "A-WL-002",
+ "triadRank" -> MatrixRank[triad],
+ "ablationRanks" -> roleRanks,
+ "triadAblationPass" -> TrueQ[MatrixRank[triad] == 3 && roleRanks == {2, 2, 2}],
+ "laneCount" -> Length[lanes],
+ "laneCountPass" -> TrueQ[Length[lanes] == n (n - 1)],
+ "noSelfLanes" -> noSelf,
+ "uniqueLanes" -> unique
+|>;
+ToString[result, InputForm]

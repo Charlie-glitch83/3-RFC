@@ -1,0 +1,8 @@
+{
+  "call_id": "A-WL-001",
+  "tool": "WolframLanguageEvaluator",
+  "validation_scope": "live syntax and manufactured invariant validation only; not a physical RFC result",
+  "input_sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+  "output_sha256": "99fe255cb87f95b70267383526b07735833e9e28b96b03cb9473bcdcb03d1c24",
+  "pass": true
+}

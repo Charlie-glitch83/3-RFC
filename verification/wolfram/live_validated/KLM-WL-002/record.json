@@ -1,0 +1,8 @@
+{
+  "call_id": "KLM-WL-002",
+  "tool": "WolframLanguageEvaluator",
+  "validation_scope": "live syntax and manufactured invariant validation only; not a physical RFC result",
+  "input_sha256": "e26155a40e33a65b497bd317073473387365ce0323ee677e002bd3b9056952b1",
+  "output_sha256": "1a843869127c5d29af4ecb83ccb53c8b1b6e50ed5d455aa8869c3eb75b23169a",
+  "pass": true
+}

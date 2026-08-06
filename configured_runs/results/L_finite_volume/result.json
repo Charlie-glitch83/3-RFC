@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "classification": "PERIODIC_FINITE_VOLUME_UPDATE",
+  "updated_state": [
+    1.03,
+    0.6849999999999999,
+    1.42,
+    0.865
+  ],
+  "sum_before": 3.9999999999999996,
+  "sum_after": 4.0,
+  "conservation_error": 4.440892098500626e-16,
+  "conservation_tolerance": 1e-12,
+  "minimum_state": 0.6849999999999999,
+  "pass_flags": {
+    "finite_state": true,
+    "periodic_conservation": true,
+    "positivity": true
+  }
+}

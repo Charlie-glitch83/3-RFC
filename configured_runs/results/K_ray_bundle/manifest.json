@@ -1,0 +1,9 @@
+{
+  "solver": "ray_bundle",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "1eca7c69202f4e0a267d79fee50d4251c597521a62095bbefae6c39188982e93",
+  "result_sha256": "11fe714dc2a8ea7ddb1efe5f446f7e12242617a91024a5b0d0a8dea92a17bbf9",
+  "environment_sha256": "1d46dd7d3aa6be6bc509c045c4bc2c1448855ee82ab5a35596a874323c0fcc80",
+  "success": true,
+  "classification": "LINEARIZED_RAY_JACOBI_PROPAGATION"
+}

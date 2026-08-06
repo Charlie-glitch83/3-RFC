@@ -1,0 +1,9 @@
+{
+  "solver": "triad_kernel",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "c266dfd20445e47f3321244b65d41fd7de6902a85fc6601a27fe2dc30a787f2c",
+  "result_sha256": "c0800259e4185dac8a2d4ad400d4aba599570d64ba76b004eca1a9ffb8c47417",
+  "environment_sha256": "989633b34cd5ed293e527971ff1b9fa7cd10dcaa6931e1fec2afa13dc8913555",
+  "success": true,
+  "classification": "FINITE_TRIAD_KERNEL_EXECUTION"
+}

@@ -1,0 +1,22 @@
+{
+  "module": "I",
+  "componentwise": [
+    {
+      "gate": "equation/constraint derivation",
+      "required": "PASS"
+    },
+    {
+      "gate": "gauge/frame consistency",
+      "required": "PASS"
+    },
+    {
+      "gate": "no observed expansion history used as target",
+      "required": "PASS"
+    },
+    {
+      "gate": "numerical convergence and independent reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

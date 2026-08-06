@@ -1,0 +1,26 @@
+{
+  "module": "C",
+  "componentwise": [
+    {
+      "gate": "units and dimensions",
+      "required": "PASS"
+    },
+    {
+      "gate": "symmetry/constraint closure",
+      "required": "PASS"
+    },
+    {
+      "gate": "positivity/unitarity or declared alternative",
+      "required": "PASS"
+    },
+    {
+      "gate": "no Standard Model label without derivation or correspondence theorem",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent symbolic and numerical checks",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

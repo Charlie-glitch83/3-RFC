@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "work_unit": "REC-040",
+  "title": "Recover Valid Prior 2-RFC Assets by Exact Object Admission",
+  "module": "RECOVERY",
+  "objective": "Inspect old repository branches and libraries, admit only exact valid scientific objects, and quarantine obsolete machinery and failed outputs.",
+  "depends_on": [
+    "XWALK-030"
+  ],
+  "exact_commands": [
+    "python tools/director.py doctor"
+  ],
+  "exact_sequence": [
+    "Fetch candidate objects from 2-RFC by exact commit and path.",
+    "Hash, replay, and independently inspect each object.",
+    "Do not import an old PASS label, state file, numerical output, or public-data-contaminated artifact as authority.",
+    "Treat repaired Module L as a recovery candidate at its exact verified scope only.",
+    "Inspect Charlie-glitch83/2-RFC and known lineages.",
+    "Verify exact commits and files.",
+    "Replay or reconstruct candidate assets.",
+    "Classify each object: CANONICAL_PARENT, ADMITTED_SOURCE, REPLAY_REQUIRED, COMPARISON_ONLY, HISTORICAL_WARNING, QUARANTINED, SUPERSEDED, EXCLUDED.",
+    "Preserve Module L first-pass work only at its verified scope."
+  ],
+  "deliverables": [
+    "recovery/LINEAGE_CROSSWALK.json",
+    "recovery/ADMITTED_ASSET_MANIFEST.json",
+    "recovery/QUARANTINE.md",
+    "runs/REC-040/CLOSEOUT.md"
+  ],
+  "componentwise_gates": [
+    "exact commit/file hashes",
+    "no old PASS auto-promoted",
+    "no public-data contamination",
+    "replay evidence"
+  ],
+  "commit_message": "Recover verified RFC assets without inheriting failures",
+  "hard_stops": [
+    "required source or parent hash is missing",
+    "a public target would influence a generation decision",
+    "a claimed artifact cannot be fetched and independently verified",
+    "a componentwise gate fails"
+  ]
+}
