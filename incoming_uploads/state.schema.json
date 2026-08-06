@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "project_id",
+    "active_work_unit",
+    "generation_mode",
+    "modules",
+    "strongest_supported_claim",
+    "strongest_unsupported_claim"
+  ],
+  "properties": {
+    "project_id": {
+      "const": "3-RFC"
+    },
+    "active_work_unit": {
+      "type": "string"
+    },
+    "generation_mode": {
+      "enum": [
+        "GENERATION_SEALED",
+        "PUBLIC_COMPARISON_OPEN"
+      ]
+    },
+    "modules": {
+      "type": "object"
+    },
+    "last_verified_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

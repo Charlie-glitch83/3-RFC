@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "run_id",
+    "module",
+    "task_id",
+    "status",
+    "created_utc",
+    "parent_hashes",
+    "generation_mode"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "CREATED",
+        "FROZEN_PRE_EXECUTION",
+        "EXECUTED",
+        "PASS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,44 +1,14 @@
-# Module K — Nonlinear Relational Gravity, Structures, Metric, and Lightcones
+# Supplied Source Seed
 
-**Objective:** Evolve the realized fields into nonlinear structure while preserving relativistic/metric, route, event, branch, conservation, lightcone, and lensing truth.
+These are the source and recovery materials available when the bootstrap bundle was built. They are not automatically authoritative.
 
-**Primary parents:** J
+`SRC-010` must hash, classify, and admit exact bytes into `sources/frozen/`.
 
-**Causal recurrence returns:** KLM
+Read canonical sources first in this order:
 
-**Children:** L, KLM, N
+1. Presentation 29 revised and metadata.
+2. Revised N-body proof and metadata.
+3. Presentation 30 and reproducibility metadata.
+4. Supporting/historical sources only as needed.
 
-**N-body mode:** `DIRECT_MANY_BODY_ACTIVE`
-
-## Required outputs
-
-- particle/field nonlinear state
-- halos and structures
-- metric and Weyl products
-- lightcones
-- ray/Jacobi/lensing products
-- merger/event trees
-- return interface to L and KLM
-
-## Mandatory gates
-
-- force/field accuracy
-- constraint closure
-- mass-energy conservation
-- resolution/volume convergence
-- restart/replay
-- independent critical implementation
-
-## Forbidden shortcuts
-
-- gravity-only toy labeled hyper-realistic
-- dropping metric/lightcone truth
-- tuning initial phases
-
-## Claim boundary
-
-Nonlinear RFC gravitational universe at stated fidelity.
-
-## Working rule
-
-Create run workspaces only with `python tools/rfc.py new-run K`. State is held centrally in `STATE.json`.
+The `analysis/` files are interpretive audits and plans. They help orientation but never override exact source text.

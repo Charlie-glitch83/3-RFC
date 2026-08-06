@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "candidates": [
+    {
+      "name": "Presentation 29 revised raw LaTeX",
+      "source_seed": "source_seed/originals/Presentation 29 revised  raw LaTeX.md",
+      "class": "CANONICAL_PARENT",
+      "verify": "sha256 + source manifest"
+    },
+    {
+      "name": "Presentation 30 raw LaTeX",
+      "source_seed": "source_seed/originals/Presentation 30 raw LaTex.md",
+      "class": "CANONICAL_PARENT_ARCHITECTURE",
+      "verify": "sha256 + quarantine old numerical packets"
+    },
+    {
+      "name": "Revised triadic N-body proof",
+      "source_seed": "source_seed/originals/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "class": "CANONICAL_PARENT",
+      "verify": "sha256 + theorem object extraction"
+    },
+    {
+      "name": "Revised triadic N-body metadata",
+      "source_seed": "source_seed/originals/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+      "class": "CANONICAL_METADATA",
+      "verify": "sha256"
+    },
+    {
+      "name": "2-RFC repaired Module L first pass",
+      "repository": "Charlie-glitch83/2-RFC",
+      "known_head": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "class": "RECOVER_AT_VERIFIED_SCOPE",
+      "verify": "fetch exact files, replay, preserve physical-execution limitation"
+    },
+    {
+      "name": "2-RFC reduced KLM F0 recurrence",
+      "repository": "Charlie-glitch83/2-RFC",
+      "class": "MANUFACTURED_REGRESSION_ONLY",
+      "verify": "do not promote to physical F1-F4"
+    },
+    {
+      "name": "Older P29/P30 failed outputs",
+      "class": "HISTORICAL_WARNING",
+      "verify": "never use as generative parent or target"
+    }
+  ]
+}

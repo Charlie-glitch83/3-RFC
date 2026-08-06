@@ -1,92 +1,49 @@
-# Module Q Exact Work Order — Terminal Evolution, Qualified Memory, and Next-Cycle Conditioning
+# BOOT-000 — Install, Verify, and Commit the Repository Scaffold
 
 ## Objective
 
-Continue the frozen universe physically to terminal evolution, classify collapse/rebirth behavior, and derive the qualified memory packet for a possible next effective CIF without information from P.
+Place this scaffold at the root of Charlie-glitch83/3-RFC, run all local checks, commit it, and verify the exact GitHub SHA and diff.
 
-## Frozen triadic descent
+## Exact sequence
 
-- **CIF:** terminal physical possibilities from O
-- **QV:** collapse/continuation/rebirth dynamics
-- **RFL:** qualified memory and next-cycle condition
-- **N-body mode:** `RELATIONAL_GRAMMAR_ACTIVE`
+1. Copy the complete bundle to the empty repository root.
+2. Commit the scaffold exactly once.
+3. Fetch README.md and the commit through GitHub, verify SHA and diff, then record the commit.
+4. Copy the bundle contents into the empty 3-RFC repository without redesigning them.
+5. Run python tools/rfc.py doctor, python -m unittest discover -s tests -v, and python tools/rfc.py firewall-scan.
+6. Create work branch agent/3rfc-universe-build after the scaffold is visible on the default branch or as the initial branch, according to repository state.
+7. Commit with the prescribed message and verify the commit SHA, file list, fetched README, and branch comparison.
+8. Record the verified SHA in memory/DECISION_LOG.jsonl and the closeout.
 
-## Derive these objects; do not substitute familiar answers
-
-1. terminal evolution law from frozen O only
-2. collapse/rebirth event and branch ledger
-3. qualified memory M_rec with no-loss and source distinction
-4. next-cycle conditions, branch family, obstruction or nonconvergence
-
-## Exact Wolfram calls
-
-- `Q-WL-001` — Terminal affine recurrence and fixed-point classification
-- `Q-WL-002` — Qualified memory is not the source role
-
-Run each through:
+## Commands
 
 ```bash
-python tools/director.py wolfram-show --call <CALL_ID>
+bash bootstrap.sh
+python tools/director.py doctor
+python -m unittest discover -s tests -v
+python tools/rfc.py firewall-scan
 ```
 
-Submit the exact code to `WolframLanguageEvaluator`, save the returned output verbatim, and register it with `wolfram-record`.
+## Deliverables
 
-## Local manufactured reference check
+- runs/BOOT-000/CLOSEOUT.md
+- verified GitHub commit SHA
+- passing doctor/tests/firewall scan
 
-```bash
-python tools/run_reference_checks.py --module Q --output <RUN_DIR>/reference_checks.json
-```
+## Componentwise gates
 
-This is an implementation/invariant test only. It is not the actual module execution.
+- README visible in GitHub
+- new commit SHA exists
+- diff contains scaffold
+- doctor and tests pass
 
-## Actual numerical execution obligations
+## Hard stops
 
-1. terminal convergence/branch exploration
-2. memory reopening and conservation
-3. independent recurrence classification
+- required source or parent hash is missing
+- a public target would influence a generation decision
+- a claimed artifact cannot be fetched and independently verified
+- a componentwise gate fails
 
-## Required final outputs
+## Commit
 
-- terminal physical trajectory
-- collapse/rebirth event and branch ledger
-- qualified memory packet M_rec
-- next-cycle source conditions or obstruction
-- independent recurrence classification
-
-## Componentwise mandatory gates
-
-- no P data flow
-- conservation and no-loss
-- terminal numerical convergence
-- memory does not impersonate source
-- independent reconstruction
-
-## Hard stop conditions
-
-- P data are read
-- RFL memory is equated with next CIF
-- rebirth is forced
-
-## Claim boundary
-
-Terminal RFC continuation and next-cycle conditioning at executed scope.
-
-## Prebuilt local execution engines
-
-These engines execute a law already derived and frozen from admitted parents. They do **not** choose the law or its coefficients. Each configuration is created only through a provenance-complete binding sheet.
-
-### `affine_recurrence`
-
-Classify isolated terminal evolution and next-cycle conditioning.
-
-Template: `configured_runs/templates/Q_terminal_recurrence.template.json`  
-Binding sheet: `configured_runs/binding_sheets/Q_terminal_recurrence.bindings.json`
-
-```bash
-python tools/director.py solver-copy --module Q --solver affine_recurrence --destination <RUN_DIR>
-# Fill every binding record with an exact value, origin path, origin SHA-256, units, dimensions, and derivation object.
-python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/Q_terminal_recurrence.template.json --binding-sheet <RUN_DIR>/binding_sheets/Q_terminal_recurrence.bindings.json --output <RUN_DIR>/solver_configs/Q_terminal_recurrence.json
-python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/Q_terminal_recurrence.json --output-dir <RUN_DIR>/solver_outputs/affine_recurrence
-```
-
-Every `__BIND_...` token is a hard stop. The materializer verifies hashes and refuses unresolved or provenance-free values.
+`Initialize the 3-RFC governed universe workspace`

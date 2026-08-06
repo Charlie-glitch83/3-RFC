@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "path",
+    "sha256",
+    "kind",
+    "created_utc"
+  ],
+  "additionalProperties": true
+}

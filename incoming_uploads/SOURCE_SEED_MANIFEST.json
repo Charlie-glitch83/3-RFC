@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0",
+  "status": "SUPPLIED_NOT_ADMITTED",
+  "rule": "Files become scientific authorities only after SRC-010 exact admission and classification.",
+  "files": [
+    {
+      "filename": "originals/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "bytes": 86724,
+      "default_classification": "CANONICAL_AUTHORITY",
+      "reading_order": 1,
+      "role": "Triadic emergence and theorem architecture"
+    },
+    {
+      "filename": "originals/Presentation 29 revised Metadata.md",
+      "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "bytes": 10821,
+      "default_classification": "CANONICAL_AUTHORITY",
+      "reading_order": 2,
+      "role": "P29 metadata and reproducibility context"
+    },
+    {
+      "filename": "originals/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "bytes": 356706,
+      "default_classification": "CANONICAL_AUTHORITY",
+      "reading_order": 3,
+      "role": "Revised triadic N-body proof"
+    },
+    {
+      "filename": "originals/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+      "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "bytes": 257569,
+      "default_classification": "CANONICAL_AUTHORITY",
+      "reading_order": 4,
+      "role": "N-body metadata"
+    },
+    {
+      "filename": "originals/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "bytes": 951976,
+      "default_classification": "CANONICAL_AUTHORITY",
+      "reading_order": 5,
+      "role": "Universe architecture and full ledger"
+    },
+    {
+      "filename": "originals/Reproducibility Metadata.md",
+      "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+      "bytes": 254488,
+      "default_classification": "ADMITTED_SOURCE",
+      "reading_order": 6,
+      "role": "Universe reproducibility metadata candidate"
+    },
+    {
+      "filename": "originals/Reproducibility Metadata - Final Revised W2 BBN Closeout.md",
+      "sha256": "0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f",
+      "bytes": 274842,
+      "default_classification": "ADMITTED_SOURCE",
+      "reading_order": 7,
+      "role": "Revised W2/BBN closeout metadata candidate"
+    },
+    {
+      "filename": "originals/Presentation 28.pdf",
+      "sha256": "52ff9b4a79f0a052d17d5592c32a44d471cdfb209ed803f7f12253c4c0f50599",
+      "bytes": 1251331,
+      "default_classification": "HISTORICAL_WARNING",
+      "reading_order": 10,
+      "role": "Consolidated prior triadic rebuild"
+    },
+    {
+      "filename": "originals/Presentation27.pdf",
+      "sha256": "9a8e0bb8fcbaeb3ab391b5ccb1213b83318685a54953b0d1b1ba9e0eca26a086",
+      "bytes": 580810,
+      "default_classification": "HISTORICAL_WARNING",
+      "reading_order": 11,
+      "role": "Deterministic rebuild and no-retune lineage"
+    },
+    {
+      "filename": "originals/Presentation 26.pdf",
+      "sha256": "01c15530f437d0dd37937e7789e410f85fb4417a049357eb31f140c345b954f5",
+      "bytes": 362939,
+      "default_classification": "HISTORICAL_WARNING",
+      "reading_order": 12,
+      "role": "Mathematical codex"
+    },
+    {
+      "filename": "originals/Presentation 25.pdf",
+      "sha256": "c89cdfa633961934306cc03121c4fe911b0140610f7a1da6be97d220de8b2540",
+      "bytes": 479693,
+      "default_classification": "HISTORICAL_WARNING",
+      "reading_order": 13,
+      "role": "One kernel, many modal manifestations"
+    },
+    {
+      "filename": "originals/Presentation 24.pdf",
+      "sha256": "f3c1f848255334fcefc5eae6a8110a7e463e244fa605c1d9e56faa8ecd7aad17",
+      "bytes": 642191,
+      "default_classification": "HISTORICAL_WARNING",
+      "reading_order": 14,
+      "role": "Original ontology and explanatory vision"
+    },
+    {
+      "filename": "originals/RFC_Story_Arc.md",
+      "sha256": "c8b617f643db47c2a520d018bee82328204430ed39a85d7ab918acc001546a18",
+      "bytes": 11196,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 20,
+      "role": "Narrative synthesis"
+    },
+    {
+      "filename": "originals/RFC_Module_X1_Nucleosynthesis_Theorem_Addendum_and_Metadata.md",
+      "sha256": "d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c",
+      "bytes": 10836,
+      "default_classification": "CANDIDATE_ADDENDUM",
+      "reading_order": 21,
+      "role": "Nucleosynthesis addendum"
+    },
+    {
+      "filename": "originals/RFC_Module_Y_Global_Collapse_Rebirth_Trace_Addendum_and_Metadata.md",
+      "sha256": "522da698be7c70b17e327d54fe5825321934550c0ee3a8a187fcce9098895d3a",
+      "bytes": 8447,
+      "default_classification": "CANDIDATE_ADDENDUM",
+      "reading_order": 22,
+      "role": "Collapse/rebirth addendum"
+    },
+    {
+      "filename": "originals/Triad_and_Triad_Kernel_Markdown_Book.zip",
+      "sha256": "23cf3e0f8c2b125f1733e02cdd1a795738849fa1a5f2951669c1f84d9417fdab",
+      "bytes": 56567,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 23,
+      "role": "Triad/kernel source book"
+    },
+    {
+      "filename": "originals/How to build presentation 28.zip",
+      "sha256": "2166865f16a2daefa1f40ddd80a180c05ba154c8dfb467c1381b8006d01589be",
+      "bytes": 240976,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 24,
+      "role": "Source audits and drafting doctrine"
+    },
+    {
+      "filename": "originals/1 RFC close out ledgers.zip",
+      "sha256": "e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad",
+      "bytes": 67372,
+      "default_classification": "REPLAY_REQUIRED",
+      "reading_order": 30,
+      "role": "Historical closeout ledgers"
+    },
+    {
+      "filename": "originals/Simulation Meta data 2.zip",
+      "sha256": "9f6f05a297e95ef01813fd6eb9532c8ee41d6feb7f4d7cb723da87ff5858a9da",
+      "bytes": 366558,
+      "default_classification": "REPLAY_REQUIRED",
+      "reading_order": 31,
+      "role": "Historical simulation logs"
+    },
+    {
+      "filename": "originals/Triadic_Completed_Shell_Twin_Prime_Preprint_Clean_Raw_LaTeX_20260626.md",
+      "sha256": "ac37b05c67b26c882d171b7986a5c1a5536a4ecbdf1152731897f876972bb7fe",
+      "bytes": 40865,
+      "default_classification": "COMPARISON_ONLY",
+      "reading_order": 40,
+      "role": "Non-cosmological triadic manifestation exemplar"
+    },
+    {
+      "filename": "originals/T1_T5_Closeout_Ledger.md",
+      "sha256": "21057508fcdb9cbb0fa3a932cc297dc2754b38ed59cab79d460f64ca1f2eb43f",
+      "bytes": 12135,
+      "default_classification": "COMPARISON_ONLY",
+      "reading_order": 41,
+      "role": "Arithmetic proof closeout exemplar"
+    },
+    {
+      "filename": "originals/TwinPrime_Zip_Source_Map_REVISED_Triad_Fractal_Weights.md",
+      "sha256": "5d3cdf28aa14fdd2dbcff8307ec2e391a40623148696e1baa5623037d29ba84e",
+      "bytes": 125678,
+      "default_classification": "COMPARISON_ONLY",
+      "reading_order": 42,
+      "role": "Arithmetic source map exemplar"
+    },
+    {
+      "filename": "analysis/2RFC_Architecture_Intent_and_Drift_Deep_Soak_20260805.md",
+      "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
+      "bytes": 31773,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 90,
+      "role": "Prior audit/synthesis; never supersedes exact sources"
+    },
+    {
+      "filename": "analysis/2RFC_Canonical_Enhancement_Map_20260805.md",
+      "sha256": "12575578458a7f908f4c10dcf69eddb095d436e21c9f4b51ea758e380ceda4d8",
+      "bytes": 3376,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 90,
+      "role": "Prior audit/synthesis; never supersedes exact sources"
+    },
+    {
+      "filename": "analysis/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
+      "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+      "bytes": 42775,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 90,
+      "role": "Prior audit/synthesis; never supersedes exact sources"
+    },
+    {
+      "filename": "analysis/2RFC_Immediate_Execution_Queue_20260805.md",
+      "sha256": "c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226",
+      "bytes": 7795,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 90,
+      "role": "Prior audit/synthesis; never supersedes exact sources"
+    },
+    {
+      "filename": "analysis/2RFC_Integration_Fidelity_Audit_20260805.md",
+      "sha256": "af15e723cf93e2cf05873ca74514661393d2d669db502b66838e1ee5979a0f2d",
+      "bytes": 18368,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 90,
+      "role": "Prior audit/synthesis; never supersedes exact sources"
+    },
+    {
+      "filename": "analysis/2RFC_Revised_Work_Queue_after_Integration_Audit_20260805.md",
+      "sha256": "275ce318acfb84f88e9edb91ca371bcfa8d8dd248172ee9444e4d108fb6472c7",
+      "bytes": 5346,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 90,
+      "role": "Prior audit/synthesis; never supersedes exact sources"
+    },
+    {
+      "filename": "analysis/2RFC_Triad_NBody_Enhancement_Lock_DRAFT_20260805.md",
+      "sha256": "c0458d1905da03c21c7a93b1d11c19fa6679c18c5b1a0a95fefacf38e66a8240",
+      "bytes": 9512,
+      "default_classification": "INTERPRETIVE_SYNTHESIS",
+      "reading_order": 90,
+      "role": "Prior audit/synthesis; never supersedes exact sources"
+    }
+  ]
+}
