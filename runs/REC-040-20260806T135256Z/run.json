@@ -2,9 +2,11 @@
   "run_id": "REC-040-20260806T135256Z",
   "module": "RECOVERY",
   "task_id": "REC-040",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-06T13:52:56.279835+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "runs/REC-040-20260806T135256Z"
+  "workspace": "runs/REC-040-20260806T135256Z",
+  "closed_utc": "2026-08-06T14:10:01.299495+00:00",
+  "closeout": "runs/REC-040-20260806T135256Z/CLOSEOUT.md"
 }

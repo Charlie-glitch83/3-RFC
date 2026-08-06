@@ -1,14 +1,14 @@
 # Current Context
 
-Generated: 2026-08-06T14:09:06.520842+00:00
+Generated: 2026-08-06T14:10:05.305718+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `REC-040` — Recover Valid Prior 2-RFC Assets by Exact Object Admission
-- Current module: `RECOVERY`
-- Last verified commit: `8913ed740c60cc7ea02652150a3dd8e962d4ecae`
+- Active work unit: `FRONTIER-050` — Determine the Earliest Missing Physical Parent
+- Current module: `AUDIT`
+- Last verified commit: `5f3216de0bf6e2e2b4cb8966bc468a852284225c`
 
 ## Strongest supported claim
 
@@ -20,21 +20,19 @@ The enhanced RFC universe is complete, physically executed, or empirically valid
 
 ## Immediate objective
 
-Inspect old repository branches and libraries, admit only exact valid scientific objects, and quarantine obsolete machinery and failed outputs.
+Audit A–J and choose the earliest exact break between formal law and one physically executed parent chain.
 
 ## Required deliverables
 
-- recovery/LINEAGE_CROSSWALK.json
-- recovery/ADMITTED_ASSET_MANIFEST.json
-- recovery/QUARANTINE.md
-- runs/REC-040/CLOSEOUT.md
+- audit/PHYSICAL_FRONTIER.json
+- audit/PHYSICAL_FRONTIER.md
+- runs/FRONTIER-050/CLOSEOUT.md
 
 ## Mandatory gates
 
-- exact commit/file hashes
-- no old PASS auto-promoted
-- no public-data contamination
-- replay evidence
+- no status word hides a missing object
+- one frontier selected
+- recovered parents verified
 
 ## Module states
 
@@ -61,7 +59,7 @@ Inspect old repository branches and libraries, admit only exact valid scientific
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 3
+- frozen artifacts: 4
 - indexed runs: 4
 
 ## Recent runs
@@ -69,18 +67,18 @@ Inspect old repository branches and libraries, admit only exact valid scientific
 - SRC-010-20260806T065702Z: PASS (SOURCES)
 - AUTH-020-20260806T071800Z: PASS (THEORY)
 - XWALK-030-20260806T130603Z: PASS (THEORY)
-- REC-040-20260806T135256Z: CREATED (RECOVERY)
+- REC-040-20260806T135256Z: PASS (RECOVERY)
 
 ## Recent decisions
 
-- BOOT-000-INSTALLATION-REPAIRS: Apply only installation-control repairs and preserve scientific content unchanged.
-- ADVANCE-BOOT-000: Marked BOOT-000 PASS and activated SRC-010
 - COMMIT-c369a10cd01c: Verified SRC-010 source admission commit, exact changed files, gate evidence, and reconstructed manifest
 - ADVANCE-SRC-010-20260806T070909Z: Marked SRC-010 PASS and activated AUTH-020
 - COMMIT-795bf1c11b7a: Verified AUTH-020 constitution-lock commit, exact changed files, gate evidence, source trace, and closeout
 - ADVANCE-AUTH-020-20260806T072340Z: Marked AUTH-020 PASS and activated XWALK-030
 - COMMIT-8913ed740c60: Verified XWALK-030 crosswalk commit, exact changed files, gate evidence, source bindings, independent review, and closeout
 - ADVANCE-XWALK-030-20260806T131240Z: Marked XWALK-030 PASS and activated REC-040
+- COMMIT-5f3216de0bf6: Verified REC-040 exact-object recovery commit, changed files, source hashes, gates, replay, quarantine, and closeout
+- ADVANCE-REC-040-20260806T141001Z: Marked REC-040 PASS and activated FRONTIER-050
 
 ## Recent failures
 

@@ -1,1 +1,0 @@
-Trigger formal REC-040 record, close, advance, replay, and cleanup.

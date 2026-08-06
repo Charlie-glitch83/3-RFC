@@ -24,6 +24,14 @@
       "created_utc": "2026-08-06T13:12:40.345129+00:00",
       "work_unit": "XWALK-030",
       "run_id": "XWALK-030-20260806T130603Z"
+    },
+    {
+      "path": "runs/REC-040-20260806T135256Z",
+      "sha256": "f31c01a7826809d1962a36dc1d1303eed794d01bf5a4269b4a1ba3edcb14585b",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-06T14:10:01.300858+00:00",
+      "work_unit": "REC-040",
+      "run_id": "REC-040-20260806T135256Z"
     }
   ]
 }

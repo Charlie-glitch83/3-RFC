@@ -120,7 +120,7 @@
       "id": "REC-040",
       "title": "Recover Valid Prior 2-RFC Assets by Exact Object Admission",
       "module": "RECOVERY",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "XWALK-030"
       ],
@@ -150,7 +150,7 @@
       "id": "FRONTIER-050",
       "title": "Determine the Earliest Missing Physical Parent",
       "module": "AUDIT",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "REC-040"
       ],
