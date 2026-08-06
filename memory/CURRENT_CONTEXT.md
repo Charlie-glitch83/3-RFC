@@ -1,14 +1,14 @@
 # Current Context
 
-Generated: 2026-08-06T13:11:28.357054+00:00
+Generated: 2026-08-06T13:12:44.060823+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `XWALK-030` — P29/P30/N-body Preservation and Enhancement Crosswalk
-- Current module: `THEORY`
-- Last verified commit: `795bf1c11b7ab67438b9b93b3c267f09d69ebe86`
+- Active work unit: `REC-040` — Recover Valid Prior 2-RFC Assets by Exact Object Admission
+- Current module: `RECOVERY`
+- Last verified commit: `8913ed740c60cc7ea02652150a3dd8e962d4ecae`
 
 ## Strongest supported claim
 
@@ -20,20 +20,21 @@ The enhanced RFC universe is complete, physically executed, or empirically valid
 
 ## Immediate objective
 
-Map every material parent object to preserve, strengthen, rederive, execute, reserve, quarantine, or supersede.
+Inspect old repository branches and libraries, admit only exact valid scientific objects, and quarantine obsolete machinery and failed outputs.
 
 ## Required deliverables
 
-- theory/ENHANCEMENT_CROSSWALK.json
-- theory/ENHANCEMENT_CROSSWALK.md
-- runs/XWALK-030/CLOSEOUT.md
+- recovery/LINEAGE_CROSSWALK.json
+- recovery/ADMITTED_ASSET_MANIFEST.json
+- recovery/QUARANTINE.md
+- runs/REC-040/CLOSEOUT.md
 
 ## Mandatory gates
 
-- all major objects classified
-- claim overlap removed
-- source hashes present
-- independent review
+- exact commit/file hashes
+- no old PASS auto-promoted
+- no public-data contamination
+- replay evidence
 
 ## Module states
 
@@ -60,24 +61,25 @@ Map every material parent object to preserve, strengthen, rederive, execute, res
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 2
+- frozen artifacts: 3
 - indexed runs: 3
 
 ## Recent runs
 
 - SRC-010-20260806T065702Z: PASS (SOURCES)
 - AUTH-020-20260806T071800Z: PASS (THEORY)
-- XWALK-030-20260806T130603Z: CREATED (THEORY)
+- XWALK-030-20260806T130603Z: PASS (THEORY)
 
 ## Recent decisions
 
-- COMMIT-b1642cbbbbc0: Verified scaffold commit, fetched README and validation workflow, exact changed-file diff, and synchronized agent/3rfc-universe-build branch
 - BOOT-000-INSTALLATION-REPAIRS: Apply only installation-control repairs and preserve scientific content unchanged.
 - ADVANCE-BOOT-000: Marked BOOT-000 PASS and activated SRC-010
 - COMMIT-c369a10cd01c: Verified SRC-010 source admission commit, exact changed files, gate evidence, and reconstructed manifest
 - ADVANCE-SRC-010-20260806T070909Z: Marked SRC-010 PASS and activated AUTH-020
 - COMMIT-795bf1c11b7a: Verified AUTH-020 constitution-lock commit, exact changed files, gate evidence, source trace, and closeout
 - ADVANCE-AUTH-020-20260806T072340Z: Marked AUTH-020 PASS and activated XWALK-030
+- COMMIT-8913ed740c60: Verified XWALK-030 crosswalk commit, exact changed files, gate evidence, source bindings, independent review, and closeout
+- ADVANCE-XWALK-030-20260806T131240Z: Marked XWALK-030 PASS and activated REC-040
 
 ## Recent failures
 

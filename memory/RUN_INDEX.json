@@ -27,9 +27,12 @@
       "run_id": "XWALK-030-20260806T130603Z",
       "module": "THEORY",
       "task_id": "XWALK-030",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "runs/XWALK-030-20260806T130603Z",
-      "created_utc": "2026-08-06T13:06:03.095503+00:00"
+      "created_utc": "2026-08-06T13:06:03.095503+00:00",
+      "closed_utc": "2026-08-06T13:12:40.344347+00:00",
+      "tree_sha256": "ec6f7a31008f1cee64c5a6ea512c9652d09e9fd147250555acc8207bcd8631ad",
+      "closeout": "runs/XWALK-030-20260806T130603Z/CLOSEOUT.md"
     }
   ]
 }

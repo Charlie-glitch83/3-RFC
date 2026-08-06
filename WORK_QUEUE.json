@@ -91,7 +91,7 @@
       "id": "XWALK-030",
       "title": "P29/P30/N-body Preservation and Enhancement Crosswalk",
       "module": "THEORY",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "AUTH-020"
       ],
@@ -120,7 +120,7 @@
       "id": "REC-040",
       "title": "Recover Valid Prior 2-RFC Assets by Exact Object Admission",
       "module": "RECOVERY",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "XWALK-030"
       ],

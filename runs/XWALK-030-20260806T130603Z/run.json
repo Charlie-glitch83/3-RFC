@@ -2,9 +2,11 @@
   "run_id": "XWALK-030-20260806T130603Z",
   "module": "THEORY",
   "task_id": "XWALK-030",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-06T13:06:03.095312+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "runs/XWALK-030-20260806T130603Z"
+  "workspace": "runs/XWALK-030-20260806T130603Z",
+  "closed_utc": "2026-08-06T13:12:40.344347+00:00",
+  "closeout": "runs/XWALK-030-20260806T130603Z/CLOSEOUT.md"
 }
