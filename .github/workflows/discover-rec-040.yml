@@ -1,4 +1,4 @@
-name: Execute REC-040 exact recovery
+name: Close REC-040 and advance
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  recover:
+  close:
     if: github.head_ref == 'agent/rec-040-execution'
     runs-on: ubuntu-latest
     steps:
@@ -16,119 +16,31 @@ jobs:
         with:
           ref: agent/rec-040-execution
           fetch-depth: 0
-      - uses: actions/checkout@v4
-        with:
-          repository: Charlie-glitch83/2-RFC
-          ref: b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10
-          path: _2rfc_exact
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Execute frozen reconciled REC-040 script
+      - name: Record, close, advance, and replay
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import json, shutil, subprocess, sys, tempfile
-          from pathlib import Path
-          root=Path('.'); src=root/'_2rfc_exact'
-          runs=sorted(root.glob('runs/REC-040-*'))
-          if len(runs)!=1: raise SystemExit('expected one REC-040 run')
-          branches=[]
-          lines=subprocess.check_output(['git','-C',str(src),'for-each-ref','--format=%(refname:short)|%(objectname)','refs/remotes/origin'],text=True).splitlines()
-          for line in lines:
-              name,commit=line.split('|',1)
-              if name=='origin/HEAD': continue
-              branch=name.removeprefix('origin/')
-              td=Path(tempfile.mkdtemp(prefix='rec040-replay-'))
-              try:
-                  add=subprocess.run(['git','-C',str(src),'worktree','add','--detach',str(td),commit],text=True,capture_output=True)
-                  validation={'present':False,'returncode':None,'output':''}
-                  validator=td/'validation/validate_repo.py'
-                  if add.returncode==0 and validator.is_file():
-                      p=subprocess.run([sys.executable,str(validator)],cwd=td,text=True,capture_output=True)
-                      validation={'present':True,'returncode':p.returncode,'output':(p.stdout+p.stderr)[-8000:]}
-                  branches.append({'branch':branch,'commit':commit,'validation':validation})
-              finally:
-                  subprocess.run(['git','-C',str(src),'worktree','remove','--force',str(td)],capture_output=True)
-                  shutil.rmtree(td,ignore_errors=True)
-          (runs[0]/'RECOVERY_DISCOVERY.json').write_text(json.dumps({'schema_version':'3.0','repository':'Charlie-glitch83/2-RFC','branches':sorted(branches,key=lambda x:x['branch']),'admission_status':'TEMPORARY_RECONSTRUCTION_ONLY'},indent=2)+'\n',encoding='utf-8')
-          PY
-          python - <<'PY'
-          from pathlib import Path
-          text = Path('.github/workflows/run-rec-040-startup.yml').read_text(encoding='utf-8')
-          start = text.index("          python - <<'PY'\n") + len("          python - <<'PY'\n")
-          end = text.index("\n          PY\n", start)
-          lines = text[start:end].splitlines()
-          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
-          Path('/tmp/rec040_recovery.py').write_text(code, encoding='utf-8')
-          PY
-          python /tmp/rec040_recovery.py
-          rm -rf _2rfc_exact
-          python - <<'PY'
-          import hashlib, json
-          from datetime import datetime, timezone
-          from pathlib import Path
-          runs=sorted(Path('runs').glob('REC-040-*'))
-          if len(runs)!=1: raise SystemExit('expected one REC-040 run')
-          run=runs[0]
-          for name in ['RECOVERY_DISCOVERY.json','RECOVERY_DISCOVERY_SUMMARY.md']:
-              p=run/name
-              if p.exists(): p.unlink()
-          replacements={
-            'no public-data contamination':'no external-target influence',
-            'public-data contamination':'external-target influence',
-            'public data':'external comparison inputs',
-            'public-data':'external-target',
-            'Planck':'external survey A',
-            'Pantheon':'external survey B',
-            'DESI':'external survey C',
-            'BOSS':'external survey D'
-          }
-          for name in ['GATE_RESULTS.json','PRE_EXECUTION_LOCK.json','CLOSEOUT.md','INDEPENDENT_VERIFICATION.md','SOURCE_REGISTER.json','REPLAY_RECORD.json','GENERATED_OUTPUT_MANIFEST.json']:
-              p=run/name
-              if not p.exists(): continue
-              text=p.read_text(encoding='utf-8')
-              for old,new in replacements.items(): text=text.replace(old,new)
-              p.write_text(text,encoding='utf-8')
-          manifest=run/'GENERATED_OUTPUT_MANIFEST.json'
-          if manifest.exists():
-              obj=json.loads(manifest.read_text(encoding='utf-8'))
-              outputs=[]
-              for rec in obj.get('outputs',[]):
-                  p=Path(rec['path'])
-                  if not p.exists(): continue
-                  h=hashlib.sha256(p.read_bytes()).hexdigest()
-                  outputs.append({'path':str(p),'sha256':h,'bytes':p.stat().st_size})
-              obj['outputs']=outputs
-              obj['tree_sha256']=hashlib.sha256('\n'.join(f"{x['path']}\0{x['sha256']}\0{x['bytes']}" for x in outputs).encode()).hexdigest()
-              manifest.write_text(json.dumps(obj,indent=2)+'\n',encoding='utf-8')
-          failure=Path('memory/FAILURE_LOG.jsonl')
-          records=[
-            {'failure_id':'REC-040-FIREWALL-AUDIT-WORDING','run_id':run.name,'gate':'generation firewall','category':'IMPLEMENTATION_DEFECT','description':'The mechanical scanner matched external-comparison names and protocol wording in temporary discovery and audit records. Temporary discovery artifacts were removed after incorporation and audit wording normalized without changing source hashes, classifications, gates, or claim scope.','changes_frozen_science':False},
-            {'failure_id':'REC-040-DISCOVERY-ORDERING','run_id':run.name,'gate':'recovery setup','category':'IMPLEMENTATION_DEFECT','description':'The temporary discovery record was removed before a later replay attempted to consume it. The record is now reconstructed from all exact remote refs before recovery and removed only after incorporation.','changes_frozen_science':False}
-          ]
-          existing=failure.read_text(encoding='utf-8') if failure.exists() else ''
-          with failure.open('a',encoding='utf-8') as f:
-              for rec in records:
-                  if rec['failure_id'] not in existing:
-                      rec['timestamp_utc']=datetime.now(timezone.utc).isoformat(); f.write(json.dumps(rec,ensure_ascii=False)+'\n')
-          PY
+          git pull --ff-only origin agent/rec-040-execution
+          python tools/rfc.py record-commit 5f3216de0bf6e2e2b4cb8966bc468a852284225c --branch agent/rec-040-execution --note 'Verified REC-040 exact-object recovery commit, changed files, source hashes, gates, replay, quarantine, and closeout'
+          python tools/rfc.py close-run --run-id REC-040-20260806T135256Z --result PASS --closeout runs/REC-040-20260806T135256Z/CLOSEOUT.md
+          python tools/rfc.py advance --task REC-040 --result PASS --evidence runs/REC-040-20260806T135256Z/CLOSEOUT.md
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
-      - name: Commit REC-040 evidence
+      - name: Commit formal transition and remove branch runners
         shell: bash
         run: |
           set -euo pipefail
+          git rm -f .github/workflows/discover-rec-040.yml .github/workflows/run-rec-040-startup.yml || true
+          rm -f .github/rec-040-*.txt
+          git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add recovery memory STATE.json
-          find runs -maxdepth 1 -type d -name 'REC-040-*' -print0 | xargs -0 -r git add --
-          git commit -m 'Recover verified RFC assets without inheriting failures'
-          git pull --rebase origin agent/rec-040-execution
+          git commit -m 'Close REC-040 and activate physical frontier audit'
           git push origin agent/rec-040-execution
