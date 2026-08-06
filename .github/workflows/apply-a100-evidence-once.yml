@@ -108,3 +108,5 @@ jobs:
           git diff --cached --quiet && { echo 'No A-100 evidence changes produced' >&2; exit 1; }
           git commit -m 'Execute and freeze Module A prephysical handoff'
           git push origin HEAD:agent/frontier-050-execution
+
+# Registered through the repository contents API before triggering.
