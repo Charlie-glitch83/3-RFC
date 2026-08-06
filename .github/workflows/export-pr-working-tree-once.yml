@@ -1,0 +1,24 @@
+name: Export PR working tree once
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Remove Git metadata from artifact payload
+        run: rm -rf .git
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frontier-pr-working-tree
+          path: .
+          include-hidden-files: true
+          retention-days: 1
