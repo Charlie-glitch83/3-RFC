@@ -38,5 +38,6 @@ jobs:
             echo 'No generated startup changes.'
           else
             git commit -m 'Prepare XWALK-030 governed workspace'
+            git pull --rebase origin agent/xwalk-030-execution
             git push origin agent/xwalk-030-execution
           fi
