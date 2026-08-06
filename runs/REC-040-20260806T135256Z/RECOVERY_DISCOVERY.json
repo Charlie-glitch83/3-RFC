@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "generated_utc": "2026-08-06T14:00:40.034872+00:00",
+  "generated_utc": "2026-08-06T14:01:48.914986+00:00",
   "repository": "Charlie-glitch83/2-RFC",
   "branches": [
     {
@@ -10,7 +10,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-wl4um1ja/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-wl4um1ja/validation/validate_repo.py\", line 64, in main\n    require((ROOT / relative).is_file(), f\"missing required file: {relative}\")\n  File \"/tmp/rec040-wl4um1ja/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: missing required file: modules/N/MODULE_N_DETAILED_SCIENTIFIC_REPAIR_PLAN.md\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-o6ofp90h/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-o6ofp90h/validation/validate_repo.py\", line 64, in main\n    require((ROOT / relative).is_file(), f\"missing required file: {relative}\")\n  File \"/tmp/rec040-o6ofp90h/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: missing required file: modules/N/MODULE_N_DETAILED_SCIENTIFIC_REPAIR_PLAN.md\n"
       },
       "candidate_hits": {
         "module_l": [
@@ -1026,7 +1026,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-i2dbg_ed/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-i2dbg_ed/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-i2dbg_ed/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-f29a6deb/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-f29a6deb/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-f29a6deb/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       },
       "candidate_hits": {
         "module_l": [
@@ -1955,7 +1955,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-vd__6x08/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-vd__6x08/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-vd__6x08/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-vb66sn06/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-vb66sn06/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-vb66sn06/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       },
       "candidate_hits": {
         "module_l": [
@@ -2884,7 +2884,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-5pnks6jk/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-5pnks6jk/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-5pnks6jk/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-750vpu2b/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-750vpu2b/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-750vpu2b/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       },
       "candidate_hits": {
         "module_l": [
@@ -3813,7 +3813,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-nngh9vx3/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-nngh9vx3/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-nngh9vx3/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-ixey5nrc/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-ixey5nrc/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-ixey5nrc/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       },
       "candidate_hits": {
         "module_l": [
@@ -4742,7 +4742,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-l1z09lgy/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-l1z09lgy/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-l1z09lgy/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-ot4ao50b/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-ot4ao50b/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-ot4ao50b/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       },
       "candidate_hits": {
         "module_l": [
@@ -5671,7 +5671,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-ebw1itbo/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-ebw1itbo/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-ebw1itbo/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-_5w7ld78/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-_5w7ld78/validation/validate_repo.py\", line 57, in main\n    require(state[\"active_module\"] == \"D\", \"Module D must be active\")\n  File \"/tmp/rec040-_5w7ld78/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: Module D must be active\n"
       },
       "candidate_hits": {
         "module_l": [
@@ -6600,7 +6600,7 @@
       "validation": {
         "present": true,
         "returncode": 1,
-        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-m8acoe4z/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-m8acoe4z/validation/validate_repo.py\", line 64, in main\n    require((ROOT / relative).is_file(), f\"missing required file: {relative}\")\n  File \"/tmp/rec040-m8acoe4z/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: missing required file: modules/N/MODULE_N_DETAILED_SCIENTIFIC_REPAIR_PLAN.md\n"
+        "output": "Traceback (most recent call last):\n  File \"/tmp/rec040-asu9nf3j/validation/validate_repo.py\", line 169, in <module>\n    main()\n  File \"/tmp/rec040-asu9nf3j/validation/validate_repo.py\", line 64, in main\n    require((ROOT / relative).is_file(), f\"missing required file: {relative}\")\n  File \"/tmp/rec040-asu9nf3j/validation/validate_repo.py\", line 15, in require\n    raise AssertionError(message)\nAssertionError: missing required file: modules/N/MODULE_N_DETAILED_SCIENTIFIC_REPAIR_PLAN.md\n"
       },
       "candidate_hits": {
         "module_l": [
