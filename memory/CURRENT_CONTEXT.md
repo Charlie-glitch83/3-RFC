@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-06T14:10:05.305718+00:00
+Generated: 2026-08-06T14:13:43.056988+00:00
 
 ## Project truth
 
@@ -8,7 +8,7 @@ Generated: 2026-08-06T14:10:05.305718+00:00
 - Generation mode: `GENERATION_SEALED`
 - Active work unit: `FRONTIER-050` — Determine the Earliest Missing Physical Parent
 - Current module: `AUDIT`
-- Last verified commit: `5f3216de0bf6e2e2b4cb8966bc468a852284225c`
+- Last verified commit: `c29b124760302471c55dbf0fe49582af5f8cc10a`
 
 ## Strongest supported claim
 
@@ -77,12 +77,11 @@ Audit A–J and choose the earliest exact break between formal law and one physi
 - ADVANCE-AUTH-020-20260806T072340Z: Marked AUTH-020 PASS and activated XWALK-030
 - COMMIT-8913ed740c60: Verified XWALK-030 crosswalk commit, exact changed files, gate evidence, source bindings, independent review, and closeout
 - ADVANCE-XWALK-030-20260806T131240Z: Marked XWALK-030 PASS and activated REC-040
-- COMMIT-5f3216de0bf6: Verified REC-040 exact-object recovery commit, changed files, source hashes, gates, replay, quarantine, and closeout
+- COMMIT-c29b12476030: Verified final REC-040 exact-object recovery commit, five source-only Module L assets, exact hashes, quarantines, preserved validator failures, gate evidence, and closeout
 - ADVANCE-REC-040-20260806T141001Z: Marked REC-040 PASS and activated FRONTIER-050
 
 ## Recent failures
 
-- BOOT-000-CI-MISSING-LOCKED-DEPENDENCIES: Validation omitted requirements-lock.txt and lacked numpy/networkx.
 - BOOT-000-ACTIVE-QUEUE-TEST-HARDCODE: The deterministic-next test hardcoded BOOT-000 instead of reading active state.
 - SRC-010-FIREWALL-TOKEN-BOUNDARY: The mechanical scanner matched DESI inside design and public_data inside a NONE declaration key.
 - SRC-010-RUN-ID-STATE-DRIFT: Generated timestamped run workspace existed but current_run and RUN_INDEX were not retained by the startup commit; verifier now resolves and registers the sole governed SRC-010 workspace.
@@ -90,6 +89,7 @@ Audit A–J and choose the earliest exact break between formal law and one physi
 - XWALK-030-MISSING-PROVENANCE-AND-MD: The prebuilt crosswalk lacked required source hashes and evidence states, and its Markdown deliverable was absent. Provenance and review structure were added without changing original dispositions.
 - REC-040-FIREWALL-AUDIT-WORDING: The mechanical scanner matched external-comparison names and protocol wording in temporary discovery and audit records. Temporary discovery artifacts were removed after incorporation and audit wording normalized without changing source hashes, classifications, gates, or claim scope.
 - REC-040-DISCOVERY-ORDERING: The temporary discovery record was removed before a later replay attempted to consume it. The record is now reconstructed from all exact remote refs before recovery and removed only after incorporation.
+- REC-040-VERIFIED-SHA-RACE: Concurrent successful replays caused formal transition bookkeeping to record an earlier valid evidence SHA instead of the final clean replay SHA. Provenance was corrected to the final verified commit without changing run evidence, classifications, gates, result, or next-child authorization.
 
 ## Resume commands
 
