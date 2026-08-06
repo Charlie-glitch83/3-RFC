@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "generated_utc": "2026-08-06T13:55:40.073498+00:00",
+  "repository": "Charlie-glitch83/2-RFC",
+  "branch": "main",
+  "commit": "ff835652f035119f4d0d806957bf92227ae18ab5",
+  "tracked_file_count": 1,
+  "validation": {
+    "command": "python validation/validate_repo.py",
+    "returncode": 2,
+    "output": "python: can't open file '/home/runner/work/3-RFC/3-RFC/upstream/validation/validate_repo.py': [Errno 2] No such file or directory\n"
+  },
+  "candidate_hits": {
+    "module_l": [],
+    "kernel": [
+      "README.md"
+    ],
+    "physical_bridge": [
+      "README.md"
+    ],
+    "public_data": [
+      "README.md"
+    ],
+    "pass_state": [
+      "README.md"
+    ]
+  },
+  "shortlist": [
+    {
+      "path": "README.md",
+      "sha256": "a9982d5174e9caca963f5a6466a71602e2f4bf4091278f920c7981ae0e90f290",
+      "bytes": 3517
+    }
+  ],
+  "all_files": [
+    {
+      "path": "README.md",
+      "sha256": "a9982d5174e9caca963f5a6466a71602e2f4bf4091278f920c7981ae0e90f290",
+      "bytes": 3517
+    }
+  ],
+  "admission_status": "DISCOVERY_ONLY_NOT_ADMITTED"
+}
