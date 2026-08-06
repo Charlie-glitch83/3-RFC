@@ -1,0 +1,10 @@
+{
+  "run_id": "FRONTIER-050-20260806T142640Z",
+  "module": "AUDIT",
+  "task_id": "FRONTIER-050",
+  "status": "CREATED",
+  "created_utc": "2026-08-06T14:26:40.944123+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "runs/FRONTIER-050-20260806T142640Z"
+}

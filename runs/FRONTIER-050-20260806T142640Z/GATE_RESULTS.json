@@ -1,0 +1,7 @@
+{
+  "run_id": "",
+  "overall": "BLOCKED",
+  "gates": [],
+  "diagnostics": [],
+  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+}

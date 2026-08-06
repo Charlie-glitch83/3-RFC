@@ -44,6 +44,14 @@
       "closed_utc": "2026-08-06T14:10:01.299495+00:00",
       "tree_sha256": "f31c01a7826809d1962a36dc1d1303eed794d01bf5a4269b4a1ba3edcb14585b",
       "closeout": "runs/REC-040-20260806T135256Z/CLOSEOUT.md"
+    },
+    {
+      "run_id": "FRONTIER-050-20260806T142640Z",
+      "module": "AUDIT",
+      "task_id": "FRONTIER-050",
+      "status": "CREATED",
+      "path": "runs/FRONTIER-050-20260806T142640Z",
+      "created_utc": "2026-08-06T14:26:40.944407+00:00"
     }
   ]
 }
