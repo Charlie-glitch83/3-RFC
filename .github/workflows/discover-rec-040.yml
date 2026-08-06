@@ -1,0 +1,130 @@
+name: Discover REC-040 exact candidates
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    if: github.head_ref == 'agent/rec-040-execution'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/rec-040-execution
+          fetch-depth: 0
+          path: current
+      - uses: actions/checkout@v4
+        with:
+          repository: Charlie-glitch83/2-RFC
+          ref: main
+          fetch-depth: 0
+          path: upstream
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect exact upstream commit and replay repository validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE/current"
+          python - <<'PY'
+          import hashlib, json, os, re, subprocess
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          current = Path.cwd()
+          upstream = current.parent / 'upstream'
+          runs = sorted(current.glob('runs/REC-040-*'))
+          if len(runs) != 1:
+              raise SystemExit(f'expected one REC-040 run, found {len(runs)}')
+          run_dir = runs[0]
+
+          def cmd(args, cwd):
+              p = subprocess.run(args, cwd=cwd, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+              return p.returncode, p.stdout
+          def sha(path):
+              h = hashlib.sha256()
+              with path.open('rb') as f:
+                  for chunk in iter(lambda: f.read(1024*1024), b''):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          _, head = cmd(['git','rev-parse','HEAD'], upstream)
+          head = head.strip()
+          _, branch = cmd(['git','branch','--show-current'], upstream)
+          rc, validation = cmd(['python','validation/validate_repo.py'], upstream)
+
+          tracked = []
+          _, listing = cmd(['git','ls-files'], upstream)
+          for rel in listing.splitlines():
+              p = upstream / rel
+              if p.is_file():
+                  tracked.append({'path': rel, 'sha256': sha(p), 'bytes': p.stat().st_size})
+
+          text_ext = {'.md','.txt','.json','.py','.toml','.yaml','.yml','.wl','.m','.csv'}
+          patterns = {
+              'module_l': re.compile(r'(?i)(module[ _-]*l|\bL\b.*first.?pass|first.?pass.*\bL\b)'),
+              'kernel': re.compile(r'(?i)(recursive kernel|triad kernel|directed lane|witness|route|no-loss|reopening)'),
+              'physical_bridge': re.compile(r'(?i)(genesis realization|physical realization|bridge lemma|Big Implosion)'),
+              'public_data': re.compile(r'(?i)(planck|pantheon|desi|sdss|public[_ -]?data|observational target|empirical comparison)'),
+              'pass_state': re.compile(r'(?i)(\bPASS\b|score.?1\.0000|state\.json|closeout)'),
+          }
+          hits = {k: [] for k in patterns}
+          for item in tracked:
+              p = upstream / item['path']
+              if p.suffix.lower() not in text_ext or p.stat().st_size > 2_000_000:
+                  continue
+              try:
+                  text = p.read_text(encoding='utf-8', errors='replace')
+              except Exception:
+                  continue
+              for key, rx in patterns.items():
+                  if rx.search(item['path']) or rx.search(text):
+                      hits[key].append(item['path'])
+
+          shortlist = sorted(set(
+              hits['module_l'] + hits['kernel'] + hits['physical_bridge'] +
+              ['README.md','STATE.json','PLAN.md','HANDOFF.md','evidence/SOURCE_AUDIT.md']
+          ))
+          shortlist_records = [x for x in tracked if x['path'] in shortlist]
+          report = {
+              'schema_version':'1.0',
+              'generated_utc':datetime.now(timezone.utc).isoformat(),
+              'repository':'Charlie-glitch83/2-RFC',
+              'branch':branch.strip(),
+              'commit':head,
+              'tracked_file_count':len(tracked),
+              'validation':{'command':'python validation/validate_repo.py','returncode':rc,'output':validation[-12000:]},
+              'candidate_hits':hits,
+              'shortlist':shortlist_records,
+              'all_files':tracked,
+              'admission_status':'DISCOVERY_ONLY_NOT_ADMITTED'
+          }
+          (run_dir/'RECOVERY_DISCOVERY.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
+          (run_dir/'RECOVERY_DISCOVERY_SUMMARY.md').write_text(
+              '# REC-040 Discovery Summary\n\n'
+              f'- Upstream commit: `{head}`\n'
+              f'- Tracked files: {len(tracked)}\n'
+              f'- Validation return code: {rc}\n'
+              f'- Module-L hits: {len(hits["module_l"])}\n'
+              f'- Kernel hits: {len(hits["kernel"])}\n'
+              f'- Physical-bridge hits: {len(hits["physical_bridge"])}\n'
+              f'- Public-data indicator hits: {len(hits["public_data"])}\n'
+              f'- PASS/state indicator hits: {len(hits["pass_state"])}\n\n'
+              'This is discovery evidence only. No object is admitted by this report.\n',
+              encoding='utf-8')
+          PY
+      - name: Commit discovery evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE/current"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add runs/REC-040-*/RECOVERY_DISCOVERY.json runs/REC-040-*/RECOVERY_DISCOVERY_SUMMARY.md
+          git commit -m 'Record exact 2-RFC recovery discovery'
+          git push origin agent/rec-040-execution
