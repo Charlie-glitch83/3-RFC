@@ -1,0 +1,10 @@
+{
+  "run_id": "REC-040-20260806T135256Z",
+  "module": "RECOVERY",
+  "task_id": "REC-040",
+  "status": "CREATED",
+  "created_utc": "2026-08-06T13:52:56.279835+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "runs/REC-040-20260806T135256Z"
+}
