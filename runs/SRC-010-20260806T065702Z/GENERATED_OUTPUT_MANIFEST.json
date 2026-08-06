@@ -1,11 +1,11 @@
 {
   "run_id": "SRC-010-20260806T065702Z",
   "status": "FINAL",
-  "finalized_utc": "2026-08-06T07:06:54.024110+00:00",
+  "finalized_utc": "2026-08-06T07:07:19.125366+00:00",
   "outputs": [
     {
       "path": "sources/SOURCE_MANIFEST.json",
-      "sha256": "b4d68b14ed8226d4b4faf8dc42a5e83f4b6f15826bde2276709258b3ff7f42d5",
+      "sha256": "7204e0540e06604b1635a2f222bcc504aa1f93e92cdb77643926135e68d186e4",
       "bytes": 16475
     },
     {
@@ -34,6 +34,6 @@
       "bytes": 2025
     }
   ],
-  "tree_sha256": "52145db5cfc3eca33097c7b43c983d40f73cc68dba081ab09fbda4a99de06a20",
+  "tree_sha256": "ebb7d1a2f7ad695280e60fbcd912f922b7b92610dbb4c88096c2cc9c45c1785d",
   "note": "Manifest excludes itself from tree hash."
 }

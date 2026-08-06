@@ -295,7 +295,7 @@
   ],
   "manifest_sha256": "d6f8b697050cf62e5e189a19b471488f80bbc78a85903f0b83511b1dc77971e3",
   "independent_reconstruction": {
-    "timestamp_utc": "2026-08-06T07:06:54.024110+00:00",
+    "timestamp_utc": "2026-08-06T07:07:19.125366+00:00",
     "method": "fresh SHA-256 pass over seed and frozen objects with registry, role, classification, and parent-class checks",
     "source_count": 29,
     "reconstruction_sha256": "f13f97f0ff1380dcd924447a32610bf4020850fd326009209dac0a238265f030",
