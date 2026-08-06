@@ -5,9 +5,12 @@
       "run_id": "SRC-010-20260806T065702Z",
       "module": "SOURCES",
       "task_id": "SRC-010",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "runs/SRC-010-20260806T065702Z",
-      "created_utc": "2026-08-06T06:57:02.685341+00:00"
+      "created_utc": "2026-08-06T06:57:02.685341+00:00",
+      "closed_utc": "2026-08-06T07:09:09.126107+00:00",
+      "tree_sha256": "ffaf33fa4f65c1319986f29e0118ce744b06cf291366c9bc84e938e1a05c9592",
+      "closeout": "runs/SRC-010-20260806T065702Z/CLOSEOUT.md"
     }
   ]
 }

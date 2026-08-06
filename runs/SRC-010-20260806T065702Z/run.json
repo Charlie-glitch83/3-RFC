@@ -2,9 +2,11 @@
   "run_id": "SRC-010-20260806T065702Z",
   "module": "SOURCES",
   "task_id": "SRC-010",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-06T06:57:02.685341+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "runs/SRC-010-20260806T065702Z"
+  "workspace": "runs/SRC-010-20260806T065702Z",
+  "closed_utc": "2026-08-06T07:09:09.126107+00:00",
+  "closeout": "runs/SRC-010-20260806T065702Z/CLOSEOUT.md"
 }

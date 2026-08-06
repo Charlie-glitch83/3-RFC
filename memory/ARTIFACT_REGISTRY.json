@@ -1,4 +1,13 @@
 {
   "schema_version": "1.0",
-  "artifacts": []
+  "artifacts": [
+    {
+      "path": "runs/SRC-010-20260806T065702Z",
+      "sha256": "ffaf33fa4f65c1319986f29e0118ce744b06cf291366c9bc84e938e1a05c9592",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-06T07:09:09.127429+00:00",
+      "work_unit": "SRC-010",
+      "run_id": "SRC-010-20260806T065702Z"
+    }
+  ]
 }
