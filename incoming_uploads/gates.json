@@ -1,0 +1,26 @@
+{
+  "module": "Q",
+  "componentwise": [
+    {
+      "gate": "no P data flow",
+      "required": "PASS"
+    },
+    {
+      "gate": "conservation and no-loss",
+      "required": "PASS"
+    },
+    {
+      "gate": "terminal numerical convergence",
+      "required": "PASS"
+    },
+    {
+      "gate": "memory does not impersonate source",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}
