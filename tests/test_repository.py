@@ -87,7 +87,8 @@ class RepositoryTests(unittest.TestCase):
     def test_next_command_is_deterministic(self):
         proc = subprocess.run([sys.executable, str(ROOT / "tools/rfc.py"), "next"], cwd=ROOT, capture_output=True, text=True)
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
-        self.assertIn("ACTIVE: BOOT-000", proc.stdout)
+        state = json.loads((ROOT / "STATE.json").read_text())
+        self.assertIn(f"ACTIVE: {state['active_work_unit']}", proc.stdout)
 
     def test_firewall_scan_does_not_flag_protocol_prohibitions(self):
         proc = subprocess.run([sys.executable, str(ROOT / "tools/rfc.py"), "firewall-scan"], cwd=ROOT, capture_output=True, text=True)

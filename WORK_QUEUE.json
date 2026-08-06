@@ -6,7 +6,7 @@
       "id": "BOOT-000",
       "title": "Install, Verify, and Commit the Repository Scaffold",
       "module": "REPO",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [],
       "objective": "Place this scaffold at the root of Charlie-glitch83/3-RFC, run all local checks, commit it, and verify the exact GitHub SHA and diff.",
       "steps": [
@@ -33,7 +33,7 @@
       "id": "SRC-010",
       "title": "Hash and Admit the Core Source Corpus",
       "module": "SOURCES",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "BOOT-000"
       ],
@@ -154,7 +154,7 @@
       "depends_on": [
         "REC-040"
       ],
-      "objective": "Audit A–J and choose the earliest exact break between formal law and one physically executed parent chain.",
+      "objective": "Audit A\u2013J and choose the earliest exact break between formal law and one physically executed parent chain.",
       "steps": [
         "For each boundary, record source, law, representative test, physical parent, solver, output, restart, covariance, independent reconstruction, and evidence state.",
         "Select the earliest missing object.",
@@ -709,7 +709,7 @@
     },
     {
       "id": "KLM-240",
-      "title": "Close Module KLM: Causal K–L–M Recurrence and Classification",
+      "title": "Close Module KLM: Causal K\u2013L\u2013M Recurrence and Classification",
       "module": "KLM",
       "status": "BLOCKED",
       "depends_on": [

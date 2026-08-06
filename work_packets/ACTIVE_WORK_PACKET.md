@@ -1,45 +1,24 @@
-# ACTIVE WORK PACKET — BOOT-000
+# ACTIVE WORK PACKET — SRC-010
 
 **This is the only authorized work. Execute it in order.**
 
-- Module: `REPO`
-- Objective: Place this scaffold at the root of Charlie-glitch83/3-RFC, run all local checks, commit it, and verify the exact GitHub SHA and diff.
-- Run workspace: `runs/BOOT-000`
-
-## Exact sequence
-
-1. Read `work_units/BOOT-000/WORK_ORDER.md` and `work_units/BOOT-000/recipe.json`.
-2. Execute the frozen sequence below without redesigning it:
-
-   1. Copy the complete bundle to the empty repository root.
-   2. Commit the scaffold exactly once.
-   3. Fetch README.md and the commit through GitHub, verify SHA and diff, then record the commit.
-   4. Copy the bundle contents into the empty 3-RFC repository without redesigning them.
-   5. Run python tools/rfc.py doctor, python -m unittest discover -s tests -v, and python tools/rfc.py firewall-scan.
-   6. Create work branch agent/3rfc-universe-build after the scaffold is visible on the default branch or as the initial branch, according to repository state.
-   7. Commit with the prescribed message and verify the commit SHA, file list, fetched README, and branch comparison.
-   8. Record the verified SHA in memory/DECISION_LOG.jsonl and the closeout.
-
-3. Run the exact commands:
-
-   - `bash bootstrap.sh`
-   - `python tools/director.py doctor`
-   - `python -m unittest discover -s tests -v`
-   - `python tools/rfc.py firewall-scan`
+- Module: `SOURCES`
+- Objective: Admit exact source bytes from source_seed into immutable sources/frozen, classify authority, and create a reproducible source manifest.
+- Run workspace: create only when SRC-010 execution begins.
 
 ## Required deliverables
 
-- runs/BOOT-000/CLOSEOUT.md
-- verified GitHub commit SHA
-- passing doctor/tests/firewall scan
+- `sources/SOURCE_MANIFEST.json`
+- `memory/SOURCE_REGISTRY.json`
+- `runs/SRC-010/CLOSEOUT.md`
 
-## Componentwise gates
+## Mandatory gates
 
-- README visible in GitHub
-- new commit SHA exists
-- diff contains scaffold
-- doctor and tests pass
+- all core bytes resolvable
+- hashes match
+- authority class explicit
+- no summary used as parent
 
 ## Commit message
 
-`Initialize the 3-RFC governed universe workspace`
+`Admit and lock the core RFC source corpus`
