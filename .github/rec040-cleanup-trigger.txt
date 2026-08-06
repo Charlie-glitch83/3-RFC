@@ -1,0 +1,1 @@
+Delete the temporary REC-040 execution branch and self-remove the cleanup action.
