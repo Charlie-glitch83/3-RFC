@@ -1,7 +1,41 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
+  "run_id": "AUTH-020-20260806T071800Z",
+  "overall": "PASS",
+  "gates": [
+    {
+      "gate": "no terminology drift",
+      "result": "PASS",
+      "evidence": "TERMINOLOGY_LOCK canonical map exactly matches CIF, QV, RFL, First Action, and Big Implosion definitions"
+    },
+    {
+      "gate": "no N-body over-universalization",
+      "result": "PASS",
+      "evidence": "constitution and claim map explicitly restrict N-body to kernel enhancement and finite relational carriers"
+    },
+    {
+      "gate": "no inherited failure parentage",
+      "result": "PASS",
+      "evidence": "constitution treats failed mechanisms/outputs as regression evidence, never required parents"
+    },
+    {
+      "gate": "independent source trace",
+      "result": "PASS",
+      "evidence": "five exact canonical frozen objects rehashed and every material assertion mapped to admitted owner hashes"
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "canonical_sources_verified",
+      "value": 5
+    },
+    {
+      "name": "claims_verified",
+      "value": 7
+    },
+    {
+      "name": "public_inputs",
+      "value": 0
+    }
+  ],
   "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
 }

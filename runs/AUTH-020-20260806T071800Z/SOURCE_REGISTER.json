@@ -1,9 +1,52 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
+  "run_id": "AUTH-020-20260806T071800Z",
+  "exact_parents": [
+    "sources/SOURCE_MANIFEST.json",
+    "memory/SOURCE_REGISTRY.json"
+  ],
+  "admitted_sources": [
+    {
+      "label": "Triadic emergence and theorem architecture",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "P29 metadata and reproducibility context",
+      "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "Revised triadic N-body proof",
+      "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "N-body metadata",
+      "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "Universe architecture and full ledger",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "classification": "CANONICAL_AUTHORITY"
+    }
+  ],
+  "imports": [
+    "hashlib",
+    "json",
+    "pathlib"
+  ],
+  "files": [
+    "theory/SCIENTIFIC_CONSTITUTION.md",
+    "theory/TERMINOLOGY_LOCK.json",
+    "theory/CLAIM_MAP.json",
+    "runs/AUTH-020-20260806T071800Z/AUTHORITY_SOURCE_TRACE.json"
+  ],
   "urls": [],
   "constants": [],
   "public_data_declaration": "NONE"

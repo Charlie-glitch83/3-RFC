@@ -1,21 +1,73 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
+  "run_id": "AUTH-020-20260806T071800Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-06T07:22:15.282512+00:00",
+  "authority_hashes": [
+    "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+    "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+    "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+    "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+    "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+  ],
+  "parent_hashes": [
+    "d6f8b697050cf62e5e189a19b471488f80bbc78a85903f0b83511b1dc77971e3"
+  ],
+  "definition_hashes": [
+    "ce506bfbeb753e61c52d16ec5b3cb67f138928929d5d061941ca31c408f71ea0",
+    "b85d472879fe60f6fe23c595b7ebaa71d81e744c53f5df3effab327d4f19ecdb",
+    "9e9e9c62bab48aeb56595531bb5818f373b9faae22f77364a92c7f45d7f34c55"
+  ],
+  "candidate_classes": [
+    "canonical terminology",
+    "source-local namespaced alternatives",
+    "claim ownership and evidence boundaries"
+  ],
+  "equations_and_laws": [
+    "QV(CIF) -> RFL"
+  ],
   "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "methods": [
+    "exact source hash verification",
+    "assertion-owner trace",
+    "countermodel scope checks"
+  ],
+  "tolerances": [
+    "exact equality only"
+  ],
+  "stopping_rules": [
+    "any missing source/hash or failed component gate"
+  ],
+  "expected_invariants": [
+    "common ancestry not identical equations",
+    "N-body scope limited",
+    "no inherited failure parentage",
+    "generation firewall",
+    "proof and physical states separated"
+  ],
+  "tests": [
+    "common ancestry not identical equations",
+    "N-body scope limited",
+    "no inherited failure parentage",
+    "generation firewall",
+    "proof and physical states separated"
+  ],
+  "gates": [
+    "no terminology drift",
+    "no N-body over-universalization",
+    "no inherited failure parentage",
+    "independent source trace"
+  ],
+  "falsifiers": [
+    "canonical term mismatch",
+    "N-body universalization",
+    "failed mechanism made parent",
+    "untraceable material assertion"
+  ],
+  "claim_boundary": "Locks authority, terminology, roles, failure policy, no-tuning policy, and evidence ownership only; does not validate the scientific truth of later module claims.",
+  "independent_verifier_design": "Reopen admitted manifest and frozen byte objects, recompute hashes, and reconstruct assertion-to-owner mapping without trusting the primary closeout.",
+  "allowed_implementation_only_corrections": [
+    "relocation-safe paths",
+    "evidence formatting",
+    "run-state bookkeeping"
+  ]
 }

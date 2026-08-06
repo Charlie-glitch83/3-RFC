@@ -1,8 +1,49 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "AUTH-020-20260806T071800Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-06T07:22:15.282512+00:00",
+  "outputs": [
+    {
+      "path": "theory/SCIENTIFIC_CONSTITUTION.md",
+      "sha256": "ce506bfbeb753e61c52d16ec5b3cb67f138928929d5d061941ca31c408f71ea0",
+      "bytes": 3036
+    },
+    {
+      "path": "theory/TERMINOLOGY_LOCK.json",
+      "sha256": "b85d472879fe60f6fe23c595b7ebaa71d81e744c53f5df3effab327d4f19ecdb",
+      "bytes": 480
+    },
+    {
+      "path": "theory/CLAIM_MAP.json",
+      "sha256": "9e9e9c62bab48aeb56595531bb5818f373b9faae22f77364a92c7f45d7f34c55",
+      "bytes": 2286
+    },
+    {
+      "path": "runs/AUTH-020-20260806T071800Z/AUTHORITY_SOURCE_TRACE.json",
+      "sha256": "ce7dbed36525aba43ad772bd504ce9e67384fb529731ee009410051be8a9c5c4",
+      "bytes": 4476
+    },
+    {
+      "path": "runs/AUTH-020-20260806T071800Z/GATE_RESULTS.json",
+      "sha256": "595abbe9ebbb689d5749ebdec535ce8e10169213d5751a022cd7245050e6b5ef",
+      "bytes": 1198
+    },
+    {
+      "path": "runs/AUTH-020-20260806T071800Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "f8f611b0d30c21cd4e01ca0f9ba35f83fc3f01426643a4255a665bd8f4dba872",
+      "bytes": 1214
+    },
+    {
+      "path": "runs/AUTH-020-20260806T071800Z/REPLAY_RECORD.json",
+      "sha256": "19bc1370ba2bad627261e6bd1e729e675c914afc254f6222b87a945496dbf04a",
+      "bytes": 312
+    },
+    {
+      "path": "runs/AUTH-020-20260806T071800Z/CLOSEOUT.md",
+      "sha256": "0c82fafcd1f006b476fed0bb089ba66f402d92c6e86adaf2490c5e4fc014f046",
+      "bytes": 2300
+    }
+  ],
+  "tree_sha256": "464bc36326b6ba24bc64e5ecca696bc9c5ac5e02af358883ec53ffca9dadb762",
+  "note": "Manifest excludes itself from tree hash."
 }

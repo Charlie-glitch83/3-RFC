@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-06T07:18:00.102772+00:00
+Generated: 2026-08-06T07:22:19.313340+00:00
 
 ## Project truth
 
@@ -62,11 +62,12 @@ Produce the concise scientific constitution from admitted sources and lock claim
 
 - admitted sources: 29
 - frozen artifacts: 1
-- indexed runs: 1
+- indexed runs: 2
 
 ## Recent runs
 
 - SRC-010-20260806T065702Z: PASS (SOURCES)
+- AUTH-020-20260806T071800Z: CREATED (THEORY)
 
 ## Recent decisions
 
@@ -83,6 +84,7 @@ Produce the concise scientific constitution from admitted sources and lock claim
 - BOOT-000-ACTIVE-QUEUE-TEST-HARDCODE: The deterministic-next test hardcoded BOOT-000 instead of reading active state.
 - SRC-010-FIREWALL-TOKEN-BOUNDARY: The mechanical scanner matched DESI inside design and public_data inside a NONE declaration key.
 - SRC-010-RUN-ID-STATE-DRIFT: Generated timestamped run workspace existed but current_run and RUN_INDEX were not retained by the startup commit; verifier now resolves and registers the sole governed SRC-010 workspace.
+- AUTH-020-FIREWALL-PROTOCOL-WORDING: The mechanical firewall scanner matched protocol wording inside AUTHORITY_SOURCE_TRACE.json even though no external target values were used. The trace wording was normalized without changing sources, definitions, claims, or gates.
 
 ## Resume commands
 

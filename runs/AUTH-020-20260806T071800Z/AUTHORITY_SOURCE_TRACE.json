@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "run_id": "AUTH-020-20260806T071800Z",
+  "generated_utc": "2026-08-06T07:22:15.282512+00:00",
+  "method": "Independent exact-hash verification of admitted frozen source objects followed by assertion-to-owner mapping; no external target values used.",
+  "material_assertions": [
+    {
+      "assertion": "CIF/QV/RFL meanings, ordered triad, First Action, recursive/domain-specific manifestation, memory, and no-retune architecture",
+      "owners": [
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215"
+      ]
+    },
+    {
+      "assertion": "Constituted relational carriers, directed relations, witnesses, routes, events, branches, conservation, no-loss memory, reopening, and controlled finite-N refinement",
+      "owners": [
+        "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+        "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94"
+      ]
+    },
+    {
+      "assertion": "Universe-scale causal order, handoffs, observer products, reproducibility, freeze, and later comparison architecture",
+      "owners": [
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+      ]
+    },
+    {
+      "assertion": "Common triadic ancestry does not imply one identical equation",
+      "owners": [
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+      ]
+    },
+    {
+      "assertion": "N-body enhances the kernel but does not replace the RFC universe or universalize point-body mechanics",
+      "owners": [
+        "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+        "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+      ]
+    },
+    {
+      "assertion": "Old failures are warnings, regression tests, and negative controls, not mandatory scientific parents",
+      "owners": [
+        "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+        "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+      ]
+    }
+  ],
+  "verified_objects": [
+    {
+      "label": "Triadic emergence and theorem architecture",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "frozen_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "P29 metadata and reproducibility context",
+      "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "frozen_path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "Revised triadic N-body proof",
+      "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "frozen_path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "N-body metadata",
+      "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "frozen_path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+      "classification": "CANONICAL_AUTHORITY"
+    },
+    {
+      "label": "Universe architecture and full ledger",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "frozen_path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "classification": "CANONICAL_AUTHORITY"
+    }
+  ],
+  "disagreements": [
+    {
+      "topic": "source-local alternative CIF/QV wording",
+      "resolution": "Preserved only as namespaced source-local wording; canonical RFC definitions remain locked. No silent reconciliation."
+    },
+    {
+      "topic": "scope of N-body mechanics",
+      "resolution": "Relational objects enhance the kernel; direct point-body mechanics are not imposed on every domain."
+    }
+  ],
+  "verdict": "PASS"
+}
