@@ -1,24 +1,24 @@
-# ACTIVE WORK PACKET — AUTH-020
+# ACTIVE WORK PACKET — XWALK-030
 
 **This is the only authorized work. Execute it in order.**
 
 - Module: `THEORY`
-- Objective: Produce the concise scientific constitution from admitted sources and lock claim ownership, failure policy, no-tuning firewall, and proof-versus-physical order.
-- Run workspace: `runs/AUTH-020-20260806T071800Z`
+- Objective: Map every material parent object to preserve, strengthen, rederive, execute, reserve, quarantine, or supersede.
+- Run workspace: `runs/XWALK-030-20260806T130603Z`
 
 ## Exact sequence
 
-1. Read `work_units/AUTH-020/WORK_ORDER.md` and `work_units/AUTH-020/recipe.json`.
+1. Read `work_units/XWALK-030/WORK_ORDER.md` and `work_units/XWALK-030/recipe.json`.
 2. Execute the frozen sequence below without redesigning it:
 
-   1. Use the prebuilt constitution, terminology lock, and claim map.
-   2. Trace every material assertion to admitted source bytes.
-   3. Record disagreements; do not silently reconcile source conflict.
-   4. Use exact admitted sources.
-   5. Verify canonical CIF/QV/RFL meanings.
-   6. Separate common ancestry from identical equations.
-   7. Lock P29 + N-body + P30 roles.
-   8. Register countermodels and claim boundaries.
+   1. Use theory/ENHANCEMENT_CROSSWALK.json.
+   2. Classify each inherited mechanism as PRESERVE, REDERIVE, REGRESSION_ONLY, QUARANTINE, or EXCLUDE.
+   3. Keep N-body as kernel enhancement, not a universal identical equation.
+   4. Inventory P29 objects.
+   5. Inventory P30 universe objects.
+   6. Inventory N-body relational objects.
+   7. Assign exact disposition, evidence state, source hash, and target module.
+   8. Ensure nothing valid is discarded and no failure is inherited.
 
 3. Run the exact commands:
 
@@ -26,18 +26,17 @@
 
 ## Required deliverables
 
-- theory/SCIENTIFIC_CONSTITUTION.md
-- theory/TERMINOLOGY_LOCK.json
-- theory/CLAIM_MAP.json
-- runs/AUTH-020/CLOSEOUT.md
+- theory/ENHANCEMENT_CROSSWALK.json
+- theory/ENHANCEMENT_CROSSWALK.md
+- runs/XWALK-030/CLOSEOUT.md
 
 ## Componentwise gates
 
-- no terminology drift
-- no N-body over-universalization
-- no inherited failure parentage
-- independent source trace
+- all major objects classified
+- claim overlap removed
+- source hashes present
+- independent review
 
 ## Commit message
 
-`Lock the enhanced RFC scientific constitution`
+`Map the complete RFC enhancement architecture`

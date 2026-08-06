@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "work_unit": "XWALK-030",
+  "title": "P29/P30/N-body Preservation and Enhancement Crosswalk",
+  "module": "THEORY",
+  "objective": "Map every material parent object to preserve, strengthen, rederive, execute, reserve, quarantine, or supersede.",
+  "depends_on": [
+    "AUTH-020"
+  ],
+  "exact_commands": [
+    "python tools/director.py doctor"
+  ],
+  "exact_sequence": [
+    "Use theory/ENHANCEMENT_CROSSWALK.json.",
+    "Classify each inherited mechanism as PRESERVE, REDERIVE, REGRESSION_ONLY, QUARANTINE, or EXCLUDE.",
+    "Keep N-body as kernel enhancement, not a universal identical equation.",
+    "Inventory P29 objects.",
+    "Inventory P30 universe objects.",
+    "Inventory N-body relational objects.",
+    "Assign exact disposition, evidence state, source hash, and target module.",
+    "Ensure nothing valid is discarded and no failure is inherited."
+  ],
+  "deliverables": [
+    "theory/ENHANCEMENT_CROSSWALK.json",
+    "theory/ENHANCEMENT_CROSSWALK.md",
+    "runs/XWALK-030/CLOSEOUT.md"
+  ],
+  "componentwise_gates": [
+    "all major objects classified",
+    "claim overlap removed",
+    "source hashes present",
+    "independent review"
+  ],
+  "commit_message": "Map the complete RFC enhancement architecture",
+  "hard_stops": [
+    "required source or parent hash is missing",
+    "a public target would influence a generation decision",
+    "a claimed artifact cannot be fetched and independently verified",
+    "a componentwise gate fails"
+  ]
+}
