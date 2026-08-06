@@ -1,0 +1,973 @@
+{
+  "schema_version": "1.0",
+  "policy": "Exactly one ACTIVE item. PASS advances to direct child; FAIL remains active and records analysis.",
+  "items": [
+    {
+      "id": "BOOT-000",
+      "title": "Install, Verify, and Commit the Repository Scaffold",
+      "module": "REPO",
+      "status": "ACTIVE",
+      "depends_on": [],
+      "objective": "Place this scaffold at the root of Charlie-glitch83/3-RFC, run all local checks, commit it, and verify the exact GitHub SHA and diff.",
+      "steps": [
+        "Copy the bundle contents into the empty 3-RFC repository without redesigning them.",
+        "Run python tools/rfc.py doctor, python -m unittest discover -s tests -v, and python tools/rfc.py firewall-scan.",
+        "Create work branch agent/3rfc-universe-build after the scaffold is visible on the default branch or as the initial branch, according to repository state.",
+        "Commit with the prescribed message and verify the commit SHA, file list, fetched README, and branch comparison.",
+        "Record the verified SHA in memory/DECISION_LOG.jsonl and the closeout."
+      ],
+      "deliverables": [
+        "runs/BOOT-000/CLOSEOUT.md",
+        "verified GitHub commit SHA",
+        "passing doctor/tests/firewall scan"
+      ],
+      "gates": [
+        "README visible in GitHub",
+        "new commit SHA exists",
+        "diff contains scaffold",
+        "doctor and tests pass"
+      ],
+      "commit_message": "Initialize the 3-RFC governed universe workspace"
+    },
+    {
+      "id": "SRC-010",
+      "title": "Hash and Admit the Core Source Corpus",
+      "module": "SOURCES",
+      "status": "BLOCKED",
+      "depends_on": [
+        "BOOT-000"
+      ],
+      "objective": "Admit exact source bytes from source_seed into immutable sources/frozen, classify authority, and create a reproducible source manifest.",
+      "steps": [
+        "Verify source_seed manifest.",
+        "Admit P29, N-body, P30 and metadata first.",
+        "Classify historical, explanatory, candidate-addendum, recovery, and interpretation sources.",
+        "Hash every admitted object and reconstruct manifest independently."
+      ],
+      "deliverables": [
+        "sources/SOURCE_MANIFEST.json",
+        "memory/SOURCE_REGISTRY.json",
+        "runs/SRC-010/CLOSEOUT.md"
+      ],
+      "gates": [
+        "all core bytes resolvable",
+        "hashes match",
+        "authority class explicit",
+        "no summary used as parent"
+      ],
+      "commit_message": "Admit and lock the core RFC source corpus"
+    },
+    {
+      "id": "AUTH-020",
+      "title": "Lock Canonical Authority, Terminology, and Claims",
+      "module": "THEORY",
+      "status": "BLOCKED",
+      "depends_on": [
+        "SRC-010"
+      ],
+      "objective": "Produce the concise scientific constitution from admitted sources and lock claim ownership, failure policy, no-tuning firewall, and proof-versus-physical order.",
+      "steps": [
+        "Use exact admitted sources.",
+        "Verify canonical CIF/QV/RFL meanings.",
+        "Separate common ancestry from identical equations.",
+        "Lock P29 + N-body + P30 roles.",
+        "Register countermodels and claim boundaries."
+      ],
+      "deliverables": [
+        "theory/SCIENTIFIC_CONSTITUTION.md",
+        "theory/TERMINOLOGY_LOCK.json",
+        "theory/CLAIM_MAP.json",
+        "runs/AUTH-020/CLOSEOUT.md"
+      ],
+      "gates": [
+        "no terminology drift",
+        "no N-body over-universalization",
+        "no inherited failure parentage",
+        "independent source trace"
+      ],
+      "commit_message": "Lock the enhanced RFC scientific constitution"
+    },
+    {
+      "id": "XWALK-030",
+      "title": "P29/P30/N-body Preservation and Enhancement Crosswalk",
+      "module": "THEORY",
+      "status": "BLOCKED",
+      "depends_on": [
+        "AUTH-020"
+      ],
+      "objective": "Map every material parent object to preserve, strengthen, rederive, execute, reserve, quarantine, or supersede.",
+      "steps": [
+        "Inventory P29 objects.",
+        "Inventory P30 universe objects.",
+        "Inventory N-body relational objects.",
+        "Assign exact disposition, evidence state, source hash, and target module.",
+        "Ensure nothing valid is discarded and no failure is inherited."
+      ],
+      "deliverables": [
+        "theory/ENHANCEMENT_CROSSWALK.json",
+        "theory/ENHANCEMENT_CROSSWALK.md",
+        "runs/XWALK-030/CLOSEOUT.md"
+      ],
+      "gates": [
+        "all major objects classified",
+        "claim overlap removed",
+        "source hashes present",
+        "independent review"
+      ],
+      "commit_message": "Map the complete RFC enhancement architecture"
+    },
+    {
+      "id": "REC-040",
+      "title": "Recover Valid Prior 2-RFC Assets by Exact Object Admission",
+      "module": "RECOVERY",
+      "status": "BLOCKED",
+      "depends_on": [
+        "XWALK-030"
+      ],
+      "objective": "Inspect old repository branches and libraries, admit only exact valid scientific objects, and quarantine obsolete machinery and failed outputs.",
+      "steps": [
+        "Inspect Charlie-glitch83/2-RFC and known lineages.",
+        "Verify exact commits and files.",
+        "Replay or reconstruct candidate assets.",
+        "Classify each object: CANONICAL_PARENT, ADMITTED_SOURCE, REPLAY_REQUIRED, COMPARISON_ONLY, HISTORICAL_WARNING, QUARANTINED, SUPERSEDED, EXCLUDED.",
+        "Preserve Module L first-pass work only at its verified scope."
+      ],
+      "deliverables": [
+        "recovery/LINEAGE_CROSSWALK.json",
+        "recovery/ADMITTED_ASSET_MANIFEST.json",
+        "recovery/QUARANTINE.md",
+        "runs/REC-040/CLOSEOUT.md"
+      ],
+      "gates": [
+        "exact commit/file hashes",
+        "no old PASS auto-promoted",
+        "no public-data contamination",
+        "replay evidence"
+      ],
+      "commit_message": "Recover verified RFC assets without inheriting failures"
+    },
+    {
+      "id": "FRONTIER-050",
+      "title": "Determine the Earliest Missing Physical Parent",
+      "module": "AUDIT",
+      "status": "BLOCKED",
+      "depends_on": [
+        "REC-040"
+      ],
+      "objective": "Audit A–J and choose the earliest exact break between formal law and one physically executed parent chain.",
+      "steps": [
+        "For each boundary, record source, law, representative test, physical parent, solver, output, restart, covariance, independent reconstruction, and evidence state.",
+        "Select the earliest missing object.",
+        "Authorize exactly one next module."
+      ],
+      "deliverables": [
+        "audit/PHYSICAL_FRONTIER.json",
+        "audit/PHYSICAL_FRONTIER.md",
+        "runs/FRONTIER-050/CLOSEOUT.md"
+      ],
+      "gates": [
+        "no status word hides a missing object",
+        "one frontier selected",
+        "recovered parents verified"
+      ],
+      "commit_message": "Locate the exact RFC physical execution frontier"
+    },
+    {
+      "id": "A-100",
+      "title": "Close Module A: Triad, First Action, Recursive Kernel, and Relational Completion",
+      "module": "A",
+      "status": "BLOCKED",
+      "depends_on": [
+        "FRONTIER-050"
+      ],
+      "objective": "Constitute the exact prephysical RFC source law and integrate the revised N-body proof as the terminal relational completion of the kernel.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/A/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/A/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/A/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/A/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/A/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "canonical terminology exact",
+        "no physical time, geometry, constants, or later-module objects assumed",
+        "triad ablations fail as predeclared",
+        "scalar collapse countermodel rejected",
+        "lane increment 2N verified",
+        "new-solution claim requires non-gauge witnessed closure",
+        "dormant direct dynamics has zero backreaction",
+        "independent symbolic reconstruction"
+      ],
+      "commit_message": "Close Module A at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
+      "id": "B-110",
+      "title": "Close Module B: Big Implosion and First Physical State",
+      "module": "B",
+      "status": "BLOCKED",
+      "depends_on": [
+        "A-100"
+      ],
+      "objective": "Execute the sole first physical event from the exact prephysical parent and generate the first restartable physical RFC state.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/B/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/B/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/B/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/B/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/B/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "no pre-event physical time",
+        "exact parent bytes",
+        "strict nontrivial compression or derived equivalent",
+        "total ledger preservation",
+        "no-loss reopening",
+        "no later physics smuggled into B",
+        "ablation, replay, restart, and independent reconstruction"
+      ],
+      "commit_message": "Close Module B at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "C-120",
+      "title": "Close Module C: Microscopic Constitution",
+      "module": "C",
+      "status": "BLOCKED",
+      "depends_on": [
+        "B-110"
+      ],
+      "objective": "Derive and execute the microscopic field, particle, interaction, mass, mixing, and prethermal population content from the first physical state.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/C/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/C/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/C/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/C/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/C/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "units and dimensions",
+        "symmetry/constraint closure",
+        "positivity/unitarity or declared alternative",
+        "no Standard Model label without derivation or correspondence theorem",
+        "independent symbolic and numerical checks"
+      ],
+      "commit_message": "Close Module C at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "D-130",
+      "title": "Close Module D: Nonequilibrium Thermal and Phase History",
+      "module": "D",
+      "status": "BLOCKED",
+      "depends_on": [
+        "C-120"
+      ],
+      "objective": "Evolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/D/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/D/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/D/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "positive distributions",
+        "energy/charge conservation",
+        "event ordering",
+        "stiff-solver convergence",
+        "restart and independent reconstruction"
+      ],
+      "commit_message": "Close Module D at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "E-140",
+      "title": "Close Module E: Primordial Nuclear Network",
+      "module": "E",
+      "status": "BLOCKED",
+      "depends_on": [
+        "D-130"
+      ],
+      "objective": "Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/E/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/E/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/E/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "baryon/charge/energy accounting",
+        "network convergence",
+        "rate-source audit",
+        "no scalar-channel collapse",
+        "withheld reaction and independent implementation checks"
+      ],
+      "commit_message": "Close Module E at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "F-150",
+      "title": "Close Module F: Post-Nuclear Plasma and Radiation Persistence",
+      "module": "F",
+      "status": "BLOCKED",
+      "depends_on": [
+        "E-140"
+      ],
+      "objective": "Carry isotope, plasma, radiation, neutrino, and transport states from nucleosynthesis into recombination without losing lineage or covariance.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/F/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/F/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/F/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/F/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/F/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "charge neutrality where derived",
+        "energy and particle accounting",
+        "covariance positive semidefinite",
+        "replay from E"
+      ],
+      "commit_message": "Close Module F at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "G-160",
+      "title": "Close Module G: Nonequilibrium Recombination and Last-Scattering State",
+      "module": "G",
+      "status": "BLOCKED",
+      "depends_on": [
+        "F-150"
+      ],
+      "objective": "Generate recombination, visibility, opacity, and radiation-surface histories from the physical plasma state.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/G/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/G/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/G/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/G/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/G/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "rate and opacity lineage",
+        "normalization and positivity",
+        "stiff convergence",
+        "independent reconstruction"
+      ],
+      "commit_message": "Close Module G at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "HU-170",
+      "title": "Close Module HU: Frozen Universal Linear Transfer Operator",
+      "module": "HU",
+      "status": "BLOCKED",
+      "depends_on": [
+        "G-160"
+      ],
+      "objective": "Derive and freeze the background-independent portion of the linear transfer machinery before instantiation on a realized geometry.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/HU/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/HU/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/HU/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "no realized-background values smuggled into universal operator",
+        "linearity-domain proof",
+        "symbolic identity verification",
+        "hash freeze"
+      ],
+      "commit_message": "Close Module HU at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "I-180",
+      "title": "Close Module I: Realized Background Geometry and Expansion",
+      "module": "I",
+      "status": "BLOCKED",
+      "depends_on": [
+        "G-160"
+      ],
+      "objective": "Generate the universe's realized geometry, expansion, clocks, horizons, and distance structure from the accumulated physical state.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/I/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/I/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/I/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/I/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/I/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "equation/constraint derivation",
+        "gauge/frame consistency",
+        "no observed expansion history used as target",
+        "numerical convergence and independent reconstruction"
+      ],
+      "commit_message": "Close Module I at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "HI-190",
+      "title": "Close Module HI: Transfer Operator Instantiation",
+      "module": "HI",
+      "status": "BLOCKED",
+      "depends_on": [
+        "HU-170",
+        "I-180"
+      ],
+      "objective": "Instantiate the frozen universal transfer operator on the realized background without changing either parent's law.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/HI/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/HI/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/HI/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/HI/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/HI/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "exact parent hashes",
+        "no retune of HU or I",
+        "operator-domain compatibility",
+        "independent reconstruction"
+      ],
+      "commit_message": "Close Module HI at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "J-200",
+      "title": "Close Module J: Primordial Covariance, Linear Spectra, and Finite-Volume Fields",
+      "module": "J",
+      "status": "BLOCKED",
+      "depends_on": [
+        "HI-190"
+      ],
+      "objective": "Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/J/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/J/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/J/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/J/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/J/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "covariance PSD",
+        "reality/Hermitian conditions",
+        "resolution and volume tests",
+        "no public initial-condition file",
+        "independent field reconstruction"
+      ],
+      "commit_message": "Close Module J at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "K-210",
+      "title": "Close Module K: Nonlinear Relational Gravity, Structures, Metric, and Lightcones",
+      "module": "K",
+      "status": "BLOCKED",
+      "depends_on": [
+        "J-200"
+      ],
+      "objective": "Evolve the realized fields into nonlinear structure while preserving relativistic/metric, route, event, branch, conservation, lightcone, and lensing truth.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/K/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/K/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/K/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/K/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/K/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "force/field accuracy",
+        "constraint closure",
+        "mass-energy conservation",
+        "resolution/volume convergence",
+        "restart/replay",
+        "independent critical implementation"
+      ],
+      "commit_message": "Close Module K at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "L-220",
+      "title": "Close Module L: Baryonic and Stellar Universe",
+      "module": "L",
+      "status": "BLOCKED",
+      "depends_on": [
+        "K-210"
+      ],
+      "objective": "Execute hydro/MHD, radiation, thermochemistry, turbulence, collapse, generated stellar birth, stellar/binary populations, feedback, remnants, accretion, cosmic rays, and radiation sources.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/L/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/L/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/L/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/L/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/L/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "mass/momentum/energy/species conservation",
+        "resolution and subgrid convergence",
+        "feedback ownership",
+        "uncertainty/covariance",
+        "replay locality",
+        "independent implementation"
+      ],
+      "commit_message": "Close Module L at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "M-230",
+      "title": "Close Module M: Stellar/Explosive Nucleosynthesis, Chemistry, Dust, Cooling, and Opacity",
+      "module": "M",
+      "status": "BLOCKED",
+      "depends_on": [
+        "L-220"
+      ],
+      "objective": "Generate element/isotope production, chemical enrichment, dust, cooling, opacity, and composition-dependent returns from the executed stellar history.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/M/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/M/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/M/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/M/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/M/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "nuclear/species conservation",
+        "yield source/derivation audit",
+        "network convergence",
+        "return causality and earliest-change replay",
+        "independent reconstruction"
+      ],
+      "commit_message": "Close Module M at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "KLM-240",
+      "title": "Close Module KLM: Causal K–L–M Recurrence and Classification",
+      "module": "KLM",
+      "status": "BLOCKED",
+      "depends_on": [
+        "M-230"
+      ],
+      "objective": "Replay causal backreaction among gravity, baryons/stars, and chemistry until the system reaches a lawfully classified state without forcing convergence.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/KLM/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/KLM/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/KLM/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/KLM/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/KLM/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "no target-driven stopping",
+        "componentwise convergence metrics",
+        "return ownership",
+        "clean replay",
+        "independent implementation",
+        "preserved failed attempts"
+      ],
+      "commit_message": "Close Module KLM at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "N-250",
+      "title": "Close Module N: Manifested Observer-Ready Universe",
+      "module": "N",
+      "status": "BLOCKED",
+      "depends_on": [
+        "KLM-240"
+      ],
+      "objective": "Prove and construct that all executed sectors coexist in one compatible causal, conservation-bearing universe and generate truth-level observer interfaces.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/N/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/N/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/N/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/N/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/N/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "no directory-merge substitution",
+        "cross-domain compatibility",
+        "global conservation",
+        "lineage completeness",
+        "synthetic observation closure",
+        "independent end-to-end reconstruction"
+      ],
+      "commit_message": "Close Module N at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "MINIMAL_SPINE"
+    },
+    {
+      "id": "HR-255",
+      "title": "Expand the Manifested Universe to Hyper-Realistic and Gold Standard Fidelity",
+      "module": "UNIVERSE",
+      "status": "BLOCKED",
+      "depends_on": [
+        "N-250"
+      ],
+      "objective": "Upgrade the complete minimal/production A-N spine into the full hyper-realistic universe planned across the RFC corpus without changing source law to chase observations.",
+      "steps": [
+        "Build the cross-module fidelity matrix and identify every production-to-hyper-realistic gap.",
+        "Execute multiple resolutions, volumes, time steps, seeds/branches, and required ensembles.",
+        "Add independent critical implementations and full uncertainty/cross-domain covariance.",
+        "Complete quantum-geometry/particle, neutrino/radiation, nonlinear structure, galaxy, feedback, compact-object, reionization, 21-cm, stellar-population, dust, opacity, transient, gravitational-wave, lensing, RSD, lightcone, mock-catalogue, observer-record, and multimessenger products where admitted by the derivation chain.",
+        "Rerun the complete causal spine and K-L-M recurrence after material fidelity upgrades.",
+        "Prove all truth and synthetic-observation products share one compatible universe identity.",
+        "Close every gap in docs/22_HYPER_REALISM_EXPANSION_MATRIX.md or record a falsifying obstruction."
+      ],
+      "deliverables": [
+        "universe/HYPER_REALISM_MATRIX.json",
+        "universe/ENSEMBLE_MANIFEST.json",
+        "universe/INDEPENDENT_IMPLEMENTATION_LEDGER.json",
+        "universe/GOLD_STANDARD_CLOSEOUT.md",
+        "runs/HR-255/CLOSEOUT.md"
+      ],
+      "gates": [
+        "all mandatory hyper-realism dimensions pass componentwise",
+        "no public calibration",
+        "ensemble and resolution evidence",
+        "full covariance",
+        "independent critical implementations",
+        "one compatible universe identity",
+        "clean end-to-end replay"
+      ],
+      "commit_message": "Expand the RFC universe to hyper-realistic Gold Standard fidelity",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "HYPER_REALISTIC"
+    },
+    {
+      "id": "O-260",
+      "title": "Close Module O: Immutable Universe and Prediction Freeze",
+      "module": "O",
+      "status": "BLOCKED",
+      "depends_on": [
+        "HR-255"
+      ],
+      "objective": "Create one immutable content-addressed universe, environment, prediction, falsifier, and observation-interface packet and seal generation.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/O/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/O/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/O/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/O/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/O/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "all files stopped changing before manifest",
+        "full clean replay",
+        "hash verification",
+        "P and Q isolation",
+        "no public data present"
+      ],
+      "commit_message": "Close Module O at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "HYPER_REALISTIC"
+    },
+    {
+      "id": "P-270",
+      "title": "Close Module P: Blind Empirical Comparison",
+      "module": "P",
+      "status": "BLOCKED",
+      "depends_on": [
+        "O-260"
+      ],
+      "objective": "Ingest public evidence only after O, apply preregistered observation operators/statistics, and classify survival, tension, or falsification without retuning.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/P/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/P/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/P/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/P/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/P/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "O hash unchanged",
+        "no target deletion",
+        "no covariance inflation",
+        "no branch/seed/tolerance changes",
+        "reproducible independent comparison"
+      ],
+      "commit_message": "Close Module P at its verified scientific scope",
+      "required_evidence_state": "BLIND_VALIDATED",
+      "required_fidelity": "HYPER_REALISTIC"
+    },
+    {
+      "id": "Q-280",
+      "title": "Close Module Q: Terminal Evolution, Qualified Memory, and Next-Cycle Conditioning",
+      "module": "Q",
+      "status": "BLOCKED",
+      "depends_on": [
+        "O-260"
+      ],
+      "objective": "Continue the frozen universe physically to terminal evolution, classify collapse/rebirth behavior, and derive the qualified memory packet for a possible next effective CIF without information from P.",
+      "steps": [
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
+      ],
+      "deliverables": [
+        "modules/Q/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/Q/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/Q/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/Q/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/Q/runs/<RUN_ID>/CLOSEOUT.md",
+        "frozen output packet and artifact registry entries"
+      ],
+      "gates": [
+        "no P data flow",
+        "conservation and no-loss",
+        "terminal numerical convergence",
+        "memory does not impersonate source",
+        "independent reconstruction"
+      ],
+      "commit_message": "Close Module Q at its verified scientific scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "HYPER_REALISTIC"
+    },
+    {
+      "id": "FINAL-290",
+      "title": "Final Repository, Reproducibility, and Claim Audit",
+      "module": "FINAL",
+      "status": "BLOCKED",
+      "depends_on": [
+        "P-270",
+        "Q-280"
+      ],
+      "objective": "Prove that the repository can reconstruct the frozen universe, its empirical audit, and terminal continuation from a clean checkout without chat history.",
+      "steps": [
+        "Run clean reconstruction.",
+        "Verify source, artifact, environment, and run manifests.",
+        "Rebuild context from machine state.",
+        "Audit all claims against evidence ownership.",
+        "Package publication-ready proof/universe artifacts without changing frozen science."
+      ],
+      "deliverables": [
+        "FINAL_RECONSTRUCTION.md",
+        "FINAL_CLAIM_AUDIT.json",
+        "FINAL_TREE_MANIFEST.json",
+        "runs/FINAL-290/CLOSEOUT.md"
+      ],
+      "gates": [
+        "clean checkout reconstruction",
+        "all hashes match",
+        "no hidden inputs",
+        "claim audit passes",
+        "P and Q isolation verified"
+      ],
+      "commit_message": "Complete the reproducible enhanced RFC universe"
+    }
+  ]
+}

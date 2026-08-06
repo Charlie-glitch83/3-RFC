@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "project_id": "3-RFC",
+  "repository_target": "Charlie-glitch83/3-RFC",
+  "project_status": "BOOTSTRAP_READY",
+  "generation_mode": "GENERATION_SEALED",
+  "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
+  "active_work_unit": "BOOT-000",
+  "current_module": "REPO",
+  "current_run": null,
+  "source_state": "SEED_PRESENT_NOT_ADMITTED",
+  "canonical_source_manifest": null,
+  "frozen_universe_hash": null,
+  "public_comparison_open": false,
+  "terminal_branch_open": false,
+  "modules": {
+    "A": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "B": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "C": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "D": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "E": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "F": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "G": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "HU": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "I": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "HI": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "J": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "K": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "L": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "M": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "KLM": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "N": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "O": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "P": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    },
+    "Q": {
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
+      "active_run": null,
+      "frozen_artifacts": [],
+      "evidence_history": [
+        {
+          "state": "DESIGN",
+          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
+          "evidence": "repository bootstrap"
+        }
+      ]
+    }
+  },
+  "last_verified_commit": null,
+  "last_updated_utc": "2026-08-06T00:48:09.414909+00:00",
+  "strongest_supported_claim": "A governed scaffold and source seed have been prepared; no new 3-RFC scientific result has been executed.",
+  "strongest_unsupported_claim": "The enhanced RFC universe is complete, physically executed, or empirically validated."
+}

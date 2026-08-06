@@ -1,0 +1,22 @@
+{
+  "bundle_id": "3RFC_Execution_Ready_Universe_Builder_20260805",
+  "version": "2.0.0",
+  "created_utc": "2026-08-05T00:00:00Z",
+  "target_repository": "Charlie-glitch83/3-RFC",
+  "entrypoint": "README.md",
+  "operator_prompt": "MODEL_OPERATOR_PROMPT.md",
+  "install": "Unzip at repository root, run bash bootstrap.sh and bash tools/start_work.sh, then execute only work_packets/ACTIVE_WORK_PACKET.md.",
+  "prepared_assets": {
+    "administrative_work_unit_packs": 8,
+    "scientific_module_recipe_packs": 19,
+    "wolfram_language_programs": 38,
+    "provenance_bound_solver_templates": 26,
+    "manufactured_solver_examples": 17,
+    "hyper_realism_rows": 20,
+    "live_validated_wolfram_calls": 3,
+    "repository_tests": 28,
+    "integrity_tracked_files": 530
+  },
+  "scientific_status": "Execution-ready repository and computation system. Manufactured examples validate machinery only. Exact source-dependent derivations and physical universe states must be produced by the governed queue and may not be fabricated.",
+  "integrity_manifest": "BUNDLE_MANIFEST.json"
+}

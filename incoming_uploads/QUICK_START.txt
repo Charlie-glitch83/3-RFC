@@ -1,0 +1,9 @@
+3-RFC EXECUTION-READY BUNDLE
+
+1. Unzip at the root of Charlie-glitch83/3-RFC.
+2. Run: bash bootstrap.sh
+3. Run: bash tools/start_work.sh
+4. Open: work_packets/ACTIVE_WORK_PACKET.md
+5. Execute it exactly.
+
+For a scientific module, the run already contains exact Wolfram programs, unbound solver templates, provenance binding sheets, work orders, gates, and a one-command local phase. Do not create a new plan.

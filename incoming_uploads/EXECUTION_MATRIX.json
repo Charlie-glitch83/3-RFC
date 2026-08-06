@@ -1,0 +1,1325 @@
+{
+  "schema_version": "1.0",
+  "work_unit": "HR-255",
+  "rule": "Every applicable row closes componentwise or records a derivational obstruction. NOT_APPLICABLE requires a theorem-level scope justification. No aggregate score can override a failed row.",
+  "rows": [
+    {
+      "id": "HR-FUND-01",
+      "family": "fundamental",
+      "target": "quantum-geometry correspondence and finite geometry products",
+      "parents": [
+        "A",
+        "B",
+        "C",
+        "I"
+      ],
+      "required_outputs": [
+        "typed geometry correspondence",
+        "finite metric/pregeometry artifacts",
+        "uncertainty and scope"
+      ],
+      "engines": [
+        "spectral_model",
+        "transport"
+      ],
+      "gates": [
+        "dimensional closure",
+        "constraint preservation",
+        "independent reconstruction"
+      ],
+      "domain": "quantum-geometry correspondence and finite geometry products",
+      "required_truth_outputs": [
+        "typed geometry correspondence",
+        "finite metric/pregeometry artifacts",
+        "uncertainty and scope"
+      ],
+      "required_synthetic_outputs": [
+        "coordinate-independent diagnostic packet",
+        "geometry-to-observable interface contract"
+      ],
+      "numerical_matrix": {
+        "precision": [
+          "machine",
+          "50-digit",
+          "100-digit where ill-conditioned"
+        ],
+        "candidate_classes": [
+          "all frozen lawful branches"
+        ],
+        "representation": [
+          "at least two algebraically equivalent bases"
+        ],
+        "replay": "clean symbolic and numerical reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-FUND-02",
+      "family": "fundamental",
+      "target": "particle, mass, mixing, CP/EDM and baryogenesis lanes at admitted scope",
+      "parents": [
+        "C",
+        "D"
+      ],
+      "required_outputs": [
+        "candidate classes",
+        "symmetry/invariant proofs",
+        "executed branch family"
+      ],
+      "engines": [
+        "spectral_model",
+        "reaction_network"
+      ],
+      "gates": [
+        "no imported constants",
+        "symmetry closure",
+        "branch completeness"
+      ],
+      "domain": "particle, mass, mixing, CP/EDM and baryogenesis lanes at admitted scope",
+      "required_truth_outputs": [
+        "candidate classes",
+        "symmetry/invariant proofs",
+        "executed branch family"
+      ],
+      "required_synthetic_outputs": [
+        "parameter-free invariant summaries",
+        "candidate-branch discriminants"
+      ],
+      "numerical_matrix": {
+        "precision": [
+          "machine",
+          "50-digit",
+          "100-digit where ill-conditioned"
+        ],
+        "candidate_classes": [
+          "all frozen lawful branches"
+        ],
+        "representation": [
+          "at least two algebraically equivalent bases"
+        ],
+        "replay": "clean symbolic and numerical reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-EARLY-01",
+      "family": "early_universe",
+      "target": "neutrino and radiation transport",
+      "parents": [
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "required_outputs": [
+        "distribution histories",
+        "collision/transport ledgers",
+        "covariance"
+      ],
+      "engines": [
+        "transport"
+      ],
+      "gates": [
+        "conservation",
+        "positivity",
+        "stiff convergence"
+      ],
+      "domain": "neutrino and radiation transport",
+      "required_truth_outputs": [
+        "distribution histories",
+        "collision/transport ledgers",
+        "covariance"
+      ],
+      "required_synthetic_outputs": [
+        "comoving distribution snapshots",
+        "transport-derived spectral moments"
+      ],
+      "numerical_matrix": {
+        "time_step": [
+          "coarse",
+          "baseline",
+          "half-step",
+          "quarter-step"
+        ],
+        "network_or_moment_order": [
+          "reduced",
+          "baseline",
+          "expanded"
+        ],
+        "precision": [
+          "double",
+          "extended where stiff"
+        ],
+        "branch_or_initial_state": [
+          "all frozen branches"
+        ],
+        "replay": "checkpoint restart at every regime transition"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-EARLY-02",
+      "family": "early_universe",
+      "target": "full primordial isotope and uncertainty network",
+      "parents": [
+        "D",
+        "E"
+      ],
+      "required_outputs": [
+        "isotope network",
+        "abundance covariance",
+        "freeze-out history"
+      ],
+      "engines": [
+        "reaction_network"
+      ],
+      "gates": [
+        "stoichiometric invariants",
+        "network convergence",
+        "independent rates audit"
+      ],
+      "domain": "full primordial isotope and uncertainty network",
+      "required_truth_outputs": [
+        "isotope network",
+        "abundance covariance",
+        "freeze-out history"
+      ],
+      "required_synthetic_outputs": [
+        "primordial abundance prediction packet",
+        "isotope covariance packet"
+      ],
+      "numerical_matrix": {
+        "time_step": [
+          "coarse",
+          "baseline",
+          "half-step",
+          "quarter-step"
+        ],
+        "network_or_moment_order": [
+          "reduced",
+          "baseline",
+          "expanded"
+        ],
+        "precision": [
+          "double",
+          "extended where stiff"
+        ],
+        "branch_or_initial_state": [
+          "all frozen branches"
+        ],
+        "replay": "checkpoint restart at every regime transition"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-EARLY-03",
+      "family": "early_universe",
+      "target": "recombination, CMB surface, secondary anisotropy and lensing truth",
+      "parents": [
+        "F",
+        "G",
+        "HI",
+        "J",
+        "K"
+      ],
+      "required_outputs": [
+        "opacity history",
+        "visibility surface",
+        "truth maps and spectra"
+      ],
+      "engines": [
+        "reaction_network",
+        "visibility",
+        "linear_transfer",
+        "ray_bundle"
+      ],
+      "gates": [
+        "visibility normalization",
+        "covariance PSD",
+        "resolution convergence"
+      ],
+      "domain": "recombination, CMB surface, secondary anisotropy and lensing truth",
+      "required_truth_outputs": [
+        "opacity history",
+        "visibility surface",
+        "truth maps and spectra"
+      ],
+      "required_synthetic_outputs": [
+        "CMB temperature/polarization/lensing maps",
+        "angular spectra and cross-spectra"
+      ],
+      "numerical_matrix": {
+        "time_step": [
+          "coarse",
+          "baseline",
+          "half-step",
+          "quarter-step"
+        ],
+        "network_or_moment_order": [
+          "reduced",
+          "baseline",
+          "expanded"
+        ],
+        "precision": [
+          "double",
+          "extended where stiff"
+        ],
+        "branch_or_initial_state": [
+          "all frozen branches"
+        ],
+        "replay": "checkpoint restart at every regime transition"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-GEO-01",
+      "family": "geometry",
+      "target": "metric, Weyl, horizon, distance and causal products",
+      "parents": [
+        "I",
+        "K"
+      ],
+      "required_outputs": [
+        "metric history",
+        "curvature/Weyl products",
+        "horizons/distances",
+        "causal graph"
+      ],
+      "engines": [
+        "transport",
+        "ray_bundle"
+      ],
+      "gates": [
+        "constraints",
+        "coordinate/gauge invariance",
+        "ray closure"
+      ],
+      "domain": "metric, Weyl, horizon, distance and causal products",
+      "required_truth_outputs": [
+        "metric history",
+        "curvature/Weyl products",
+        "horizons/distances",
+        "causal graph"
+      ],
+      "required_synthetic_outputs": [
+        "distance-redshift and horizon truth interfaces",
+        "ray-ready metric products"
+      ],
+      "numerical_matrix": {
+        "spatial_resolution": [
+          "coarse",
+          "baseline",
+          "2x",
+          "4x where feasible"
+        ],
+        "time_step": [
+          "baseline",
+          "half",
+          "quarter"
+        ],
+        "gauge_or_coordinates": [
+          "at least two admitted representations"
+        ],
+        "ray_density": [
+          "baseline",
+          "2x",
+          "4x"
+        ],
+        "replay": "metric and ray reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-STRUCT-01",
+      "family": "structure",
+      "target": "finite-volume ensembles, nonlinear matter, halos and merger trees",
+      "parents": [
+        "J",
+        "K"
+      ],
+      "required_outputs": [
+        "ensemble fields",
+        "structure catalogues",
+        "merger trees"
+      ],
+      "engines": [
+        "fourier_field",
+        "nbody"
+      ],
+      "gates": [
+        "seed freeze",
+        "energy/momentum control",
+        "volume/resolution convergence"
+      ],
+      "domain": "finite-volume ensembles, nonlinear matter, halos and merger trees",
+      "required_truth_outputs": [
+        "ensemble fields",
+        "structure catalogues",
+        "merger trees"
+      ],
+      "required_synthetic_outputs": [
+        "halo and merger catalogues",
+        "matter maps and spectra"
+      ],
+      "numerical_matrix": {
+        "box_or_volume": [
+          "small validation",
+          "baseline",
+          "expanded"
+        ],
+        "particle_or_mesh_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "time_step": [
+          "baseline",
+          "half"
+        ],
+        "seed_or_branch": [
+          "all preregistered seeds/branches"
+        ],
+        "replay": "checkpointed merger and lightcone replay"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-STRUCT-02",
+      "family": "structure",
+      "target": "galaxies, clustering, peculiar velocities and redshift-space distortions",
+      "parents": [
+        "K",
+        "L",
+        "KLM"
+      ],
+      "required_outputs": [
+        "galaxy truth catalogue",
+        "clustering/RSD fields",
+        "cross-covariance"
+      ],
+      "engines": [
+        "nbody",
+        "finite_volume",
+        "synthetic_observation"
+      ],
+      "gates": [
+        "one-universe identity",
+        "cross-sector conservation",
+        "ensemble convergence"
+      ],
+      "domain": "galaxies, clustering, peculiar velocities and redshift-space distortions",
+      "required_truth_outputs": [
+        "galaxy truth catalogue",
+        "clustering/RSD fields",
+        "cross-covariance"
+      ],
+      "required_synthetic_outputs": [
+        "galaxy/redshift-space catalogues",
+        "clustering multipoles and velocity statistics"
+      ],
+      "numerical_matrix": {
+        "box_or_volume": [
+          "small validation",
+          "baseline",
+          "expanded"
+        ],
+        "particle_or_mesh_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "time_step": [
+          "baseline",
+          "half"
+        ],
+        "seed_or_branch": [
+          "all preregistered seeds/branches"
+        ],
+        "replay": "checkpointed merger and lightcone replay"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-LENS-01",
+      "family": "structure",
+      "target": "weak lensing, cosmic shear, lightcones and mock catalogues",
+      "parents": [
+        "K",
+        "N"
+      ],
+      "required_outputs": [
+        "ray/Jacobi histories",
+        "shear/convergence maps",
+        "lightcone catalogues"
+      ],
+      "engines": [
+        "ray_bundle",
+        "synthetic_observation"
+      ],
+      "gates": [
+        "metric ancestry",
+        "ray convergence",
+        "truth/observable separation"
+      ],
+      "domain": "weak lensing, cosmic shear, lightcones and mock catalogues",
+      "required_truth_outputs": [
+        "ray/Jacobi histories",
+        "shear/convergence maps",
+        "lightcone catalogues"
+      ],
+      "required_synthetic_outputs": [
+        "shear/convergence maps",
+        "tomographic catalogues and two-point functions"
+      ],
+      "numerical_matrix": {
+        "box_or_volume": [
+          "small validation",
+          "baseline",
+          "expanded"
+        ],
+        "particle_or_mesh_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "time_step": [
+          "baseline",
+          "half"
+        ],
+        "seed_or_branch": [
+          "all preregistered seeds/branches"
+        ],
+        "replay": "checkpointed merger and lightcone replay"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-BARY-01",
+      "family": "baryonic",
+      "target": "hydro/MHD, radiation, thermochemistry, turbulence and shocks",
+      "parents": [
+        "K",
+        "L",
+        "M"
+      ],
+      "required_outputs": [
+        "conservative fields",
+        "radiation/chemistry state",
+        "shock/turbulence diagnostics"
+      ],
+      "engines": [
+        "finite_volume",
+        "reaction_network",
+        "transport"
+      ],
+      "gates": [
+        "mass/momentum/energy/species conservation",
+        "positivity",
+        "resolution/subgrid convergence"
+      ],
+      "domain": "hydro/MHD, radiation, thermochemistry, turbulence and shocks",
+      "required_truth_outputs": [
+        "conservative fields",
+        "radiation/chemistry state",
+        "shock/turbulence diagnostics"
+      ],
+      "required_synthetic_outputs": [
+        "gas/radiation/chemistry cubes",
+        "shock, turbulence, and thermodynamic diagnostics"
+      ],
+      "numerical_matrix": {
+        "mesh_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "time_step": [
+          "baseline",
+          "half",
+          "quarter near events"
+        ],
+        "network_or_subgrid": [
+          "frozen reduced",
+          "baseline",
+          "expanded"
+        ],
+        "radiation_groups": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "replay": "shock/collapse/feedback checkpoint replay"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-STAR-01",
+      "family": "stellar",
+      "target": "cloud/core/collapse/star-birth witnesses and generated stellar birth measure",
+      "parents": [
+        "K",
+        "L"
+      ],
+      "required_outputs": [
+        "witness ledger",
+        "fragmentation/collapse histories",
+        "normalized generated birth measure"
+      ],
+      "engines": [
+        "finite_volume",
+        "nbody"
+      ],
+      "gates": [
+        "no imported IMF",
+        "witness autonomy",
+        "source ownership"
+      ],
+      "domain": "cloud/core/collapse/star-birth witnesses and generated stellar birth measure",
+      "required_truth_outputs": [
+        "witness ledger",
+        "fragmentation/collapse histories",
+        "normalized generated birth measure"
+      ],
+      "required_synthetic_outputs": [
+        "star-birth event catalogue",
+        "generated birth-measure summaries"
+      ],
+      "numerical_matrix": {
+        "mass_or_state_resolution": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "binary_or_branch_grid": [
+          "all frozen branches"
+        ],
+        "time_step": [
+          "baseline",
+          "half around events"
+        ],
+        "population_size": [
+          "validation",
+          "baseline",
+          "ensemble"
+        ],
+        "replay": "event-by-event ancestry reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-STAR-02",
+      "family": "stellar",
+      "target": "stellar/binary populations, remnants, accretion, black holes and AGN",
+      "parents": [
+        "L",
+        "M",
+        "KLM"
+      ],
+      "required_outputs": [
+        "population histories",
+        "remnant/compact-object catalogue",
+        "feedback and return ledgers"
+      ],
+      "engines": [
+        "reaction_network",
+        "nbody",
+        "transport"
+      ],
+      "gates": [
+        "conservation",
+        "event/branch completeness",
+        "return causality"
+      ],
+      "domain": "stellar/binary populations, remnants, accretion, black holes and AGN",
+      "required_truth_outputs": [
+        "population histories",
+        "remnant/compact-object catalogue",
+        "feedback and return ledgers"
+      ],
+      "required_synthetic_outputs": [
+        "stellar/binary/remnant/AGN catalogues",
+        "feedback and transient time series"
+      ],
+      "numerical_matrix": {
+        "mass_or_state_resolution": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "binary_or_branch_grid": [
+          "all frozen branches"
+        ],
+        "time_step": [
+          "baseline",
+          "half around events"
+        ],
+        "population_size": [
+          "validation",
+          "baseline",
+          "ensemble"
+        ],
+        "replay": "event-by-event ancestry reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-CHEM-01",
+      "family": "chemical",
+      "target": "stellar/explosive yields, chemical evolution, dust, extinction, molecules, cooling and opacity",
+      "parents": [
+        "L",
+        "M",
+        "KLM"
+      ],
+      "required_outputs": [
+        "isotope/element history",
+        "dust/molecule state",
+        "cooling/opacity operators"
+      ],
+      "engines": [
+        "reaction_network",
+        "transport"
+      ],
+      "gates": [
+        "nucleon/charge conservation",
+        "network convergence",
+        "composition-aware return"
+      ],
+      "domain": "stellar/explosive yields, chemical evolution, dust, extinction, molecules, cooling and opacity",
+      "required_truth_outputs": [
+        "isotope/element history",
+        "dust/molecule state",
+        "cooling/opacity operators"
+      ],
+      "required_synthetic_outputs": [
+        "element/isotope/dust/molecule maps",
+        "cooling, opacity, and extinction products"
+      ],
+      "numerical_matrix": {
+        "network_size": [
+          "reduced invariant check",
+          "baseline",
+          "expanded"
+        ],
+        "time_step": [
+          "baseline",
+          "half",
+          "quarter in stiff intervals"
+        ],
+        "spatial_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "yield_or_branch_family": [
+          "all frozen branches"
+        ],
+        "replay": "source-to-return composition reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-REION-01",
+      "family": "radiation",
+      "target": "cosmic dawn, reionization and 21-cm truth",
+      "parents": [
+        "G",
+        "K",
+        "L",
+        "M"
+      ],
+      "required_outputs": [
+        "ionization topology",
+        "source/radiation history",
+        "21-cm truth cubes"
+      ],
+      "engines": [
+        "transport",
+        "finite_volume",
+        "synthetic_observation"
+      ],
+      "gates": [
+        "photon/energy ledger",
+        "causal source ancestry",
+        "resolution convergence"
+      ],
+      "domain": "cosmic dawn, reionization and 21-cm truth",
+      "required_truth_outputs": [
+        "ionization topology",
+        "source/radiation history",
+        "21-cm truth cubes"
+      ],
+      "required_synthetic_outputs": [
+        "21-cm cubes and lightcones",
+        "ionization maps and spectra"
+      ],
+      "numerical_matrix": {
+        "mesh_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "frequency_groups": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "time_step": [
+          "baseline",
+          "half"
+        ],
+        "source_sampling": [
+          "baseline",
+          "2x"
+        ],
+        "replay": "photon/energy ledger reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-POP-01",
+      "family": "observer_projection",
+      "target": "stellar population synthesis and photometric projection",
+      "parents": [
+        "L",
+        "M",
+        "N"
+      ],
+      "required_outputs": [
+        "truth spectra",
+        "band-independent response basis",
+        "synthetic photometry"
+      ],
+      "engines": [
+        "synthetic_observation"
+      ],
+      "gates": [
+        "no public target calibration",
+        "energy normalization",
+        "truth/response separation"
+      ],
+      "domain": "stellar population synthesis and photometric projection",
+      "required_truth_outputs": [
+        "truth spectra",
+        "band-independent response basis",
+        "synthetic photometry"
+      ],
+      "required_synthetic_outputs": [
+        "rest-frame spectra and synthetic photometry",
+        "population response basis"
+      ],
+      "numerical_matrix": {
+        "spectral_resolution": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "time_sampling": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "viewing_geometry": [
+          "all frozen sightlines"
+        ],
+        "selection_operator": [
+          "identity",
+          "each frozen response"
+        ],
+        "replay": "truth-to-observable reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-MULTI-01",
+      "family": "multimessenger",
+      "target": "gravitational-wave, transient, neutrino and multimessenger products",
+      "parents": [
+        "K",
+        "L",
+        "M",
+        "N"
+      ],
+      "required_outputs": [
+        "event catalogue",
+        "time series/signals",
+        "joint ancestry"
+      ],
+      "engines": [
+        "nbody",
+        "transport",
+        "synthetic_observation"
+      ],
+      "gates": [
+        "event conservation",
+        "clock synchronization",
+        "joint covariance"
+      ],
+      "domain": "gravitational-wave, transient, neutrino and multimessenger products",
+      "required_truth_outputs": [
+        "event catalogue",
+        "time series/signals",
+        "joint ancestry"
+      ],
+      "required_synthetic_outputs": [
+        "gravitational-wave, neutrino, and transient time series",
+        "joint event catalogues"
+      ],
+      "numerical_matrix": {
+        "time_resolution": [
+          "coarse",
+          "baseline",
+          "event-refined"
+        ],
+        "spatial_or_angular_resolution": [
+          "baseline",
+          "2x"
+        ],
+        "event_threshold": [
+          "frozen values only"
+        ],
+        "branch_family": [
+          "all frozen events/branches"
+        ],
+        "replay": "joint-clock and ancestry reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-OBS-01",
+      "family": "observer",
+      "target": "truth maps, spectra, time series, signals and catalogues",
+      "parents": [
+        "N"
+      ],
+      "required_outputs": [
+        "truth product suite",
+        "instrument-independent observation operators",
+        "selection/window models"
+      ],
+      "engines": [
+        "synthetic_observation"
+      ],
+      "gates": [
+        "no public calibration",
+        "one-universe hash",
+        "reconstruction"
+      ],
+      "domain": "truth maps, spectra, time series, signals and catalogues",
+      "required_truth_outputs": [
+        "truth product suite",
+        "instrument-independent observation operators",
+        "selection/window models"
+      ],
+      "required_synthetic_outputs": [
+        "instrument-independent map/spectrum/signal/catalogue suite",
+        "selection and window response products"
+      ],
+      "numerical_matrix": {
+        "map_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "catalogue_sampling": [
+          "validation",
+          "baseline",
+          "ensemble"
+        ],
+        "time_sampling": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "response_operators": [
+          "all frozen instrument-independent operators"
+        ],
+        "replay": "truth-to-record reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-OBS-02",
+      "family": "observer",
+      "target": "observer-record and recursive identity lanes at supported scope",
+      "parents": [
+        "A",
+        "N"
+      ],
+      "required_outputs": [
+        "record/state interface",
+        "memory/identity ancestry",
+        "scope/falsifier ledger"
+      ],
+      "engines": [
+        "global_ledger"
+      ],
+      "gates": [
+        "no unsupported consciousness claim",
+        "reopening",
+        "branch identity"
+      ],
+      "domain": "observer-record and recursive identity lanes at supported scope",
+      "required_truth_outputs": [
+        "record/state interface",
+        "memory/identity ancestry",
+        "scope/falsifier ledger"
+      ],
+      "required_synthetic_outputs": [
+        "observer-record state packet",
+        "memory, identity, and reopening audit"
+      ],
+      "numerical_matrix": {
+        "map_resolution": [
+          "coarse",
+          "baseline",
+          "2x"
+        ],
+        "catalogue_sampling": [
+          "validation",
+          "baseline",
+          "ensemble"
+        ],
+        "time_sampling": [
+          "coarse",
+          "baseline",
+          "expanded"
+        ],
+        "response_operators": [
+          "all frozen instrument-independent operators"
+        ],
+        "replay": "truth-to-record reconstruction"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-NUM-01",
+      "family": "numerical",
+      "target": "multi-resolution, multi-volume, time-step, network-size and branch ensembles",
+      "parents": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "HU",
+        "I",
+        "HI",
+        "J",
+        "K",
+        "L",
+        "M",
+        "KLM",
+        "N"
+      ],
+      "required_outputs": [
+        "ensemble manifest",
+        "convergence tables",
+        "uncertainty decomposition"
+      ],
+      "engines": [
+        "all applicable"
+      ],
+      "gates": [
+        "componentwise convergence",
+        "frozen seeds/branches",
+        "no score substitution"
+      ],
+      "domain": "multi-resolution, multi-volume, time-step, network-size and branch ensembles",
+      "required_truth_outputs": [
+        "ensemble manifest",
+        "convergence tables",
+        "uncertainty decomposition"
+      ],
+      "required_synthetic_outputs": [
+        "convergence dashboards generated from frozen truth products",
+        "ensemble uncertainty summaries"
+      ],
+      "numerical_matrix": {
+        "resolution": [
+          "minimum three-level refinement"
+        ],
+        "volume": [
+          "minimum two independent volumes where applicable"
+        ],
+        "time_step": [
+          "minimum three-level refinement"
+        ],
+        "network_size": [
+          "reduced/baseline/expanded where applicable"
+        ],
+        "branches": [
+          "all frozen branches"
+        ],
+        "replay": "full cumulative spine"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    },
+    {
+      "id": "HR-REP-01",
+      "family": "reproducibility",
+      "target": "independent critical implementations, restart, earliest-change replay and clean reconstruction",
+      "parents": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "HU",
+        "I",
+        "HI",
+        "J",
+        "K",
+        "L",
+        "M",
+        "KLM",
+        "N"
+      ],
+      "required_outputs": [
+        "independent implementation ledger",
+        "restart/replay hashes",
+        "clean reconstruction"
+      ],
+      "engines": [
+        "all applicable"
+      ],
+      "gates": [
+        "independent outputs agree within frozen tolerance",
+        "all hashes match",
+        "one universe identity"
+      ],
+      "domain": "independent critical implementations, restart, earliest-change replay and clean reconstruction",
+      "required_truth_outputs": [
+        "independent implementation ledger",
+        "restart/replay hashes",
+        "clean reconstruction"
+      ],
+      "required_synthetic_outputs": [
+        "clean-reconstruction report",
+        "independent-implementation comparison packet"
+      ],
+      "numerical_matrix": {
+        "implementations": [
+          "primary",
+          "independent critical implementation"
+        ],
+        "environment": [
+          "declared baseline",
+          "clean isolated rebuild"
+        ],
+        "restart": [
+          "multiple checkpoints"
+        ],
+        "replay": [
+          "earliest-change and full clean replay"
+        ],
+        "hashing": "all final artifacts content-addressed"
+      },
+      "independent_verification": [
+        "reconstruct material result without trusting primary gate summaries",
+        "compare exact hashes, invariants, and frozen tolerances",
+        "verify source-to-output provenance and one-universe identity"
+      ],
+      "hard_stop": [
+        "any required parent, source hash, unit, or derivation record is missing",
+        "a componentwise gate or invariant fails",
+        "a public target influences generation or branch selection",
+        "convergence, covariance, restart, replay, or independent reconstruction is absent"
+      ]
+    }
+  ]
+}

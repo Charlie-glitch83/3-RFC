@@ -1,0 +1,8 @@
+[project]
+name = "rfc-repository-control"
+version = "2.0.0"
+description = "Standard-library controls for the 3-RFC scientific construction repository"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 100
