@@ -1,1 +1,1 @@
-Rerun the recognized REC-040 exact recovery after the wording-only firewall correction.
+Rerun the recognized REC-040 exact recovery with discovery reconstructed before consumption.
