@@ -1,1 +1,1 @@
-Trigger the installed REC-040 exact discovery runner.
+Trigger the installed REC-040 branch-lineage discovery runner.
