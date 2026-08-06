@@ -150,7 +150,7 @@
       "id": "FRONTIER-050",
       "title": "Determine the Earliest Missing Physical Parent",
       "module": "AUDIT",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "REC-040"
       ],
@@ -176,7 +176,7 @@
       "id": "A-100",
       "title": "Close Module A: Triad, First Action, Recursive Kernel, and Relational Completion",
       "module": "A",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "FRONTIER-050"
       ],

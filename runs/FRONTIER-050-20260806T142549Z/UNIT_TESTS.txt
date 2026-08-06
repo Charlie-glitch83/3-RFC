@@ -28,6 +28,6 @@ test_negative_covariance_is_rejected_without_projection (test_solver_suite.Solve
 test_public_comparison_cannot_run_in_generation_mode (test_solver_suite.SolverSuiteTests.test_public_comparison_cannot_run_in_generation_mode) ... ok
 
 ----------------------------------------------------------------------
-Ran 28 tests in 1.773s
+Ran 28 tests in 1.789s
 
 OK

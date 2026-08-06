@@ -7,7 +7,7 @@
 - Evidence state reached: `VERIFIED_AUDIT`
 - Fidelity reached: exact byte/hash and registry reconstruction
 - Frozen artifact hashes: finalized in `GENERATED_OUTPUT_MANIFEST.json`
-- Verified GitHub evidence commit SHA: `PENDING_EVIDENCE_STAGE`
+- Verified GitHub evidence commit SHA: `5ac899a0ad800a743af814f74163af586780ee54`
 
 ## Scientific objects produced
 

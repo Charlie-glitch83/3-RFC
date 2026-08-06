@@ -49,9 +49,12 @@
       "run_id": "FRONTIER-050-20260806T142549Z",
       "module": "AUDIT",
       "task_id": "FRONTIER-050",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "runs/FRONTIER-050-20260806T142549Z",
-      "created_utc": "2026-08-06T14:25:49.334441+00:00"
+      "created_utc": "2026-08-06T14:25:49.334441+00:00",
+      "closed_utc": "2026-08-06T15:10:14.326354+00:00",
+      "tree_sha256": "c524e7ecc7a6ec2764e1e3a8b1619af823e938e50aedf71ba52dd4bbb26e4e18",
+      "closeout": "runs/FRONTIER-050-20260806T142549Z/CLOSEOUT.md"
     }
   ]
 }

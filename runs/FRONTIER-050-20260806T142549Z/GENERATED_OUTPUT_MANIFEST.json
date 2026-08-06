@@ -1,8 +1,54 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "FRONTIER-050-20260806T142549Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-06T15:10:14.253698+00:00",
+  "outputs": [
+    {
+      "path": "audit/PHYSICAL_FRONTIER.json",
+      "sha256": "f1615e1ebd12fa29466aa84bb0c3e3134c02623a9a999824c56770688f382fdb",
+      "bytes": 120948
+    },
+    {
+      "path": "audit/PHYSICAL_FRONTIER.md",
+      "sha256": "65fd2eb723f7f3d00279307163607b5931e231a19164b1acb0ecc6d523c31758",
+      "bytes": 3527
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z/GATE_RESULTS.json",
+      "sha256": "d069ce2e0e7947845b38492b56d96a4ee47c0c283cb23882f44022570bf21539",
+      "bytes": 1803
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z/INDEPENDENT_FRONTIER_RECONSTRUCTION.json",
+      "sha256": "8546e71889ac26acfb0b4eb2f785b985e5b62c28694871abe2deca24b7a8862f",
+      "bytes": 865
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "9449e913f4e6d8890535f2712c5f900948b48e8fa4367d32927b2b36cc6e9625",
+      "bytes": 1268
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z/REPLAY_RECORD.json",
+      "sha256": "369c1c499aa38a0df2ade27ec2f314122cb530c72a64a776309cb939e0a82984",
+      "bytes": 1782
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z/CLOSEOUT.md",
+      "sha256": "2811fc65716de75b1ef0d66e57492c89bf67a203aa558568e3355e3bf8806756",
+      "bytes": 3003
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z/primary_frontier_audit.py",
+      "sha256": "f920b4fbd2d69f31553bff3972741abce42d7e721989c5174308c7669e43c309",
+      "bytes": 15429
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z/independent_frontier_reconstruction.py",
+      "sha256": "82dde5c8c20ccefa9fc44b148f16f8c713599bbf22fba63a6d46a1026a01a85a",
+      "bytes": 4218
+    }
+  ],
+  "tree_sha256": "08acb7d3f56f907fd2515134bdcf98136e9538cab470fed40c2cd7ea9b5d9851",
+  "note": "Manifest covers the frozen audit products, gate evidence, replay, closeout, and both reconstruction scripts; it excludes itself and mutable administrative run metadata."
 }

@@ -32,6 +32,14 @@
       "created_utc": "2026-08-06T14:10:01.300858+00:00",
       "work_unit": "REC-040",
       "run_id": "REC-040-20260806T135256Z"
+    },
+    {
+      "path": "runs/FRONTIER-050-20260806T142549Z",
+      "sha256": "c524e7ecc7a6ec2764e1e3a8b1619af823e938e50aedf71ba52dd4bbb26e4e18",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-06T15:10:14.328195+00:00",
+      "work_unit": "FRONTIER-050",
+      "run_id": "FRONTIER-050-20260806T142549Z"
     }
   ]
 }
