@@ -2,7 +2,7 @@ name: Apply FRONTIER-050 verified evidence once
 
 on:
   pull_request:
-    types: [edited, reopened, synchronize, ready_for_review]
+    types: [edited]
     branches: [main]
 
 permissions:
@@ -94,8 +94,8 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          if git diff --cached --name-only | grep -E '(^\.frontier050_bundle/|apply-frontier050-evidence-once\.yml$)'; then
-            echo 'Temporary evidence machinery remains staged' >&2
+          if git ls-files -- .frontier050_bundle .github/workflows/apply-frontier050-evidence-once.yml | grep -q .; then
+            echo 'Temporary evidence machinery remains in the final index' >&2
             exit 1
           fi
           git diff --cached --quiet && { echo 'No evidence changes produced' >&2; exit 1; }
