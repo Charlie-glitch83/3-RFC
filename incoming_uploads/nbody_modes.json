@@ -1,0 +1,10 @@
+{
+  "modes": {
+    "DORMANT": "Relational carrier retained; no activation witness; exact zero physical backreaction.",
+    "RELATIONAL_GRAMMAR_ACTIVE": "Identity, relation, witness, route, event, branch, conservation, memory, promotion, or reopening active without direct point-body mechanics.",
+    "DIRECT_MANY_BODY_ACTIVE": "Physical constituents, clocks, geometry/phase space, scales, interactions, constraints, and activation witnesses are present."
+  },
+  "lane_count": "N(N-1)",
+  "lane_increment": "2N",
+  "solution_growth_rule": "Strict solution-capacity growth requires a new witnessed, admissible, non-gauge-equivalent closure."
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/N_synthetic_observation.template.json",
+  "template_sha256": "e9227df00ec85a2e89e5365a9ac9ec60c9ffa222be977b405dfdc40ea76b3cfd",
+  "expected_binding_paths": [
+    "model.truth",
+    "model.response_matrix",
+    "model.noise_covariance",
+    "model.noise_seed",
+    "model.covariance_tolerance"
+  ],
+  "binding_rule": "Every value requires an exact admitted source, exact parent artifact, or hashed internal derivation record. Module P alone may bind preregistered public comparison sources.",
+  "bindings": [
+    {
+      "path": "model.truth",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.response_matrix",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.noise_covariance",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.noise_seed",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.covariance_tolerance",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    }
+  ]
+}

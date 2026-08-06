@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/L_finite_volume.template.json",
+  "template_sha256": "0a6d4a2d637e473427a2abb65bb322864a2ddb9a616bccac87648658c1c5a40c",
+  "expected_binding_paths": [
+    "model.state",
+    "model.interface_flux",
+    "model.dt",
+    "model.dx",
+    "model.conservation_tolerance",
+    "model.positivity_tolerance"
+  ],
+  "binding_rule": "Every value requires an exact admitted source, exact parent artifact, or hashed internal derivation record. Module P alone may bind preregistered public comparison sources.",
+  "bindings": [
+    {
+      "path": "model.state",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "L",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.interface_flux",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "L",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.dt",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "L",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.dx",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "L",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.conservation_tolerance",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "L",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.positivity_tolerance",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "L",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    }
+  ]
+}

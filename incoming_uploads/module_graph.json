@@ -1,0 +1,224 @@
+{
+  "module_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "HU",
+    "I",
+    "HI",
+    "J",
+    "K",
+    "L",
+    "M",
+    "KLM",
+    "N",
+    "O",
+    "P",
+    "Q"
+  ],
+  "modules": {
+    "A": {
+      "parents": [],
+      "children": [
+        "B"
+      ]
+    },
+    "B": {
+      "parents": [
+        "A"
+      ],
+      "children": [
+        "C"
+      ]
+    },
+    "C": {
+      "parents": [
+        "B"
+      ],
+      "children": [
+        "D"
+      ]
+    },
+    "D": {
+      "parents": [
+        "C"
+      ],
+      "children": [
+        "E"
+      ]
+    },
+    "E": {
+      "parents": [
+        "D"
+      ],
+      "children": [
+        "F"
+      ]
+    },
+    "F": {
+      "parents": [
+        "E"
+      ],
+      "children": [
+        "G"
+      ]
+    },
+    "G": {
+      "parents": [
+        "F"
+      ],
+      "children": [
+        "HU",
+        "I"
+      ]
+    },
+    "HU": {
+      "parents": [
+        "G"
+      ],
+      "children": [
+        "HI"
+      ]
+    },
+    "I": {
+      "parents": [
+        "G"
+      ],
+      "children": [
+        "HI"
+      ]
+    },
+    "HI": {
+      "parents": [
+        "HU",
+        "I"
+      ],
+      "children": [
+        "J"
+      ]
+    },
+    "J": {
+      "parents": [
+        "HI"
+      ],
+      "children": [
+        "K"
+      ]
+    },
+    "K": {
+      "parents": [
+        "J"
+      ],
+      "children": [
+        "L",
+        "KLM",
+        "N"
+      ],
+      "return_inputs": [
+        "KLM"
+      ]
+    },
+    "L": {
+      "parents": [
+        "K"
+      ],
+      "children": [
+        "M",
+        "KLM",
+        "N"
+      ],
+      "return_inputs": [
+        "KLM"
+      ]
+    },
+    "M": {
+      "parents": [
+        "L"
+      ],
+      "children": [
+        "KLM",
+        "N"
+      ],
+      "return_inputs": [
+        "KLM"
+      ]
+    },
+    "KLM": {
+      "parents": [
+        "K",
+        "L",
+        "M"
+      ],
+      "children": [
+        "K",
+        "L",
+        "M",
+        "N"
+      ]
+    },
+    "N": {
+      "parents": [
+        "K",
+        "L",
+        "M",
+        "KLM"
+      ],
+      "children": [
+        "O"
+      ]
+    },
+    "O": {
+      "parents": [
+        "N"
+      ],
+      "children": [
+        "P",
+        "Q"
+      ]
+    },
+    "P": {
+      "parents": [
+        "O"
+      ],
+      "children": []
+    },
+    "Q": {
+      "parents": [
+        "O"
+      ],
+      "children": []
+    }
+  },
+  "protected_edges": [
+    "A->B",
+    "B->C",
+    "C->D",
+    "D->E",
+    "E->F",
+    "F->G",
+    "G->HU",
+    "G->I",
+    "HU->HI",
+    "I->HI",
+    "HI->J",
+    "J->K",
+    "K->L",
+    "L->M",
+    "K/L/M->KLM",
+    "KLM->K/L/M",
+    "K/L/M/KLM->N",
+    "N->O",
+    "O->P",
+    "O->Q"
+  ],
+  "forbidden_edges": [
+    "P->O",
+    "P->Q",
+    "P->generation",
+    "future_module->past_parent_without_causal_return_record"
+  ]
+}

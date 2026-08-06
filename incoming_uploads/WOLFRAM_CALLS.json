@@ -1,0 +1,347 @@
+{
+  "version": "2.0",
+  "calls": [
+    {
+      "call_id": "A-WL-001",
+      "module": "A",
+      "purpose": "Kernel bound, normalized depth weights, and 2N lane increment",
+      "code_path": "recipes/A/wolfram/A-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "A-WL-002",
+      "module": "A",
+      "purpose": "Triadic role independence and relational carrier manufactured audit",
+      "code_path": "recipes/A/wolfram/A-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "B-WL-001",
+      "module": "B",
+      "purpose": "Spectral audit of the Big Implosion compression operator",
+      "code_path": "recipes/B/wolfram/B-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "B-WL-002",
+      "module": "B",
+      "purpose": "No-loss reopening and strict nontrivial-mode compression",
+      "code_path": "recipes/B/wolfram/B-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "C-WL-001",
+      "module": "C",
+      "purpose": "Hermitian mass/mixing candidate and exact spectral invariants",
+      "code_path": "recipes/C/wolfram/C-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "C-WL-002",
+      "module": "C",
+      "purpose": "Generic continuous-symmetry invariance equation solver",
+      "code_path": "recipes/C/wolfram/C-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "D-WL-001",
+      "module": "D",
+      "purpose": "Exact two-state transport conservation and Lyapunov decay",
+      "code_path": "recipes/D/wolfram/D-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "D-WL-002",
+      "module": "D",
+      "purpose": "Transport Jacobian eigenstructure and stiffness diagnostic",
+      "code_path": "recipes/D/wolfram/D-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "E-WL-001",
+      "module": "E",
+      "purpose": "Stoichiometric baryon and charge conservation",
+      "code_path": "recipes/E/wolfram/E-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "E-WL-002",
+      "module": "E",
+      "purpose": "Reaction Jacobian and stiffness structure",
+      "code_path": "recipes/E/wolfram/E-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "F-WL-001",
+      "module": "F",
+      "purpose": "Charge-neutral reaction-transfer audit",
+      "code_path": "recipes/F/wolfram/F-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "F-WL-002",
+      "module": "F",
+      "purpose": "Covariance propagation and PSD check",
+      "code_path": "recipes/F/wolfram/F-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "G-WL-001",
+      "module": "G",
+      "purpose": "Visibility normalization identity for a positive opacity model",
+      "code_path": "recipes/G/wolfram/G-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "G-WL-002",
+      "module": "G",
+      "purpose": "Three-state recombination-network conservation template",
+      "code_path": "recipes/G/wolfram/G-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "HU-WL-001",
+      "module": "HU",
+      "purpose": "Linear transfer semigroup and superposition",
+      "code_path": "recipes/HU/wolfram/HU-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "HU-WL-002",
+      "module": "HU",
+      "purpose": "Operator constraint-invariant subspace audit",
+      "code_path": "recipes/HU/wolfram/HU-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "I-WL-001",
+      "module": "I",
+      "purpose": "Kinematic expansion and horizon identities",
+      "code_path": "recipes/I/wolfram/I-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "I-WL-002",
+      "module": "I",
+      "purpose": "Generic constraint-preservation condition",
+      "code_path": "recipes/I/wolfram/I-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "HI-WL-001",
+      "module": "HI",
+      "purpose": "Immutable operator-background composition",
+      "code_path": "recipes/HI/wolfram/HI-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "HI-WL-002",
+      "module": "HI",
+      "purpose": "Covariance propagation through instantiated operator",
+      "code_path": "recipes/HI/wolfram/HI-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "J-WL-001",
+      "module": "J",
+      "purpose": "Positive-definite covariance and Cholesky reconstruction",
+      "code_path": "recipes/J/wolfram/J-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "J-WL-002",
+      "module": "J",
+      "purpose": "Hermitian Fourier reality condition",
+      "code_path": "recipes/J/wolfram/J-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "K-WL-001",
+      "module": "K",
+      "purpose": "Pairwise antisymmetry and total momentum conservation",
+      "code_path": "recipes/K/wolfram/K-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "K-WL-002",
+      "module": "K",
+      "purpose": "Leapfrog symplectic Jacobian determinant",
+      "code_path": "recipes/K/wolfram/K-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "L-WL-001",
+      "module": "L",
+      "purpose": "Finite-volume periodic conservation identity",
+      "code_path": "recipes/L/wolfram/L-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "L-WL-002",
+      "module": "L",
+      "purpose": "Internally generated stellar birth-measure normalization",
+      "code_path": "recipes/L/wolfram/L-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "M-WL-001",
+      "module": "M",
+      "purpose": "Composition-network conserved-count audit",
+      "code_path": "recipes/M/wolfram/M-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "M-WL-002",
+      "module": "M",
+      "purpose": "Cooling/opacity return Jacobian template",
+      "code_path": "recipes/M/wolfram/M-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "KLM-WL-001",
+      "module": "KLM",
+      "purpose": "Fixed-point and Jacobian stability classifier",
+      "code_path": "recipes/KLM/wolfram/KLM-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "KLM-WL-002",
+      "module": "KLM",
+      "purpose": "Exact finite-cycle and nonconvergence countermodels",
+      "code_path": "recipes/KLM/wolfram/KLM-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "N-WL-001",
+      "module": "N",
+      "purpose": "Global causal-graph reachability audit",
+      "code_path": "recipes/N/wolfram/N-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "N-WL-002",
+      "module": "N",
+      "purpose": "Block covariance compatibility audit",
+      "code_path": "recipes/N/wolfram/N-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "O-WL-001",
+      "module": "O",
+      "purpose": "Canonical packet hash and mutation sensitivity",
+      "code_path": "recipes/O/wolfram/O-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "O-WL-002",
+      "module": "O",
+      "purpose": "Generation/comparison dependency firewall",
+      "code_path": "recipes/O/wolfram/O-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "P-WL-001",
+      "module": "P",
+      "purpose": "Generic frozen-prediction Gaussian statistic",
+      "code_path": "recipes/P/wolfram/P-WL-001.wl",
+      "public_knowledge_allowed": true,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "P-WL-002",
+      "module": "P",
+      "purpose": "Covariance positive-definiteness preregistration condition",
+      "code_path": "recipes/P/wolfram/P-WL-002.wl",
+      "public_knowledge_allowed": true,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "Q-WL-001",
+      "module": "Q",
+      "purpose": "Terminal affine recurrence and fixed-point classification",
+      "code_path": "recipes/Q/wolfram/Q-WL-001.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    },
+    {
+      "call_id": "Q-WL-002",
+      "module": "Q",
+      "purpose": "Qualified memory is not the source role",
+      "code_path": "recipes/Q/wolfram/Q-WL-002.wl",
+      "public_knowledge_allowed": false,
+      "expected_output": "Wolfram Association string (InputForm)",
+      "failure_policy": "Record verbatim; implementation-only syntax corrections require a patch record and full rerun."
+    }
+  ]
+}

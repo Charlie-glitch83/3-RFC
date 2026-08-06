@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "modules": {
+    "A": {
+      "must_visit": [
+        "FORMALIZED",
+        "VERIFIED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": false
+    },
+    "HU": {
+      "must_visit": [
+        "FORMALIZED",
+        "VERIFIED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": false
+    },
+    "O": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "FROZEN"
+      ],
+      "physical": false
+    },
+    "P": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "BLIND_VALIDATED"
+      ],
+      "physical": false
+    },
+    "B": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "C": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "D": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "E": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "F": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "G": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "I": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "HI": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "J": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "K": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "L": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "M": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "KLM": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "N": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    },
+    "Q": {
+      "must_visit": [
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "PHYSICALLY_EXECUTED",
+        "INDEPENDENTLY_REPRODUCED",
+        "FROZEN"
+      ],
+      "physical": true
+    }
+  }
+}

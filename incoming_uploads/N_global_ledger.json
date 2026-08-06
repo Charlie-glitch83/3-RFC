@@ -1,0 +1,16 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "global_ledger",
+  "model": {
+    "quantities": ["energy", "charge"],
+    "sectors": ["K", "L", "M"],
+    "owners": {"energy": "K", "charge": "L"},
+    "initial_ledger": [[10.0, 0.0], [2.0, 3.0], [1.0, -3.0]],
+    "transfers": [
+      {"source": "K", "target": "L", "quantity": "energy", "amount": 1.5},
+      {"source": "L", "target": "M", "quantity": "charge", "amount": 0.5}
+    ],
+    "final_ledger": [[8.5, 0.0], [3.5, 2.5], [1.0, -2.5]],
+    "tolerance": 1e-12
+  }
+}

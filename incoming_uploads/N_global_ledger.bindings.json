@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/N_global_ledger.template.json",
+  "template_sha256": "6739dc4142f6c02ec3a9fdb81cd6479d386335180183dcb774498faf542660d6",
+  "expected_binding_paths": [
+    "model.quantities",
+    "model.sectors",
+    "model.owners",
+    "model.initial_ledger",
+    "model.transfers",
+    "model.final_ledger",
+    "model.tolerance"
+  ],
+  "binding_rule": "Every value requires an exact admitted source, exact parent artifact, or hashed internal derivation record. Module P alone may bind preregistered public comparison sources.",
+  "bindings": [
+    {
+      "path": "model.quantities",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.sectors",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.owners",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.initial_ledger",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.transfers",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.final_ledger",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.tolerance",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "N",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    }
+  ]
+}

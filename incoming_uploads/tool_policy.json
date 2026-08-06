@@ -1,0 +1,52 @@
+{
+  "github": {
+    "purpose": [
+      "read",
+      "commit",
+      "branch",
+      "issue",
+      "pull_request",
+      "verification"
+    ],
+    "mandatory_after_write": [
+      "new_commit_sha",
+      "changed_file_list",
+      "diff_or_refetch",
+      "ci_status_if_available"
+    ],
+    "failure_rule": "If no new SHA/diff appears, stop and switch method immediately."
+  },
+  "wolfram": {
+    "purpose": [
+      "symbolic_derivation",
+      "exact_check",
+      "dimensional_analysis",
+      "ode_pde",
+      "stability",
+      "conservation",
+      "independent_verification"
+    ],
+    "record": [
+      "complete_input",
+      "assumptions",
+      "output",
+      "interpretation",
+      "timestamp",
+      "hash"
+    ],
+    "forbidden": "Using public numerical targets from Wolfram|Alpha during sealed generation unless already admitted as frozen source."
+  },
+  "numerical_software": {
+    "record": [
+      "version",
+      "environment",
+      "commands",
+      "inputs",
+      "seeds",
+      "tolerances",
+      "stopping_rules",
+      "hardware_relevant_settings"
+    ],
+    "hidden_defaults_forbidden": true
+  }
+}

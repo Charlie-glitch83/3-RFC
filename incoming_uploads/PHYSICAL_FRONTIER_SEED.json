@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "status": "SEED_FROM_DEEP_SOAK_REQUIRES_EXACT_REPOSITORY_VERIFICATION",
+  "rule": "Select the earliest boundary whose exact parent-driven physical output, restart packet, covariance, and independent reconstruction are absent. Do not infer execution from formal law or representative verification.",
+  "rows": [
+    {
+      "module": "A",
+      "known_strength": "Strong formal triad/kernel/N-body architecture exists in prior work.",
+      "unverified_requirement": "Exact admitted source bytes, final typed prephysical packet, independent reconstruction, and verified freeze in 3-RFC."
+    },
+    {
+      "module": "B",
+      "known_strength": "A mathematically explicit Big Implosion operator and representative verification exist in prior lineages.",
+      "unverified_requirement": "One exact physically executed first-state packet from the admitted A parent, with restart, covariance, no-loss reopening, and independent replay."
+    },
+    {
+      "module": "C",
+      "known_strength": "Microscopic constitution laws/interfaces have been formalized in prior work.",
+      "unverified_requirement": "Exact parent-driven field/particle/interaction/mass/mixing state rather than representative examples."
+    },
+    {
+      "module": "D-G",
+      "known_strength": "Early-universe law architecture and representative checks exist.",
+      "unverified_requirement": "Cumulative physical trajectory with exact parent packets, solver state, covariance, restart, and independent replay."
+    },
+    {
+      "module": "HU/I/HI/J",
+      "known_strength": "Transfer, background, and covariance architecture is well developed.",
+      "unverified_requirement": "Actual realized background, immutable instantiation, primordial covariance, and finite-volume field packet consumed by K."
+    },
+    {
+      "module": "K",
+      "known_strength": "Nonlinear gravity requirements are specified.",
+      "unverified_requirement": "Physical nonlinear field/particle/metric/lightcone/lensing execution."
+    },
+    {
+      "module": "L",
+      "known_strength": "Repaired first-pass hydro/MHD/radiation/thermochemistry/star-formation architecture independently passed at its declared scope.",
+      "unverified_requirement": "Execution from exact physical K parent and participation in physical K-L-M recurrence."
+    },
+    {
+      "module": "M/KLM",
+      "known_strength": "Law architecture and reduced F0 recurrence exist.",
+      "unverified_requirement": "Physical isotope/chemical state and F1-F4 coupled recurrence; F0 cannot be promoted."
+    }
+  ]
+}

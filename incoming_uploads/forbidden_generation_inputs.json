@@ -1,0 +1,22 @@
+{
+  "mode": "GENERATION_SEALED",
+  "forbidden_categories": [
+    "public_observational_targets",
+    "published_best_fit_parameters",
+    "published_priors_posteriors_likelihoods",
+    "remembered_target_values",
+    "calibrated_public_simulations",
+    "target_trained_surrogates",
+    "post_hoc_residual_corrections",
+    "target_selected_seeds_branches_bases_thresholds_tolerances",
+    "public_comparison_results_from_Module_P"
+  ],
+  "allowed_categories": [
+    "exact_admitted_source_bytes",
+    "internally_derived_mathematics",
+    "parent_state_objects",
+    "predeclared_numerical_methods",
+    "internal_conservation_and_constraint_tests",
+    "manufactured_solutions_not_based_on_public_targets"
+  ]
+}

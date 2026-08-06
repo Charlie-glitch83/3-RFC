@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/A_triad_kernel.template.json",
+  "template_sha256": "fa42cc61e866d02c53e641e18861caa399d73aec379cff3cce880eff27c2cbad",
+  "expected_binding_paths": [
+    "model.delta",
+    "model.alpha",
+    "model.depth",
+    "model.constituents",
+    "model.basis_matrix"
+  ],
+  "binding_rule": "Manufactured binding demo only.",
+  "bindings": [
+    {
+      "path": "model.delta",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": 3.23606797749979,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "configured_runs/examples/A_triad_kernel.json",
+      "origin_sha256": "b5661a1b4d284995e6d8fbb37c005bc8e9ce43b4f507f57e1861e3eb1797d7ae",
+      "module": "A",
+      "derivation_object": "manufactured A example configuration",
+      "units": "dimensionless manufactured case",
+      "dimensions": "declared by example",
+      "justification": "Binding-materializer regression test only."
+    },
+    {
+      "path": "model.alpha",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": 0.17,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "configured_runs/examples/A_triad_kernel.json",
+      "origin_sha256": "b5661a1b4d284995e6d8fbb37c005bc8e9ce43b4f507f57e1861e3eb1797d7ae",
+      "module": "A",
+      "derivation_object": "manufactured A example configuration",
+      "units": "dimensionless manufactured case",
+      "dimensions": "declared by example",
+      "justification": "Binding-materializer regression test only."
+    },
+    {
+      "path": "model.depth",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": 6,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "configured_runs/examples/A_triad_kernel.json",
+      "origin_sha256": "b5661a1b4d284995e6d8fbb37c005bc8e9ce43b4f507f57e1861e3eb1797d7ae",
+      "module": "A",
+      "derivation_object": "manufactured A example configuration",
+      "units": "dimensionless manufactured case",
+      "dimensions": "declared by example",
+      "justification": "Binding-materializer regression test only."
+    },
+    {
+      "path": "model.constituents",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "configured_runs/examples/A_triad_kernel.json",
+      "origin_sha256": "b5661a1b4d284995e6d8fbb37c005bc8e9ce43b4f507f57e1861e3eb1797d7ae",
+      "module": "A",
+      "derivation_object": "manufactured A example configuration",
+      "units": "dimensionless manufactured case",
+      "dimensions": "declared by example",
+      "justification": "Binding-materializer regression test only."
+    },
+    {
+      "path": "model.basis_matrix",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "configured_runs/examples/A_triad_kernel.json",
+      "origin_sha256": "b5661a1b4d284995e6d8fbb37c005bc8e9ce43b4f507f57e1861e3eb1797d7ae",
+      "module": "A",
+      "derivation_object": "manufactured A example configuration",
+      "units": "dimensionless manufactured case",
+      "dimensions": "declared by example",
+      "justification": "Binding-materializer regression test only."
+    }
+  ]
+}

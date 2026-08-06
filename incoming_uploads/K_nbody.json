@@ -1,0 +1,46 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "nbody",
+  "model": {
+    "positions": [
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.2
+      ]
+    ],
+    "velocities": [
+      [
+        0.0,
+        0.22
+      ],
+      [
+        0.0,
+        -0.22
+      ],
+      [
+        -0.15,
+        0.0
+      ]
+    ],
+    "masses": [
+      1.0,
+      1.0,
+      0.7
+    ],
+    "softening": 0.05,
+    "dt": 0.0002,
+    "steps": 5000,
+    "checkpoint_stride": 500,
+    "coupling_constant": 1.0,
+    "relative_energy_tolerance": 0.0005,
+    "momentum_tolerance": 1e-10
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "big_implosion",
+  "model": {
+    "delta": 3.23606797749979,
+    "node_count": 4,
+    "weighted_edges": [[0, 1, 1.0], [1, 2, 1.0], [2, 3, 1.0]],
+    "initial_state": [[1.5], [-0.5], [0.75], [-1.75]],
+    "pre_event_clock": null,
+    "tolerance": 1e-10,
+    "strict_compression_margin": 1e-12
+  }
+}

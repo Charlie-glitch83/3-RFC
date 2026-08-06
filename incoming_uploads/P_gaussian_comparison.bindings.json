@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/P_gaussian_comparison.template.json",
+  "template_sha256": "71df596c87246fe7e7a31442ebb4f33644947d34edb5ed68f6192adcc90c1003",
+  "expected_binding_paths": [
+    "model.prediction",
+    "model.prediction_hash_from_O",
+    "model.data",
+    "model.public_data_source_register",
+    "model.covariance",
+    "model.covariance_tolerance"
+  ],
+  "binding_rule": "Every value requires an exact admitted source, exact parent artifact, or hashed internal derivation record. Module P alone may bind preregistered public comparison sources.",
+  "bindings": [
+    {
+      "path": "model.prediction",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "P",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.prediction_hash_from_O",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "P",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.data",
+      "placeholder": "__BIND_FROM_PREREGISTERED_PUBLIC_COMPARISON__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "P",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.public_data_source_register",
+      "placeholder": "__BIND_FROM_PREREGISTERED_PUBLIC_COMPARISON__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "P",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.covariance",
+      "placeholder": "__BIND_FROM_PREREGISTERED_PUBLIC_COMPARISON__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "P",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.covariance_tolerance",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "P",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    }
+  ]
+}

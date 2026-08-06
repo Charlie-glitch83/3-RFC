@@ -1,0 +1,8 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "freeze_packet",
+  "model": {
+    "root": "manufactured_cases/freeze_example",
+    "required_relative_paths": ["state.json", "truth.txt"]
+  }
+}

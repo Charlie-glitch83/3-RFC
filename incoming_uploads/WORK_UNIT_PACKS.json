@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "work_units": {
+    "BOOT-000": {
+      "recipe": "work_units/BOOT-000/recipe.json",
+      "work_order": "work_units/BOOT-000/WORK_ORDER.md"
+    },
+    "SRC-010": {
+      "recipe": "work_units/SRC-010/recipe.json",
+      "work_order": "work_units/SRC-010/WORK_ORDER.md"
+    },
+    "AUTH-020": {
+      "recipe": "work_units/AUTH-020/recipe.json",
+      "work_order": "work_units/AUTH-020/WORK_ORDER.md"
+    },
+    "XWALK-030": {
+      "recipe": "work_units/XWALK-030/recipe.json",
+      "work_order": "work_units/XWALK-030/WORK_ORDER.md"
+    },
+    "REC-040": {
+      "recipe": "work_units/REC-040/recipe.json",
+      "work_order": "work_units/REC-040/WORK_ORDER.md"
+    },
+    "FRONTIER-050": {
+      "recipe": "work_units/FRONTIER-050/recipe.json",
+      "work_order": "work_units/FRONTIER-050/WORK_ORDER.md"
+    },
+    "HR-255": {
+      "recipe": "work_units/HR-255/recipe.json",
+      "work_order": "work_units/HR-255/WORK_ORDER.md"
+    },
+    "FINAL-290": {
+      "recipe": "work_units/FINAL-290/recipe.json",
+      "work_order": "work_units/FINAL-290/WORK_ORDER.md"
+    }
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "rule": "Templates are executable only after every binding token is replaced and recorded in the run source register and pre-execution lock.",
+  "modules": {
+    "A": {
+      "bindings": [
+        {
+          "solver": "triad_kernel",
+          "template": "configured_runs/templates/A_triad_kernel.template.json",
+          "purpose": "Execute recursive depth law, typed constituents, and complete directed non-self carrier.",
+          "copy_command": "python tools/director.py solver-copy --module A --solver triad_kernel --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/A_triad_kernel.json --output-dir <RUN_DIR>/solver_outputs/triad_kernel",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/A_triad_kernel.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/A_triad_kernel.template.json --binding-sheet <RUN_DIR>/binding_sheets/A_triad_kernel.bindings.json --output <RUN_DIR>/solver_configs/A_triad_kernel.json"
+        }
+      ]
+    },
+    "B": {
+      "bindings": [
+        {
+          "solver": "big_implosion",
+          "template": "configured_runs/templates/B_big_implosion.template.json",
+          "purpose": "Execute the frozen Big Implosion compression operator on the exact A parent.",
+          "copy_command": "python tools/director.py solver-copy --module B --solver big_implosion --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/B_big_implosion.json --output-dir <RUN_DIR>/solver_outputs/big_implosion",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/B_big_implosion.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/B_big_implosion.template.json --binding-sheet <RUN_DIR>/binding_sheets/B_big_implosion.bindings.json --output <RUN_DIR>/solver_configs/B_big_implosion.json"
+        }
+      ]
+    },
+    "C": {
+      "bindings": [
+        {
+          "solver": "spectral_model",
+          "template": "configured_runs/templates/C_spectral_model.template.json",
+          "purpose": "Audit internally derived mass/mixing/interaction matrix candidates and their symmetries.",
+          "copy_command": "python tools/director.py solver-copy --module C --solver spectral_model --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/C_spectral_model.json --output-dir <RUN_DIR>/solver_outputs/spectral_model",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/C_spectral_model.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/C_spectral_model.template.json --binding-sheet <RUN_DIR>/binding_sheets/C_spectral_model.bindings.json --output <RUN_DIR>/solver_configs/C_spectral_model.json"
+        }
+      ]
+    },
+    "D": {
+      "bindings": [
+        {
+          "solver": "transport",
+          "template": "configured_runs/templates/D_transport.template.json",
+          "purpose": "Integrate the frozen nonequilibrium thermal/transport state with explicit invariants.",
+          "copy_command": "python tools/director.py solver-copy --module D --solver transport --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/D_transport.json --output-dir <RUN_DIR>/solver_outputs/transport",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/D_transport.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/D_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/D_transport.bindings.json --output <RUN_DIR>/solver_configs/D_transport.json"
+        }
+      ]
+    },
+    "E": {
+      "bindings": [
+        {
+          "solver": "reaction_network",
+          "template": "configured_runs/templates/E_reaction_network.template.json",
+          "purpose": "Execute the internally derived primordial reaction network with stoichiometric invariants.",
+          "copy_command": "python tools/director.py solver-copy --module E --solver reaction_network --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/E_reaction_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/E_reaction_network.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/E_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/E_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/E_reaction_network.json"
+        }
+      ]
+    },
+    "F": {
+      "bindings": [
+        {
+          "solver": "reaction_network",
+          "template": "configured_runs/templates/F_reaction_network.template.json",
+          "purpose": "Execute the post-nuclear plasma reaction network.",
+          "copy_command": "python tools/director.py solver-copy --module F --solver reaction_network --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/F_reaction_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/F_reaction_network.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/F_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/F_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/F_reaction_network.json"
+        },
+        {
+          "solver": "transport",
+          "template": "configured_runs/templates/F_transport.template.json",
+          "purpose": "Execute coupled plasma/radiation transport.",
+          "copy_command": "python tools/director.py solver-copy --module F --solver transport --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/F_transport.json --output-dir <RUN_DIR>/solver_outputs/transport",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/F_transport.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/F_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/F_transport.bindings.json --output <RUN_DIR>/solver_configs/F_transport.json"
+        }
+      ]
+    },
+    "G": {
+      "bindings": [
+        {
+          "solver": "reaction_network",
+          "template": "configured_runs/templates/G_recombination_network.template.json",
+          "purpose": "Execute nonequilibrium recombination chemistry.",
+          "copy_command": "python tools/director.py solver-copy --module G --solver reaction_network --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/G_recombination_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/G_recombination_network.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/G_recombination_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/G_recombination_network.bindings.json --output <RUN_DIR>/solver_configs/G_recombination_network.json"
+        },
+        {
+          "solver": "visibility",
+          "template": "configured_runs/templates/G_visibility.template.json",
+          "purpose": "Construct the physical visibility kernel from the executed opacity history.",
+          "copy_command": "python tools/director.py solver-copy --module G --solver visibility --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/G_visibility.json --output-dir <RUN_DIR>/solver_outputs/visibility",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/G_visibility.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/G_visibility.template.json --binding-sheet <RUN_DIR>/binding_sheets/G_visibility.bindings.json --output <RUN_DIR>/solver_configs/G_visibility.json"
+        }
+      ]
+    },
+    "HU": {
+      "bindings": [
+        {
+          "solver": "linear_transfer",
+          "template": "configured_runs/templates/HU_linear_transfer.template.json",
+          "purpose": "Execute and freeze the universal linear transfer operator.",
+          "copy_command": "python tools/director.py solver-copy --module HU --solver linear_transfer --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/HU_linear_transfer.json --output-dir <RUN_DIR>/solver_outputs/linear_transfer",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/HU_linear_transfer.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/HU_linear_transfer.template.json --binding-sheet <RUN_DIR>/binding_sheets/HU_linear_transfer.bindings.json --output <RUN_DIR>/solver_configs/HU_linear_transfer.json"
+        }
+      ]
+    },
+    "I": {
+      "bindings": [
+        {
+          "solver": "transport",
+          "template": "configured_runs/templates/I_background_ode.template.json",
+          "purpose": "Integrate the internally derived background geometry/clock system.",
+          "copy_command": "python tools/director.py solver-copy --module I --solver transport --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/I_background_ode.json --output-dir <RUN_DIR>/solver_outputs/transport",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/I_background_ode.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/I_background_ode.template.json --binding-sheet <RUN_DIR>/binding_sheets/I_background_ode.bindings.json --output <RUN_DIR>/solver_configs/I_background_ode.json"
+        }
+      ]
+    },
+    "HI": {
+      "bindings": [
+        {
+          "solver": "linear_transfer",
+          "template": "configured_runs/templates/HI_instantiated_transfer.template.json",
+          "purpose": "Instantiate the frozen transfer operator on the exact realized background.",
+          "copy_command": "python tools/director.py solver-copy --module HI --solver linear_transfer --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/HI_instantiated_transfer.json --output-dir <RUN_DIR>/solver_outputs/linear_transfer",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/HI_instantiated_transfer.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/HI_instantiated_transfer.template.json --binding-sheet <RUN_DIR>/binding_sheets/HI_instantiated_transfer.bindings.json --output <RUN_DIR>/solver_configs/HI_instantiated_transfer.json"
+        }
+      ]
+    },
+    "J": {
+      "bindings": [
+        {
+          "solver": "covariance",
+          "template": "configured_runs/templates/J_covariance.template.json",
+          "purpose": "Audit and sample the internally derived primordial covariance.",
+          "copy_command": "python tools/director.py solver-copy --module J --solver covariance --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_covariance.json --output-dir <RUN_DIR>/solver_outputs/covariance",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/J_covariance.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_covariance.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_covariance.bindings.json --output <RUN_DIR>/solver_configs/J_covariance.json"
+        },
+        {
+          "solver": "fourier_field",
+          "template": "configured_runs/templates/J_fourier_field.template.json",
+          "purpose": "Generate finite-volume fields with a frozen seed and Hermitian reality.",
+          "copy_command": "python tools/director.py solver-copy --module J --solver fourier_field --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_fourier_field.json --output-dir <RUN_DIR>/solver_outputs/fourier_field",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/J_fourier_field.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_fourier_field.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_fourier_field.bindings.json --output <RUN_DIR>/solver_configs/J_fourier_field.json"
+        }
+      ]
+    },
+    "K": {
+      "bindings": [
+        {
+          "solver": "nbody",
+          "template": "configured_runs/templates/K_nbody.template.json",
+          "purpose": "Execute the active many-body gravity specialization with explicit coupling and units.",
+          "copy_command": "python tools/director.py solver-copy --module K --solver nbody --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/K_nbody.json --output-dir <RUN_DIR>/solver_outputs/nbody",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/K_nbody.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/K_nbody.template.json --binding-sheet <RUN_DIR>/binding_sheets/K_nbody.bindings.json --output <RUN_DIR>/solver_configs/K_nbody.json"
+        },
+        {
+          "solver": "ray_bundle",
+          "template": "configured_runs/templates/K_ray_bundle.template.json",
+          "purpose": "Propagate metric/lensing truth through frozen ray/Jacobi screens.",
+          "copy_command": "python tools/director.py solver-copy --module K --solver ray_bundle --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/K_ray_bundle.json --output-dir <RUN_DIR>/solver_outputs/ray_bundle",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/K_ray_bundle.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/K_ray_bundle.template.json --binding-sheet <RUN_DIR>/binding_sheets/K_ray_bundle.bindings.json --output <RUN_DIR>/solver_configs/K_ray_bundle.json"
+        }
+      ]
+    },
+    "L": {
+      "bindings": [
+        {
+          "solver": "finite_volume",
+          "template": "configured_runs/templates/L_finite_volume.template.json",
+          "purpose": "Execute conservative baryonic finite-volume updates.",
+          "copy_command": "python tools/director.py solver-copy --module L --solver finite_volume --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/L_finite_volume.json --output-dir <RUN_DIR>/solver_outputs/finite_volume",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/L_finite_volume.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/L_finite_volume.template.json --binding-sheet <RUN_DIR>/binding_sheets/L_finite_volume.bindings.json --output <RUN_DIR>/solver_configs/L_finite_volume.json"
+        },
+        {
+          "solver": "reaction_network",
+          "template": "configured_runs/templates/L_thermochemistry.template.json",
+          "purpose": "Execute gas thermochemistry and composition-aware source terms.",
+          "copy_command": "python tools/director.py solver-copy --module L --solver reaction_network --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/L_thermochemistry.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/L_thermochemistry.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/L_thermochemistry.template.json --binding-sheet <RUN_DIR>/binding_sheets/L_thermochemistry.bindings.json --output <RUN_DIR>/solver_configs/L_thermochemistry.json"
+        }
+      ]
+    },
+    "M": {
+      "bindings": [
+        {
+          "solver": "reaction_network",
+          "template": "configured_runs/templates/M_nucleosynthesis.template.json",
+          "purpose": "Execute stellar/explosive nucleosynthesis and isotope return.",
+          "copy_command": "python tools/director.py solver-copy --module M --solver reaction_network --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/M_nucleosynthesis.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/M_nucleosynthesis.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/M_nucleosynthesis.template.json --binding-sheet <RUN_DIR>/binding_sheets/M_nucleosynthesis.bindings.json --output <RUN_DIR>/solver_configs/M_nucleosynthesis.json"
+        },
+        {
+          "solver": "transport",
+          "template": "configured_runs/templates/M_chemical_transport.template.json",
+          "purpose": "Execute chemical/dust/cooling/opacity transport.",
+          "copy_command": "python tools/director.py solver-copy --module M --solver transport --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/M_chemical_transport.json --output-dir <RUN_DIR>/solver_outputs/transport",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/M_chemical_transport.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/M_chemical_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/M_chemical_transport.bindings.json --output <RUN_DIR>/solver_configs/M_chemical_transport.json"
+        }
+      ]
+    },
+    "KLM": {
+      "bindings": [
+        {
+          "solver": "affine_recurrence",
+          "template": "configured_runs/templates/KLM_recurrence.template.json",
+          "purpose": "Classify the frozen recurrence without forcing convergence.",
+          "copy_command": "python tools/director.py solver-copy --module KLM --solver affine_recurrence --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/KLM_recurrence.json --output-dir <RUN_DIR>/solver_outputs/affine_recurrence",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/KLM_recurrence.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/KLM_recurrence.template.json --binding-sheet <RUN_DIR>/binding_sheets/KLM_recurrence.bindings.json --output <RUN_DIR>/solver_configs/KLM_recurrence.json"
+        }
+      ]
+    },
+    "N": {
+      "bindings": [
+        {
+          "solver": "global_ledger",
+          "template": "configured_runs/templates/N_global_ledger.template.json",
+          "purpose": "Close the one-universe global conservation and ownership ledger.",
+          "copy_command": "python tools/director.py solver-copy --module N --solver global_ledger --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/N_global_ledger.json --output-dir <RUN_DIR>/solver_outputs/global_ledger",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/N_global_ledger.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/N_global_ledger.template.json --binding-sheet <RUN_DIR>/binding_sheets/N_global_ledger.bindings.json --output <RUN_DIR>/solver_configs/N_global_ledger.json"
+        },
+        {
+          "solver": "synthetic_observation",
+          "template": "configured_runs/templates/N_synthetic_observation.template.json",
+          "purpose": "Generate truth-to-observation products without public comparison data.",
+          "copy_command": "python tools/director.py solver-copy --module N --solver synthetic_observation --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/N_synthetic_observation.json --output-dir <RUN_DIR>/solver_outputs/synthetic_observation",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/N_synthetic_observation.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/N_synthetic_observation.template.json --binding-sheet <RUN_DIR>/binding_sheets/N_synthetic_observation.bindings.json --output <RUN_DIR>/solver_configs/N_synthetic_observation.json"
+        }
+      ]
+    },
+    "O": {
+      "bindings": [
+        {
+          "solver": "freeze_packet",
+          "template": "configured_runs/templates/O_freeze_packet.template.json",
+          "purpose": "Content-address the immutable universe and prediction packet.",
+          "copy_command": "python tools/director.py solver-copy --module O --solver freeze_packet --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/O_freeze_packet.json --output-dir <RUN_DIR>/solver_outputs/freeze_packet",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/O_freeze_packet.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/O_freeze_packet.template.json --binding-sheet <RUN_DIR>/binding_sheets/O_freeze_packet.bindings.json --output <RUN_DIR>/solver_configs/O_freeze_packet.json"
+        }
+      ]
+    },
+    "P": {
+      "bindings": [
+        {
+          "solver": "gaussian_comparison",
+          "template": "configured_runs/templates/P_gaussian_comparison.template.json",
+          "purpose": "Perform read-only comparison after the O freeze.",
+          "copy_command": "python tools/director.py solver-copy --module P --solver gaussian_comparison --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/P_gaussian_comparison.json --output-dir <RUN_DIR>/solver_outputs/gaussian_comparison",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/P_gaussian_comparison.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/P_gaussian_comparison.template.json --binding-sheet <RUN_DIR>/binding_sheets/P_gaussian_comparison.bindings.json --output <RUN_DIR>/solver_configs/P_gaussian_comparison.json"
+        }
+      ]
+    },
+    "Q": {
+      "bindings": [
+        {
+          "solver": "affine_recurrence",
+          "template": "configured_runs/templates/Q_terminal_recurrence.template.json",
+          "purpose": "Classify isolated terminal evolution and next-cycle conditioning.",
+          "copy_command": "python tools/director.py solver-copy --module Q --solver affine_recurrence --destination <RUN_DIR>",
+          "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/Q_terminal_recurrence.json --output-dir <RUN_DIR>/solver_outputs/affine_recurrence",
+          "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+          "binding_sheet": "configured_runs/binding_sheets/Q_terminal_recurrence.bindings.json",
+          "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/Q_terminal_recurrence.template.json --binding-sheet <RUN_DIR>/binding_sheets/Q_terminal_recurrence.bindings.json --output <RUN_DIR>/solver_configs/Q_terminal_recurrence.json"
+        }
+      ]
+    }
+  }
+}

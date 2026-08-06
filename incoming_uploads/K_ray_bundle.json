@@ -1,0 +1,14 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "ray_bundle",
+  "model": {
+    "screen_tensors": [
+      [[0.02, 0.005], [0.005, 0.015]],
+      [[0.01, -0.003], [-0.003, 0.012]],
+      [[0.005, 0.001], [0.001, 0.004]]
+    ],
+    "distance_weights": [0.3, 0.4, 0.2],
+    "initial_jacobi": [[1.0, 0.0], [0.0, 1.0]],
+    "finite_tolerance": 1e-12
+  }
+}

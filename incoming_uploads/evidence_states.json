@@ -1,0 +1,62 @@
+{
+  "ordered": [
+    "DESIGN",
+    "FORMALIZED",
+    "IMPLEMENTED",
+    "VERIFIED",
+    "PHYSICALLY_EXECUTED",
+    "ENSEMBLE_VERIFIED",
+    "INDEPENDENTLY_REPRODUCED",
+    "FROZEN",
+    "BLIND_VALIDATED",
+    "PREDICTIVE_LOCK"
+  ],
+  "exception_states": [
+    "BLOCKED",
+    "FAIL_REQUIRES_ANALYSIS",
+    "FALSIFIED_AT_SCOPE"
+  ],
+  "rule": "No state may be skipped or granted by prose, document count, an old PASS label, or an aggregate score.",
+  "transitions": {
+    "DESIGN": [
+      "FORMALIZED"
+    ],
+    "FORMALIZED": [
+      "IMPLEMENTED",
+      "VERIFIED"
+    ],
+    "IMPLEMENTED": [
+      "VERIFIED"
+    ],
+    "VERIFIED": [
+      "PHYSICALLY_EXECUTED",
+      "INDEPENDENTLY_REPRODUCED",
+      "FROZEN"
+    ],
+    "PHYSICALLY_EXECUTED": [
+      "ENSEMBLE_VERIFIED",
+      "INDEPENDENTLY_REPRODUCED",
+      "FROZEN"
+    ],
+    "ENSEMBLE_VERIFIED": [
+      "INDEPENDENTLY_REPRODUCED",
+      "FROZEN"
+    ],
+    "INDEPENDENTLY_REPRODUCED": [
+      "FROZEN"
+    ],
+    "FROZEN": [
+      "FROZEN",
+      "BLIND_VALIDATED",
+      "PREDICTIVE_LOCK"
+    ],
+    "BLIND_VALIDATED": [
+      "BLIND_VALIDATED",
+      "PREDICTIVE_LOCK"
+    ],
+    "PREDICTIVE_LOCK": [
+      "PREDICTIVE_LOCK"
+    ]
+  },
+  "note": "Formal objects may reach FROZEN without claiming physical execution; physical modules must include PHYSICALLY_EXECUTED before FROZEN as enforced by their closeout and work-unit requirements."
+}

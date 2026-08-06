@@ -1,0 +1,20 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "triad_kernel",
+  "model": {
+    "delta": 3.23606797749979,
+    "alpha": 0.17,
+    "time": 0.4,
+    "depth": 6,
+    "constituents": ["a", "b", "c", "d"],
+    "basis_matrix": [
+      [1.0, 0.0, 0.0],
+      [0.0, 1.0, 0.0],
+      [0.0, 0.0, 1.0],
+      [1.0, 1.0, 0.0],
+      [0.0, 1.0, 1.0],
+      [1.0, 0.0, 1.0]
+    ],
+    "tolerance": 1e-12
+  }
+}

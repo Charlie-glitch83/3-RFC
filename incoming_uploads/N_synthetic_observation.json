@@ -1,0 +1,11 @@
+{
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "synthetic_observation",
+  "model": {
+    "truth": [1.0, 0.6, -0.2, 0.1],
+    "response_matrix": [[1.0, 0.2, 0.0, 0.0], [0.0, 0.5, 0.5, 0.0], [0.0, 0.0, 0.3, 0.7]],
+    "noise_covariance": [[0.01, 0.002, 0.0], [0.002, 0.02, 0.001], [0.0, 0.001, 0.015]],
+    "noise_seed": 2026080502,
+    "covariance_tolerance": 1e-12
+  }
+}

@@ -1,0 +1,23 @@
+name: RFC work unit
+about: Track one authorized scientific or repository work unit
+title: "[UNIT] "
+labels: ["work-unit"]
+body:
+  - type: input
+    id: task
+    attributes:
+      label: Work unit ID
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and exact deliverables
+    validations:
+      required: true
+  - type: textarea
+    id: gates
+    attributes:
+      label: Mandatory gates
+    validations:
+      required: true
