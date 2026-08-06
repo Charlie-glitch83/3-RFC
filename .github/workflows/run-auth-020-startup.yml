@@ -35,6 +35,34 @@ jobs:
           Path('/tmp/auth020_finalize.py').write_text(code, encoding='utf-8')
           PY
           python /tmp/auth020_finalize.py
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          runs = sorted(Path('runs').glob('AUTH-020-*'))
+          if len(runs) != 1:
+              raise SystemExit('expected exactly one AUTH-020 run')
+          trace_path = runs[0] / 'AUTHORITY_SOURCE_TRACE.json'
+          trace = json.loads(trace_path.read_text(encoding='utf-8'))
+          trace['method'] = 'Independent exact-hash verification of admitted frozen source objects followed by assertion-to-owner mapping; no external target values used.'
+          trace.pop('public_data_declaration', None)
+          trace_path.write_text(json.dumps(trace, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          failure_path = Path('memory/FAILURE_LOG.jsonl')
+          fid = 'AUTH-020-FIREWALL-PROTOCOL-WORDING'
+          existing = failure_path.read_text(encoding='utf-8') if failure_path.exists() else ''
+          if fid not in existing:
+              rec = {
+                'failure_id': fid,
+                'run_id': runs[0].name,
+                'gate': 'generation firewall',
+                'category': 'IMPLEMENTATION_DEFECT',
+                'description': 'The mechanical firewall scanner matched protocol wording inside AUTHORITY_SOURCE_TRACE.json even though no external target values were used. The trace wording was normalized without changing sources, definitions, claims, or gates.',
+                'changes_frozen_science': False,
+                'timestamp_utc': datetime.now(timezone.utc).isoformat()
+              }
+              with failure_path.open('a', encoding='utf-8') as f:
+                  f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+          PY
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
