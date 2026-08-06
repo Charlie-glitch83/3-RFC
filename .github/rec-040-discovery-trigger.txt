@@ -1,1 +1,1 @@
-Trigger the recognized REC-040 exact recovery audit.
+Rerun the recognized REC-040 exact recovery after the wording-only firewall correction.
