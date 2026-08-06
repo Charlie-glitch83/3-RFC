@@ -1,0 +1,41 @@
+name: Apply BOOT-000 closeout
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.head_ref == 'agent/close-boot-000'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/close-boot-000
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Apply exact closeout payload and validate
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAYLOAD='.bootstrap/boot_closeout_no_workflows.tar.gz'
+          EXPECTED='08c19c96b81ddc261972f3364174ab00fa431c776906ca697f69c9f7a1f33edc'
+          test "$(sha256sum "$PAYLOAD" | awk '{print $1}')" = "$EXPECTED"
+          tar -xzf "$PAYLOAD" -C .
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py next
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json memory runs tests tools work_packets
+          git commit -m 'Stage BOOT-000 closeout evidence'
+          git push origin HEAD:agent/close-boot-000
