@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-07T22:03:42.109579+00:00
+Generated: 2026-08-07T22:04:24.509350+00:00
 
 ## Project truth
 
@@ -65,11 +65,10 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 
 - admitted sources: 29
 - frozen artifacts: 8
-- indexed runs: 8
+- indexed runs: 9
 
 ## Recent runs
 
-- SRC-010-20260806T065702Z: PASS (SOURCES)
 - AUTH-020-20260806T071800Z: PASS (THEORY)
 - XWALK-030-20260806T130603Z: PASS (THEORY)
 - REC-040-20260806T135256Z: PASS (RECOVERY)
@@ -77,6 +76,7 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 - A-100-20260806T173458Z: PASS (A)
 - B-110-20260807T002248Z: PASS (B)
 - C-120-20260807T032543Z: PASS (C)
+- D-130-20260807T220342Z: CREATED (D)
 
 ## Recent decisions
 
