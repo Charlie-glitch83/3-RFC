@@ -1,0 +1,28 @@
+name: One-use D130 Wolfram show
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: read
+
+jobs:
+  show:
+    if: github.event.pull_request.head.ref == 'ops/readme-exact-startup-20260807c'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Display D-WL-001 exactly
+        shell: bash
+        run: python tools/director.py wolfram-show --call D-WL-001
+      - name: Display D-WL-002 exactly
+        shell: bash
+        run: python tools/director.py wolfram-show --call D-WL-002
