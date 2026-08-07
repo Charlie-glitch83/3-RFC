@@ -1,0 +1,57 @@
+name: D130 Claim Surface Finalize
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.event.pull_request.head.ref == 'ops/readme-exact-startup-20260807c'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked requirements
+        run: python -m pip install -r requirements-lock.txt
+      - name: Finalize D130 global claim surface from verified closeout
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('STATE.json')
+          s=json.loads(p.read_text())
+          if s['modules']['D']['evidence_state']!='FROZEN' or s['modules']['D']['fidelity']!='MINIMAL_SPINE':
+              raise SystemExit('D is not frozen at MINIMAL_SPINE')
+          s['strongest_supported_claim']='Generated RFC dimensionless nonequilibrium thermal/phase history at MINIMAL_SPINE fidelity from the exact C parent, including conservative transport, positive distributions, entropy production, internal conjugate temperature, thermodynamic state-volume expansion, a parameter-free RFL-memory balance phase event, inherited uncertainty envelope, restart, clean replay, and independent reconstruction.'
+          s['strongest_unsupported_claim']='No Kelvin calibration, SI duration, metric expansion, Standard Model phase identity, primordial abundances, or empirical correspondence is established by Module D.'
+          p.write_text(json.dumps(s,indent=2)+'\n')
+          PY
+          python tools/rfc.py context
+      - name: Validate finalized claim surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/d130_claim_surface_finalize.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Finalize D130 claim surface'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
