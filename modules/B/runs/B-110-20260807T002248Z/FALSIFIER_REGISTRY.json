@@ -1,0 +1,16 @@
+{
+  "run_id": "B-110-20260807T002248Z",
+  "status": "FINAL",
+  "falsifiers": [
+    "H_A_to_B hash differs from frozen parent SHA-256",
+    "any pre-event physical clock is non-null",
+    "counting support differs from complete A support without parent evidence",
+    "a nonconstant graph mode is not strictly compressed",
+    "total ledger changes above 1e-11",
+    "reopening error exceeds 1e-11",
+    "an ordinary/radiative/dissipative sector or metric geometry is asserted without a derived map",
+    "independent spectral reconstruction disagrees above 1e-11"
+  ],
+  "all_tested_or_hard_stopped": true,
+  "result": "PASS"
+}

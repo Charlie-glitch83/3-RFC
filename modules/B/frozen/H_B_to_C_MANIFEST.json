@@ -1,0 +1,11 @@
+{
+  "object_id": "H_B_to_C_MANIFEST",
+  "run_id": "B-110-20260807T002248Z",
+  "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+  "bytes": 7564,
+  "run_copy": "modules/B/runs/B-110-20260807T002248Z/frozen/H_B_to_C.json",
+  "module_copy": "modules/B/frozen/H_B_to_C.json",
+  "parent_sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED"
+}

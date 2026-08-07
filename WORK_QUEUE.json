@@ -217,7 +217,7 @@
       "id": "B-110",
       "title": "Close Module B: Big Implosion and First Physical State",
       "module": "B",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "A-100"
       ],
@@ -257,7 +257,7 @@
       "id": "C-120",
       "title": "Close Module C: Microscopic Constitution",
       "module": "C",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "B-110"
       ],

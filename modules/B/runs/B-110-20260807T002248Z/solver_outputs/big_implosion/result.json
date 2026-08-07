@@ -1,0 +1,109 @@
+{
+  "success": true,
+  "classification": "BIG_IMPLOSION_OPERATOR_EXECUTION",
+  "laplacian": [
+    [
+      2.0,
+      -1.0,
+      -1.0
+    ],
+    [
+      -1.0,
+      2.0,
+      -1.0
+    ],
+    [
+      -1.0,
+      -1.0,
+      2.0
+    ]
+  ],
+  "operator": [
+    [
+      0.7001139566964553,
+      0.1499430216517723,
+      0.1499430216517723
+    ],
+    [
+      0.1499430216517723,
+      0.7001139566964554,
+      0.1499430216517723
+    ],
+    [
+      0.1499430216517723,
+      0.1499430216517723,
+      0.7001139566964554
+    ]
+  ],
+  "operator_eigenvalues": [
+    0.5501709350446827,
+    0.550170935044683,
+    0.9999999999999997
+  ],
+  "initial_state": [
+    [
+      0.7936268560033942
+    ],
+    [
+      0.1699706279455569
+    ],
+    [
+      0.036402516051048765
+    ]
+  ],
+  "manifested_state": [
+    [
+      0.5865734510957316
+    ],
+    [
+      0.24345592095871127
+    ],
+    [
+      0.16997062794555687
+    ]
+  ],
+  "reopened_state": [
+    [
+      0.7936268560033941
+    ],
+    [
+      0.1699706279455569
+    ],
+    [
+      0.03640251605104876
+    ]
+  ],
+  "nontrivial_norm_before": 0.5715989947293056,
+  "nontrivial_norm_after": 0.31447715340082283,
+  "compression_ratio": 0.5501709350446828,
+  "reopening_error": 1.1123893155135927e-16,
+  "conserved_mode_error": 1.1102230246251565e-16,
+  "total_relative_change": 2.2204460492503136e-16,
+  "sector_result": {
+    "values": [
+      [
+        0.5865734510957316
+      ],
+      [
+        0.24345592095871127
+      ],
+      [
+        0.16997062794555687
+      ]
+    ],
+    "projection_shape": [
+      3,
+      3
+    ],
+    "reconstruction_error": 0.0
+  },
+  "pass_flags": {
+    "symmetric_laplacian": true,
+    "positive_semidefinite_laplacian": true,
+    "conserved_constant_mode": true,
+    "strict_nontrivial_compression": true,
+    "reopening": true,
+    "operator_eigenvalues_in_unit_interval": true,
+    "no_pre_event_clock_imported": true
+  }
+}

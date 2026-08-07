@@ -1,0 +1,83 @@
+{
+  "classification": "STRUCTURAL_ROBUSTNESS_NOT_ADDITIONAL_PHYSICAL_BRANCHES",
+  "runs": [
+    {
+      "N": 2,
+      "construction": "cycle exact A modal values then renormalize total ledger to 1 for structural test only",
+      "compression_ratio": 0.6472165384886756,
+      "analytic_nonconstant_eigenvalue": 0.6472165384886757,
+      "max_operator_eigenvalue": 1.0,
+      "min_operator_eigenvalue": 0.6472165384886756,
+      "ledger_error": -1.1102230246251565e-16,
+      "reopening_error": 1.1443916996305594e-16,
+      "pass": true
+    },
+    {
+      "N": 3,
+      "construction": "cycle exact A modal values then renormalize total ledger to 1 for structural test only",
+      "compression_ratio": 0.550170935044683,
+      "analytic_nonconstant_eigenvalue": 0.5501709350446831,
+      "max_operator_eigenvalue": 0.9999999999999997,
+      "min_operator_eigenvalue": 0.5501709350446827,
+      "ledger_error": -2.220446049250313e-16,
+      "reopening_error": 1.1527756336890508e-16,
+      "pass": true
+    },
+    {
+      "N": 4,
+      "construction": "cycle exact A modal values then renormalize total ledger to 1 for structural test only",
+      "compression_ratio": 0.47843321337297234,
+      "analytic_nonconstant_eigenvalue": 0.4784332133729724,
+      "max_operator_eigenvalue": 1.0000000000000004,
+      "min_operator_eigenvalue": 0.4784332133729722,
+      "ledger_error": 2.220446049250313e-16,
+      "reopening_error": 6.216025217875883e-17,
+      "pass": true
+    },
+    {
+      "N": 5,
+      "construction": "cycle exact A modal values then renormalize total ledger to 1 for structural test only",
+      "compression_ratio": 0.42324551285009,
+      "analytic_nonconstant_eigenvalue": 0.42324551285009,
+      "max_operator_eigenvalue": 1.0,
+      "min_operator_eigenvalue": 0.42324551285008993,
+      "ledger_error": 0.0,
+      "reopening_error": 8.15873481018251e-17,
+      "pass": true
+    },
+    {
+      "N": 6,
+      "construction": "cycle exact A modal values then renormalize total ledger to 1 for structural test only",
+      "compression_ratio": 0.37947296570553934,
+      "analytic_nonconstant_eigenvalue": 0.37947296570553923,
+      "max_operator_eigenvalue": 0.9999999999999991,
+      "min_operator_eigenvalue": 0.37947296570553896,
+      "ledger_error": 0.0,
+      "reopening_error": 8.455776084155501e-17,
+      "pass": true
+    },
+    {
+      "N": 7,
+      "construction": "cycle exact A modal values then renormalize total ledger to 1 for structural test only",
+      "compression_ratio": 0.34390582236718786,
+      "analytic_nonconstant_eigenvalue": 0.3439058223671878,
+      "max_operator_eigenvalue": 1.0000000000000004,
+      "min_operator_eigenvalue": 0.3439058223671875,
+      "ledger_error": 2.220446049250313e-16,
+      "reopening_error": 1.8182351663528605e-16,
+      "pass": true
+    },
+    {
+      "N": 8,
+      "construction": "cycle exact A modal values then renormalize total ledger to 1 for structural test only",
+      "compression_ratio": 0.3144345799197887,
+      "analytic_nonconstant_eigenvalue": 0.31443457991978885,
+      "max_operator_eigenvalue": 0.9999999999999991,
+      "min_operator_eigenvalue": 0.3144345799197884,
+      "ledger_error": -3.3306690738754696e-16,
+      "reopening_error": 9.910722837601153e-17,
+      "pass": true
+    }
+  ],
+  "overall": "PASS"
+}

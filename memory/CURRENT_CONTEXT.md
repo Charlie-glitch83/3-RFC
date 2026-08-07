@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-07T00:22:52.682636+00:00
+Generated: 2026-08-07T03:10:58.300855+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `B-110` — Close Module B: Big Implosion and First Physical State
-- Current module: `B`
+- Active work unit: `C-120` — Close Module C: Microscopic Constitution
+- Current module: `C`
 - Last verified commit: `b6280513dc47339ddf024be6275817d3f38a9d39`
 
 ## Strongest supported claim
@@ -20,31 +20,29 @@ No Big Implosion has been executed. No physical time, geometry, fields, particle
 
 ## Immediate objective
 
-Execute the sole first physical event from the exact prephysical parent and generate the first restartable physical RFC state.
+Derive and execute the microscopic field, particle, interaction, mass, mixing, and prethermal population content from the first physical state.
 
 ## Required deliverables
 
-- modules/B/runs/<RUN_ID>/RUN_PLAN.md
-- modules/B/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/B/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/B/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/B/runs/<RUN_ID>/CLOSEOUT.md
+- modules/C/runs/<RUN_ID>/RUN_PLAN.md
+- modules/C/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/C/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/C/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/C/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- no pre-event physical time
-- exact parent bytes
-- strict nontrivial compression or derived equivalent
-- total ledger preservation
-- no-loss reopening
-- no later physics smuggled into B
-- ablation, replay, restart, and independent reconstruction
+- units and dimensions
+- symmetry/constraint closure
+- positivity/unitarity or declared alternative
+- no Standard Model label without derivation or correspondence theorem
+- independent symbolic and numerical checks
 
 ## Module states
 
 - A: `FROZEN` / `PRODUCTION`
-- B: `DESIGN` / `UNSTARTED`
+- B: `FROZEN` / `MINIMAL_SPINE`
 - C: `DESIGN` / `UNSTARTED`
 - D: `DESIGN` / `UNSTARTED`
 - E: `DESIGN` / `UNSTARTED`
@@ -66,7 +64,7 @@ Execute the sole first physical event from the exact prephysical parent and gene
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 5
+- frozen artifacts: 7
 - indexed runs: 7
 
 ## Recent runs
@@ -76,19 +74,19 @@ Execute the sole first physical event from the exact prephysical parent and gene
 - XWALK-030-20260806T130603Z: PASS (THEORY)
 - REC-040-20260806T135256Z: PASS (RECOVERY)
 - FRONTIER-050-20260806T142549Z: PASS (AUDIT)
-- A-100-20260806T173458Z: CREATED (A)
-- B-110-20260807T002248Z: CREATED (B)
+- A-100-20260806T173458Z: PASS (A)
+- B-110-20260807T002248Z: PASS (B)
 
 ## Recent decisions
 
-- COMMIT-795bf1c11b7a: Verified AUTH-020 constitution-lock commit, exact changed files, gate evidence, source trace, and closeout
-- ADVANCE-AUTH-020-20260806T072340Z: Marked AUTH-020 PASS and activated XWALK-030
-- COMMIT-8913ed740c60: Verified XWALK-030 crosswalk commit, exact changed files, gate evidence, source bindings, independent review, and closeout
-- ADVANCE-XWALK-030-20260806T131240Z: Marked XWALK-030 PASS and activated REC-040
-- COMMIT-c29b12476030: Verified final REC-040 exact-object recovery commit, five source-only Module L assets, exact hashes, quarantines, preserved validator failures, gate evidence, and closeout
-- ADVANCE-REC-040-20260806T141001Z: Marked REC-040 PASS and activated FRONTIER-050
-- COMMIT-5ac899a0ad80: FRONTIER-050 exact evidence commit verified after external SHA and diff review.
 - ADVANCE-FRONTIER-050-20260806T151014Z: Marked FRONTIER-050 PASS and activated A-100
+- PROMOTE-B-FORMALIZED-20260807T031057Z: Promoted Module B from DESIGN to FORMALIZED at MINIMAL_SPINE
+- PROMOTE-B-IMPLEMENTED-20260807T031057Z: Promoted Module B from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
+- PROMOTE-B-VERIFIED-20260807T031057Z: Promoted Module B from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
+- PROMOTE-B-PHYSICALLY_EXECUTED-20260807T031057Z: Promoted Module B from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
+- PROMOTE-B-INDEPENDENTLY_REPRODUCED-20260807T031058Z: Promoted Module B from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
+- PROMOTE-B-FROZEN-20260807T031058Z: Promoted Module B from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-B-110-20260807T031058Z: Marked B-110 PASS and activated C-120
 
 ## Recent failures
 

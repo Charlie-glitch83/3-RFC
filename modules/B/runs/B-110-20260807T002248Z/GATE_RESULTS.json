@@ -1,7 +1,59 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "B-110-20260807T002248Z",
+  "classification": "MODULE_B_COMPONENTWISE_GATES",
+  "overall": "PASS",
+  "gates": [
+    {
+      "id": "B-GATE-001",
+      "name": "no_pre_event_physical_time",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "B-GATE-002",
+      "name": "exact_parent_bytes",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "B-GATE-003",
+      "name": "strict_nontrivial_compression",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "B-GATE-004",
+      "name": "total_ledger_preservation",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "B-GATE-005",
+      "name": "no_loss_reopening",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "B-GATE-006",
+      "name": "no_later_physics_smuggled",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "B-GATE-007",
+      "name": "ablation_and_independent_reconstruction",
+      "result": "PASS",
+      "score": 1.0
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "minimum_component_score",
+      "value": 1.0,
+      "threshold": 0.95,
+      "result": "PASS"
+    }
+  ],
+  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis",
+  "frozen_science_changed_after_lock": false
 }

@@ -1,0 +1,51 @@
+{
+  "run_id": "B-110-20260807T002248Z",
+  "method": "ANALYTIC_K3_SPECTRAL_RECONSTRUCTION_WITHOUT_PRIMARY_MATRIX_INVERSE",
+  "parent_sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+  "analytic": {
+    "constant_eigenvalue": 1.0,
+    "nonconstant_eigenvalue_q": 0.5501709350446831,
+    "multiplicity_nonconstant": 2,
+    "post_event_state": [
+      0.5865734510957317,
+      0.24345592095871127,
+      0.1699706279455569
+    ],
+    "reopened_parent_state": [
+      0.7936268560033941,
+      0.16997062794555692,
+      0.03640251605104883
+    ],
+    "edge_currents": [
+      {
+        "i": 0,
+        "j": 1,
+        "J_ij": 0.09351289930693896
+      },
+      {
+        "i": 0,
+        "j": 2,
+        "J_ij": 0.11354050560072353
+      },
+      {
+        "i": 1,
+        "j": 2,
+        "J_ij": 0.020027606293784576
+      }
+    ],
+    "current_divergence": [
+      0.2070534049076625,
+      -0.07348529301315437,
+      -0.1335681118945081
+    ]
+  },
+  "comparisons": {
+    "primary_state_l2_error": 1.1443916996305594e-16,
+    "reopening_l2_error": 1.303699802838727e-16,
+    "divergence_vs_parent_minus_state_l2_error": 6.206335383118183e-17,
+    "primary_relic_residual_l2_error": 1.1443916996305594e-16,
+    "ledger_error": -1.1102230246251565e-16
+  },
+  "pass": true,
+  "trust_boundary": "Did not load primary GATE_RESULTS, CLOSEOUT, or operator matrix; only exact parent and the primary physical-state value for final comparison."
+}

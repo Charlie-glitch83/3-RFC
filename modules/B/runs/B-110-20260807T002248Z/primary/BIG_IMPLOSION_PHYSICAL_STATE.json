@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "object_id": "B_FIRST_PHYSICAL_STATE",
+  "run_id": "B-110-20260807T002248Z",
+  "status": "PHYSICALLY_EXECUTED_MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "object_id": "H_A_to_B",
+    "path": "modules/A/frozen/H_A_to_B.json",
+    "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+  },
+  "event": {
+    "name": "BIG_IMPLOSION",
+    "pre_event_physical_time": null,
+    "intrinsic_event_order_origin": 0,
+    "clock_statement": "Physical ordering begins at this crossing. tau_B=0 is an event-order origin, not an imported pre-event time or calibrated duration."
+  },
+  "carrier": {
+    "node_count": 3,
+    "node_semantics": [
+      "A_MODAL_CHANNEL_0",
+      "A_MODAL_CHANNEL_1",
+      "A_MODAL_CHANNEL_2"
+    ],
+    "support": "complete inherited A relational support",
+    "edge_measure": "unit incidence/counting measure",
+    "weighted_edges": [
+      [
+        0,
+        1,
+        1.0
+      ],
+      [
+        0,
+        2,
+        1.0
+      ],
+      [
+        1,
+        2,
+        1.0
+      ]
+    ]
+  },
+  "operator": {
+    "expression": "Q_B=(I+L/(delta-1))^-1",
+    "delta": 4.6692,
+    "laplacian": [
+      [
+        2.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        2.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        2.0
+      ]
+    ],
+    "matrix": [
+      [
+        0.7001139566964553,
+        0.1499430216517723,
+        0.1499430216517723
+      ],
+      [
+        0.1499430216517723,
+        0.7001139566964554,
+        0.1499430216517723
+      ],
+      [
+        0.1499430216517723,
+        0.1499430216517723,
+        0.7001139566964554
+      ]
+    ],
+    "eigenvalues": [
+      0.5501709350446827,
+      0.550170935044683,
+      0.9999999999999997
+    ]
+  },
+  "state": {
+    "pre_event_prephysical_parent_state": [
+      0.7936268560033942,
+      0.1699706279455569,
+      0.036402516051048765
+    ],
+    "post_event_physical_state": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "total_before": 0.9999999999999999,
+    "total_after": 0.9999999999999997,
+    "total_relative_change": 2.2204460492503136e-16,
+    "nontrivial_norm_before": 0.5715989947293056,
+    "nontrivial_norm_after": 0.31447715340082283,
+    "compression_ratio": 0.5501709350446828
+  },
+  "pregeometry": {
+    "type": "FINITE_RELATIONAL_GRAPH_WITH_SCALAR_CARRIER_AND_ANTISYMMETRIC_EDGE_CURRENT",
+    "metric_geometry": false,
+    "scalar_carrier": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "edge_currents": [
+      {
+        "i": 0,
+        "j": 1,
+        "J_ij": 0.09351289930693892,
+        "J_ji": -0.09351289930693892
+      },
+      {
+        "i": 0,
+        "j": 2,
+        "J_ij": 0.11354050560072351,
+        "J_ji": -0.11354050560072351
+      },
+      {
+        "i": 1,
+        "j": 2,
+        "J_ij": 0.020027606293784587,
+        "J_ji": -0.020027606293784587
+      }
+    ],
+    "current_divergence": [
+      0.20705340490766244,
+      -0.07348529301315433,
+      -0.1335681118945081
+    ],
+    "compression_relic_ledger_residual": [
+      0.20705340490766266,
+      -0.07348529301315437,
+      -0.1335681118945081
+    ],
+    "divergence_residual_norm": 2.2591401799415137e-16,
+    "ledger_residual_sum": 1.942890293094024e-16
+  },
+  "sector_seed_status": {
+    "ordinary": "NOT_DERIVED_IN_B",
+    "radiative": "NOT_DERIVED_IN_B",
+    "compression_relic": {
+      "status": "SIGNED_LEDGER_DERIVED_NOT_INDEPENDENT_POSITIVE_SECTOR",
+      "signed_residual": [
+        0.20705340490766266,
+        -0.07348529301315437,
+        -0.1335681118945081
+      ]
+    },
+    "dissipative_tail": "NOT_DERIVED_IN_B_REVERSIBLE_OPERATOR"
+  },
+  "no_loss": {
+    "reopened_parent_state": [
+      0.7936268560033941,
+      0.1699706279455569,
+      0.03640251605104876
+    ],
+    "reopening_error": 1.1123893155135927e-16,
+    "ancestry_preserved": true,
+    "parent_hash_preserved": true
+  },
+  "engine_pass_flags": {
+    "symmetric_laplacian": true,
+    "positive_semidefinite_laplacian": true,
+    "conserved_constant_mode": true,
+    "strict_nontrivial_compression": true,
+    "reopening": true,
+    "operator_eigenvalues_in_unit_interval": true,
+    "no_pre_event_clock_imported": true
+  },
+  "claim_boundary": "First physical event/state and typed pregeometry only; no microscopic sectors, metric spacetime, dimensional constants, late cosmology, or empirical validation."
+}

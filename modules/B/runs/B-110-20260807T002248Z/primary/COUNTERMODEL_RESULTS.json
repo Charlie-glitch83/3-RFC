@@ -1,0 +1,43 @@
+{
+  "countermodels": [
+    {
+      "id": "CM_B1_NO_COMPRESSION",
+      "change": "L->0",
+      "compression_ratio": 1.0,
+      "expected": "FAIL strict nontrivial compression",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "CM_B2_DISCONNECTED_RELATIONAL_SUPPORT",
+      "change": "remove two inherited K3 edges",
+      "operator_eigenvalues": [
+        0.6472165384886756,
+        1.0,
+        1.0
+      ],
+      "extra_unit_eigenvalue_count": 1,
+      "expected": "FAIL inherited support and strict compression of every nonconstant carrier mode",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "CM_B3_PRE_EVENT_CLOCK",
+      "change": "pre_event_clock=0",
+      "expected": "FAIL no-pre-event-time gate",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "CM_B4_LOSSY_REOPENING",
+      "change": "replace inverse reopening with mean projection",
+      "reopening_error": 0.5715989947293056,
+      "expected": "FAIL no-loss reopening",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "CM_B5_LATE_PHYSICS_LABEL_IMPORT",
+      "change": "assign ordinary/radiative/dissipative sector identities without a derived map",
+      "expected": "FAIL no-later-physics gate",
+      "result": "FAIL_AS_EXPECTED"
+    }
+  ],
+  "overall": "PASS"
+}

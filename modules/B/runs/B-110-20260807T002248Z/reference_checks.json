@@ -1,0 +1,24 @@
+{
+  "module": "B",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "operator_symmetric": true,
+    "operator_positive_definite": true,
+    "carrier_mode_preserved": true,
+    "nontrivial_modes_strictly_compressed": true,
+    "no_loss_reopening": true,
+    "laplacian_ledger_conserved": true
+  },
+  "metrics": {
+    "operator_eigenvalues": [
+      0.5179989482867456,
+      0.6472166386200455,
+      0.8623294751492656,
+      1.0
+    ],
+    "compression_ratio": 0.7190840213960342,
+    "reopening_error": 2.482534153247273e-16
+  },
+  "note": "Manufactured graph-Laplacian realization of the Big Implosion operator. Actual Module B must consume the exact Module A parent and derive its physical state."
+}

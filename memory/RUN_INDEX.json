@@ -71,9 +71,12 @@
       "run_id": "B-110-20260807T002248Z",
       "module": "B",
       "task_id": "B-110",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/B/runs/B-110-20260807T002248Z",
-      "created_utc": "2026-08-07T00:22:48.880988+00:00"
+      "created_utc": "2026-08-07T00:22:48.880988+00:00",
+      "closed_utc": "2026-08-07T03:10:58.167450+00:00",
+      "tree_sha256": "51f046dfe0a93a7357c8b7b3c79373cecc9a308efd40e73676d9f313976267dd",
+      "closeout": "modules/B/runs/B-110-20260807T002248Z/CLOSEOUT.md"
     }
   ]
 }

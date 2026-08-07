@@ -1,10 +1,75 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "artifact_hashes_match": true,
+  "clean_checkout": true,
+  "compared_artifacts": {
+    "CHECKPOINT_RECORD.json": {
+      "match": true,
+      "primary_sha256": "a3a33260827d4847a5842e8bbcb1e38d100ab1aba1063a0595d710b7b6d4091c",
+      "replay_sha256": "a3a33260827d4847a5842e8bbcb1e38d100ab1aba1063a0595d710b7b6d4091c"
+    },
+    "GATE_RESULTS.json": {
+      "match": true,
+      "primary_sha256": "170a0f7c7dd4e7b8a4c2e318adadbebb14d05c7633bc2ac4ce7bc45fe6cb60a7",
+      "replay_sha256": "170a0f7c7dd4e7b8a4c2e318adadbebb14d05c7633bc2ac4ce7bc45fe6cb60a7"
+    },
+    "checkpoints/B_FIRST_PHYSICAL_STATE.json": {
+      "match": true,
+      "primary_sha256": "8f9009d5326408f19bcba6f93ca59222eebb6d56d399379f4609d86827f734c0",
+      "replay_sha256": "8f9009d5326408f19bcba6f93ca59222eebb6d56d399379f4609d86827f734c0"
+    },
+    "independent/INDEPENDENT_RECONSTRUCTION.json": {
+      "match": true,
+      "primary_sha256": "f1ae0a5ed6e815cb31a3f178e66c2ba0c20cebb9dadc3c2ec937dc1c64ead761",
+      "replay_sha256": "f1ae0a5ed6e815cb31a3f178e66c2ba0c20cebb9dadc3c2ec937dc1c64ead761"
+    },
+    "primary/BIG_IMPLOSION_PHYSICAL_STATE.json": {
+      "match": true,
+      "primary_sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16",
+      "replay_sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16"
+    },
+    "primary/COUNTERMODEL_RESULTS.json": {
+      "match": true,
+      "primary_sha256": "d14125cec821556d6446a8f3c3e3925eb817df9f1367a5300459899b8b611320",
+      "replay_sha256": "d14125cec821556d6446a8f3c3e3925eb817df9f1367a5300459899b8b611320"
+    },
+    "primary/FINITE_N_STRUCTURAL_AUDIT.json": {
+      "match": true,
+      "primary_sha256": "9886d9e049f166d6e6dc3c59f1b2d5ef54950c6b23d866fcbe721dfe8fa646bd",
+      "replay_sha256": "9886d9e049f166d6e6dc3c59f1b2d5ef54950c6b23d866fcbe721dfe8fa646bd"
+    },
+    "primary/PRIMARY_SUMMARY.json": {
+      "match": true,
+      "primary_sha256": "10f55dd91d15c33ee2ce4bb3f1cc8b058e93daec5a818484b32d6c608da02f02",
+      "replay_sha256": "10f55dd91d15c33ee2ce4bb3f1cc8b058e93daec5a818484b32d6c608da02f02"
+    },
+    "primary/UNCERTAINTY_ENVELOPE.json": {
+      "match": true,
+      "primary_sha256": "2a42722e2ccf174d8757dbad2030570b736e0eee1feadece9ae3ddf48761a7cc",
+      "replay_sha256": "2a42722e2ccf174d8757dbad2030570b736e0eee1feadece9ae3ddf48761a7cc"
+    },
+    "reference_checks.json": {
+      "match": true,
+      "primary_sha256": "2df1c552c5e114c3051a97fae7180fcf60ea058435245703015466f7169e0c05",
+      "replay_sha256": "2df1c552c5e114c3051a97fae7180fcf60ea058435245703015466f7169e0c05"
+    },
+    "solver_outputs/big_implosion/result.json": {
+      "match": true,
+      "primary_sha256": "b035cc636f63e1a78301423dcd53ba888edfb41d4db195046980758200974a97",
+      "replay_sha256": "b035cc636f63e1a78301423dcd53ba888edfb41d4db195046980758200974a97"
+    }
+  },
+  "config_reproducibility": {
+    "normalization": "remove only absolute binding_manifest.template_path and binding_manifest.binding_sheet_path; retain template/binding hashes, every binding provenance record, model values, tolerances, generation mode, solver and classification",
+    "primary_raw_sha256": "578b191de667f7e3fb3b2bbb33678056e4263881f83d92fb3187e40b541149a1",
+    "primary_semantic_sha256": "ec36993356cdf2d648d7a97dbd5a49dd37e7f3658076a31f8af631448f1c2154",
+    "raw_hash_match": false,
+    "reason_raw_hash_may_differ": "materializer intentionally embeds checkout-specific absolute template_path and binding_sheet_path; those two transport paths are excluded from semantic comparison while their content SHA-256 values and all bindings remain included",
+    "replay_raw_sha256": "f07a2a8b1c268fe5d34b2948db0b3c0c4082a14dd4850e4b473c816fb79b6705",
+    "replay_semantic_sha256": "ec36993356cdf2d648d7a97dbd5a49dd37e7f3658076a31f8af631448f1c2154",
+    "semantic_match": true
+  },
+  "method": "second actions/checkout of agent/frontier-050-execution with no generated primary artifacts, followed by full frozen materialize/solver/primary/independent/validate sequence",
+  "replay_ref": "071f4c265e35e67bcd513ba5884e9ace155ec937",
+  "result": "PASS",
+  "run_id": "B-110-20260807T002248Z"
 }

@@ -1,0 +1,13 @@
+{
+  "run_id": "B-110-20260807T002248Z",
+  "parent_sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+  "solver_success": true,
+  "compression_ratio": 0.5501709350446828,
+  "ledger_error": -2.220446049250313e-16,
+  "reopening_error": 1.1123893155135927e-16,
+  "current_divergence_error": 2.2591401799415137e-16,
+  "finite_N_pass": true,
+  "countermodels_pass": true,
+  "strongest_supported_claim": "The exact frozen A prephysical modal state has undergone the source-locked Big Implosion counting-Laplacian crossing into a conserved, strictly compressed, exactly reopenable first physical relational state with intrinsic event-order origin and typed pregeometry at MINIMAL_SPINE fidelity.",
+  "strongest_unsupported_claim": "No microscopic particle/field sector model, metric spacetime geometry, dimensional physical constants, late-time cosmology, empirical agreement, or completed universe has been established."
+}

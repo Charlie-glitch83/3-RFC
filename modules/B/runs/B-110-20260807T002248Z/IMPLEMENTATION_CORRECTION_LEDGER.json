@@ -1,0 +1,31 @@
+{
+  "run_id": "B-110-20260807T002248Z",
+  "status": "FINAL",
+  "frozen_science_changed_after_lock": false,
+  "records": [
+    {
+      "id": "B-110-PRELOCK-EDGE-NORMALIZATION-DIAGNOSTIC",
+      "phase": "PRE_LOCK",
+      "scientific_evidence": false,
+      "definition_change_after_lock": false
+    },
+    {
+      "id": "B-110-PRELOCK-UNIT-EDGE-DIAGNOSTIC",
+      "phase": "PRE_LOCK",
+      "scientific_evidence": false,
+      "definition_change_after_lock": false
+    },
+    {
+      "id": "B-110-POSTLOCK-RELOCATION-001",
+      "phase": "POST_LOCK",
+      "scientific_evidence": false,
+      "definition_change_after_lock": false,
+      "failure": "Run-local scripts resolved repository root as parents[3], producing modules/modules/A and stopping after configured solver execution.",
+      "correction": "Changed repository-root resolution to parents[4] in primary, independent, validation, and finalization scripts.",
+      "rerun_scope": "Full frozen matrix including solver, primary, independent, gates, clean replay, finalization."
+    }
+  ],
+  "post_lock_implementation_corrections": [
+    "B-110-POSTLOCK-RELOCATION-001"
+  ]
+}

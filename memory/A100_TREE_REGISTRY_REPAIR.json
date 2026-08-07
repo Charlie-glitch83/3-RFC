@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "repair_type": "ADMINISTRATIVE_RUN_TREE_REGISTRY_REFRESH",
+  "run_id": "A-100-20260806T173458Z",
+  "run_path": "modules/A/runs/A-100-20260806T173458Z",
+  "old_registered_tree_sha256": "affac042456f256f07cc6f72d9a1b4d0b2650decf4d86a88d11d338aa521b395",
+  "current_verified_tree_sha256": "691511ae3bd1dabbab5af8da9394a9144442331031a1282c3a132426fd55994f",
+  "changed": true,
+  "manifest_status": "FINAL",
+  "manifested_outputs_verified": 56,
+  "scientific_output_bytes_changed": false,
+  "scope": "Registry metadata only; no run scientific/evidence file is modified by this tool.",
+  "timestamp_utc": "2026-08-07T03:10:49.191756+00:00"
+}

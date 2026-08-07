@@ -1,13 +1,85 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
+  "run_id": "B-110-20260807T002248Z",
+  "status": "FINAL",
+  "captured_utc": "2026-08-07T03:10:57.593713+00:00",
+  "operating_system": "Linux-6.17.0-1021-azure-x86_64-with-glibc2.39",
+  "hardware": {
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "logical_cpu_count": 4
+  },
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.13.14",
+      "executable": "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python"
+    },
+    {
+      "name": "NumPy",
+      "version": "2.5.1"
+    },
+    {
+      "name": "GitHub Actions",
+      "mode": "clean repository-hosted execution and replay"
+    }
+  ],
+  "network_policy": "NO_NETWORK_SCIENTIFIC_INPUTS; package/bootstrap and repository transport are infrastructure only",
+  "network_used_for_generation": false,
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "stochastic_algorithms": false,
+  "hidden_defaults_audited": true,
+  "hidden_default_audit": {
+    "undeclared_environment_inputs": false,
+    "implicit_randomness": false,
+    "network_calls_in_primary_or_independent_code": false,
+    "urls_in_source_register_or_execution_configs": false,
+    "remembered_physical_targets": false,
+    "external_observational_values": false,
+    "post_result_parameter_selection": false
+  },
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_used": false,
+  "claim_boundary": "Module B establishes only the first physical RFC event/state at MINIMAL_SPINE fidelity: Big Implosion crossing, intrinsic event-order origin, typed pregeometry, conserved graph-current ledger, exact reopening, ancestry, and restartable handoff. It does not establish metric spacetime, microscopic particle/field sectors, dimensional constants, late cosmology, empirical agreement, or a completed universe.",
+  "code_hashes": [
+    {
+      "path": "modules/B/runs/B-110-20260807T002248Z/primary_module_b.py",
+      "sha256": "d16c8955c2e8755f2226ffce4edce750491587bf0365bf8c414577584c532ff6",
+      "bytes": 9171
+    },
+    {
+      "path": "modules/B/runs/B-110-20260807T002248Z/independent_module_b.py",
+      "sha256": "526ebf05f349a356dfa485934fb34c1093931049a23bb1ffa5f6139a5214a4fe",
+      "bytes": 2479
+    },
+    {
+      "path": "modules/B/runs/B-110-20260807T002248Z/validate_module_b.py",
+      "sha256": "ea91d1ad4df698ea3c04cb5e2d071f3282c5d97c96a7bcac99bdc13df49934c8",
+      "bytes": 3422
+    },
+    {
+      "path": "modules/B/runs/B-110-20260807T002248Z/finalize_module_b.py",
+      "sha256": "5fbe0fec420e40c8309dd77a8ca3d3cba2f58b507a52292dd9d6e254b69afb33",
+      "bytes": 11245
+    },
+    {
+      "path": "rfc_engine/solvers/big_implosion.py",
+      "sha256": "dd8b6c5f265fff5de901b5c3da29099c819184608d870df35a845b4727746b02",
+      "bytes": 4755
+    },
+    {
+      "path": "tools/materialize_solver_config.py",
+      "sha256": "df51b784a21d3affe244df3ee1303a2f21fbaf71cfa1e47cde1b979cb3d273f5",
+      "bytes": 5206
+    },
+    {
+      "path": "tools/run_configured_solver.py",
+      "sha256": "0939e59a63c7164fd4e4c867a7a560719d342f03029bca5b961355d689e7371e",
+      "bytes": 5652
+    },
+    {
+      "path": "tools/rfc.py",
+      "sha256": "9b7111647975766790b6625ccd8a225e8bc21ce1ab800c785638a482ee917a81",
+      "bytes": 46383
+    }
+  ]
 }

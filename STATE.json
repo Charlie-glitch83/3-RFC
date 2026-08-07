@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "B-110",
-  "current_module": "B",
-  "current_run": "B-110-20260807T002248Z",
+  "active_work_unit": "C-120",
+  "current_module": "C",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -66,16 +66,70 @@
       "last_promoted_utc": "2026-08-07T00:11:19.343756+00:00"
     },
     "B": {
-      "evidence_state": "DESIGN",
-      "fidelity": "UNSTARTED",
-      "active_run": "B-110-20260807T002248Z",
+      "evidence_state": "FROZEN",
+      "fidelity": "MINIMAL_SPINE",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/B/runs/B-110-20260807T002248Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-07T03:10:57.781217+00:00",
+          "work_unit": "B-110"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/B/runs/B-110-20260807T002248Z/solver_outputs/big_implosion/result.json",
+          "timestamp_utc": "2026-08-07T03:10:57.845307+00:00",
+          "work_unit": "B-110"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/B/runs/B-110-20260807T002248Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-07T03:10:57.914078+00:00",
+          "work_unit": "B-110"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+          "timestamp_utc": "2026-08-07T03:10:57.976975+00:00",
+          "work_unit": "B-110"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/B/runs/B-110-20260807T002248Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-07T03:10:58.039434+00:00",
+          "work_unit": "B-110"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/B/frozen/H_B_to_C.json",
+          "timestamp_utc": "2026-08-07T03:10:58.104036+00:00",
+          "work_unit": "B-110"
         }
+      ],
+      "promotion_evidence": [
+        "modules/B/runs/B-110-20260807T002248Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/B/runs/B-110-20260807T002248Z/solver_outputs/big_implosion/result.json",
+        "modules/B/runs/B-110-20260807T002248Z/GATE_RESULTS.json",
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/runs/B-110-20260807T002248Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/B/frozen/H_B_to_C.json"
+      ],
+      "last_promoted_utc": "2026-08-07T03:10:58.104049+00:00",
+      "completed_runs": [
+        "B-110-20260807T002248Z"
       ]
     },
     "C": {
@@ -301,7 +355,7 @@
     }
   },
   "last_verified_commit": "b6280513dc47339ddf024be6275817d3f38a9d39",
-  "last_updated_utc": "2026-08-07T00:22:48.881249+00:00",
+  "last_updated_utc": "2026-08-07T03:10:58.235579+00:00",
   "strongest_supported_claim": "Module A now provides a frozen, deterministic, typed, source-addressed, independently reproduced and cleanly replayed prephysical triad/First-Action/kernel/relational-memory handoff H_A_to_B at production fidelity.",
   "strongest_unsupported_claim": "No Big Implosion has been executed. No physical time, geometry, fields, particles, direct many-body dynamics, physical constants, manifested universe, later-module physics, empirical agreement, or completed RFC universe has been established.",
   "last_verified_branch": "agent/frontier-050-execution"

@@ -1,0 +1,73 @@
+{
+  "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
+  "stochastic_physical_uncertainty": false,
+  "covariance": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "covariance_reason": "No stochastic or empirical random variable is admitted in B.",
+  "runs": [
+    {
+      "delta": 4.66915,
+      "input_state": [
+        0.7936247927467817,
+        0.16997200619958272,
+        0.036403201053635606
+      ],
+      "post_event_state": [
+        0.5865707636365733,
+        0.2434572301638438,
+        0.1699720061995827
+      ],
+      "compression_ratio": 0.5501675625829378,
+      "ledger_error": -2.220446049250313e-16,
+      "reopening_error": 1.1188630228279524e-16
+    },
+    {
+      "delta": 4.6692,
+      "input_state": [
+        0.7936268560033942,
+        0.1699706279455569,
+        0.036402516051048765
+      ],
+      "post_event_state": [
+        0.5865734510957316,
+        0.24345592095871127,
+        0.16997062794555687
+      ],
+      "compression_ratio": 0.5501709350446828,
+      "ledger_error": -2.220446049250313e-16,
+      "reopening_error": 1.1123893155135927e-16
+    },
+    {
+      "delta": 4.66925,
+      "input_state": [
+        0.7936289192199208,
+        0.16996924971246366,
+        0.0364018310676155
+      ],
+      "post_event_state": [
+        0.5865761385234763,
+        0.24345461176405997,
+        0.1699692497124636
+      ],
+      "compression_ratio": 0.5501743074558609,
+      "ledger_error": 0.0,
+      "reopening_error": 1.3877787807814457e-17
+    }
+  ],
+  "max_post_event_component_deviation_from_nominal": 2.6874591582126683e-06
+}

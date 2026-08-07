@@ -1,0 +1,9 @@
+{
+  "run_id": "B-110-20260807T002248Z",
+  "checkpoint_id": "B-FIRST-PHYSICAL-STATE",
+  "state_path": "primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+  "state_sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16",
+  "restart_test": "PASS",
+  "reopened_parent_l2_error": 1.1123893155135927e-16,
+  "contract": "Child C starts from H_B_to_C physical state and event-order origin; parent reopening remains available by exact inverse and ancestry hash."
+}

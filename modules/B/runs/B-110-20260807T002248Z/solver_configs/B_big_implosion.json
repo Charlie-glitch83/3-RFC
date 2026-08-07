@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "big_implosion",
+  "model": {
+    "delta": 4.6692,
+    "node_count": 3,
+    "weighted_edges": [
+      [
+        0,
+        1,
+        1.0
+      ],
+      [
+        0,
+        2,
+        1.0
+      ],
+      [
+        1,
+        2,
+        1.0
+      ]
+    ],
+    "initial_state": [
+      [
+        0.7936268560033942
+      ],
+      [
+        0.1699706279455569
+      ],
+      [
+        0.036402516051048765
+      ]
+    ],
+    "pre_event_clock": null,
+    "sector_projection": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "tolerance": 1e-11,
+    "strict_compression_margin": 1e-12
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/primary_checkout/configured_runs/templates/B_big_implosion.template.json",
+    "template_sha256": "13f90965db1214ce6e7e722b1f8c4af204e001ccfff535672c7718f28dc80242",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/primary_checkout/modules/B/runs/B-110-20260807T002248Z/binding_sheets/B_big_implosion.bindings.json",
+    "binding_sheet_sha256": "805eceaa8b161808255913b85d69340a28430919822551f86739be6c0e42d68e",
+    "bindings": [
+      {
+        "derivation_object": "H_A_to_B.recursive_kernel.executed_state.delta",
+        "dimensions": "1",
+        "justification": "Exact frozen parent value.",
+        "module": "B",
+        "origin_kind": "EXACT_PARENT_ARTIFACT",
+        "origin_path": "modules/A/frozen/H_A_to_B.json",
+        "origin_sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+        "path": "model.delta",
+        "units": "dimensionless",
+        "value": 4.6692
+      },
+      {
+        "derivation_object": "node_count_rule",
+        "dimensions": "count",
+        "justification": "Length and rank of exact A kernel state.",
+        "module": "B",
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/B/runs/B-110-20260807T002248Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "5674d3ee30605eccecb3d5f1e92942197a7f3ed81701da36e5d4a75576ac1f7a",
+        "path": "model.node_count",
+        "units": "count",
+        "value": 3
+      },
+      {
+        "derivation_object": "counting_measure_derivation",
+        "dimensions": "1",
+        "justification": "Counting measure on complete inherited A support; no tunable edge scale.",
+        "module": "B",
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/B/runs/B-110-20260807T002248Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "5674d3ee30605eccecb3d5f1e92942197a7f3ed81701da36e5d4a75576ac1f7a",
+        "path": "model.weighted_edges",
+        "units": "dimensionless incidence count",
+        "value": [
+          [
+            0,
+            1,
+            1.0
+          ],
+          [
+            0,
+            2,
+            1.0
+          ],
+          [
+            1,
+            2,
+            1.0
+          ]
+        ]
+      },
+      {
+        "derivation_object": "H_A_to_B.recursive_kernel.executed_state.kernel_state",
+        "dimensions": "1",
+        "justification": "Exact frozen parent kernel state, column form only.",
+        "module": "B",
+        "origin_kind": "EXACT_PARENT_ARTIFACT",
+        "origin_path": "modules/A/frozen/H_A_to_B.json",
+        "origin_sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+        "path": "model.initial_state",
+        "units": "dimensionless inherited modal ledger",
+        "value": [
+          [
+            0.7936268560033942
+          ],
+          [
+            0.1699706279455569
+          ],
+          [
+            0.036402516051048765
+          ]
+        ]
+      },
+      {
+        "derivation_object": "sector_projection.identity_no_loss_bookkeeping",
+        "dimensions": "1",
+        "justification": "No-loss engine bookkeeping only; explicitly not a later physical sector decomposition.",
+        "module": "B",
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/B/runs/B-110-20260807T002248Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "5674d3ee30605eccecb3d5f1e92942197a7f3ed81701da36e5d4a75576ac1f7a",
+        "path": "model.sector_projection",
+        "units": "dimensionless",
+        "value": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ]
+  }
+}

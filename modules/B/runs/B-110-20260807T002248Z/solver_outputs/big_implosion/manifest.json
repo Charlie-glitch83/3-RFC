@@ -1,0 +1,9 @@
+{
+  "solver": "big_implosion",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "578b191de667f7e3fb3b2bbb33678056e4263881f83d92fb3187e40b541149a1",
+  "result_sha256": "b035cc636f63e1a78301423dcd53ba888edfb41d4db195046980758200974a97",
+  "environment_sha256": "1c5b8a2c83f0b941dbd23360a5378ac973e2099e25e263ddf76b206667349f0c",
+  "success": true,
+  "classification": "BIG_IMPLOSION_OPERATOR_EXECUTION"
+}
