@@ -1,0 +1,15 @@
+{
+  "module": "D",
+  "bindings": [
+    {
+      "solver": "transport",
+      "template": "configured_runs/templates/D_transport.template.json",
+      "purpose": "Integrate the frozen nonequilibrium thermal/transport state with explicit invariants.",
+      "copy_command": "python tools/director.py solver-copy --module D --solver transport --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/D_transport.json --output-dir <RUN_DIR>/solver_outputs/transport",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/D_transport.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/D_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/D_transport.bindings.json --output <RUN_DIR>/solver_configs/D_transport.json"
+    }
+  ]
+}
