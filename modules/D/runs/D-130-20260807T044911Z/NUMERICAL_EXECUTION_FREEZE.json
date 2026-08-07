@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T044911Z",
+  "status": "FROZEN_BEFORE_PRIMARY_NUMERICAL_EXECUTION",
+  "scientific_lock_unchanged": true,
+  "intrinsic_execution_interval": [0.0, 1.0],
+  "interval_meaning": "one canonical unit of the normalized dimensionless intrinsic transport clock s; not physical time, age, freeze-out duration, or observed epoch",
+  "configured_solver": {
+    "method": "BDF",
+    "rtol": 1e-9,
+    "atol": 1e-12,
+    "max_step": 0.05,
+    "invariant_tolerance": 1e-10,
+    "positivity_tolerance": 1e-12
+  },
+  "refinement_matrix": [
+    {"label": "coarse", "max_step": 0.1},
+    {"label": "nominal", "max_step": 0.05},
+    {"label": "fine", "max_step": 0.025}
+  ],
+  "restart_split": 0.5,
+  "analytic_comparison_tolerance_l2": 1e-8,
+  "refinement_tolerance_l2": 1e-7,
+  "restart_tolerance_l2": 1e-9,
+  "independent_tolerance_l2": 1e-8,
+  "countermodels": [
+    {
+      "id": "D-CM-SIGN-FLIP",
+      "law": "dp/ds=+P_perp p",
+      "purpose": "negative control for positivity/entropy direction"
+    },
+    {
+      "id": "D-CM-ANISOTROPIC",
+      "generator": [[-0.5,0.25,0.25],[0.5,-0.75,0.25],[0.0,0.5,-0.5]],
+      "purpose": "conservative positive Markov negative control that violates inherited exact O(2)/permutation symmetry"
+    },
+    {
+      "id": "D-CM-NONCONSERVATIVE",
+      "law": "dp/ds=-P_perp p + 0.01 p",
+      "purpose": "negative control for total-carrier conservation"
+    }
+  ],
+  "event_rule": "No phase event is recorded unless the frozen parent-derived witness criterion is satisfied; arbitrary thresholds are forbidden.",
+  "temperature_rule": "No Kelvin or dimensionful temperature history may be synthesized. Output must record NOT_DERIVED unless a lawful scale object appears, which is forbidden to add after freeze.",
+  "allowed_corrections": "implementation-only syntax/path/serialization/numerical defects; no changes to interval, solver controls, refinement matrix, countermodels, tolerances, gates, scientific law, or claim boundary"
+}
