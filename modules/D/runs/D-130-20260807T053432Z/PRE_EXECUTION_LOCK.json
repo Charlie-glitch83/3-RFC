@@ -1,21 +1,132 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "run_id": "D-130-20260807T053432Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-07T06:19:12Z",
+  "authority_hashes": [
+    {"path":"README.md","sha256":"0c0420ae09b4794cd7c80dcf4c9deac3656a133255ed585b055302b33a95038c"},
+    {"path":"STATE.json","sha256":"47e980e5b31f89dba970f74a03d08764fd371ba57d9fc50c8304cc15cf39a119"},
+    {"path":"WORK_QUEUE.json","sha256":"a22b03bfb3a7e545fee4d2e0007f871fbdfa98195803d63422c4ff1006256b62"},
+    {"path":"work_packets/ACTIVE_WORK_PACKET.md","sha256":"bedb70e4c143f3663b9a34fdc57af0c5965b8cc09d36c7096af970a59881ec35"},
+    {"path":"recipes/D/WORK_ORDER.md","sha256":"4588a02fc5baff38bc83b5390161cf44f1cdd98a1acd137860d9ec36efccd365"},
+    {"path":"recipes/D/recipe.json","sha256":"1ad9720aa394d62df35bf6161414522f7a5563e8a8f94f5c8cd0c5e0b466cb16"},
+    {"path":"recipes/D/gates.json","sha256":"610391ea4c95139954b54d251bb2bc5010330bff455e075b4f313c464df9e60f"}
+  ],
+  "parent_hashes": [
+    {"object_id":"H_C_to_D","path":"modules/C/frozen/H_C_to_D.json","sha256":"41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"},
+    {"object_id":"H_C_to_D_MANIFEST","path":"modules/C/frozen/H_C_to_D_MANIFEST.json","sha256":"38c1e5c153c5287e03884eabe0b0d680ea1f6746a1f35e7d366e1ec2a8015e5a"},
+    {"object_id":"H_B_to_C_INHERITED_ANCESTRY","sha256":"c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492","role":"inherited through exact C parent; not a replacement D parent"}
+  ],
+  "definition_hashes": [
+    {"object_id":"D130_FROZEN_DERIVATION_SPEC","path":"modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json","git_blob_sha1":"d575acff43120f00b510f5dcf11dce59bf7d6c6f","commit_sha":"6aad505c4dd03d36c130fc6c4191212e0669a934"},
+    {"path":"modules/D/runs/D-130-20260807T053432Z/solver_templates/D_transport.template.json","sha256":"23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df"}
+  ],
+  "candidate_classes": [
+    "linear complete-support conservative O(2)-equivariant positive Markov generators on the inherited three-state simplex",
+    "nonlinear conservative O(2)-equivariant closures retained only as RESERVED_POSSIBILITY because the exact parent supplies no selector for one"
+  ],
+  "equations_and_laws": [
+    "M_C=g_C P_perp with g_C=0.449829064955317",
+    "K_D=-M_C",
+    "dp/dtau_D=-M_C p",
+    "p(tau_D)=u+exp(-g_C tau_D)(p0-u)",
+    "Q_total=sum_i p_i is conserved",
+    "E_exc=0.5 p^T M_C p",
+    "H_RFL=E_exc(0)-E_exc",
+    "E_exc+H_RFL=E_exc(0) is conserved",
+    "S_D=-sum_i p_i log(p_i)",
+    "dS_D/dtau_D=g_C sum_i (p_i-1/3) log(p_i)>=0",
+    "V_eff=exp(S_D)",
+    "Theta_D=dH_RFL/dS_D with off-equilibrium closed form frozen in D130_FROZEN_DERIVATION_SPEC",
+    "Phi_D=H_RFL-E_exc; D_MEMORY_BALANCE_CROSSING occurs at tau_phase=log(2)/(2 g_C)"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "p, Q_total, M_C, g_C, E_exc, H_RFL, S_D, V_eff and Theta_D are dimensionless RFC internal quantities at MINIMAL_SPINE fidelity",
+    "tau_D is the parent-normalized intrinsic post-C transport clock; tau_D=0 is the exact C restart state",
+    "the positive scalar freedom in K=-c P_perp is intrinsic-clock gauge; gauge is fixed by K_D=-M_C exactly",
+    "carrier frame is the inherited C three-state basis; scalar thermodynamic ledgers are O(2)-basis invariant on V_perp",
+    "metric expansion, SI time and Kelvin calibration are not claimed in D and remain outside this lock"
+  ],
+  "methods": [
+    "primary configured transport solver: BDF",
+    "rtol=1e-9",
+    "atol=1e-12",
+    "execution interval tau_D in [0,1/g_C]=[0,2.223066321827846]",
+    "baseline max_step=(1/g_C)/128=0.017367705639280047",
+    "dyadic convergence max_step sequence: (1/g_C)/32,/64,/128,/256",
+    "three-member inherited decimal-envelope replay for delta=4.66915,4.6692,4.66925",
+    "midpoint checkpoint/restart at tau_D=(1/2)(1/g_C)",
+    "independent analytic spectral reconstruction without trusting primary gate summaries"
+  ],
+  "tolerances": [
+    "positivity_tolerance=1e-12",
+    "charge_invariant_tolerance=1e-9",
+    "excitation_memory_ledger_tolerance=1e-9",
+    "entropy_monotonicity_tolerance=1e-10",
+    "convergence_final_population_Linf_tolerance=1e-8",
+    "restart_final_population_Linf_tolerance=1e-8",
+    "independent_reconstruction_final_population_Linf_tolerance=1e-8"
+  ],
+  "stopping_rules": [
+    "hard stop if any unresolved __BIND_ token remains",
+    "hard stop on any population below -1e-12",
+    "hard stop on absolute Q_total drift above 1e-9",
+    "hard stop on absolute conserved excitation-memory ledger drift above 1e-9",
+    "hard stop if entropy decreases beyond 1e-10",
+    "hard stop if event ordering is not 0<tau_phase<1/g_C",
+    "hard stop if any mandatory componentwise gate fails",
+    "hard stop on public-data contamination or observed-target-dependent event ordering"
+  ],
+  "expected_invariants": [
+    "Q_total remains equal to the exact C parent normalization",
+    "all populations remain nonnegative",
+    "E_exc+H_RFL remains E_exc(0)",
+    "S_D and V_eff are nondecreasing",
+    "E_exc is nonincreasing",
+    "the uniform mode is conserved and the two V_perp modes decay with parent rate g_C",
+    "the phase-memory witness crosses exactly once inside the frozen interval"
+  ],
+  "tests": [
+    "exact Wolfram D-WL-001 conservation and Lyapunov decay",
+    "exact Wolfram D-WL-002 conserved mode and relaxation eigenstructure",
+    "repository D manufactured reference check",
+    "configured BDF transport execution",
+    "SIGN_FLIP countermodel",
+    "CONSERVATION_BREAK countermodel",
+    "SYMMETRY_BREAK countermodel",
+    "complete-support edge ablation",
+    "H_RFL memory-ledger ablation",
+    "parent-gap/clock-normalization ablation",
+    "dyadic max-step convergence",
+    "three-member inherited uncertainty-envelope replay",
+    "midpoint restart",
+    "clean replay",
+    "independent analytic reconstruction"
+  ],
+  "gates": [
+    "positive distributions: PASS required",
+    "energy/charge conservation: PASS required",
+    "event ordering: PASS required",
+    "stiff-solver convergence: PASS required",
+    "restart and independent reconstruction: PASS required",
+    "aggregate scores cannot override any component failure"
+  ],
+  "falsifiers": [
+    "any population below -1e-12",
+    "absolute Q_total drift above 1e-9",
+    "absolute conserved excitation-memory ledger drift above 1e-9",
+    "entropy decrease beyond 1e-10",
+    "phase-event ordering failure",
+    "dyadic refinement final-population difference above 1e-8 L_infinity",
+    "restart final-population difference above 1e-8 L_infinity",
+    "independent reconstruction final-population difference above 1e-8 L_infinity",
+    "event order depends on observed target values"
+  ],
+  "claim_boundary": "Generated RFC dimensionless nonequilibrium thermal/phase history at MINIMAL_SPINE fidelity from the exact C parent, including conservative transport, entropy production, internal conjugate temperature, thermodynamic state-volume expansion, phase-memory crossing, uncertainty envelope, restart and independent reconstruction. No Kelvin calibration, metric expansion, Standard Model phase identity, primordial abundances or empirical correspondence is claimed.",
+  "independent_verifier_design": "Reconstruct M_C=g_C P_perp and p(tau_D)=u+exp(-g_C tau_D)(p0-u) directly from H_C_to_D plus the frozen derivation; independently compute all thermodynamic ledgers, temperature, phase event and final state; compare against primary outputs only after reconstruction, without trusting primary summaries.",
+  "allowed_implementation_only_corrections": [
+    "serialization/formatting fixes",
+    "path and relocation fixes",
+    "solver API wiring fixes",
+    "numerical output precision fixes that do not change frozen equations, parents, thresholds, interval, gates, expected outcomes or claim scope"
+  ]
 }
