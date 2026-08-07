@@ -1,0 +1,11 @@
+{
+  "failure_id": "D130_REDO_PREEXEC_IMPLEMENTATION_HASH_001",
+  "classification": "IMPLEMENTATION_ONLY_PREEXECUTION",
+  "actions_runs": [31224209866, 31224303383],
+  "failure": "The initial implementation lock used SHA-256 values from local staging copies instead of the exact committed GitHub bytes. The first primary runner stopped on that mismatch. A correction helper then compiled the exact committed scripts and reported their actual repository hashes but itself stopped because it called director doctor without installing locked dependencies.",
+  "resolution": "Freeze the exact repository-byte SHA-256 values reported by the compilation runner: 39dfe2b38251036e050ece9ad820589b182b4a813c6dc18ad429a0f7a7b7e959 and 048c32ea70c433ca757862891df4463d418c895ff267a989fbbf04aaafb9d284. No frozen scientific object changed.",
+  "scientific_change": false,
+  "wolfram_execution_occurred": false,
+  "reference_check_occurred": false,
+  "primary_execution_occurred": false
+}
