@@ -1,0 +1,1 @@
+Trigger only: freeze the fresh D-130 parent-driven thermal derivation before primary execution.
