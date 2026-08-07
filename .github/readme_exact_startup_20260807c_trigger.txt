@@ -14,3 +14,4 @@ trigger D130 claim surface finalization
 trigger exact README session start
 retry exact README session start with locked dependencies
 trigger E140 source obstruction freeze
+trigger E140 exact Wolfram display
