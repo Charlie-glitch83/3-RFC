@@ -1,0 +1,46 @@
+name: E140 Fresh Wolfram Show
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  show:
+    if: github.event.pull_request.head.ref == 'ops/e140-readme-restart-20260807'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Verify fresh frozen E run and display exact calls
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          run='E-140-20260807T155635Z'
+          s=json.loads(Path('STATE.json').read_text())
+          assert s['active_work_unit']=='E-140'
+          assert s['current_run']==run
+          lock=json.loads(Path(f'modules/E/runs/{run}/PRE_EXECUTION_LOCK.json').read_text())
+          assert lock['status']=='FROZEN' and lock['frozen_before_primary_execution'] is True
+          PY
+          python tools/director.py wolfram-show --call E-WL-001
+          python tools/director.py wolfram-show --call E-WL-002
+      - name: Remove one-use carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_fresh_wolfram_show.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Display fresh E140 exact Wolfram calls'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
