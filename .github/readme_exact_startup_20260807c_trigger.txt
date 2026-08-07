@@ -5,3 +5,4 @@ retry D130 Wolfram record with captured paths
 trigger D130 reference check
 trigger D130 steps 5-6
 trigger D130 finish
+trigger D130 serialization retry
