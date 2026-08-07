@@ -1,0 +1,1 @@
+trigger frozen D-130 diagnostic execution
