@@ -1,40 +1,51 @@
-name: Apply A-100 verified evidence once
+name: Finalize verified A-100 evidence once
 
 on:
   push:
-    branches: [agent/frontier-050-execution]
+    branches: [agent/a100-finalize]
     paths:
-      - '.github/a100-evidence-trigger.txt'
+      - '.github/a100-finalize-trigger.txt'
 
 permissions:
   contents: write
 
+env:
+  EXECUTION_BRANCH: agent/frontier-050-execution
+  RUN_ID: A-100-20260806T173458Z
+  EVIDENCE_ARCHIVE_SHA256: f4b1ea136c7b26fd6d587ae11d5470521092392d9c371801172919e2b3a33102
+  H_A_SHA256: 728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7
+  OUTPUT_TREE_SHA256: 33d1967c587a282e43896bc3f6c1f00a49bd1c2da0bfdcd4cc26982512e81b6c
+
 jobs:
-  apply:
+  finalize:
     runs-on: ubuntu-latest
-    env:
-      RUN_ID: A-100-20260806T173458Z
-      EVIDENCE_ARCHIVE_SHA256: f4b1ea136c7b26fd6d587ae11d5470521092392d9c371801172919e2b3a33102
-      H_A_SHA256: 728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7
-      OUTPUT_TREE_SHA256: 33d1967c587a282e43896bc3f6c1f00a49bd1c2da0bfdcd4cc26982512e81b6c
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: agent/frontier-050-execution
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
-      - name: Install locked dependencies
-        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Reconstruct exact A-100 evidence payload
+      - name: Reconstruct immutable evidence archive
         shell: bash
         run: |
           set -euo pipefail
+          test "$GITHUB_SHA" = "$(git rev-parse HEAD)"
           cat .a100_bundle/chunk-* | base64 -d > /tmp/a100-evidence.tar.xz
           echo "$EVIDENCE_ARCHIVE_SHA256  /tmp/a100-evidence.tar.xz" | sha256sum -c -
+          mkdir -p /tmp/a100-reference
+          tar -xJf /tmp/a100-evidence.tar.xz -C /tmp/a100-reference
+      - name: Checkout exact execution branch and apply evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "$EXECUTION_BRANCH"
+          git checkout -B "$EXECUTION_BRANCH" "origin/$EXECUTION_BRANCH"
+          echo "BASE_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           tar -xJf /tmp/a100-evidence.tar.xz -C .
+      - name: Install locked dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
       - name: Verify frozen Module A evidence
         shell: bash
         run: |
@@ -75,36 +86,92 @@ jobs:
           assert manifest['status'] == 'FINAL'
           assert len(manifest['outputs']) == 56
           PY
-      - name: Remove one-use staging machinery
+      - name: Run README verification commands
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf .a100_bundle
-          rm -f .github/a100-evidence-trigger.txt .github/workflows/apply-a100-evidence-once.yml
-      - name: Run README end-session checks
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+      - name: Commit and push exact evidence
         shell: bash
         run: |
           set -euo pipefail
-          run="modules/A/runs/$RUN_ID"
-          python tools/director.py doctor | tee "$run/FINAL_DOCTOR_EVIDENCE_COMMIT.txt"
-          python -m unittest discover -s tests -v 2>&1 | tee "$run/FINAL_UNIT_TESTS_EVIDENCE_COMMIT.txt"
-          python tools/rfc.py firewall-scan | tee "$run/FINAL_FIREWALL_EVIDENCE_COMMIT.txt"
-          python tools/rfc.py context | tee "$run/FINAL_CONTEXT_EVIDENCE_COMMIT.txt"
-      - name: Commit exact verified Module A evidence
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -f modules/A/frozen/H_A_to_B.json
-          test -f "modules/A/runs/$RUN_ID/CLOSEOUT.md"
-          test ! -e .a100_bundle
-          test ! -e .github/workflows/apply-a100-evidence-once.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          if git ls-files -- .a100_bundle .github/a100-evidence-trigger.txt .github/workflows/apply-a100-evidence-once.yml | grep -q .; then
-            echo 'One-use A-100 staging machinery remains in final index' >&2
-            exit 1
-          fi
-          git diff --cached --quiet && { echo 'No A-100 evidence changes produced' >&2; exit 1; }
+          git diff --cached --quiet && { echo 'No evidence changes produced' >&2; exit 1; }
           git commit -m 'Execute and freeze Module A prephysical handoff'
-          git push origin HEAD:agent/frontier-050-execution
+          evidence_commit=$(git rev-parse HEAD)
+          echo "EVIDENCE_COMMIT=$evidence_commit" >> "$GITHUB_ENV"
+          git push origin HEAD:"$EXECUTION_BRANCH"
+      - name: Verify GitHub evidence commit and changed scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          remote_sha=$(git ls-remote origin "refs/heads/$EXECUTION_BRANCH" | awk '{print $1}')
+          test "$remote_sha" = "$EVIDENCE_COMMIT"
+          git fetch origin "$EXECUTION_BRANCH"
+          test "$(git rev-parse origin/$EXECUTION_BRANCH)" = "$EVIDENCE_COMMIT"
+          tar -tJf /tmp/a100-evidence.tar.xz | sed '/\/$/d' | sort -u > /tmp/allowed.txt
+          git diff --name-only "$BASE_COMMIT" "$EVIDENCE_COMMIT" | sort -u > /tmp/changed.txt
+          comm -23 /tmp/changed.txt /tmp/allowed.txt > /tmp/unexpected.txt
+          test ! -s /tmp/unexpected.txt || { cat /tmp/unexpected.txt >&2; exit 1; }
+          while IFS= read -r rel; do
+            test -f "$rel"
+            cmp -s "/tmp/a100-reference/$rel" "$rel"
+          done < /tmp/allowed.txt
+          test "$(git log -1 --format=%s "$EVIDENCE_COMMIT")" = 'Execute and freeze Module A prephysical handoff'
+      - name: Close, promote, and authorize exactly B-110
+        shell: bash
+        run: |
+          set -euo pipefail
+          closeout="modules/A/runs/$RUN_ID/CLOSEOUT.md"
+          python - "$closeout" "$EVIDENCE_COMMIT" <<'PY'
+          from pathlib import Path
+          import sys
+          p = Path(sys.argv[1])
+          text = p.read_text()
+          marker = 'Verified GitHub commit SHA: `PENDING_EVIDENCE_COMMIT`'
+          assert marker in text
+          p.write_text(text.replace(marker, f'Verified GitHub commit SHA: `{sys.argv[2]}`', 1))
+          PY
+          python tools/rfc.py record-commit "$EVIDENCE_COMMIT" --branch "$EXECUTION_BRANCH" --note 'Verified exact A-100 evidence commit and changed-file scope on GitHub.'
+          python tools/rfc.py close-run --run-id "$RUN_ID" --result PASS --closeout "$closeout"
+          python tools/rfc.py promote-module A --to FORMALIZED --fidelity PRODUCTION --evidence "$closeout"
+          python tools/rfc.py promote-module A --to VERIFIED --fidelity PRODUCTION --evidence "$closeout"
+          python tools/rfc.py promote-module A --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "$closeout"
+          python tools/rfc.py promote-module A --to FROZEN --fidelity PRODUCTION --evidence "$closeout"
+          python tools/rfc.py advance --task A-100 --result PASS --evidence "$closeout" --note 'Module A closed at frozen production scope; authorize exactly B-110.'
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+          python - <<'PY'
+          import json
+          state = json.load(open('STATE.json'))
+          queue = json.load(open('WORK_QUEUE.json'))['items']
+          active = [x['id'] for x in queue if x['status'] == 'ACTIVE']
+          assert state['active_work_unit'] == 'B-110'
+          assert state['current_module'] == 'B'
+          assert state['current_run'] is None
+          assert state['modules']['A']['evidence_state'] == 'FROZEN'
+          assert state['modules']['A']['fidelity'] == 'PRODUCTION'
+          assert active == ['B-110'], active
+          PY
+      - name: Commit and verify final state transition
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A
+          git diff --cached --quiet && { echo 'No closeout state changes produced' >&2; exit 1; }
+          git commit -m 'Close Module A and authorize Module B'
+          final_commit=$(git rev-parse HEAD)
+          git push origin HEAD:"$EXECUTION_BRANCH"
+          remote_sha=$(git ls-remote origin "refs/heads/$EXECUTION_BRANCH" | awk '{print $1}')
+          test "$remote_sha" = "$final_commit"
+          git fetch origin "$EXECUTION_BRANCH"
+          test "$(git rev-parse origin/$EXECUTION_BRANCH)" = "$final_commit"
+          echo "A100_EVIDENCE_COMMIT=$EVIDENCE_COMMIT"
+          echo "A100_FINAL_COMMIT=$final_commit"
