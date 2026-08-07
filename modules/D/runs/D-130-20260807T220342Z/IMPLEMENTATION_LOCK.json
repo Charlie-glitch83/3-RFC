@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T220342Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "frozen_science_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+  "implementations": [
+    {
+      "path": "modules/D/runs/D-130-20260807T220342Z/execute_d130_physical.py",
+      "sha256": "214449802a3a18864536795ce935571f89137a3a10f8df125977ed3b4305dbd5",
+      "role": "PRIMARY_PHYSICAL_HISTORY_MATERIALIZER"
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T220342Z/independent_reconstruct_d130.py",
+      "sha256": "30ab532f39bb57601d44104bf7af4a7fd487890cb1198c22fd251f0bb6e4c2b3",
+      "role": "INDEPENDENT_PARENT_ONLY_RECONSTRUCTION"
+    }
+  ],
+  "allowed_change_scope": "Implementation-only corrections may repair serialization, path handling, dependency/setup, output formatting, or execution plumbing. They may not change the frozen parent, law, coefficients, event definitions/order, interval, tolerances, gates, falsifiers, temperature classification, or claim boundary.",
+  "primary_execution_occurred_at_lock": false
+}
