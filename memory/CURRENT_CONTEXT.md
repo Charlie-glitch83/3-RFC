@@ -1,43 +1,43 @@
 # Current Context
 
-Generated: 2026-08-07T03:47:27.818994+00:00
+Generated: 2026-08-07T03:49:53.939602+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `C-120` — Close Module C: Microscopic Constitution
-- Current module: `C`
-- Last verified commit: `36084b7dac69139e37e6c69dcc7779da4c050a1e`
+- Active work unit: `D-130` — Close Module D: Nonequilibrium Thermal and Phase History
+- Current module: `D`
+- Last verified commit: `4645aefed4d3d1bc1e2462f44ab12082dbb291c8`
 
 ## Strongest supported claim
 
-Module B now provides a frozen, source-addressed, physically executed, independently reproduced and cleanly replayed first physical RFC state H_B_to_C at MINIMAL_SPINE fidelity: the exact frozen A prephysical modal state undergoes the source-locked Big Implosion counting-Laplacian crossing into a conserved, strictly compressed, exactly reopenable relational state with intrinsic event-order origin and typed pregeometry.
+The exact frozen B first physical state supports a parent-derived dimensionless microscopic constitution M_C=I-Q_B with one conserved uniform mode, an exactly degenerate positive internal excitation doublet, O(2) internal law symmetry, conserved total carrier, deterministic prethermal populations, and unitary dimensionless internal phase evolution at MINIMAL_SPINE fidelity.
 
 ## Strongest unsupported claim
 
-No microscopic particle/field sector model, metric spacetime geometry, calibrated physical duration, dimensional physical constants, late-time cosmology, empirical agreement, manifested completed universe, or later-module physics has yet been established.
+No dimensionful masses, empirical particle identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or Standard Model correspondence has been derived.
 
 ## Immediate objective
 
-Derive and execute the microscopic field, particle, interaction, mass, mixing, and prethermal population content from the first physical state.
+Evolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.
 
 ## Required deliverables
 
-- modules/C/runs/<RUN_ID>/RUN_PLAN.md
-- modules/C/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/C/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/C/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/C/runs/<RUN_ID>/CLOSEOUT.md
+- modules/D/runs/<RUN_ID>/RUN_PLAN.md
+- modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/D/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/D/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- units and dimensions
-- symmetry/constraint closure
-- positivity/unitarity or declared alternative
-- no Standard Model label without derivation or correspondence theorem
-- independent symbolic and numerical checks
+- positive distributions
+- energy/charge conservation
+- event ordering
+- stiff-solver convergence
+- restart and independent reconstruction
 
 ## Module states
 
@@ -80,7 +80,6 @@ Derive and execute the microscopic field, particle, interaction, mass, mixing, a
 
 ## Recent decisions
 
-- PROMOTE-B-FROZEN-20260807T031058Z: Promoted Module B from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 - ADVANCE-B-110-20260807T031058Z: Marked B-110 PASS and activated C-120
 - PROMOTE-C-FORMALIZED-20260807T034727Z: Promoted Module C from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-C-IMPLEMENTED-20260807T034727Z: Promoted Module C from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
@@ -88,6 +87,7 @@ Derive and execute the microscopic field, particle, interaction, mass, mixing, a
 - PROMOTE-C-PHYSICALLY_EXECUTED-20260807T034727Z: Promoted Module C from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
 - PROMOTE-C-INDEPENDENTLY_REPRODUCED-20260807T034727Z: Promoted Module C from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
 - PROMOTE-C-FROZEN-20260807T034727Z: Promoted Module C from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-C-120-20260807T034953Z: Marked C-120 PASS and activated D-130
 
 ## Recent failures
 

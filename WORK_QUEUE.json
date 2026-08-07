@@ -257,7 +257,7 @@
       "id": "C-120",
       "title": "Close Module C: Microscopic Constitution",
       "module": "C",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "B-110"
       ],
@@ -295,7 +295,7 @@
       "id": "D-130",
       "title": "Close Module D: Nonequilibrium Thermal and Phase History",
       "module": "D",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "C-120"
       ],
