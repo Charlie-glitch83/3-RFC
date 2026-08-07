@@ -1,0 +1,2 @@
+Trigger the established PR-gated A-100 finalization workflow.
+evidence_commit=23ca80aad5a565ed58648103b2908c6360d29506
