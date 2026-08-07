@@ -1,1 +1,3 @@
 Finalize A-100 from verified evidence commit b6280513dc47339ddf024be6275817d3f38a9d39
+repository_test_guardrail_fixed=ffe8370574b4518aee6c83606110d50b357cb15d
+retry=2026-08-06T19:05:00-05:00
