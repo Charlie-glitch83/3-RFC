@@ -1,0 +1,45 @@
+name: README Exact Restart
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  restart:
+    if: github.event.pull_request.head.ref == 'ops/e140-readme-restart-20260807'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install repository locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Run exact README startup commands
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash bootstrap.sh
+          bash tools/start_work.sh
+      - name: Commit generated startup state and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/readme_exact_restart.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'HARD STOP: startup produced no state changes'
+            exit 1
+          fi
+          git commit -m 'Restart E140 from root README instructions'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
