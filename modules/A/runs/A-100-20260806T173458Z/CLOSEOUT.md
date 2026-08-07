@@ -3,13 +3,13 @@
 - Run ID: `A-100-20260806T173458Z`
 - Work unit: `A-100`
 - Module: `A`
-- Result: **PASS - all frozen scientific, component, independent, restart, replay, and firewall gates pass; administrative close-run awaits the verified GitHub evidence commit.**
-- Evidence state reached: `FROZEN` (promotion to be recorded after the evidence commit is verified)
+- Result: **PASS - all frozen scientific, component, independent, restart, replay, and firewall gates pass; verified GitHub evidence commit recorded; administrative close-run completed.**
+- Evidence state reached: `FROZEN` (promotion recorded after exact GitHub evidence verification)
 - Fidelity reached: `PRODUCTION`
 - Frozen artifact: `modules/A/frozen/H_A_to_B.json`
 - Frozen artifact SHA-256: `728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7`
 - Generated-output tree SHA-256: `33d1967c587a282e43896bc3f6c1f00a49bd1c2da0bfdcd4cc26982512e81b6c`
-- Verified GitHub commit SHA: `PENDING_EVIDENCE_COMMIT`
+- Verified GitHub commit SHA: `b6280513dc47339ddf024be6275817d3f38a9d39`
 
 ## Scientific objects produced
 
