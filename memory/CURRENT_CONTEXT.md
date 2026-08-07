@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-07T15:56:34.983820+00:00
+Generated: 2026-08-07T15:57:20.155846+00:00
 
 ## Project truth
 
@@ -65,11 +65,10 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 
 - admitted sources: 29
 - frozen artifacts: 14
-- indexed runs: 12
+- indexed runs: 13
 
 ## Recent runs
 
-- FRONTIER-050-20260806T142549Z: PASS (AUDIT)
 - A-100-20260806T173458Z: PASS (A)
 - B-110-20260807T002248Z: PASS (B)
 - C-120-20260807T032543Z: PASS (C)
@@ -77,6 +76,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 - D-130-20260807T045646Z: BLOCKED (D)
 - D-130-20260807T053432Z: PASS (D)
 - E-140-20260807T142445Z: BLOCKED (E)
+- E-140-20260807T155635Z: CREATED (E)
 
 ## Recent decisions
 
