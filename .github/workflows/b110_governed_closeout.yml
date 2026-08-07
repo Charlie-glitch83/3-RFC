@@ -29,8 +29,8 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install execution dependency
-        run: python -m pip install --disable-pip-version-check numpy
+      - name: Install execution dependencies
+        run: python -m pip install --disable-pip-version-check numpy networkx scipy
 
       - name: Execute frozen Module B in primary checkout
         working-directory: primary_checkout
@@ -61,24 +61,9 @@ jobs:
         run: |
           python - <<'PY'
           import hashlib,json,pathlib
-          root=pathlib.Path('.')
-          run=root/'modules/B/runs/B-110-20260807T002248Z'
-          rels=[
-            'solver_configs/B_big_implosion.json',
-            'primary/BIG_IMPLOSION_PHYSICAL_STATE.json',
-            'primary/FINITE_N_STRUCTURAL_AUDIT.json',
-            'primary/COUNTERMODEL_RESULTS.json',
-            'primary/UNCERTAINTY_ENVELOPE.json',
-            'primary/PRIMARY_SUMMARY.json',
-            'independent/INDEPENDENT_RECONSTRUCTION.json',
-            'GATE_RESULTS.json',
-            'CHECKPOINT_RECORD.json',
-            'checkpoints/B_FIRST_PHYSICAL_STATE.json'
-          ]
-          out={}
-          for rel in rels:
-              p=run/rel
-              out[rel]=hashlib.sha256(p.read_bytes()).hexdigest()
+          run=pathlib.Path('modules/B/runs/B-110-20260807T002248Z')
+          rels=['solver_configs/B_big_implosion.json','primary/BIG_IMPLOSION_PHYSICAL_STATE.json','primary/FINITE_N_STRUCTURAL_AUDIT.json','primary/COUNTERMODEL_RESULTS.json','primary/UNCERTAINTY_ENVELOPE.json','primary/PRIMARY_SUMMARY.json','independent/INDEPENDENT_RECONSTRUCTION.json','GATE_RESULTS.json','CHECKPOINT_RECORD.json','checkpoints/B_FIRST_PHYSICAL_STATE.json']
+          out={rel:hashlib.sha256((run/rel).read_bytes()).hexdigest() for rel in rels}
           pathlib.Path('../primary_hashes.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
           PY
 
@@ -99,13 +84,8 @@ jobs:
           python tools/rfc.py doctor
           python tools/run_reference_checks.py --module B --output "$RUN/reference_checks.json"
           mkdir -p "$RUN/solver_configs" "$RUN/solver_outputs/big_implosion"
-          python tools/materialize_solver_config.py \
-            --template configured_runs/templates/B_big_implosion.template.json \
-            --binding-sheet "$RUN/binding_sheets/B_big_implosion.bindings.json" \
-            --output "$RUN/solver_configs/B_big_implosion.json"
-          python tools/run_configured_solver.py \
-            --config "$RUN/solver_configs/B_big_implosion.json" \
-            --output-dir "$RUN/solver_outputs/big_implosion"
+          python tools/materialize_solver_config.py --template configured_runs/templates/B_big_implosion.template.json --binding-sheet "$RUN/binding_sheets/B_big_implosion.bindings.json" --output "$RUN/solver_configs/B_big_implosion.json"
+          python tools/run_configured_solver.py --config "$RUN/solver_configs/B_big_implosion.json" --output-dir "$RUN/solver_outputs/big_implosion"
           python "$RUN/primary_module_b.py"
           python "$RUN/independent_module_b.py"
           python "$RUN/validate_module_b.py"
@@ -119,20 +99,10 @@ jobs:
           run=pathlib.Path('replay_checkout/modules/B/runs/B-110-20260807T002248Z')
           second={rel:hashlib.sha256((run/rel).read_bytes()).hexdigest() for rel in first}
           matches={rel:{'primary_sha256':first[rel],'replay_sha256':second[rel],'match':first[rel]==second[rel]} for rel in first}
-          if not all(v['match'] for v in matches.values()):
-              raise SystemExit('HARD STOP: clean replay scientific hashes differ')
+          if not all(v['match'] for v in matches.values()): raise SystemExit('HARD STOP: clean replay scientific hashes differ')
           ref=subprocess.check_output(['git','-C','replay_checkout','rev-parse','HEAD'],text=True).strip()
-          rec={
-            'run_id':'B-110-20260807T002248Z',
-            'result':'PASS',
-            'clean_checkout':True,
-            'artifact_hashes_match':True,
-            'replay_ref':ref,
-            'method':'second actions/checkout of agent/frontier-050-execution with no generated primary artifacts, followed by full frozen materialize/solver/primary/independent/validate sequence',
-            'compared_artifacts':matches
-          }
-          p=pathlib.Path('primary_checkout/modules/B/runs/B-110-20260807T002248Z/REPLAY_RECORD.json')
-          p.write_text(json.dumps(rec,indent=2,sort_keys=True)+'\n')
+          rec={'run_id':'B-110-20260807T002248Z','result':'PASS','clean_checkout':True,'artifact_hashes_match':True,'replay_ref':ref,'method':'second actions/checkout of agent/frontier-050-execution with no generated primary artifacts, followed by full frozen materialize/solver/primary/independent/validate sequence','compared_artifacts':matches}
+          pathlib.Path('primary_checkout/modules/B/runs/B-110-20260807T002248Z/REPLAY_RECORD.json').write_text(json.dumps(rec,indent=2,sort_keys=True)+'\n')
           PY
 
       - name: Finalize evidence and handoff
@@ -163,10 +133,7 @@ jobs:
           git config user.email 'actions@users.noreply.github.com'
           git status --short
           git add STATE.json WORK_QUEUE.json CLAIMS_LEDGER.json memory modules/B work_packets/ACTIVE_WORK_PACKET.md
-          if git diff --cached --quiet; then
-            echo 'HARD STOP: no governed closeout changes to commit'
-            exit 1
-          fi
+          if git diff --cached --quiet; then echo 'HARD STOP: no governed closeout changes to commit'; exit 1; fi
           git commit -m 'Close Module B at its verified scientific scope'
           git push origin HEAD:agent/frontier-050-execution
           git rev-parse HEAD
