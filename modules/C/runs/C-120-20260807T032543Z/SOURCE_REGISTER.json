@@ -1,10 +1,41 @@
 {
-  "run_id": "",
-  "exact_parents": [],
+  "run_id": "C-120-20260807T032543Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "object_id": "H_B_to_C",
+      "path": "modules/B/frozen/H_B_to_C.json",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+      "fidelity": "MINIMAL_SPINE",
+      "use": "sole physical parent for C generation"
+    }
+  ],
   "admitted_sources": [],
-  "imports": [],
+  "internal_derivations": [
+    {
+      "object_id": "C_FROZEN_DERIVATION_SPEC",
+      "path": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "578cd6bc04f37fe17e769cc27fe9f02700568feb399cf2fd529a796984eb8ee9",
+      "use": "frozen parent-only microscopic constitution and solver bindings"
+    }
+  ],
+  "governing_files": [
+    {"path": "recipes/C/WORK_ORDER.md", "git_blob_sha1": "797a892967018d92b92195af6a79b29a11792c55"},
+    {"path": "recipes/C/recipe.json", "git_blob_sha1": "1c92e6fd04fea03a894515cf9dee33950e349d86"},
+    {"path": "recipes/C/gates.json", "git_blob_sha1": "4a8bfca9a0dd3dd3e11eec55fb347fba7fd1452f"},
+    {"path": "modules/C/spec.json", "git_blob_sha1": "25109639492c0075f551ed9c91619b23c3729f3e"},
+    {"path": "modules/C/runs/C-120-20260807T032543Z/wolfram/C-WL-001/input.wl", "git_blob_sha1": "941bca4d91027e7d874b3d5951c1a1fb359daccf"},
+    {"path": "modules/C/runs/C-120-20260807T032543Z/wolfram/C-WL-002/input.wl", "git_blob_sha1": "4e9f22b2fd4d7b40d6f042e33624e5badfaa862e"},
+    {"path": "rfc_engine/solvers/spectral_model.py", "git_blob_sha1": "4e0ed1f9e4441f85a23ba80b4ea287774e6e6fbc"}
+  ],
+  "imports": ["python-standard-library", "numpy", "scipy"],
   "files": [],
   "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "constants": [
+    {"name": "delta", "value": 4.6692, "origin": "H_B_to_C.operator.delta", "dimensions": "1"},
+    {"name": "spectral_tolerance", "value": 1e-10, "origin": "C spectral template", "dimensions": "1"}
+  ],
+  "public_data_declaration": "NONE",
+  "public_data_used_for_generation": false
 }
