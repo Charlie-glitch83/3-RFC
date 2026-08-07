@@ -1,0 +1,156 @@
+name: Build D-130 pre-execution lock once
+
+on:
+  push:
+    branches: [agent/frontier-050-execution]
+    paths: ['.github/d130-prelock-trigger.txt']
+
+permissions:
+  contents: write
+
+jobs:
+  prelock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Freeze exact D source register and derivation lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          run_id='D-130-20260807T044911Z'
+          run=Path('modules/D/runs')/run_id
+          def sha(rel): return hashlib.sha256(Path(rel).read_bytes()).hexdigest()
+          authority_files=['README.md','recipes/D/WORK_ORDER.md','recipes/D/recipe.json','recipes/D/gates.json','configured_runs/templates/D_transport.template.json','configured_runs/binding_sheets/D_transport.bindings.json']
+          parent='modules/C/frozen/H_C_to_D.json'
+          parent_obj=json.loads(Path(parent).read_text())
+          g=float(parent_obj['microscopic_constitution']['dimensionless_doublet_gap'])
+          M=parent_obj['microscopic_constitution']['matrix']
+          p0=parent_obj['prethermal_state']['node_populations']
+          u=[1/3,1/3,1/3]
+          P=[[x/g for x in row] for row in M]
+          frozen_utc=datetime.now(timezone.utc).isoformat()
+
+          spec={
+            'schema_version':'1.0','run_id':run_id,'status':'FROZEN_PRE_EXECUTION','frozen_utc':frozen_utc,
+            'exact_parent':{'path':parent,'sha256':sha(parent),'object_id':'H_C_to_D','run_id':parent_obj['run_id']},
+            'parent_facts':{
+              'carrier_space':parent_obj['typed_fields_and_excitations']['carrier_space'],
+              'initial_populations':p0,'normalization':sum(p0),'uniform_mode':u,
+              'M_C':M,'g_C':g,'P_perp=M_C/g_C':P,
+              'physical_time_scale':'NOT_DERIVED_IN_C','physical_energy_scale':'NOT_DERIVED_IN_C',
+              'metric_spacetime':'NOT_DERIVED_IN_C','preloaded_thermal_law':False
+            },
+            'candidate_classes':[
+              {
+                'id':'D-C1','name':'minimal autonomous linear conservative positive-semigroup closure',
+                'definition':'dp/ds = G p on the inherited three-state simplex; G annihilates the uniform mode, commutes with the exact C doublet symmetry/permutations, has nonnegative off-diagonal transition rates, and introduces no new state object.',
+                'derivation':'On R^3 = span{u} + V_perp, exact symmetry forces any linear commuting operator to act as one scalar on V_perp and zero on u. Positivity and relaxation fix G=-kappa P_perp with kappa>=0. C supplies no dimensionful rate, so kappa is absorbed into intrinsic clock s and the normalized nontrivial representative is G=-P_perp.',
+                'status':'SELECTED_MINIMAL_SPINE_UP_TO_CLOCK_REPARAMETERIZATION'
+              },
+              {
+                'id':'D-C2','name':'nonlinear conservative permutation-equivariant entropy-producing flows',
+                'definition':'Pairwise flows with nonnegative state-dependent mobilities and zero total-population source.',
+                'status':'LAWFUL_BRANCH_FAMILY_UNDERDETERMINED_BY_C','reason':'requires an additional mobility function not present in the exact parent'
+              },
+              {
+                'id':'D-C3','name':'memory-bearing/non-Markov transport',
+                'definition':'Flows requiring additional memory kernels or state variables.',
+                'status':'LAWFUL_BUT_NOT_INSTANTIABLE_FROM_C','reason':'requires new state objects absent from H_C_to_D'
+              }
+            ],
+            'selection_rule':{
+              'name':'MINIMAL_NO_NEW_OBJECT_CLOSURE',
+              'authority':'README minimal complete physical spine + D recipe exact-parent/no-substitution rule',
+              'rule':'At MINIMAL_SPINE fidelity choose the nontrivial candidate fully determined by existing parent objects and exact symmetries, introducing no unfrozen function, parameter, physical scale, geometry, or memory state. Preserve all other lawful classes as countermodels/unsupported branches.',
+              'public_target_use':False
+            },
+            'selected_law':{
+              'state':['p1','p2','p3'],'clock':'s_D intrinsic dimensionless transport clock',
+              'equation':'dp/ds = -P_perp p = -(p-u)','generator_matrix':[[-2/3,1/3,1/3],[1/3,-2/3,1/3],[1/3,1/3,-2/3]],
+              'analytic_solution':'p(s)=u+exp(-s)*(p0-u)','physical_duration_claimed':False
+            },
+            'thermodynamic_objects':{
+              'entropy':'S_D(p)=-sum_i p_i log(p_i)','excitation_functional':'E_D(p)=0.5*p^T M_C p',
+              'intrinsic_thermal_coordinate':'Theta_D(s)=-(dE_D/ds)/(dS_D/ds) where dS_D/ds>0',
+              'physical_kelvin_temperature':'NOT_DERIVED_NO_DIMENSIONFUL_ENERGY_SCALE',
+              'expansion_history':'NOT_DERIVED_NO_METRIC_OR_SCALE_FACTOR_PARENT'
+            },
+            'phase_event_witness':{
+              'definition':'A D phase event requires a witnessed admissible non-gauge-equivalent change in branch/state ordering or constitutive stability, not an arbitrary numerical threshold.',
+              'expected_on_selected_minimal_branch':'NO_EVENT_UNLESS_WITNESSED_BY_EXECUTION'
+            },
+            'methods':{'primary':'BDF','analytic_crosscheck':True,'independent':'separate analytic/expm reconstruction script/process'},
+            'tolerances':{'rtol':1e-9,'atol':1e-12,'max_step':0.05,'positivity':1e-12,'charge_drift':1e-9,'analytic_l2':1e-8,'restart_l2':1e-9,'independent_l2':1e-8,'refinement_l2':1e-7,'entropy_monotonic':1e-12},
+            'execution_interval':{'s_start':0.0,'s_end':1.0,'meaning':'canonical unit intrinsic interval only; not a physical age or freeze-out time'},
+            'expected_invariants':['sum(p)=sum(p0)','p_i>=-1e-12','S_D nondecreasing','E_D nonincreasing','uniform mode conserved','no physical-time or Kelvin-temperature claim'],
+            'tests':['analytic-vs-BDF','coarse/fine timestep convergence','checkpoint restart','zero and nonlinear countermodel executions','inherited decimal-envelope propagation','separate independent reconstruction'],
+            'gates':['positive distributions','energy/charge conservation','event ordering','stiff-solver convergence','restart and independent reconstruction'],
+            'falsifiers':['negative population below -1e-12','charge drift >1e-9','entropy decrease >1e-12','analytic error >1e-8','refinement error >1e-7','restart error >1e-9','independent error >1e-8','event ordering uses observed target values','claim of physical temperature/time/expansion without a derived scale'],
+            'claim_boundary':'Generated RFC intrinsic nonequilibrium transport/entropy history at MINIMAL_SPINE fidelity; not dimensionful Kelvin temperature, metric expansion, primordial abundances, or empirical correspondence.',
+            'allowed_implementation_only_corrections':['syntax/serialization/path fixes','relocation-safe file handling','numerical implementation defects that do not change frozen law/candidates/tolerances/gates/claims']
+          }
+          (run/'FROZEN_DERIVATION_SPEC.json').write_text(json.dumps(spec,indent=2)+'\n')
+          spec_sha=sha(run/'FROZEN_DERIVATION_SPEC.json')
+
+          source={
+            'run_id':run_id,
+            'exact_parents':[{'path':parent,'sha256':sha(parent),'object_id':'H_C_to_D'}],
+            'admitted_sources':[{'path':x,'sha256':sha(x),'role':'AUTHORITY_OR_FROZEN_RECIPE'} for x in authority_files],
+            'imports':['python:hashlib','python:json','python:pathlib','python:datetime'],
+            'files':authority_files+[parent,str(run/'FROZEN_DERIVATION_SPEC.json')],
+            'urls':[],
+            'constants':[{'name':'g_C','value':g,'origin':parent,'origin_sha256':sha(parent)},{'name':'p0','value':p0,'origin':parent,'origin_sha256':sha(parent)},{'name':'rtol','value':1e-9,'origin':'configured_runs/templates/D_transport.template.json','origin_sha256':sha('configured_runs/templates/D_transport.template.json')},{'name':'atol','value':1e-12,'origin':'configured_runs/templates/D_transport.template.json','origin_sha256':sha('configured_runs/templates/D_transport.template.json')}],
+            'public_data_declaration':'NONE_GENERATION_SEALED'
+          }
+          (run/'SOURCE_REGISTER.json').write_text(json.dumps(source,indent=2)+'\n')
+
+          lock={
+            'run_id':run_id,'status':'FROZEN','frozen_utc':frozen_utc,
+            'authority_hashes':[{'path':x,'sha256':sha(x)} for x in authority_files],
+            'parent_hashes':[{'path':parent,'sha256':sha(parent)}],
+            'definition_hashes':[{'path':str(run/'FROZEN_DERIVATION_SPEC.json'),'sha256':spec_sha}],
+            'candidate_classes':spec['candidate_classes'],
+            'equations_and_laws':[spec['selected_law'],spec['thermodynamic_objects'],spec['phase_event_witness']],
+            'dimensions_units_frames_gauges_clocks':['p_i dimensionless normalized populations','s_D dimensionless intrinsic transport clock','M_C and g_C dimensionless','Theta_D dimensionless intrinsic thermal coordinate only','no metric frame/gauge/scale factor admitted','no physical Kelvin or duration unit admitted'],
+            'methods':[spec['methods'],{'solver_template':'configured_runs/templates/D_transport.template.json','template_sha256':sha('configured_runs/templates/D_transport.template.json')}],
+            'tolerances':[spec['tolerances']],
+            'stopping_rules':['execute exactly s_D in [0,1] for primary canonical branch','hard stop on any frozen falsifier','do not extend interval to seek a preferred outcome'],
+            'expected_invariants':spec['expected_invariants'],
+            'tests':spec['tests'],'gates':spec['gates'],'falsifiers':spec['falsifiers'],
+            'claim_boundary':spec['claim_boundary'],
+            'independent_verifier_design':'Separate script/process reconstructs P_perp from exact H_C_to_D, evaluates analytic matrix-exponential trajectory without reading primary gate summaries or CLOSEOUT, and compares only hashed primary trajectory outputs after reconstruction.',
+            'allowed_implementation_only_corrections':spec['allowed_implementation_only_corrections']
+          }
+          (run/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          PY
+      - name: Display exact Wolfram calls after lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          run=modules/D/runs/D-130-20260807T044911Z
+          python tools/director.py wolfram-show --call D-WL-001 > "$run/wolfram/D-WL-001/DISPLAYED_CALL.txt"
+          python tools/director.py wolfram-show --call D-WL-002 > "$run/wolfram/D-WL-002/DISPLAYED_CALL.txt"
+      - name: Validate and commit frozen pre-execution state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/director.py doctor
+          rm -f .github/d130-prelock-trigger.txt .github/readme-exact-runner-trigger.txt .github/workflows/d130_prelock_once.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Freeze D-130 pre-execution derivation and provenance'
+          git push origin HEAD:agent/frontier-050-execution
