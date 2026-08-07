@@ -1,4 +1,4 @@
-name: One-use D130 interval retry
+name: One-use D130 final checks
 
 on:
   pull_request:
@@ -30,7 +30,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python tools/rfc.py freeze --path modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json --kind HANDOFF
+          python tools/rfc.py freeze modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json --kind HANDOFF
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
