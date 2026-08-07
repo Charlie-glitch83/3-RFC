@@ -1,4 +1,0 @@
-Repair and finalize A-100 administrative closeout
-verified_evidence_commit=b6280513dc47339ddf024be6275817d3f38a9d39
-repair_workflow_commit=d2587642ffdc8b651671194c02ce20863271d549
-triggered_utc=2026-08-07T00:38:00Z
