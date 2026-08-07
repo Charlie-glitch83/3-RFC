@@ -18,6 +18,12 @@ jobs:
         with:
           ref: agent/frontier-050-execution
           fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install repository execution dependencies
+        run: python -m pip install --disable-pip-version-check numpy networkx scipy sympy
       - name: Run repository startup exactly
         shell: bash
         run: |
