@@ -1,14 +1,14 @@
 # Current Context
 
-Generated: 2026-08-07T13:43:33.564298+00:00
+Generated: 2026-08-07T13:51:12.138412+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `D-130` — Close Module D: Nonequilibrium Thermal and Phase History
-- Current module: `D`
-- Last verified commit: `4645aefed4d3d1bc1e2462f44ab12082dbb291c8`
+- Active work unit: `E-140` — Close Module E: Primordial Nuclear Network
+- Current module: `E`
+- Last verified commit: `44ed126d494f41e0448e5e751b3b17b5d8f1848e`
 
 ## Strongest supported claim
 
@@ -20,31 +20,31 @@ No dimensionful masses, empirical particle identities, calibrated couplings, met
 
 ## Immediate objective
 
-Evolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.
+Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.
 
 ## Required deliverables
 
-- modules/D/runs/<RUN_ID>/RUN_PLAN.md
-- modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/D/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/D/runs/<RUN_ID>/CLOSEOUT.md
+- modules/E/runs/<RUN_ID>/RUN_PLAN.md
+- modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/E/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/E/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- positive distributions
-- energy/charge conservation
-- event ordering
-- stiff-solver convergence
-- restart and independent reconstruction
+- baryon/charge/energy accounting
+- network convergence
+- rate-source audit
+- no scalar-channel collapse
+- withheld reaction and independent implementation checks
 
 ## Module states
 
 - A: `FROZEN` / `PRODUCTION`
 - B: `FROZEN` / `MINIMAL_SPINE`
 - C: `FROZEN` / `MINIMAL_SPINE`
-- D: `DESIGN` / `UNSTARTED`
+- D: `FROZEN` / `MINIMAL_SPINE`
 - E: `DESIGN` / `UNSTARTED`
 - F: `DESIGN` / `UNSTARTED`
 - G: `DESIGN` / `UNSTARTED`
@@ -64,7 +64,7 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 12
+- frozen artifacts: 13
 - indexed runs: 11
 
 ## Recent runs
@@ -76,18 +76,18 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 - C-120-20260807T032543Z: PASS (C)
 - D-130-20260807T044911Z: FAIL (D)
 - D-130-20260807T045646Z: BLOCKED (D)
-- D-130-20260807T053432Z: CREATED (D)
+- D-130-20260807T053432Z: PASS (D)
 
 ## Recent decisions
 
-- ADVANCE-B-110-20260807T031058Z: Marked B-110 PASS and activated C-120
-- PROMOTE-C-FORMALIZED-20260807T034727Z: Promoted Module C from DESIGN to FORMALIZED at MINIMAL_SPINE
-- PROMOTE-C-IMPLEMENTED-20260807T034727Z: Promoted Module C from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
-- PROMOTE-C-VERIFIED-20260807T034727Z: Promoted Module C from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
-- PROMOTE-C-PHYSICALLY_EXECUTED-20260807T034727Z: Promoted Module C from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
-- PROMOTE-C-INDEPENDENTLY_REPRODUCED-20260807T034727Z: Promoted Module C from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
-- PROMOTE-C-FROZEN-20260807T034727Z: Promoted Module C from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
-- ADVANCE-C-120-20260807T034953Z: Marked C-120 PASS and activated D-130
+- COMMIT-44ed126d494f: Verified D130 closeout commit, fetched artifacts, diff, tests, doctor and firewall.
+- PROMOTE-D-FORMALIZED-20260807T135107Z: Promoted Module D from DESIGN to FORMALIZED at MINIMAL_SPINE
+- PROMOTE-D-IMPLEMENTED-20260807T135107Z: Promoted Module D from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
+- PROMOTE-D-VERIFIED-20260807T135107Z: Promoted Module D from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
+- PROMOTE-D-PHYSICALLY_EXECUTED-20260807T135108Z: Promoted Module D from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
+- PROMOTE-D-INDEPENDENTLY_REPRODUCED-20260807T135108Z: Promoted Module D from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
+- PROMOTE-D-FROZEN-20260807T135108Z: Promoted Module D from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-D-130-20260807T135108Z: Marked D-130 PASS and activated E-140
 
 ## Recent failures
 
