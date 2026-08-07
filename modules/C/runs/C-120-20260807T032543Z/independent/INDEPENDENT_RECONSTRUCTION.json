@@ -1,0 +1,73 @@
+{
+  "run_id": "C-120-20260807T032543Z",
+  "method": "ANALYTIC_K3_PARENT_RECONSTRUCTION_WITHOUT_PRIMARY_SOLVER_MATRIX",
+  "parent_sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+  "reconstructed": {
+    "matrix": [
+      [
+        0.2998860433035446,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "uniform_mode": [
+      0.5773502691896258,
+      0.5773502691896258,
+      0.5773502691896258
+    ],
+    "analytic_spectrum": [
+      0.0,
+      0.449829064955317,
+      0.449829064955317
+    ],
+    "numeric_spectrum": [
+      -1.3877787807814457e-17,
+      0.44982906495531694,
+      0.44982906495531694
+    ],
+    "generator": [
+      [
+        0.0,
+        -0.5773502691896258,
+        0.5773502691896258
+      ],
+      [
+        0.5773502691896258,
+        0.0,
+        -0.5773502691896258
+      ],
+      [
+        -0.5773502691896258,
+        0.5773502691896258,
+        0.0
+      ]
+    ],
+    "prethermal_populations": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "population_sum": 0.9999999999999997
+  },
+  "checks": {
+    "matrix_vs_primary_l2_error": 1.1102230246251565e-16,
+    "uniform_zero_mode_error": 1.9774869276684306e-18,
+    "generator_antisymmetry_error": 0.0,
+    "generator_commutator_error": 2.7965888325241983e-18,
+    "positivity_minimum_eigenvalue": -1.3877787807814457e-17,
+    "unitarity_error_theta_1": 9.813077866773594e-17,
+    "population_normalization_error": 3.3306690738754696e-16
+  },
+  "pass": true,
+  "trust_boundary": "Used exact H_B_to_C, analytic K3 structure, and the final primary matrix only for comparison. Did not trust primary gates, spectral solver eigenvectors, closeout, or claim conclusions."
+}

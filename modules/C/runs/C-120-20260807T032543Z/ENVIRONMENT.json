@@ -1,13 +1,89 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
+  "run_id": "C-120-20260807T032543Z",
+  "status": "FINAL",
+  "captured_utc": "2026-08-07T03:47:27.201225+00:00",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "hardware": {
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "logical_cpu_count": 4
+  },
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.13.14",
+      "executable": "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python"
+    },
+    {
+      "name": "NumPy",
+      "version": "2.5.1"
+    },
+    {
+      "name": "SciPy",
+      "version": "1.18.0"
+    },
+    {
+      "name": "GitHub Actions",
+      "mode": "clean repository-hosted execution and replay"
+    }
+  ],
+  "network_policy": "NO_NETWORK_SCIENTIFIC_INPUTS; repository/package transport is infrastructure only",
+  "network_used_for_generation": false,
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "stochastic_algorithms": false,
+  "hidden_defaults_audited": true,
+  "hidden_default_audit": {
+    "undeclared_environment_inputs": false,
+    "implicit_randomness": false,
+    "network_calls_in_primary_or_independent_code": false,
+    "remembered_physical_targets": false,
+    "external_observational_values": false,
+    "post_result_parameter_selection": false,
+    "dimensionful_scale_injected": false
+  },
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_used": false,
+  "claim_boundary": "Module C establishes RFC microscopic excitation types and a parent-derived dimensionless constitution at MINIMAL_SPINE fidelity, including exact symmetry/conservation, positive constitutive spectrum, unitary dimensionless phase evolution, deterministic prethermal populations and restart. It does not establish dimensionful masses, Standard Model identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or empirical correspondence.",
+  "code_hashes": [
+    {
+      "path": "modules/C/runs/C-120-20260807T032543Z/primary_module_c.py",
+      "sha256": "1b6078c0f5d0faf8888d6165b59e02f3a21917f744761b3a529912837c9bb071",
+      "bytes": 7867
+    },
+    {
+      "path": "modules/C/runs/C-120-20260807T032543Z/independent_module_c.py",
+      "sha256": "09ff127f7032d9808256e69617a30fce2b97daafdd59d2e80579a914adbce969",
+      "bytes": 2534
+    },
+    {
+      "path": "modules/C/runs/C-120-20260807T032543Z/validate_module_c.py",
+      "sha256": "cafd0786c0cfeda6f244c3a28ca533a878a3374bf34ffdd08ac78cedccdb9f6a",
+      "bytes": 4052
+    },
+    {
+      "path": "modules/C/runs/C-120-20260807T032543Z/finalize_module_c.py",
+      "sha256": "7cd6f769e5eeaf276fc43a1f98fa42d856daa44999419099bda047cd29aa44a2",
+      "bytes": 10431
+    },
+    {
+      "path": "rfc_engine/solvers/spectral_model.py",
+      "sha256": "e784413787a7053c01929469da2c434c925b21f9c946e629764ad6a653127d31",
+      "bytes": 2716
+    },
+    {
+      "path": "tools/materialize_solver_config.py",
+      "sha256": "df51b784a21d3affe244df3ee1303a2f21fbaf71cfa1e47cde1b979cb3d273f5",
+      "bytes": 5206
+    },
+    {
+      "path": "tools/run_configured_solver.py",
+      "sha256": "0939e59a63c7164fd4e4c867a7a560719d342f03029bca5b961355d689e7371e",
+      "bytes": 5652
+    },
+    {
+      "path": "tools/rfc.py",
+      "sha256": "9b7111647975766790b6625ccd8a225e8bc21ce1ab800c785638a482ee917a81",
+      "bytes": 46383
+    }
+  ]
 }

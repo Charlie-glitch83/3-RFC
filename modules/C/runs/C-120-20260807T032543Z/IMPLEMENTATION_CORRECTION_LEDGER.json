@@ -1,0 +1,88 @@
+{
+  "run_id": "C-120-20260807T032543Z",
+  "status": "FINAL",
+  "frozen_science_changed_after_lock": false,
+  "records": [
+    {
+      "failure_id": "C-120-STARTUP-RUNNER-DEPS",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "STARTUP",
+      "category": "ENVIRONMENT_ONLY",
+      "description": "First clean GitHub Actions bootstrap attempt stopped in the repository test suite because numpy/networkx were absent from the runner. No C run workspace or scientific output was admitted from that attempt.",
+      "changes_frozen_science": false,
+      "correction": "Install declared repository execution dependencies and rerun bootstrap/start_work from the beginning.",
+      "scientific_evidence": false
+    },
+    {
+      "failure_id": "C-120-STARTUP-NONFASTFORWARD",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "STARTUP",
+      "category": "CONCURRENT_BRANCH_ADVANCE",
+      "description": "A duplicate startup checkout created C-120-20260807T032553Z locally but its push was rejected because the execution branch had already received the valid governed C-120-20260807T032543Z startup commit. The rejected duplicate was not transplanted or force-pushed.",
+      "changes_frozen_science": false,
+      "correction": "Adopt only the committed 032543Z workspace from current repository truth.",
+      "scientific_evidence": false
+    },
+    {
+      "failure_id": "C-120-PRELOCK-WOLFRAM-DIAGNOSTIC",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "PRE_LOCK",
+      "category": "PRELOCK_SYMBOLIC_DIAGNOSTIC_NOT_EVIDENCE",
+      "description": "C-WL-001 and C-WL-002 were initially evaluated interactively before PRE_EXECUTION_LOCK was frozen. Those captures are diagnostic only. Both exact programs must be rerun unchanged after the lock and only the post-lock captures may enter C evidence.",
+      "changes_frozen_science": false,
+      "correction": "Rerun both exact Wolfram calls after lock commit and preserve complete outputs including messages.",
+      "scientific_evidence": false
+    },
+    {
+      "failure_id": "C-120-POSTLOCK-WOLFRAM-RECORD-SAMEFILE",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "POST_LOCK_PRE_NUMERICAL_EXECUTION",
+      "category": "IMPLEMENTATION_ONLY_INVOCATION_DEFECT",
+      "description": "The README-aligned governed closeout attempt passed rfc/director doctor and then stopped before reference or numerical execution because wolfram-record was invoked with the canonical destination output.txt as its source, causing shutil.SameFileError.",
+      "changes_frozen_science": false,
+      "correction": "Copy each already captured post-lock Wolfram output to a temporary path and invoke wolfram-record from that temporary source; rerun the full frozen C matrix from the beginning.",
+      "scientific_evidence": false
+    },
+    {
+      "failure_id": "C-120-POSTLOCK-CLOSEOUT-PUSH-RACE",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "POST_LOCK_AFTER_FULL_VERIFICATION",
+      "category": "CONCURRENT_WORKFLOW_ONLY_BRANCH_ADVANCE",
+      "description": "A governed C execution passed primary gates, independent reconstruction, clean replay, finalization, all evidence promotions and close-run locally, but its closeout commit push was rejected because a concurrent README-protocol workflow-only commit advanced the execution branch after checkout. The unpushed closeout commit was not force-pushed or transplanted.",
+      "changes_frozen_science": false,
+      "correction": "Rerun the complete frozen C matrix from the current branch head and publish only a fast-forward closeout commit.",
+      "scientific_evidence": false
+    },
+    {
+      "failure_id": "C-120-POSTLOCK-WOLFRAM-CHECKER-ESCAPED-KEYS",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "POST_LOCK_PRE_NUMERICAL_EXECUTION",
+      "category": "IMPLEMENTATION_ONLY_PARSER_DEFECT",
+      "description": "Director wolfram-record copied the post-lock C-WL-001 capture successfully, but check_wolfram_output.py failed the required hermitian=True token because its regex did not recognize the escaped quoted association key in the captured InputForm string. The capture itself explicitly contained hermitian -> True.",
+      "changes_frozen_science": false,
+      "correction": "Extend only the checker token delimiter parser to accept quoted or escaped-quoted association keys; leave all frozen expectation fields and required truth values unchanged; rerun the complete frozen C matrix.",
+      "scientific_evidence": false
+    },
+    {
+      "failure_id": "C-120-POSTLOCK-WOLFRAM-GATE-SCHEMA",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "POST_LOCK_AFTER_PRIMARY_AND_INDEPENDENT_BEFORE_COMPONENT_GATE_COMPLETION",
+      "category": "IMPLEMENTATION_ONLY_SCHEMA_MISMATCH",
+      "description": "The full primary C construction and independent reconstruction passed, but validate_module_c.py raised KeyError because it expected the Wolfram gate field result while the canonical director/check_wolfram_output record emits status. No mandatory C gate was waived or redefined.",
+      "changes_frozen_science": false,
+      "correction": "Read canonical gate field status with backward-compatible fallback to result while requiring the same PASS prefix; rerun the complete frozen C matrix from the current branch head.",
+      "scientific_evidence": false
+    },
+    {
+      "failure_id": "C-120-POSTLOCK-FAILURE-LEDGER-JSONL",
+      "run_id": "C-120-20260807T032543Z",
+      "phase": "POST_LOCK_AFTER_GATES_AND_CLEAN_REPLAY_BEFORE_FINALIZATION",
+      "category": "IMPLEMENTATION_ONLY_EVIDENCE_SERIALIZATION_DEFECT",
+      "description": "The full frozen C primary execution passed all five component gates at 1.0 and the second clean checkout replay matched, but finalize_module_c.py stopped while parsing FAILURES.jsonl because an earlier descriptive line contained malformed JSON escaping. No scientific result, threshold, or claim was changed.",
+      "changes_frozen_science": false,
+      "correction": "Rewrite the preserved failure records as valid one-object-per-line JSON with unchanged meanings, validate by finalizer parsing, and rerun the complete frozen C matrix from the current branch head.",
+      "scientific_evidence": false
+    }
+  ],
+  "post_lock_implementation_corrections": []
+}

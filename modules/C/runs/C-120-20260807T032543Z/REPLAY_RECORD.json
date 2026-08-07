@@ -1,10 +1,79 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "artifact_hashes_match": true,
+  "clean_checkout": true,
+  "compared_artifacts": {
+    "CHECKPOINT_RECORD.json": {
+      "match": true,
+      "primary_sha256": "649fd9e92ce48d6694556e5c487db6e14e1f5c08abcd33767604c735e353027e",
+      "replay_sha256": "649fd9e92ce48d6694556e5c487db6e14e1f5c08abcd33767604c735e353027e"
+    },
+    "GATE_RESULTS.json": {
+      "match": true,
+      "primary_sha256": "45ccfbd013da50938968fb9d1739899fba813e2be995d0c2855b9dada16237bd",
+      "replay_sha256": "45ccfbd013da50938968fb9d1739899fba813e2be995d0c2855b9dada16237bd"
+    },
+    "checkpoints/C_MICROSCOPIC_CONSTITUTION.json": {
+      "match": true,
+      "primary_sha256": "e394f3097f7cd5fb55e36150df259449e5a915936b8aa31e4f274c49aa670179",
+      "replay_sha256": "e394f3097f7cd5fb55e36150df259449e5a915936b8aa31e4f274c49aa670179"
+    },
+    "independent/INDEPENDENT_RECONSTRUCTION.json": {
+      "match": true,
+      "primary_sha256": "2c35c8d7dfd21dd536a11bdb5d2b44a93312debee290eb9822240825ceaaec2f",
+      "replay_sha256": "2c35c8d7dfd21dd536a11bdb5d2b44a93312debee290eb9822240825ceaaec2f"
+    },
+    "primary/COUNTERMODEL_RESULTS.json": {
+      "match": true,
+      "primary_sha256": "648c86da73f43d99ac108336299c8c7021cb3baa23fcc34551f2a15946fdf6d0",
+      "replay_sha256": "648c86da73f43d99ac108336299c8c7021cb3baa23fcc34551f2a15946fdf6d0"
+    },
+    "primary/MICROSCOPIC_CONSTITUTION.json": {
+      "match": true,
+      "primary_sha256": "3255975f872f42fdbf08f5c0c901884edf4c7e22a4de01b70689fedf43903393",
+      "replay_sha256": "3255975f872f42fdbf08f5c0c901884edf4c7e22a4de01b70689fedf43903393"
+    },
+    "primary/PRIMARY_SUMMARY.json": {
+      "match": true,
+      "primary_sha256": "86d1db0e7ed1c13e62713bb90f9981bf5d502ea44592d63e0b5483b0e2e1efa1",
+      "replay_sha256": "86d1db0e7ed1c13e62713bb90f9981bf5d502ea44592d63e0b5483b0e2e1efa1"
+    },
+    "primary/UNCERTAINTY_ENVELOPE.json": {
+      "match": true,
+      "primary_sha256": "92edf3d466d00d99aaeea8b4609234e239a4a7cd234f839c4e9e2cd0daa1d5c1",
+      "replay_sha256": "92edf3d466d00d99aaeea8b4609234e239a4a7cd234f839c4e9e2cd0daa1d5c1"
+    },
+    "reference_checks.json": {
+      "match": true,
+      "primary_sha256": "53ea809b8a03f71f448d1544aaca5992473163cbf1c313d7233b9bd541479070",
+      "replay_sha256": "53ea809b8a03f71f448d1544aaca5992473163cbf1c313d7233b9bd541479070"
+    },
+    "solver_outputs/spectral_model/result.json": {
+      "match": true,
+      "primary_sha256": "5e98ab097b45382edff2227fb572a6f67917917a1e3666b04b3bbf2823c59c41",
+      "replay_sha256": "5e98ab097b45382edff2227fb572a6f67917917a1e3666b04b3bbf2823c59c41"
+    },
+    "wolfram/C-WL-001/gate.json": {
+      "match": true,
+      "primary_sha256": "ff67c6cef0a90f568cf919d9f2d7de3cf737f2e2397da391cd60ebf1c1d894d1",
+      "replay_sha256": "ff67c6cef0a90f568cf919d9f2d7de3cf737f2e2397da391cd60ebf1c1d894d1"
+    },
+    "wolfram/C-WL-002/gate.json": {
+      "match": true,
+      "primary_sha256": "ccaec59a95f005bfea7f8daad8fd98750f858dcc8230d0341c51b558570e9390",
+      "replay_sha256": "ccaec59a95f005bfea7f8daad8fd98750f858dcc8230d0341c51b558570e9390"
+    }
+  },
+  "config_reproducibility": {
+    "normalization": "remove only checkout-specific absolute binding_manifest template_path and binding_sheet_path; retain every scientific value and provenance hash",
+    "primary_raw_sha256": "d56d378706bb738832fb83adddb9b2ab6414b77bd9c537c6032e74a37c85df9e",
+    "primary_semantic_sha256": "fe91fe43988d86d4789987f19d619eb752c9f4eb36297d77530cceb2a88223c7",
+    "raw_hash_match": false,
+    "replay_raw_sha256": "78b77918f4cd579a112b5c6f44d8147d805bbc67a85c3776f0a0a23153a544fa",
+    "replay_semantic_sha256": "fe91fe43988d86d4789987f19d619eb752c9f4eb36297d77530cceb2a88223c7",
+    "semantic_match": true
+  },
+  "method": "second clean checkout followed by frozen Wolfram-record/reference/materialize/spectral/local-phase/primary/independent/validate sequence",
+  "replay_ref": "fd44d0829df24c611bb2a486f47ef58621b5b40d",
+  "result": "PASS",
+  "run_id": "C-120-20260807T032543Z"
 }

@@ -1,0 +1,40 @@
+{
+  "classification": "SEMANTIC_FALSIFIERS_NOT_ALTERNATIVE_PHYSICAL_BRANCHES",
+  "countermodels": [
+    {
+      "id": "C-CM-001-NO-CONSTITUTION",
+      "change": "M_C -> 0",
+      "expected_failure": "nonzero internal excitation gap disappears",
+      "observed_gap": 0.0,
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "C-CM-002-UNWITNESSED-SPLIT",
+      "change": "add one parent-gap to one diagonal only",
+      "expected_failure": "O(2) law symmetry",
+      "commutator_error": 0.51941786348254,
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "C-CM-003-NEGATIVE-GAP",
+      "change": "M_C -> -M_C",
+      "minimum_eigenvalue": -0.44982906495531705,
+      "expected_failure": "positivity",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "C-CM-004-NONCONSERVING-DIAGONAL",
+      "change": "add one parent-gap to channel 0 without compensating edge term",
+      "row_sum_norm": 0.44982906495531716,
+      "expected_failure": "Q_total conservation",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "C-CM-005-EXTERNAL-IDENTITY-SCALE",
+      "change": "inject a Standard Model name or external dimensionful mass scale",
+      "expected_failure": "generation/source/claim firewall",
+      "result": "FAIL_AS_EXPECTED"
+    }
+  ],
+  "overall": "PASS"
+}

@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "C-120",
   "current_module": "C",
-  "current_run": "C-120-20260807T032543Z",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -133,16 +133,70 @@
       ]
     },
     "C": {
-      "evidence_state": "DESIGN",
-      "fidelity": "UNSTARTED",
-      "active_run": "C-120-20260807T032543Z",
+      "evidence_state": "FROZEN",
+      "fidelity": "MINIMAL_SPINE",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-07T03:47:27.395979+00:00",
+          "work_unit": "C-120"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/C/runs/C-120-20260807T032543Z/solver_outputs/spectral_model/result.json",
+          "timestamp_utc": "2026-08-07T03:47:27.455415+00:00",
+          "work_unit": "C-120"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/C/runs/C-120-20260807T032543Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-07T03:47:27.514763+00:00",
+          "work_unit": "C-120"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json",
+          "timestamp_utc": "2026-08-07T03:47:27.574863+00:00",
+          "work_unit": "C-120"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/C/runs/C-120-20260807T032543Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-07T03:47:27.634025+00:00",
+          "work_unit": "C-120"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/C/frozen/H_C_to_D.json",
+          "timestamp_utc": "2026-08-07T03:47:27.694208+00:00",
+          "work_unit": "C-120"
         }
+      ],
+      "promotion_evidence": [
+        "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/C/runs/C-120-20260807T032543Z/solver_outputs/spectral_model/result.json",
+        "modules/C/runs/C-120-20260807T032543Z/GATE_RESULTS.json",
+        "modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json",
+        "modules/C/runs/C-120-20260807T032543Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D.json"
+      ],
+      "last_promoted_utc": "2026-08-07T03:47:27.694219+00:00",
+      "completed_runs": [
+        "C-120-20260807T032543Z"
       ]
     },
     "D": {
@@ -355,7 +409,7 @@
     }
   },
   "last_verified_commit": "36084b7dac69139e37e6c69dcc7779da4c050a1e",
-  "last_updated_utc": "2026-08-07T03:25:43.208539+00:00",
+  "last_updated_utc": "2026-08-07T03:47:27.759703+00:00",
   "strongest_supported_claim": "Module B now provides a frozen, source-addressed, physically executed, independently reproduced and cleanly replayed first physical RFC state H_B_to_C at MINIMAL_SPINE fidelity: the exact frozen A prephysical modal state undergoes the source-locked Big Implosion counting-Laplacian crossing into a conserved, strictly compressed, exactly reopenable relational state with intrinsic event-order origin and typed pregeometry.",
   "strongest_unsupported_claim": "No microscopic particle/field sector model, metric spacetime geometry, calibrated physical duration, dimensional physical constants, late-time cosmology, empirical agreement, manifested completed universe, or later-module physics has yet been established.",
   "last_verified_branch": "agent/frontier-050-execution"

@@ -1,7 +1,52 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "C-120-20260807T032543Z",
+  "classification": "MODULE_C_COMPONENTWISE_GATES",
+  "overall": "PASS",
+  "gates": [
+    {
+      "id": "C-GATE-001",
+      "name": "units_and_dimensions",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "C-GATE-002",
+      "name": "symmetry_constraint_closure",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "C-GATE-003",
+      "name": "positivity_unitarity_or_declared_alternative",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "C-GATE-004",
+      "name": "no_standard_model_label_without_derivation_or_correspondence",
+      "result": "PASS",
+      "score": 1.0
+    },
+    {
+      "id": "C-GATE-005",
+      "name": "independent_symbolic_and_numerical_checks",
+      "result": "PASS",
+      "score": 1.0
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "minimum_component_score",
+      "value": 1.0,
+      "threshold": 0.95,
+      "result": "PASS"
+    },
+    {
+      "name": "doublet_gap",
+      "value": 0.449829064955317,
+      "classification": "DIMENSIONLESS_CONSTITUTIVE_GAP_NOT_MEASURED_MASS"
+    }
+  ],
+  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis",
+  "frozen_science_changed_after_lock": false
 }

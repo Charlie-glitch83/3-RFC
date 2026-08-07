@@ -1,0 +1,15 @@
+{
+  "run_id": "C-120-20260807T032543Z",
+  "status": "FINAL",
+  "falsifiers": [
+    "parent H_B_to_C SHA-256 mismatch",
+    "M_C differs from I-Q_B or L_B/(delta+2)",
+    "M_C is not symmetric positive semidefinite within 1e-10",
+    "declared generator fails G^T=-G, G u=0, or [M_C,G]=0 within 1e-10",
+    "total carrier is not preserved",
+    "any Standard Model name, measured mass, coupling, or dimensionful scale enters generation",
+    "independent spectral reconstruction disagrees above 1e-10"
+  ],
+  "all_tested_or_hard_stopped": true,
+  "result": "PASS"
+}

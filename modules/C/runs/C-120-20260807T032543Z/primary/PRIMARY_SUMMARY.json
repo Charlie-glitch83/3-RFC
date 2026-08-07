@@ -1,0 +1,14 @@
+{
+  "run_id": "C-120-20260807T032543Z",
+  "parent_sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+  "spectral_solver_success": true,
+  "parent_equivalence_error": 1.1102230246251565e-16,
+  "doublet_gap": 0.449829064955317,
+  "commutator_error": 1.1105751912039322e-16,
+  "conservation_error": 1.1102230246251565e-16,
+  "unitarity_error": 1.1775693440128312e-16,
+  "minimum_eigenvalue": 2.7755575615628914e-17,
+  "countermodels_pass": true,
+  "strongest_supported_claim": "The exact frozen B first physical state supports a parent-derived dimensionless microscopic constitution M_C=I-Q_B with one conserved uniform mode, an exactly degenerate positive internal excitation doublet, O(2) internal law symmetry, conserved total carrier, deterministic prethermal populations, and unitary dimensionless internal phase evolution at MINIMAL_SPINE fidelity.",
+  "strongest_unsupported_claim": "No dimensionful masses, empirical particle identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or Standard Model correspondence has been derived."
+}

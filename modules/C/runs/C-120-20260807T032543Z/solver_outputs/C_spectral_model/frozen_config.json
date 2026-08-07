@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "spectral_model",
+  "model": {
+    "matrix": [
+      [
+        0.2998860433035446,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "symmetry_generators": [
+      [
+        [
+          0.0,
+          -0.5773502691896258,
+          0.5773502691896258
+        ],
+        [
+          0.5773502691896258,
+          0.0,
+          -0.5773502691896258
+        ],
+        [
+          -0.5773502691896258,
+          0.5773502691896258,
+          0.0
+        ]
+      ]
+    ],
+    "require_symmetric": true,
+    "require_generator_invariance": true,
+    "tolerance": 1e-10
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/primary_checkout/modules/C/runs/C-120-20260807T032543Z/solver_templates/C_spectral_model.template.json",
+    "template_sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/primary_checkout/modules/C/runs/C-120-20260807T032543Z/binding_sheets/C_spectral_model.bindings.json",
+    "binding_sheet_sha256": "05c8ec39126d5b804b870cb803db723ac3c009b847063b36dfffc2ac9f88548f",
+    "bindings": [
+      {
+        "path": "model.matrix",
+        "value": [
+          [
+            0.2998860433035446,
+            -0.1499430216517723,
+            -0.1499430216517723
+          ],
+          [
+            -0.1499430216517723,
+            0.2998860433035446,
+            -0.1499430216517723
+          ],
+          [
+            -0.1499430216517723,
+            -0.1499430216517723,
+            0.2998860433035446
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "578cd6bc04f37fe17e769cc27fe9f02700568feb399cf2fd529a796984eb8ee9",
+        "module": "C",
+        "derivation_object": "constitution_law.matrix",
+        "units": "dimensionless intrinsic constitutive gap",
+        "dimensions": "1",
+        "justification": "Exact director-frozen C constitution matrix M_C=I-Q_B=L_B/(delta+2)."
+      },
+      {
+        "path": "model.symmetry_generators",
+        "value": [
+          [
+            [
+              0.0,
+              -0.5773502691896258,
+              0.5773502691896258
+            ],
+            [
+              0.5773502691896258,
+              0.0,
+              -0.5773502691896258
+            ],
+            [
+              -0.5773502691896258,
+              0.5773502691896258,
+              0.0
+            ]
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "578cd6bc04f37fe17e769cc27fe9f02700568feb399cf2fd529a796984eb8ee9",
+        "module": "C",
+        "derivation_object": "symmetry.canonical_generator",
+        "units": "dimensionless",
+        "dimensions": "1",
+        "justification": "Exact director-frozen O(2) generator on the degenerate nonconstant excitation subspace."
+      }
+    ]
+  }
+}

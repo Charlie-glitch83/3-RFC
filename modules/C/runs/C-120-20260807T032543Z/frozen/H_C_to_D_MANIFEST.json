@@ -1,0 +1,11 @@
+{
+  "object_id": "H_C_to_D_MANIFEST",
+  "run_id": "C-120-20260807T032543Z",
+  "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+  "bytes": 8919,
+  "run_copy": "modules/C/runs/C-120-20260807T032543Z/frozen/H_C_to_D.json",
+  "module_copy": "modules/C/frozen/H_C_to_D.json",
+  "parent_sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED"
+}

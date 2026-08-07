@@ -1,14 +1,14 @@
 {
-  "call": "C-WL-001",
-  "phase": "POST_LOCK",
-  "result": "PASS_WITH_PRESERVED_MESSAGES",
-  "required_true": {"hermitian": true},
-  "manual_review": {
-    "characteristicPolynomial": "a*b - a*lambda - b*lambda + lambda^2 - w^2 - z^2",
-    "trace": "a + b",
-    "determinant": "a*b - w^2 - z^2",
-    "eigenvalues": ["(a + b - Sqrt[(a - b)^2 + 4*(w^2 + z^2)])/2", "(a + b + Sqrt[(a - b)^2 + 4*(w^2 + z^2)])/2"]
-  },
-  "messages_preserved": true,
-  "scope": "Generic Hermitian candidate identity only; actual C matrix must be independently reconstructed from H_B_to_C."
+  "call_id": "C-WL-001",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "characteristicPolynomial",
+    "trace",
+    "determinant",
+    "eigenvalues"
+  ],
+  "decision_rule": "Reject non-Hermitian candidates; compare exact invariants with the independently reconstructed matrix.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
 }

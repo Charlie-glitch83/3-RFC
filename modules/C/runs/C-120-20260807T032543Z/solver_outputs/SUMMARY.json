@@ -1,0 +1,19 @@
+{
+  "classification": "MODULE_LOCAL_EXECUTION_PIPELINE",
+  "run": "/home/runner/work/3-RFC/3-RFC/primary_checkout/modules/C/runs/C-120-20260807T032543Z",
+  "configuration_count": 1,
+  "overall": "PASS",
+  "results": [
+    {
+      "config": "C_spectral_model.json",
+      "solver": "spectral_model",
+      "returncode": 0,
+      "success": true,
+      "classification": "SPECTRAL_MODEL_AUDIT",
+      "manifest": "/home/runner/work/3-RFC/3-RFC/primary_checkout/modules/C/runs/C-120-20260807T032543Z/solver_outputs/C_spectral_model/manifest.json",
+      "stdout": "{\n  \"solver\": \"spectral_model\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"d56d378706bb738832fb83adddb9b2ab6414b77bd9c537c6032e74a37c85df9e\",\n  \"result_sha256\": \"5e98ab097b45382edff2227fb572a6f67917917a1e3666b04b3bbf2823c59c41\",\n  \"environment_sha256\": \"f803ce74b90754c3f5182c43bc232e5efd48c15555efbaad5583476c9ad7e1ce\",\n  \"success\": true,\n  \"classification\": \"SPECTRAL_MODEL_AUDIT\"\n}",
+      "stderr": ""
+    }
+  ],
+  "warning": "Local solver success is necessary but does not replace source admission, Wolfram gates, convergence matrices, restart/replay, independent reconstruction, or module closeout."
+}

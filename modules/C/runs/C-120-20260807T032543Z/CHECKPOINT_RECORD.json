@@ -1,7 +1,16 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "C-120-20260807T032543Z",
+  "checkpoints": [
+    {
+      "run_id": "C-120-20260807T032543Z",
+      "checkpoint_id": "C-MICROSCOPIC-CONSTITUTION",
+      "state_path": "primary/MICROSCOPIC_CONSTITUTION.json",
+      "state_sha256": "3255975f872f42fdbf08f5c0c901884edf4c7e22a4de01b70689fedf43903393",
+      "restart_test": "PASS",
+      "contract": "Module D receives H_C_to_D with the exact microscopic constitution, deterministic prethermal populations, symmetry/conservation ownership, and explicit dimensionful-mass obstruction. No thermal-history law is preloaded."
+    }
+  ],
+  "restart_contract": "Module D receives H_C_to_D with the exact microscopic constitution, deterministic prethermal populations, symmetry/conservation ownership, and explicit dimensionful-mass obstruction. No thermal-history law is preloaded.",
+  "state_schema": "C_MICROSCOPIC_CONSTITUTION + H_C_to_D",
   "hash_algorithm": "sha256"
 }

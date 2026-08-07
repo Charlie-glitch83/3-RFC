@@ -1,0 +1,285 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_C_to_D",
+  "from_module": "C",
+  "to_module": "D",
+  "run_id": "C-120-20260807T032543Z",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "object_id": "H_B_to_C",
+    "path": "modules/B/frozen/H_B_to_C.json",
+    "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"
+  },
+  "triadic_descent": {
+    "CIF": "inherited first-physical-state carrier and its exact excitation/symmetry candidate space",
+    "QV": "parent-only constitution M_C=I-Q_B with source-locked symmetry/conservation selection",
+    "RFL": "stable microscopic excitation types, interaction/charge memory, deterministic prethermal population and restart state"
+  },
+  "microscopic_constitution": {
+    "law": "M_C=I-Q_B=L_B/(delta+2)",
+    "matrix": [
+      [
+        0.29988604330354474,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "parent_equivalence_error": 1.1102230246251565e-16,
+    "eigenvalues": [
+      2.7755575615628914e-17,
+      0.44982906495531694,
+      0.44982906495531705
+    ],
+    "dimensionless_doublet_gap": 0.449829064955317,
+    "dimensionful_mass": "NOT_DERIVED_NO_SCALE_IN_PARENT"
+  },
+  "typed_fields_and_excitations": {
+    "carrier_space": "R^3 inherited B physical carrier",
+    "uniform_memory_mode": [
+      0.5773502691896258,
+      0.5773502691896258,
+      0.5773502691896258
+    ],
+    "uniform_mode_role": "conserved total-carrier memory",
+    "internal_excitation_space": "zero-sum two-dimensional doublet V_perp",
+    "excitation_types": [
+      "C_INTERNAL_DOUBLEt_MODE_A",
+      "C_INTERNAL_DOUBLET_MODE_B"
+    ],
+    "empirical_particle_identity": "UNASSIGNED",
+    "standard_model_labels_used": false
+  },
+  "symmetry": {
+    "law_group": "O(2)_ON_EXACT_DEGENERATE_DOUBLET",
+    "canonical_generator": [
+      [
+        0.0,
+        -0.5773502691896258,
+        0.5773502691896258
+      ],
+      [
+        0.5773502691896258,
+        0.0,
+        -0.5773502691896258
+      ],
+      [
+        -0.5773502691896258,
+        0.5773502691896258,
+        0.0
+      ]
+    ],
+    "generator_antisymmetry_error": 0.0,
+    "generator_uniform_mode_error": 5.1028470856450266e-18,
+    "commutator_error": 1.1105751912039322e-16,
+    "mixing_family": "all orthonormal basis rotations inside V_perp; no selected angle"
+  },
+  "interaction_and_charge": {
+    "off_diagonal_rule": "-1/(delta+2) on complete inherited support",
+    "diagonal_rule": "2/(delta+2)",
+    "total_charge_name": "Q_total",
+    "total_charge_before": 0.9999999999999997,
+    "conservation_residual": 1.1102230246251565e-16,
+    "doublet_total_charge": 0.0,
+    "ownership": "uniform RFL memory mode"
+  },
+  "positivity_unitarity": {
+    "minimum_eigenvalue": 2.7755575615628914e-17,
+    "positive_semidefinite": true,
+    "dimensionless_phase_test_theta": 1.0,
+    "unitarity_error": 1.1775693440128312e-16,
+    "physical_duration_claimed": false
+  },
+  "prethermal_state": {
+    "node_populations": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "positive": true,
+    "normalization": 0.9999999999999997,
+    "canonical_mode_amplitudes": [
+      0.5773502691896256,
+      0.24262073230386658,
+      0.20007763560033423
+    ],
+    "canonical_mode_power_fractions": [
+      0.7711957522586971,
+      0.1361888968313639,
+      0.09261535090993898
+    ],
+    "stochastic_covariance": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "covariance_reason": "no stochastic or empirical random variable admitted"
+  },
+  "uncertainty": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
+    "stochastic_physical_uncertainty": false,
+    "covariance": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "runs": [
+      {
+        "delta": 4.66915,
+        "prethermal_populations": [
+          0.5865707636365733,
+          0.2434572301638438,
+          0.1699720061995827
+        ],
+        "population_sum": 0.9999999999999998,
+        "dimensionless_doublet_gap": 0.44983243741706214,
+        "matrix": [
+          [
+            0.29988829161137476,
+            -0.14994414580568738,
+            -0.14994414580568738
+          ],
+          [
+            -0.14994414580568738,
+            0.29988829161137476,
+            -0.14994414580568738
+          ],
+          [
+            -0.14994414580568738,
+            -0.14994414580568738,
+            0.29988829161137476
+          ]
+        ],
+        "minimum_eigenvalue": -4.163336342344337e-17,
+        "maximum_eigenvalue": 0.44983243741706214
+      },
+      {
+        "delta": 4.6692,
+        "prethermal_populations": [
+          0.5865734510957316,
+          0.24345592095871127,
+          0.16997062794555687
+        ],
+        "population_sum": 0.9999999999999997,
+        "dimensionless_doublet_gap": 0.449829064955317,
+        "matrix": [
+          [
+            0.2998860433035446,
+            -0.1499430216517723,
+            -0.1499430216517723
+          ],
+          [
+            -0.1499430216517723,
+            0.2998860433035446,
+            -0.1499430216517723
+          ],
+          [
+            -0.1499430216517723,
+            -0.1499430216517723,
+            0.2998860433035446
+          ]
+        ],
+        "minimum_eigenvalue": -1.3877787807814457e-17,
+        "maximum_eigenvalue": 0.44982906495531694
+      },
+      {
+        "delta": 4.66925,
+        "prethermal_populations": [
+          0.5865761385234763,
+          0.24345461176405997,
+          0.1699692497124636
+        ],
+        "population_sum": 1.0,
+        "dimensionless_doublet_gap": 0.4498256925441392,
+        "matrix": [
+          [
+            0.2998837950294261,
+            -0.14994189751471304,
+            -0.14994189751471304
+          ],
+          [
+            -0.14994189751471304,
+            0.2998837950294261,
+            -0.14994189751471304
+          ],
+          [
+            -0.14994189751471304,
+            -0.14994189751471304,
+            0.2998837950294261
+          ]
+        ],
+        "minimum_eigenvalue": -5.551115123125783e-17,
+        "maximum_eigenvalue": 0.4498256925441392
+      }
+    ]
+  },
+  "restart": {
+    "run_id": "C-120-20260807T032543Z",
+    "checkpoints": [
+      {
+        "run_id": "C-120-20260807T032543Z",
+        "checkpoint_id": "C-MICROSCOPIC-CONSTITUTION",
+        "state_path": "primary/MICROSCOPIC_CONSTITUTION.json",
+        "state_sha256": "3255975f872f42fdbf08f5c0c901884edf4c7e22a4de01b70689fedf43903393",
+        "restart_test": "PASS",
+        "contract": "Module D receives H_C_to_D with the exact microscopic constitution, deterministic prethermal populations, symmetry/conservation ownership, and explicit dimensionful-mass obstruction. No thermal-history law is preloaded."
+      }
+    ],
+    "restart_contract": "Module D receives H_C_to_D with the exact microscopic constitution, deterministic prethermal populations, symmetry/conservation ownership, and explicit dimensionful-mass obstruction. No thermal-history law is preloaded.",
+    "state_schema": "C_MICROSCOPIC_CONSTITUTION + H_C_to_D",
+    "hash_algorithm": "sha256"
+  },
+  "independent_verification": {
+    "method": "ANALYTIC_K3_PARENT_RECONSTRUCTION_WITHOUT_PRIMARY_SOLVER_MATRIX",
+    "pass": true,
+    "checks": {
+      "matrix_vs_primary_l2_error": 1.1102230246251565e-16,
+      "uniform_zero_mode_error": 1.9774869276684306e-18,
+      "generator_antisymmetry_error": 0.0,
+      "generator_commutator_error": 2.7965888325241983e-18,
+      "positivity_minimum_eigenvalue": -1.3877787807814457e-17,
+      "unitarity_error_theta_1": 9.813077866773594e-17,
+      "population_normalization_error": 3.3306690738754696e-16
+    }
+  },
+  "thermal_history_status": "NOT_DERIVED_IN_C_RESERVED_FOR_D",
+  "metric_spacetime_status": "NOT_DERIVED",
+  "empirical_identity_status": "UNASSIGNED_RESERVED_FOR_P",
+  "dimensionful_mass_status": "NOT_DERIVED_NO_LAWFUL_SCALE_IN_PARENT",
+  "claim_boundary": "Module C establishes RFC microscopic excitation types and a parent-derived dimensionless constitution at MINIMAL_SPINE fidelity, including exact symmetry/conservation, positive constitutive spectrum, unitary dimensionless phase evolution, deterministic prethermal populations and restart. It does not establish dimensionful masses, Standard Model identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or empirical correspondence."
+}
