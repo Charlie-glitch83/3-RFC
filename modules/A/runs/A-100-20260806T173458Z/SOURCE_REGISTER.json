@@ -1,0 +1,252 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "exact_parents": [],
+  "parent_rule": "Module A is the root prephysical module. No prior module output is admitted; only exact frozen authority bytes may generate H_A_to_B.",
+  "admitted_sources": [
+    {
+      "label": "Revised triadic N-body proof",
+      "classification": "CANONICAL_AUTHORITY",
+      "path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "bytes": 356706,
+      "admission": "EXACT_OBJECT_READ_ONLY",
+      "verified": true,
+      "module_A_use": "Definitions, source-ordering, kernel constants, relational grammar, memory, handoff discipline, and claim boundary only."
+    },
+    {
+      "label": "Universe architecture and full ledger",
+      "classification": "CANONICAL_AUTHORITY",
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "bytes": 951976,
+      "admission": "EXACT_OBJECT_READ_ONLY",
+      "verified": true,
+      "module_A_use": "Definitions, source-ordering, kernel constants, relational grammar, memory, handoff discipline, and claim boundary only."
+    },
+    {
+      "label": "Universe reproducibility metadata candidate",
+      "classification": "ADMITTED_SOURCE",
+      "path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+      "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+      "bytes": 254488,
+      "admission": "EXACT_OBJECT_READ_ONLY",
+      "verified": true,
+      "module_A_use": "Definitions, source-ordering, kernel constants, relational grammar, memory, handoff discipline, and claim boundary only."
+    },
+    {
+      "label": "P29 metadata and reproducibility context",
+      "classification": "CANONICAL_AUTHORITY",
+      "path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+      "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "bytes": 10821,
+      "admission": "EXACT_OBJECT_READ_ONLY",
+      "verified": true,
+      "module_A_use": "Definitions, source-ordering, kernel constants, relational grammar, memory, handoff discipline, and claim boundary only."
+    },
+    {
+      "label": "N-body metadata",
+      "classification": "CANONICAL_AUTHORITY",
+      "path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+      "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "bytes": 257569,
+      "admission": "EXACT_OBJECT_READ_ONLY",
+      "verified": true,
+      "module_A_use": "Definitions, source-ordering, kernel constants, relational grammar, memory, handoff discipline, and claim boundary only."
+    },
+    {
+      "label": "Triadic emergence and theorem architecture",
+      "classification": "CANONICAL_AUTHORITY",
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "bytes": 86724,
+      "admission": "EXACT_OBJECT_READ_ONLY",
+      "verified": true,
+      "module_A_use": "Definitions, source-ordering, kernel constants, relational grammar, memory, handoff discipline, and claim boundary only."
+    }
+  ],
+  "imports": [
+    {
+      "module": "hashlib",
+      "use": "content addressing"
+    },
+    {
+      "module": "json",
+      "use": "canonical records"
+    },
+    {
+      "module": "math",
+      "use": "source-locked algebra"
+    },
+    {
+      "module": "itertools",
+      "use": "finite relational enumeration"
+    },
+    {
+      "module": "pathlib",
+      "use": "relocation-safe paths"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "0c0420ae09b4794cd7c80dcf4c9deac3656a133255ed585b055302b33a95038c",
+      "bytes": 18507,
+      "role": "repository governing instruction",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "STATE.json",
+      "sha256": "af32084331e271ab2955bcbb441a07568ce9f57207a2e848b50cd169eb52e3e0",
+      "bytes": 7544,
+      "role": "machine state and authorization",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "WORK_QUEUE.json",
+      "sha256": "9dafc51e5a5c7efef58854ef79a263840148556b651767cfebddfad8181923fd",
+      "bytes": 53400,
+      "role": "single active work unit",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "sources/SOURCE_MANIFEST.json",
+      "sha256": "7204e0540e06604b1635a2f222bcc504aa1f93e92cdb77643926135e68d186e4",
+      "bytes": 16475,
+      "role": "admitted source authority",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "theory/SCIENTIFIC_CONSTITUTION.md",
+      "sha256": "ce506bfbeb753e61c52d16ec5b3cb67f138928929d5d061941ca31c408f71ea0",
+      "bytes": 3036,
+      "role": "canonical scientific constitution",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "theory/TERMINOLOGY_LOCK.json",
+      "sha256": "b85d472879fe60f6fe23c595b7ebaa71d81e744c53f5df3effab327d4f19ecdb",
+      "bytes": 480,
+      "role": "canonical terminology lock",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "theory/CLAIM_MAP.json",
+      "sha256": "9e9e9c62bab48aeb56595531bb5818f373b9faae22f77364a92c7f45d7f34c55",
+      "bytes": 2286,
+      "role": "claim ownership",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "theory/ENHANCEMENT_CROSSWALK.json",
+      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72",
+      "bytes": 13064,
+      "role": "source/object disposition",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "theory/DERIVATION_ATLAS.md",
+      "sha256": "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875",
+      "bytes": 4280,
+      "role": "dependency order",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "audit/PHYSICAL_FRONTIER.json",
+      "sha256": "f1615e1ebd12fa29466aa84bb0c3e3134c02623a9a999824c56770688f382fdb",
+      "bytes": 120948,
+      "role": "authorized frontier evidence",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "modules/A/spec.json",
+      "sha256": "c0ecc12e47bccc1859afed211bbf5d0aa75e056ece7a39403b26d59b55080ee1",
+      "bytes": 1589,
+      "role": "Module A specification",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "recipes/A/recipe.json",
+      "sha256": "5f7d4b77bcbf9e379c6ab22a377b5dde64295b742a028556302bfc58562a2b73",
+      "bytes": 4825,
+      "role": "frozen Module A recipe",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "recipes/A/gates.json",
+      "sha256": "e932278e9fcce8573f9ab95db376f2789d1e3cb7768a34a4e77ac063d2c353c9",
+      "bytes": 867,
+      "role": "componentwise gates",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "recipes/A/wolfram/A-WL-001.wl",
+      "sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+      "bytes": 698,
+      "role": "exact symbolic call 1",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "recipes/A/wolfram/A-WL-002.wl",
+      "sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+      "bytes": 618,
+      "role": "exact symbolic call 2",
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "configured_runs/templates/A_triad_kernel.template.json",
+      "sha256": "fa42cc61e866d02c53e641e18861caa399d73aec379cff3cce880eff27c2cbad",
+      "bytes": 647,
+      "role": "local solver template",
+      "classification": "AUTHORITY"
+    }
+  ],
+  "urls": [],
+  "constants": [
+    {
+      "name": "delta",
+      "value": 4.6692,
+      "kind": "SOURCE_LITERAL_MATHEMATICAL",
+      "origin_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "origin_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "source_locator": "Presentation 29, Module G deterministic packet and notation glossary",
+      "units": "dimensionless",
+      "dimensions": "1"
+    },
+    {
+      "name": "cycle_length_L",
+      "value": 60,
+      "kind": "SOURCE_LITERAL_RECURSION_COUNT",
+      "origin_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "origin_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "source_locator": "Presentation 29, Module G deterministic packet",
+      "units": "recursive steps",
+      "dimensions": "count"
+    },
+    {
+      "name": "closure_depth_n_c",
+      "value": 18,
+      "kind": "SOURCE_LITERAL_RECURSION_COUNT",
+      "origin_path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "origin_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "source_locator": "Presentation 29, Module G deterministic packet",
+      "units": "recursive depth index",
+      "dimensions": "count"
+    },
+    {
+      "name": "alpha",
+      "value": 0.02568312917993952,
+      "kind": "INTERNAL_EXACT_DERIVATION_FROM_SOURCE_LITERALS",
+      "derivation": "Log[delta]/L",
+      "units": "inverse recursion coordinate",
+      "dimensions": "1"
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "generation_mode": "GENERATION_SEALED",
+  "verification": {
+    "all_source_hashes_match": true,
+    "authority_hashes_frozen": true,
+    "network_inputs": false,
+    "public_observational_inputs": false
+  }
+}

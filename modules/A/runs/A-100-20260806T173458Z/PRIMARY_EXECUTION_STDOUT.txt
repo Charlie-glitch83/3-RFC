@@ -1,0 +1,16 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "classification": "MODULE_A_PREPHYSICAL_PRIMARY_EXECUTION",
+  "source_hashes_verified": true,
+  "triad_rank": 3,
+  "all_ablations_fail_as_predeclared": true,
+  "scalar_countermodel_rejected": true,
+  "kernel_normalized": true,
+  "kernel_tail_bound_pass": true,
+  "finite_N_all_pass": true,
+  "memory_nonidentity_and_no_loss_pass": true,
+  "unbounded_construct_pass": true,
+  "public_data_used": false,
+  "physical_objects_assumed": false,
+  "preliminary_handoff_sha256": "9c89275403e394329a91b9e0cac2620c3f939ae00d6a0ed8c38d1979efe2eaad"
+}

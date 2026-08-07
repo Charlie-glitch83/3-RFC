@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_A_to_B",
+  "status": "FROZEN",
+  "run_id": "A-100-20260806T173458Z",
+  "canonical_path": "modules/A/frozen/H_A_to_B.json",
+  "run_copy_path": "modules/A/runs/A-100-20260806T173458Z/frozen/H_A_to_B.json",
+  "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+  "bytes": 14529,
+  "copies_identical": true,
+  "generation_mode": "GENERATION_SEALED",
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet.",
+  "created_utc": "2026-08-06T17:54:42.129013+00:00"
+}

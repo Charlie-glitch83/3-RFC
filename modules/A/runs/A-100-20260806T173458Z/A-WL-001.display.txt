@@ -1,0 +1,17 @@
+(* CALL_ID: A-WL-001 *)
+(* PURPOSE: Kernel bound, normalized depth weights, and 2N lane increment *)
+ClearAll["Global`*"];
+assume = delta > 1 && alpha > 0 && t >= 0 && Element[n, Integers] && n >= 1 && Element[nDepth, Integers] && nDepth >= 1;
+lane = FullSimplify[(n + 1) n - n (n - 1), assume];
+series = FullSimplify[Sum[delta^-j Exp[-alpha j t], {j, 1, Infinity}], assume];
+den = Sum[delta^-k Exp[-alpha k t], {k, 1, nDepth}];
+norm = FullSimplify[Sum[delta^-j Exp[-alpha j t]/den, {j, 1, nDepth}], assume];
+result = <|
+ "call" -> "A-WL-001",
+ "laneIncrement" -> ToString[lane, InputForm],
+ "lanePass" -> TrueQ[lane == 2 n],
+ "infiniteWeightSum" -> ToString[series, InputForm],
+ "normalization" -> ToString[norm, InputForm],
+ "normalizationPass" -> TrueQ[norm == 1]
+|>;
+ToString[result, InputForm]

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "classification": "UNBOUND_EXECUTION_TEMPLATE",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "triad_kernel",
+  "model": {
+    "delta": "__BIND_FROM_ADMITTED_SOURCE__",
+    "alpha": "__BIND_FROM_ADMITTED_SOURCE__",
+    "time": 0.0,
+    "depth": "__BIND_FROM_ADMITTED_SOURCE__",
+    "constituents": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "basis_matrix": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "tolerance": 1e-12
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "call_id": "A-WL-001",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "FAIL",
+  "failures": [
+    "lanePass is not True",
+    "normalizationPass is not True"
+  ],
+  "manual_review_fields": [
+    "infiniteWeightSum"
+  ],
+  "decision_rule": "PASS only when lane increment is exactly 2 n and normalized weights sum to one.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

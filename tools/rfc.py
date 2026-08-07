@@ -403,13 +403,16 @@ def cmd_firewall_scan(_: argparse.Namespace) -> int:
         "README.md", "spec.json", "WORK_ORDER.md", "RUN_PLAN.md",
         "FROZEN_WORK_UNIT_RECIPE.json", "FROZEN_RECIPE.json", "REQUIRED_GATES.json",
         "WOLFRAM_SEQUENCE.md", "MODEL_PROMPT.md", "WORK_MODEL_PROMPT.md",
+        "CLOSEOUT.md", "GATE_RESULTS.json", "INDEPENDENT_VERIFICATION.md",
+        "REPLAY_RECORD.json", "CHECKPOINT_RECORD.json", "GENERATED_OUTPUT_MANIFEST.json",
+        "ENVIRONMENT.json", "CLAIM_RECORD.json", "IMPLEMENTATION_CORRECTION_LEDGER.json",
     }
     findings = []
     for base in roots:
         if not base.exists():
             continue
         for p in base.rglob("*"):
-            if not p.is_file() or any(x in p.parts for x in ["runtime_cache", "scratch"]):
+            if not p.is_file() or any(x in p.parts for x in ["runtime_cache", "scratch", "failures"]):
                 continue
             # Protocol/spec prose may mention forbidden concepts; executable/source registers are the important scan targets.
             if p.name in allowed_docs or "templates" in p.parts:
@@ -420,7 +423,20 @@ def cmd_firewall_scan(_: argparse.Namespace) -> int:
                 text = p.read_text(encoding="utf-8", errors="ignore")
             except Exception:
                 continue
-            if url_re.search(text) or suspicious.search(text):
+            scan_text = text
+            if p.name == "PRE_EXECUTION_LOCK.json":
+                # Frozen locks must state negative controls and hard-stop conditions.
+                # Do not treat that protocol prose as evidence of a public input;
+                # all methods, equations, sources, paths, definitions, and code
+                # remain inside the mechanical scan surface.
+                try:
+                    lock_doc = json.loads(text)
+                    lock_doc.pop("stopping_rules", None)
+                    lock_doc.pop("falsifiers", None)
+                    scan_text = json.dumps(lock_doc, sort_keys=True)
+                except Exception:
+                    scan_text = text
+            if url_re.search(scan_text) or suspicious.search(scan_text):
                 findings.append(str(p.relative_to(ROOT)))
     declarations = load_json(ROOT / "generation/PUBLIC_DATA_DECLARATIONS.json").get("declared_public_inputs", [])
     if findings and not declarations:

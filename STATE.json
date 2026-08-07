@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "A-100",
   "current_module": "A",
-  "current_run": null,
+  "current_run": "A-100-20260806T173458Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -17,7 +17,7 @@
     "A": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "A-100-20260806T173458Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -263,7 +263,7 @@
     }
   },
   "last_verified_commit": "5ac899a0ad800a743af814f74163af586780ee54",
-  "last_updated_utc": "2026-08-06T15:10:14.383644+00:00",
+  "last_updated_utc": "2026-08-06T17:34:58.347779+00:00",
   "strongest_supported_claim": "A governed exact-object audit identifies Module A as the unique earliest missing physical parent: the authority and formal architecture exist, but no frozen typed H_A_to_B execution packet exists.",
   "strongest_unsupported_claim": "No Module A physical execution, Module B Big Implosion, manifested universe, downstream A-J validation, empirical agreement, or universe completion has been established.",
   "last_verified_branch": "agent/frontier-050-execution"

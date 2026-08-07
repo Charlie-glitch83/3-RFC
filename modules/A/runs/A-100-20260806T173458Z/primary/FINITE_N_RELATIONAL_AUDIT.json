@@ -1,0 +1,302 @@
+{
+  "range": [
+    2,
+    8
+  ],
+  "records": [
+    {
+      "N": 2,
+      "lane_count": 2,
+      "expected_lane_count": 2,
+      "lane_increment_to_N_plus_1": 4,
+      "expected_increment": 4,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "two_step_route_count": 2,
+      "gauge_group_count": 2,
+      "largest_gauge_representative_count": 1,
+      "witnessed_non_gauge_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "closure_A": {
+          "signature": "canonical_witness",
+          "witness_complete": true
+        },
+        "closure_B": {
+          "signature": "independent_invariant_B",
+          "witness_complete": true
+        },
+        "classification": "MULTI_ROUTE_VALID_TEST_ONLY",
+        "counts_as_new_solution_capacity": true,
+        "physical_solution_claim": false
+      },
+      "unwitnessed_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "signature": "unwitnessed_branch",
+        "witness_complete": false,
+        "classification": "OBSTRUCTION",
+        "counts_as_new_solution_capacity": false
+      },
+      "lane_count_alone_implies_new_solution": false,
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 3,
+      "lane_count": 6,
+      "expected_lane_count": 6,
+      "lane_increment_to_N_plus_1": 6,
+      "expected_increment": 6,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "two_step_route_count": 12,
+      "gauge_group_count": 9,
+      "largest_gauge_representative_count": 2,
+      "witnessed_non_gauge_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "closure_A": {
+          "signature": "canonical_witness",
+          "witness_complete": true
+        },
+        "closure_B": {
+          "signature": "independent_invariant_B",
+          "witness_complete": true
+        },
+        "classification": "MULTI_ROUTE_VALID_TEST_ONLY",
+        "counts_as_new_solution_capacity": true,
+        "physical_solution_claim": false
+      },
+      "unwitnessed_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "signature": "unwitnessed_branch",
+        "witness_complete": false,
+        "classification": "OBSTRUCTION",
+        "counts_as_new_solution_capacity": false
+      },
+      "lane_count_alone_implies_new_solution": false,
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 4,
+      "lane_count": 12,
+      "expected_lane_count": 12,
+      "lane_increment_to_N_plus_1": 8,
+      "expected_increment": 8,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "two_step_route_count": 36,
+      "gauge_group_count": 16,
+      "largest_gauge_representative_count": 3,
+      "witnessed_non_gauge_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "closure_A": {
+          "signature": "canonical_witness",
+          "witness_complete": true
+        },
+        "closure_B": {
+          "signature": "independent_invariant_B",
+          "witness_complete": true
+        },
+        "classification": "MULTI_ROUTE_VALID_TEST_ONLY",
+        "counts_as_new_solution_capacity": true,
+        "physical_solution_claim": false
+      },
+      "unwitnessed_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "signature": "unwitnessed_branch",
+        "witness_complete": false,
+        "classification": "OBSTRUCTION",
+        "counts_as_new_solution_capacity": false
+      },
+      "lane_count_alone_implies_new_solution": false,
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 5,
+      "lane_count": 20,
+      "expected_lane_count": 20,
+      "lane_increment_to_N_plus_1": 10,
+      "expected_increment": 10,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "two_step_route_count": 80,
+      "gauge_group_count": 25,
+      "largest_gauge_representative_count": 4,
+      "witnessed_non_gauge_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "closure_A": {
+          "signature": "canonical_witness",
+          "witness_complete": true
+        },
+        "closure_B": {
+          "signature": "independent_invariant_B",
+          "witness_complete": true
+        },
+        "classification": "MULTI_ROUTE_VALID_TEST_ONLY",
+        "counts_as_new_solution_capacity": true,
+        "physical_solution_claim": false
+      },
+      "unwitnessed_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "signature": "unwitnessed_branch",
+        "witness_complete": false,
+        "classification": "OBSTRUCTION",
+        "counts_as_new_solution_capacity": false
+      },
+      "lane_count_alone_implies_new_solution": false,
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 6,
+      "lane_count": 30,
+      "expected_lane_count": 30,
+      "lane_increment_to_N_plus_1": 12,
+      "expected_increment": 12,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "two_step_route_count": 150,
+      "gauge_group_count": 36,
+      "largest_gauge_representative_count": 5,
+      "witnessed_non_gauge_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "closure_A": {
+          "signature": "canonical_witness",
+          "witness_complete": true
+        },
+        "closure_B": {
+          "signature": "independent_invariant_B",
+          "witness_complete": true
+        },
+        "classification": "MULTI_ROUTE_VALID_TEST_ONLY",
+        "counts_as_new_solution_capacity": true,
+        "physical_solution_claim": false
+      },
+      "unwitnessed_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "signature": "unwitnessed_branch",
+        "witness_complete": false,
+        "classification": "OBSTRUCTION",
+        "counts_as_new_solution_capacity": false
+      },
+      "lane_count_alone_implies_new_solution": false,
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 7,
+      "lane_count": 42,
+      "expected_lane_count": 42,
+      "lane_increment_to_N_plus_1": 14,
+      "expected_increment": 14,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "two_step_route_count": 252,
+      "gauge_group_count": 49,
+      "largest_gauge_representative_count": 6,
+      "witnessed_non_gauge_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "closure_A": {
+          "signature": "canonical_witness",
+          "witness_complete": true
+        },
+        "closure_B": {
+          "signature": "independent_invariant_B",
+          "witness_complete": true
+        },
+        "classification": "MULTI_ROUTE_VALID_TEST_ONLY",
+        "counts_as_new_solution_capacity": true,
+        "physical_solution_claim": false
+      },
+      "unwitnessed_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "signature": "unwitnessed_branch",
+        "witness_complete": false,
+        "classification": "OBSTRUCTION",
+        "counts_as_new_solution_capacity": false
+      },
+      "lane_count_alone_implies_new_solution": false,
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 8,
+      "lane_count": 56,
+      "expected_lane_count": 56,
+      "lane_increment_to_N_plus_1": 16,
+      "expected_increment": 16,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "two_step_route_count": 392,
+      "gauge_group_count": 64,
+      "largest_gauge_representative_count": 7,
+      "witnessed_non_gauge_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "closure_A": {
+          "signature": "canonical_witness",
+          "witness_complete": true
+        },
+        "closure_B": {
+          "signature": "independent_invariant_B",
+          "witness_complete": true
+        },
+        "classification": "MULTI_ROUTE_VALID_TEST_ONLY",
+        "counts_as_new_solution_capacity": true,
+        "physical_solution_claim": false
+      },
+      "unwitnessed_test": {
+        "endpoints": [
+          1,
+          2
+        ],
+        "signature": "unwitnessed_branch",
+        "witness_complete": false,
+        "classification": "OBSTRUCTION",
+        "counts_as_new_solution_capacity": false
+      },
+      "lane_count_alone_implies_new_solution": false,
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+test_administrative_work_unit_packs_are_complete (test_execution_ready.ExecutionReadyTests.test_administrative_work_unit_packs_are_complete) ... ok
+test_all_module_recipes_exist (test_execution_ready.ExecutionReadyTests.test_all_module_recipes_exist) ... ok
+test_director_doctor (test_execution_ready.ExecutionReadyTests.test_director_doctor) ... ok
+test_hyper_realism_matrix_is_prechewed (test_execution_ready.ExecutionReadyTests.test_hyper_realism_matrix_is_prechewed) ... ok
+test_prebuilt_theory (test_execution_ready.ExecutionReadyTests.test_prebuilt_theory) ... ok
+test_reference_matrix (test_execution_ready.ExecutionReadyTests.test_reference_matrix) ... ok
+test_wolfram_calls_are_unique_and_self_contained (test_execution_ready.ExecutionReadyTests.test_wolfram_calls_are_unique_and_self_contained) ... ok
+test_all_module_specs_exist (test_repository.RepositoryTests.test_all_module_specs_exist) ... ok
+test_bundle_manifest_if_present (test_repository.RepositoryTests.test_bundle_manifest_if_present) ... ok
+test_canonical_terms (test_repository.RepositoryTests.test_canonical_terms) ... ok
+test_core_thesis_is_explicit (test_repository.RepositoryTests.test_core_thesis_is_explicit) ... ok
+test_doctor (test_repository.RepositoryTests.test_doctor) ... ok
+test_exactly_one_active_queue_item (test_repository.RepositoryTests.test_exactly_one_active_queue_item) ... ok
+test_firewall_scan_does_not_flag_protocol_prohibitions (test_repository.RepositoryTests.test_firewall_scan_does_not_flag_protocol_prohibitions) ... ok
+test_module_evidence_history_and_requirements (test_repository.RepositoryTests.test_module_evidence_history_and_requirements) ... ok
+test_module_work_units_have_targets (test_repository.RepositoryTests.test_module_work_units_have_targets) ... ok
+test_next_command_is_deterministic (test_repository.RepositoryTests.test_next_command_is_deterministic) ... ok
+test_protected_dependencies (test_repository.RepositoryTests.test_protected_dependencies) ... ok
+test_required_governed_run_templates (test_repository.RepositoryTests.test_required_governed_run_templates) ... ok
+test_seed_manifest_hashes (test_repository.RepositoryTests.test_seed_manifest_hashes) ... ok
+test_big_implosion_reopens_exact_parent_numerically (test_solver_suite.SolverSuiteTests.test_big_implosion_reopens_exact_parent_numerically) ... ok
+test_binding_materializer_produces_executable_config (test_solver_suite.SolverSuiteTests.test_binding_materializer_produces_executable_config) ... ok
+test_every_manufactured_configuration_passes (test_solver_suite.SolverSuiteTests.test_every_manufactured_configuration_passes) ... ok
+test_every_template_is_deliberately_unbound (test_solver_suite.SolverSuiteTests.test_every_template_is_deliberately_unbound) ... ok
+test_freeze_hash_changes_when_content_changes (test_solver_suite.SolverSuiteTests.test_freeze_hash_changes_when_content_changes) ... ok
+test_nbody_requires_explicit_coupling (test_solver_suite.SolverSuiteTests.test_nbody_requires_explicit_coupling) ... ok
+test_negative_covariance_is_rejected_without_projection (test_solver_suite.SolverSuiteTests.test_negative_covariance_is_rejected_without_projection) ... ok
+test_public_comparison_cannot_run_in_generation_mode (test_solver_suite.SolverSuiteTests.test_public_comparison_cannot_run_in_generation_mode) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 1.893s
+
+OK

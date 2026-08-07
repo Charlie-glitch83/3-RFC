@@ -1,0 +1,22 @@
+{
+  "failure_id": "SOLVER_COPY_ALREADY_PREPARED_001",
+  "classification": "WORKFLOW_IDEMPOTENCE_CONFLICT",
+  "status": "PRESERVED_RESOLVED_BY_EXACT_HASH_EQUIVALENCE_FINAL_MATRIX_PASS",
+  "cause": "tools/start_work.sh/prepare-active had already copied the exact solver template and binding sheet into the run. The packet's later solver-copy command correctly refused to overwrite them.",
+  "scientific_definitions_changed": false,
+  "resolution": "Verify copied-file hashes against their canonical configured_runs sources and continue using the already prepared exact copies. Do not force-overwrite the now-to-be-filled binding sheet.",
+  "full_rerun_evidence": [
+    "solver_copy_equivalence.json",
+    "solver_outputs/triad_kernel/result.json",
+    "solver_outputs/A_triad_kernel/result.json",
+    "LOCAL_PHASE_STDOUT.txt",
+    "REPLAY_RECORD.json"
+  ],
+  "final_full_rerun_evidence": [
+    "solver_copy_equivalence.json",
+    "solver_outputs/triad_kernel/result.json",
+    "solver_outputs/A_triad_kernel/result.json",
+    "LOCAL_PHASE_STDOUT.txt",
+    "REPLAY_RECORD.json"
+  ]
+}

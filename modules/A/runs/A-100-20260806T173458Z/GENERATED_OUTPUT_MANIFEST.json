@@ -1,0 +1,290 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-06T17:54:52.719061+00:00",
+  "outputs": [
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "bytes": 14529
+    },
+    {
+      "path": "modules/A/frozen/H_A_to_B_MANIFEST.json",
+      "sha256": "bae71a978a306f2a1f011d39bf816490975a71283a4e92b3591337860164c7e4",
+      "bytes": 581
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/CHECKPOINT_RECORD.json",
+      "sha256": "6452c09cecb1d37c543fd835002123769d5e0c67454e019b3e5068f56a2db30a",
+      "bytes": 4224
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/CLAIM_RECORD.json",
+      "sha256": "d0dc34c7ca472ce6cd21cb0579488bf4d9c735c7b375eab437063a824ce0d51b",
+      "bytes": 983
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/ENVIRONMENT.json",
+      "sha256": "a713174cd9f1df95f8d1cb5e08b90550754c2005a0dc93865a46dc2e792c9e75",
+      "bytes": 5356
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/FAILURES.jsonl",
+      "sha256": "3cd7d3ccc1c253c1cab1088058c9ac1de25a0e6f1cb6fd08fc63b3282e54b1f5",
+      "bytes": 875
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/FALSIFIER_REGISTRY.json",
+      "sha256": "e84fb3b042a4f11f7f244be6af9763e0d71cc1eecd1760741ce83bf1cd5d723a",
+      "bytes": 1318
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+      "bytes": 6942
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/GATE_RESULTS.json",
+      "sha256": "de3ed0060826671566121f2fc26a978f2273c382acd3a9865475a136647549b9",
+      "bytes": 8627
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/IMPLEMENTATION_CORRECTION_LEDGER.json",
+      "sha256": "60e9704130287db1d1d58b1a6a5751302fa0a846d900f3911e39cd5f2c7bb05d",
+      "bytes": 1938
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "32365991f66f65f474f53f829c5f354c0df0cbcac2f053ae5aa5244296011b12",
+      "bytes": 2211
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/PRE_EXECUTION_LOCK.json",
+      "sha256": "6b4a4a90b9e13bae168251157cd98cfa041f7388b4b9c3fb1634c5f858713041",
+      "bytes": 8315
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/REPLAY_RECORD.json",
+      "sha256": "7a5b055b443ea111d6f17dc5bc732d3ce72cb235bbe14eb61ea2379cc67a68e0",
+      "bytes": 7379
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/SOURCE_REGISTER.json",
+      "sha256": "11e25c3de3cd1015b4e307be128f26d3394469539e6e41c0d437c9f89de64b88",
+      "bytes": 9917
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/failures/FIREWALL_PROTOCOL_FALSE_POSITIVE_001/FAILURE_RECORD.json",
+      "sha256": "e9c34d8e8c9f3e904c4dd75cf41262ebb1a25a1438c1241ada844917de50556e",
+      "bytes": 1794
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/failures/SOLVER_COPY_ALREADY_PREPARED_001/FAILURE_RECORD.json",
+      "sha256": "d401c37835089fbf787e572e3d081c5f1f3aa4d086eac14d8f72ace06f23bbb8",
+      "bytes": 1081
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/failures/WOLFRAM_CAPTURE_FORMAT_001/FAILURE_RECORD.json",
+      "sha256": "70b94f905e20baadb6e5e88ef8eb0dafd6581fde5fb0b0278805992e86d4ea70",
+      "bytes": 1351
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "bytes": 14529
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/frozen/H_A_to_B_MANIFEST.json",
+      "sha256": "bae71a978a306f2a1f011d39bf816490975a71283a4e92b3591337860164c7e4",
+      "bytes": 581
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "f864ced4bb69c822ddd1cf8c791b4c80c61c1a4bd322c2ebd3d187bfcd2cac44",
+      "bytes": 10695
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/independent_module_a.py",
+      "sha256": "9ae2e87bc0c5fb38cc7df67882ff8a45528530cbfbd15954b0d1b8f5a0e4b347",
+      "bytes": 15838
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/CONVERGENCE_AND_UNCERTAINTY.json",
+      "sha256": "34b9003584080f9db602651c0025ac8d9afb1df9f57089948e0165e05e0e59bb",
+      "bytes": 2102
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/COUNTERMODEL_RESULTS.json",
+      "sha256": "916af7380acdbea980795656d8dd8719a5d5dbe95d2508ea5e20d9c4fe456d6f",
+      "bytes": 1600
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/FINITE_N_RELATIONAL_AUDIT.json",
+      "sha256": "c70b71991021b637bc40211875a4785e7caca4e1bbe0be31ba7445e9eab83112",
+      "bytes": 8478
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/H_A_to_B.preliminary.json",
+      "sha256": "aa4e4ccb537a4fa224536ecd69e906b4ea84b28238886a062263d612d4c26137",
+      "bytes": 6786
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/KERNEL_EXECUTION.json",
+      "sha256": "583c87f44c30d18a5f6a40c970c32e73583662250daa8d9d18cf5b3e087800f2",
+      "bytes": 1371
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/MEMORY_REOPENING_AUDIT.json",
+      "sha256": "f30817302ac38179d38857468157eb588c45fb1570bb7dd50561d38f49ee68f6",
+      "bytes": 3185
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/PRIMARY_SUMMARY.json",
+      "sha256": "f4d24218f8ab4b006ce1e2f1c8e202e4955433ad313fbc6894ece43d98be59e4",
+      "bytes": 582
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/SCHEMA_VALIDATION.json",
+      "sha256": "e28bff21925b3d616f9dca6b17027cc0187924d2c10cfbe89d41633c1f0a7a63",
+      "bytes": 2626
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/TRIAD_AND_FIRST_ACTION.json",
+      "sha256": "7ad7690f4fb32d65afaa018fc8e12bb00420454ce902fc0c6a6733819bdec338",
+      "bytes": 775
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/UNBOUNDED_MANIFESTATION_AUDIT.json",
+      "sha256": "f08f2b81cecf107020e9dae350c299369ebaaffa995b53ce3816efa0ab0382e7",
+      "bytes": 3938
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary_module_a.py",
+      "sha256": "d099c95a827bfa1bd27f0eaae94a0635d280c96cd82f05e203f6958190799a35",
+      "bytes": 18094
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/reference_checks.json",
+      "sha256": "0447eeab8be646cd785595bda6ae8e23d60ec75fc2edf8298617bfc0c1659810",
+      "bytes": 552
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/solver_configs/A_triad_kernel.json",
+      "sha256": "e7115d1637219c78ed8a840f3597251dabc959f1d0f2f5b9828e8001d9a27e3a",
+      "bytes": 6401
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/solver_outputs/A_triad_kernel/result.json",
+      "sha256": "a47467b595f56e56dd655bb0312e6674bf847a8e9402c09c3a0e563602886735",
+      "bytes": 1808
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/solver_outputs/triad_kernel/result.json",
+      "sha256": "a47467b595f56e56dd655bb0312e6674bf847a8e9402c09c3a0e563602886735",
+      "bytes": 1808
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/attempt-2-normalized.txt",
+      "sha256": "4935f6e2a18165152974c89dcef33bb6e794f30ad55d613e1ba803be2e3dbb8f",
+      "bytes": 896
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/attempt-2-raw.txt",
+      "sha256": "223c61f7f222d5fd59ff2491cd38ddd2ad322683219c8574a88895cad2ce1265",
+      "bytes": 671
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/attempt-2-record-stdout.txt",
+      "sha256": "84bc5333c6e55133f1e60342d0c2696e60861616cba8b6822e601b1653f9ccb8",
+      "bytes": 1084
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/attempt-3-normalized.txt",
+      "sha256": "4935f6e2a18165152974c89dcef33bb6e794f30ad55d613e1ba803be2e3dbb8f",
+      "bytes": 896
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/attempt-3-raw.txt",
+      "sha256": "223c61f7f222d5fd59ff2491cd38ddd2ad322683219c8574a88895cad2ce1265",
+      "bytes": 671
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/attempt-3-record-stdout.txt",
+      "sha256": "fd40951f91997985ca6fd72d465b1ea921a17eaf287bf7d366c90757a06a2fa7",
+      "bytes": 1084
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/gate.json",
+      "sha256": "b864078d4bd5dbb106c81245998ef98adcf500b4d4c1812419b8e17fc5eb0a9c",
+      "bytes": 456
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/input.wl",
+      "sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+      "bytes": 698
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/output.txt",
+      "sha256": "4935f6e2a18165152974c89dcef33bb6e794f30ad55d613e1ba803be2e3dbb8f",
+      "bytes": 896
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/record.json",
+      "sha256": "81d6ef74b4d79fa5a05f91e826e4a9d7e87744a333fd7a5b8830349d59701fac",
+      "bytes": 628
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/attempt-2-normalized.txt",
+      "sha256": "43fb8919eaac83e6c9f6320d743b65de94d76d2f31d14dee9de12524cc208920",
+      "bytes": 457
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/attempt-2-raw.txt",
+      "sha256": "0dc8a214e81bf652d8c77712871e7d29e8d28216892f3b7b79aae4c02218c687",
+      "bytes": 220
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/attempt-2-record-stdout.txt",
+      "sha256": "be88629388adce7719a684c07c3172c341956b9ccd3b1948ee4fdb6a669888e5",
+      "bytes": 1090
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/attempt-3-normalized.txt",
+      "sha256": "43fb8919eaac83e6c9f6320d743b65de94d76d2f31d14dee9de12524cc208920",
+      "bytes": 457
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/attempt-3-raw.txt",
+      "sha256": "0dc8a214e81bf652d8c77712871e7d29e8d28216892f3b7b79aae4c02218c687",
+      "bytes": 220
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/attempt-3-record-stdout.txt",
+      "sha256": "0a23b88703422c4f8bc7a878ae0014c9a86bdb39ef865e2f0052325856910cae",
+      "bytes": 1090
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/gate.json",
+      "sha256": "9fc3d438caf9261fad4e7c9f46ea95d980847c5d0e7b1ef4400890ab56ba8ab9",
+      "bytes": 456
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/input.wl",
+      "sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+      "bytes": 618
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/output.txt",
+      "sha256": "43fb8919eaac83e6c9f6320d743b65de94d76d2f31d14dee9de12524cc208920",
+      "bytes": 457
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/record.json",
+      "sha256": "56d1dfaadd6602d2063d84f06e771882d20c348752b3c7c3cef45f97b25f84d4",
+      "bytes": 634
+    }
+  ],
+  "tree_sha256": "33d1967c587a282e43896bc3f6c1f00a49bd1c2da0bfdcd4cc26982512e81b6c",
+  "output_count": 56,
+  "note": "Manifest covers frozen scientific sources/definitions, final Wolfram records, bound solver results, primary and independent products, component gates, restart/replay, environment, claim record, preserved failures, and both canonical/run copies of H_A_to_B. It excludes itself, CLOSEOUT.md, mutable run.json, end-session logs, and repository registries."
+}

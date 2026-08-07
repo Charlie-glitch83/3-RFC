@@ -1,0 +1,4 @@
+Out[1]= "<|\"call\" -> \"A-WL-002\", \"triadRank\" -> 3, \"ablationRanks\" -> {2, 2, 2}, \"triadAblationPass\" -> True, \"laneCount\" -> 20, \"laneCountPass\" -> True, \"noSelfLanes\" -> True, \"uniqueLanes\" -> True|>"
+
+Decoded InputForm payload (mechanical unescape; values unchanged):
+<|"call" -> "A-WL-002", "triadRank" -> 3, "ablationRanks" -> {2, 2, 2}, "triadAblationPass" -> True, "laneCount" -> 20, "laneCountPass" -> True, "noSelfLanes" -> True, "uniqueLanes" -> True|>

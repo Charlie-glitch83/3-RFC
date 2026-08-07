@@ -1,0 +1,147 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "status": "COMPLETE",
+  "replay_version": 3,
+  "clean_checkout": true,
+  "clean_checkout_kind": "detached Git worktree from an exact indexed content-tree snapshot",
+  "local_replay_snapshot_commit": "db4d45a3caeda053e04ba217fa80758cc443540c",
+  "restart_check": true,
+  "checkpoint_sha256": "6452c09cecb1d37c543fd835002123769d5e0c67454e019b3e5068f56a2db30a",
+  "earliest_change_replay": true,
+  "earliest_replayed_boundary": "frozen Module A source register, derivation specification, falsifiers, pre-execution lock, final Wolfram records, and completed implementation-correction ledger",
+  "commands": [
+    "python tools/run_reference_checks.py --module A --output <RUN>/reference_checks.json",
+    "python tools/run_configured_solver.py --config <RUN>/solver_configs/A_triad_kernel.json --output-dir <RUN>/solver_outputs/triad_kernel",
+    "python <RUN>/primary_module_a.py",
+    "python <RUN>/independent_module_a.py"
+  ],
+  "regenerated_artifact_comparisons": [
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/INDEPENDENT_VERIFICATION.md",
+      "baseline_sha256": "32365991f66f65f474f53f829c5f354c0df0cbcac2f053ae5aa5244296011b12",
+      "replay_sha256": "32365991f66f65f474f53f829c5f354c0df0cbcac2f053ae5aa5244296011b12",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "baseline_sha256": "f864ced4bb69c822ddd1cf8c791b4c80c61c1a4bd322c2ebd3d187bfcd2cac44",
+      "replay_sha256": "f864ced4bb69c822ddd1cf8c791b4c80c61c1a4bd322c2ebd3d187bfcd2cac44",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/CONVERGENCE_AND_UNCERTAINTY.json",
+      "baseline_sha256": "34b9003584080f9db602651c0025ac8d9afb1df9f57089948e0165e05e0e59bb",
+      "replay_sha256": "34b9003584080f9db602651c0025ac8d9afb1df9f57089948e0165e05e0e59bb",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/COUNTERMODEL_RESULTS.json",
+      "baseline_sha256": "916af7380acdbea980795656d8dd8719a5d5dbe95d2508ea5e20d9c4fe456d6f",
+      "replay_sha256": "916af7380acdbea980795656d8dd8719a5d5dbe95d2508ea5e20d9c4fe456d6f",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/FINITE_N_RELATIONAL_AUDIT.json",
+      "baseline_sha256": "c70b71991021b637bc40211875a4785e7caca4e1bbe0be31ba7445e9eab83112",
+      "replay_sha256": "c70b71991021b637bc40211875a4785e7caca4e1bbe0be31ba7445e9eab83112",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/H_A_to_B.preliminary.json",
+      "baseline_sha256": "aa4e4ccb537a4fa224536ecd69e906b4ea84b28238886a062263d612d4c26137",
+      "replay_sha256": "aa4e4ccb537a4fa224536ecd69e906b4ea84b28238886a062263d612d4c26137",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/KERNEL_EXECUTION.json",
+      "baseline_sha256": "583c87f44c30d18a5f6a40c970c32e73583662250daa8d9d18cf5b3e087800f2",
+      "replay_sha256": "583c87f44c30d18a5f6a40c970c32e73583662250daa8d9d18cf5b3e087800f2",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/MEMORY_REOPENING_AUDIT.json",
+      "baseline_sha256": "f30817302ac38179d38857468157eb588c45fb1570bb7dd50561d38f49ee68f6",
+      "replay_sha256": "f30817302ac38179d38857468157eb588c45fb1570bb7dd50561d38f49ee68f6",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/PRIMARY_SUMMARY.json",
+      "baseline_sha256": "f4d24218f8ab4b006ce1e2f1c8e202e4955433ad313fbc6894ece43d98be59e4",
+      "replay_sha256": "f4d24218f8ab4b006ce1e2f1c8e202e4955433ad313fbc6894ece43d98be59e4",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/SCHEMA_VALIDATION.json",
+      "baseline_sha256": "e28bff21925b3d616f9dca6b17027cc0187924d2c10cfbe89d41633c1f0a7a63",
+      "replay_sha256": "e28bff21925b3d616f9dca6b17027cc0187924d2c10cfbe89d41633c1f0a7a63",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/TRIAD_AND_FIRST_ACTION.json",
+      "baseline_sha256": "7ad7690f4fb32d65afaa018fc8e12bb00420454ce902fc0c6a6733819bdec338",
+      "replay_sha256": "7ad7690f4fb32d65afaa018fc8e12bb00420454ce902fc0c6a6733819bdec338",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/UNBOUNDED_MANIFESTATION_AUDIT.json",
+      "baseline_sha256": "f08f2b81cecf107020e9dae350c299369ebaaffa995b53ce3816efa0ab0382e7",
+      "replay_sha256": "f08f2b81cecf107020e9dae350c299369ebaaffa995b53ce3816efa0ab0382e7",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/reference_checks.json",
+      "baseline_sha256": "0447eeab8be646cd785595bda6ae8e23d60ec75fc2edf8298617bfc0c1659810",
+      "replay_sha256": "0447eeab8be646cd785595bda6ae8e23d60ec75fc2edf8298617bfc0c1659810",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/solver_outputs/triad_kernel/result.json",
+      "baseline_sha256": "a47467b595f56e56dd655bb0312e6674bf847a8e9402c09c3a0e563602886735",
+      "replay_sha256": "a47467b595f56e56dd655bb0312e6674bf847a8e9402c09c3a0e563602886735",
+      "match": true
+    }
+  ],
+  "frozen_external_symbolic_artifact_checks": [
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/gate.json",
+      "expected_sha256": "b864078d4bd5dbb106c81245998ef98adcf500b4d4c1812419b8e17fc5eb0a9c",
+      "clean_checkout_sha256": "b864078d4bd5dbb106c81245998ef98adcf500b4d4c1812419b8e17fc5eb0a9c",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/input.wl",
+      "expected_sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+      "clean_checkout_sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/record.json",
+      "expected_sha256": "81d6ef74b4d79fa5a05f91e826e4a9d7e87744a333fd7a5b8830349d59701fac",
+      "clean_checkout_sha256": "81d6ef74b4d79fa5a05f91e826e4a9d7e87744a333fd7a5b8830349d59701fac",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/gate.json",
+      "expected_sha256": "9fc3d438caf9261fad4e7c9f46ea95d980847c5d0e7b1ef4400890ab56ba8ab9",
+      "clean_checkout_sha256": "9fc3d438caf9261fad4e7c9f46ea95d980847c5d0e7b1ef4400890ab56ba8ab9",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/input.wl",
+      "expected_sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+      "clean_checkout_sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+      "match": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/record.json",
+      "expected_sha256": "56d1dfaadd6602d2063d84f06e771882d20c348752b3c7c3cef45f97b25f84d4",
+      "clean_checkout_sha256": "56d1dfaadd6602d2063d84f06e771882d20c348752b3c7c3cef45f97b25f84d4",
+      "match": true
+    }
+  ],
+  "result": "PASS",
+  "artifact_hashes_match": true,
+  "public_data_used": false,
+  "physical_objects_assumed": false,
+  "completed_utc": "2026-08-06T17:53:48.535694+00:00"
+}

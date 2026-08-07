@@ -1,0 +1,32 @@
+{
+  "failure_id": "WOLFRAM_CAPTURE_FORMAT_001",
+  "classification": "IMPLEMENTATION_ONLY_OUTPUT_NORMALIZATION",
+  "status": "PRESERVED_CORRECTED_FINAL_FULL_FROZEN_MATRIX_PASS",
+  "scientific_definitions_changed": false,
+  "sources_changed": false,
+  "tests_or_thresholds_changed": false,
+  "cause": "WolframLanguageEvaluator returned ToString[...] as an escaped string prefixed by Out[1]=. The frozen gate recognizes an unescaped InputForm association and therefore could not see fields that were visibly True.",
+  "allowed_correction": "Preserve the complete raw evaluator output and append the mechanically decoded InputForm payload without changing any field or value.",
+  "evidence": [
+    "wolfram/A-WL-001/attempt-1-raw.txt",
+    "wolfram/A-WL-002/attempt-1-raw.txt",
+    "wolfram/A-WL-001/attempt-1-gate.json",
+    "wolfram/A-WL-002/attempt-1-gate.json"
+  ],
+  "full_rerun_evidence": [
+    "wolfram/A-WL-001/attempt-2-raw.txt",
+    "wolfram/A-WL-002/attempt-2-raw.txt",
+    "wolfram/A-WL-001/gate.json",
+    "wolfram/A-WL-002/gate.json",
+    "LOCAL_PHASE_STDOUT.txt",
+    "REPLAY_RECORD.json"
+  ],
+  "final_full_rerun_evidence": [
+    "wolfram/A-WL-001/attempt-3-raw.txt",
+    "wolfram/A-WL-002/attempt-3-raw.txt",
+    "wolfram/A-WL-001/gate.json",
+    "wolfram/A-WL-002/gate.json",
+    "LOCAL_PHASE_STDOUT.txt",
+    "REPLAY_RECORD.json"
+  ]
+}

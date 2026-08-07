@@ -1,0 +1,94 @@
+{
+  "schema_version": "2.0",
+  "module": "A",
+  "title": "Triad, First Action, Recursive Kernel, and Relational Completion",
+  "parents": [],
+  "children": [
+    "B"
+  ],
+  "objective": "Constitute the exact prephysical RFC source law and integrate the revised N-body proof as the terminal relational completion of the kernel.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "modal source/candidate classes",
+    "QV": "First Action and admission witnesses",
+    "RFL": "recursive kernel, memory, relational carrier"
+  },
+  "derive_exactly": [
+    "typed CIF/QV/RFL roles and ablation obligations",
+    "First Action as an ordered prephysical dependency operator",
+    "recursive kernel boundedness and normalized depth law",
+    "domain/modal-basis admission rule",
+    "directed-lane carrier, local witnesses, gauge/multiroute/branch/event classes",
+    "no-loss memory, promotion and reopening",
+    "constructive unbounded-manifestation statement without identical-equation reduction"
+  ],
+  "wolfram_calls": [
+    "A-WL-001",
+    "A-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module A --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module A --solver triad_kernel --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/A_triad_kernel.template.json --binding-sheet <RUN_DIR>/binding_sheets/A_triad_kernel.bindings.json --output <RUN_DIR>/solver_configs/A_triad_kernel.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/A_triad_kernel.json --output-dir <RUN_DIR>/solver_outputs/triad_kernel"
+  ],
+  "numerical_execution": [
+    "run the complete A manufactured reference matrix",
+    "enumerate finite-N lanes and route equivalence on N=2..8",
+    "test dormant direct dynamics gives exactly zero backreaction"
+  ],
+  "required_outputs": [
+    "typed CIF/QV/RFL objects and irreducibility proof",
+    "First Action operator and witness law",
+    "recursive kernel with lawful modal-basis admission",
+    "directed-lane carrier, route/gauge/branch/event classes",
+    "no-loss memory and reopening law",
+    "unbounded domain-pluriform manifestation theorem at declared scope",
+    "exact prephysical handoff H_A_to_B",
+    "source, uncertainty, provenance, and claim records"
+  ],
+  "mandatory_gates": [
+    "canonical terminology exact",
+    "no physical time, geometry, constants, or later-module objects assumed",
+    "triad ablations fail as predeclared",
+    "scalar collapse countermodel rejected",
+    "lane increment 2N verified",
+    "new-solution claim requires non-gauge witnessed closure",
+    "dormant direct dynamics has zero backreaction",
+    "independent symbolic reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "renaming imported equations as triadic",
+    "using weighted scalar packet as the triad",
+    "treating RFL as identical to next CIF"
+  ],
+  "hard_stop_conditions": [
+    "physical time, geometry, particles or empirical constants appear in A",
+    "new-solution capacity is claimed from lane count alone",
+    "a triadic role can be removed without breaking a frozen obligation"
+  ],
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "triad_kernel",
+      "template": "configured_runs/templates/A_triad_kernel.template.json",
+      "purpose": "Execute recursive depth law, typed constituents, and complete directed non-self carrier.",
+      "copy_command": "python tools/director.py solver-copy --module A --solver triad_kernel --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/A_triad_kernel.json --output-dir <RUN_DIR>/solver_outputs/triad_kernel",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/A_triad_kernel.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/A_triad_kernel.template.json --binding-sheet <RUN_DIR>/binding_sheets/A_triad_kernel.bindings.json --output <RUN_DIR>/solver_configs/A_triad_kernel.json"
+    }
+  ]
+}

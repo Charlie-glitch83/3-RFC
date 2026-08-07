@@ -1,0 +1,163 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "status": "FINAL",
+  "captured_utc": "2026-08-06T17:54:21.715351+00:00",
+  "operating_system": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "hardware": {
+    "machine": "x86_64",
+    "processor": "",
+    "logical_cpu_count": 5
+  },
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.13.5",
+      "executable": "/opt/pyvenv/bin/python"
+    },
+    {
+      "name": "WolframLanguageEvaluator",
+      "mode": "stateless connected evaluator; complete returned text preserved in run records"
+    },
+    {
+      "name": "3-RFC repository execution tools",
+      "tools_rfc_sha256": "9b7111647975766790b6625ccd8a225e8bc21ce1ab800c785638a482ee917a81"
+    }
+  ],
+  "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+  "imports": {
+    "modules/A/runs/A-100-20260806T173458Z/primary_module_a.py": [
+      "__future__",
+      "hashlib",
+      "itertools",
+      "json",
+      "math",
+      "pathlib",
+      "typing"
+    ],
+    "modules/A/runs/A-100-20260806T173458Z/independent_module_a.py": [
+      "__future__",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib",
+      "typing"
+    ],
+    "tools/run_reference_checks.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "pathlib",
+      "rfc_engine.reference_checks",
+      "sys"
+    ],
+    "tools/run_configured_solver.py": [
+      "__future__",
+      "argparse",
+      "datetime",
+      "json",
+      "pathlib",
+      "platform",
+      "rfc_engine.provenance",
+      "rfc_engine.solvers.big_implosion",
+      "rfc_engine.solvers.covariance",
+      "rfc_engine.solvers.finite_volume",
+      "rfc_engine.solvers.fourier_field",
+      "rfc_engine.solvers.freeze_packet",
+      "rfc_engine.solvers.global_ledger",
+      "rfc_engine.solvers.linear_transfer",
+      "rfc_engine.solvers.nbody",
+      "rfc_engine.solvers.observation",
+      "rfc_engine.solvers.ray_bundle",
+      "rfc_engine.solvers.reaction_network",
+      "rfc_engine.solvers.recurrence",
+      "rfc_engine.solvers.spectral_model",
+      "rfc_engine.solvers.synthetic_observation",
+      "rfc_engine.solvers.transport",
+      "rfc_engine.solvers.triad_kernel",
+      "rfc_engine.solvers.utils",
+      "rfc_engine.solvers.visibility",
+      "sys",
+      "typing"
+    ],
+    "tools/rfc.py": [
+      "__future__",
+      "argparse",
+      "datetime",
+      "hashlib",
+      "json",
+      "os",
+      "pathlib",
+      "re",
+      "shutil",
+      "sys",
+      "typing",
+      "zipfile"
+    ]
+  },
+  "code_hashes": [
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary_module_a.py",
+      "sha256": "d099c95a827bfa1bd27f0eaae94a0635d280c96cd82f05e203f6958190799a35"
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/independent_module_a.py",
+      "sha256": "9ae2e87bc0c5fb38cc7df67882ff8a45528530cbfbd15954b0d1b8f5a0e4b347"
+    },
+    {
+      "path": "tools/run_reference_checks.py",
+      "sha256": "1f5a8a1aa9ae56a650be99290b651c1549619f6dfe3ae4e0c0d0c7068474e274"
+    },
+    {
+      "path": "tools/run_configured_solver.py",
+      "sha256": "0939e59a63c7164fd4e4c867a7a560719d342f03029bca5b961355d689e7371e"
+    },
+    {
+      "path": "tools/rfc.py",
+      "sha256": "9b7111647975766790b6625ccd8a225e8bc21ce1ab800c785638a482ee917a81"
+    }
+  ],
+  "commands": [
+    "bash bootstrap.sh",
+    "bash tools/start_work.sh",
+    "python tools/director.py wolfram-show --call A-WL-001",
+    "python tools/director.py wolfram-show --call A-WL-002",
+    "python tools/director.py wolfram-record --run A-100-20260806T173458Z --call <CALL> --output <CAPTURE>",
+    "python tools/run_reference_checks.py --module A --output <RUN>/reference_checks.json",
+    "python tools/materialize_solver_config.py --template <RUN>/solver_templates/A_triad_kernel.template.json --binding-sheet <RUN>/binding_sheets/A_triad_kernel.bindings.json --output <RUN>/solver_configs/A_triad_kernel.json",
+    "python tools/run_configured_solver.py --config <RUN>/solver_configs/A_triad_kernel.json --output-dir <RUN>/solver_outputs/triad_kernel",
+    "python <RUN>/primary_module_a.py",
+    "python <RUN>/independent_module_a.py",
+    "bash tools/finish_local_phase.sh A <RUN>",
+    "python -m unittest discover -s tests -v",
+    "python tools/director.py doctor",
+    "python tools/rfc.py firewall-scan",
+    "python tools/rfc.py context"
+  ],
+  "network_policy": "DISABLED_DURING_GENERATION",
+  "network_used_for_generation": false,
+  "connected_tools_used": [
+    {
+      "tool": "GitHub",
+      "purpose": "repository access and later verified publication only; not scientific generation input"
+    },
+    {
+      "tool": "WolframLanguageEvaluator",
+      "purpose": "frozen symbolic calls only; no WolframAlpha/public values"
+    }
+  ],
+  "random_seeds": [],
+  "stochastic_algorithms": false,
+  "hidden_defaults_audited": true,
+  "hidden_default_audit": {
+    "undeclared_environment_inputs": false,
+    "implicit_randomness": false,
+    "network_calls_in_primary_or_independent_code": false,
+    "urls_in_source_register_or_execution_configs": false,
+    "remembered_physical_targets": false,
+    "external_observational_values": false,
+    "post_result_parameter_selection": false
+  },
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_used": false,
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet."
+}

@@ -1,0 +1,108 @@
+{
+  "classification": "RUN_SPECIFIC_STRICT_SEMANTIC_ENVELOPE",
+  "overall": "PASS",
+  "records": [
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/TRIAD_AND_FIRST_ACTION.json",
+      "required_keys": [
+        "typed_roles",
+        "first_action",
+        "triad_rank",
+        "ablation_ranks"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/KERNEL_EXECUTION.json",
+      "required_keys": [
+        "delta",
+        "alpha",
+        "xi",
+        "depth",
+        "normalized_weights",
+        "kernel_state",
+        "tail_bound"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/FINITE_N_RELATIONAL_AUDIT.json",
+      "required_keys": [
+        "range",
+        "records"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/COUNTERMODEL_RESULTS.json",
+      "required_keys": [
+        "triad_ablations",
+        "scalar_collapse",
+        "lane_count_only",
+        "unwitnessed_branch"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/MEMORY_REOPENING_AUDIT.json",
+      "required_keys": [
+        "CIF_0",
+        "QV_witness",
+        "RFL_0",
+        "promotion",
+        "CIF_1",
+        "reopening_event"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/UNBOUNDED_MANIFESTATION_AUDIT.json",
+      "required_keys": [
+        "constructive_rule",
+        "all_sample_hashes_distinct",
+        "all_sample_bases_bounded",
+        "samples"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/CONVERGENCE_AND_UNCERTAINTY.json",
+      "required_keys": [
+        "convergence",
+        "uncertainty"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/H_A_to_B.preliminary.json",
+      "required_keys": [
+        "object_id",
+        "typed_roles",
+        "first_action",
+        "kernel",
+        "relational_carrier",
+        "claim_boundary"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary/PRIMARY_SUMMARY.json",
+      "required_keys": [
+        "classification",
+        "source_hashes_verified",
+        "finite_N_all_pass",
+        "public_data_used"
+      ],
+      "missing": [],
+      "pass": true
+    }
+  ]
+}

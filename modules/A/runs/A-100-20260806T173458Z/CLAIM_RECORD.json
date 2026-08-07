@@ -1,0 +1,25 @@
+{
+  "claim_id": "A-100-H-A-TO-B-FROZEN",
+  "text": "Module A provides a frozen, deterministic, typed, source-addressed, independently reproduced and cleanly replayed prephysical triad/First-Action/kernel/relational-memory handoff H_A_to_B at production fidelity.",
+  "owner": "A",
+  "evidence_state": "FROZEN",
+  "fidelity": "PRODUCTION",
+  "supported": true,
+  "evidence": [
+    "modules/A/frozen/H_A_to_B.json",
+    "modules/A/frozen/H_A_to_B_MANIFEST.json",
+    "modules/A/runs/A-100-20260806T173458Z/GATE_RESULTS.json",
+    "modules/A/runs/A-100-20260806T173458Z/INDEPENDENT_VERIFICATION.md",
+    "modules/A/runs/A-100-20260806T173458Z/REPLAY_RECORD.json"
+  ],
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet.",
+  "unsupported_extensions": [
+    "Big Implosion execution",
+    "physical time",
+    "geometry",
+    "fields or particles",
+    "physical constants",
+    "manifested universe",
+    "empirical agreement"
+  ]
+}

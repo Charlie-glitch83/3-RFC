@@ -1,0 +1,38 @@
+{
+  "module": "A",
+  "componentwise": [
+    {
+      "gate": "canonical terminology exact",
+      "required": "PASS"
+    },
+    {
+      "gate": "no physical time, geometry, constants, or later-module objects assumed",
+      "required": "PASS"
+    },
+    {
+      "gate": "triad ablations fail as predeclared",
+      "required": "PASS"
+    },
+    {
+      "gate": "scalar collapse countermodel rejected",
+      "required": "PASS"
+    },
+    {
+      "gate": "lane increment 2N verified",
+      "required": "PASS"
+    },
+    {
+      "gate": "new-solution claim requires non-gauge witnessed closure",
+      "required": "PASS"
+    },
+    {
+      "gate": "dormant direct dynamics has zero backreaction",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent symbolic reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

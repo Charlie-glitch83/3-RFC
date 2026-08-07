@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/A_triad_kernel.template.json",
+  "template_sha256": "fa42cc61e866d02c53e641e18861caa399d73aec379cff3cce880eff27c2cbad",
+  "expected_binding_paths": [
+    "model.delta",
+    "model.alpha",
+    "model.depth",
+    "model.constituents",
+    "model.basis_matrix"
+  ],
+  "binding_rule": "Every value is bound from the frozen pre-execution Module A derivation object; no public source or post-hoc output is used.",
+  "bindings": [
+    {
+      "path": "model.delta",
+      "placeholder": "__BIND_FROM_ADMITTED_SOURCE__",
+      "value": 4.6692,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+      "module": "A",
+      "derivation_object": "FROZEN_DERIVATION_SPEC.json pre-execution object",
+      "units": "dimensionless",
+      "dimensions": "1",
+      "justification": "Source literal delta=4.6692 frozen in the Module A derivation object."
+    },
+    {
+      "path": "model.alpha",
+      "placeholder": "__BIND_FROM_ADMITTED_SOURCE__",
+      "value": 0.02568312917993952,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+      "module": "A",
+      "derivation_object": "FROZEN_DERIVATION_SPEC.json pre-execution object",
+      "units": "inverse recursion coordinate",
+      "dimensions": "1",
+      "justification": "Deterministic source-locked derivation alpha=ln(delta)/L; the coordinate is prephysical and dimensionless."
+    },
+    {
+      "path": "model.depth",
+      "placeholder": "__BIND_FROM_ADMITTED_SOURCE__",
+      "value": 18,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+      "module": "A",
+      "derivation_object": "FROZEN_DERIVATION_SPEC.json pre-execution object",
+      "units": "recursive depth index",
+      "dimensions": "count",
+      "justification": "Source literal closure depth n_c=18."
+    },
+    {
+      "path": "model.constituents",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": [
+        "CIF",
+        "QV",
+        "RFL"
+      ],
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+      "module": "A",
+      "derivation_object": "FROZEN_DERIVATION_SPEC.json pre-execution object",
+      "units": "typed symbolic roles",
+      "dimensions": "categorical",
+      "justification": "Canonical ordered irreducible roles CIF, QV, RFL."
+    },
+    {
+      "path": "model.basis_matrix",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+      "module": "A",
+      "derivation_object": "FROZEN_DERIVATION_SPEC.json pre-execution object",
+      "units": "dimensionless typed role coordinates",
+      "dimensions": "18x3",
+      "justification": "Minimal ordered identity role basis repeated over the source-locked closure depth; frozen before execution."
+    }
+  ]
+}

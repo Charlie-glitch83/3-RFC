@@ -1,0 +1,29 @@
+{
+  "typed_roles": {
+    "CIF": {
+      "type": "MODAL_SOURCE",
+      "obligation": "Provide candidate classes and admitted modal possibility without actualizing them."
+    },
+    "QV": {
+      "type": "WITNESSED_ADMISSION_OPERATOR",
+      "obligation": "Apply lawful compression/selection/crossing only with a local witness."
+    },
+    "RFL": {
+      "type": "STABILIZED_MEMORY_OUTPUT",
+      "obligation": "Store admitted output, lineage, route class, and return-memory identity."
+    }
+  },
+  "first_action": {
+    "expression": "QV(CIF) -> RFL",
+    "kind": "ORDERED_PREPHYSICAL_DEPENDENCY_OPERATOR",
+    "physical_time": false,
+    "geometry": false,
+    "backreaction": false
+  },
+  "triad_rank": 3,
+  "ablation_ranks": {
+    "CIF": 2,
+    "QV": 2,
+    "RFL": 2
+  }
+}

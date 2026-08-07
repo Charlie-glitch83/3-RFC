@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.0",
+  "run_id": "A-100-20260806T173458Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet.",
+  "canonical_order": [
+    "CIF",
+    "QV",
+    "RFL"
+  ],
+  "typed_roles": {
+    "CIF": {
+      "type": "MODAL_SOURCE",
+      "obligation": "Provide candidate classes and admitted modal possibility without actualizing them."
+    },
+    "QV": {
+      "type": "WITNESSED_ADMISSION_OPERATOR",
+      "obligation": "Apply lawful compression/selection/crossing only with a local witness."
+    },
+    "RFL": {
+      "type": "STABILIZED_MEMORY_OUTPUT",
+      "obligation": "Store admitted output, lineage, route class, and return-memory identity."
+    }
+  },
+  "first_action": {
+    "expression": "QV(CIF) -> RFL",
+    "kind": "ORDERED_PREPHYSICAL_DEPENDENCY_OPERATOR",
+    "physical_time": false,
+    "geometry": false,
+    "backreaction": false
+  },
+  "kernel": {
+    "expression": "K_A(xi)=Sum_{j=1}^{n_c} delta^(-j) f_j(xi) Exp[-alpha j xi]",
+    "coordinate": {
+      "symbol": "xi",
+      "value": 0.0,
+      "meaning": "dimensionless prephysical recursion evaluation coordinate; not physical time"
+    },
+    "delta": 4.6692,
+    "cycle_length_L": 60,
+    "alpha": 0.02568312917993952,
+    "alpha_derivation": "ln(delta)/L",
+    "closure_depth": 18,
+    "basis_bound": 1.0,
+    "basis_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "normalized_weight_expression": "p_j(xi;n)=delta^(-j) Exp[-alpha j xi] / Sum_{k=1}^{n} delta^(-k) Exp[-alpha k xi]",
+    "tail_bound_at_depth_18": 2.4494243553123634e-13
+  },
+  "basis_admission_rule": {
+    "candidate": "A domain-labelled modal basis F_m={f_{m,j}} is eligible only when every component is typed, bounded, provenance-addressed, dimension/frame declared, and carries a preregistered witness/falsifier record.",
+    "selection": "QV admits an eligible basis only if all frozen predicates pass. Domain semantics and laws are not supplied by Module A and must be derived downstream.",
+    "stabilization": "RFL stores the admitted basis identity and provenance hash without identifying the returned RFL object with a new CIF object."
+  },
+  "relational_carrier": {
+    "mode": "RELATIONAL_GRAMMAR_ACTIVE",
+    "direct_many_body_dynamics": "DORMANT",
+    "physical_backreaction": 0.0,
+    "lane_set": "L_N={(i,j):1<=i,j<=N, i!=j}",
+    "lane_count": "N(N-1)",
+    "add_one_increment": "2N",
+    "witness_fields": [
+      "source",
+      "action",
+      "returned_output",
+      "residual_or_rule_check",
+      "invariant_or_type_check",
+      "projection_consistency",
+      "packet_continuity",
+      "event_branch_status",
+      "kernel_bound"
+    ],
+    "route_classes": {
+      "GAUGE_EQUIVALENT": "distinct representatives, same witnessed valid closure",
+      "MULTI_ROUTE_VALID": "distinct witnessed valid closures for the same admitted problem; retained as route strength/capacity",
+      "EVENT_BRANCH_FAMILY": "tied lawful branches retained without arbitrary label selection",
+      "OBSTRUCTION": "non-lawful or unwitnessed route/branch"
+    },
+    "new_solution_rule": "Lane growth alone never proves a new solution. A new closure requires a witnessed, admissible, non-gauge-equivalent closure distinction."
+  },
+  "memory_reopening": {
+    "no_loss_rule": "A quotient may remove duplicate representatives only; it may not delete an independent source, phase/type, witness, invariant, branch, route, memory, or kernel distinction.",
+    "promotion": "An admitted RFL output may seed a later CIF candidate envelope only through an explicit promotion record retaining the RFL content hash and ancestry.",
+    "non_identity": "RFL_s is not identical to CIF_{s+1}; promotion is a typed map with preserved lineage.",
+    "reopening": "A closed object reopens only through a new witnessed event/condition; ancestor hashes and prior closure status remain immutable."
+  },
+  "unbounded_manifestation_construct": {
+    "family": "For each m>=1, q_m=m/(m+1) and f_{m,j}=q_m^j e_{1+((j+m-2) mod 3)} defines a distinct bounded typed modal basis under the same source kernel.",
+    "scope": "This constructs unbounded lawful modal-basis capacity only. It does not assert identical equations, physical realization, empirical truth, or completed downstream laws."
+  },
+  "solver_binding": {
+    "constituents": [
+      "CIF",
+      "QV",
+      "RFL"
+    ],
+    "basis_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "tolerance": 1e-12
+  },
+  "source_precision": {
+    "delta_literal": "4.6692",
+    "delta_representation_interval": [
+      4.66915,
+      4.66925
+    ],
+    "interpretation": "decimal representation envelope only, not empirical uncertainty"
+  },
+  "forbidden": [
+    "physical time",
+    "geometry",
+    "particles",
+    "fields",
+    "empirical constants",
+    "public target values",
+    "weighted-scalar replacement of the triad",
+    "RFL=CIF identity",
+    "lane-count-only new-solution claim"
+  ]
+}

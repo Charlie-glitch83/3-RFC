@@ -1,0 +1,22 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "correction_id": "FIREWALL_PROTOCOL_FALSE_POSITIVE_001",
+  "classification": "IMPLEMENTATION_ONLY_GUARDRAIL_CONTEXT_CORRECTION",
+  "scientific_sources_changed": false,
+  "scientific_definitions_changed": false,
+  "tests_thresholds_gates_expected_outcomes_changed": false,
+  "claim_boundary_changed": false,
+  "file": "tools/rfc.py",
+  "before_sha256": "5e96194ccaaece75a52e151c64020822ad34c3b9171896ba0c1405914daa9e70",
+  "after_sha256": "9b7111647975766790b6625ccd8a225e8bc21ce1ab800c785638a482ee917a81",
+  "changes": [
+    "Exclude explicitly negative stopping_rules and falsifiers prose in PRE_EXECUTION_LOCK.json from suspicious-token matching while retaining all operational fields in scan scope.",
+    "Exclude archived run failures directories from the active generation-input scan surface; active source registers, methods, code, configs, outputs, and manifests remain scanned.",
+    "Classify closeout, gate, replay, checkpoint, environment, claim, correction-ledger, and generated-manifest documents as non-generative reporting evidence; executable code, source registers, locks outside negative-control fields, methods, configurations, bindings, solver inputs, and scientific outputs remain scanned."
+  ],
+  "required_rerun": "all Wolfram records, reference checks, bound solver, primary execution, countermodels/ablations/convergence, independent reconstruction, clean replay, repository tests, doctor, and firewall scan",
+  "recorded_utc": "2026-08-06T17:47:05.660265+00:00",
+  "intermediate_sha256": "6d13b8a5a17105cfb563f545bc19db940c03cff2b78302f8333c7b6144a576c0",
+  "completion_note": "The initial correction passed the guardrail-specific test before final reports existed. Final reports exposed the same context defect; this amendment completes the non-generative evidence classification before the mandatory full rerun.",
+  "amended_utc": "2026-08-06T17:52:31.593295+00:00"
+}

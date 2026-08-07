@@ -1,0 +1,14 @@
+{
+  "call_id": "A-WL-002",
+  "module": "A",
+  "purpose": "Triadic role independence and relational carrier manufactured audit",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-06T17:39:49.097739+00:00",
+  "input_sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+  "output_sha256": "0dc8a214e81bf652d8c77712871e7d29e8d28216892f3b7b79aae4c02218c687",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 1,
+  "manufactured_gate_path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/gate.json"
+}

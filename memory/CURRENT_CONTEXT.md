@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-06T15:10:14.465810+00:00
+Generated: 2026-08-07T00:07:06.942250+00:00
 
 ## Project truth
 
@@ -68,7 +68,7 @@ Constitute the exact prephysical RFC source law and integrate the revised N-body
 
 - admitted sources: 29
 - frozen artifacts: 5
-- indexed runs: 5
+- indexed runs: 6
 
 ## Recent runs
 
@@ -77,6 +77,7 @@ Constitute the exact prephysical RFC source law and integrate the revised N-body
 - XWALK-030-20260806T130603Z: PASS (THEORY)
 - REC-040-20260806T135256Z: PASS (RECOVERY)
 - FRONTIER-050-20260806T142549Z: PASS (AUDIT)
+- A-100-20260806T173458Z: CREATED (A)
 
 ## Recent decisions
 
