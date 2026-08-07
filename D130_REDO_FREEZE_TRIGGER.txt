@@ -1,2 +1,3 @@
 Trigger only: freeze the fresh D-130 parent-driven thermal derivation before primary execution.
 Retry after implementation-only removal of one obsolete helper documentation path; no scientific change.
+Retry with path-independent token removal; no scientific change.
