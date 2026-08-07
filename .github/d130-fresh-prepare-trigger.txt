@@ -1,1 +1,2 @@
 trigger fresh D-130 provenance binding, config materialization, and pre-primary hash freeze
+retry with race-safe publication
