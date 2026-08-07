@@ -1,2 +1,0 @@
-trigger frozen D-130 diagnostic execution
-retry 2
