@@ -1,0 +1,213 @@
+name: E140 Freeze Parent Derivation
+
+on:
+  push:
+    branches: [agent/frontier-050-execution]
+    paths: [.github/e140_freeze_trigger.txt]
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Derive and freeze E140 from exact parents
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, math
+          from pathlib import Path
+          import numpy as np
+
+          ROOT=Path('.')
+          RUN_ID='E-140-20260807T155635Z'
+          RUN=ROOT/'modules/E/runs'/RUN_ID
+          state=json.loads((ROOT/'STATE.json').read_text())
+          assert state['active_work_unit']=='E-140' and state['current_module']=='E' and state['current_run']==RUN_ID
+          assert state['generation_mode']=='GENERATION_SEALED'
+
+          def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          def write(path,obj): Path(path).write_text(json.dumps(obj,indent=2,ensure_ascii=False)+'\n')
+
+          paths={
+            'readme':'README.md',
+            'operator':'MODEL_OPERATOR_PROMPT.md',
+            'spec':'modules/E/spec.json',
+            'recipe':'recipes/E/recipe.json',
+            'work_order':'recipes/E/WORK_ORDER.md',
+            'gates':'recipes/E/gates.json',
+            'c_parent':'modules/C/frozen/H_C_to_D.json',
+            'd_parent':'modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json',
+            'd_manifest':'modules/D/runs/D-130-20260807T053432Z/GENERATED_OUTPUT_MANIFEST.json',
+            'd_ledger':'modules/D/runs/D-130-20260807T053432Z/primary/ENTROPY_CONSERVATION_LEDGER.json',
+            'd_history':'modules/D/runs/D-130-20260807T053432Z/primary/THERMAL_DISTRIBUTION_HISTORY.json',
+          }
+          for p in paths.values():
+            if not Path(p).exists(): raise SystemExit(f'HARD STOP missing authority/parent {p}')
+
+          dparent=json.loads(Path(paths['d_parent']).read_text())
+          cparent=json.loads(Path(paths['c_parent']).read_text())
+          dledger=json.loads(Path(paths['d_ledger']).read_text())
+          dhist=json.loads(Path(paths['d_history']).read_text())
+          dmanifest=json.loads(Path(paths['d_manifest']).read_text())
+          expected=next(x['sha256'] for x in dmanifest['outputs'] if x['path']=='frozen/H_D_to_E.json')
+          actual=sha(paths['d_parent'])
+          if actual!=expected: raise SystemExit(f'HARD STOP D->E hash mismatch {actual} != {expected}')
+
+          p=np.asarray(dparent['final_population'],dtype=float)
+          if abs(float(p.sum())-1.0)>1e-12 or np.min(p)<=0: raise SystemExit('HARD STOP invalid D final population')
+          g=float(cparent['microscopic_constitution']['dimensionless_doublet_gap'])
+          a=g/3.0
+          K=np.asarray(dparent['transport_operator'],dtype=float)
+          off=[K[i,j] for i in range(3) for j in range(3) if i!=j]
+          if max(abs(x-a) for x in off)>1e-12: raise SystemExit('HARD STOP parent K3 edge rate does not match g/3')
+          final=dhist['history'][-1]
+          if abs(float(final['tau_D'])-float(dparent['intrinsic_clock_end_tau_D']))>1e-12: raise SystemExit('HARD STOP D history endpoint mismatch')
+          Et=float(dledger['E_total']); Eexc=float(final['E_exc']); H=float(final['H_RFL'])
+          if abs((Eexc+H)-Et)>1e-12: raise SystemExit('HARD STOP D energy-memory ledger does not close')
+          rho_exc=Eexc/Et; rho_mem=H/Et
+          kf=g*rho_mem; kr=g*rho_exc
+          if abs((kf+kr)-g)>1e-12: raise SystemExit('HARD STOP E rate split does not close to parent gap')
+
+          species=['U0','U1','U2','C01','C02','C12','M01','M02','M12']
+          pairs=[(0,1,3,6),(0,2,4,7),(1,2,5,8)]
+          S=np.zeros((9,6),dtype=float)
+          rate_expr=[]
+          names=[]
+          for k,(i,j,c,m) in enumerate(pairs):
+            S[i,2*k]=-1; S[j,2*k]=-1; S[c,2*k]=1; S[m,2*k]=1
+            S[:,2*k+1]=-S[:,2*k]
+            rate_expr += [f'kf*U{i}*U{j}', f'kr*C{i}{j}*M{i}{j}']
+            names += [f'F{i}{j}',f'R{i}{j}']
+          baryon=np.array([1,1,1,2,2,2,0,0,0],dtype=float)
+          chargeA=np.array([1,-1,0,0,1,-1,0,0,0],dtype=float)
+          chargeB=np.array([1,1,-2,2,-1,-1,0,0,0],dtype=float)
+          energy=np.array([1,1,1,*([2*rho_exc]*3),*([2*rho_mem]*3)],dtype=float)
+          invariants={'baryon':baryon.tolist(),'charge_doublet_A':chargeA.tolist(),'charge_doublet_B':chargeB.tolist(),'energy_memory':energy.tolist()}
+          for name,row in [('baryon',baryon),('chargeA',chargeA),('chargeB',chargeB),('energy',energy)]:
+            if np.max(np.abs(row@S))>1e-12: raise SystemExit(f'HARD STOP invariant derivation failed {name}')
+
+          tau=float(dparent['intrinsic_clock_end_tau_D'])
+          t_end=8.0*tau
+          max_step=tau/128.0
+          initial=[*p.tolist(),0.0,0.0,0.0,0.0,0.0,0.0]
+          initial_flux=max(kf*p[0]*p[1],kf*p[0]*p[2],kf*p[1]*p[2])
+          freeze_threshold=rho_exc*initial_flux
+
+          derivation={
+            'schema_version':'1.0','module':'E','run_id':RUN_ID,'status':'FROZEN','generation_mode':'GENERATION_SEALED',
+            'fidelity':'MINIMAL_SPINE','derivation_class':'PARENT_ONLY_TRIADIC_REACTION_HYPERGRAPH',
+            'triadic_descent':{
+              'CIF':'Promote the complete inherited three-channel K3 support into all three pair-composite possibilities without empirical isotope labels.',
+              'QV':'Actualize pair-composite flow at the exact C microscopic gap weighted by the D fraction already transferred into stabilized RFL memory.',
+              'RFL':'Carry binding energy as explicit memory species and reopen composites at the same parent gap weighted by the residual D excitation fraction.'
+            },
+            'identity_boundary':'U0/U1/U2 and Cij are internal RFC constituent/composite roles. They are not identified with empirical neutron/proton/deuterium or Standard Model isotopes in generation.',
+            'parent_objects':{k:{'path':v,'sha256':sha(v)} for k,v in paths.items() if k in ['c_parent','d_parent','d_ledger','d_history']},
+            'derivation':{
+              'complete_support_edges':[[0,1],[0,2],[1,2]],
+              'species':species,'reaction_names':names,'stoichiometry':S.tolist(),'rate_expressions':rate_expr,
+              'parameters':{'g_C':g,'edge_rate_a':a,'rho_exc':rho_exc,'rho_mem':rho_mem,'kf':kf,'kr':kr},
+              'rate_law':'kf = g_C*(H_RFL/E_total); kr = g_C*(E_exc/E_total); hence kf+kr=g_C exactly up to frozen-parent arithmetic.',
+              'energy_partition':'Each unit carrier has unit internal energy. Each composite carries 2*rho_exc and its paired RFL memory channel carries 2*rho_mem, so every formation/reopening reaction conserves energy exactly.',
+              'invariants':invariants,
+              'initial_state':initial,
+              'initial_state_rule':'D final carrier populations become the three E unit-carrier possibilities; all composites and E binding-memory channels begin at zero, so no primordial composite abundance is preloaded.',
+              'intrinsic_clock':{'symbol':'tau_E','physical_SI_time':False,'t_span':[0.0,t_end],'parent_gap_horizon_multiple':8,'max_step':max_step},
+              'freeze_out_witness':{'rule':'first time after which max absolute net pair flux remains <= rho_exc times the initial maximum forward flux','threshold':freeze_threshold,'parent_fraction':rho_exc},
+            },
+            'uncertainty_rule':'Replay the exact D decimal-envelope parent branches. No stochastic covariance is invented; covariance is computed only from deterministic parent-envelope outputs.',
+            'branch_rule':'No empirical particle labeling or O(2) charge-basis angle is selected. Charge_doublet_A/B are a canonical algebraic gauge representative; any O(2) rotation is physically equivalent for the conservation test.',
+            'network_refinement_rule':'Network-size convergence is tested by route refinement: split each physical K3 edge into 1,2,4 identical parallel subroutes with rates divided by the split count. This increases reaction count without changing the physical law; converged outputs must agree componentwise.',
+            'withheld_rule':'Withhold each complete physical edge in turn. The corresponding composite/memory channel must remain absent and the change must not be hidden by aggregate conservation.',
+            'countermodels':[
+              {'id':'SCALAR_COLLAPSE','expected':'FAIL','reason':'collapsing U0/U1/U2 destroys the two-dimensional conserved charge-doublet structure'},
+              {'id':'DELETE_RFL_MEMORY','expected':'FAIL','reason':'forming composites without the Mij channels violates the frozen energy-memory partition'},
+              {'id':'HIDE_WITHHELD_EDGE','expected':'FAIL','reason':'aggregate conservation cannot substitute for componentwise reaction support'}
+            ],
+            'tolerances':{'positivity':1e-10,'invariant_drift':1e-9,'rate_convergence_linf':1e-8,'network_refinement_linf':1e-8,'restart_linf':1e-8,'independent_linf':1e-8,'covariance_psd':1e-12},
+            'claim_boundary':'Internally generated dimensionless primordial RFC constituent/composite state with explicit binding-memory accounting. No empirical isotope identification, SI nuclear rates, public abundance agreement, or external BBN validation is claimed.'
+          }
+          deriv_path=RUN/'FROZEN_DERIVATION_SPEC.json'; write(deriv_path,derivation); deriv_sha=sha(deriv_path)
+
+          source={
+            'schema_version':'1.0','run_id':RUN_ID,'module':'E','generation_mode':'GENERATION_SEALED','public_data_declaration':'NONE',
+            'exact_parents':[{'path':paths['d_parent'],'sha256':actual,'role':'EXACT_D_TO_E_PARENT'}],
+            'inherited_parent_objects':[
+              {'path':paths['c_parent'],'sha256':sha(paths['c_parent']),'role':'MICROSCOPIC_GAP_AND_CHARGE_STRUCTURE'},
+              {'path':paths['d_ledger'],'sha256':sha(paths['d_ledger']),'role':'ENERGY_MEMORY_TOTAL'},
+              {'path':paths['d_history'],'sha256':sha(paths['d_history']),'role':'ENDPOINT_EXCITATION_RFL_SPLIT'}
+            ],
+            'authority_files':[{'path':paths[k],'sha256':sha(paths[k])} for k in ['readme','operator','spec','recipe','work_order','gates']],
+            'internal_derivations':[{'path':str(deriv_path),'sha256':deriv_sha,'role':'E_PARENT_ONLY_REACTION_LAW'}],
+            'imports':['numpy','scipy','sympy','networkx','json','hashlib'], 'files':[], 'urls':[],
+            'constants':[{'name':'g_C','value':g,'origin':paths['c_parent']},{'name':'rho_exc','value':rho_exc,'origin':paths['d_history']},{'name':'rho_mem','value':rho_mem,'origin':paths['d_history']}],
+            'historical_failure_parentage':'NONE. Prior Li7/proxy outcomes are not used to generate any E definition, coefficient, state, branch, or gate.'
+          }
+          write(RUN/'SOURCE_REGISTER.json',source)
+
+          lock={
+            'schema_version':'1.0','run_id':RUN_ID,'status':'FROZEN','frozen_before_primary_execution':True,
+            'authority_hashes':[sha(paths[k]) for k in ['readme','operator','spec','recipe','work_order','gates']],
+            'parent_hashes':[actual,sha(paths['c_parent']),sha(paths['d_ledger']),sha(paths['d_history'])],
+            'definition_hashes':[deriv_sha,sha(RUN/'wolfram/E-WL-001/input.wl'),sha(RUN/'wolfram/E-WL-002/input.wl')],
+            'candidate_classes':['complete inherited K3 pair-composite hypergraph','O(2)-gauge-equivalent charge-doublet representatives','route-refined equivalent reaction networks'],
+            'equations_and_laws':[derivation['derivation']['rate_law'],'Ui+Uj <-> Cij+Mij on every inherited K3 edge'],
+            'dimensions_units_frames_gauges_clocks':['all E state/rates are dimensionless','tau_E is an intrinsic post-D ordering coordinate, not SI time','charge doublet basis is gauge-representative only'],
+            'methods':['BDF primary integration','powers-of-two max-step convergence','1/2/4 route-refinement convergence','withheld-edge ablations','DOP853 independent implementation','midpoint checkpoint/restart','clean-checkout replay'],
+            'tolerances':[f'{k}={v}' for k,v in derivation['tolerances'].items()],
+            'stopping_rules':['freeze-out witness is parent-derived rho_exc flux threshold','numerical closure horizon fixed at 8 inherited D gap-time intervals before execution'],
+            'expected_invariants':['baryon','two-dimensional internal charge doublet','energy including explicit RFL binding memory','positivity'],
+            'tests':['E-WL-001','E-WL-002','manufactured E reference','physical bound solver','route refinement','rate convergence','withheld edges','restart','independent implementation','uncertainty envelope','countermodels'],
+            'gates':['baryon/charge/energy accounting','network convergence','rate-source audit','no scalar-channel collapse','withheld reaction and independent implementation checks'],
+            'falsifiers':['any public/remembered abundance target influences generation','any prior Li7 failure/mechanism is inherited','scalar collapse removes charge-doublet rank','binding memory deletion breaks energy accounting','any invariant drift > 1e-9','any convergence/restart/independent Linf > 1e-8','any negative abundance < -1e-10'],
+            'claim_boundary':derivation['claim_boundary'],
+            'independent_verifier_design':'Reconstruct K3 edges, g_C, D energy-memory fractions, stoichiometry, invariants, rates and final integration independently from frozen C/D parents without trusting the primary E config or gate summary.',
+            'allowed_implementation_only_corrections':['serialization','path handling','array/list conversion','solver-runner plumbing; no definitions, parent values, rates, horizon, tolerances, gates or claim changes']
+          }
+          write(RUN/'PRE_EXECUTION_LOCK.json',lock)
+
+          bind=json.loads((RUN/'binding_sheets/E_reaction_network.bindings.json').read_text())
+          values={
+            'model.species':species,'model.stoichiometry':S.tolist(),'model.rate_expressions':rate_expr,
+            'model.parameters':{'kf':kf,'kr':kr},'model.invariants':invariants,'initial_state':initial,
+            't_span':[0.0,t_end],'max_step':max_step,'positivity_tolerance':1e-10,'invariant_tolerance':1e-9
+          }
+          objects={
+            'model.species':'derivation.species','model.stoichiometry':'derivation.stoichiometry','model.rate_expressions':'derivation.rate_expressions',
+            'model.parameters':'derivation.parameters.kf_kr','model.invariants':'derivation.invariants','initial_state':'derivation.initial_state',
+            't_span':'derivation.intrinsic_clock.t_span','max_step':'derivation.intrinsic_clock.max_step','positivity_tolerance':'tolerances.positivity','invariant_tolerance':'tolerances.invariant_drift'
+          }
+          for rec in bind['bindings']:
+            path=rec['path']; rec['value']=values[path]; rec['origin_kind']='INTERNAL_DERIVATION'; rec['origin_path']=str(deriv_path); rec['origin_sha256']=deriv_sha; rec['module']='E'; rec['derivation_object']=objects[path]; rec['units']='dimensionless'; rec['dimensions']='intrinsic RFC E units'; rec['justification']='Frozen parent-only E derivation; no public or historical target value used.'
+          bind['status']='FROZEN_BOUND_FROM_PARENT_DERIVATION'; bind['run_id']=RUN_ID
+          write(RUN/'binding_sheets/E_reaction_network.bindings.json',bind)
+
+          (RUN/'RUN_PLAN.md').write_text('# Run Plan — E-140 parent-derived physical execution\n\nExecute the frozen complete-K3 pair-composite network derived only from C/D parent objects. All composites and binding-memory channels start at zero. Run exact Wolfram checks, manufactured reference, bound BDF solver, route/network and rate convergence, withheld edges, countermodels, deterministic parent-envelope uncertainty, restart, independent implementation, clean replay, gates, frozen H_E_to_F and evidence-matched closeout.\n')
+          print(json.dumps({'run':RUN_ID,'parent_sha':actual,'derivation_sha':deriv_sha,'g_C':g,'rho_exc':rho_exc,'rho_mem':rho_mem,'kf':kf,'kr':kr,'t_end':t_end},indent=2))
+          PY
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit frozen derivation
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_freeze_parent_derivation.yml .github/e140_freeze_trigger.txt
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Freeze E140 parent-derived nuclear network'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
