@@ -15,3 +15,4 @@ trigger exact README session start
 retry exact README session start with locked dependencies
 trigger E140 source obstruction freeze
 trigger E140 exact Wolfram display
+trigger E140 blocker recording and closeout
