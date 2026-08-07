@@ -1,2 +1,3 @@
 trigger E140 repository-contract restart
 trigger restart after derivation mismatch
+trigger E140 repository parent-law freeze
