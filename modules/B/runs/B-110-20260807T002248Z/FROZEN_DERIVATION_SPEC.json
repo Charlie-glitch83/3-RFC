@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "run_id": "B-110-20260807T002248Z",
+  "module": "B",
+  "status": "FROZEN_PRE_EXECUTION",
+  "work_unit": "B-110",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/A/frozen/H_A_to_B.json",
+    "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+    "object_id": "H_A_to_B",
+    "evidence_state": "FROZEN",
+    "fidelity": "PRODUCTION"
+  },
+  "triadic_descent": {
+    "CIF": "exact prephysical A modal kernel and complete directed non-self relational support",
+    "QV": "single Big Implosion compression/crossing operator",
+    "RFL": "first physical relational carrier, event-origin record, conserved ledger, memory, and restart state"
+  },
+  "source_locked_inputs": {
+    "delta": 4.6692,
+    "initial_state": [0.7936268560033942, 0.1699706279455569, 0.036402516051048765],
+    "initial_state_semantics": "three-component prephysical kernel state inherited verbatim from H_A_to_B; components remain modal channels and are not relabelled as later physical sectors",
+    "node_count_rule": "N := length(H_A_to_B.recursive_kernel.executed_state.kernel_state) = 3",
+    "relational_support_rule": "inherit A carrier L_N={(i,j): i != j}; for N=3 this supplies both directed lanes for every unordered node pair"
+  },
+  "counting_measure_derivation": {
+    "rule": "The inherited A carrier is a set of admitted lanes with no lane-specific scalar weight. The canonical adjacency measure is incidence/counting measure: an admitted unordered pair has weight 1 and an absent pair weight 0.",
+    "weighted_edges": [[0,1,1.0],[0,2,1.0],[1,2,1.0]],
+    "why_not_row_normalized": "A row-normalized 1/(N-1) trial was considered before the lock but changes the counting Laplacian used by the frozen B symbolic/reference operator and introduces a new N-dependent rescaling not supplied by H_A_to_B. It is retained only as a rejected diagnostic alternative.",
+    "hidden_tuning": false,
+    "units": "dimensionless incidence count",
+    "dimensions": "1"
+  },
+  "operator_law": {
+    "laplacian": "L = D - A on the inherited undirected counting support",
+    "big_implosion": "Q_B = (I + L/(delta-1))^{-1}",
+    "physical_state": "y = Q_B x",
+    "reopening": "x = Q_B^{-1} y",
+    "compression_relic_ledger": "r = x-y = L y/(delta-1)",
+    "edge_current": "J_ij = (y_i-y_j)/(delta-1) for each unit counting edge; J_ji=-J_ij; div J = x-y",
+    "clock_origin": "No physical clock exists in H_A_to_B. The completed crossing is the first physical event and is assigned intrinsic event-order origin tau_B=0; no duration or pre-event time coordinate is asserted."
+  },
+  "sector_projection": {
+    "matrix": [[1,0,0],[0,1,0],[0,0,1]],
+    "meaning": "identity no-loss bookkeeping projection required by the local engine; it is not an ordinary/radiative/relic/dissipative physical sector decomposition",
+    "derived_sector_seed_status": {
+      "ordinary": "NOT_DERIVED_IN_B",
+      "radiative": "NOT_DERIVED_IN_B",
+      "compression_relic": "SIGNED_COMPRESSION_LEDGER_DERIVED_NOT_AN_INDEPENDENT_POSITIVE_SECTOR",
+      "dissipative_tail": "NOT_DERIVED_IN_B_REVERSIBLE_OPERATOR"
+    }
+  },
+  "typed_post_event_object": {
+    "geometry_status": "PREGEOMETRY_ONLY",
+    "pregeometry_type": "FINITE_RELATIONAL_GRAPH_WITH_SCALAR_CARRIER_AND_ANTISYMMETRIC_EDGE_CURRENT",
+    "metric_geometry_claimed": false,
+    "physical_event_claimed": true,
+    "later_particle_or_cosmological_labels_claimed": false
+  },
+  "uncertainty_policy": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
+    "delta_interval": [4.66915,4.66925],
+    "stochastic_physical_uncertainty": false,
+    "covariance": "ZERO_BY_NO_STOCHASTIC_INPUT"
+  },
+  "primary_falsifiers": [
+    "H_A_to_B hash differs from frozen parent SHA-256",
+    "any pre-event physical clock is non-null",
+    "counting support differs from complete A support without parent evidence",
+    "a nonconstant graph mode is not strictly compressed",
+    "total ledger changes above 1e-11",
+    "reopening error exceeds 1e-11",
+    "an ordinary/radiative/dissipative sector or metric geometry is asserted without a derived map",
+    "independent spectral reconstruction disagrees above 1e-11"
+  ],
+  "claim_boundary": "First physical RFC event/state at MINIMAL_SPINE fidelity: a source-addressed Big Implosion on inherited A prephysical modal support, intrinsic event-order origin, typed pregeometry, conserved graph-current ledger, exact reopening, and restartable H_B_to_C. No microscopic particle model, metric spacetime, dimensional physical constants, late-time cosmology, empirical agreement, or completed universe is claimed."
+}
