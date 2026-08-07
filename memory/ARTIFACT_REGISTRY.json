@@ -40,6 +40,14 @@
       "created_utc": "2026-08-06T15:10:14.328195+00:00",
       "work_unit": "FRONTIER-050",
       "run_id": "FRONTIER-050-20260806T142549Z"
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z",
+      "sha256": "affac042456f256f07cc6f72d9a1b4d0b2650decf4d86a88d11d338aa521b395",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-07T00:10:43.226639+00:00",
+      "work_unit": "A-100",
+      "run_id": "A-100-20260806T173458Z"
     }
   ]
 }
