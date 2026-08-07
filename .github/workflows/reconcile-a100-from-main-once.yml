@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
     paths: ['.github/reconcile-a100-main-trigger.txt']
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths: ['.github/reconcile-a100-main-trigger.txt']
 
 permissions:
   contents: write
