@@ -1,8 +1,0 @@
-Symbol::undefined2: Warning: Global symbols "V, V, V" are undefined.
-Part::pkspec1: -- Message text not found -- (#1)
-Part::pkspec1: -- Message text not found -- (Internal`ProcessEquations`ProcessEquationsDump`i)
-Part::pkspec1: -- Message text not found -- (#1)
-Part::pkspec1: -- Message text not found -- (Internal`ProcessEquations`ProcessEquationsDump`i)
-General::messages: Messages were generated which may indicate errors.
-
-Out[1]= "<|\"call\" -> \"D-WL-001\", \"solution\" -> \"{(x0 + E^(2*k*t)*x0 - y0 + E^(2*k*t)*y0)/(2*E^(2*k*t)), (-x0 + E^(2*k*t)*x0 + y0 + E^(2*k*t)*y0)/(2*E^(2*k*t))}\", \"conservedTotal\" -> \"x0 + y0\", \"lyapunovDerivative\" -> \"-4*k*(x[t] - y[t])^2\", \"decayPass\" -> True|>"

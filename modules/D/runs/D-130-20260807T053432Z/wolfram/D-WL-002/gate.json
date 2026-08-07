@@ -1,0 +1,12 @@
+{
+  "call_id": "D-WL-002",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "eigenvalues",
+    "relaxationMode"
+  ],
+  "decision_rule": "Require one conserved mode and internally justified decaying/stiff modes.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}
