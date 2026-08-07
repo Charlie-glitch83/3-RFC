@@ -1,0 +1,1 @@
+Temporary trigger only: correct the post-output D gate-summary iteration and re-freeze the materializer hash. No scientific change.
