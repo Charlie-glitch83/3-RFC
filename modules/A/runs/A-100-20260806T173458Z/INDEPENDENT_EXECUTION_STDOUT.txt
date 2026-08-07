@@ -1,0 +1,19 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "overall": "PASS",
+  "checks": {
+    "all_sources_exact": true,
+    "all_lock_checks": true,
+    "canonical_triad_and_ablations": true,
+    "scalar_collapse_rejected": true,
+    "kernel_reconstructed": true,
+    "finite_N_relational_grammar": true,
+    "witness_rule_preserved": true,
+    "dormant_backreaction_zero": true,
+    "memory_nonidentity_no_loss": true,
+    "unbounded_modal_capacity_constructed": true,
+    "all_independent_comparisons": true,
+    "generation_firewall_clean": true
+  },
+  "output": "modules/A/runs/A-100-20260806T173458Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+}

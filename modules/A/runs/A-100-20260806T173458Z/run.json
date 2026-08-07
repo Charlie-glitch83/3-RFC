@@ -1,0 +1,10 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "module": "A",
+  "task_id": "A-100",
+  "status": "CREATED",
+  "created_utc": "2026-08-06T17:34:58.347372+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "modules/A/runs/A-100-20260806T173458Z"
+}

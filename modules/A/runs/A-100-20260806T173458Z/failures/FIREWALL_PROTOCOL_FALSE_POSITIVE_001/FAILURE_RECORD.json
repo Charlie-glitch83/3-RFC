@@ -1,0 +1,28 @@
+{
+  "failure_id": "FIREWALL_PROTOCOL_FALSE_POSITIVE_001",
+  "run_id": "A-100-20260806T173458Z",
+  "gate": "generation firewall mechanical scan",
+  "category": "IMPLEMENTATION_ONLY_SCANNER_CONTEXT",
+  "description": "The scanner matched the negative protocol phrases 'public-data contamination' and 'source/public contamination scan' inside the frozen pre-execution stopping-rule and falsifier declarations. No URL, public input, observational value, fitted constant, or undeclared source was present. Final closeout and gate reports exposed the same context class because they describe the prohibition rather than supply an input.",
+  "earliest_affected_object": "tools/rfc.py::cmd_firewall_scan",
+  "changes_frozen_science": false,
+  "required_replay_scope": "rerun the full repository test suite, firewall scan, local Module A matrix, independent reconstruction, and clean replay after the scanner-only correction",
+  "allowed_correction": "For PRE_EXECUTION_LOCK.json only, exclude the explicitly negative stopping_rules and falsifiers prose from suspicious-token matching while continuing to scan all methods, equations, sources, paths, definitions, and executable files.",
+  "status": "PRESERVED_CORRECTED_FINAL_FULL_FROZEN_MATRIX_PASS",
+  "strongest_claim_remaining": "Primary and independent Module A mathematics remain PASS; repository closeout remains blocked until the corrected guardrail and full matrix pass.",
+  "full_rerun_evidence": [
+    "IMPLEMENTATION_CORRECTION_LEDGER.json",
+    "FIREWALL_SCAN.txt",
+    "LOCAL_PHASE_STDOUT.txt",
+    "REPLAY_RECORD.json"
+  ],
+  "evidence": [
+    "attempt-2-firewall.txt"
+  ],
+  "final_full_rerun_evidence": [
+    "IMPLEMENTATION_CORRECTION_LEDGER.json",
+    "FIREWALL_SCAN.txt",
+    "LOCAL_PHASE_STDOUT.txt",
+    "REPLAY_RECORD.json"
+  ]
+}

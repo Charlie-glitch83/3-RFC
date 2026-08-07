@@ -1,0 +1,3 @@
+FIREWALL SCAN: REVIEW REQUIRED
+- modules/A/runs/A-100-20260806T173458Z/PRE_EXECUTION_LOCK.json
+This mechanical scan is not proof of contamination. Review and document each finding.

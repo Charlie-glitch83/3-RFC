@@ -1,0 +1,68 @@
+{
+  "triad_ablations": {
+    "CIF": {
+      "retained_roles": [
+        "QV",
+        "RFL"
+      ],
+      "matrix_rank": 2,
+      "lost_obligations": [
+        "candidate_source",
+        "modal_possibility"
+      ],
+      "first_action_total": false,
+      "result": "FAIL_AS_PREDECLARED"
+    },
+    "QV": {
+      "retained_roles": [
+        "CIF",
+        "RFL"
+      ],
+      "matrix_rank": 2,
+      "lost_obligations": [
+        "witnessed_action",
+        "lawful_admission"
+      ],
+      "first_action_total": false,
+      "result": "FAIL_AS_PREDECLARED"
+    },
+    "RFL": {
+      "retained_roles": [
+        "CIF",
+        "QV"
+      ],
+      "matrix_rank": 2,
+      "lost_obligations": [
+        "stabilized_output",
+        "memory_and_lineage"
+      ],
+      "first_action_total": false,
+      "result": "FAIL_AS_PREDECLARED"
+    }
+  },
+  "scalar_collapse": {
+    "input_rank": 3,
+    "scalar_projection_rank": 1,
+    "typed_inverse_exists": false,
+    "preserves_role_specific_ablations": false,
+    "preserves_ordered_first_action": false,
+    "result": "REJECTED_RANK_AND_TYPE_LOSS"
+  },
+  "lane_count_only": {
+    "claim": "more lanes alone imply a new solution",
+    "accepted": false,
+    "required_repair": "non-gauge witnessed closure"
+  },
+  "unwitnessed_branch": {
+    "accepted": false,
+    "classification": "OBSTRUCTION"
+  },
+  "arbitrary_collision_tie_break": {
+    "accepted": false,
+    "required_output": "gauge-equivalent branch family when witnesses tie"
+  },
+  "RFL_equals_CIF": {
+    "accepted": false,
+    "reason": "typed promotion with ancestry is required"
+  }
+}

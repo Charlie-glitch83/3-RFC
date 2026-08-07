@@ -1,0 +1,19 @@
+{
+  "classification": "MODULE_LOCAL_EXECUTION_PIPELINE",
+  "run": "/mnt/data/3-RFC-current/modules/A/runs/A-100-20260806T173458Z",
+  "configuration_count": 1,
+  "overall": "PASS",
+  "results": [
+    {
+      "config": "A_triad_kernel.json",
+      "solver": "triad_kernel",
+      "returncode": 0,
+      "success": true,
+      "classification": "FINITE_TRIAD_KERNEL_EXECUTION",
+      "manifest": "/mnt/data/3-RFC-current/modules/A/runs/A-100-20260806T173458Z/solver_outputs/A_triad_kernel/manifest.json",
+      "stdout": "{\n  \"solver\": \"triad_kernel\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"e7115d1637219c78ed8a840f3597251dabc959f1d0f2f5b9828e8001d9a27e3a\",\n  \"result_sha256\": \"a47467b595f56e56dd655bb0312e6674bf847a8e9402c09c3a0e563602886735\",\n  \"environment_sha256\": \"d4f312d6a75e8ab2c36edcf35f972e2fc68107eb0fe8c97ba13681e4cee7271f\",\n  \"success\": true,\n  \"classification\": \"FINITE_TRIAD_KERNEL_EXECUTION\"\n}",
+      "stderr": ""
+    }
+  ],
+  "warning": "Local solver success is necessary but does not replace source admission, Wolfram gates, convergence matrices, restart/replay, independent reconstruction, or module closeout."
+}

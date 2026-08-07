@@ -1,0 +1,101 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "status": "FROZEN_RESTART_BOUNDARY",
+  "checkpoint_version": 3,
+  "created_utc": "2026-08-06T17:53:31.094369+00:00",
+  "boundary": "after final scanner-context amendment and complete Wolfram/reference/solver/primary/independent/local-matrix rerun; before final clean replay and closeout",
+  "generation_mode": "GENERATION_SEALED",
+  "restart_inputs": [
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/SOURCE_REGISTER.json",
+      "sha256": "11e25c3de3cd1015b4e307be128f26d3394469539e6e41c0d437c9f89de64b88",
+      "bytes": 9917
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/PRE_EXECUTION_LOCK.json",
+      "sha256": "6b4a4a90b9e13bae168251157cd98cfa041f7388b4b9c3fb1634c5f858713041",
+      "bytes": 8315
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+      "bytes": 6942
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/FALSIFIER_REGISTRY.json",
+      "sha256": "e84fb3b042a4f11f7f244be6af9763e0d71cc1eecd1760741ce83bf1cd5d723a",
+      "bytes": 1318
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/primary_module_a.py",
+      "sha256": "d099c95a827bfa1bd27f0eaae94a0635d280c96cd82f05e203f6958190799a35",
+      "bytes": 18094
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/independent_module_a.py",
+      "sha256": "9ae2e87bc0c5fb38cc7df67882ff8a45528530cbfbd15954b0d1b8f5a0e4b347",
+      "bytes": 15838
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/solver_configs/A_triad_kernel.json",
+      "sha256": "e7115d1637219c78ed8a840f3597251dabc959f1d0f2f5b9828e8001d9a27e3a",
+      "bytes": 6401
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/reference_checks.json",
+      "sha256": "0447eeab8be646cd785595bda6ae8e23d60ec75fc2edf8298617bfc0c1659810",
+      "bytes": 552
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/input.wl",
+      "sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+      "bytes": 698
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/record.json",
+      "sha256": "81d6ef74b4d79fa5a05f91e826e4a9d7e87744a333fd7a5b8830349d59701fac",
+      "bytes": 628
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/gate.json",
+      "sha256": "b864078d4bd5dbb106c81245998ef98adcf500b4d4c1812419b8e17fc5eb0a9c",
+      "bytes": 456
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/input.wl",
+      "sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029",
+      "bytes": 618
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/record.json",
+      "sha256": "56d1dfaadd6602d2063d84f06e771882d20c348752b3c7c3cef45f97b25f84d4",
+      "bytes": 634
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-002/gate.json",
+      "sha256": "9fc3d438caf9261fad4e7c9f46ea95d980847c5d0e7b1ef4400890ab56ba8ab9",
+      "bytes": 456
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/IMPLEMENTATION_CORRECTION_LEDGER.json",
+      "sha256": "60e9704130287db1d1d58b1a6a5751302fa0a846d900f3911e39cd5f2c7bb05d",
+      "bytes": 1938
+    },
+    {
+      "path": "tools/rfc.py",
+      "sha256": "9b7111647975766790b6625ccd8a225e8bc21ce1ab800c785638a482ee917a81",
+      "bytes": 46383
+    }
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41"
+  },
+  "preserved_prior_checkpoints": [
+    "modules/A/runs/A-100-20260806T173458Z/checkpoints/CHECKPOINT_POST_PRIMARY_PRE_FULL_RERUN.json",
+    "modules/A/runs/A-100-20260806T173458Z/checkpoints/CHECKPOINT_PRE_FIREWALL_CORRECTION.json",
+    "modules/A/runs/A-100-20260806T173458Z/checkpoints/CHECKPOINT_V2_BEFORE_FINAL_SCANNER_AMENDMENT.json"
+  ],
+  "restart_rule": "Verify every listed hash in a detached clean Git worktree; delete generated reference, solver, primary, and independent products; regenerate from the frozen boundary; compare deterministic content hashes exactly.",
+  "result": "READY"
+}

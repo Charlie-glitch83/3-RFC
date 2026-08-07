@@ -1,0 +1,132 @@
+{
+  "constructive_rule": "For each m>=1, q_m=m/(m+1) and f_{m,j}=q_m^j e_{1+((j+m-2) mod 3)} defines a distinct bounded typed modal basis under the same source kernel.",
+  "sampled_m": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "all_sample_hashes_distinct": true,
+  "all_sample_bases_bounded": true,
+  "symbolic_reason_unbounded": "m ranges over all positive integers and q_m=m/(m+1) is strictly increasing, so the admitted candidate family has no finite terminal index.",
+  "identical_equation_reduction_claimed": false,
+  "physical_realization_claimed": false,
+  "samples": [
+    {
+      "m": 1,
+      "q_m": 0.5,
+      "basis_sha256": "418db03aeb7dc5ebf05e9f2ba1ed8a7238a0e4146df65a3792096c67094e257b",
+      "max_abs_component": 0.5,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 2,
+      "q_m": 0.6666666666666666,
+      "basis_sha256": "ad84aa7c8b980bb3d6e4a870edc2d711c8d2d5c2bf51d77dca7a2c113f2afad2",
+      "max_abs_component": 0.6666666666666666,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 3,
+      "q_m": 0.75,
+      "basis_sha256": "cffc8cf8cc6cab347897247af92d8c20651406afa499bb85cc9844a7eefc6eaa",
+      "max_abs_component": 0.75,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 4,
+      "q_m": 0.8,
+      "basis_sha256": "1a754233e1daf390db9fd4f3419fad0b409485c884be985c25cee444864d8d1a",
+      "max_abs_component": 0.8,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 5,
+      "q_m": 0.8333333333333334,
+      "basis_sha256": "7a7e0aa64b2204dc5e334e73ec96a9e228f7bbf24bccde4f08b84a48696a03b1",
+      "max_abs_component": 0.8333333333333334,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 6,
+      "q_m": 0.8571428571428571,
+      "basis_sha256": "2817dfdd67b4b7ddb3eb0f943d5ef8f565d0aecfa039465293ff9a0cd25f3947",
+      "max_abs_component": 0.8571428571428571,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 7,
+      "q_m": 0.875,
+      "basis_sha256": "cf30f2e0aeea5f063198acfdacfa90ab08c3cf33e40c291f7f0a6a1506f8f1f0",
+      "max_abs_component": 0.875,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 8,
+      "q_m": 0.8888888888888888,
+      "basis_sha256": "a7bbcea4dcf1fa919e65d6c19297a913f0175306a23e34c38eb8aa9f4b428726",
+      "max_abs_component": 0.8888888888888888,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 9,
+      "q_m": 0.9,
+      "basis_sha256": "76c1c0117caaea3b89fdb634c0e015163d8addb9b16b2201b073380049ad1b50",
+      "max_abs_component": 0.9,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 10,
+      "q_m": 0.9090909090909091,
+      "basis_sha256": "b11c15e4a3fc35a1d2701c578c192854f92a3529e8de01e910ba072f9197e982",
+      "max_abs_component": 0.9090909090909091,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 11,
+      "q_m": 0.9166666666666666,
+      "basis_sha256": "6a978100da4f1668bda8bf406206bdcc782e55d1306434aceb4a70645ebf74a6",
+      "max_abs_component": 0.9166666666666666,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    },
+    {
+      "m": 12,
+      "q_m": 0.9230769230769231,
+      "basis_sha256": "17ae5da7fe7e54d7d043c7e5b23a3898feb7e902ddff266e602eed3a8f9cc370",
+      "max_abs_component": 0.9230769230769231,
+      "bounded": true,
+      "typed_channels": 3,
+      "admission_predicates_pass": true
+    }
+  ]
+}

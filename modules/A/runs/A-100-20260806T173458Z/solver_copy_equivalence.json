@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "source": "configured_runs/templates/A_triad_kernel.template.json",
+      "run_copy": "modules/A/runs/A-100-20260806T173458Z/solver_templates/A_triad_kernel.template.json",
+      "source_sha256": "fa42cc61e866d02c53e641e18861caa399d73aec379cff3cce880eff27c2cbad",
+      "run_sha256": "fa42cc61e866d02c53e641e18861caa399d73aec379cff3cce880eff27c2cbad",
+      "match": true
+    },
+    {
+      "source": "configured_runs/binding_sheets/A_triad_kernel.bindings.json",
+      "run_copy": "modules/A/runs/A-100-20260806T173458Z/binding_sheets/A_triad_kernel.bindings.json",
+      "source_sha256": "3229538154f925bb2e03af574936e3dbadea5f1c2a732ef9c4a011dd2c510bcb",
+      "run_sha256": "3229538154f925bb2e03af574936e3dbadea5f1c2a732ef9c4a011dd2c510bcb",
+      "match": true
+    }
+  ]
+}

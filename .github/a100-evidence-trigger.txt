@@ -1,4 +1,0 @@
-A-100 verified evidence recovery trigger v3
-archive_sha256=f4b1ea136c7b26fd6d587ae11d5470521092392d9c371801172919e2b3a33102
-source_commit=2a54d53cc87f584173e521a85b548584fd13034b
-lease_mode=live-at-push

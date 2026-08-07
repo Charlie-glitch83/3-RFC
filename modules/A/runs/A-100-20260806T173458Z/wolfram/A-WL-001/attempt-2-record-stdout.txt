@@ -1,0 +1,25 @@
+{
+  "call_id": "A-WL-001",
+  "module": "A",
+  "purpose": "Kernel bound, normalized depth weights, and 2N lane increment",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-06T17:47:35.740888+00:00",
+  "input_sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e",
+  "output_sha256": "4935f6e2a18165152974c89dcef33bb6e794f30ad55d613e1ba803be2e3dbb8f",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/A/runs/A-100-20260806T173458Z/wolfram/A-WL-001/gate.json"
+}
+{
+  "call_id": "A-WL-001",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "infiniteWeightSum"
+  ],
+  "decision_rule": "PASS only when lane increment is exactly 2 n and normalized weights sum to one.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

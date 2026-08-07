@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_A_to_B",
+  "status": "PRELIMINARY_PENDING_INDEPENDENT_RECONSTRUCTION_AND_FINAL_MANIFEST",
+  "run_id": "A-100-20260806T173458Z",
+  "generation_mode": "GENERATION_SEALED",
+  "evidence_state": "PHYSICALLY_EXECUTED_NOT_APPLICABLE_PREPHYSICAL; VERIFIED_EXECUTION_PENDING_INDEPENDENT_REPRODUCTION",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "direct_many_body_dynamics": "DORMANT_ZERO_BACKREACTION",
+  "typed_roles": {
+    "CIF": {
+      "type": "MODAL_SOURCE",
+      "obligation": "Provide candidate classes and admitted modal possibility without actualizing them."
+    },
+    "QV": {
+      "type": "WITNESSED_ADMISSION_OPERATOR",
+      "obligation": "Apply lawful compression/selection/crossing only with a local witness."
+    },
+    "RFL": {
+      "type": "STABILIZED_MEMORY_OUTPUT",
+      "obligation": "Store admitted output, lineage, route class, and return-memory identity."
+    }
+  },
+  "first_action": {
+    "expression": "QV(CIF) -> RFL",
+    "kind": "ORDERED_PREPHYSICAL_DEPENDENCY_OPERATOR",
+    "physical_time": false,
+    "geometry": false,
+    "backreaction": false
+  },
+  "kernel": {
+    "expression": "K_A(xi)=Sum_{j=1}^{n_c} delta^(-j) f_j(xi) Exp[-alpha j xi]",
+    "coordinate": {
+      "symbol": "xi",
+      "value": 0.0,
+      "meaning": "dimensionless prephysical recursion evaluation coordinate; not physical time"
+    },
+    "delta": 4.6692,
+    "cycle_length_L": 60,
+    "alpha": 0.02568312917993952,
+    "alpha_derivation": "ln(delta)/L",
+    "closure_depth": 18,
+    "normalized_weight_expression": "p_j(xi;n)=delta^(-j) Exp[-alpha j xi] / Sum_{k=1}^{n} delta^(-k) Exp[-alpha k xi]"
+  },
+  "kernel_execution": {
+    "delta": 4.6692,
+    "alpha": 0.02568312917993952,
+    "xi": 0.0,
+    "xi_is_physical_time": false,
+    "depth": 18,
+    "raw_weights": [
+      0.21416945086952796,
+      0.04586855368575515,
+      0.009823642955057645,
+      0.0021039242172230027,
+      0.000450596294273752,
+      9.65039609084537e-05,
+      2.0668200314497922e-05,
+      4.426497111817425e-06,
+      9.480204557134895e-07,
+      2.030370204132377e-07,
+      4.348432716808826e-08,
+      9.31301447102036e-09,
+      1.9945631951983977e-09,
+      4.2717450424021196e-10,
+      9.148772899858905e-11,
+      1.9593876680928006e-11,
+      4.1964098091596005e-12,
+      8.987427844512123e-13
+    ],
+    "normalized_weights": [
+      0.7858305491311782,
+      0.16830089718392405,
+      0.0360449107307299,
+      0.007719718737841579,
+      0.0016533279229507367,
+      0.00035409233336561655,
+      7.583576059402393e-05,
+      1.624170320269509e-05,
+      3.4784766561070614e-06,
+      7.449834353009213e-07,
+      1.5955269324529282e-07,
+      3.417131269709861e-08,
+      7.318451275828538e-09,
+      1.5673886909595943e-09,
+      3.356867752419246e-10,
+      7.189385231772565e-11,
+      1.5397466871782244e-11,
+      3.2976670247113515e-12
+    ],
+    "normalization_error": 1.1102230246251565e-16,
+    "kernel_state": [
+      0.7936268560033942,
+      0.1699706279455569,
+      0.036402516051048765
+    ],
+    "basis_rank": 3,
+    "basis_component_bound": 1.0,
+    "tail_bound": 2.4494243553123634e-13
+  },
+  "basis_admission_rule": {
+    "candidate": "A domain-labelled modal basis F_m={f_{m,j}} is eligible only when every component is typed, bounded, provenance-addressed, dimension/frame declared, and carries a preregistered witness/falsifier record.",
+    "selection": "QV admits an eligible basis only if all frozen predicates pass. Domain semantics and laws are not supplied by Module A and must be derived downstream.",
+    "stabilization": "RFL stores the admitted basis identity and provenance hash without identifying the returned RFL object with a new CIF object."
+  },
+  "relational_carrier": {
+    "mode": "RELATIONAL_GRAMMAR_ACTIVE",
+    "direct_many_body_dynamics": "DORMANT",
+    "physical_backreaction": 0.0,
+    "lane_set": "L_N={(i,j):1<=i,j<=N, i!=j}",
+    "lane_count": "N(N-1)",
+    "add_one_increment": "2N",
+    "witness_fields": [
+      "source",
+      "action",
+      "returned_output",
+      "residual_or_rule_check",
+      "invariant_or_type_check",
+      "projection_consistency",
+      "packet_continuity",
+      "event_branch_status",
+      "kernel_bound"
+    ],
+    "route_classes": {
+      "GAUGE_EQUIVALENT": "distinct representatives, same witnessed valid closure",
+      "MULTI_ROUTE_VALID": "distinct witnessed valid closures for the same admitted problem; retained as route strength/capacity",
+      "EVENT_BRANCH_FAMILY": "tied lawful branches retained without arbitrary label selection",
+      "OBSTRUCTION": "non-lawful or unwitnessed route/branch"
+    },
+    "new_solution_rule": "Lane growth alone never proves a new solution. A new closure requires a witnessed, admissible, non-gauge-equivalent closure distinction."
+  },
+  "memory_reopening": {
+    "no_loss_rule": "A quotient may remove duplicate representatives only; it may not delete an independent source, phase/type, witness, invariant, branch, route, memory, or kernel distinction.",
+    "promotion": "An admitted RFL output may seed a later CIF candidate envelope only through an explicit promotion record retaining the RFL content hash and ancestry.",
+    "non_identity": "RFL_s is not identical to CIF_{s+1}; promotion is a typed map with preserved lineage.",
+    "reopening": "A closed object reopens only through a new witnessed event/condition; ancestor hashes and prior closure status remain immutable."
+  },
+  "memory_execution_hash": "fca0400b2e2d97289c8f903ca73a115abb62044b700ca02e90a96fc39e402e6b",
+  "unbounded_manifestation_construct": {
+    "family": "For each m>=1, q_m=m/(m+1) and f_{m,j}=q_m^j e_{1+((j+m-2) mod 3)} defines a distinct bounded typed modal basis under the same source kernel.",
+    "scope": "This constructs unbounded lawful modal-basis capacity only. It does not assert identical equations, physical realization, empirical truth, or completed downstream laws."
+  },
+  "source_register_sha256": "11e25c3de3cd1015b4e307be128f26d3394469539e6e41c0d437c9f89de64b88",
+  "pre_execution_lock_sha256": "6b4a4a90b9e13bae168251157cd98cfa041f7388b4b9c3fb1634c5f858713041",
+  "frozen_derivation_sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2",
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet.",
+  "strongest_supported_claim": "Module A constitutes and executes a deterministic, typed, auditable, restartable prephysical triad/First-Action/kernel/relational-memory handoff at the declared mathematical scope.",
+  "strongest_unsupported_claim": "No Big Implosion, physical time, geometry, fields, particles, constants of nature, direct many-body dynamics, manifested universe, or empirical validation is established."
+}

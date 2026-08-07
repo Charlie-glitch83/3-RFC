@@ -1,0 +1,18 @@
+{
+  "module": "A",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "lane_increment_2N": true,
+    "depth_weights_normalized": true,
+    "kernel_bound_respected": true,
+    "three_roles_independent": true,
+    "each_role_ablation_loses_rank": true
+  },
+  "metrics": {
+    "kernel": 0.15638344336418855,
+    "bound": 0.18858093710131377,
+    "depth": 64
+  },
+  "note": "Checks the exact algebraic and manufactured invariants used to validate the Module A implementation. It is not the full emergence theorem."
+}

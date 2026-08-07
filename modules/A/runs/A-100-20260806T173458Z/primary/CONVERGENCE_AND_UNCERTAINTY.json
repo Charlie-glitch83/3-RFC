@@ -1,0 +1,93 @@
+{
+  "convergence": [
+    {
+      "depth": 6,
+      "kernel_state": [
+        0.7936268560033942,
+        0.1699706279455569,
+        0.03640251605104877
+      ],
+      "normalization_error": 1.1102230246251565e-16,
+      "geometric_tail_bound": 2.6301090403481333e-05
+    },
+    {
+      "depth": 12,
+      "kernel_state": [
+        0.7936268560033943,
+        0.16997062794555692,
+        0.03640251605104877
+      ],
+      "normalization_error": 0.0,
+      "geometric_tail_bound": 2.538159400147269e-09
+    },
+    {
+      "depth": 18,
+      "kernel_state": [
+        0.7936268560033942,
+        0.1699706279455569,
+        0.036402516051048765
+      ],
+      "normalization_error": 1.1102230246251565e-16,
+      "geometric_tail_bound": 2.4494243553123634e-13
+    }
+  ],
+  "uncertainty": {
+    "classification": "SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
+    "probabilistic_physical_uncertainty": false,
+    "delta_interval": [
+      4.66915,
+      4.66925
+    ],
+    "envelope_runs": [
+      {
+        "delta": 4.66915,
+        "alpha": 0.02568295070444153,
+        "kernel_state": [
+          0.7936247927467817,
+          0.16997200619958272,
+          0.036403201053635606
+        ],
+        "normalization_error": 0.0
+      },
+      {
+        "delta": 4.6692,
+        "alpha": 0.02568312917993952,
+        "kernel_state": [
+          0.7936268560033942,
+          0.1699706279455569,
+          0.036402516051048765
+        ],
+        "normalization_error": 1.1102230246251565e-16
+      },
+      {
+        "delta": 4.66925,
+        "alpha": 0.025683307653526322,
+        "kernel_state": [
+          0.7936289192199208,
+          0.16996924971246366,
+          0.0364018310676155
+        ],
+        "normalization_error": 0.0
+      }
+    ],
+    "max_kernel_component_deviation": 2.0632566125611262e-06,
+    "covariance": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "covariance_reason": "No stochastic or empirical random variable is admitted in Module A."
+  }
+}

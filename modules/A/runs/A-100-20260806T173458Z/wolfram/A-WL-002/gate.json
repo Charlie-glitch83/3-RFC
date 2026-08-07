@@ -1,0 +1,9 @@
+{
+  "call_id": "A-WL-002",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [],
+  "decision_rule": "PASS only when all three roles are independent and the directed carrier is complete, unique, and non-self.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

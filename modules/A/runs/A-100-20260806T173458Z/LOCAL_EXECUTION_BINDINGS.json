@@ -1,0 +1,15 @@
+{
+  "module": "A",
+  "bindings": [
+    {
+      "solver": "triad_kernel",
+      "template": "configured_runs/templates/A_triad_kernel.template.json",
+      "purpose": "Execute recursive depth law, typed constituents, and complete directed non-self carrier.",
+      "copy_command": "python tools/director.py solver-copy --module A --solver triad_kernel --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/A_triad_kernel.json --output-dir <RUN_DIR>/solver_outputs/triad_kernel",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/A_triad_kernel.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/A_triad_kernel.template.json --binding-sheet <RUN_DIR>/binding_sheets/A_triad_kernel.bindings.json --output <RUN_DIR>/solver_configs/A_triad_kernel.json"
+    }
+  ]
+}

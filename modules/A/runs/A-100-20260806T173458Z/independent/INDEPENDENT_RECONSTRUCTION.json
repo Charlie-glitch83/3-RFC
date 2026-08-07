@@ -1,0 +1,313 @@
+{
+  "schema_version": "1.0",
+  "run_id": "A-100-20260806T173458Z",
+  "classification": "INDEPENDENT_MODULE_A_RECONSTRUCTION",
+  "reads_primary_summary": false,
+  "reads_gate_results": false,
+  "source_checks": [
+    {
+      "path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "expected": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "actual": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "pass": true
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "expected": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "actual": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "pass": true
+    },
+    {
+      "path": "sources/frozen/65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70/Reproducibility Metadata.md",
+      "expected": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+      "actual": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
+      "pass": true
+    },
+    {
+      "path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
+      "expected": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "actual": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "pass": true
+    },
+    {
+      "path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
+      "expected": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "actual": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "pass": true
+    },
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "expected": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "actual": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "pass": true
+    }
+  ],
+  "lock_checks": {
+    "lock_status_frozen": true,
+    "frozen_spec_hash_matches_lock": true,
+    "public_data_none": true
+  },
+  "triad": {
+    "canonical_order_exact": true,
+    "first_action_exact": true,
+    "triad_rank": 3,
+    "ablation_ranks": {
+      "CIF": 2,
+      "QV": 2,
+      "RFL": 2
+    },
+    "all_single_role_ablations_lose_rank": true,
+    "scalar_projection_rank": 1,
+    "scalar_collapse_rejected": true
+  },
+  "kernel": {
+    "alpha_reconstructed": 0.02568312917993952,
+    "alpha_matches_frozen": true,
+    "normalization_error": 1.1102230246251565e-16,
+    "normalized": true,
+    "kernel_state": [
+      0.7936268560033942,
+      0.1699706279455569,
+      0.036402516051048765
+    ],
+    "tail_bound": 2.4494243553123634e-13,
+    "tail_bound_pass": true,
+    "coordinate_is_physical_time": false,
+    "symbolic_reconstruction": {
+      "lane_identity": "(N+1)N-N(N-1)=2N",
+      "weight_sum_identity": "Sum_{j>=1} delta^-j exp(-alpha*j*xi)=1/(delta*exp(alpha*xi)-1)",
+      "finite_normalization_identity": "Sum_j p_j(xi;n)=1"
+    }
+  },
+  "finite_N": [
+    {
+      "N": 2,
+      "lane_count": 2,
+      "lane_count_expected": 2,
+      "increment": 4,
+      "increment_expected": 4,
+      "new_lane_count_by_set_difference": 4,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "lane_growth_alone_new_solution": false,
+      "witnessed_non_gauge_closure_required": true,
+      "unwitnessed_branch_classification": "OBSTRUCTION",
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 3,
+      "lane_count": 6,
+      "lane_count_expected": 6,
+      "increment": 6,
+      "increment_expected": 6,
+      "new_lane_count_by_set_difference": 6,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "lane_growth_alone_new_solution": false,
+      "witnessed_non_gauge_closure_required": true,
+      "unwitnessed_branch_classification": "OBSTRUCTION",
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 4,
+      "lane_count": 12,
+      "lane_count_expected": 12,
+      "increment": 8,
+      "increment_expected": 8,
+      "new_lane_count_by_set_difference": 8,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "lane_growth_alone_new_solution": false,
+      "witnessed_non_gauge_closure_required": true,
+      "unwitnessed_branch_classification": "OBSTRUCTION",
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 5,
+      "lane_count": 20,
+      "lane_count_expected": 20,
+      "increment": 10,
+      "increment_expected": 10,
+      "new_lane_count_by_set_difference": 10,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "lane_growth_alone_new_solution": false,
+      "witnessed_non_gauge_closure_required": true,
+      "unwitnessed_branch_classification": "OBSTRUCTION",
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 6,
+      "lane_count": 30,
+      "lane_count_expected": 30,
+      "increment": 12,
+      "increment_expected": 12,
+      "new_lane_count_by_set_difference": 12,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "lane_growth_alone_new_solution": false,
+      "witnessed_non_gauge_closure_required": true,
+      "unwitnessed_branch_classification": "OBSTRUCTION",
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 7,
+      "lane_count": 42,
+      "lane_count_expected": 42,
+      "increment": 14,
+      "increment_expected": 14,
+      "new_lane_count_by_set_difference": 14,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "lane_growth_alone_new_solution": false,
+      "witnessed_non_gauge_closure_required": true,
+      "unwitnessed_branch_classification": "OBSTRUCTION",
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    },
+    {
+      "N": 8,
+      "lane_count": 56,
+      "lane_count_expected": 56,
+      "increment": 16,
+      "increment_expected": 16,
+      "new_lane_count_by_set_difference": 16,
+      "no_self_lanes": true,
+      "unique_lanes": true,
+      "lane_growth_alone_new_solution": false,
+      "witnessed_non_gauge_closure_required": true,
+      "unwitnessed_branch_classification": "OBSTRUCTION",
+      "direct_dynamics_mode": "DORMANT",
+      "direct_backreaction_norm": 0.0
+    }
+  ],
+  "memory": {
+    "rfl_hash": "3a5151d1f7af49c1f97392fc466a3891d0b5ab6b3ff4c7b73b524ee9e57b8520",
+    "next_cif_hash": "e3e48bd6317b4d95a62011dc349c23a9a8ac59a764d22d747b32b43397f22708",
+    "non_identity": true,
+    "ancestry_preserved": true,
+    "prior_closure_immutable": true
+  },
+  "unbounded_manifestation_capacity": {
+    "sample_count": 12,
+    "all_distinct": true,
+    "all_bounded": true,
+    "positive_integer_index_has_no_finite_terminal_member": true,
+    "physical_realization_claimed": false,
+    "samples": [
+      {
+        "m": 1,
+        "q_m": 0.5,
+        "basis_sha256": "418db03aeb7dc5ebf05e9f2ba1ed8a7238a0e4146df65a3792096c67094e257b",
+        "bounded": true
+      },
+      {
+        "m": 2,
+        "q_m": 0.6666666666666666,
+        "basis_sha256": "ad84aa7c8b980bb3d6e4a870edc2d711c8d2d5c2bf51d77dca7a2c113f2afad2",
+        "bounded": true
+      },
+      {
+        "m": 3,
+        "q_m": 0.75,
+        "basis_sha256": "cffc8cf8cc6cab347897247af92d8c20651406afa499bb85cc9844a7eefc6eaa",
+        "bounded": true
+      },
+      {
+        "m": 4,
+        "q_m": 0.8,
+        "basis_sha256": "1a754233e1daf390db9fd4f3419fad0b409485c884be985c25cee444864d8d1a",
+        "bounded": true
+      },
+      {
+        "m": 5,
+        "q_m": 0.8333333333333334,
+        "basis_sha256": "7a7e0aa64b2204dc5e334e73ec96a9e228f7bbf24bccde4f08b84a48696a03b1",
+        "bounded": true
+      },
+      {
+        "m": 6,
+        "q_m": 0.8571428571428571,
+        "basis_sha256": "2817dfdd67b4b7ddb3eb0f943d5ef8f565d0aecfa039465293ff9a0cd25f3947",
+        "bounded": true
+      },
+      {
+        "m": 7,
+        "q_m": 0.875,
+        "basis_sha256": "cf30f2e0aeea5f063198acfdacfa90ab08c3cf33e40c291f7f0a6a1506f8f1f0",
+        "bounded": true
+      },
+      {
+        "m": 8,
+        "q_m": 0.8888888888888888,
+        "basis_sha256": "a7bbcea4dcf1fa919e65d6c19297a913f0175306a23e34c38eb8aa9f4b428726",
+        "bounded": true
+      },
+      {
+        "m": 9,
+        "q_m": 0.9,
+        "basis_sha256": "76c1c0117caaea3b89fdb634c0e015163d8addb9b16b2201b073380049ad1b50",
+        "bounded": true
+      },
+      {
+        "m": 10,
+        "q_m": 0.9090909090909091,
+        "basis_sha256": "b11c15e4a3fc35a1d2701c578c192854f92a3529e8de01e910ba072f9197e982",
+        "bounded": true
+      },
+      {
+        "m": 11,
+        "q_m": 0.9166666666666666,
+        "basis_sha256": "6a978100da4f1668bda8bf406206bdcc782e55d1306434aceb4a70645ebf74a6",
+        "bounded": true
+      },
+      {
+        "m": 12,
+        "q_m": 0.9230769230769231,
+        "basis_sha256": "17ae5da7fe7e54d7d043c7e5b23a3898feb7e902ddff266e602eed3a8f9cc370",
+        "bounded": true
+      }
+    ]
+  },
+  "comparisons": {
+    "triad_rank_matches_primary": true,
+    "ablation_ranks_match_primary": true,
+    "kernel_state_matches_primary": true,
+    "kernel_state_matches_bound_solver": true,
+    "normalized_weights_match_primary": true,
+    "normalized_weights_match_bound_solver": true,
+    "finite_lane_records_match_primary": true,
+    "memory_hash_matches_primary": true,
+    "unbounded_sample_hashes_match_primary": true,
+    "solver_declares_success": true
+  },
+  "contamination_scan": {
+    "forbidden_physical_objects_present": false,
+    "public_data_used": false,
+    "physical_time_used": false,
+    "geometry_used": false,
+    "empirical_constants_used": false,
+    "direct_many_body_dynamics_used": false
+  },
+  "checks": {
+    "all_sources_exact": true,
+    "all_lock_checks": true,
+    "canonical_triad_and_ablations": true,
+    "scalar_collapse_rejected": true,
+    "kernel_reconstructed": true,
+    "finite_N_relational_grammar": true,
+    "witness_rule_preserved": true,
+    "dormant_backreaction_zero": true,
+    "memory_nonidentity_no_loss": true,
+    "unbounded_modal_capacity_constructed": true,
+    "all_independent_comparisons": true,
+    "generation_firewall_clean": true
+  },
+  "overall": "PASS",
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet."
+}

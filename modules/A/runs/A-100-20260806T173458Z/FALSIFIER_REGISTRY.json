@@ -1,0 +1,54 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "falsifiers": [
+    {
+      "id": "F-A-001",
+      "name": "CIF ablation",
+      "expected": "FAIL_SOURCE_OBLIGATION",
+      "hard_stop_if": "passes"
+    },
+    {
+      "id": "F-A-002",
+      "name": "QV ablation",
+      "expected": "FAIL_WITNESS_AND_ACTION_OBLIGATION",
+      "hard_stop_if": "passes"
+    },
+    {
+      "id": "F-A-003",
+      "name": "RFL ablation",
+      "expected": "FAIL_STABILIZATION_AND_MEMORY_OBLIGATION",
+      "hard_stop_if": "passes"
+    },
+    {
+      "id": "F-A-004",
+      "name": "weighted scalar collapse",
+      "expected": "REJECT_RANK_AND_TYPE_LOSS",
+      "hard_stop_if": "accepted"
+    },
+    {
+      "id": "F-A-005",
+      "name": "lane count implies solution",
+      "expected": "REJECT_WITHOUT_NON_GAUGE_WITNESS",
+      "hard_stop_if": "accepted"
+    },
+    {
+      "id": "F-A-006",
+      "name": "unwitnessed branch",
+      "expected": "OBSTRUCTION",
+      "hard_stop_if": "admitted"
+    },
+    {
+      "id": "F-A-007",
+      "name": "dormant direct dynamics",
+      "expected": "EXACT_ZERO_BACKREACTION",
+      "hard_stop_if": "nonzero"
+    },
+    {
+      "id": "F-A-008",
+      "name": "source/public contamination scan",
+      "expected": "NONE",
+      "hard_stop_if": "any detected"
+    }
+  ]
+}

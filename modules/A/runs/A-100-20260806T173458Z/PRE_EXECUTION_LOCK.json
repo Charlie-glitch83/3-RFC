@@ -1,0 +1,258 @@
+{
+  "run_id": "A-100-20260806T173458Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-06T17:39:08.420381+00:00",
+  "authority_hashes": [
+    {
+      "path": "README.md",
+      "sha256": "0c0420ae09b4794cd7c80dcf4c9deac3656a133255ed585b055302b33a95038c"
+    },
+    {
+      "path": "STATE.json",
+      "sha256": "af32084331e271ab2955bcbb441a07568ce9f57207a2e848b50cd169eb52e3e0"
+    },
+    {
+      "path": "WORK_QUEUE.json",
+      "sha256": "9dafc51e5a5c7efef58854ef79a263840148556b651767cfebddfad8181923fd"
+    },
+    {
+      "path": "sources/SOURCE_MANIFEST.json",
+      "sha256": "7204e0540e06604b1635a2f222bcc504aa1f93e92cdb77643926135e68d186e4"
+    },
+    {
+      "path": "theory/SCIENTIFIC_CONSTITUTION.md",
+      "sha256": "ce506bfbeb753e61c52d16ec5b3cb67f138928929d5d061941ca31c408f71ea0"
+    },
+    {
+      "path": "theory/TERMINOLOGY_LOCK.json",
+      "sha256": "b85d472879fe60f6fe23c595b7ebaa71d81e744c53f5df3effab327d4f19ecdb"
+    },
+    {
+      "path": "theory/CLAIM_MAP.json",
+      "sha256": "9e9e9c62bab48aeb56595531bb5818f373b9faae22f77364a92c7f45d7f34c55"
+    },
+    {
+      "path": "theory/ENHANCEMENT_CROSSWALK.json",
+      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72"
+    },
+    {
+      "path": "theory/DERIVATION_ATLAS.md",
+      "sha256": "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875"
+    },
+    {
+      "path": "audit/PHYSICAL_FRONTIER.json",
+      "sha256": "f1615e1ebd12fa29466aa84bb0c3e3134c02623a9a999824c56770688f382fdb"
+    },
+    {
+      "path": "modules/A/spec.json",
+      "sha256": "c0ecc12e47bccc1859afed211bbf5d0aa75e056ece7a39403b26d59b55080ee1"
+    },
+    {
+      "path": "recipes/A/recipe.json",
+      "sha256": "5f7d4b77bcbf9e379c6ab22a377b5dde64295b742a028556302bfc58562a2b73"
+    },
+    {
+      "path": "recipes/A/gates.json",
+      "sha256": "e932278e9fcce8573f9ab95db376f2789d1e3cb7768a34a4e77ac063d2c353c9"
+    },
+    {
+      "path": "recipes/A/wolfram/A-WL-001.wl",
+      "sha256": "50a4b5542e128152e43d87b912bdbdc8188f4d355b54b421b2c06ee23d4a8a2e"
+    },
+    {
+      "path": "recipes/A/wolfram/A-WL-002.wl",
+      "sha256": "e59dd764fdc085f002001b05ff7687358eb6ac58ca557a11fd6d19cc0f35a029"
+    },
+    {
+      "path": "configured_runs/templates/A_triad_kernel.template.json",
+      "sha256": "fa42cc61e866d02c53e641e18861caa399d73aec379cff3cce880eff27c2cbad"
+    }
+  ],
+  "parent_hashes": [],
+  "definition_hashes": [
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "86f63f252d3b68a90cd78c7cdb11b90e2d608d5df8494950e2de6f42e66b41f2"
+    },
+    {
+      "path": "modules/A/runs/A-100-20260806T173458Z/FALSIFIER_REGISTRY.json",
+      "sha256": "e84fb3b042a4f11f7f244be6af9763e0d71cc1eecd1760741ce83bf1cd5d723a"
+    }
+  ],
+  "candidate_classes": [
+    "typed ordered CIF/QV/RFL role basis",
+    "bounded provenance-complete modal-basis families",
+    "finite directed non-self carriers N=2..8",
+    "witness-certified route classes",
+    "gauge/multiroute/event-branch families",
+    "obstruction records"
+  ],
+  "equations_and_laws": [
+    "QV(CIF)->RFL",
+    "K_A(xi)=Sum delta^-j f_j(xi) Exp[-alpha j xi]",
+    "p_j normalized depth law",
+    "|L_N|=N(N-1)",
+    "|L_(N+1)|-|L_N|=2N",
+    "typed promotion RFL_s -> CIF_(s+1) with non-identity and no-loss ancestry"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "all Module A values dimensionless or counts",
+    "xi is a prephysical recursion coordinate, not physical time",
+    "no geometry/frame/physical gauge is admitted",
+    "route gauge means representative equivalence of the same witnessed closure"
+  ],
+  "methods": [
+    "exact-source SHA-256 verification",
+    "unchanged Wolfram A-WL-001 then A-WL-002",
+    "prebuilt triad_kernel solver with materialized provenance bindings",
+    "primary finite relational enumeration N=2..8",
+    "semantic ablation/countermodel matrix",
+    "depth convergence and source-representation envelope",
+    "checkpoint/restart and clean replay",
+    "independent reconstruction without reading primary gate summary"
+  ],
+  "tolerances": [
+    {
+      "name": "floating_arithmetic",
+      "value": 1e-12
+    },
+    {
+      "name": "source_hash",
+      "value": "exact equality"
+    },
+    {
+      "name": "rank_lane_counts_zero_backreaction",
+      "value": "exact equality"
+    },
+    {
+      "name": "component_gate_threshold",
+      "value": 0.95
+    }
+  ],
+  "stopping_rules": [
+    "stop on any source/hash mismatch",
+    "stop on any unresolved __BIND token",
+    "stop on physical-time/geometry/particle/public-data contamination",
+    "stop if any triad ablation passes",
+    "stop if scalar collapse is accepted",
+    "stop if dormant backreaction is nonzero",
+    "stop if independent reconstruction hash/invariants disagree"
+  ],
+  "expected_invariants": [
+    "triad rank 3; every single-role ablation rank 2 and fails a frozen obligation",
+    "normalized depth weights sum to one",
+    "depth-18 tail bound below 1e-12",
+    "all directed lanes unique and non-self",
+    "lane count and 2N increments exact for N=2..8",
+    "new-solution flag false absent witnessed non-gauge closure",
+    "direct dynamics backreaction exactly zero",
+    "memory promotion retains ancestry and is not identity"
+  ],
+  "tests": [
+    "F-A-001",
+    "F-A-002",
+    "F-A-003",
+    "F-A-004",
+    "F-A-005",
+    "F-A-006",
+    "F-A-007",
+    "F-A-008",
+    "WOLFRAM-A-WL-001",
+    "WOLFRAM-A-WL-002",
+    "REFERENCE-MATRIX-A",
+    "SOLVER-TRIAD-KERNEL",
+    "INDEPENDENT-RECONSTRUCTION",
+    "CLEAN-REPLAY"
+  ],
+  "gates": [
+    {
+      "gate": "canonical terminology exact",
+      "required": "PASS"
+    },
+    {
+      "gate": "no physical time, geometry, constants, or later-module objects assumed",
+      "required": "PASS"
+    },
+    {
+      "gate": "triad ablations fail as predeclared",
+      "required": "PASS"
+    },
+    {
+      "gate": "scalar collapse countermodel rejected",
+      "required": "PASS"
+    },
+    {
+      "gate": "lane increment 2N verified",
+      "required": "PASS"
+    },
+    {
+      "gate": "new-solution claim requires non-gauge witnessed closure",
+      "required": "PASS"
+    },
+    {
+      "gate": "dormant direct dynamics has zero backreaction",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent symbolic reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "falsifiers": [
+    {
+      "id": "F-A-001",
+      "name": "CIF ablation",
+      "expected": "FAIL_SOURCE_OBLIGATION",
+      "hard_stop_if": "passes"
+    },
+    {
+      "id": "F-A-002",
+      "name": "QV ablation",
+      "expected": "FAIL_WITNESS_AND_ACTION_OBLIGATION",
+      "hard_stop_if": "passes"
+    },
+    {
+      "id": "F-A-003",
+      "name": "RFL ablation",
+      "expected": "FAIL_STABILIZATION_AND_MEMORY_OBLIGATION",
+      "hard_stop_if": "passes"
+    },
+    {
+      "id": "F-A-004",
+      "name": "weighted scalar collapse",
+      "expected": "REJECT_RANK_AND_TYPE_LOSS",
+      "hard_stop_if": "accepted"
+    },
+    {
+      "id": "F-A-005",
+      "name": "lane count implies solution",
+      "expected": "REJECT_WITHOUT_NON_GAUGE_WITNESS",
+      "hard_stop_if": "accepted"
+    },
+    {
+      "id": "F-A-006",
+      "name": "unwitnessed branch",
+      "expected": "OBSTRUCTION",
+      "hard_stop_if": "admitted"
+    },
+    {
+      "id": "F-A-007",
+      "name": "dormant direct dynamics",
+      "expected": "EXACT_ZERO_BACKREACTION",
+      "hard_stop_if": "nonzero"
+    },
+    {
+      "id": "F-A-008",
+      "name": "source/public contamination scan",
+      "expected": "NONE",
+      "hard_stop_if": "any detected"
+    }
+  ],
+  "claim_boundary": "Mathematical constitution and relational enhancement only; no physical universe yet.",
+  "independent_verifier_design": "A separate script re-reads exact frozen source and derivation hashes, reconstructs kernel weights, triad ranks, N=2..8 lanes, countermodel outcomes, zero backreaction, and H_A_to_B content without reading GATE_RESULTS.json or primary summary conclusions.",
+  "allowed_implementation_only_corrections": [
+    "syntax/path/serialization defects only; no changes to sources, definitions, constants, basis selection, tests, thresholds, gates, expected outcomes, falsifiers, or claim boundary"
+  ],
+  "public_data_declaration": "NONE",
+  "generation_mode": "GENERATION_SEALED"
+}
