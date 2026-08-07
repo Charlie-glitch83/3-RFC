@@ -1,0 +1,1 @@
+Temporary trigger only: clean-checkout replay the rebuilt D-130 physical artifacts, finalize canonical H_D_to_E, close and freeze Module D, and do not activate E.
