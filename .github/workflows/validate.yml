@@ -22,7 +22,7 @@ jobs:
       - run: python tools/rfc.py firewall-scan
 
   finalize-a100:
-    if: github.ref == 'refs/heads/agent/frontier-050-execution'
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'agent/a100-finalize-run'
     runs-on: ubuntu-latest
     env:
       BRANCH: agent/frontier-050-execution
@@ -33,13 +33,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: agent/frontier-050-execution
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Verify evidence, close Module A, and authorize B-110
+      - name: Verify evidence and governed parent state
         shell: bash
         run: |
           set -euo pipefail
@@ -51,9 +52,19 @@ jobs:
           run = Path('modules/A/runs') / os.environ['RUN_ID']
           gates = json.loads((run / 'GATE_RESULTS.json').read_text())
           replay = json.loads((run / 'REPLAY_RECORD.json').read_text())
+          queue = json.loads(Path('WORK_QUEUE.json').read_text())['items']
+          assert next(x for x in queue if x['id']=='FRONTIER-050')['status'] == 'PASS'
           assert gates['overall'] == 'PASS'
           assert all(g['result'] == 'PASS' and g['score'] >= 0.95 for g in gates['gates'])
           assert replay['result'] == 'PASS' and replay['clean_checkout'] and replay['artifact_hashes_match']
+          PY
+      - name: Close Module A and authorize exactly B-110
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          from pathlib import Path
           p = Path(os.environ['CLOSEOUT'])
           text = p.read_text()
           text = text.replace('administrative close-run awaits the verified GitHub evidence commit.', 'verified GitHub evidence commit recorded; administrative close-run completed.')
@@ -70,21 +81,18 @@ jobs:
           python tools/rfc.py advance --task A-100 --result PASS --evidence "$CLOSEOUT" --note 'Module A closed at FROZEN/PRODUCTION; authorize exactly B-110'
           python - <<'PY'
           import json
-          state = json.load(open('STATE.json'))
-          queue = json.load(open('WORK_QUEUE.json'))['items']
-          active = [x for x in queue if x['status'] == 'ACTIVE']
-          assert state['active_work_unit'] == 'B-110'
-          assert state['current_module'] == 'B'
-          assert state['current_run'] is None
-          assert state['modules']['A']['evidence_state'] == 'FROZEN'
-          assert state['modules']['A']['fidelity'] == 'PRODUCTION'
-          assert len(active) == 1 and active[0]['id'] == 'B-110'
+          s=json.load(open('STATE.json')); q=json.load(open('WORK_QUEUE.json'))['items']
+          assert s['active_work_unit']=='B-110' and s['current_module']=='B' and s['current_run'] is None
+          assert s['modules']['A']['evidence_state']=='FROZEN' and s['modules']['A']['fidelity']=='PRODUCTION'
+          assert sum(x['status']=='ACTIVE' for x in q)==1
+          assert next(x for x in q if x['id']=='A-100')['status']=='PASS'
+          assert next(x for x in q if x['id']=='B-110')['status']=='ACTIVE'
           PY
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
-      - name: Restore validation workflow, commit, push, and verify
+      - name: Restore workflow, commit, push, and verify
         shell: bash
         run: |
           set -euo pipefail
@@ -114,8 +122,6 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
           git commit -m 'Close Module A and authorize B-110'
-          git fetch origin "$BRANCH"
-          git rebase "origin/$BRANCH"
           FINAL_SHA=$(git rev-parse HEAD)
           git push origin HEAD:"$BRANCH"
           REMOTE_SHA=$(git ls-remote origin "refs/heads/$BRANCH" | awk '{print $1}')
