@@ -1,10 +1,88 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
+  "schema_version": "1.0",
+  "run_id": "E-140-20260807T161406Z",
+  "module": "E",
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_declaration": "NONE",
+  "exact_parents": [
+    {
+      "object_id": "H_D_to_E",
+      "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
+      "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8",
+      "role": "SOLE_DIRECT_PHYSICAL_PARENT"
+    }
+  ],
+  "inherited_authorities": [
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "role": "TRIAD_KERNEL_ANCESTRY"
+    },
+    {
+      "path": "modules/B/frozen/H_B_to_C.json",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+      "role": "ORDERED_THREE_CHANNEL_PHYSICAL_ANCESTRY"
+    },
+    {
+      "path": "modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json",
+      "sha256": "3255975f872f42fdbf08f5c0c901884edf4c7e22a4de01b70689fedf43903393",
+      "role": "MICROSCOPIC_GAP_EDGE_AND_SYMMETRY_PARENT"
+    }
+  ],
+  "module_authorities": [
+    {
+      "path": "recipes/E/recipe.json",
+      "sha256": "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f"
+    },
+    {
+      "path": "recipes/E/WORK_ORDER.md",
+      "sha256": "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7"
+    },
+    {
+      "path": "recipes/E/MODEL_PROMPT.md",
+      "sha256": "c3a6bd65808eaf9fbe85e4951a666a2287bbd6c74f928a55ccd7518c51387fcd"
+    },
+    {
+      "path": "modules/E/spec.json",
+      "sha256": "3a73e6482152d8d2d465e711be19d634e170f5a6bcee2b564fa046b133014cc8"
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d"
+    },
+    {
+      "path": "docs/10_EXECUTION_PROTOCOL.md",
+      "sha256": "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d"
+    },
+    {
+      "path": "docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md",
+      "sha256": "ce98bd016b75d6750d09f7485b54b4879d29c1a73bc8b1c9a369af50a8b5f083"
+    },
+    {
+      "path": "docs/00_SCIENTIFIC_CONSTITUTION.md",
+      "sha256": "fa57dad1c09fb3aeb7d4f842d186997ccd14a5a786eb92a3c5b73a20b78bd8e7"
+    },
+    {
+      "path": "configured_runs/BINDING_PROTOCOL.md",
+      "sha256": "a4610c3b1c058b3ef1967c7e3e442c2a40955641fad32e9b95a998b55ffde1ae"
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-001.wl",
+      "sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668"
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-002.wl",
+      "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43"
+    },
+    {
+      "path": ".github/workflows/e140_execute_frozen_parent_law.yml",
+      "sha256": "2cf08dec6127a961047e3658d6b1719f6358511dfe7456a7e0256ae71695a6c4"
+    }
+  ],
+  "historical_failures_used_for_generation": false,
+  "historical_proxy_abundances_used_for_generation": false,
+  "public_data_used": false,
   "imports": [],
-  "files": [],
   "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "constants": []
 }

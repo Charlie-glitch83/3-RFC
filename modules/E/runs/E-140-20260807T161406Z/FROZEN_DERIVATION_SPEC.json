@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E140_FROZEN_DERIVATION_SPEC",
+  "run_id": "E-140-20260807T161406Z",
+  "module": "E",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "fidelity": "MINIMAL_SPINE",
+  "exact_parent": {
+    "object_id": "H_D_to_E",
+    "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
+    "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8"
+  },
+  "triadic_descent": {
+    "CIF": "The exact E program opens the three internal species roles n,p,d and reversible n+p<->d reaction hypergraph on the inherited three-channel parent possibility state.",
+    "QV": "The C/D constitutive gap g_C supplies the association/action rate while the exact complete-support edge rate a=g_C/3 supplies the reverse/reopening rate; all symmetry-equivalent parent-role assignments are retained rather than arbitrarily labeled.",
+    "RFL": "The deuteron-like composite abundance, conserved ledgers, reaction-flow freeze witness, branch covariance and restartable H_E_to_F are stabilized as E memory."
+  },
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE_REACTION_HYPERGRAPH_SPECIALIZATION",
+  "species_and_graph": {
+    "species": [
+      "n",
+      "p",
+      "d"
+    ],
+    "semantics": "RFC internal Module-E species roles only; no empirical nuclear identity or calibrated Standard Model correspondence is claimed at MINIMAL_SPINE.",
+    "stoichiometry": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "rate_expressions": [
+      "kf*n*p",
+      "kr*d"
+    ],
+    "baryon": [
+      1.0,
+      1.0,
+      2.0
+    ],
+    "charge": [
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  "parent_to_E_interface": {
+    "reason": "C and D preserve an exactly symmetric unlabeled three-channel carrier. E may not assign empirical identities to those channels. Preserve every ordered n/p assignment and treat the remaining channel as an RFL memory reservoir returned symmetrically to the primitive pair before E association begins.",
+    "branch_family": [
+      {
+        "branch_id": "N0_P1_R2",
+        "assignment": {
+          "n_source": 0,
+          "p_source": 1,
+          "symmetric_reservoir_source": 2
+        },
+        "initial_state": [
+          0.5631129521420619,
+          0.4368870478579379,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.4368870478579379
+      },
+      {
+        "branch_id": "N0_P2_R1",
+        "assignment": {
+          "n_source": 0,
+          "p_source": 2,
+          "symmetric_reservoir_source": 1
+        },
+        "initial_state": [
+          0.5766298184450823,
+          0.42337018155491757,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999999,
+        "initial_charge": 0.42337018155491757
+      },
+      {
+        "branch_id": "N1_P0_R2",
+        "assignment": {
+          "n_source": 1,
+          "p_source": 0,
+          "symmetric_reservoir_source": 2
+        },
+        "initial_state": [
+          0.4368870478579379,
+          0.5631129521420619,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.5631129521420619
+      },
+      {
+        "branch_id": "N1_P2_R0",
+        "assignment": {
+          "n_source": 1,
+          "p_source": 2,
+          "symmetric_reservoir_source": 0
+        },
+        "initial_state": [
+          0.5135168663030203,
+          0.48648313369697954,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.48648313369697954
+      },
+      {
+        "branch_id": "N2_P0_R1",
+        "assignment": {
+          "n_source": 2,
+          "p_source": 0,
+          "symmetric_reservoir_source": 1
+        },
+        "initial_state": [
+          0.42337018155491757,
+          0.5766298184450823,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999999,
+        "initial_charge": 0.5766298184450823
+      },
+      {
+        "branch_id": "N2_P1_R0",
+        "assignment": {
+          "n_source": 2,
+          "p_source": 1,
+          "symmetric_reservoir_source": 0
+        },
+        "initial_state": [
+          0.48648313369697954,
+          0.5135168663030203,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.5135168663030203
+      }
+    ],
+    "branch_count": 6,
+    "central_symmetry_quotient_initial_state": [
+      0.49999999999999994,
+      0.49999999999999994,
+      0.0
+    ],
+    "central_rule": "arithmetic quotient over all six equally lawful role assignments; no branch is selected as empirically preferred",
+    "no_loss_check": "Each branch has initial baryon ledger 1 and zero initial d; the full D carrier sum is retained because the unused channel is split one-half/one-half into n and p."
+  },
+  "rate_law": {
+    "kf_expression": "g_C",
+    "kr_expression": "a=g_C/3=1/(delta+2)",
+    "kf": 0.449829064955317,
+    "kr": 0.1499430216517723,
+    "ratio": 3.0000000000000004,
+    "derivation": "Association uses the full nonuniform QV relaxation gap; reverse/reopening uses one exact complete-support relational edge. Both are inherited from C/D and introduce no new coefficient.",
+    "units": "inverse intrinsic E reaction-clock unit"
+  },
+  "intrinsic_energy_ledger": {
+    "energy_vector": [
+      0.449829064955317,
+      0.449829064955317,
+      0.899658129910634
+    ],
+    "expression": "E_i=g_C*A_i with A=(1,1,2)",
+    "status": "exact additive internal energy invariant",
+    "claim_boundary": "dimensionless parent-gap-scaled energy only; no MeV binding energy or calibrated nuclear Q-value"
+  },
+  "clock_and_interval": {
+    "clock": "tau_E dimensionless intrinsic reaction clock beginning at the D->E interface",
+    "t_span": [
+      0.0,
+      6.669200000000001
+    ],
+    "interval_rule": "one reverse/reopening timescale 1/kr=1/a=delta+2",
+    "max_step": 0.05210312500000001,
+    "max_step_rule": "t_end/128 inherited from immediate-parent D baseline resolution convention",
+    "convergence_steps": [
+      0.20841250000000003,
+      0.10420625000000001,
+      0.05210312500000001,
+      0.026051562500000004
+    ],
+    "freezeout_witness": "first accepted state satisfying |J_E| <= |J_E(0)|/e, where J_E=kf*n*p-kr*d",
+    "freezeout_meaning": "one e-fold QV compression of net reaction flow, recorded into RFL memory; no SI time or public freeze-out temperature"
+  },
+  "network_size_and_route_rule": "The source-owned physical graph has the two exact reversible channels. Network-size convergence is tested by splitting each exact channel into 1,2,4 algebraically equivalent witnessed relational routes whose summed propensity is unchanged; withheld-forward/reverse runs are separate ablations and must materially differ. No unsupported extra species/reaction is invented.",
+  "uncertainty": {
+    "stochastic_covariance": "ZERO_NO_STOCHASTIC_VARIABLE_ADMITTED",
+    "required": "For each inherited D delta-envelope member, rederive g_C, a, branch family, interval and all six E branch outputs without retuning; report branch covariance and combined branch-plus-decimal-envelope covariance."
+  },
+  "countermodels": [
+    "SCALAR_COLLAPSE: erase six branch identities into one unlabeled scalar before conservation/charge bookkeeping; must be rejected because branch charges differ",
+    "CHARGE_BREAK: perturb stoichiometry so exact charge/baryon nullspace fails",
+    "FORWARD_WITHHELD: kf=0 must materially alter E state",
+    "REVERSE_WITHHELD: kr=0 must materially alter E state"
+  ],
+  "gates": [
+    "baryon/charge/energy accounting",
+    "network convergence",
+    "rate-source audit",
+    "no scalar-channel collapse",
+    "withheld reaction and independent implementation checks"
+  ],
+  "falsifiers": [
+    "D parent hash mismatch",
+    "g_C != 3a above 1e-12",
+    "a != 1/(delta+2) above 1e-12",
+    "any public/remembered abundance target enters generation",
+    "any branch loses baryon/charge/internal-energy above 1e-9",
+    "any abundance below -1e-12",
+    "finest dyadic step pair differs above 1e-8 L_inf",
+    "1/2/4 exact route splitting differs above 1e-8 L_inf",
+    "midpoint restart differs above 1e-8 L_inf",
+    "independent reduced reaction-extent implementation differs above 1e-8 L_inf",
+    "withheld forward or reverse channel fails to materially change result",
+    "scalar branch collapse is treated as equivalent to branch-resolved state"
+  ],
+  "independent_verifier_design": "Reconstruct g_C and a from the C constitution and D ancestry, independently generate all six parent-role assignments and the [0.5,0.5,0] symmetry quotient, integrate the reduced one-dimensional reaction extent with an independent DOP853 implementation, and compare branchwise against primary BDF outputs without trusting gate summaries.",
+  "claim_boundary": "Internally generated RFC minimal-spine primordial three-species branch-family state with parent-derived reversible rates, exact baryon/charge/internal-energy accounting, reaction-flow freeze witnesses and inherited representation uncertainty. No calibrated physical nuclear rates, MeV binding energies, SI times, Standard Model isotope correspondence, observational abundance agreement, or old Li7 mechanism is claimed."
+}

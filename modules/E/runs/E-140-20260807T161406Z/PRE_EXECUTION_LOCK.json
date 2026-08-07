@@ -1,21 +1,109 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "1.0",
+  "run_id": "E-140-20260807T161406Z",
+  "status": "FROZEN",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f",
+    "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7",
+    "c3a6bd65808eaf9fbe85e4951a666a2287bbd6c74f928a55ccd7518c51387fcd",
+    "3a73e6482152d8d2d465e711be19d634e170f5a6bcee2b564fa046b133014cc8",
+    "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+    "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d",
+    "ce98bd016b75d6750d09f7485b54b4879d29c1a73bc8b1c9a369af50a8b5f083",
+    "fa57dad1c09fb3aeb7d4f842d186997ccd14a5a786eb92a3c5b73a20b78bd8e7",
+    "a4610c3b1c058b3ef1967c7e3e442c2a40955641fad32e9b95a998b55ffde1ae",
+    "2cf08dec6127a961047e3658d6b1719f6358511dfe7456a7e0256ae71695a6c4"
+  ],
+  "parent_hashes": [
+    "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8"
+  ],
+  "definition_hashes": [
+    "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
+    "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43",
+    "d8ba9789bd261ec4957a0025679e854f237eb13fd22e10613b5137efcbd4e693"
+  ],
+  "candidate_classes": [
+    "six symmetry-equivalent parent-role branches",
+    "central symmetry quotient representative",
+    "withheld-channel ablations",
+    "scalar-collapse and charge-break countermodels"
+  ],
+  "equations_and_laws": [
+    "n+p<->d",
+    "kf=g_C",
+    "kr=g_C/3=a",
+    "tau_E end=1/a",
+    "J_E=kf*n*p-kr*d"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "dimensionless abundance carriers",
+    "intrinsic tau_E only",
+    "no SI/Kelvin/MeV calibration",
+    "E internal species labels are not empirical identities"
+  ],
+  "methods": [
+    "BDF primary branch family",
+    "DOP853 independent reduced extent"
+  ],
+  "tolerances": [
+    "rtol=1e-9",
+    "atol=1e-12",
+    "positivity=1e-12",
+    "invariants=1e-9",
+    "convergence/restart/independent=1e-8"
+  ],
+  "stopping_rules": [
+    "execute exact t_span [0,1/a]",
+    "record first net-flow e-fold freeze witness",
+    "unresolved binding token is hard stop"
+  ],
+  "expected_invariants": [
+    "baryon",
+    "charge",
+    "parent-gap-scaled intrinsic energy",
+    "positivity"
+  ],
+  "tests": [
+    "E-WL-001",
+    "E-WL-002",
+    "reference check",
+    "six-branch primary execution",
+    "1/2/4 route splitting",
+    "dyadic time-step refinement",
+    "withheld channels",
+    "scalar collapse",
+    "delta envelope",
+    "midpoint restart",
+    "independent reduced extent"
+  ],
+  "gates": [
+    "baryon/charge/energy accounting",
+    "network convergence",
+    "rate-source audit",
+    "no scalar-channel collapse",
+    "withheld reaction and independent implementation checks"
+  ],
+  "falsifiers": [
+    "D parent hash mismatch",
+    "g_C != 3a above 1e-12",
+    "a != 1/(delta+2) above 1e-12",
+    "any public/remembered abundance target enters generation",
+    "any branch loses baryon/charge/internal-energy above 1e-9",
+    "any abundance below -1e-12",
+    "finest dyadic step pair differs above 1e-8 L_inf",
+    "1/2/4 exact route splitting differs above 1e-8 L_inf",
+    "midpoint restart differs above 1e-8 L_inf",
+    "independent reduced reaction-extent implementation differs above 1e-8 L_inf",
+    "withheld forward or reverse channel fails to materially change result",
+    "scalar branch collapse is treated as equivalent to branch-resolved state"
+  ],
+  "claim_boundary": "Internally generated RFC minimal-spine primordial three-species branch-family state with parent-derived reversible rates, exact baryon/charge/internal-energy accounting, reaction-flow freeze witnesses and inherited representation uncertainty. No calibrated physical nuclear rates, MeV binding energies, SI times, Standard Model isotope correspondence, observational abundance agreement, or old Li7 mechanism is claimed.",
+  "independent_verifier_design": "Reconstruct g_C and a from the C constitution and D ancestry, independently generate all six parent-role assignments and the [0.5,0.5,0] symmetry quotient, integrate the reduced one-dimensional reaction extent with an independent DOP853 implementation, and compare branchwise against primary BDF outputs without trusting gate summaries.",
+  "allowed_implementation_only_corrections": [
+    "serialization",
+    "path handling",
+    "runner dependencies",
+    "numerical output formatting; no frozen rate/interface/branch/gate/tolerance/claim changes"
+  ]
 }
