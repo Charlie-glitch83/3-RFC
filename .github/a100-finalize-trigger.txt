@@ -1,0 +1,5 @@
+Finalize verified A-100 evidence
+verified_evidence_commit=b6280513dc47339ddf024be6275817d3f38a9d39
+expected_handoff_sha256=728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7
+expected_output_tree_sha256=33d1967c587a282e43896bc3f6c1f00a49bd1c2da0bfdcd4cc26982512e81b6c
+finalizer_retry=2026-08-06T19:20:00-05:00
