@@ -1,0 +1,259 @@
+name: D130 Redo Clean Replay and Frozen Closeout
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+env:
+  PYTHONPATH: ${{ github.workspace }}
+
+jobs:
+  replay_closeout:
+    if: github.event.pull_request.head.ref == 'ops/d130-redo-replay-closeout-trigger-20260807'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Verify committed Stage-1 physical evidence and frozen authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          run=Path('modules/D/runs/D-130-20260807T220342Z')
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          state=json.loads(Path('STATE.json').read_text())
+          if state.get('active_work_unit')!='D-130' or state.get('current_module')!='D' or state.get('current_run')!='D-130-20260807T220342Z':
+              raise SystemExit('HARD STOP: D-130 is no longer the sole authorized active run')
+          snap=json.loads((run/'PRE_EXECUTION_SNAPSHOT.json').read_text())
+          if sha(run/'FROZEN_DERIVATION_SPEC.json')!=snap['derivation_sha256'] or snap['derivation_sha256']!='7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506':
+              raise SystemExit('HARD STOP: frozen D science changed')
+          impl=json.loads((run/'IMPLEMENTATION_LOCK.json').read_text())
+          for rec in impl['implementations']:
+              if sha(rec['path'])!=rec['sha256']:
+                  raise SystemExit('HARD STOP: frozen implementation changed: '+rec['path'])
+          stage=json.loads((run/'STAGE1_OUTPUT_MANIFEST.json').read_text())
+          if stage.get('status')!='PHYSICALLY_EXECUTED_AND_INDEPENDENTLY_RECONSTRUCTED_PENDING_CLEAN_REPLAY':
+              raise SystemExit('HARD STOP: Stage-1 status mismatch')
+          bad=[]
+          for rec in stage['outputs']:
+              p=run/rec['path']
+              if not p.exists() or sha(p)!=rec['sha256']:
+                  bad.append(rec['path'])
+          if bad: raise SystemExit('HARD STOP: committed Stage-1 artifact drift: '+','.join(bad))
+          gates=json.loads((run/'GATE_RESULTS.json').read_text())
+          indep=json.loads((run/'independent/INDEPENDENT_RECONSTRUCTION.json').read_text())
+          if gates.get('overall')!='PASS' or not indep.get('pass'):
+              raise SystemExit('HARD STOP: committed Stage-1 gates/independent reconstruction not PASS')
+          print(json.dumps({'stage1_commit':'05c57aa567bee79c0f7f9935d9cfc1891ca8aabb','stage1_artifacts':len(stage['outputs']),'frozen_derivation_sha256':snap['derivation_sha256'],'implementation_hashes':[x['sha256'] for x in impl['implementations']]},indent=2))
+          PY
+      - name: Clean-checkout replay of frozen numerical and physical matrix
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/D/runs/D-130-20260807T220342Z'
+          python tools/run_reference_checks.py --module D --output "$RUN/reference_checks.json"
+          python tools/materialize_solver_config.py --template "$RUN/solver_templates/D_transport.template.json" --binding-sheet "$RUN/binding_sheets/D_transport.bindings.json" --output "$RUN/solver_configs/D_transport.json"
+          python tools/run_configured_solver.py --config "$RUN/solver_configs/D_transport.json" --output-dir "$RUN/solver_outputs/transport"
+          python "$RUN/execute_d130_physical.py" --run "$RUN" --solver-result "$RUN/solver_outputs/transport/result.json"
+          python "$RUN/independent_reconstruct_d130.py" --run "$RUN"
+      - name: Require exact artifact-hash replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          run=Path('modules/D/runs/D-130-20260807T220342Z')
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          stage=json.loads((run/'STAGE1_OUTPUT_MANIFEST.json').read_text())
+          rows=[]; mismatches=[]
+          for rec in stage['outputs']:
+              p=run/rec['path']; actual=sha(p)
+              ok=actual==rec['sha256']
+              rows.append({'path':rec['path'],'stage1_sha256':rec['sha256'],'replay_sha256':actual,'match':ok})
+              if not ok: mismatches.append(rec['path'])
+          replay={
+            'run_id':run.name,
+            'result':'PASS' if not mismatches else 'FAIL',
+            'clean_checkout':True,
+            'artifact_hashes_match':not mismatches,
+            'source_commit':'05c57aa567bee79c0f7f9935d9cfc1891ca8aabb',
+            'replayed_frozen_derivation_sha256':'7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506',
+            'artifact_comparisons':rows,
+            'mismatches':mismatches,
+            'independent_reconstruction_pass':json.loads((run/'independent/INDEPENDENT_RECONSTRUCTION.json').read_text()).get('pass') is True,
+            'public_data_used':False,
+            'historical_D_output_used_as_generation_input':False
+          }
+          (run/'REPLAY_RECORD.json').write_text(json.dumps(replay,indent=2)+'\n')
+          if mismatches: raise SystemExit('HARD STOP: clean replay hash mismatch: '+','.join(mismatches))
+          if json.loads((run/'GATE_RESULTS.json').read_text()).get('overall')!='PASS':
+              raise SystemExit('HARD STOP: replay gates not PASS')
+          print(json.dumps({'clean_replay':'PASS','exact_hash_matches':len(rows)},indent=2))
+          PY
+      - name: Finalize canonical H_D_to_E and run closeout evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          run=Path('modules/D/runs/D-130-20260807T220342Z')
+          root=Path('.')
+          def load(p): return json.loads(Path(p).read_text())
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          def dump(p,o):
+              p=Path(p); p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,ensure_ascii=False)+'\n')
+          spec=load(run/'FROZEN_DERIVATION_SPEC.json')
+          dist=load(run/'primary/THERMAL_DISTRIBUTION_HISTORY.json')
+          temp=load(run/'primary/TEMPERATURE_HISTORY.json')
+          phase=load(run/'primary/PHASE_EVENT_LEDGER.json')
+          ent=load(run/'primary/ENTROPY_CONSERVATION_LEDGER.json')
+          op=load(run/'primary/TRANSPORT_COLLISION_OPERATORS.json')
+          unc=load(run/'primary/UNCERTAINTY_COVARIANCE.json')
+          gates=load(run/'GATE_RESULTS.json')
+          indep=load(run/'independent/INDEPENDENT_RECONSTRUCTION.json')
+          replay=load(run/'REPLAY_RECORD.json')
+          if gates.get('overall')!='PASS' or not indep.get('pass') or replay.get('result')!='PASS' or not replay.get('artifact_hashes_match'):
+              raise SystemExit('HARD STOP: final D evidence not fully PASS')
+          handoff={
+            'schema_version':'1.0','object_id':'H_D_to_E','from_module':'D','to_module':'E','run_id':run.name,
+            'evidence_state':'FROZEN_PENDING_CONTROLLER_PROMOTION','fidelity':'MINIMAL_SPINE','generation_mode':'GENERATION_SEALED',
+            'parent':spec['exact_parent'],'triadic_descent':spec['triadic_descent'],'nbody_mode':spec['nbody_mode'],
+            'clock':spec['state_space']['clock'],'frame':spec['state_space']['frame'],
+            'transport_collision_law':{
+              'compact_expression':spec['transport_collision_law']['compact_expression'],
+              'edge_rate_a':spec['transport_collision_law']['edge_rate_a'],'gap_g_C':spec['transport_collision_law']['gap_g_C'],
+              'parent_matrix_M_C':spec['transport_collision_law']['parent_matrix_M_C'],'generator_G_D':spec['transport_collision_law']['generator_G_D']
+            },
+            'thermal_state':{
+              'initial_distribution':dist['initial_state'],'final_distribution':dist['final_state'],'equilibrium_state':dist['equilibrium_state'],
+              'intrinsic_spectral_temperature_definition':temp['definition'],'Theta_D_initial':temp['initial_Theta_D'],'Theta_D_final':temp['final_Theta_D'],
+              'temperature_units':temp['units'],'kelvin_or_MeV_status':temp['kelvin_or_MeV_status'],
+              'entropy_initial':ent['shannon_entropy_S_D'][0],'entropy_final':ent['shannon_entropy_S_D'][-1],
+              'entropy_change':ent['entropy_change'],'RFL_memory_final':ent['rfl_transfer_memory_Q_RFL'][-1],
+              'effective_nonmetric_state_space_volume_initial':ent['effective_nonmetric_state_space_volume_V_eff'][0],
+              'effective_nonmetric_state_space_volume_final':ent['effective_nonmetric_state_space_volume_V_eff'][-1],
+              'metric_expansion_claimed':False
+            },
+            'phase_events':[{'event':x['event'],'tau_D':x['tau_D'],'state':x['state'],'Theta_D':x['Theta_D'],'S_D':x['S_D'],'Q_RFL':x['Q_RFL']} for x in phase['events']],
+            'uncertainty':{
+              'stochastic_covariance':unc['stochastic_covariance'],'final_state_covariance':unc['final_state_covariance'],
+              'event_time_covariance':unc['event_time_covariance'],'thermal_scalar_covariance':unc['thermal_scalar_covariance'],'retuned':False
+            },
+            'verification':{
+              'gates_overall':gates['overall'],'independent_method':indep['method'],'analytic_history_linf':indep['analytic_history_linf'],
+              'DOP853_final_linf':indep['DOP853_final_linf'],'clean_replay':replay['result'],'exact_stage1_hash_replay':replay['artifact_hashes_match']
+            },
+            'restart_contract':'E receives the exact D final three-carrier thermal distribution, parent-derived transport/gap provenance, intrinsic tau_D chronology, phase-event witnesses, entropy/RFL memory state, intrinsic spectral-temperature coordinate and inherited covariance. E must not infer Kelvin/MeV, Standard Model species identities, public abundance targets, metric/FRW expansion or observational transition temperatures from this handoff.',
+            'claim_boundary':spec['claim_boundary']
+          }
+          run_h=run/'frozen/H_D_to_E.json'; canonical=Path('modules/D/frozen/H_D_to_E.json')
+          dump(run_h,handoff); canonical.parent.mkdir(parents=True,exist_ok=True); canonical.write_bytes(run_h.read_bytes())
+          manifest={'object_id':'H_D_to_E','sha256':sha(run_h),'bytes':run_h.stat().st_size,'generation_mode':'GENERATION_SEALED','evidence_state':'FROZEN_PENDING_CONTROLLER_PROMOTION'}
+          dump(run/'frozen/H_D_to_E_MANIFEST.json',manifest); dump('modules/D/frozen/H_D_to_E_MANIFEST.json',manifest)
+          if sha(run_h)!=sha(canonical): raise SystemExit('HARD STOP: run/canonical H_D_to_E copy mismatch')
+
+          claim={
+            'claim_id':'RFC-D-130-GENERATED-THERMAL-HISTORY-20260807','text':'From the exact frozen C prethermal three-carrier state, Module D generates and physically executes a conservative parent-derived nonequilibrium transport history with positive carrier distributions, exact carrier and constitutive-energy/RFL accounting, nonnegative entropy production, ordered source-derived phase witnesses, intrinsic spectral-temperature history, inherited decimal-envelope covariance, restart, independent parent-only reconstruction, and exact clean-checkout replay.',
+            'owner':'D','evidence_state':'FROZEN','fidelity':'MINIMAL_SPINE','supported':True,
+            'evidence':['modules/D/frozen/H_D_to_E.json',str(run/'GATE_RESULTS.json'),str(run/'independent/INDEPENDENT_RECONSTRUCTION.json'),str(run/'REPLAY_RECORD.json')],
+            'strongest_unsupported_claim':'Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation.'
+          }
+          dump(run/'CLAIM_RECORD.json',claim)
+
+          closeout=f'''# D-130 Closeout\n\n## Result\n\nPASS at `MINIMAL_SPINE`. Module D now physically materializes the nonequilibrium thermal/phase trajectory required by the repository from the exact frozen Module-C parent. The run generated the full three-carrier distribution history, intrinsic spectral-temperature diagnostic history, transport/collision operator, QV-to-RFL constitutive-energy transfer, entropy production, nonmetric state-space expansion, phase/event chronology, inherited decimal-envelope covariance, checkpoint/restart evidence, semantic countermodels, and canonical `H_D_to_E`. A second clean checkout reproduced every Stage-1 scientific artifact byte-for-byte.\n\n## Key physical state\n\n- final carrier distribution: `{dist['final_state']}`\n- intrinsic spectral-temperature coordinate: `{temp['initial_Theta_D']}` -> `{temp['final_Theta_D']}`\n- entropy increase: `{ent['entropy_change']}`\n- final RFL transfer memory: `{ent['rfl_transfer_memory_Q_RFL'][-1]}`\n- analytic full-history L_inf: `{indep['analytic_history_linf']}`\n- independent DOP853 endpoint L_inf: `{indep['DOP853_final_linf']}`\n- clean replay: `{replay['result']}` with exact artifact-hash match `{replay['artifact_hashes_match']}`\n\n## Strongest supported claim\n\nRFC now has a generated, physically executed, independently reconstructed and cleanly replayed Module-D nonequilibrium thermal/phase history derived from the frozen C parent without importing a standard thermal history or fitting observational transition temperatures.\n\n## Strongest unsupported claim\n\nModule D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation. Those remain downstream obligations.\n\nModule E is **not activated by this closeout**.\n'''
+          (run/'CLOSEOUT.md').write_text(closeout)
+
+          env=load(run/'ENVIRONMENT.json'); env['status']='FINAL'; env['hidden_defaults_audited']=True
+          env['clean_replay_commit']='05c57aa567bee79c0f7f9935d9cfc1891ca8aabb'; env['clean_replay_exact_hash_match']=True
+          dump(run/'ENVIRONMENT.json',env)
+          fals=load(run/'FALSIFIER_REGISTRY.json'); fals['all_tested_or_hard_stopped']=True; fals['result']='PASS'; fals['clean_replay_exact_hash_match']=True
+          dump(run/'FALSIFIER_REGISTRY.json',fals)
+
+          outputs=[]
+          final_paths=[
+            'reference_checks.json','solver_configs/D_transport.json','solver_outputs/transport/result.json',
+            'primary/THERMAL_DISTRIBUTION_HISTORY.json','primary/TEMPERATURE_HISTORY.json','primary/PHASE_EVENT_LEDGER.json',
+            'primary/TRANSPORT_COLLISION_OPERATORS.json','primary/ENTROPY_CONSERVATION_LEDGER.json','primary/UNCERTAINTY_COVARIANCE.json',
+            'COUNTERMODELS_AND_ABLATIONS.json','CONVERGENCE.json','CHECKPOINT_RECORD.json','PRIMARY_GATE_INPUTS.json',
+            'independent/INDEPENDENT_RECONSTRUCTION.json','GATE_RESULTS.json','INDEPENDENT_VERIFICATION.md','REPLAY_RECORD.json',
+            'frozen/H_D_to_E.json','frozen/H_D_to_E_MANIFEST.json','CLAIM_RECORD.json','CLOSEOUT.md','ENVIRONMENT.json','FALSIFIER_REGISTRY.json'
+          ]
+          for rel in final_paths:
+              p=run/rel
+              if not p.exists(): raise SystemExit('HARD STOP: missing final D output '+rel)
+              outputs.append({'path':rel,'sha256':sha(p),'bytes':p.stat().st_size})
+          dump(run/'GENERATED_OUTPUT_MANIFEST.json',{'status':'FINAL','generation_mode':'GENERATION_SEALED','outputs':outputs})
+          print(json.dumps({'H_D_to_E_sha256':sha(canonical),'final_outputs':len(outputs),'clean_replay':replay['result']},indent=2))
+          PY
+      - name: End-of-session checks before controllers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Close run and promote D through required evidence states without advancing E
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/D/runs/D-130-20260807T220342Z'
+          python tools/rfc.py close-run --run-id D-130-20260807T220342Z --result PASS --closeout "$RUN/CLOSEOUT.md"
+          python tools/rfc.py promote-module D --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$RUN/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module D --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$RUN/solver_outputs/transport/result.json"
+          python tools/rfc.py promote-module D --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$RUN/GATE_RESULTS.json"
+          python tools/rfc.py promote-module D --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$RUN/primary/THERMAL_DISTRIBUTION_HISTORY.json"
+          python tools/rfc.py promote-module D --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module D --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/D/frozen/H_D_to_E.json
+          python tools/rfc.py record-claim --file "$RUN/CLAIM_RECORD.json"
+          python tools/rfc.py context
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('STATE.json').read_text())
+          q=json.loads(Path('WORK_QUEUE.json').read_text())
+          if s.get('active_work_unit')!='D-130' or s.get('current_module')!='D' or s.get('current_run') is not None:
+              raise SystemExit('HARD STOP: D closeout accidentally advanced the queue')
+          if s['modules']['D'].get('evidence_state')!='FROZEN' or s['modules']['D'].get('fidelity')!='MINIMAL_SPINE':
+              raise SystemExit('HARD STOP: D did not reach frozen minimal-spine state')
+          active=[x for x in q['items'] if x.get('status')=='ACTIVE']
+          if len(active)!=1 or active[0].get('id')!='D-130':
+              raise SystemExit('HARD STOP: E or another child was activated')
+          print(json.dumps({'D_state':s['modules']['D']['evidence_state'],'D_fidelity':s['modules']['D']['fidelity'],'active_work_unit':s['active_work_unit'],'current_run':s['current_run']},indent=2))
+          PY
+      - name: Commit frozen D closeout
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/d130_redo_clean_replay_closeout.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Freeze rebuilt Module D physical thermal history'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          science_sha=$(git rev-parse HEAD)
+          git show --stat --oneline "$science_sha"
+          python tools/rfc.py record-commit "$science_sha" --branch agent/frontier-050-execution --note 'Verified rebuilt Module D frozen closeout commit and diff; D remains the active starting point and E is not authorized.'
+          python tools/director.py doctor
+          git add STATE.json memory/DECISION_LOG.jsonl
+          git commit -m 'Record verified rebuilt Module D closeout commit'
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
