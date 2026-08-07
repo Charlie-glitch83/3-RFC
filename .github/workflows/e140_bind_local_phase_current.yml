@@ -1,0 +1,132 @@
+name: E140 Bind Current Frozen Local Phase
+
+on:
+  push:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  execute-local:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Record exact Wolfram outputs and reference check
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T155635Z'
+          python tools/director.py wolfram-show --call E-WL-001
+          python tools/director.py wolfram-show --call E-WL-002
+          mkdir -p "$RUN/wolfram_outputs"
+          cat > "$RUN/wolfram_outputs/E-WL-001.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "S, S, S" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"E-WL-001\", \"residual\" -> {{0, 0}, {0, 0}}, \"pass\" -> True, \"leftNullspace\" -> {\"{1, 0, 1}\", \"{-1, 1, 0}\"}|>"
+          EOF
+          cat > "$RUN/wolfram_outputs/E-WL-002.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "S, S, J, J" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"E-WL-002\", \"rhs\" -> \"{d*kr - kf*n*p, d*kr - kf*n*p, -(d*kr) + kf*n*p}\", \"jacobian\" -> \"{{-(kf*p), -(kf*n), kr}, {-(kf*p), -(kf*n), kr}, {kf*p, kf*n, -kr}}\", \"conservationCheck\" -> \"0\"|>"
+          EOF
+          python tools/director.py wolfram-record --run E-140-20260807T155635Z --call E-WL-001 --output "$RUN/wolfram_outputs/E-WL-001.txt"
+          python tools/director.py wolfram-record --run E-140-20260807T155635Z --call E-WL-002 --output "$RUN/wolfram_outputs/E-WL-002.txt"
+          python tools/run_reference_checks.py --module E --output "$RUN/reference_checks.json"
+      - name: Reconcile binding sheet to current frozen derivation
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T155635Z'
+          set +e
+          python tools/director.py solver-copy --module E --solver reaction_network --destination "$RUN" > "$RUN/solver_copy_attempt_current.txt" 2>&1
+          code=$?
+          set -e
+          printf '\nexit_code=%s\n' "$code" >> "$RUN/solver_copy_attempt_current.txt"
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          RUN=Path('modules/E/runs/E-140-20260807T155635Z')
+          spec_path=RUN/'FROZEN_DERIVATION_SPEC.json'
+          spec=json.loads(spec_path.read_text())
+          if spec.get('status')!='FROZEN_BEFORE_PRIMARY_EXECUTION':
+              raise SystemExit('HARD STOP: current E derivation is not frozen')
+          h=hashlib.sha256(spec_path.read_bytes()).hexdigest()
+          src_path=RUN/'SOURCE_REGISTER.json'
+          src=json.loads(src_path.read_text())
+          if src['exact_parents'][0]['sha256']!='199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8':
+              raise SystemExit('HARD STOP: exact D parent hash changed')
+          found=False
+          for obj in src.get('derived_objects',[]):
+              if obj.get('path')==str(spec_path):
+                  obj['sha256']=h; found=True
+          if not found:
+              src.setdefault('derived_objects',[]).append({'path':str(spec_path),'sha256':h,'role':'FROZEN_PARENT_DRIVEN_E_LAW'})
+          src_path.write_text(json.dumps(src,indent=2)+'\n')
+          lock_path=RUN/'PRE_EXECUTION_LOCK.json'
+          lock=json.loads(lock_path.read_text())
+          old=[x for x in lock.get('definition_hashes',[]) if x not in {'965e84ef3fbe4a26f279b41d18e57035513e31ed5f80289fd6b8bc3a1b79d400','c193896dfb3881321c7e3f00e9e2423460173ce0ddfcd5098d8fe920cd83b6e4'}]
+          if h not in old: old.append(h)
+          lock['definition_hashes']=old
+          lock_path.write_text(json.dumps(lock,indent=2)+'\n')
+          sheet_path=RUN/'binding_sheets/E_reaction_network.bindings.json'
+          sheet=json.loads(sheet_path.read_text())
+          values={
+            'model.species':spec['species_constitution']['solver_labels'],
+            'model.stoichiometry':spec['species_constitution']['stoichiometry'],
+            'model.rate_expressions':[spec['rate_law']['forward_expression'],spec['rate_law']['reverse_expression']],
+            'model.parameters':{'kf':spec['rate_law']['kf'],'kr':spec['rate_law']['kr']},
+            'model.invariants':{'baryon':spec['species_constitution']['baryon_vector'],'charge':spec['species_constitution']['charge_vector'],'intrinsic_energy':spec['intrinsic_energy_ledger']['energy_vector']},
+            'initial_state':spec['parent_to_E_interface']['central_symmetry_quotient_initial_state'],
+            't_span':spec['clock_and_interval']['t_span'],
+            'max_step':spec['clock_and_interval']['max_step'],
+            'positivity_tolerance':1e-12,
+            'invariant_tolerance':1e-9,
+          }
+          units={
+            'model.species':('dimensionless','typed RFC nuclear-role labels'),
+            'model.stoichiometry':('dimensionless','integer reaction incidence'),
+            'model.rate_expressions':('dimensionless','abundance flow per tau_E'),
+            'model.parameters':('dimensionless','intrinsic inverse tau_E rates'),
+            'model.invariants':('dimensionless','conserved RFC ledgers'),
+            'initial_state':('dimensionless','normalized symmetry-quotient abundance state'),
+            't_span':('dimensionless','tau_E'),
+            'max_step':('dimensionless','tau_E'),
+            'positivity_tolerance':('dimensionless','abundance'),
+            'invariant_tolerance':('dimensionless','ledger residual'),
+          }
+          for rec in sheet['bindings']:
+              p=rec['path']; rec['value']=values[p]; rec['origin_kind']='INTERNAL_DERIVATION'; rec['origin_path']=str(spec_path); rec['origin_sha256']=h; rec['module']='E'; rec['derivation_object']='E140_FROZEN_DERIVATION_SPEC'; rec['units'],rec['dimensions']=units[p]; rec['justification']='Exact value from current frozen parent-driven E derivation; no historical failure, public target, or manufactured numerical value used.'
+          sheet_path.write_text(json.dumps(sheet,indent=2)+'\n')
+          print(json.dumps({'frozen_derivation_sha256':h,'binding_paths':[r['path'] for r in sheet['bindings']]},indent=2))
+          PY
+      - name: Materialize and run exact configured local phase
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T155635Z'
+          python tools/materialize_solver_config.py --template "$RUN/solver_templates/E_reaction_network.template.json" --binding-sheet "$RUN/binding_sheets/E_reaction_network.bindings.json" --output "$RUN/solver_configs/E_reaction_network.json"
+          python tools/run_configured_solver.py --config "$RUN/solver_configs/E_reaction_network.json" --output-dir "$RUN/solver_outputs/reaction_network"
+          bash tools/finish_local_phase.sh E "$RUN"
+      - name: Commit local phase and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_bind_local_phase_current.yml .github/workflows/e140_current_wolfram_show.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Bind and execute E140 frozen local phase'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
