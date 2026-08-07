@@ -1,1 +1,1 @@
-trigger canonical E derivation search
+trigger E140 derived-network freeze
