@@ -1,0 +1,107 @@
+name: D130 Sync Frozen Frontier Context
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.event.pull_request.head.ref == 'ops/d130-sync-frontier-context-20260807'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Synchronize state claim surface to recorded frozen D claim
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          state_path=Path('STATE.json')
+          state=json.loads(state_path.read_text())
+          run=Path('modules/D/runs/D-130-20260807T220342Z')
+          claim=json.loads((run/'CLAIM_RECORD.json').read_text())
+          handoff=json.loads(Path('modules/D/frozen/H_D_to_E.json').read_text())
+          if state.get('active_work_unit')!='D-130' or state.get('current_module')!='D' or state.get('current_run') is not None:
+              raise SystemExit('HARD STOP: D is not the frozen hold frontier')
+          if state['modules']['D'].get('evidence_state')!='FROZEN' or state['modules']['D'].get('fidelity')!='MINIMAL_SPINE':
+              raise SystemExit('HARD STOP: D is not frozen at expected fidelity')
+          if state['modules']['E'].get('evidence_state')!='DESIGN' or state['modules']['E'].get('active_run') is not None:
+              raise SystemExit('HARD STOP: E is not blocked/unstarted')
+          if claim.get('supported') is not True or claim.get('evidence_state')!='FROZEN' or handoff.get('object_id')!='H_D_to_E':
+              raise SystemExit('HARD STOP: canonical D claim/handoff not available')
+          old_supported=state.get('strongest_supported_claim')
+          old_unsupported=state.get('strongest_unsupported_claim')
+          state['strongest_supported_claim']=claim['text']
+          state['strongest_unsupported_claim']=claim['strongest_unsupported_claim']
+          state['last_updated_utc']=datetime.now(timezone.utc).isoformat()
+          state_path.write_text(json.dumps(state,indent=2,ensure_ascii=False)+'\n')
+          decision={
+            'decision_id':'SYNC-D-FROZEN-FRONTIER-CLAIMS-20260807T2249Z',
+            'timestamp_utc':datetime.now(timezone.utc).isoformat(),
+            'work_unit':'D-130',
+            'decision':'Synchronized global frontier claim summaries to the already-recorded frozen Module-D claim after D closeout; preserved D as the active hold point and left E unauthorized.',
+            'basis':['modules/D/runs/D-130-20260807T220342Z/CLAIM_RECORD.json','modules/D/frozen/H_D_to_E.json','modules/D/runs/D-130-20260807T220342Z/CLOSEOUT.md'],
+            'alternatives_rejected':['Retain stale C-era claim text that incorrectly says no nonequilibrium thermal history has been derived.'],
+            'changes_science':False,
+            'required_replay':'none; scientific replay already PASS and no scientific artifact is modified',
+            'commit_sha':state.get('last_verified_commit') or ''
+          }
+          with Path('memory/DECISION_LOG.jsonl').open('a') as f: f.write(json.dumps(decision,ensure_ascii=False)+'\n')
+          print(json.dumps({'old_supported':old_supported,'new_supported':state['strongest_supported_claim'],'old_unsupported':old_unsupported,'new_unsupported':state['strongest_unsupported_claim'],'last_verified_commit_preserved':state.get('last_verified_commit')},indent=2))
+          PY
+          python tools/rfc.py context
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('memory/CURRENT_CONTEXT.md')
+          text=p.read_text()
+          old='## Immediate objective\n\nEvolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.\n'
+          new='## Immediate objective\n\n**HOLD AT REBUILT MODULE D FRONTIER.** Module D is already `FROZEN` / `MINIMAL_SPINE` with a closed PASS run and canonical `H_D_to_E`. Do not create another D run and do not activate Module E until explicit authorization to advance beyond this starting point.\n'
+          if old not in text: raise SystemExit('HARD STOP: expected generated D objective block not found')
+          p.write_text(text.replace(old,new,1))
+          PY
+      - name: Verify administrative synchronization only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          s=json.loads(Path('STATE.json').read_text())
+          h=json.loads(Path('modules/D/frozen/H_D_to_E_MANIFEST.json').read_text())
+          actual=hashlib.sha256(Path('modules/D/frozen/H_D_to_E.json').read_bytes()).hexdigest()
+          if actual!=h['sha256']: raise SystemExit('HARD STOP: canonical D handoff changed')
+          if s.get('active_work_unit')!='D-130' or s.get('current_run') is not None or s['modules']['E'].get('evidence_state')!='DESIGN':
+              raise SystemExit('HARD STOP: frontier authorization changed')
+          if s.get('last_verified_commit')!='4a9f3f5e5b76c9612120b427cffd60642c891662':
+              raise SystemExit('HARD STOP: verified science commit pointer changed')
+          print(json.dumps({'D_state':s['modules']['D']['evidence_state'],'active_work_unit':s['active_work_unit'],'E_state':s['modules']['E']['evidence_state'],'verified_science_commit':s['last_verified_commit'],'H_D_to_E_sha256':actual},indent=2))
+          PY
+      - name: Commit frontier context synchronization
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/d130_sync_frontier_context.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add STATE.json memory/CURRENT_CONTEXT.md memory/DECISION_LOG.jsonl .github/workflows/d130_sync_frontier_context.yml
+          git commit -m 'Synchronize frozen Module D frontier context'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
