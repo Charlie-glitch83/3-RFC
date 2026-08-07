@@ -4,7 +4,9 @@
   "task_id": "D-130",
   "status": "CREATED",
   "created_utc": "2026-08-07T04:56:46.016202+00:00",
-  "parent_hashes": [],
+  "parent_hashes": [
+    "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+  ],
   "generation_mode": "GENERATION_SEALED",
   "workspace": "modules/D/runs/D-130-20260807T045646Z"
 }

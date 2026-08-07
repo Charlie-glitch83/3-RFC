@@ -1,10 +1,95 @@
 {
-  "run_id": "",
-  "exact_parents": [],
+  "run_id": "D-130-20260807T045646Z",
+  "exact_parents": [
+    {
+      "object_id": "H_C_to_D",
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+      "manifest_path": "modules/C/frozen/H_C_to_D_MANIFEST.json",
+      "manifest_sha256": "38c1e5c153c5287e03884eabe0b0d680ea1f6746a1f35e7d366e1ec2a8015e5a"
+    }
+  ],
   "admitted_sources": [],
-  "imports": [],
-  "files": [],
+  "imports": [
+    "python standard library for governed record generation; frozen repository numerical engines only after provenance materialization"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "0c0420ae09b4794cd7c80dcf4c9deac3656a133255ed585b055302b33a95038c",
+      "role": "root authority"
+    },
+    {
+      "path": "STATE.json",
+      "sha256": "eea5208ae8213bc8af6dfa42daf5e081d7fa661e265893dc5bfbe4a19d0f6501",
+      "role": "machine authorization"
+    },
+    {
+      "path": "WORK_QUEUE.json",
+      "sha256": "a22b03bfb3a7e545fee4d2e0007f871fbdfa98195803d63422c4ff1006256b62",
+      "role": "work queue"
+    },
+    {
+      "path": "work_packets/ACTIVE_WORK_PACKET.md",
+      "sha256": "0f9aa4f7e13d27111106deaa6e7fc1cce2eec3bce0ce61a3955096a1dd0ae39c",
+      "role": "active packet"
+    },
+    {
+      "path": "recipes/D/WORK_ORDER.md",
+      "sha256": "4588a02fc5baff38bc83b5390161cf44f1cdd98a1acd137860d9ec36efccd365",
+      "role": "D work order"
+    },
+    {
+      "path": "recipes/D/recipe.json",
+      "sha256": "1ad9720aa394d62df35bf6161414522f7a5563e8a8f94f5c8cd0c5e0b466cb16",
+      "role": "D recipe"
+    },
+    {
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+      "role": "exact scientific parent"
+    },
+    {
+      "path": "modules/C/frozen/H_C_to_D_MANIFEST.json",
+      "sha256": "38c1e5c153c5287e03884eabe0b0d680ea1f6746a1f35e7d366e1ec2a8015e5a",
+      "role": "parent content manifest"
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T045646Z/solver_templates/D_transport.template.json",
+      "sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+      "role": "frozen solver template"
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T045646Z/binding_sheets/D_transport.bindings.json",
+      "sha256": "2bae62066676d0e611f29ebd4410514e1478988360708a467319897b4259cd4c",
+      "role": "frozen binding sheet"
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T045646Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa",
+      "role": "frozen D derivation specification"
+    }
+  ],
   "urls": [],
-  "constants": [],
+  "constants": [
+    {
+      "name": "g_C",
+      "value": 0.449829064955317,
+      "origin_path": "modules/C/frozen/H_C_to_D.json",
+      "origin_sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+      "dimensions": "dimensionless"
+    },
+    {
+      "name": "p0",
+      "value": [
+        0.5865734510957316,
+        0.24345592095871127,
+        0.16997062794555687
+      ],
+      "origin_path": "modules/C/frozen/H_C_to_D.json",
+      "origin_sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+      "dimensions": "dimensionless probability"
+    }
+  ],
   "public_data_declaration": "NONE"
 }
