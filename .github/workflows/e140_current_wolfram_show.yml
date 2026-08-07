@@ -1,0 +1,40 @@
+name: E140 Current Wolfram Show
+
+on:
+  push:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Display exact E calls
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/director.py wolfram-show --call E-WL-001
+          python tools/director.py wolfram-show --call E-WL-002
+      - name: Remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_current_wolfram_show.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Display current E140 Wolfram calls'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
