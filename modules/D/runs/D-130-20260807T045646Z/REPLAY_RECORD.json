@@ -1,10 +1,28 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "result": "PASS",
+  "source_commit": "4f57749032f9138b4bf2f95eef442bb0215d4f01",
+  "clean_checkout": true,
+  "artifact_hashes_match": true,
+  "primary_command": "python modules/D/runs/D-130-20260807T045646Z/primary/execute_d130.py",
+  "independent_command": "python modules/D/runs/D-130-20260807T045646Z/independent/independent_reconstruct_d130.py",
+  "checks": [
+    {
+      "path": "primary/DISTRIBUTION_HISTORY.json",
+      "live_sha256": "0609e57e7b63becc64108c417c35f82f994d5a94af90df05e5faa23e3f6836db",
+      "replay_sha256": "0609e57e7b63becc64108c417c35f82f994d5a94af90df05e5faa23e3f6836db",
+      "exact_match": true
+    },
+    {
+      "path": "primary/PRIMARY_DIAGNOSTICS.json",
+      "live_sha256": "c0552258514884339030890e9e05d435dcd0d7c048c0e28659d1113b70537e68",
+      "replay_sha256": "c0552258514884339030890e9e05d435dcd0d7c048c0e28659d1113b70537e68",
+      "exact_match": true
+    },
+    {
+      "path": "independent/INDEPENDENT_RECONSTRUCTION.json",
+      "live_sha256": "4b080af497ee99051808d5a0ed584be94439caac4f333d41306cec9674b404db",
+      "replay_sha256": "4b080af497ee99051808d5a0ed584be94439caac4f333d41306cec9674b404db",
+      "exact_match": true
+    }
+  ]
 }

@@ -10,10 +10,10 @@
     "approaches_equilibrium": true
   },
   "metrics": {
-    "max_total_error": 4.440892098500626e-16,
+    "max_total_error": 5.551115123125783e-16,
     "final_state": [
-      0.5000000165657876,
-      0.4999999834342124
+      0.5000000165657875,
+      0.4999999834342123
     ]
   },
   "note": "Stiff-capable nonequilibrium manufactured exchange system."

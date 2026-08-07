@@ -1,0 +1,18 @@
+{
+  "run_id": "D-130-20260807T045646Z",
+  "diagnostic_pass": true,
+  "checks": {
+    "integrator": true,
+    "projector_reconstruction": true,
+    "positive_distributions": true,
+    "charge_conservation": true,
+    "analytic_orbit": true,
+    "entropy_direction": true,
+    "dimensionless_excitation_decay": true,
+    "dyadic_convergence": true,
+    "restart": true
+  },
+  "hard_obstruction": "If no additional admitted premise lawfully supplies physical scale/temperature/event structure, full Module D must stop blocked rather than promote to E.",
+  "full_physical_module_D_pass": false,
+  "reason": "Physical temperature/clock/phase-event objects remain underived by frozen exact parent."
+}

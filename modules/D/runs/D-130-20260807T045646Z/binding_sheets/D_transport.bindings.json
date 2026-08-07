@@ -24,43 +24,43 @@
         "p3"
       ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa",
       "module": "D",
-      "derivation_object": "derivation.state_names",
-      "units": "dimensionless population coordinate labels",
-      "dimensions": "3-state vector",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_NORMALIZED_TRANSPORT_STATE",
+      "units": "dimensionless labels",
+      "dimensions": "3-state simplex",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.parameters",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
       "value": {},
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa",
       "module": "D",
-      "derivation_object": "derivation.parameters",
-      "units": "none",
-      "dimensions": "empty parameter map",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_NO_FREE_RATE_AFTER_INTRINSIC_NORMALIZATION",
+      "units": "dimensionless",
+      "dimensions": "none",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.rhs_expressions",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
       "value": [
-        "(-2*p1 + p2 + p3)/3",
-        "(p1 - 2*p2 + p3)/3",
-        "(p1 + p2 - 2*p3)/3"
+        "-2*p1/3+p2/3+p3/3",
+        "p1/3-2*p2/3+p3/3",
+        "p1/3+p2/3-2*p3/3"
       ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa",
       "module": "D",
-      "derivation_object": "derivation.rhs_expressions",
-      "units": "population per unit intrinsic dimensionless clock s",
-      "dimensions": "3-vector ODE RHS",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_SELECTED_NORMALIZED_BRANCH",
+      "units": "population per intrinsic-clock unit",
+      "dimensions": "dimensionless",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.initial_state",
@@ -73,11 +73,11 @@
       "origin_kind": "EXACT_PARENT_ARTIFACT",
       "origin_path": "modules/C/frozen/H_C_to_D.json",
       "origin_sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
-      "module": "C",
-      "derivation_object": "prethermal_state.node_populations",
+      "module": "D",
+      "derivation_object": "H_C_to_D_PRETHERMAL_STATE",
       "units": "dimensionless probability",
-      "dimensions": "3-state population vector",
-      "justification": "Exact frozen C prethermal parent state; no D fitting or replacement."
+      "dimensions": "3",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.t_span",
@@ -87,71 +87,71 @@
         1.0
       ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/PRE_EXECUTION_LOCK.json",
+      "origin_sha256": "1113fd71f83c8335630ab763feb8e3754e1549b5bb7d84fc017a428bdc0b7737",
       "module": "D",
-      "derivation_object": "derivation.t_span",
-      "units": "intrinsic dimensionless clock s; not physical time",
-      "dimensions": "ordered pair",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_FROZEN_INTRINSIC_INTERVAL",
+      "units": "intrinsic clock s",
+      "dimensions": "dimensionless",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.max_step",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
       "value": 0.0625,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/PRE_EXECUTION_LOCK.json",
+      "origin_sha256": "1113fd71f83c8335630ab763feb8e3754e1549b5bb7d84fc017a428bdc0b7737",
       "module": "D",
-      "derivation_object": "derivation.max_step",
-      "units": "intrinsic dimensionless clock s",
-      "dimensions": "scalar",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_FROZEN_PRIMARY_MAX_STEP",
+      "units": "intrinsic clock s",
+      "dimensions": "dimensionless",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.linear_invariants",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
       "value": {
         "Q_total": [
-          1.0,
-          1.0,
-          1.0
+          1,
+          1,
+          1
         ]
       },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa",
       "module": "D",
-      "derivation_object": "derivation.linear_invariants",
-      "units": "dimensionless total-carrier charge",
-      "dimensions": "linear invariant map",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_TOTAL_CHARGE_INVARIANT",
+      "units": "dimensionless",
+      "dimensions": "linear invariant",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.invariant_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
       "value": 1e-10,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/PRE_EXECUTION_LOCK.json",
+      "origin_sha256": "1113fd71f83c8335630ab763feb8e3754e1549b5bb7d84fc017a428bdc0b7737",
       "module": "D",
-      "derivation_object": "derivation.invariant_tolerance",
-      "units": "dimensionless absolute drift",
-      "dimensions": "scalar tolerance",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_FROZEN_INVARIANT_TOLERANCE",
+      "units": "dimensionless",
+      "dimensions": "absolute",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     },
     {
       "path": "model.positivity_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
       "value": 1e-12,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
-      "origin_sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a",
+      "origin_path": "modules/D/runs/D-130-20260807T045646Z/PRE_EXECUTION_LOCK.json",
+      "origin_sha256": "1113fd71f83c8335630ab763feb8e3754e1549b5bb7d84fc017a428bdc0b7737",
       "module": "D",
-      "derivation_object": "derivation.positivity_tolerance",
-      "units": "dimensionless population floor",
-      "dimensions": "scalar tolerance",
-      "justification": "Direct materialization of the complete D-130 frozen pre-execution derivation and numerical controls."
+      "derivation_object": "D_FROZEN_POSITIVITY_TOLERANCE",
+      "units": "dimensionless probability",
+      "dimensions": "absolute",
+      "justification": "Exact frozen parent or pre-execution derivation only; no observed targets or post-hoc values."
     }
   ]
 }

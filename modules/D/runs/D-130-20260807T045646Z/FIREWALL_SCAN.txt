@@ -1,0 +1,1 @@
+FIREWALL SCAN: PASS (mechanical guardrail only)

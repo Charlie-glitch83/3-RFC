@@ -1,0 +1,18 @@
+{
+  "diagnostic_pass": true,
+  "checks": {
+    "integrator": true,
+    "projector_reconstruction": true,
+    "positive_distributions": true,
+    "charge_conservation": true,
+    "analytic_orbit": true,
+    "entropy_direction": true,
+    "dimensionless_excitation_decay": true,
+    "dyadic_convergence": true,
+    "restart": true
+  },
+  "analytic_l2": 1.759666548336491e-09,
+  "restart_l2": 1.8724379860279227e-09,
+  "max_charge_drift": 2.220446049250313e-16,
+  "minimum_population": 0.16997062794555687
+}

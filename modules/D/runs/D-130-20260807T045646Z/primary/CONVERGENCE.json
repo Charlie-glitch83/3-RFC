@@ -1,0 +1,51 @@
+{
+  "matrix": [
+    {
+      "max_step": 0.25,
+      "success": true,
+      "nfev": 104,
+      "final": [
+        0.4264951677549674,
+        0.3002692805921102,
+        0.27323555165292196
+      ],
+      "analytic_l2": 1.7596665613080329e-09
+    },
+    {
+      "max_step": 0.125,
+      "success": true,
+      "nfev": 104,
+      "final": [
+        0.4264951677549674,
+        0.3002692805921102,
+        0.27323555165292196
+      ],
+      "analytic_l2": 1.7596665613080329e-09
+    },
+    {
+      "max_step": 0.0625,
+      "success": true,
+      "nfev": 104,
+      "final": [
+        0.4264951677549674,
+        0.3002692805921102,
+        0.27323555165292196
+      ],
+      "analytic_l2": 1.7596665613080329e-09
+    },
+    {
+      "max_step": 0.03125,
+      "success": true,
+      "nfev": 114,
+      "final": [
+        0.42649516662288894,
+        0.300269280993896,
+        0.27323555238321473
+      ],
+      "analytic_l2": 3.5383552206264035e-10
+    }
+  ],
+  "analytic_tolerance": 1e-08,
+  "pass": true,
+  "note": "BDF convergence of normalized intrinsic branch; no physical-time stiffness claim."
+}

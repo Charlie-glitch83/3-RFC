@@ -1,13 +1,46 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
+  "run_id": "D-130-20260807T045646Z",
+  "status": "FINAL",
+  "operating_system": "Linux-6.17.0-1021-azure-x86_64-with-glibc2.39",
+  "hardware": {
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "software": [
+    "numpy==2.3.5",
+    "scipy==1.17.0",
+    "sympy==1.14.0"
+  ],
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
+  "imports": [
+    "hashlib",
+    "json",
+    "os",
+    "platform",
+    "subprocess",
+    "sys",
+    "tempfile",
+    "pathlib",
+    "numpy",
+    "scipy",
+    "sympy"
+  ],
+  "commands": [
+    "python tools/materialize_solver_config.py ...",
+    "python tools/run_configured_solver.py ...",
+    "bash tools/finish_local_phase.sh D <RUN_DIR>",
+    "python <RUN_DIR>/primary/execute_d130.py",
+    "python <RUN_DIR>/independent/independent_reconstruct_d130.py",
+    "git worktree add --detach <tmp> <source_commit>",
+    "python tools/director.py doctor",
+    "python -m unittest discover -s tests -v",
+    "python tools/rfc.py firewall-scan",
+    "python tools/rfc.py context",
+    "python tools/rfc.py close-run --result BLOCKED ..."
+  ],
   "network_policy": "DISABLED_DURING_GENERATION",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true,
+  "generation_inputs": "FROZEN_PARENT_AND_INTERNAL_DERIVATION_ONLY",
+  "finalized_utc": "2026-08-07T05:22:37.085138+00:00"
 }

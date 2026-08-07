@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-07T04:58:28.273027+00:00
+Generated: 2026-08-07T05:22:40.976086+00:00
 
 ## Project truth
 
@@ -64,7 +64,7 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 9
+- frozen artifacts: 10
 - indexed runs: 10
 
 ## Recent runs
@@ -76,7 +76,7 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 - B-110-20260807T002248Z: PASS (B)
 - C-120-20260807T032543Z: PASS (C)
 - D-130-20260807T044911Z: FAIL (D)
-- D-130-20260807T045646Z: CREATED (D)
+- D-130-20260807T045646Z: BLOCKED (D)
 
 ## Recent decisions
 

@@ -1,0 +1,7 @@
+{
+  "status": "NOT_DERIVED",
+  "physical_temperature_values": [],
+  "unit": null,
+  "reason": "Exact C parent contains no dimensionful energy scale or thermodynamic temperature map; frozen D rules forbid importing one.",
+  "intrinsic_entropy_history_path": "primary/DISTRIBUTION_HISTORY.json"
+}

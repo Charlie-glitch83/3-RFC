@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_D_to_E_BLOCKED",
+  "from_module": "D",
+  "to_module": "E",
+  "run_id": "D-130-20260807T045646Z",
+  "status": "BLOCKED_NO_PHYSICAL_HANDOFF",
+  "supported_object": "normalized dimensionless parent-driven transport diagnostic",
+  "missing_required_objects": [
+    "dimensionful energy/temperature map",
+    "physical clock or lawful time map",
+    "metric/expansion state required by D objective",
+    "parent-derived phase order parameter and threshold"
+  ],
+  "generation_inputs": "FROZEN_PARENT_AND_INTERNAL_DERIVATION_ONLY",
+  "claim_boundary": "No primordial-abundance parent is released; Module E remains blocked."
+}

@@ -1,7 +1,38 @@
 {
-  "run_id": "",
+  "run_id": "D-130-20260807T045646Z",
   "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis",
+  "component_gates": {
+    "positive distributions": {
+      "status": "PASS",
+      "normalized_score": 1.0
+    },
+    "energy/charge conservation": {
+      "status": "BLOCKED_PHYSICAL_ENERGY_NOT_DERIVED",
+      "charge_status": "PASS",
+      "physical_energy_status": "NOT_TESTABLE_NO_DIMENSIONFUL_ENERGY_OBJECT_IN_PARENT",
+      "normalized_score": null
+    },
+    "event ordering": {
+      "status": "PASS_NO_EVENT_WITNESS",
+      "events": [],
+      "observed_targets_used": false,
+      "normalized_score": 1.0
+    },
+    "stiff-solver convergence": {
+      "status": "PASS",
+      "normalized_score": 1.0,
+      "scope": "BDF convergence of normalized intrinsic branch; no physical stiffness scale claimed"
+    },
+    "restart and independent reconstruction": {
+      "status": "PASS",
+      "normalized_score": 1.0
+    }
+  },
+  "blocking_object": {
+    "status": "BLOCKED",
+    "name": "PHYSICAL_THERMAL_HISTORY",
+    "reason": "Exact C parent provides no dimensionful energy/temperature map, physical clock, metric expansion state, or parent-derived phase order parameter/threshold. Full D claim would exceed evidence."
+  },
+  "generation_inputs": "FROZEN_PARENT_AND_INTERNAL_DERIVATION_ONLY"
 }

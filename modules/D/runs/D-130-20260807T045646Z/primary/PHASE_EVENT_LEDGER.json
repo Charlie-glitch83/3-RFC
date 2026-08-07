@@ -1,0 +1,7 @@
+{
+  "rule": "NO_EVENT_WITNESS_WITHOUT_PARENT-DERIVED_ORDER_PARAMETER_AND_THRESHOLD",
+  "events": [],
+  "status": "NO_PARENT_DERIVED_PHASE_EVENT_WITNESS",
+  "ordering": "VACUOUS_NO_EVENTS",
+  "observed_or_public_target_values_used": false
+}

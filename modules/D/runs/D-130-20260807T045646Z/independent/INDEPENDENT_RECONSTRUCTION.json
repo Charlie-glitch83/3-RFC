@@ -1,0 +1,27 @@
+{
+  "run_id": "D-130-20260807T045646Z",
+  "method": "ANALYTIC_PARENT_ONLY_RECONSTRUCTION_BEFORE_PRIMARY_COMPARISON",
+  "parent_sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+  "spec_sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa",
+  "checks": {
+    "projector_exact_form_l2": 1.9229626863835638e-16,
+    "normalization_max_drift": 3.3306690738754696e-16,
+    "minimum_population": 0.16997062794555687,
+    "minimum_entropy_increment": 0.0001504312792046658,
+    "maximum_excitation_increment": -2.3609911040801783e-05
+  },
+  "primary_final_comparison_l2": 1.759666548336491e-09,
+  "comparison_tolerance": 1e-08,
+  "obstruction_checks": {
+    "thermal_history_status_in_parent": "NOT_DERIVED_IN_C_RESERVED_FOR_D",
+    "metric_spacetime_status_in_parent": "NOT_DERIVED",
+    "dimensionful_mass_status_in_parent": "NOT_DERIVED_NO_LAWFUL_SCALE_IN_PARENT",
+    "restart_contract": "Module D receives H_C_to_D with the exact microscopic constitution, deterministic prethermal populations, symmetry/conservation ownership, and explicit dimensionful-mass obstruction. No thermal-history law is preloaded.",
+    "physical_temperature_map_present": false,
+    "physical_clock_or_scale_factor_present": false,
+    "phase_order_parameter_threshold_present": false
+  },
+  "diagnostic_pass": true,
+  "full_physical_module_D_pass": false,
+  "conclusion": "The normalized dimensionless transport orbit is independently reproduced. The exact parent still lacks a physical temperature/energy scale, physical clock/metric expansion, and phase-threshold object; no physical D-to-E handoff is independently supported."
+}

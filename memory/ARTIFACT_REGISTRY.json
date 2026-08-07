@@ -72,6 +72,22 @@
       "created_utc": "2026-08-07T04:58:27.255901+00:00",
       "work_unit": "D-130",
       "run_id": "D-130-20260807T044911Z"
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T045646Z",
+      "sha256": "6af2603816b21b3893f71bd386188264a82a4fbbbf900624e55303af3bfedbf0",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-07T05:22:40.914775+00:00",
+      "work_unit": "D-130",
+      "run_id": "D-130-20260807T045646Z"
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T045646Z/H_D_to_E_BLOCKED.json",
+      "sha256": "18f1a862d4604d207b528b48fbbb350c5f36698681948930dfe7d02708a32fa0",
+      "kind": "SCIENTIFIC_BLOCKER",
+      "created_utc": "2026-08-07T05:22:40.995369+00:00",
+      "work_unit": "D-130",
+      "run_id": "D-130-20260807T045646Z"
     }
   ]
 }

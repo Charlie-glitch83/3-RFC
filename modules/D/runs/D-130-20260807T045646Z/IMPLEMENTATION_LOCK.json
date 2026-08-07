@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T045646Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "frozen_utc": "2026-08-07T05:22:29.278848+00:00",
+  "source_commit": "4f57749032f9138b4bf2f95eef442bb0215d4f01",
+  "pre_execution_lock_sha256": "1113fd71f83c8335630ab763feb8e3754e1549b5bb7d84fc017a428bdc0b7737",
+  "derivation_spec_sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa",
+  "primary_implementation": {
+    "path": "modules/D/runs/D-130-20260807T045646Z/primary/execute_d130.py",
+    "sha256": "aa37336ec2758fc93dd07f7c2dd0c7be71b19b061b6abdb2bf5473c212cf71d5"
+  },
+  "independent_implementation": {
+    "path": "modules/D/runs/D-130-20260807T045646Z/independent/independent_reconstruct_d130.py",
+    "sha256": "f72efacff266661160f73504b9cf892c745671db7084b35c1e0a94a50a52b253"
+  },
+  "orchestrator": {
+    "path": "tools/d130_closeout_orchestrator.py",
+    "sha256": "740850e108f7b7b5706ee7f4c1f433440f186c160166750deeae09e0bd44437e"
+  },
+  "allowed_corrections": [
+    "syntax/path/serialization corrections only",
+    "implementation corrections that do not change parents, candidates, laws, interval, max_step, refinement matrix, tolerances, gates, falsifiers, or claim boundary",
+    "full frozen matrix rerun after any correction"
+  ]
+}

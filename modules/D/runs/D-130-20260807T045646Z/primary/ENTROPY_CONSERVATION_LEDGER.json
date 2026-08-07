@@ -1,0 +1,13 @@
+{
+  "Q_total_initial": 0.9999999999999997,
+  "Q_total_max_abs_drift": 2.220446049250313e-16,
+  "minimum_population": 0.16997062794555687,
+  "entropy_initial": 0.9580811666868891,
+  "entropy_final": 1.079187863495232,
+  "minimum_entropy_step": 0.00015043128387959293,
+  "dimensionless_excitation_initial": 0.02224312061665973,
+  "dimensionless_excitation_final": 0.0030102791202958608,
+  "maximum_excitation_step": -2.360991178533469e-05,
+  "physical_energy_conservation_status": "NOT_TESTABLE_NO_DIMENSIONFUL_ENERGY_OBJECT_IN_PARENT",
+  "charge_conservation_status": "PASS"
+}

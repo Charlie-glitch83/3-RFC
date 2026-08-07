@@ -1,0 +1,114 @@
+{
+  "classification": "STRUCTURAL_NEGATIVE_CONTROLS_ONLY",
+  "generative_parent": false,
+  "public_targets_used": false,
+  "executions": [
+    {
+      "id": "SIGN_FLIP",
+      "definition": "dp/ds=+P_perp p",
+      "final": [
+        1.0217113525430692,
+        0.08902119334219694,
+        -0.11073254588526635
+      ],
+      "minimum_population": -0.11073254588526635,
+      "entropy_change": -0.764694866924402,
+      "role": "negative control for relaxation/entropy direction"
+    },
+    {
+      "id": "SINGLE_EDGE_12",
+      "definition": "remove two of three inherited K3 edges; normalize surviving edge relaxation eigenvalue to 1",
+      "generator": [
+        [
+          -0.5,
+          0.5,
+          -0.0
+        ],
+        [
+          0.5,
+          -0.5,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -0.0
+        ]
+      ],
+      "final": [
+        0.4781276292961899,
+        0.3519017427582526,
+        0.16997062794555687
+      ],
+      "total_drift": 5.551115123125783e-16,
+      "role": "symmetry/support ablation; all label choices executed"
+    },
+    {
+      "id": "SINGLE_EDGE_13",
+      "definition": "remove two of three inherited K3 edges; normalize surviving edge relaxation eigenvalue to 1",
+      "generator": [
+        [
+          -0.5,
+          -0.0,
+          0.5
+        ],
+        [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          0.5,
+          -0.0,
+          -0.5
+        ]
+      ],
+      "final": [
+        0.45490184754944285,
+        0.24345592095871127,
+        0.30164223149184527
+      ],
+      "total_drift": 4.440892098500626e-16,
+      "role": "symmetry/support ablation; all label choices executed"
+    },
+    {
+      "id": "SINGLE_EDGE_23",
+      "definition": "remove two of three inherited K3 edges; normalize surviving edge relaxation eigenvalue to 1",
+      "generator": [
+        [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.5,
+          0.5
+        ],
+        [
+          -0.0,
+          0.5,
+          -0.5
+        ]
+      ],
+      "final": [
+        0.5865734510957316,
+        0.22023013879040576,
+        0.19319641011386238
+      ],
+      "total_drift": 1.1102230246251565e-16,
+      "role": "symmetry/support ablation; all label choices executed"
+    },
+    {
+      "id": "UNIFORM_SOURCE",
+      "definition": "dp/ds=-P_perp p + u",
+      "final": [
+        0.759828500863689,
+        0.6336026140051603,
+        0.6065688851311499
+      ],
+      "total_change": 0.9999999999999994,
+      "role": "negative control for total-carrier conservation"
+    }
+  ]
+}
