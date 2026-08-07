@@ -1,0 +1,10 @@
+{
+  "call": "B-WL-002",
+  "execution_phase": "POST_LOCK",
+  "result": "PASS",
+  "mean_preserved": true,
+  "strict_compression": true,
+  "reopening_pass": true,
+  "reopening_residual": 0.0,
+  "interpretation": "The exact frozen manufactured symbolic/numeric check preserves the carrier mean, strictly reduces the nontrivial norm, and exactly reopens the manufactured state. It is corroborative only and is not the physical B result."
+}
