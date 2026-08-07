@@ -1,1 +1,1 @@
-trigger exact root README startup
+trigger exact root README startup after locked dependency setup
