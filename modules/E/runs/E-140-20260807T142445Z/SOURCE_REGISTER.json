@@ -1,10 +1,64 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
+  "schema_version": "1.0",
+  "run_id": "E-140-20260807T142445Z",
+  "module": "E",
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_declaration": "NONE",
+  "exact_parents": [
+    {
+      "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
+      "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8",
+      "role": "EXACT_PHYSICAL_PARENT_D"
+    }
+  ],
+  "admitted_sources": [
+    {
+      "path": "sources/frozen/0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f/Reproducibility Metadata - Final Revised W2 BBN Closeout.md",
+      "sha256": "0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f",
+      "role": "HISTORICAL_PROXY_BOUNDARY",
+      "generative_permission": false,
+      "reason": "States fullBBNNetworkCompleted=False, reactionRateTablesUsed=False, temperatureTimeIntegrationDone=False and contains target-relative proxy/comparison results."
+    },
+    {
+      "path": "sources/frozen/d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c/RFC_Module_X1_Nucleosynthesis_Theorem_Addendum_and_Metadata.md",
+      "sha256": "d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c",
+      "role": "CANDIDATE_ADDENDUM_PROXY_NEGATIVE_CONTROL",
+      "generative_permission": false,
+      "reason": "Internal theorem/proxy nucleosynthesis suite; external physical network validation explicitly pending."
+    }
+  ],
+  "authority_files": [
+    {
+      "path": "recipes/E/recipe.json",
+      "sha256": "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f"
+    },
+    {
+      "path": "recipes/E/WORK_ORDER.md",
+      "sha256": "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7"
+    },
+    {
+      "path": "docs/27_BUNDLE_CAPABILITIES_AND_LIMITS.md",
+      "sha256": "46c7b894ee0b74598f61d9cc6fcc65c4826f08e81c1f87167d0cb2fe75df306c"
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-001.wl",
+      "sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668"
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-002.wl",
+      "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43"
+    }
+  ],
   "imports": [],
   "files": [],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "source_audit_findings": {
+    "physical_reaction_topology": "SYMBOLIC_MANUFACTURED_N_P_D_SKELETON_ONLY",
+    "provenance_bound_numerical_forward_rate": "NOT_FOUND",
+    "provenance_bound_numerical_reverse_rate": "NOT_FOUND",
+    "temperature_time_rate_law": "NOT_FOUND",
+    "primordial_abundances_preloaded": false,
+    "historical_target_conditioned_proxy_allowed_for_generation": false
+  }
 }

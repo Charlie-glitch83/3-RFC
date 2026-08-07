@@ -1,21 +1,85 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "1.0",
+  "run_id": "E-140-20260807T142445Z",
+  "module": "E",
+  "status": "FROZEN",
+  "classification": "FROZEN_PREEXECUTION_SCIENTIFIC_OBSTRUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f",
+    "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7",
+    "46c7b894ee0b74598f61d9cc6fcc65c4826f08e81c1f87167d0cb2fe75df306c"
+  ],
+  "parent_hashes": [
+    "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8"
+  ],
+  "definition_hashes": [
+    "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
+    "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43"
+  ],
+  "candidate_classes": [
+    "exact-parent derivation",
+    "target-blind admitted source",
+    "lawful coefficient branch family"
+  ],
+  "equations_and_laws": [
+    "manufactured symbolic skeleton n+p<->d with rates kf*n*p and kr*d; no numerical kf or kr selected"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "D parent supplies intrinsic dimensionless tau_D; no E nuclear rate units/normalization are source-owned"
+  ],
+  "methods": [
+    "source/rate provenance audit before physical solver binding"
+  ],
+  "tolerances": [
+    "solver template rtol=1e-9",
+    "solver template atol=1e-12"
+  ],
+  "stopping_rules": [
+    "HARD STOP on any unresolved __BIND token",
+    "HARD STOP if no exact target-blind rate source exists"
+  ],
+  "expected_invariants": [
+    "baryon number",
+    "charge",
+    "positivity"
+  ],
+  "tests": [
+    "E-WL-001 manufactured conservation check",
+    "E-WL-002 manufactured Jacobian/conservation check",
+    "Module E reference check"
+  ],
+  "gates": [
+    "baryon/charge/energy accounting",
+    "network convergence",
+    "rate-source audit",
+    "no scalar-channel collapse",
+    "withheld reaction and independent implementation checks"
+  ],
+  "falsifiers": [
+    "public or remembered abundance target influences generation",
+    "historical Li7/Be7 proxy coefficients promoted to physical rates",
+    "manufactured n,p,d example promoted as a source-owned physical network",
+    "arbitrary numerical kf or kr chosen without exact provenance"
+  ],
+  "claim_boundary": "E physical primordial network remains unexecuted unless an exact target-blind source-owned reaction/rate law is recovered or derived.",
+  "independent_verifier_design": "Reconstruct the source-boundary audit independently from H_D_to_E, SOURCE_MANIFEST, admitted W2/addendum boundary statements, E recipe, and exact Wolfram inputs without trusting primary gate conclusions.",
+  "allowed_implementation_only_corrections": [
+    "serialization",
+    "path handling",
+    "runner dependency installation; no scientific source/rate/threshold changes"
+  ],
+  "scientific_obstruction": {
+    "earliest_missing_object": "E_SOURCE_OWNED_NUCLEAR_RATE_LAW",
+    "missing": [
+      "provenance-bound numerical forward reaction rate",
+      "provenance-bound numerical reverse reaction rate",
+      "lawful E rate normalization/time law sufficient to bind the physical solver"
+    ],
+    "parent_finding": "H_D_to_E supplies D thermal/transport state and explicitly preloads no primordial abundances; it contains no nuclear rate coefficients.",
+    "source_finding": "Admitted W2 metadata explicitly records fullBBNNetworkCompleted=False, reactionRateTablesUsed=False, temperatureTimeIntegrationDone=False; addendum remains theorem/proxy with external network validation pending.",
+    "repo_rule": "Bundle limits forbid predeclaring a unique coefficient when admitted triad and parent do not determine one.",
+    "lawful_resolution": "Recover/derive an exact target-blind source-owned E rate law, or preserve an explicitly lawful branch family only if it supports all required physical gates without arbitrary selection."
+  }
 }
