@@ -1,0 +1,91 @@
+{
+  "schema_version": "2.0",
+  "module": "B",
+  "title": "Big Implosion and First Physical State",
+  "parents": [
+    "A"
+  ],
+  "children": [
+    "C"
+  ],
+  "objective": "Execute the sole first physical event from the exact prephysical parent and generate the first restartable physical RFC state.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "exact prephysical A modes",
+    "QV": "Big Implosion compression/crossing",
+    "RFL": "first physical carrier, event and memory"
+  },
+  "derive_exactly": [
+    "Big Implosion candidate from exact A carrier and graph/relational operator",
+    "proof that physical time is absent before the event and intrinsic ordering begins at it",
+    "compression, conservation, sector ownership, uncertainty and branch laws",
+    "restartable first physical state and no-loss reopening map"
+  ],
+  "wolfram_calls": [
+    "B-WL-001",
+    "B-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module B --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module B --solver big_implosion --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/B_big_implosion.template.json --binding-sheet <RUN_DIR>/binding_sheets/B_big_implosion.bindings.json --output <RUN_DIR>/solver_configs/B_big_implosion.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/B_big_implosion.json --output-dir <RUN_DIR>/solver_outputs/big_implosion"
+  ],
+  "numerical_execution": [
+    "execute multiple graph sizes and nontrivial modes",
+    "check spectral compression, conserved carrier mode, restart and exact reopening",
+    "ablate compression and relational coupling"
+  ],
+  "required_outputs": [
+    "physically executed Big Implosion state",
+    "intrinsic physical event order and clock origin",
+    "generated geometry or explicitly typed pregeometry",
+    "field/current/conservation-bearing state",
+    "ordinary, radiative, compression-relic, and dissipative-tail sector seeds only where derived",
+    "route, event, branch, memory, uncertainty, and no-loss ancestry",
+    "restartable H_B_to_C"
+  ],
+  "mandatory_gates": [
+    "no pre-event physical time",
+    "exact parent bytes",
+    "strict nontrivial compression or derived equivalent",
+    "total ledger preservation",
+    "no-loss reopening",
+    "no later physics smuggled into B",
+    "ablation, replay, restart, and independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "inheriting an old Big Implosion result without replay",
+    "choosing a law because it recovers an old output",
+    "calling a symbolic operator a physical execution"
+  ],
+  "hard_stop_conditions": [
+    "a physical clock or geometry is assumed in the A parent",
+    "later-module particles/constants are inserted",
+    "compression is trivial or ledger is not conserved"
+  ],
+  "claim_boundary": "First physical RFC state at declared fidelity; no microscopic or cosmological late-time completion.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "big_implosion",
+      "template": "configured_runs/templates/B_big_implosion.template.json",
+      "purpose": "Execute the frozen Big Implosion compression operator on the exact A parent.",
+      "copy_command": "python tools/director.py solver-copy --module B --solver big_implosion --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/B_big_implosion.json --output-dir <RUN_DIR>/solver_outputs/big_implosion",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/B_big_implosion.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/B_big_implosion.template.json --binding-sheet <RUN_DIR>/binding_sheets/B_big_implosion.bindings.json --output <RUN_DIR>/solver_configs/B_big_implosion.json"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 - Module: `B`
 - Objective: Execute the sole first physical event from the exact prephysical parent and generate the first restartable physical RFC state.
-- Run workspace: `not yet created`
+- Run workspace: `modules/B/runs/B-110-20260807T002248Z`
 
 ## Exact sequence
 
@@ -16,13 +16,13 @@
    - `python tools/director.py wolfram-show --call B-WL-001`
    - `python tools/director.py wolfram-show --call B-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module B --output <RUN_DIR>/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module B --output modules/B/runs/B-110-20260807T002248Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module B --solver big_implosion --destination <RUN_DIR>`
+   - `python tools/director.py solver-copy --module B --solver big_implosion --destination modules/B/runs/B-110-20260807T002248Z`
    - fill `configured_runs/binding_sheets/B_big_implosion.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/B_big_implosion.template.json --binding-sheet <RUN_DIR>/binding_sheets/B_big_implosion.bindings.json --output <RUN_DIR>/solver_configs/B_big_implosion.json`
-   - `python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/B_big_implosion.json --output-dir <RUN_DIR>/solver_outputs/big_implosion`
+   - `python tools/materialize_solver_config.py --template modules/B/runs/B-110-20260807T002248Z/solver_templates/B_big_implosion.template.json --binding-sheet modules/B/runs/B-110-20260807T002248Z/binding_sheets/B_big_implosion.bindings.json --output modules/B/runs/B-110-20260807T002248Z/solver_configs/B_big_implosion.json`
+   - `python tools/run_configured_solver.py --config modules/B/runs/B-110-20260807T002248Z/solver_configs/B_big_implosion.json --output-dir modules/B/runs/B-110-20260807T002248Z/solver_outputs/big_implosion`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.

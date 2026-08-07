@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-07T00:21:08.797148+00:00
+Generated: 2026-08-07T00:22:52.682636+00:00
 
 ## Project truth
 
@@ -67,7 +67,7 @@ Execute the sole first physical event from the exact prephysical parent and gene
 
 - admitted sources: 29
 - frozen artifacts: 5
-- indexed runs: 6
+- indexed runs: 7
 
 ## Recent runs
 
@@ -77,6 +77,7 @@ Execute the sole first physical event from the exact prephysical parent and gene
 - REC-040-20260806T135256Z: PASS (RECOVERY)
 - FRONTIER-050-20260806T142549Z: PASS (AUDIT)
 - A-100-20260806T173458Z: CREATED (A)
+- B-110-20260807T002248Z: CREATED (B)
 
 ## Recent decisions
 
