@@ -1,0 +1,99 @@
+name: D130 Redo Gate Check Implementation Correction
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+env:
+  PYTHONPATH: ${{ github.workspace }}
+
+jobs:
+  correct:
+    if: github.event.pull_request.head.ref == 'ops/d130-redo-gatecheck-fix-20260807'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Correct only post-output gate-summary iteration
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          run=Path('modules/D/runs/D-130-20260807T220342Z')
+          script=run/'execute_d130_physical.py'
+          lock_path=run/'IMPLEMENTATION_LOCK.json'
+          snap=json.loads((run/'PRE_EXECUTION_SNAPSHOT.json').read_text())
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          if sha(run/'FROZEN_DERIVATION_SPEC.json')!=snap['derivation_sha256'] or snap['derivation_sha256']!='7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506':
+              raise SystemExit('HARD STOP: frozen D science changed')
+          old_hash=sha(script)
+          if old_hash!='39dfe2b38251036e050ece9ad820589b182b4a813c6dc18ad429a0f7a7b7e959':
+              raise SystemExit('HARD STOP: unexpected pre-correction primary materializer hash '+old_hash)
+          old="if not all(v['pass'] for k, v in primary_gates.items() if k != 'independent_reconstruction'):"
+          new="if not all(v['pass'] for k, v in primary_gates.items() if isinstance(v, dict) and k != 'independent_reconstruction'):"
+          text=script.read_text()
+          if text.count(old)!=1:
+              raise SystemExit('HARD STOP: exact gate-summary correction target not unique')
+          script.write_text(text.replace(old,new))
+          new_hash=sha(script)
+          lock=json.loads(lock_path.read_text())
+          changed=False
+          for rec in lock['implementations']:
+              if rec['path']==str(script):
+                  rec['sha256']=new_hash
+                  changed=True
+          if not changed: raise SystemExit('HARD STOP: implementation lock does not own primary materializer')
+          lock['status']='FROZEN_BEFORE_FULL_MATRIX_RERUN_AFTER_IMPLEMENTATION_ONLY_CORRECTION'
+          lock['postprimary_correction']={
+              'failure_run':31224620497,
+              'old_sha256':old_hash,
+              'new_sha256':new_hash,
+              'scope':'One-line gate-summary iteration fix only; skip top-level metadata strings when requiring primary gate pass flags.',
+              'scientific_change':False,
+              'required_rerun':'FULL_FROZEN_MATRIX'
+          }
+          lock_path.write_text(json.dumps(lock,indent=2)+'\n')
+          failure={
+              'failure_id':'D130_REDO_POSTPRIMARY_GATE_SUMMARY_001',
+              'classification':'IMPLEMENTATION_ONLY_POSTPRIMARY',
+              'actions_run':31224620497,
+              'failure':'The materializer completed output construction but its final all(...) gate-summary loop indexed top-level metadata strings as if they were gate dictionaries, raising TypeError after physical outputs were written in the ephemeral runner.',
+              'resolution':'Change exactly one bookkeeping condition so only dict-valued primary gate records participate. No physical equations, parent, coefficients, initial state, thermal definition, events, tolerances, falsifiers, outputs, or claim boundary changed. Full frozen matrix rerun required.',
+              'old_materializer_sha256':old_hash,
+              'new_materializer_sha256':new_hash,
+              'scientific_change':False,
+              'primary_BDF_execution_occurred':True,
+              'ephemeral_physical_outputs_written_before_failure':True,
+              'failed_attempt_outputs_admitted_as_evidence':False,
+              'required_replay_scope':'FULL_FROZEN_MATRIX'
+          }
+          corr=run/'implementation_corrections/D130_REDO_POSTPRIMARY_GATE_SUMMARY_001.json'
+          corr.parent.mkdir(parents=True,exist_ok=True)
+          corr.write_text(json.dumps(failure,indent=2)+'\n')
+          with (run/'FAILURES.jsonl').open('a') as f: f.write(json.dumps(failure,separators=(',',':'))+'\n')
+          print(json.dumps({'old_sha256':old_hash,'new_sha256':new_hash,'scientific_change':False},indent=2))
+          PY
+          python -m py_compile modules/D/runs/D-130-20260807T220342Z/execute_d130_physical.py modules/D/runs/D-130-20260807T220342Z/independent_reconstruct_d130.py
+      - name: Commit implementation-only correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/d130_redo_gatecheck_fix.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Correct D-130 post-output gate summary implementation'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
