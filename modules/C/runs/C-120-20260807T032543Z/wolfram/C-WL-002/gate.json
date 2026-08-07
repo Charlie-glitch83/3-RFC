@@ -1,0 +1,12 @@
+{
+  "call": "C-WL-002",
+  "phase": "POST_LOCK",
+  "result": "PASS_WITH_PRESERVED_MESSAGES",
+  "manual_review": {
+    "invarianceSolution": "x21 == -x12 && x22 == x11",
+    "candidate": "{{x11, x12}, {-x12, x11}}"
+  },
+  "messages_preserved": true,
+  "source_derived_generator_requirement": "SATISFIED_BY_FROZEN_C_DERIVATION",
+  "scope": "Generic continuous O(2)-type invariance family only; the actual 3D C generator is derived from the exact degenerate H_B_to_C excitation subspace."
+}
