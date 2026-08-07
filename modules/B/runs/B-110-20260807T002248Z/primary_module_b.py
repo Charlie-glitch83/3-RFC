@@ -4,7 +4,7 @@ import hashlib, json
 from pathlib import Path
 import numpy as np
 
-ROOT=Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[4]
 RUN=Path(__file__).resolve().parent
 PARENT=ROOT/'modules/A/frozen/H_A_to_B.json'
 PARENT_SHA='728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7'
@@ -60,7 +60,7 @@ for n in range(2,9):
     eig=np.linalg.eigvalsh(QQ); ratio=nontrivial_ratio(xx,yy)
     struct.append({'N':n,'construction':'cycle exact A modal values then renormalize total ledger to 1 for structural test only','compression_ratio':ratio,'analytic_nonconstant_eigenvalue':float((delta-1)/(delta-1+n)),'max_operator_eigenvalue':float(np.max(eig)),'min_operator_eigenvalue':float(np.min(eig)),'ledger_error':float(np.sum(yy)-np.sum(xx)),'reopening_error':float(np.linalg.norm(rr-xx)),'pass':bool(ratio<1-1e-12 and abs(np.sum(yy)-np.sum(xx))<=TOL and np.linalg.norm(rr-xx)<=TOL)})
 dump('primary/FINITE_N_STRUCTURAL_AUDIT.json',{'classification':'STRUCTURAL_ROBUSTNESS_NOT_ADDITIONAL_PHYSICAL_BRANCHES','runs':struct,'overall':'PASS' if all(r['pass'] for r in struct) else 'FAIL'})
-Q0=np.eye(3); y0=x.copy(); ratio0=nontrivial_ratio(x,y0)
+y0=x.copy(); ratio0=nontrivial_ratio(x,y0)
 Ld=np.array([[1.,-1.,0.],[-1.,1.,0.],[0.,0.,0.]])
 Qd=np.linalg.inv(np.eye(3)+Ld/(delta-1)); eigd=np.linalg.eigvalsh(Qd)
 lossy=np.full(3,float(np.mean(y))); lossy_err=float(np.linalg.norm(lossy-x))
