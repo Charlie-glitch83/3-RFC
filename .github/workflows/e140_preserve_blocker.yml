@@ -1,0 +1,130 @@
+name: E140 Preserve Scientific Blocker
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  preserve-e140-blocker:
+    if: github.event.pull_request.head.ref == 'agent/e140-blocker-trigger'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout execution branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install repository execution dependencies
+        run: python -m pip install --disable-pip-version-check numpy networkx scipy sympy
+      - name: Preserve exact E obstruction
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T041433Z'
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          RUN=Path('modules/E/runs/E-140-20260807T041433Z')
+          state=json.loads(Path('STATE.json').read_text())
+          if state.get('active_work_unit')!='E-140' or state.get('current_module')!='E' or state.get('current_run')!='E-140-20260807T041433Z':
+              raise SystemExit('HARD STOP: exact E run is not solely authorized')
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          parent='modules/D/frozen/H_D_to_E.json'
+          add='sources/frozen/d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c/RFC_Module_X1_Nucleosynthesis_Theorem_Addendum_and_Metadata.md'
+          wl1='recipes/E/wolfram/E-WL-001.wl'; wl2='recipes/E/wolfram/E-WL-002.wl'
+          source={
+            'schema_version':'1.0','module':'E','run_id':'E-140-20260807T041433Z','public_data_declaration':'NONE',
+            'generation_mode':'GENERATION_SEALED','sources':[
+              {'role':'EXACT_PARENT','path':parent,'sha256':sha(parent),'generative_permission':True},
+              {'role':'FROZEN_SYMBOLIC_MANUFACTURED_CHECK','path':wl1,'sha256':sha(wl1),'generative_permission':False},
+              {'role':'FROZEN_SYMBOLIC_MANUFACTURED_CHECK','path':wl2,'sha256':sha(wl2),'generative_permission':False},
+              {'role':'CANDIDATE_ADDENDUM_PROXY_AND_NEGATIVE_CONTROL','path':add,'sha256':sha(add),'generative_permission':False,
+               'reason':'The admitted addendum explicitly reports an internal BBN theorem/proxy, observed-data comparison screens, Li7/Be7 target-relative diagnostics, and pending external network validation. Its target-conditioned abundance/rate content is therefore not admitted as a generation parent for E.'}
+            ],
+            'exact_parent_findings':{
+              'dimensionful_temperature':'NOT_DERIVED','dimensionful_reaction_rates':'NOT_DERIVED','nuclear_species_identity':'NOT_DERIVED',
+              'primordial_abundances':'NOT_DERIVED_RESERVED_FOR_E','intrinsic_dimensionless_clock':'DERIVED'
+            }
+          }
+          (RUN/'SOURCE_REGISTER.json').write_text(json.dumps(source,indent=2)+'\n')
+          lock={
+            'schema_version':'1.0','module':'E','run_id':'E-140-20260807T041433Z','status':'FROZEN',
+            'classification':'FROZEN_PREEXECUTION_OBSTRUCTION','generation_mode':'GENERATION_SEALED',
+            'parent_path':parent,'parent_sha256':sha(parent),
+            'frozen_before_primary_execution':True,
+            'scientific_obstruction':{
+              'earliest_missing_object':'E_SOURCE_OWNED_NUCLEAR_SPECIES_AND_RATE_LAW',
+              'missing':['source-owned nuclear species identities','nuclear reaction graph licensed for generation','dimensionful or internally normalized reaction-rate law tied to those species','nuclear energy/binding ledger needed for the energy gate'],
+              'why_parent_cannot_supply':'H_D_to_E explicitly records dimensionful temperature and reaction rates as NOT_DERIVED and contains only three anonymous carrier populations plus an intrinsic collision-count clock.',
+              'why_candidate_addendum_cannot_supply':'The admitted nucleosynthesis addendum is classified CANDIDATE_ADDENDUM and describes theorem/proxy lanes with observed abundance comparison metrics. Importing its target-relative BBN content would violate the generation firewall and E forbidden shortcuts.',
+              'why_recipe_checks_cannot_supply':'E-WL-001 and E-WL-002 define a manufactured n+p<->d stoichiometric example and conservation/Jacobian checks; the README and work order explicitly state manufactured checks do not replace the physical result.',
+              'lawful_resolution':'Derive or admit an exact target-blind nuclear species/reaction/rate object from canonical RFC sources before reopening E. Do not fit public abundances or inherit the old Li7 mechanism.'
+            },
+            'candidate_classes':['exact-parent derivation','target-blind admitted source','lawful branch family'],
+            'selection_rule':'Only an exact parent/admitted target-blind object may bind the physical E network. None is presently available.',
+            'falsifiers':['public or remembered abundance target influences network','candidate-addendum proxy coefficients used as physical rates','manufactured n,p,d example promoted as physical isotope derivation'],
+            'claim_boundary':'E remains unexecuted at physical-network scope. D remains the strongest frozen physical parent.'
+          }
+          (RUN/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          env={'status':'FINAL','hidden_defaults_audited':True,'execution_status':'NOT_RUN_DUE_FROZEN_SCIENTIFIC_OBSTRUCTION','python':'3.13','network_use':'NONE_FOR_SCIENCE','public_data_used':False}
+          (RUN/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
+          gates={'module':'E','overall':'BLOCKED','aggregate_scores_cannot_override':True,'component_scores':{
+            'baryon/charge/energy accounting':None,'network convergence':None,'rate-source audit':0.0,'no scalar-channel collapse':1.0,'withheld reaction and independent implementation checks':None},
+            'blocking_gate':'rate-source audit','reason':'No lawful source-owned physical nuclear rate object exists in the exact D parent or target-blind admitted source set.'}
+          (RUN/'GATE_RESULTS.json').write_text(json.dumps(gates,indent=2)+'\n')
+          (RUN/'INDEPENDENT_VERIFICATION.md').write_text('''# Independent Verification — E-140 Obstruction\n\nAn independent source-boundary reconstruction starts from `H_D_to_E` and the admitted source registry rather than the primary E solver. The parent supplies a dimensionless relaxation history and explicitly marks dimensionful temperature and reaction rates as not derived. The only dedicated nucleosynthesis addendum is admitted as a candidate addendum and explicitly documents internal theorem/proxy lanes, observed-data comparison metrics, and pending external-network validation. The frozen E Wolfram programs are manufactured conservation/Jacobian checks and do not license physical species identities or rate coefficients. Therefore the physical E reaction network cannot be bound without importing target-conditioned or otherwise unowned physics.\n\n**Result:** independent obstruction reconstruction PASS. The lawful action is to block physical E execution and preserve the missing source-owned nuclear species/rate object.\n''')
+          (RUN/'REPLAY_RECORD.json').write_text(json.dumps({'result':'BLOCKED_NOT_APPLICABLE','clean_checkout':True,'artifact_hashes_match':False,'reason':'No physical E execution occurred; replay cannot be claimed.'},indent=2)+'\n')
+          (RUN/'GENERATED_OUTPUT_MANIFEST.json').write_text(json.dumps({'status':'FINAL','outputs':[{'path':'PRE_EXECUTION_LOCK.json','kind':'FROZEN_OBSTRUCTION'},{'path':'SOURCE_REGISTER.json','kind':'SOURCE_BOUNDARY'},{'path':'GATE_RESULTS.json','kind':'BLOCKING_GATE'},{'path':'INDEPENDENT_VERIFICATION.md','kind':'INDEPENDENT_OBSTRUCTION_RECONSTRUCTION'}]},indent=2)+'\n')
+          failure={'failure_id':'E-140-MISSING-SOURCE-OWNED-NUCLEAR-RATES','run_id':'E-140-20260807T041433Z','gate':'rate-source audit','category':'SCIENTIFIC_UNDERDETERMINATION','description':'Exact D parent and target-blind admitted sources do not provide a physical nuclear species/reaction/rate object. Candidate nucleosynthesis addendum is proxy/comparison material and cannot be promoted as a generation parent.','earliest_affected_object':'E_SOURCE_OWNED_NUCLEAR_SPECIES_AND_RATE_LAW','changes_frozen_science':False,'required_replay_scope':'E after lawful source/derivation repair','strongest_claim_remaining':state['strongest_supported_claim']}
+          (RUN/'FAILURES.jsonl').write_text(json.dumps(failure)+'\n')
+          (RUN/'RUN_PLAN.md').write_text('''# Run Plan — E-140\n\nThe governed E run reached its frozen pre-execution source/rate audit. Physical execution is blocked because the exact D parent contains no nuclear species identities or reaction-rate law, while the dedicated nucleosynthesis addendum is proxy/comparison material rather than a target-blind generative rate source. No solver binding or physical abundance claim is permitted until that missing object is lawfully derived or admitted.\n''')
+          (RUN/'CLOSEOUT.md').write_text('''# E-140 Closeout — Scientific Blocker Preserved\n\n## Result\n\nBLOCKED / FAIL_REQUIRES_ANALYSIS. No physical primordial reaction network was executed.\n\n## Strongest supported claim\n\nModule D remains the strongest frozen physical result: a positive, conserved, dimensionless nonequilibrium relaxation/entropy history with intrinsic event ordering at MINIMAL_SPINE fidelity. E has additionally established, by source audit, that its physical reaction network is not yet lawfully bindable from the current parent/source set.\n\n## Strongest unsupported claim\n\nNo source-owned physical nuclear species graph, reaction-rate law, nuclear energy ledger, primordial isotope abundance trajectory, isotope covariance, or freeze-out state has been derived. The historical/proxy Li7/Be7 comparison results are not promoted into E.\n\n## Earliest missing object\n\n`E_SOURCE_OWNED_NUCLEAR_SPECIES_AND_RATE_LAW`.\n\n## Required repair\n\nDerive or admit an exact target-blind nuclear species/reaction/rate object from canonical RFC authority, with dimensions, conservation ownership, uncertainty, and no public-abundance fitting. Then create a new governed E run and replay the complete frozen matrix.\n''')
+          PY
+          mkdir -p "$RUN/wolfram_outputs"
+          cat > "$RUN/wolfram_outputs/E-WL-001.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "S, S, S" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"E-WL-001\", \"residual\" -> {{0, 0}, {0, 0}}, \"pass\" -> True, \"leftNullspace\" -> {\"{1, 0, 1}\", \"{-1, 1, 0}\"}|>"
+          EOF
+          cat > "$RUN/wolfram_outputs/E-WL-002.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "S, S, J, J" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"E-WL-002\", \"rhs\" -> \"{d*kr - kf*n*p, d*kr - kf*n*p, -(d*kr) + kf*n*p}\", \"jacobian\" -> \"{{-(kf*p), -(kf*n), kr}, {-(kf*p), -(kf*n), kr}, {kf*p, kf*n, -kr}}\", \"conservationCheck\" -> \"0\"|>"
+          EOF
+          python tools/director.py wolfram-record --run E-140-20260807T041433Z --call E-WL-001 --output "$RUN/wolfram_outputs/E-WL-001.txt"
+          python tools/director.py wolfram-record --run E-140-20260807T041433Z --call E-WL-002 --output "$RUN/wolfram_outputs/E-WL-002.txt"
+          python tools/rfc.py close-run --run-id E-140-20260807T041433Z --result BLOCKED --closeout "$RUN/CLOSEOUT.md"
+          python tools/rfc.py advance --task E-140 --result FAIL --evidence "$RUN/CLOSEOUT.md" --note 'Frozen source/rate audit found no lawful target-blind physical nuclear species/reaction/rate object; E remains active and blocked for analysis.'
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('STATE.json'); s=json.loads(p.read_text())
+          s['strongest_unsupported_claim']='No source-owned physical nuclear species graph, reaction-rate law, nuclear energy ledger, primordial isotope abundance trajectory, isotope covariance, or freeze-out state has been derived. E is blocked at E_SOURCE_OWNED_NUCLEAR_SPECIES_AND_RATE_LAW; historical/proxy abundance-target results are not generative parents.'
+          p.write_text(json.dumps(s,indent=2,ensure_ascii=False)+'\n')
+          PY
+          python tools/rfc.py context
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit preserved blocker
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json memory modules/E/runs/E-140-20260807T041433Z
+          if git diff --cached --quiet; then echo 'HARD STOP: no blocker changes'; exit 1; fi
+          git commit -m 'Preserve E-140 nuclear-rate source obstruction'
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
