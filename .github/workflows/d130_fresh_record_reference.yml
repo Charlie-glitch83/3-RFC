@@ -1,17 +1,16 @@
 name: One-shot fresh D130 Wolfram registration and reference
 
 on:
-  push:
+  pull_request:
     branches:
       - agent/frontier-050-execution
-    paths:
-      - .github/d130-fresh-record-trigger.txt
 
 permissions:
   contents: write
 
 jobs:
   record:
+    if: github.event.pull_request.head.ref == 'ops/d130-fresh-record-trigger'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +42,7 @@ jobs:
         run: |
           set -euo pipefail
           python tools/run_reference_checks.py --module D --output modules/D/runs/D-130-20260807T045646Z/reference_checks.json
-      - name: Commit evidence and remove one-shot trigger/runner
+      - name: Commit evidence and remove one-shot runner
         shell: bash
         run: |
           set -euo pipefail
