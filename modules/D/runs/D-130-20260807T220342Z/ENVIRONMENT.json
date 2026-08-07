@@ -1,6 +1,6 @@
 {
   "run_id": "D-130-20260807T220342Z",
-  "status": "PHYSICALLY_EXECUTED_PENDING_CLEAN_REPLAY",
+  "status": "FINAL",
   "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {
     "machine": "x86_64",
@@ -52,5 +52,7 @@
   "hidden_defaults_audited": true,
   "notes": [
     "No stochastic variable admitted. No public thermal, laboratory, SI, Kelvin, MeV, Standard Model, or historical D output enters generation."
-  ]
+  ],
+  "clean_replay_commit": "05c57aa567bee79c0f7f9935d9cfc1891ca8aabb",
+  "clean_replay_exact_hash_match": true
 }

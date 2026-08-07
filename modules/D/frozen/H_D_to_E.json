@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_D_to_E",
+  "from_module": "D",
+  "to_module": "E",
+  "run_id": "D-130-20260807T220342Z",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "object_id": "H_C_to_D",
+    "path": "modules/C/frozen/H_C_to_D.json",
+    "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+  },
+  "triadic_descent": {
+    "CIF": "The exact C prethermal three-carrier distribution, complete inherited K3 support, and its lawful distribution/phase possibility family.",
+    "QV": "The source-owned conservative complete-support collision/transport generator G_D=-M_C redistributes the parent carrier; its edge fluxes produce monotone entropy while the exact C constitutive excitation decays.",
+    "RFL": "The full distribution trajectory, intrinsic spectral-temperature coordinate, entropy/state-space expansion history, phase-event chronology, transferred constitutive-excitation memory, covariance envelope, and restart state are stabilized as D memory."
+  },
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE_ON_COMPLETE_PARENT_K3_TRANSPORT_GRAPH",
+  "clock": "tau_D, intrinsic dimensionless post-Big-Implosion transport clock. tau_D=0 is the C->D interface; no seconds or pre-event time are imported.",
+  "frame": "B/C finite relational pregeometry; no metric spacetime or FRW geometry is introduced in D.",
+  "transport_collision_law": {
+    "compact_expression": "dp/dtau_D = -M_C p",
+    "edge_rate_a": 0.1499430216517723,
+    "gap_g_C": 0.449829064955317,
+    "parent_matrix_M_C": [
+      [
+        0.29988604330354474,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "generator_G_D": [
+      [
+        -0.29988604330354474,
+        0.1499430216517723,
+        0.1499430216517723
+      ],
+      [
+        0.1499430216517723,
+        -0.2998860433035446,
+        0.1499430216517723
+      ],
+      [
+        0.1499430216517723,
+        0.1499430216517723,
+        -0.2998860433035446
+      ]
+    ]
+  },
+  "thermal_state": {
+    "initial_distribution": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "final_distribution": [
+      0.3459414163255845,
+      0.32885860048152177,
+      0.3251999831928936
+    ],
+    "equilibrium_state": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "intrinsic_spectral_temperature_definition": "Theta_D=g_C/log(2*q0/qexc), the unique positive 1+2-level canonical spectral coordinate matching the instantaneous normalized zero/doublet power ratio.",
+    "Theta_D_initial": 0.2357319670252057,
+    "Theta_D_final": 0.056881184006326246,
+    "temperature_units": "dimensionless parent-gap energy coordinate",
+    "kelvin_or_MeV_status": "NOT_DERIVED_AND_NOT_USED_FOR_GENERATION",
+    "entropy_initial": 0.9580811666868891,
+    "entropy_final": 1.0982465795013165,
+    "entropy_change": 0.1401654128144274,
+    "RFL_memory_final": 0.044375970867154876,
+    "effective_nonmetric_state_space_volume_initial": 2.6066898681828,
+    "effective_nonmetric_state_space_volume_final": 2.9989030730899593,
+    "metric_expansion_claimed": false
+  },
+  "phase_events": [
+    {
+      "event": "QV_RFL_MEMORY_BALANCE",
+      "tau_D": 0.7704561960983979,
+      "state": [
+        0.512401137871605,
+        0.26978040556773836,
+        0.21781845656065646
+      ],
+      "Theta_D": 0.17292007842614163,
+      "S_D": 1.028043370090653,
+      "Q_RFL": 0.02224312061665972
+    },
+    {
+      "event": "GLOBAL_RELAXATION_EFOLD",
+      "tau_D": 2.2230666666666665,
+      "state": [
+        0.42649516633795465,
+        0.3002692810950221,
+        0.27323555256702314
+      ],
+      "Theta_D": 0.11509811799445421,
+      "S_D": 1.0791878640787336,
+      "Q_RFL": 0.038465683175875884
+    },
+    {
+      "event": "EDGE_TIMESCALE_STABILIZATION",
+      "tau_D": 6.669200000000001,
+      "state": [
+        0.34594141638985576,
+        0.3288586004587113,
+        0.3251999831514329
+      ],
+      "Theta_D": 0.0568811840796572,
+      "S_D": 1.098246579497598,
+      "Q_RFL": 0.04437597086603065
+    }
+  ],
+  "uncertainty": {
+    "stochastic_covariance": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "final_state_covariance": [
+      [
+        1.7902421935770697e-14,
+        -8.721243482805375e-15,
+        -9.181178393546128e-15
+      ],
+      [
+        -8.721243482805375e-15,
+        4.248592070913395e-15,
+        4.472651382945673e-15
+      ],
+      [
+        -9.181178393546128e-15,
+        4.472651382945673e-15,
+        4.70852698012757e-15
+      ]
+    ],
+    "event_time_covariance": [
+      [
+        3.336479263250986e-11,
+        9.627044174277713e-11,
+        2.888113252321791e-10
+      ],
+      [
+        9.627044174277713e-11,
+        2.7777777777401585e-10,
+        8.333333333331497e-10
+      ],
+      [
+        2.888113252321791e-10,
+        8.333333333331497e-10,
+        2.500000000032756e-09
+      ]
+    ],
+    "thermal_scalar_covariance": [
+      [
+        2.118408776812976e-18,
+        8.525086746044073e-16,
+        -1.0979398978082584e-17,
+        -4.0401855742824577e-16
+      ],
+      [
+        8.525086746044073e-16,
+        3.43074031901033e-13,
+        -4.418426213679032e-15,
+        -1.6258869802593675e-13
+      ],
+      [
+        -1.0979398978082584e-17,
+        -4.418426213679032e-15,
+        5.690459898101198e-17,
+        2.093968352648838e-15
+      ],
+      [
+        -4.0401855742824577e-16,
+        -1.6258869802593675e-13,
+        2.093968352648838e-15,
+        7.705358688785328e-14
+      ]
+    ],
+    "retuned": false
+  },
+  "verification": {
+    "gates_overall": "PASS",
+    "independent_method": "ANALYTIC_K3_SPECTRAL_RECONSTRUCTION_PLUS_DOP853",
+    "analytic_history_linf": 1.6405191649582207e-09,
+    "DOP853_final_linf": 6.427086640670154e-11,
+    "clean_replay": "PASS",
+    "exact_stage1_hash_replay": true
+  },
+  "restart_contract": "E receives the exact D final three-carrier thermal distribution, parent-derived transport/gap provenance, intrinsic tau_D chronology, phase-event witnesses, entropy/RFL memory state, intrinsic spectral-temperature coordinate and inherited covariance. E must not infer Kelvin/MeV, Standard Model species identities, public abundance targets, metric/FRW expansion or observational transition temperatures from this handoff.",
+  "claim_boundary": "Module D physically instantiates and numerically executes the RFC MINIMAL_SPINE nonequilibrium thermal/phase trajectory on the exact C three-carrier relational state: parent-derived conservative collision/transport, positive distribution history, parent-gap-scaled constitutive-energy transfer into RFL memory, nonnegative entropy production, nonmetric state-space expansion, intrinsic spectral-temperature history, exact phase-event chronology, inherited decimal-envelope uncertainty, restart and independent reconstruction. No Kelvin/MeV calibration, Standard Model species identity, metric/FRW expansion, public transition temperature, neutrino/radiation transport, primordial abundance network, or empirical agreement is claimed."
+}

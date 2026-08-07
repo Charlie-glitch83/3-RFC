@@ -93,9 +93,12 @@
       "run_id": "D-130-20260807T220342Z",
       "module": "D",
       "task_id": "D-130",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/D/runs/D-130-20260807T220342Z",
-      "created_utc": "2026-08-07T22:03:42.257449+00:00"
+      "created_utc": "2026-08-07T22:03:42.257449+00:00",
+      "closed_utc": "2026-08-07T22:47:47.098243+00:00",
+      "tree_sha256": "fa05e86b2530c2f8d0ebecc9e46b60094b6489c25d8d281fce404652885f6511",
+      "closeout": "modules/D/runs/D-130-20260807T220342Z/CLOSEOUT.md"
     }
   ]
 }

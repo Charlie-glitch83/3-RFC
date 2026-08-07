@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "D-130",
   "current_module": "D",
-  "current_run": "D-130-20260807T220342Z",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -200,17 +200,71 @@
       ]
     },
     "D": {
-      "evidence_state": "DESIGN",
-      "fidelity": "UNSTARTED",
-      "active_run": "D-130-20260807T220342Z",
+      "evidence_state": "FROZEN",
+      "fidelity": "MINIMAL_SPINE",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-07T22:47:47.179300+00:00",
+          "work_unit": "D-130"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/D/runs/D-130-20260807T220342Z/solver_outputs/transport/result.json",
+          "timestamp_utc": "2026-08-07T22:47:47.253250+00:00",
+          "work_unit": "D-130"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/D/runs/D-130-20260807T220342Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-07T22:47:47.325038+00:00",
+          "work_unit": "D-130"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/D/runs/D-130-20260807T220342Z/primary/THERMAL_DISTRIBUTION_HISTORY.json",
+          "timestamp_utc": "2026-08-07T22:47:47.395972+00:00",
+          "work_unit": "D-130"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/D/runs/D-130-20260807T220342Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-07T22:47:47.473869+00:00",
+          "work_unit": "D-130"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/D/frozen/H_D_to_E.json",
+          "timestamp_utc": "2026-08-07T22:47:47.542026+00:00",
+          "work_unit": "D-130"
         }
-      ]
+      ],
+      "completed_runs": [
+        "D-130-20260807T220342Z"
+      ],
+      "promotion_evidence": [
+        "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/D/runs/D-130-20260807T220342Z/solver_outputs/transport/result.json",
+        "modules/D/runs/D-130-20260807T220342Z/GATE_RESULTS.json",
+        "modules/D/runs/D-130-20260807T220342Z/primary/THERMAL_DISTRIBUTION_HISTORY.json",
+        "modules/D/runs/D-130-20260807T220342Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E.json"
+      ],
+      "last_promoted_utc": "2026-08-07T22:47:47.542044+00:00"
     },
     "E": {
       "evidence_state": "DESIGN",
@@ -409,7 +463,7 @@
     }
   },
   "last_verified_commit": "4645aefed4d3d1bc1e2462f44ab12082dbb291c8",
-  "last_updated_utc": "2026-08-07T22:03:42.257757+00:00",
+  "last_updated_utc": "2026-08-07T22:47:47.542046+00:00",
   "strongest_supported_claim": "The exact frozen B first physical state supports a parent-derived dimensionless microscopic constitution M_C=I-Q_B with one conserved uniform mode, an exactly degenerate positive internal excitation doublet, O(2) internal law symmetry, conserved total carrier, deterministic prethermal populations, and unitary dimensionless internal phase evolution at MINIMAL_SPINE fidelity.",
   "strongest_unsupported_claim": "No dimensionful masses, empirical particle identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or Standard Model correspondence has been derived.",
   "last_verified_branch": "agent/frontier-050-execution"

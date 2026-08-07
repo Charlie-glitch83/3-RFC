@@ -1,0 +1,15 @@
+{
+  "claim_id": "RFC-D-130-GENERATED-THERMAL-HISTORY-20260807",
+  "text": "From the exact frozen C prethermal three-carrier state, Module D generates and physically executes a conservative parent-derived nonequilibrium transport history with positive carrier distributions, exact carrier and constitutive-energy/RFL accounting, nonnegative entropy production, ordered source-derived phase witnesses, intrinsic spectral-temperature history, inherited decimal-envelope covariance, restart, independent parent-only reconstruction, and exact clean-checkout replay.",
+  "owner": "D",
+  "evidence_state": "FROZEN",
+  "fidelity": "MINIMAL_SPINE",
+  "supported": true,
+  "evidence": [
+    "modules/D/frozen/H_D_to_E.json",
+    "modules/D/runs/D-130-20260807T220342Z/GATE_RESULTS.json",
+    "modules/D/runs/D-130-20260807T220342Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+    "modules/D/runs/D-130-20260807T220342Z/REPLAY_RECORD.json"
+  ],
+  "strongest_unsupported_claim": "Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation."
+}
