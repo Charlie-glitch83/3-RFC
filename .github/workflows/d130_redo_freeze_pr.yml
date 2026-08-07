@@ -22,19 +22,34 @@ jobs:
           python-version: '3.12'
       - name: Install locked dependencies
         run: python -m pip install -r requirements-lock.txt
-      - name: Execute the already-reviewed freeze payload
+      - name: Execute corrected freeze payload
         shell: bash
         run: |
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
+          import json
           text=Path('.github/workflows/d130_redo_freeze_once.yml').read_text()
           marker="          python - <<'PY'\n"
           start=text.index(marker)+len(marker)
           end=text.index("\n          PY\n",start)
           block=text[start:end]
           code='\n'.join(line[10:] if line.startswith('          ') else line for line in block.splitlines())
+          code=code.replace("            'docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md','docs/11_WOLFRAM_INTEGRATION.md',\n", "            'docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md',\n")
           exec(compile(code,'d130_redo_freeze_once.yml','exec'),{})
+          run=Path('modules/D/runs/D-130-20260807T220342Z')
+          failure={
+            'failure_id':'D130_REDO_PREEXEC_HELPER_STALE_DOC_001',
+            'classification':'IMPLEMENTATION_ONLY_PREEXECUTION',
+            'actions_run':31223415610,
+            'failure':'Freeze helper carried obsolete docs/11_WOLFRAM_INTEGRATION.md path that is not cited by the live D active packet.',
+            'resolution':'Removed only the obsolete helper authority path after re-reading the live ACTIVE_WORK_PACKET.md. Frozen D scientific law, parent, coefficients, events, tolerances, gates and claim boundary unchanged.',
+            'scientific_change':False,
+            'primary_execution_occurred':False
+          }
+          (run/'IMPLEMENTATION_CORRECTION_LEDGER.json').write_text(json.dumps(failure,indent=2)+'\n')
+          with (run/'FAILURES.jsonl').open('a') as f:
+              f.write(json.dumps(failure,separators=(',',':'))+'\n')
           PY
           python tools/director.py doctor
       - name: Commit frozen D pre-execution package
