@@ -176,7 +176,7 @@
       "id": "A-100",
       "title": "Close Module A: Triad, First Action, Recursive Kernel, and Relational Completion",
       "module": "A",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "FRONTIER-050"
       ],
@@ -217,7 +217,7 @@
       "id": "B-110",
       "title": "Close Module B: Big Implosion and First Physical State",
       "module": "B",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "A-100"
       ],

@@ -1,2 +1,0 @@
-Finalize A-100 v2
-verified_evidence_commit=23ca80aad5a565ed58648103b2908c6360d29506
