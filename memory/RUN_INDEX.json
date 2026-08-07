@@ -93,9 +93,20 @@
       "run_id": "D-130-20260807T044911Z",
       "module": "D",
       "task_id": "D-130",
-      "status": "CREATED",
+      "status": "FAIL",
       "path": "modules/D/runs/D-130-20260807T044911Z",
-      "created_utc": "2026-08-07T04:49:11.028668+00:00"
+      "created_utc": "2026-08-07T04:49:11.028668+00:00",
+      "closed_utc": "2026-08-07T04:56:44.518711+00:00",
+      "tree_sha256": "db0c3e75d94f86c9e004ee94913a9f05004e8747fe914e035f79582bc0ef2e50",
+      "closeout": "modules/D/runs/D-130-20260807T044911Z/CLOSEOUT.md"
+    },
+    {
+      "run_id": "D-130-20260807T045646Z",
+      "module": "D",
+      "task_id": "D-130",
+      "status": "CREATED",
+      "path": "modules/D/runs/D-130-20260807T045646Z",
+      "created_utc": "2026-08-07T04:56:46.016485+00:00"
     }
   ]
 }

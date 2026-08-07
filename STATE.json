@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "D-130",
   "current_module": "D",
-  "current_run": "D-130-20260807T044911Z",
+  "current_run": "D-130-20260807T045646Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -202,7 +202,7 @@
     "D": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": "D-130-20260807T044911Z",
+      "active_run": "D-130-20260807T045646Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -210,6 +210,9 @@
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
         }
+      ],
+      "completed_runs": [
+        "D-130-20260807T044911Z"
       ]
     },
     "E": {
@@ -409,7 +412,7 @@
     }
   },
   "last_verified_commit": "4645aefed4d3d1bc1e2462f44ab12082dbb291c8",
-  "last_updated_utc": "2026-08-07T04:49:11.028855+00:00",
+  "last_updated_utc": "2026-08-07T04:56:46.016836+00:00",
   "strongest_supported_claim": "The exact frozen B first physical state supports a parent-derived dimensionless microscopic constitution M_C=I-Q_B with one conserved uniform mode, an exactly degenerate positive internal excitation doublet, O(2) internal law symmetry, conserved total carrier, deterministic prethermal populations, and unitary dimensionless internal phase evolution at MINIMAL_SPINE fidelity.",
   "strongest_unsupported_claim": "No dimensionful masses, empirical particle identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or Standard Model correspondence has been derived.",
   "last_verified_branch": "agent/frontier-050-execution"
