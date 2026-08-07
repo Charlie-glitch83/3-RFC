@@ -1,0 +1,8 @@
+{
+  "run_id": "",
+  "status": "DRAFT",
+  "finalized_utc": null,
+  "outputs": [],
+  "tree_sha256": null,
+  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+}
