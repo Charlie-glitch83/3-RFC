@@ -1,14 +1,14 @@
 # Current Context
 
-Generated: 2026-08-07T04:03:37.597588+00:00
+Generated: 2026-08-07T04:06:12.499847+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `D-130` — Close Module D: Nonequilibrium Thermal and Phase History
-- Current module: `D`
-- Last verified commit: `4645aefed4d3d1bc1e2462f44ab12082dbb291c8`
+- Active work unit: `E-140` — Close Module E: Primordial Nuclear Network
+- Current module: `E`
+- Last verified commit: `1813f323211236953b20b29d55e58d958c5ffabd`
 
 ## Strongest supported claim
 
@@ -20,24 +20,24 @@ No dimensionful temperature or energy scale, physical duration, metric expansion
 
 ## Immediate objective
 
-Evolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.
+Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.
 
 ## Required deliverables
 
-- modules/D/runs/<RUN_ID>/RUN_PLAN.md
-- modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/D/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/D/runs/<RUN_ID>/CLOSEOUT.md
+- modules/E/runs/<RUN_ID>/RUN_PLAN.md
+- modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/E/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/E/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- positive distributions
-- energy/charge conservation
-- event ordering
-- stiff-solver convergence
-- restart and independent reconstruction
+- baryon/charge/energy accounting
+- network convergence
+- rate-source audit
+- no scalar-channel collapse
+- withheld reaction and independent implementation checks
 
 ## Module states
 
@@ -80,7 +80,6 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 
 ## Recent decisions
 
-- PROMOTE-C-FROZEN-20260807T034727Z: Promoted Module C from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 - ADVANCE-C-120-20260807T034953Z: Marked C-120 PASS and activated D-130
 - PROMOTE-D-FORMALIZED-20260807T040337Z: Promoted Module D from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-D-IMPLEMENTED-20260807T040337Z: Promoted Module D from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
@@ -88,6 +87,7 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 - PROMOTE-D-PHYSICALLY_EXECUTED-20260807T040337Z: Promoted Module D from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
 - PROMOTE-D-INDEPENDENTLY_REPRODUCED-20260807T040337Z: Promoted Module D from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
 - PROMOTE-D-FROZEN-20260807T040337Z: Promoted Module D from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-D-130-20260807T040612Z: Marked D-130 PASS and activated E-140
 
 ## Recent failures
 
