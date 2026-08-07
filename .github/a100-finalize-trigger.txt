@@ -1,4 +1,0 @@
-Finalize A-100 after verified evidence commit b6280513dc47339ddf024be6275817d3f38a9d39
-repository_test_guardrail_fixed=ffe8370574b4518aee6c83606110d50b357cb15d
-corrected_finalizer_commit=1cd470c7cb65dac99f7fdd3ef3391a4dbaf66aba
-finalizer_retry=2026-08-06T19:34:00-05:00
