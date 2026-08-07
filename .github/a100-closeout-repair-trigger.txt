@@ -1,1 +1,2 @@
-Apply canonical repository-native A-100 closeout hash repair
+Finalize immutable A-100 evidence archival records while preserving active B-110 run
+reconciler_commit=4fc11caf62333ff9589a90514952df604a78f707
