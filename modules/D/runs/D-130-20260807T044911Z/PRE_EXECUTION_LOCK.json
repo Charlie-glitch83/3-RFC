@@ -1,21 +1,154 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "run_id": "D-130-20260807T044911Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-07T04:52:49.016392+00:00",
+  "authority_hashes": [
+    {
+      "path": "README.md",
+      "sha256": "0c0420ae09b4794cd7c80dcf4c9deac3656a133255ed585b055302b33a95038c",
+      "role": "root authority"
+    },
+    {
+      "path": "work_packets/ACTIVE_WORK_PACKET.md",
+      "sha256": "50129493850b56eaf13644059a2f7139d631d46206e55e70a6a20f3e7c3f27c7",
+      "role": "active packet"
+    },
+    {
+      "path": "recipes/D/recipe.json",
+      "sha256": "1ad9720aa394d62df35bf6161414522f7a5563e8a8f94f5c8cd0c5e0b466cb16",
+      "role": "module recipe"
+    },
+    {
+      "path": "recipes/D/WORK_ORDER.md",
+      "sha256": "4588a02fc5baff38bc83b5390161cf44f1cdd98a1acd137860d9ec36efccd365",
+      "role": "work order"
+    }
+  ],
+  "parent_hashes": [
+    {
+      "object_id": "H_C_to_D",
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+    }
+  ],
+  "definition_hashes": [
+    {
+      "path": "modules/D/runs/D-130-20260807T044911Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "f7e623967123d3e7602ee14591c969ebf852a79df2c41c699c5c97584d33a6a0"
+    }
+  ],
+  "candidate_classes": [
+    {
+      "id": "D-CAND-1",
+      "class": "linear conservative positivity-preserving symmetry-equivariant Markov flows on the inherited simplex",
+      "form": "dp/dtau=-kappa P_perp p, kappa>=0",
+      "status": "LAWFUL_FAMILY",
+      "reason": "conservation fixes the uniform zero mode; exact O(2) symmetry on V_perp forces a scalar action there; positivity requires nonnegative decay rate"
+    },
+    {
+      "id": "D-CAND-2",
+      "class": "nonlinear conservative O(2)-equivariant simplex flows",
+      "status": "UNDERDETERMINED",
+      "reason": "C supplies no constitutive nonlinearity or selection principle that chooses one member"
+    },
+    {
+      "id": "D-CAND-3",
+      "class": "phase-threshold/event laws and physical temperature laws",
+      "status": "NOT_DERIVED_FROM_C",
+      "reason": "C supplies no dimensionful scale, equation of state, temperature map, order parameter threshold, or physical clock"
+    }
+  ],
+  "equations_and_laws": [
+    "M_C=g_C P_perp inherited from C",
+    "lawful linear family dp/dtau=-kappa P_perp p, kappa>=0",
+    "normalized intrinsic branch dp/ds=-P_perp p for kappa>0",
+    "q(s)=exp(-s)q(0)",
+    "no physical temperature law or phase threshold is admitted at freeze"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "p, M_C, g_C and normalized intrinsic clock s are dimensionless",
+    "kappa is pure intrinsic-clock scaling within the admitted family and is not a physical rate",
+    "no metric frame, physical time, physical temperature, energy scale, or expansion scale is derived from C",
+    "O(2) rotations inside V_perp remain gauge-equivalent basis choices"
+  ],
+  "methods": [
+    "exact symbolic manufactured calls D-WL-001 then D-WL-002 after this lock",
+    "repository manufactured reference check for D",
+    "BDF local solver only after provenance-complete binding to the frozen normalized branch",
+    "analytic closed-form reconstruction independent of primary numerical integrator",
+    "actual clean-checkout replay required before any PASS claim"
+  ],
+  "tolerances": [
+    {
+      "name": "solver_rtol",
+      "value": 1e-09,
+      "source": "frozen solver template"
+    },
+    {
+      "name": "solver_atol",
+      "value": 1e-12,
+      "source": "frozen solver template"
+    },
+    {
+      "name": "conservation_abs",
+      "value": 1e-10,
+      "basis": "stricter than component gate floor and above floating representation noise; frozen before execution"
+    },
+    {
+      "name": "positivity_abs",
+      "value": 1e-12,
+      "basis": "aligned with solver absolute tolerance; frozen before execution"
+    },
+    {
+      "name": "analytic_numeric_l2",
+      "value": 1e-08,
+      "basis": "pre-execution diagnostic tolerance"
+    }
+  ],
+  "stopping_rules": [
+    "hard stop on any negative population below -1e-12",
+    "hard stop on total-carrier drift above 1e-10",
+    "hard stop if any event/temperature rule requires an observed or remembered target",
+    "hard stop on any attempt to label intrinsic clock s as physical time",
+    "hard stop on any attempt to claim complete D thermal history without a derived physical temperature/clock/phase-event object"
+  ],
+  "expected_invariants": [
+    "sum_i p_i = 1",
+    "p_i >= 0 for the Markov semigroup",
+    "q=p-u obeys q(s)=exp(-s)q(0)",
+    "||q||_2^2 decays as exp(-2s)",
+    "Shannon entropy is nondecreasing along this doubly-stochastic relaxation branch"
+  ],
+  "tests": [
+    "D-WL-001 exact conservation/Lyapunov manufactured identity",
+    "D-WL-002 Jacobian eigenstructure/stiffness manufactured diagnostic",
+    "repository D reference check",
+    "positive-simplex evolution",
+    "time-step/refinement comparison",
+    "restart equivalence",
+    "countermodel execution for sign-flipped/anisotropic/nonconservative alternatives",
+    "independent analytic reconstruction",
+    "clean checkout replay"
+  ],
+  "gates": [
+    "positive distributions",
+    "energy/charge conservation",
+    "event ordering",
+    "stiff-solver convergence",
+    "restart and independent reconstruction"
+  ],
+  "falsifiers": [
+    "negative populations beyond frozen tolerance",
+    "carrier conservation failure",
+    "normalized transport branch disagrees with analytic exp(-s) decay beyond tolerance",
+    "an allegedly unique physical temperature/time law requires a new unfrozen premise",
+    "event ordering changes when public/observed target values are introduced"
+  ],
+  "claim_boundary": "Dimensionless parent-driven relaxation family and its obstruction record only; Generated RFC physical thermal history is not yet established.",
+  "independent_verifier_design": "Separate analytic reconstruction from H_C_to_D plus FROZEN_DERIVATION_SPEC only; do not trust primary solver outputs or gate summaries; reconstruct p(s)=u+exp(-s)(p0-u), conservation, positivity and entropy direction independently. Physical temperature/phase-event obstruction must also be independently confirmed from absence of scale/order-parameter data in the exact parent.",
+  "allowed_implementation_only_corrections": [
+    "syntax/path/serialization fixes only",
+    "numerical implementation fixes that leave candidate classes, equations, source hashes, tolerances, gates, falsifiers, and claim boundary unchanged",
+    "after any correction rerun the entire frozen matrix"
+  ]
 }
