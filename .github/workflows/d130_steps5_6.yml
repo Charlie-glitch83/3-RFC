@@ -1,0 +1,115 @@
+name: One-use D130 steps 5-6
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  execute:
+    if: github.event.pull_request.head.ref == 'ops/readme-exact-startup-20260807c'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install repository requirements
+        shell: bash
+        run: python -m pip install -r requirements-lock.txt
+      - name: Packet step 5 reference check
+        shell: bash
+        run: python tools/run_reference_checks.py --module D --output modules/D/runs/D-130-20260807T053432Z/reference_checks.json
+      - name: Packet step 6 solver copy
+        shell: bash
+        run: python tools/director.py solver-copy --module D --solver transport --destination modules/D/runs/D-130-20260807T053432Z
+      - name: Fill provenance binding sheet from frozen D derivation and exact C parent
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          run = Path('modules/D/runs/D-130-20260807T053432Z')
+          deriv = run / 'FROZEN_DERIVATION_SPEC.json'
+          sheet_path = run / 'binding_sheets/D_transport.bindings.json'
+          parent_path = Path('modules/C/frozen/H_C_to_D.json')
+          def sha(path):
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+          deriv_sha = sha(deriv)
+          parent_sha = sha(parent_path)
+          expected_parent = '41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78'
+          if parent_sha != expected_parent:
+              raise SystemExit(f'parent hash mismatch {parent_sha}')
+          sheet = json.loads(sheet_path.read_text())
+          values = {
+              'model.state_names': ['p0','p1','p2'],
+              'model.parameters': {'a': 0.1499430216517723},
+              'model.rhs_expressions': [
+                  'a*(p1-p0)+a*(p2-p0)',
+                  'a*(p0-p1)+a*(p2-p1)',
+                  'a*(p0-p2)+a*(p1-p2)'
+              ],
+              'model.initial_state': [0.5865734510957316,0.24345592095871127,0.16997062794555687],
+              'model.t_span': [0.0,2.223066321827846],
+              'model.max_step': 0.017367705639280047,
+              'model.linear_invariants': {'Q_total':[1.0,1.0,1.0]},
+              'model.invariant_tolerance': 1e-9,
+              'model.positivity_tolerance': 1e-12
+          }
+          meta = {
+              'model.state_names': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'dimensionless labels', 'three-state carrier coordinates', 'Frozen D state space.'),
+              'model.parameters': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'dimensionless', 'inverse intrinsic-clock coordinate', 'a=1/(delta+2) inherited through M_C.'),
+              'model.rhs_expressions': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'population per tau_D', 'dimensionless', 'Exact pairwise form of dp/dtau_D=-M_C p.'),
+              'model.initial_state': ('EXACT_PARENT_ARTIFACT', parent_path, parent_sha, '', 'dimensionless probability', 'three-state population simplex', 'Exact C prethermal population state.'),
+              'model.t_span': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'tau_D', 'dimensionless intrinsic clock', 'Frozen interval [0,1/g_C].'),
+              'model.max_step': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'tau_D', 'dimensionless intrinsic clock', 'Frozen baseline max_step=(1/g_C)/128.'),
+              'model.linear_invariants': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'dimensionless', 'linear carrier invariant', 'Q_total=sum_i p_i.'),
+              'model.invariant_tolerance': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'dimensionless', 'absolute tolerance', 'Frozen Q_total tolerance.'),
+              'model.positivity_tolerance': ('INTERNAL_DERIVATION', deriv, deriv_sha, 'D130_FROZEN_DERIVATION_SPEC', 'dimensionless probability', 'absolute tolerance', 'Frozen positivity tolerance.')
+          }
+          for rec in sheet['bindings']:
+              path = rec['path']
+              kind, origin, origin_sha, dobj, units, dims, why = meta[path]
+              rec['value'] = values[path]
+              rec['origin_kind'] = kind
+              rec['origin_path'] = origin.as_posix()
+              rec['origin_sha256'] = origin_sha
+              rec['module'] = 'D'
+              rec['derivation_object'] = dobj
+              rec['units'] = units
+              rec['dimensions'] = dims
+              rec['justification'] = why
+          sheet_path.write_text(json.dumps(sheet, indent=2) + '\n')
+          print(json.dumps({'derivation_sha256':deriv_sha,'parent_sha256':parent_sha},indent=2))
+          PY
+      - name: Materialize provenance-bound transport config
+        shell: bash
+        run: python tools/materialize_solver_config.py --template modules/D/runs/D-130-20260807T053432Z/solver_templates/D_transport.template.json --binding-sheet modules/D/runs/D-130-20260807T053432Z/binding_sheets/D_transport.bindings.json --output modules/D/runs/D-130-20260807T053432Z/solver_configs/D_transport.json
+      - name: Run configured transport solver
+        shell: bash
+        run: python tools/run_configured_solver.py --config modules/D/runs/D-130-20260807T053432Z/solver_configs/D_transport.json --output-dir modules/D/runs/D-130-20260807T053432Z/solver_outputs/transport
+      - name: Verify no unresolved bindings
+        shell: bash
+        run: |
+          if grep -R '__BIND_' modules/D/runs/D-130-20260807T053432Z/binding_sheets modules/D/runs/D-130-20260807T053432Z/solver_configs; then
+            echo 'unresolved binding token detected'
+            exit 1
+          fi
+      - name: Commit steps 5-6 outputs and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/d130_steps5_6.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Execute D130 reference and bound transport phases'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
