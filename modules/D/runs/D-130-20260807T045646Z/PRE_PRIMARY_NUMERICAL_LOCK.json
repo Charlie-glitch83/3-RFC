@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T045646Z",
+  "status": "FROZEN_BEFORE_PRIMARY_NUMERICAL_EXECUTION",
+  "frozen_utc": "2026-08-07T05:14:00.762828+00:00",
+  "source_commit_before_preparation": "94aae4db23b1452ae76fdb7f7609b3fae794d548",
+  "hashes": {
+    "scientific_pre_execution_lock": {
+      "path": "modules/D/runs/D-130-20260807T045646Z/PRE_EXECUTION_LOCK.json",
+      "sha256": "1113fd71f83c8335630ab763feb8e3754e1549b5bb7d84fc017a428bdc0b7737"
+    },
+    "derivation_spec": {
+      "path": "modules/D/runs/D-130-20260807T045646Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "a94601dd0fbd3c47643e4b6c4beed91d42a6b2c1e843ac0c42ebab25cb009eaa"
+    },
+    "binding_derivation": {
+      "path": "modules/D/runs/D-130-20260807T045646Z/derivations/TRANSPORT_BINDING_DERIVATION.json",
+      "sha256": "07de5256326b3a400e14b7d81f55326ed468c8bd0381936ad947fb66be71f27a"
+    },
+    "binding_sheet": {
+      "path": "modules/D/runs/D-130-20260807T045646Z/binding_sheets/D_transport.bindings.json",
+      "sha256": "a58401b48b12f337fa9e86a6522952ff58788f592ca9b3e4e390fdec609e6a89"
+    },
+    "solver_config": {
+      "path": "modules/D/runs/D-130-20260807T045646Z/solver_configs/D_transport.json",
+      "sha256": "9b9aa34526cbc567fb90b6e7f7a9546625743d88d75647911ab95ac97e2a41d2"
+    },
+    "primary_implementation": {
+      "path": "modules/D/runs/D-130-20260807T045646Z/primary/execute_d130.py",
+      "sha256": "aa37336ec2758fc93dd07f7c2dd0c7be71b19b061b6abdb2bf5473c212cf71d5"
+    },
+    "independent_implementation": {
+      "path": "modules/D/runs/D-130-20260807T045646Z/independent/independent_reconstruct_d130.py",
+      "sha256": "f72efacff266661160f73504b9cf892c745671db7084b35c1e0a94a50a52b253"
+    },
+    "transport_engine": {
+      "path": "rfc_engine/solvers/transport.py",
+      "sha256": "c810f56867a272bfd7276c9f358f75869f7773c75d355121ac0990529d3bfdc2"
+    },
+    "configured_solver_runner": {
+      "path": "tools/run_configured_solver.py",
+      "sha256": "0939e59a63c7164fd4e4c867a7a560719d342f03029bca5b961355d689e7371e"
+    },
+    "materializer": {
+      "path": "tools/materialize_solver_config.py",
+      "sha256": "df51b784a21d3affe244df3ee1303a2f21fbaf71cfa1e47cde1b979cb3d273f5"
+    },
+    "finish_local_phase": {
+      "path": "tools/finish_local_phase.sh",
+      "sha256": "12cb6bae7bc6b714436d6854d93ad4c4b4938c65eb72465de9b466880b10a6cf"
+    }
+  },
+  "imports": [
+    "numpy",
+    "scipy.integrate.solve_ivp",
+    "sympy via frozen transport engine",
+    "python standard library"
+  ],
+  "network_urls": [],
+  "public_data_used": false,
+  "randomness": {
+    "used": false,
+    "seed": null
+  },
+  "no_scientific_changes_after_this_record": true,
+  "allowed_corrections": "implementation-only corrections already allowed by PRE_EXECUTION_LOCK; full frozen matrix rerun required"
+}
