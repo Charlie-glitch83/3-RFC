@@ -1,0 +1,96 @@
+name: Advance Verified D130 to E140
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  advance-d130:
+    if: github.event.pull_request.head.ref == 'agent/d130-advance-trigger'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout execution branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install repository execution dependencies
+        run: python -m pip install --disable-pip-version-check numpy networkx scipy sympy
+      - name: Advance only the verified direct child
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERIFIED_D='1813f323211236953b20b29d55e58d958c5ffabd'
+          git merge-base --is-ancestor "$VERIFIED_D" HEAD
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('STATE.json').read_text())
+          queue=json.loads(Path('WORK_QUEUE.json').read_text())
+          d=state['modules']['D']
+          if d.get('evidence_state')!='FROZEN' or d.get('fidelity')!='MINIMAL_SPINE':
+              raise SystemExit('HARD STOP: D is not FROZEN/MINIMAL_SPINE')
+          if 'D-130-20260807T035820Z' not in d.get('completed_runs',[]):
+              raise SystemExit('HARD STOP: verified D run not registered')
+          run=json.loads(Path('modules/D/runs/D-130-20260807T035820Z/run.json').read_text())
+          if run.get('status')!='PASS': raise SystemExit('HARD STOP: D run not PASS')
+          gates=json.loads(Path('modules/D/runs/D-130-20260807T035820Z/GATE_RESULTS.json').read_text())
+          if gates.get('overall')!='PASS' or min(gates.get('component_scores',{}).values()) < 0.95:
+              raise SystemExit('HARD STOP: D component gates not PASS')
+          replay=json.loads(Path('modules/D/runs/D-130-20260807T035820Z/REPLAY_RECORD.json').read_text())
+          if replay.get('result')!='PASS' or not replay.get('clean_checkout') or not replay.get('artifact_hashes_match'):
+              raise SystemExit('HARD STOP: D replay not clean PASS')
+          items={i['id']:i for i in queue['items']}
+          if items['D-130']['status']!='ACTIVE' or items['E-140']['status']!='BLOCKED':
+              raise SystemExit('HARD STOP: expected D ACTIVE and E BLOCKED before one-child advance')
+          if state.get('current_run') is not None:
+              raise SystemExit('HARD STOP: current_run must be null before advancement')
+          PY
+          python tools/rfc.py doctor
+          python tools/rfc.py advance --task D-130 --result PASS --evidence modules/D/runs/D-130-20260807T035820Z/CLOSEOUT.md --note 'Externally verified D closeout commit 1813f323211236953b20b29d55e58d958c5ffabd; activate exactly one direct child E-140.'
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          p=Path('STATE.json'); state=json.loads(p.read_text())
+          q=json.loads(Path('WORK_QUEUE.json').read_text())
+          items={i['id']:i for i in q['items']}
+          if state.get('active_work_unit')!='E-140' or state.get('current_module')!='E' or state.get('current_run') is not None:
+              raise SystemExit('HARD STOP: E-140 was not sole activated child')
+          if items['D-130']['status']!='PASS' or items['E-140']['status']!='ACTIVE':
+              raise SystemExit('HARD STOP: queue did not transition exactly D PASS -> E ACTIVE')
+          later=[i['id'] for i in q['items'] if i['id'] not in {'E-140'} and i.get('status')=='ACTIVE']
+          if later: raise SystemExit(f'HARD STOP: additional ACTIVE items: {later}')
+          state['strongest_supported_claim']='The exact frozen C microscopic parent generates a positive, conserved, source-owned dimensionless nonequilibrium relaxation history under the normalized C projector, with monotonic Shannon entropy growth, an intrinsic collision-count clock, ordered internal relaxation events, a no-loss dimensionless disequilibrium-energy/RFL-memory ledger, converged BDF execution, restart, clean replay, and independent analytic reconstruction at MINIMAL_SPINE fidelity.'
+          state['strongest_unsupported_claim']='No dimensionful temperature or energy scale, physical duration, metric expansion/scale factor, calibrated collision rate, nontrivial finite phase transition, primordial abundance network, Standard Model identification, or empirical correspondence has been derived.'
+          state['last_verified_commit']='1813f323211236953b20b29d55e58d958c5ffabd'
+          state['last_verified_branch']='agent/frontier-050-execution'
+          state['last_updated_utc']=datetime.now(timezone.utc).isoformat()
+          p.write_text(json.dumps(state,indent=2,ensure_ascii=False)+'\n')
+          PY
+          python tools/rfc.py context
+          python tools/director.py prepare-active
+          python tools/director.py doctor
+          python tools/rfc.py doctor
+          python tools/rfc.py firewall-scan
+          python -m unittest discover -s tests -v
+      - name: Commit separate verified advancement
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json memory work_packets/ACTIVE_WORK_PACKET.md
+          if git diff --cached --quiet; then echo 'HARD STOP: no advancement changes'; exit 1; fi
+          git commit -m 'Advance from verified Module D closeout to E-140'
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
