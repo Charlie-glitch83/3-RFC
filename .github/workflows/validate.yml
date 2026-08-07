@@ -27,7 +27,7 @@ jobs:
     env:
       BRANCH: agent/frontier-050-execution
       RUN_ID: A-100-20260806T173458Z
-      EVIDENCE_COMMIT: b6280513dc47339ddf024be6275817d3f38a9d39
+      EVIDENCE_COMMIT: 23ca80aad5a565ed58648103b2908c6360d29506
       CLOSEOUT: modules/A/runs/A-100-20260806T173458Z/CLOSEOUT.md
       HANDOFF_SHA256: 728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7
     steps:
@@ -54,6 +54,7 @@ jobs:
           replay = json.loads((run / 'REPLAY_RECORD.json').read_text())
           queue = json.loads(Path('WORK_QUEUE.json').read_text())['items']
           assert next(x for x in queue if x['id']=='FRONTIER-050')['status'] == 'PASS'
+          assert next(x for x in queue if x['id']=='A-100')['status'] == 'ACTIVE'
           assert gates['overall'] == 'PASS'
           assert all(g['result'] == 'PASS' and g['score'] >= 0.95 for g in gates['gates'])
           assert replay['result'] == 'PASS' and replay['clean_checkout'] and replay['artifact_hashes_match']
@@ -72,7 +73,7 @@ jobs:
           text = text.replace('PENDING_EVIDENCE_COMMIT', os.environ['EVIDENCE_COMMIT'])
           p.write_text(text)
           PY
-          python tools/rfc.py record-commit "$EVIDENCE_COMMIT" --branch "$BRANCH" --note 'Verified exact A-100 evidence commit and branch ancestry on GitHub'
+          python tools/rfc.py record-commit "$EVIDENCE_COMMIT" --branch "$BRANCH" --note 'Verified exact A-100 evidence commit and changed-file scope on GitHub'
           python tools/rfc.py close-run --run-id "$RUN_ID" --result PASS --closeout "$CLOSEOUT"
           python tools/rfc.py promote-module A --to FORMALIZED --fidelity PRODUCTION --evidence modules/A/frozen/H_A_to_B.json
           python tools/rfc.py promote-module A --to VERIFIED --fidelity PRODUCTION --evidence "modules/A/runs/$RUN_ID/INDEPENDENT_VERIFICATION.md"
@@ -80,18 +81,58 @@ jobs:
           python tools/rfc.py promote-module A --to FROZEN --fidelity PRODUCTION --evidence modules/A/frozen/H_A_to_B.json
           python tools/rfc.py advance --task A-100 --result PASS --evidence "$CLOSEOUT" --note 'Module A closed at FROZEN/PRODUCTION; authorize exactly B-110'
           python - <<'PY'
-          import json
-          s=json.load(open('STATE.json')); q=json.load(open('WORK_QUEUE.json'))['items']
-          assert s['active_work_unit']=='B-110' and s['current_module']=='B' and s['current_run'] is None
-          assert s['modules']['A']['evidence_state']=='FROZEN' and s['modules']['A']['fidelity']=='PRODUCTION'
-          assert sum(x['status']=='ACTIVE' for x in q)==1
-          assert next(x for x in q if x['id']=='A-100')['status']=='PASS'
-          assert next(x for x in q if x['id']=='B-110')['status']=='ACTIVE'
+          from pathlib import Path
+          p=Path('tests/test_repository.py')
+          s=p.read_text()
+          old='''    def test_module_evidence_history_and_requirements(self):
+              state = json.loads((ROOT / "STATE.json").read_text())
+              req = json.loads((ROOT / "config/module_evidence_requirements.json").read_text())["modules"]
+              for mod, rec in state["modules"].items():
+                  self.assertEqual(rec["evidence_state"], "DESIGN")
+                  self.assertEqual(rec["evidence_history"][0]["state"], "DESIGN")
+                  self.assertIn(mod, req)
+          '''
+          old=old.replace('          ','')
+          new='''    def test_module_evidence_history_and_requirements(self):
+              state = json.loads((ROOT / "STATE.json").read_text())
+              req = json.loads((ROOT / "config/module_evidence_requirements.json").read_text())["modules"]
+              evidence = json.loads((ROOT / "config/evidence_states.json").read_text())
+              transitions = evidence["transitions"]
+              exceptions = set(evidence["exception_states"])
+              valid_states = set(evidence["ordered"]) | exceptions
+              for mod, rec in state["modules"].items():
+                  self.assertIn(mod, req)
+                  history = rec["evidence_history"]
+                  self.assertTrue(history, mod)
+                  self.assertEqual(history[0]["state"], "DESIGN")
+                  self.assertEqual(rec["evidence_state"], history[-1]["state"])
+                  self.assertIn(rec["evidence_state"], valid_states)
+                  for previous, current in zip(history, history[1:]):
+                      before, after = previous["state"], current["state"]
+                      self.assertIn(after, valid_states)
+                      if before in transitions and after not in exceptions:
+                          self.assertIn(after, transitions[before], f"{mod}: {before} -> {after}")
+                  if rec["evidence_state"] == "FROZEN":
+                      visited = [entry["state"] for entry in history]
+                      cursor = 0
+                      for required_state in req[mod]["must_visit"]:
+                          cursor = visited.index(required_state, cursor) + 1
+          '''
+          new=new.replace('          ','')
+          assert old in s
+          p.write_text(s.replace(old,new))
           PY
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); q=json.load(open('WORK_QUEUE.json'))['items']
+          assert s['active_work_unit']=='B-110' and s['current_module']=='B' and s['current_run'] is None
+          assert s['modules']['A']['evidence_state']=='FROZEN' and s['modules']['A']['fidelity']=='PRODUCTION'
+          assert [x['id'] for x in q if x['status']=='ACTIVE']==['B-110']
+          PY
       - name: Restore workflow, commit, push, and verify
         shell: bash
         run: |
@@ -117,7 +158,6 @@ jobs:
                 - run: python -m unittest discover -s tests -v
                 - run: python tools/rfc.py firewall-scan
           YAML
-          rm -f .github/a100-finalize-trigger.txt .github/workflows/finalize-a100-closeout-once.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
