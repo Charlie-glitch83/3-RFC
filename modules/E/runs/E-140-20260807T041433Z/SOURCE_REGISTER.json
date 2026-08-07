@@ -1,10 +1,41 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "schema_version": "1.0",
+  "module": "E",
+  "run_id": "E-140-20260807T041433Z",
+  "public_data_declaration": "NONE",
+  "generation_mode": "GENERATION_SEALED",
+  "sources": [
+    {
+      "role": "EXACT_PARENT",
+      "path": "modules/D/frozen/H_D_to_E.json",
+      "sha256": "2df9e5dde9416f61b123d53203badf6e707832e18c9b9ce0c53b880e5baff495",
+      "generative_permission": true
+    },
+    {
+      "role": "FROZEN_SYMBOLIC_MANUFACTURED_CHECK",
+      "path": "recipes/E/wolfram/E-WL-001.wl",
+      "sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
+      "generative_permission": false
+    },
+    {
+      "role": "FROZEN_SYMBOLIC_MANUFACTURED_CHECK",
+      "path": "recipes/E/wolfram/E-WL-002.wl",
+      "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43",
+      "generative_permission": false
+    },
+    {
+      "role": "CANDIDATE_ADDENDUM_PROXY_AND_NEGATIVE_CONTROL",
+      "path": "sources/frozen/d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c/RFC_Module_X1_Nucleosynthesis_Theorem_Addendum_and_Metadata.md",
+      "sha256": "d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c",
+      "generative_permission": false,
+      "reason": "The admitted addendum explicitly reports an internal BBN theorem/proxy, observed-data comparison screens, Li7/Be7 target-relative diagnostics, and pending external network validation. Its target-conditioned abundance/rate content is therefore not admitted as a generation parent for E."
+    }
+  ],
+  "exact_parent_findings": {
+    "dimensionful_temperature": "NOT_DERIVED",
+    "dimensionful_reaction_rates": "NOT_DERIVED",
+    "nuclear_species_identity": "NOT_DERIVED",
+    "primordial_abundances": "NOT_DERIVED_RESERVED_FOR_E",
+    "intrinsic_dimensionless_clock": "DERIVED"
+  }
 }

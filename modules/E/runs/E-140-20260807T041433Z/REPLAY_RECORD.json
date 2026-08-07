@@ -1,10 +1,6 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "result": "BLOCKED_NOT_APPLICABLE",
+  "clean_checkout": true,
+  "artifact_hashes_match": false,
+  "reason": "No physical E execution occurred; replay cannot be claimed."
 }

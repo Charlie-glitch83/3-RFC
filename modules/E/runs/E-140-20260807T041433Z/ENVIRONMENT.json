@@ -1,13 +1,8 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
-  "random_seeds": [],
-  "hidden_defaults_audited": false
+  "status": "FINAL",
+  "hidden_defaults_audited": true,
+  "execution_status": "NOT_RUN_DUE_FROZEN_SCIENTIFIC_OBSTRUCTION",
+  "python": "3.13",
+  "network_use": "NONE_FOR_SCIENCE",
+  "public_data_used": false
 }

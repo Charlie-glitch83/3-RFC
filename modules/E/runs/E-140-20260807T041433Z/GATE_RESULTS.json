@@ -1,7 +1,14 @@
 {
-  "run_id": "",
+  "module": "E",
   "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "aggregate_scores_cannot_override": true,
+  "component_scores": {
+    "baryon/charge/energy accounting": null,
+    "network convergence": null,
+    "rate-source audit": 0.0,
+    "no scalar-channel collapse": 1.0,
+    "withheld reaction and independent implementation checks": null
+  },
+  "blocking_gate": "rate-source audit",
+  "reason": "No lawful source-owned physical nuclear rate object exists in the exact D parent or target-blind admitted source set."
 }

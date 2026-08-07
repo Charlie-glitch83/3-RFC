@@ -104,9 +104,12 @@
       "run_id": "E-140-20260807T041433Z",
       "module": "E",
       "task_id": "E-140",
-      "status": "CREATED",
+      "status": "BLOCKED",
       "path": "modules/E/runs/E-140-20260807T041433Z",
-      "created_utc": "2026-08-07T04:14:33.324073+00:00"
+      "created_utc": "2026-08-07T04:14:33.324073+00:00",
+      "closed_utc": "2026-08-07T04:16:48.992970+00:00",
+      "tree_sha256": "cc030148b3d93db2b49e5ea8d1ead8deeb1a0234e5936ba04b202a9b1bdc5f4a",
+      "closeout": "modules/E/runs/E-140-20260807T041433Z/CLOSEOUT.md"
     }
   ]
 }

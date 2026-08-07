@@ -1,9 +1,3 @@
 # Run Plan — E-140
 
-PRE-CHEWED MODULE PLAN
-
-Objective: Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.
-
-The exact derivation obligations, calls, outputs, gates, and stop conditions are frozen in `FROZEN_RECIPE.json`, `WORK_ORDER.md`, and `REQUIRED_GATES.json`.
-
-Before execution, replace every placeholder in the source register, pre-execution lock, environment, expected outcomes, tolerances, falsifiers, and claim boundary with exact frozen values.
+The governed E run reached its frozen pre-execution source/rate audit. Physical execution is blocked because the exact D parent contains no nuclear species identities or reaction-rate law, while the dedicated nucleosynthesis addendum is proxy/comparison material rather than a target-blind generative rate source. No solver binding or physical abundance claim is permitted until that missing object is lawfully derived or admitted.

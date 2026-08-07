@@ -1,10 +1,10 @@
 # Current Context
 
-Generated: 2026-08-07T04:14:37.502613+00:00
+Generated: 2026-08-07T04:16:49.145626+00:00
 
 ## Project truth
 
-- Status: `ACTIVE`
+- Status: `FAIL_REQUIRES_ANALYSIS`
 - Generation mode: `GENERATION_SEALED`
 - Active work unit: `E-140` — Close Module E: Primordial Nuclear Network
 - Current module: `E`
@@ -16,7 +16,7 @@ The exact frozen C microscopic parent generates a positive, conserved, source-ow
 
 ## Strongest unsupported claim
 
-No dimensionful temperature or energy scale, physical duration, metric expansion/scale factor, calibrated collision rate, nontrivial finite phase transition, primordial abundance network, Standard Model identification, or empirical correspondence has been derived.
+No source-owned physical nuclear species graph, reaction-rate law, nuclear energy ledger, primordial isotope abundance trajectory, isotope covariance, or freeze-out state has been derived. E is blocked at E_SOURCE_OWNED_NUCLEAR_SPECIES_AND_RATE_LAW; historical/proxy abundance-target results are not generative parents.
 
 ## Immediate objective
 
@@ -64,7 +64,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 10
+- frozen artifacts: 11
 - indexed runs: 10
 
 ## Recent runs
@@ -76,7 +76,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 - B-110-20260807T002248Z: PASS (B)
 - C-120-20260807T032543Z: PASS (C)
 - D-130-20260807T035820Z: PASS (D)
-- E-140-20260807T041433Z: CREATED (E)
+- E-140-20260807T041433Z: BLOCKED (E)
 
 ## Recent decisions
 
@@ -91,7 +91,6 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 
 ## Recent failures
 
-- BOOT-000-ACTIVE-QUEUE-TEST-HARDCODE: The deterministic-next test hardcoded BOOT-000 instead of reading active state.
 - SRC-010-FIREWALL-TOKEN-BOUNDARY: The mechanical scanner matched DESI inside design and public_data inside a NONE declaration key.
 - SRC-010-RUN-ID-STATE-DRIFT: Generated timestamped run workspace existed but current_run and RUN_INDEX were not retained by the startup commit; verifier now resolves and registers the sole governed SRC-010 workspace.
 - AUTH-020-FIREWALL-PROTOCOL-WORDING: The mechanical firewall scanner matched protocol wording inside AUTHORITY_SOURCE_TRACE.json even though no external target values were used. The trace wording was normalized without changing sources, definitions, claims, or gates.
@@ -99,6 +98,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 - REC-040-FIREWALL-AUDIT-WORDING: The mechanical scanner matched external-comparison names and protocol wording in temporary discovery and audit records. Temporary discovery artifacts were removed after incorporation and audit wording normalized without changing source hashes, classifications, gates, or claim scope.
 - REC-040-DISCOVERY-ORDERING: The temporary discovery record was removed before a later replay attempted to consume it. The record is now reconstructed from all exact remote refs before recovery and removed only after incorporation.
 - REC-040-VERIFIED-SHA-RACE: Concurrent successful replays caused formal transition bookkeeping to record an earlier valid evidence SHA instead of the final clean replay SHA. Provenance was corrected to the final verified commit without changing run evidence, classifications, gates, result, or next-child authorization.
+- E-140-20260807T041649Z: Frozen source/rate audit found no lawful target-blind physical nuclear species/reaction/rate object; E remains active and blocked for analysis.
 
 ## Resume commands
 

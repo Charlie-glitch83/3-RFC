@@ -1,21 +1,36 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "1.0",
+  "module": "E",
+  "run_id": "E-140-20260807T041433Z",
+  "status": "FROZEN",
+  "classification": "FROZEN_PREEXECUTION_OBSTRUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent_path": "modules/D/frozen/H_D_to_E.json",
+  "parent_sha256": "2df9e5dde9416f61b123d53203badf6e707832e18c9b9ce0c53b880e5baff495",
+  "frozen_before_primary_execution": true,
+  "scientific_obstruction": {
+    "earliest_missing_object": "E_SOURCE_OWNED_NUCLEAR_SPECIES_AND_RATE_LAW",
+    "missing": [
+      "source-owned nuclear species identities",
+      "nuclear reaction graph licensed for generation",
+      "dimensionful or internally normalized reaction-rate law tied to those species",
+      "nuclear energy/binding ledger needed for the energy gate"
+    ],
+    "why_parent_cannot_supply": "H_D_to_E explicitly records dimensionful temperature and reaction rates as NOT_DERIVED and contains only three anonymous carrier populations plus an intrinsic collision-count clock.",
+    "why_candidate_addendum_cannot_supply": "The admitted nucleosynthesis addendum is classified CANDIDATE_ADDENDUM and describes theorem/proxy lanes with observed abundance comparison metrics. Importing its target-relative BBN content would violate the generation firewall and E forbidden shortcuts.",
+    "why_recipe_checks_cannot_supply": "E-WL-001 and E-WL-002 define a manufactured n+p<->d stoichiometric example and conservation/Jacobian checks; the README and work order explicitly state manufactured checks do not replace the physical result.",
+    "lawful_resolution": "Derive or admit an exact target-blind nuclear species/reaction/rate object from canonical RFC sources before reopening E. Do not fit public abundances or inherit the old Li7 mechanism."
+  },
+  "candidate_classes": [
+    "exact-parent derivation",
+    "target-blind admitted source",
+    "lawful branch family"
+  ],
+  "selection_rule": "Only an exact parent/admitted target-blind object may bind the physical E network. None is presently available.",
+  "falsifiers": [
+    "public or remembered abundance target influences network",
+    "candidate-addendum proxy coefficients used as physical rates",
+    "manufactured n,p,d example promoted as physical isotope derivation"
+  ],
+  "claim_boundary": "E remains unexecuted at physical-network scope. D remains the strongest frozen physical parent."
 }
