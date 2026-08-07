@@ -1,1 +1,2 @@
 trigger E140 repository-contract restart
+trigger restart after derivation mismatch
