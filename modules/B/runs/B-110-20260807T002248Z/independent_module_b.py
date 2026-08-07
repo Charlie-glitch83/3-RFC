@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib, json
 from pathlib import Path
 import numpy as np
-ROOT=Path(__file__).resolve().parents[3]; RUN=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[4]; RUN=Path(__file__).resolve().parent
 PARENT=ROOT/'modules/A/frozen/H_A_to_B.json'; PARENT_SHA='728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7'; TOL=1e-11
 
 def dig(p): return hashlib.sha256(p.read_bytes()).hexdigest()
