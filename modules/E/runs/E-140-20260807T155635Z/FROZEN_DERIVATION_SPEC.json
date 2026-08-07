@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E140_FROZEN_DERIVATION_SPEC",
+  "run_id": "E-140-20260807T155635Z",
+  "module": "E",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "fidelity": "MINIMAL_SPINE",
+  "exact_parent": {
+    "object_id": "H_D_to_E",
+    "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
+    "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8"
+  },
+  "triadic_descent": {
+    "CIF": "the exact E n+p<->d reaction possibility graph and complete lawful parent-assignment branch family",
+    "QV": "forward association driven by the exact D collective relaxation gap g_C, plus one-e-fold reaction-flow freeze-out witness",
+    "RFL": "single-edge reopening at the exact D pair rate a=g_C/3, conserved abundance ledgers, branch/uncertainty memory and restartable E handoff"
+  },
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "species_constitution": {
+    "solver_labels": [
+      "n",
+      "p",
+      "d"
+    ],
+    "status": "RFC_INTERNAL_NUCLEAR_ROLES_ONLY",
+    "baryon_vector": [
+      1.0,
+      1.0,
+      2.0
+    ],
+    "charge_vector": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "empirical_standard_model_correspondence": "NOT_CLAIMED_AT_E_MINIMAL_SPINE",
+    "graph": "n+p <-> d",
+    "stoichiometry": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "source": "exact frozen E-WL-001/E-WL-002 candidate class"
+  },
+  "parent_to_E_interface": {
+    "reason": "D carries three anonymous positive populations and exact O(2)-covariant unresolved internal labeling; E must not invent a preferred parent-index-to-nuclear-role identification.",
+    "central_symmetry_quotient_initial_state": [
+      0.5,
+      0.5,
+      0.0
+    ],
+    "branch_rule": "for each ordered n,p parent assignment, split the remaining anonymous parent carrier equally between free n and p; set d=0 so no primordial bound abundance is preloaded",
+    "branch_family": [
+      {
+        "branch_id": "N0_P1_R2",
+        "assignment": {
+          "n_parent_index": 0,
+          "p_parent_index": 1,
+          "symmetric_reservoir_parent_index": 2
+        },
+        "initial_state": [
+          0.5631129521420619,
+          0.4368870478579379,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.4368870478579379
+      },
+      {
+        "branch_id": "N0_P2_R1",
+        "assignment": {
+          "n_parent_index": 0,
+          "p_parent_index": 2,
+          "symmetric_reservoir_parent_index": 1
+        },
+        "initial_state": [
+          0.5766298184450823,
+          0.42337018155491757,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999999,
+        "initial_charge": 0.42337018155491757
+      },
+      {
+        "branch_id": "N1_P0_R2",
+        "assignment": {
+          "n_parent_index": 1,
+          "p_parent_index": 0,
+          "symmetric_reservoir_parent_index": 2
+        },
+        "initial_state": [
+          0.4368870478579379,
+          0.5631129521420619,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.5631129521420619
+      },
+      {
+        "branch_id": "N1_P2_R0",
+        "assignment": {
+          "n_parent_index": 1,
+          "p_parent_index": 2,
+          "symmetric_reservoir_parent_index": 0
+        },
+        "initial_state": [
+          0.5135168663030203,
+          0.48648313369697954,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.48648313369697954
+      },
+      {
+        "branch_id": "N2_P0_R1",
+        "assignment": {
+          "n_parent_index": 2,
+          "p_parent_index": 0,
+          "symmetric_reservoir_parent_index": 1
+        },
+        "initial_state": [
+          0.42337018155491757,
+          0.5766298184450823,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999999,
+        "initial_charge": 0.5766298184450823
+      },
+      {
+        "branch_id": "N2_P1_R0",
+        "assignment": {
+          "n_parent_index": 2,
+          "p_parent_index": 1,
+          "symmetric_reservoir_parent_index": 0
+        },
+        "initial_state": [
+          0.48648313369697954,
+          0.5135168663030203,
+          0.0
+        ],
+        "initial_baryon": 0.9999999999999998,
+        "initial_charge": 0.5135168663030203
+      }
+    ],
+    "branch_count": 6,
+    "selection_status": "NO_SINGLE_BRANCH_SELECTED; full family is physical output until a later lawful witness distinguishes it"
+  },
+  "rate_law": {
+    "forward_expression": "kf*n*p",
+    "reverse_expression": "kr*d",
+    "kf": 0.449829064955317,
+    "kf_derivation": "exact D collective nonzero relaxation eigenvalue g_C; QV association/compression rate",
+    "kr": 0.1499430216517723,
+    "kr_derivation": "exact D complete-support pair edge rate a=g_C/3; RFL reopening/memory rate",
+    "ratio_kf_over_kr": 3.0000000000000004,
+    "new_fitted_or_public_coefficients": false
+  },
+  "intrinsic_energy_ledger": {
+    "energy_vector": [
+      0.2249145324776585,
+      0.2249145324776585,
+      0.449829064955317
+    ],
+    "definition": "E_E=(g_C/2)*(n+p+2d); exact baryon-proportional internal energy at minimal spine",
+    "dimensionful_nuclear_binding_energy": "NOT_CLAIMED",
+    "conservation_reason": "stoichiometric baryon conservation implies exact intrinsic-energy conservation"
+  },
+  "clock_and_interval": {
+    "clock": "tau_E continues the dimensionless parent-normalized intrinsic clock from the D handoff; no SI seconds",
+    "t_span": [
+      0.0,
+      6.669200000000001
+    ],
+    "definition": "one exact inherited pair-edge time 1/a",
+    "max_step": 0.05210312500000001,
+    "max_step_definition": "(1/a)/128",
+    "convergence_steps": [
+      0.20841250000000003,
+      0.10420625000000001,
+      0.05210312500000001,
+      0.026051562500000004
+    ]
+  },
+  "freezeout_witness": {
+    "net_flow": "J=kf*n*p-kr*d",
+    "event": "E_REACTION_FLOW_ONE_EFOLD_LOCK",
+    "definition": "first tau_E where |J(tau_E)| <= |J(0)|/e",
+    "reason": "parameter-free one-e-fold suppression of QV reaction flow relative to its own frozen initial value; RFL records the locked abundance state"
+  },
+  "uncertainty": {
+    "stochastic_covariance": "ZERO_INHERITED",
+    "branch_uncertainty": "all six lawful D-basis assignments are executed and preserved componentwise",
+    "decimal_envelope": "rederive kf=g_C and kr=g_C/3 and execute every branch for each of the three frozen D/C decimal-envelope members; no retuning",
+    "covariance_types": [
+      "branch covariance",
+      "decimal-envelope covariance",
+      "combined deterministic ensemble covariance"
+    ]
+  },
+  "network_size_convergence": {
+    "refinement": "duplicate each forward/reverse reaction into 2 and 4 equal-rate route copies while preserving total kf and kr",
+    "expected": "ODE and final abundance vector invariant under route refinement",
+    "tolerance_linf": 1e-08
+  },
+  "withheld_reaction_tests": [
+    {
+      "id": "NO_RFL_REOPENING",
+      "change": "kr=0",
+      "required_effect": "final vector differs from full law by >1e-6 L_inf"
+    },
+    {
+      "id": "NO_QV_ASSOCIATION",
+      "change": "kf=0",
+      "required_effect": "final vector differs from full law by >1e-6 L_inf"
+    }
+  ],
+  "countermodels": [
+    "SCALAR_COLLAPSE: replace species vector by baryon scalar; must fail charge/bound-channel reconstruction",
+    "CHARGE_BREAK: perturb one stoichiometric coefficient; exact charge/baryon nullspace must fail",
+    "PUBLIC_TARGET_INJECTION: any observed abundance target in generation is an immediate firewall failure"
+  ],
+  "restart": "restart each branch at the midpoint accepted primary state and require final L_inf <=1e-8",
+  "independent_verifier_design": "independently integrate the one-dimensional reduced equation d_dot=kf*(n0-d)*(p0-d)-kr*d with DOP853/high precision for every branch and envelope member, reconstruct n=n0-d and p=p0-d, and compare against primary branch outputs without trusting gate summaries",
+  "falsifiers": [
+    "any abundance below -1e-12",
+    "baryon drift above 1e-9",
+    "charge drift above 1e-9",
+    "intrinsic energy drift above 1e-9",
+    "route-refinement final L_inf above 1e-8",
+    "midpoint restart final L_inf above 1e-8",
+    "independent final L_inf above 1e-8",
+    "any branch hidden by an aggregate score",
+    "any public/remembered abundance target influences generation"
+  ],
+  "claim_boundary": "Internally generated RFC primordial three-role nuclear branch family at MINIMAL_SPINE fidelity, with source-owned stoichiometry, parent-derived dimensionless rates, conservation, freeze-out witness, deterministic branch/envelope uncertainty, convergence, restart and independent reconstruction. No empirical isotope correspondence, SI time, dimensionful nuclear binding energies, public abundance fit, or external BBN validation is claimed."
+}

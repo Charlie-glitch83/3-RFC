@@ -1,10 +1,71 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
+  "schema_version": "1.0",
+  "run_id": "E-140-20260807T155635Z",
+  "module": "E",
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_declaration": "NONE",
+  "exact_parents": [
+    {
+      "object_id": "H_D_to_E",
+      "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
+      "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8",
+      "generative_permission": true
+    }
+  ],
+  "lineage_objects": [
+    {
+      "path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10"
+    },
+    {
+      "path": "modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json",
+      "sha256": "3255975f872f42fdbf08f5c0c901884edf4c7e22a4de01b70689fedf43903393"
+    }
+  ],
+  "authority_files": [
+    {
+      "path": "recipes/E/recipe.json",
+      "sha256": "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f"
+    },
+    {
+      "path": "recipes/E/WORK_ORDER.md",
+      "sha256": "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7"
+    },
+    {
+      "path": "recipes/E/gates.json",
+      "sha256": "1452d72412a6570ebd9c571734c6da0a34148076a10507e23c50927c8b0df04b"
+    },
+    {
+      "path": "recipes/E/MODEL_PROMPT.md",
+      "sha256": "c3a6bd65808eaf9fbe85e4951a666a2287bbd6c74f928a55ccd7518c51387fcd"
+    },
+    {
+      "path": "theory/DERIVATION_ATLAS.md",
+      "sha256": "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875"
+    },
+    {
+      "path": "theory/ENHANCEMENT_CROSSWALK.json",
+      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72"
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-001.wl",
+      "sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668"
+    },
+    {
+      "path": "recipes/E/wolfram/E-WL-002.wl",
+      "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43"
+    }
+  ],
+  "historical_failure_policy": "Old failed scalar/Li7 outcomes are regression-only under ENHANCEMENT_CROSSWALK and are not used to select species, rates, initial states, branches, thresholds or expected abundances.",
   "imports": [],
   "files": [],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "derived_objects": [
+    {
+      "path": "modules/E/runs/E-140-20260807T155635Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "965e84ef3fbe4a26f279b41d18e57035513e31ed5f80289fd6b8bc3a1b79d400",
+      "role": "FROZEN_PARENT_DRIVEN_E_LAW"
+    }
+  ]
 }
