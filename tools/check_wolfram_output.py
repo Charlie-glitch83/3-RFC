@@ -11,9 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def token(field: str, value: str) -> re.Pattern[str]:
     # Wolfram ToString[..., InputForm] is commonly captured inside an Out[n]
-    # string, so association keys may appear as either "field" or \"field\".
+    # string, so association keys may appear as field, "field", or \"field\".
     # Accept only those quoting variants; the required value itself is unchanged.
-    quoted = rf'(?:\\?")?{re.escape(field)}(?:\\?")?'
+    name = re.escape(field)
+    quoted = rf'(?:(?:\\?"){name}(?:\\?")|{name})'
     return re.compile(rf'{quoted}\s*->\s*{value}\b')
 
 
