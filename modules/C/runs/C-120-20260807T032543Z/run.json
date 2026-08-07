@@ -1,0 +1,10 @@
+{
+  "run_id": "C-120-20260807T032543Z",
+  "module": "C",
+  "task_id": "C-120",
+  "status": "CREATED",
+  "created_utc": "2026-08-07T03:25:43.207744+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "modules/C/runs/C-120-20260807T032543Z"
+}

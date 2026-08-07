@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0",
+  "module": "C",
+  "title": "Microscopic Constitution",
+  "parents": [
+    "B"
+  ],
+  "children": [
+    "D"
+  ],
+  "objective": "Derive and execute the microscopic field, particle, interaction, mass, mixing, and prethermal population content from the first physical state.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "physical excitation and symmetry candidates",
+    "QV": "constitution, interaction and selection",
+    "RFL": "stable fields, particles and charge/mass memory"
+  },
+  "derive_exactly": [
+    "typed microscopic candidate spaces from B",
+    "symmetry/action candidate class and internally selected branch family",
+    "field, interaction, charge, mass and mixing structure or explicit obstruction",
+    "prethermal population and covariance state"
+  ],
+  "wolfram_calls": [
+    "C-WL-001",
+    "C-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module C --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module C --solver spectral_model --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/C_spectral_model.template.json --binding-sheet <RUN_DIR>/binding_sheets/C_spectral_model.bindings.json --output <RUN_DIR>/solver_configs/C_spectral_model.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/C_spectral_model.json --output-dir <RUN_DIR>/solver_outputs/spectral_model"
+  ],
+  "numerical_execution": [
+    "symbolic symmetry and Hermiticity/unitarity checks",
+    "manufactured spectral reconstruction",
+    "independent implementation of the selected microscopic law"
+  ],
+  "required_outputs": [
+    "typed fields and excitations",
+    "interaction and symmetry structure",
+    "mass/mixing generation or lawful branch family",
+    "charge and conservation ownership",
+    "prethermal populations and covariance",
+    "H_C_to_D"
+  ],
+  "mandatory_gates": [
+    "units and dimensions",
+    "symmetry/constraint closure",
+    "positivity/unitarity or declared alternative",
+    "no Standard Model label without derivation or correspondence theorem",
+    "independent symbolic and numerical checks"
+  ],
+  "forbidden_shortcuts": [
+    "importing measured masses/couplings",
+    "assigning familiar particles by resemblance",
+    "hiding undetermined coefficients"
+  ],
+  "hard_stop_conditions": [
+    "Standard Model names or constants are inserted without derivation/correspondence classification",
+    "positivity/unitarity or declared replacement fails",
+    "charges or conservation ownership are undefined"
+  ],
+  "claim_boundary": "RFC microscopic constitution at the executed scope; empirical identity remains for Module P.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "spectral_model",
+      "template": "configured_runs/templates/C_spectral_model.template.json",
+      "purpose": "Audit internally derived mass/mixing/interaction matrix candidates and their symmetries.",
+      "copy_command": "python tools/director.py solver-copy --module C --solver spectral_model --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/C_spectral_model.json --output-dir <RUN_DIR>/solver_outputs/spectral_model",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/C_spectral_model.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/C_spectral_model.template.json --binding-sheet <RUN_DIR>/binding_sheets/C_spectral_model.bindings.json --output <RUN_DIR>/solver_configs/C_spectral_model.json"
+    }
+  ]
+}

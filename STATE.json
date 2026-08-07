@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "C-120",
   "current_module": "C",
-  "current_run": null,
+  "current_run": "C-120-20260807T032543Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -135,7 +135,7 @@
     "C": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "C-120-20260807T032543Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -355,7 +355,7 @@
     }
   },
   "last_verified_commit": "36084b7dac69139e37e6c69dcc7779da4c050a1e",
-  "last_updated_utc": "2026-08-07T03:13:08.750903+00:00",
+  "last_updated_utc": "2026-08-07T03:25:43.208539+00:00",
   "strongest_supported_claim": "Module B now provides a frozen, source-addressed, physically executed, independently reproduced and cleanly replayed first physical RFC state H_B_to_C at MINIMAL_SPINE fidelity: the exact frozen A prephysical modal state undergoes the source-locked Big Implosion counting-Laplacian crossing into a conserved, strictly compressed, exactly reopenable relational state with intrinsic event-order origin and typed pregeometry.",
   "strongest_unsupported_claim": "No microscopic particle/field sector model, metric spacetime geometry, calibrated physical duration, dimensional physical constants, late-time cosmology, empirical agreement, manifested completed universe, or later-module physics has yet been established.",
   "last_verified_branch": "agent/frontier-050-execution"

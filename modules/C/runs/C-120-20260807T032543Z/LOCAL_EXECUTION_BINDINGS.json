@@ -1,0 +1,15 @@
+{
+  "module": "C",
+  "bindings": [
+    {
+      "solver": "spectral_model",
+      "template": "configured_runs/templates/C_spectral_model.template.json",
+      "purpose": "Audit internally derived mass/mixing/interaction matrix candidates and their symmetries.",
+      "copy_command": "python tools/director.py solver-copy --module C --solver spectral_model --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/C_spectral_model.json --output-dir <RUN_DIR>/solver_outputs/spectral_model",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/C_spectral_model.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/C_spectral_model.template.json --binding-sheet <RUN_DIR>/binding_sheets/C_spectral_model.bindings.json --output <RUN_DIR>/solver_configs/C_spectral_model.json"
+    }
+  ]
+}
