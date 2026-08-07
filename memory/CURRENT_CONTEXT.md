@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-07T22:47:47.683240+00:00
+Generated: 2026-08-07T22:51:55.112317+00:00
 
 ## Project truth
 
@@ -8,19 +8,19 @@ Generated: 2026-08-07T22:47:47.683240+00:00
 - Generation mode: `GENERATION_SEALED`
 - Active work unit: `D-130` — Close Module D: Nonequilibrium Thermal and Phase History
 - Current module: `D`
-- Last verified commit: `4645aefed4d3d1bc1e2462f44ab12082dbb291c8`
+- Last verified commit: `4a9f3f5e5b76c9612120b427cffd60642c891662`
 
 ## Strongest supported claim
 
-The exact frozen B first physical state supports a parent-derived dimensionless microscopic constitution M_C=I-Q_B with one conserved uniform mode, an exactly degenerate positive internal excitation doublet, O(2) internal law symmetry, conserved total carrier, deterministic prethermal populations, and unitary dimensionless internal phase evolution at MINIMAL_SPINE fidelity.
+From the exact frozen C prethermal three-carrier state, Module D generates and physically executes a conservative parent-derived nonequilibrium transport history with positive carrier distributions, exact carrier and constitutive-energy/RFL accounting, nonnegative entropy production, ordered source-derived phase witnesses, intrinsic spectral-temperature history, inherited decimal-envelope covariance, restart, independent parent-only reconstruction, and exact clean-checkout replay.
 
 ## Strongest unsupported claim
 
-No dimensionful masses, empirical particle identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or Standard Model correspondence has been derived.
+Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation.
 
 ## Immediate objective
 
-Evolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.
+**HOLD AT REBUILT MODULE D FRONTIER.** Module D is already `FROZEN` / `MINIMAL_SPINE` with a closed PASS run and canonical `H_D_to_E`. Do not create another D run and do not activate Module E until explicit authorization to advance beyond this starting point.
 
 ## Required deliverables
 
@@ -80,14 +80,14 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 
 ## Recent decisions
 
-- PROMOTE-C-FROZEN-20260807T034727Z: Promoted Module C from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
-- ADVANCE-C-120-20260807T034953Z: Marked C-120 PASS and activated D-130
 - PROMOTE-D-FORMALIZED-20260807T224747Z: Promoted Module D from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-D-IMPLEMENTED-20260807T224747Z: Promoted Module D from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
 - PROMOTE-D-VERIFIED-20260807T224747Z: Promoted Module D from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
 - PROMOTE-D-PHYSICALLY_EXECUTED-20260807T224747Z: Promoted Module D from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
 - PROMOTE-D-INDEPENDENTLY_REPRODUCED-20260807T224747Z: Promoted Module D from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
 - PROMOTE-D-FROZEN-20260807T224747Z: Promoted Module D from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- COMMIT-4a9f3f5e5b76: Verified rebuilt Module D frozen closeout commit and diff; D remains the active starting point and E is not authorized.
+- SYNC-D-FROZEN-FRONTIER-CLAIMS-20260807T2249Z: Synchronized global frontier claim summaries to the already-recorded frozen Module-D claim after D closeout; preserved D as the active hold point and left E unauthorized.
 
 ## Recent failures
 
