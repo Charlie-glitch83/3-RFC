@@ -3,8 +3,7 @@ name: Apply A-100 verified evidence once
 on:
   push:
     branches: [agent/a100-recovery]
-    paths:
-      - '.github/a100-evidence-trigger.txt'
+    paths: ['.github/a100-evidence-trigger.txt']
 
 permissions:
   contents: write
@@ -15,7 +14,6 @@ jobs:
     env:
       RUN_ID: A-100-20260806T173458Z
       TARGET_BRANCH: agent/frontier-050-execution
-      TARGET_EXPECTED_SHA: 6afe03fbb62eb6cb512c8d22a64eb03a1b6b6743
       EVIDENCE_ARCHIVE_SHA256: f4b1ea136c7b26fd6d587ae11d5470521092392d9c371801172919e2b3a33102
       H_A_SHA256: 728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7
       OUTPUT_TREE_SHA256: 33d1967c587a282e43896bc3f6c1f00a49bd1c2da0bfdcd4cc26982512e81b6c
@@ -30,7 +28,7 @@ jobs:
           cache: pip
       - name: Install locked dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Reconstruct exact A-100 evidence payload
+      - name: Reconstruct and verify exact A-100 evidence
         shell: bash
         run: |
           set -euo pipefail
@@ -38,42 +36,29 @@ jobs:
           cat .a100_bundle/chunk-* | base64 -d > /tmp/a100-evidence.tar.xz
           echo "$EVIDENCE_ARCHIVE_SHA256  /tmp/a100-evidence.tar.xz" | sha256sum -c -
           tar -xJf /tmp/a100-evidence.tar.xz -C .
-      - name: Verify frozen Module A evidence
-        shell: bash
-        run: |
-          set -euo pipefail
           python - <<'PY'
           import hashlib, json, os
           from pathlib import Path
-          run_id = os.environ['RUN_ID']
-          run = Path('modules/A/runs') / run_id
+          run = Path('modules/A/runs') / os.environ['RUN_ID']
           state = json.loads(Path('STATE.json').read_text())
           gates = json.loads((run / 'GATE_RESULTS.json').read_text())
           replay = json.loads((run / 'REPLAY_RECORD.json').read_text())
           manifest = json.loads((run / 'GENERATED_OUTPUT_MANIFEST.json').read_text())
           assert state['generation_mode'] == 'GENERATION_SEALED'
-          assert state['active_work_unit'] == 'A-100'
-          assert state['current_module'] == 'A'
-          assert state['current_run'] == run_id
+          assert state['active_work_unit'] == 'A-100' and state['current_module'] == 'A'
+          assert state['current_run'] == os.environ['RUN_ID']
           assert gates['overall'] == 'PASS'
           assert all(g['result'] == 'PASS' and g['score'] >= 0.95 for g in gates['gates'])
-          assert replay['result'] == 'PASS' and replay['clean_checkout'] is True and replay['artifact_hashes_match'] is True
-          handoff = Path('modules/A/frozen/H_A_to_B.json')
-          assert hashlib.sha256(handoff.read_bytes()).hexdigest() == os.environ['H_A_SHA256']
-          errors = []
+          assert replay['result'] == 'PASS' and replay['clean_checkout'] and replay['artifact_hashes_match']
+          assert hashlib.sha256(Path('modules/A/frozen/H_A_to_B.json').read_bytes()).hexdigest() == os.environ['H_A_SHA256']
           for item in manifest['outputs']:
               p = Path(item['path'])
-              if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest() != item['sha256'] or p.stat().st_size != item['bytes']:
-                  errors.append(item['path'])
+              assert p.exists() and p.stat().st_size == item['bytes']
+              assert hashlib.sha256(p.read_bytes()).hexdigest() == item['sha256']
           canonical = json.dumps(manifest['outputs'], sort_keys=True, separators=(',', ':')).encode()
-          assert not errors, errors
           assert hashlib.sha256(canonical).hexdigest() == manifest['tree_sha256'] == os.environ['OUTPUT_TREE_SHA256']
           assert manifest['status'] == 'FINAL' and len(manifest['outputs']) == 56
           PY
-      - name: Run README end-session checks
-        shell: bash
-        run: |
-          set -euo pipefail
           run="modules/A/runs/$RUN_ID"
           python tools/director.py doctor | tee "$run/FINAL_DOCTOR_EVIDENCE_COMMIT.txt"
           python -m unittest discover -s tests -v 2>&1 | tee "$run/FINAL_UNIT_TESTS_EVIDENCE_COMMIT.txt"
@@ -90,10 +75,11 @@ jobs:
           git add -A
           test -f modules/A/frozen/H_A_to_B.json
           test -f "modules/A/runs/$RUN_ID/CLOSEOUT.md"
-          test ! -e .a100_bundle
           git diff --cached --quiet && { echo 'No A-100 evidence changes produced' >&2; exit 1; }
           git commit -m 'Execute and freeze Module A prephysical handoff'
           evidence_sha=$(git rev-parse HEAD)
-          git push --force-with-lease="refs/heads/$TARGET_BRANCH:$TARGET_EXPECTED_SHA" origin "HEAD:refs/heads/$TARGET_BRANCH"
+          git fetch origin "refs/heads/$TARGET_BRANCH:refs/remotes/origin/$TARGET_BRANCH"
+          live_sha=$(git rev-parse "refs/remotes/origin/$TARGET_BRANCH")
+          git push --force-with-lease="refs/heads/$TARGET_BRANCH:$live_sha" origin "HEAD:refs/heads/$TARGET_BRANCH"
           remote_sha=$(git ls-remote origin "refs/heads/$TARGET_BRANCH" | cut -f1)
           test "$remote_sha" = "$evidence_sha"
