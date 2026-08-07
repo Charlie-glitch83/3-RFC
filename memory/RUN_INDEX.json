@@ -60,9 +60,12 @@
       "run_id": "A-100-20260806T173458Z",
       "module": "A",
       "task_id": "A-100",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/A/runs/A-100-20260806T173458Z",
-      "created_utc": "2026-08-06T17:34:58.347586+00:00"
+      "created_utc": "2026-08-06T17:34:58.347586+00:00",
+      "closed_utc": "2026-08-07T00:10:43.219845+00:00",
+      "tree_sha256": "affac042456f256f07cc6f72d9a1b4d0b2650decf4d86a88d11d338aa521b395",
+      "closeout": "modules/A/runs/A-100-20260806T173458Z/CLOSEOUT.md"
     },
     {
       "run_id": "B-110-20260807T002248Z",
