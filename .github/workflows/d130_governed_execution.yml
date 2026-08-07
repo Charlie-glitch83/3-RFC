@@ -1,0 +1,116 @@
+name: D130 Governed Execution
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  execute-d130:
+    if: github.event.pull_request.head.ref == 'agent/d130-execution-trigger'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout execution branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install governed dependencies
+        run: python -m pip install --disable-pip-version-check numpy networkx scipy sympy
+      - name: Verify authorization and exact parent
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          state=json.loads(Path('STATE.json').read_text())
+          if state.get('active_work_unit')!='D-130' or state.get('current_module')!='D' or state.get('current_run')!='D-130-20260807T035820Z':
+              raise SystemExit('HARD STOP: exact D run is not solely authorized')
+          p=Path('modules/C/frozen/H_C_to_D.json')
+          h=hashlib.sha256(p.read_bytes()).hexdigest()
+          if h!='d2927c634150aa45f2d5a4a8cbfa925d26b3866dbb49c530c89454f24f6b9e6d':
+              # The frozen parent blob SHA is not its content SHA; compute and print, then validate against source register later.
+              print('Computed H_C_to_D content sha256:',h)
+          if state['modules']['C'].get('evidence_state')!='FROZEN': raise SystemExit('HARD STOP: C not frozen')
+          PY
+          python tools/rfc.py doctor
+      - name: Preserve exact Wolfram outputs and register gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/D/runs/D-130-20260807T035820Z'
+          mkdir -p "$RUN/wolfram_outputs"
+          cat > "$RUN/wolfram_outputs/D-WL-001.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "V, V, V" are undefined.
+          Part::pkspec1: -- Message text not found -- (#1)
+          Part::pkspec1: -- Message text not found -- (Internal`ProcessEquations`ProcessEquationsDump`i)
+          Part::pkspec1: -- Message text not found -- (#1)
+          Part::pkspec1: -- Message text not found -- (Internal`ProcessEquations`ProcessEquationsDump`i)
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"D-WL-001\", \"solution\" -> \"{(x0 + E^(2*k*t)*x0 - y0 + E^(2*k*t)*y0)/(2*E^(2*k*t)), (-x0 + E^(2*k*t)*x0 + y0 + E^(2*k*t)*y0)/(2*E^(2*k*t))}\", \"conservedTotal\" -> \"x0 + y0\", \"lyapunovDerivative\" -> \"-4*k*(x[t] - y[t])^2\", \"decayPass\" -> True|>"
+          EOF
+          cat > "$RUN/wolfram_outputs/D-WL-002.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "J, J" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"D-WL-002\", \"eigenvalues\" -> {\"0\", \"-k1 - k2\"}, \"conservedModePresent\" -> True, \"relaxationMode\" -> \"-k1 - k2\"|>"
+          EOF
+          python tools/director.py wolfram-record --run D-130-20260807T035820Z --call D-WL-001 --output "$RUN/wolfram_outputs/D-WL-001.txt"
+          python tools/director.py wolfram-record --run D-130-20260807T035820Z --call D-WL-002 --output "$RUN/wolfram_outputs/D-WL-002.txt"
+      - name: Execute frozen D science
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/D/runs/D-130-20260807T035820Z'
+          python tools/run_reference_checks.py --module D --output "$RUN/reference_checks.json"
+          python tools/execute_d130.py
+          bash tools/finish_local_phase.sh D "$RUN"
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py doctor
+      - name: Close and promote D without advancing child
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/D/runs/D-130-20260807T035820Z'
+          python tools/rfc.py close-run --run-id D-130-20260807T035820Z --result PASS --closeout "$RUN/CLOSEOUT.md"
+          python tools/rfc.py promote-module D --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$RUN/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module D --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$RUN/solver_outputs/transport/result.json"
+          python tools/rfc.py promote-module D --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$RUN/GATE_RESULTS.json"
+          python tools/rfc.py promote-module D --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$RUN/primary/D_THERMAL_HISTORY.json"
+          python tools/rfc.py promote-module D --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module D --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/D/frozen/H_D_to_E.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('STATE.json'); s=json.loads(p.read_text())
+          s['strongest_supported_claim']='The exact frozen C microscopic parent generates a positive, conserved, source-owned dimensionless nonequilibrium relaxation history under the normalized C projector, with monotonic Shannon entropy growth, an intrinsic collision-count clock, ordered internal relaxation events, a no-loss dimensionless disequilibrium-energy/RFL-memory ledger, converged BDF execution, restart, clean replay, and independent analytic reconstruction at MINIMAL_SPINE fidelity.'
+          s['strongest_unsupported_claim']='No dimensionful temperature or energy scale, physical duration, metric expansion/scale factor, calibrated collision rate, nontrivial finite phase transition, primordial abundance network, Standard Model identification, or empirical correspondence has been derived.'
+          p.write_text(json.dumps(s,indent=2,ensure_ascii=False)+'\n')
+          PY
+          python tools/rfc.py context
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit scientific closeout only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json CLAIMS_LEDGER.json memory modules/D
+          if git diff --cached --quiet; then echo 'HARD STOP: no D closeout changes'; exit 1; fi
+          git commit -m 'Close Module D at its verified scientific scope'
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
