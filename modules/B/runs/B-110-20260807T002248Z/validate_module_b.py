@@ -2,7 +2,7 @@
 from __future__ import annotations
 import hashlib, json
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[3]; RUN=Path(__file__).resolve().parent; TOL=1e-11
+ROOT=Path(__file__).resolve().parents[4]; RUN=Path(__file__).resolve().parent; TOL=1e-11
 
 def load(p): return json.loads(p.read_text(encoding='utf-8'))
 def dig(p): return hashlib.sha256(p.read_bytes()).hexdigest()
