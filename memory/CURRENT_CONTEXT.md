@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-07T22:51:55.112317+00:00
+Generated: 2026-08-07T23:23:33.956610+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `D-130` — Close Module D: Nonequilibrium Thermal and Phase History
-- Current module: `D`
+- Active work unit: `E-140` — Close Module E: Primordial Nuclear Network
+- Current module: `E`
 - Last verified commit: `4a9f3f5e5b76c9612120b427cffd60642c891662`
 
 ## Strongest supported claim
@@ -20,24 +20,24 @@ Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standa
 
 ## Immediate objective
 
-**HOLD AT REBUILT MODULE D FRONTIER.** Module D is already `FROZEN` / `MINIMAL_SPINE` with a closed PASS run and canonical `H_D_to_E`. Do not create another D run and do not activate Module E until explicit authorization to advance beyond this starting point.
+Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.
 
 ## Required deliverables
 
-- modules/D/runs/<RUN_ID>/RUN_PLAN.md
-- modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/D/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/D/runs/<RUN_ID>/CLOSEOUT.md
+- modules/E/runs/<RUN_ID>/RUN_PLAN.md
+- modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/E/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/E/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- positive distributions
-- energy/charge conservation
-- event ordering
-- stiff-solver convergence
-- restart and independent reconstruction
+- baryon/charge/energy accounting
+- network convergence
+- rate-source audit
+- no scalar-channel collapse
+- withheld reaction and independent implementation checks
 
 ## Module states
 
@@ -80,7 +80,6 @@ Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standa
 
 ## Recent decisions
 
-- PROMOTE-D-FORMALIZED-20260807T224747Z: Promoted Module D from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-D-IMPLEMENTED-20260807T224747Z: Promoted Module D from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
 - PROMOTE-D-VERIFIED-20260807T224747Z: Promoted Module D from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
 - PROMOTE-D-PHYSICALLY_EXECUTED-20260807T224747Z: Promoted Module D from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
@@ -88,6 +87,7 @@ Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standa
 - PROMOTE-D-FROZEN-20260807T224747Z: Promoted Module D from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 - COMMIT-4a9f3f5e5b76: Verified rebuilt Module D frozen closeout commit and diff; D remains the active starting point and E is not authorized.
 - SYNC-D-FROZEN-FRONTIER-CLAIMS-20260807T2249Z: Synchronized global frontier claim summaries to the already-recorded frozen Module-D claim after D closeout; preserved D as the active hold point and left E unauthorized.
+- ADVANCE-D-130-20260807T232330Z: Marked D-130 PASS and activated E-140
 
 ## Recent failures
 

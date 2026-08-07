@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "D-130",
-  "current_module": "D",
-  "current_run": null,
+  "active_work_unit": "E-140",
+  "current_module": "E",
+  "current_run": "E-140-20260807T232334Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -269,7 +269,7 @@
     "E": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "E-140-20260807T232334Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -463,7 +463,7 @@
     }
   },
   "last_verified_commit": "4a9f3f5e5b76c9612120b427cffd60642c891662",
-  "last_updated_utc": "2026-08-07T22:51:55.055015+00:00",
+  "last_updated_utc": "2026-08-07T23:23:34.136452+00:00",
   "strongest_supported_claim": "From the exact frozen C prethermal three-carrier state, Module D generates and physically executes a conservative parent-derived nonequilibrium transport history with positive carrier distributions, exact carrier and constitutive-energy/RFL accounting, nonnegative entropy production, ordered source-derived phase witnesses, intrinsic spectral-temperature history, inherited decimal-envelope covariance, restart, independent parent-only reconstruction, and exact clean-checkout replay.",
   "strongest_unsupported_claim": "Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation.",
   "last_verified_branch": "agent/frontier-050-execution"

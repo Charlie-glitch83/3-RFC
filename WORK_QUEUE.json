@@ -295,7 +295,7 @@
       "id": "D-130",
       "title": "Close Module D: Nonequilibrium Thermal and Phase History",
       "module": "D",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "C-120"
       ],
@@ -333,7 +333,7 @@
       "id": "E-140",
       "title": "Close Module E: Primordial Nuclear Network",
       "module": "E",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "D-130"
       ],

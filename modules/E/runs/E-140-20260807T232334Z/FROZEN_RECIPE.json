@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0",
+  "module": "E",
+  "title": "Primordial Nuclear Network",
+  "parents": [
+    "D"
+  ],
+  "children": [
+    "F"
+  ],
+  "objective": "Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "reaction graph and isotope possibilities",
+    "QV": "reaction flow and freeze-out",
+    "RFL": "abundance and covariance memory"
+  },
+  "derive_exactly": [
+    "source-owned species and reaction graph",
+    "rate laws and uncertainty without public abundance fitting",
+    "conservation/nullspace structure",
+    "freeze-out witnesses and isotope covariance"
+  ],
+  "wolfram_calls": [
+    "E-WL-001",
+    "E-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module E --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module E --solver reaction_network --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/E_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/E_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/E_reaction_network.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/E_reaction_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network"
+  ],
+  "numerical_execution": [
+    "network-size and rate convergence",
+    "withheld-reaction tests",
+    "independent reaction integrator"
+  ],
+  "required_outputs": [
+    "reaction graph and rates with source lineage",
+    "abundance trajectories",
+    "isotope covariance",
+    "conservation and positivity ledger",
+    "freeze-out/event witnesses",
+    "H_E_to_F"
+  ],
+  "mandatory_gates": [
+    "baryon/charge/energy accounting",
+    "network convergence",
+    "rate-source audit",
+    "no scalar-channel collapse",
+    "withheld reaction and independent implementation checks"
+  ],
+  "forbidden_shortcuts": [
+    "targeting public abundances",
+    "inheriting the old Li7 failure",
+    "using fitted abundance corrections"
+  ],
+  "hard_stop_conditions": [
+    "solar or public abundance target influences generation",
+    "scalar-channel collapse hides isotope failures",
+    "baryon/charge ledger fails"
+  ],
+  "claim_boundary": "Internally generated primordial nuclear state; observations remain sealed.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "reaction_network",
+      "template": "configured_runs/templates/E_reaction_network.template.json",
+      "purpose": "Execute the internally derived primordial reaction network with stoichiometric invariants.",
+      "copy_command": "python tools/director.py solver-copy --module E --solver reaction_network --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/E_reaction_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/E_reaction_network.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/E_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/E_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/E_reaction_network.json"
+    }
+  ]
+}
