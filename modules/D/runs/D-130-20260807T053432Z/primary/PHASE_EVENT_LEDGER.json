@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event": "D_MEMORY_BALANCE_CROSSING",
+      "tau_D": 0.7704561960983979,
+      "pre": "EXCITATION_DOMINATED",
+      "post": "RFL_MEMORY_DOMINATED"
+    }
+  ],
+  "ordering_pass": true
+}

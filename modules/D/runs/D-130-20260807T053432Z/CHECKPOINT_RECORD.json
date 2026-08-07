@@ -1,7 +1,10 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
-  "hash_algorithm": "sha256"
+  "status": "PASS",
+  "checkpoint_tau_D": 1.111533160913923,
+  "restart_final_Linf": 9.438589354537896e-10,
+  "checkpoint_state": [
+    0.4869312402824096,
+    0.2788199231172892,
+    0.23424883660030116
+  ]
 }

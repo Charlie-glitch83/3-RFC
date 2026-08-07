@@ -1,8 +1,81 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "status": "FINAL",
+  "outputs": [
+    {
+      "path": "reference_checks.json",
+      "sha256": "a2581b4a09e1b275e838e6d2c4922e699bc581344dbfd73a9da2adf6e684d2ad",
+      "bytes": 495
+    },
+    {
+      "path": "solver_configs/D_transport.json",
+      "sha256": "dac910d934d94e07fd97998d1b1961af0ad3dbe385ff1591b3c13b0e9be8207a",
+      "bytes": 6763
+    },
+    {
+      "path": "solver_outputs/transport/result.json",
+      "sha256": "e6339e30a664497715726309c2eba0da9d980f01d1636fbea3fb84c9e20ecc06",
+      "bytes": 15707
+    },
+    {
+      "path": "primary/THERMAL_DISTRIBUTION_HISTORY.json",
+      "sha256": "ea5c949b9055ed9917d0da3eca1cfd7edecacda4aafec8b7a458f376b26eea07",
+      "bytes": 53637
+    },
+    {
+      "path": "primary/PHASE_EVENT_LEDGER.json",
+      "sha256": "9eb6eb5b88ffa76c873001ed37543b43701e385189f681079736e84445638718",
+      "bytes": 212
+    },
+    {
+      "path": "primary/TRANSPORT_COLLISION_OPERATORS.json",
+      "sha256": "82e70606294005d9c21dca34f3f073d3b90a4c0c497e7cf514fccf9b8595dff3",
+      "bytes": 721
+    },
+    {
+      "path": "primary/ENTROPY_CONSERVATION_LEDGER.json",
+      "sha256": "67c91bdf418a9f36b5469802a94f47abf76fbbd44cec561302c6730eb69f300e",
+      "bytes": 289
+    },
+    {
+      "path": "primary/UNCERTAINTY_COVARIANCE.json",
+      "sha256": "e427da870592169658308c8ec47e3d0789d54324720b51e56f0837bb02cf469a",
+      "bytes": 1208
+    },
+    {
+      "path": "COUNTERMODELS_AND_ABLATIONS.json",
+      "sha256": "c91a4f90004ee37d31acecabcdf126b063253cde9458e2af5ccf4ae820f85c72",
+      "bytes": 589
+    },
+    {
+      "path": "GATE_RESULTS.json",
+      "sha256": "0ab8d49f8599427e4659846b93eb6507d522e2c166895b82e0ce3441cb0d70d1",
+      "bytes": 601
+    },
+    {
+      "path": "CHECKPOINT_RECORD.json",
+      "sha256": "997a91a993e60f3112e156c775cbe7ed45162a4b1d225bbc778ab47e28b1c641",
+      "bytes": 212
+    },
+    {
+      "path": "REPLAY_RECORD.json",
+      "sha256": "9499687e35019e949d4d87c91acdac746b376fcd0fe09d1cd2ce01684ed33071",
+      "bytes": 431
+    },
+    {
+      "path": "INDEPENDENT_VERIFICATION.md",
+      "sha256": "a4aa6a477a979d754e31888c3dc7cc293cdcf0bd3ea9ee8bd61dc8a0c0262a9e",
+      "bytes": 388
+    },
+    {
+      "path": "frozen/H_D_to_E.json",
+      "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8",
+      "bytes": 2687
+    },
+    {
+      "path": "frozen/H_D_to_E_MANIFEST.json",
+      "sha256": "8c8a7aaef9ea6dfb97538964d5c33c6c601bc14527b4cb455d375c241d6ab3c0",
+      "bytes": 247
+    }
+  ],
+  "generation_mode": "GENERATION_SEALED"
 }

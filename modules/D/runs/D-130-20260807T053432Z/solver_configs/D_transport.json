@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "transport",
+  "model": {
+    "state_names": [
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "parameters": {
+      "a": 0.1499430216517723
+    },
+    "rhs_expressions": [
+      "a*(p1-p0)+a*(p2-p0)",
+      "a*(p0-p1)+a*(p2-p1)",
+      "a*(p0-p2)+a*(p1-p2)"
+    ],
+    "initial_state": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "t_span": [
+      0.0,
+      2.223066321827846
+    ],
+    "method": "BDF",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "max_step": 0.017367705639280046,
+    "linear_invariants": {
+      "Q_total": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "invariant_tolerance": 1e-09,
+    "positivity_required": true,
+    "positivity_tolerance": 1e-12
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-130-20260807T053432Z/solver_templates/D_transport.template.json",
+    "template_sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-130-20260807T053432Z/binding_sheets/D_transport.bindings.json",
+    "binding_sheet_sha256": "bbd187201c6027e5d83f977cdfe8db3a74ad032f0052ce725c8e40fce2cfe71c",
+    "bindings": [
+      {
+        "path": "model.state_names",
+        "value": [
+          "p0",
+          "p1",
+          "p2"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.parameters",
+        "value": {
+          "a": 0.1499430216517723
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.rhs_expressions",
+        "value": [
+          "a*(p1-p0)+a*(p2-p0)",
+          "a*(p0-p1)+a*(p2-p1)",
+          "a*(p0-p2)+a*(p1-p2)"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.initial_state",
+        "value": [
+          0.5865734510957316,
+          0.24345592095871127,
+          0.16997062794555687
+        ],
+        "origin_kind": "EXACT_PARENT_ARTIFACT",
+        "origin_path": "modules/C/frozen/H_C_to_D.json",
+        "origin_sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+        "module": "D",
+        "derivation_object": "",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.t_span",
+        "value": [
+          0.0,
+          2.223066321827846
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.max_step",
+        "value": 0.017367705639280046,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.linear_invariants",
+        "value": {
+          "Q_total": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.invariant_tolerance",
+        "value": 1e-09,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      },
+      {
+        "path": "model.positivity_tolerance",
+        "value": 1e-12,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "RFC intrinsic",
+        "justification": "Frozen D130 derivation / exact C parent."
+      }
+    ]
+  }
+}

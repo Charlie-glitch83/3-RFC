@@ -1,0 +1,22 @@
+{
+  "SIGN_FLIP": {
+    "expected_fail": true,
+    "entropy_change": -0.03564924972546635,
+    "pass_as_countermodel": true
+  },
+  "CONSERVATION_BREAK": {
+    "expected_fail": true,
+    "instant_Q_drift_rate": 0.005865734510957386,
+    "pass_as_countermodel": true
+  },
+  "SYMMETRY_BREAK": {
+    "expected_fail": true,
+    "commutator_norm": 0.009996201443451425,
+    "pass_as_countermodel": true
+  },
+  "ABLATIONS": {
+    "remove_edge": "changes generator class",
+    "remove_H_RFL": "destroys energy-memory ledger",
+    "remove_parent_gap": "loses exact parent clock normalization"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Q_total_initial": 0.9999999999999997,
+  "max_abs_Q_drift": 5.551115123125783e-16,
+  "E_total": 0.02224312061665973,
+  "max_abs_energy_ledger_drift": 0.0,
+  "entropy_initial": 0.9580811666868891,
+  "entropy_final": 1.0791878582917558,
+  "minimum_entropy_step": 7.452189311196733e-07
+}

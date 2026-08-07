@@ -88,6 +88,13 @@
       "created_utc": "2026-08-07T05:22:40.995369+00:00",
       "work_unit": "D-130",
       "run_id": "D-130-20260807T045646Z"
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
+      "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8",
+      "kind": "HANDOFF",
+      "created_utc": "2026-08-07T13:43:29.112003+00:00",
+      "work_unit": "D-130"
     }
   ]
 }

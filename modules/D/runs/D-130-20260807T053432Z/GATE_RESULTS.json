@@ -1,7 +1,20 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "overall": "PASS",
+  "componentwise": {
+    "positive_distributions": true,
+    "energy_charge_conservation": true,
+    "event_ordering": true,
+    "stiff_solver_convergence": true,
+    "restart_and_independent_reconstruction": true
+  },
+  "metrics": {
+    "minimum_population": 0.16997062794555687,
+    "max_Q_drift": 5.551115123125783e-16,
+    "max_energy_ledger_drift": 0.0,
+    "convergence_Linf": 1.6219253717864035e-10,
+    "restart_Linf": 9.438589354537896e-10,
+    "independent_Linf": 3.976522444659736e-10,
+    "tau_phase": 0.7704561960983979,
+    "interval_end": 2.223066321827846
+  }
 }
