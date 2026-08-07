@@ -1,1 +1,1 @@
-trigger E140 derived-network freeze
+trigger E140 repository-contract restart
