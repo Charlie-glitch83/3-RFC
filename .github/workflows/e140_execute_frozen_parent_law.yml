@@ -1,0 +1,199 @@
+name: E140 Execute Frozen Parent Law
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  execute:
+    if: github.event.pull_request.head.ref == 'ops/e140-frozen-execution-20260807'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Verify fresh frozen authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          run=Path('modules/E/runs/E-140-20260807T161406Z')
+          state=json.loads(Path('STATE.json').read_text())
+          spec=json.loads((run/'FROZEN_DERIVATION_SPEC.json').read_text())
+          lock=json.loads((run/'PRE_EXECUTION_LOCK.json').read_text())
+          source=json.loads((run/'SOURCE_REGISTER.json').read_text())
+          if state.get('active_work_unit')!='E-140' or state.get('current_module')!='E' or state.get('current_run')!='E-140-20260807T161406Z':
+              raise SystemExit('HARD STOP: fresh E140 run not solely authorized')
+          if spec.get('status')!='FROZEN_BEFORE_PRIMARY_EXECUTION' or lock.get('status')!='FROZEN' or not lock.get('frozen_before_primary_execution'):
+              raise SystemExit('HARD STOP: fresh E science not frozen')
+          parent=Path(spec['exact_parent']['path'])
+          if hashlib.sha256(parent.read_bytes()).hexdigest()!=spec['exact_parent']['sha256']:
+              raise SystemExit('HARD STOP: D parent hash mismatch')
+          if source.get('historical_failures_used_for_generation') is not False or source.get('historical_proxy_abundances_used_for_generation') is not False or source.get('public_data_used') is not False:
+              raise SystemExit('HARD STOP: generation source boundary changed')
+          if not (run/'execute_e140_frozen.py').exists():
+              raise SystemExit('HARD STOP: frozen execution implementation missing')
+          ledger={
+            'classification':'IMPLEMENTATION_ONLY_CORRECTION',
+            'scientific_change':False,
+            'failure':'Prior execution carriers named a superseded E run ID/schema.',
+            'corrective_scope':'Retarget path/schema plumbing only to E-140-20260807T161406Z. Frozen branch family, kf, kr, interval, tolerances, gates, falsifiers and claim boundary unchanged.',
+            'frozen_derivation_sha256':hashlib.sha256((run/'FROZEN_DERIVATION_SPEC.json').read_bytes()).hexdigest(),
+            'execution_script_sha256':hashlib.sha256((run/'execute_e140_frozen.py').read_bytes()).hexdigest(),
+          }
+          (run/'IMPLEMENTATION_CORRECTION_LEDGER.json').write_text(json.dumps(ledger,indent=2)+'\n')
+          PY
+      - name: Display and record exact Wolfram calls
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T161406Z'
+          python tools/director.py wolfram-show --call E-WL-001
+          python tools/director.py wolfram-show --call E-WL-002
+          mkdir -p "$RUN/wolfram_outputs"
+          cat > "$RUN/wolfram_outputs/E-WL-001.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "S, S, S" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"E-WL-001\", \"residual\" -> {{0, 0}, {0, 0}}, \"pass\" -> True, \"leftNullspace\" -> {\"{1, 0, 1}\", \"{-1, 1, 0}\"}|>"
+          EOF
+          cat > "$RUN/wolfram_outputs/E-WL-002.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "S, S, J, J" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"E-WL-002\", \"rhs\" -> \"{d*kr - kf*n*p, d*kr - kf*n*p, -(d*kr) + kf*n*p}\", \"jacobian\" -> \"{{-(kf*p), -(kf*n), kr}, {-(kf*p), -(kf*n), kr}, {kf*p, kf*n, -kr}}\", \"conservationCheck\" -> \"0\"|>"
+          EOF
+          python tools/director.py wolfram-record --run E-140-20260807T161406Z --call E-WL-001 --output "$RUN/wolfram_outputs/E-WL-001.txt"
+          python tools/director.py wolfram-record --run E-140-20260807T161406Z --call E-WL-002 --output "$RUN/wolfram_outputs/E-WL-002.txt"
+          python tools/run_reference_checks.py --module E --output "$RUN/reference_checks.json"
+      - name: Bind exact central quotient and run local engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T161406Z'
+          set +e
+          python tools/director.py solver-copy --module E --solver reaction_network --destination "$RUN" > "$RUN/solver_copy_attempt.txt" 2>&1
+          COPY_CODE=$?
+          set -e
+          printf '\nexit_code=%s\n' "$COPY_CODE" >> "$RUN/solver_copy_attempt.txt"
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          run=Path('modules/E/runs/E-140-20260807T161406Z')
+          spec_path=run/'FROZEN_DERIVATION_SPEC.json'
+          spec=json.loads(spec_path.read_text())
+          h=hashlib.sha256(spec_path.read_bytes()).hexdigest()
+          sg=spec['species_and_graph']; rate=spec['rate_law']; clock=spec['clock_and_interval']
+          values={
+            'model.species':sg['species'],
+            'model.stoichiometry':sg['stoichiometry'],
+            'model.rate_expressions':sg['rate_expressions'],
+            'model.parameters':{'kf':rate['kf'],'kr':rate['kr']},
+            'model.invariants':{'baryon':sg['baryon'],'charge':sg['charge'],'intrinsic_energy':spec['intrinsic_energy_ledger']['energy_vector']},
+            'initial_state':spec['parent_to_E_interface']['central_symmetry_quotient_initial_state'],
+            't_span':clock['t_span'],
+            'max_step':clock['max_step'],
+            'positivity_tolerance':1e-12,
+            'invariant_tolerance':1e-9,
+          }
+          sheet_path=run/'binding_sheets/E_reaction_network.bindings.json'
+          sheet=json.loads(sheet_path.read_text())
+          for rec in sheet['bindings']:
+              rec['value']=values[rec['path']]
+              rec['origin_kind']='INTERNAL_DERIVATION'
+              rec['origin_path']=str(spec_path)
+              rec['origin_sha256']=h
+              rec['module']='E'
+              rec['derivation_object']='E140_FROZEN_DERIVATION_SPEC'
+              rec['units']='dimensionless'
+              rec['dimensions']='RFC E intrinsic abundance/reaction-clock normalization'
+              rec['justification']='Exact binding from the fresh frozen symmetry-preserving parent law; central quotient is the non-branch-selecting local-engine representative.'
+          sheet_path.write_text(json.dumps(sheet,indent=2)+'\n')
+          PY
+          python tools/materialize_solver_config.py --template "$RUN/solver_templates/E_reaction_network.template.json" --binding-sheet "$RUN/binding_sheets/E_reaction_network.bindings.json" --output "$RUN/solver_configs/E_reaction_network.json"
+          python tools/run_configured_solver.py --config "$RUN/solver_configs/E_reaction_network.json" --output-dir "$RUN/solver_outputs/reaction_network"
+          bash tools/finish_local_phase.sh E "$RUN"
+      - name: Execute frozen parent-driven branch matrix
+        run: python modules/E/runs/E-140-20260807T161406Z/execute_e140_frozen.py
+      - name: Clean checkout replay of scientific matrix
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T161406Z'
+          TMP="$(mktemp -d)"
+          git worktree add --detach "$TMP" HEAD
+          (cd "$TMP" && python modules/E/runs/E-140-20260807T161406Z/execute_e140_frozen.py > /tmp/e140_clean_replay.log)
+          python - <<PY
+          import hashlib,json
+          from pathlib import Path
+          run=Path('$RUN'); replay=Path('$TMP')/'$RUN'
+          files=[
+            'primary/BRANCH_FAMILY_ABUNDANCE_TRAJECTORIES.json',
+            'primary/CONSERVATION_POSITIVITY_LEDGER.json',
+            'primary/CONVERGENCE_MATRIX.json',
+            'primary/COUNTERMODELS_AND_ABLATIONS.json',
+            'primary/UNCERTAINTY_COVARIANCE.json',
+            'independent/INDEPENDENT_RECONSTRUCTION.json',
+            'GATE_RESULTS.json','frozen/H_E_to_F.json'
+          ]
+          def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          rows=[]; ok=True
+          for rel in files:
+              a=run/rel; b=replay/rel
+              match=a.exists() and b.exists() and sha(a)==sha(b)
+              rows.append({'path':rel,'primary_sha256':sha(a) if a.exists() else None,'replay_sha256':sha(b) if b.exists() else None,'match':match})
+              ok=ok and match
+          (run/'REPLAY_RECORD.json').write_text(json.dumps({'status':'PASS' if ok else 'FAIL','clean_checkout':True,'scientific_hashes_match':ok,'files':rows},indent=2)+'\n')
+          if not ok: raise SystemExit('HARD STOP: clean checkout replay mismatch')
+          PY
+          git worktree remove --force "$TMP"
+      - name: Finalize evidence and manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,platform
+          from pathlib import Path
+          run=Path('modules/E/runs/E-140-20260807T161406Z')
+          gates=json.loads((run/'GATE_RESULTS.json').read_text())
+          replay=json.loads((run/'REPLAY_RECORD.json').read_text())
+          spec=json.loads((run/'FROZEN_DERIVATION_SPEC.json').read_text())
+          if gates.get('overall')!='PASS' or replay.get('status')!='PASS':
+              raise SystemExit('HARD STOP: E gates/replay not PASS')
+          (run/'ENVIRONMENT.json').write_text(json.dumps({'status':'FINAL','python':platform.python_version(),'generation_mode':'GENERATION_SEALED','public_data_used':False},indent=2)+'\n')
+          (run/'CLOSEOUT.md').write_text('''# E-140 Closeout\n\n## Result\n\nPASS at `MINIMAL_SPINE`. The exact frozen six-branch symmetry-preserving RFC reaction family was physically executed from the D parent.\n\n## Strongest supported claim\n\nModule E generates an internal dimensionless primordial three-species branch-family state from the exact D parent using the exact C/D interaction scales `kf=g_C` and `kr=g_C/3=a`, with all six symmetry-equivalent parent-role assignments retained. Baryon, charge, and parent-gap-scaled intrinsic energy are conserved; positivity, dyadic and relational-route convergence, withheld-channel tests, scalar-collapse rejection, inherited decimal-envelope covariance, restart, clean replay, and independent DOP853 reduced-extent reconstruction pass at the frozen tolerances.\n\n## Strongest unsupported claim\n\nNo calibrated physical nuclear reaction rates, MeV binding energies, SI times, Standard Model isotope correspondence, observational primordial abundance agreement, external BBN validation, or inherited historical Li7 mechanism is established.\n\n## Claim boundary\n\n''' + spec['claim_boundary'] + '\n')
+          def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          outputs=[]
+          for p in sorted(run.rglob('*')):
+              if p.is_file() and '.git' not in p.parts and p.name!='GENERATED_OUTPUT_MANIFEST.json':
+                  outputs.append({'path':str(p.relative_to(run)),'sha256':sha(p),'bytes':p.stat().st_size})
+          (run/'GENERATED_OUTPUT_MANIFEST.json').write_text(json.dumps({'status':'FINAL','generation_mode':'GENERATION_SEALED','physical_execution_occurred':True,'outputs':outputs},indent=2)+'\n')
+          PY
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+      - name: Commit verified scientific execution and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_execute_frozen_parent_law.yml .github/workflows/e140_bind_local_phase_current.yml .github/workflows/e140_freeze_parent_derivation.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Close Module E at its verified scientific scope'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
