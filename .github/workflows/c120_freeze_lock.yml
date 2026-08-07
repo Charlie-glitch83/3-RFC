@@ -1,0 +1,127 @@
+name: C120 Freeze Preexecution Lock
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  freeze-c120:
+    if: github.event.pull_request.head.ref == 'agent/c120-lock-trigger'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout execution branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Freeze exact C-120 lock and bindings
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          ROOT=Path('.')
+          RUN=ROOT/'modules/C/runs/C-120-20260807T032543Z'
+          PARENT=ROOT/'modules/B/frozen/H_B_to_C.json'
+          PARENT_EXPECT='c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492'
+          DERIV=RUN/'FROZEN_DERIVATION_SPEC.json'
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          def load(p): return json.loads(Path(p).read_text(encoding='utf-8'))
+          def dump(p,obj): Path(p).write_text(json.dumps(obj,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          if sha(PARENT)!=PARENT_EXPECT: raise SystemExit('HARD STOP: H_B_to_C hash mismatch')
+          deriv=load(DERIV)
+          if deriv.get('status')!='FROZEN_PRE_EXECUTION': raise SystemExit('HARD STOP: derivation not frozen')
+          if deriv['parent']['sha256']!=PARENT_EXPECT: raise SystemExit('HARD STOP: derivation parent mismatch')
+          deriv_sha=sha(DERIV)
+          authority_paths=[
+            'README.md','STATE.json','WORK_QUEUE.json','recipes/C/WORK_ORDER.md','recipes/C/recipe.json','recipes/C/gates.json','modules/C/spec.json',
+            'recipes/C/wolfram/C-WL-001.wl','recipes/C/wolfram/C-WL-002.wl','configured_runs/templates/C_spectral_model.template.json',
+            'rfc_engine/solvers/spectral_model.py','tools/materialize_solver_config.py','tools/run_configured_solver.py','tools/rfc.py','tools/director.py'
+          ]
+          authorities=[{'path':p,'sha256':sha(ROOT/p)} for p in authority_paths]
+          src={
+            'run_id':'C-120-20260807T032543Z',
+            'exact_parents':[{'path':'modules/B/frozen/H_B_to_C.json','sha256':PARENT_EXPECT,'object_id':'H_B_to_C'}],
+            'admitted_sources':[],
+            'imports':['Python standard library for lock preparation; numerical execution environment frozen separately'],
+            'files':authorities+[{'path':str(DERIV),'sha256':deriv_sha,'kind':'FROZEN_INTERNAL_DERIVATION'}],
+            'urls':[],
+            'constants':[
+              {'name':'delta','value':deriv['constitution_law']['delta'],'dimensions':'1','origin':'H_B_to_C through FROZEN_DERIVATION_SPEC'},
+              {'name':'solver_tolerance','value':1e-10,'dimensions':'1','origin':'configured_runs/templates/C_spectral_model.template.json'}
+            ],
+            'public_data_declaration':'NONE',
+            'generation_mode':'GENERATION_SEALED'
+          }
+          dump(RUN/'SOURCE_REGISTER.json',src)
+          lock={
+            'run_id':'C-120-20260807T032543Z','status':'FROZEN','frozen_utc':datetime.now(timezone.utc).isoformat(),
+            'authority_hashes':authorities,
+            'parent_hashes':[{'path':'modules/B/frozen/H_B_to_C.json','sha256':PARENT_EXPECT}],
+            'definition_hashes':[{'path':str(DERIV),'sha256':deriv_sha}],
+            'candidate_classes':[
+              'V_C=R^3 inherited B modal carrier','uniform conserved mode span{(1,1,1)}','two-dimensional nonconstant excitation doublet V_perp',
+              'O(2)-equivalent basis family inside the exactly degenerate doublet; no fitted mixing angle'
+            ],
+            'equations_and_laws':[
+              deriv['constitution_law']['expression'],
+              'U(theta)=exp(-i theta M_C) for dimensionless internal phase theta only',
+              'Q_total=sum_i p_i=1',
+              'M_C . 1 = 0',
+              '[M_C,G]=0 for the frozen canonical O(2) generator'
+            ],
+            'dimensions_units_frames_gauges_clocks':[
+              'M_C dimensionless intrinsic constitutive gap; no dimensionful mass scale admitted',
+              'theta is a dimensionless internal phase, not physical time',
+              'no metric spacetime, physical clock duration, or calibrated coupling enters C',
+              'doublet basis rotations are basis-equivalent and do not select an observable mixing angle'
+            ],
+            'methods':['exact parent-byte verification','frozen Wolfram manufactured symbolic calls','provenance-bound spectral solver','parent-driven C execution','countermodels/ablations','clean replay','independent spectral reconstruction'],
+            'tolerances':[{'name':'spectral_and_symmetry','value':1e-10},{'name':'normalization_and_conservation','value':1e-10},{'name':'replay_scientific_hashes','value':0.0}],
+            'stopping_rules':['hard stop on any parent/derivation hash mismatch','hard stop on negative spectral eigenvalue below -1e-10','hard stop if conserved carrier residual exceeds 1e-10','hard stop on any familiar/Standard-Model identity or measured constant','hard stop on unique mixing-angle selection without source evidence'],
+            'expected_invariants':['M_C symmetric/Hermitian','M_C positive semidefinite','one zero uniform mode','two equal positive nonconstant eigenvalues','canonical generator antisymmetric and commutes with M_C','positive normalized prethermal populations','total carrier conserved','no empirical labels/constants'],
+            'tests':['C-WL-001 hermiticity/invariants','C-WL-002 invariance family','manufactured C reference check','configured spectral audit','parent-law exact reconstruction','symmetry and positivity gates','countermodels','representation-uncertainty envelope','independent reconstruction','clean checkout replay'],
+            'gates':['units and dimensions','symmetry/constraint closure','positivity/unitarity or declared alternative','no Standard Model label without derivation or correspondence theorem','independent symbolic and numerical checks'],
+            'falsifiers':deriv['falsifiers'],
+            'claim_boundary':deriv['claim_boundary'],
+            'independent_verifier_design':'Reconstruct M_C independently from the exact H_B_to_C operator as I-Q_B; derive its uniform/null and degenerate doublet spectrum analytically; verify the canonical generator and populations without reading primary GATE_RESULTS or CLOSEOUT; then compare only final values/hashes.',
+            'allowed_implementation_only_corrections':['relocation/path fixes','runner dependency installation','serialization/provenance-envelope normalization that leaves scientific values/hashes/gates unchanged']
+          }
+          dump(RUN/'PRE_EXECUTION_LOCK.json',lock)
+          sheet=load(RUN/'binding_sheets/C_spectral_model.bindings.json')
+          matrix=deriv['constitution_law']['matrix']; generator=deriv['symmetry']['canonical_generator']
+          for rec in sheet['bindings']:
+            rec['origin_kind']='INTERNAL_DERIVATION'; rec['origin_path']=str(DERIV); rec['origin_sha256']=deriv_sha; rec['module']='C'
+            if rec['path']=='model.matrix':
+              rec['value']=matrix; rec['derivation_object']='constitution_law.matrix'; rec['units']=deriv['constitution_law']['units']; rec['dimensions']=deriv['constitution_law']['dimensions']; rec['justification']='Exact director-frozen C constitution matrix M_C=I-Q_B=L_B/(delta+2).'
+            elif rec['path']=='model.symmetry_generators':
+              rec['value']=[generator]; rec['derivation_object']='symmetry.canonical_generator'; rec['units']='dimensionless'; rec['dimensions']='1'; rec['justification']='Exact director-frozen O(2) generator on the degenerate nonconstant excitation subspace.'
+            else: raise SystemExit('HARD STOP: unexpected binding path')
+          dump(RUN/'binding_sheets/C_spectral_model.bindings.json',sheet)
+          failure=RUN/'FAILURES.jsonl'
+          existing=failure.read_text(encoding='utf-8') if failure.exists() else ''
+          rec={'failure_id':'C-120-PRELOCK-WOLFRAM-DIAGNOSTIC','run_id':'C-120-20260807T032543Z','gate':'pre_execution_lock','category':'PRELOCK_DIAGNOSTIC_NOT_GOVERNED_EVIDENCE','description':'The exact generic C-WL-001 and C-WL-002 programs were evaluated while inspecting the recipe before PRE_EXECUTION_LOCK was committed. Those outputs are excluded from governed C evidence and both calls must be rerun unchanged after the lock.','changes_frozen_science':False,'required_replay_scope':'rerun both Wolfram calls post-lock, then execute full frozen C matrix','strongest_claim_remaining':'No C scientific claim is admitted from the pre-lock symbolic diagnostics.'}
+          if 'C-120-PRELOCK-WOLFRAM-DIAGNOSTIC' not in existing:
+            failure.write_text(existing+json.dumps(rec,separators=(',',':'))+'\n',encoding='utf-8')
+          plan=RUN/'RUN_PLAN.md'
+          plan.write_text('# Run Plan — C-120\n\nGOVERNED EXECUTION OF THE DIRECTOR-FROZEN MODULE C RECIPE.\n\nObjective: derive and execute the RFC microscopic constitution from exact H_B_to_C without importing familiar particle identities, measured masses/couplings, or a dimensionful scale.\n\nFrozen scientific law: `M_C = I - Q_B = L_B/(delta+2)` from `FROZEN_DERIVATION_SPEC.json`. The exact twofold nonconstant degeneracy is preserved as an O(2)-equivalent basis family; no unique mixing angle is selected.\n\nExecution order: exact hashes/source register -> PRE_EXECUTION_LOCK -> post-lock Wolfram C-WL-001/002 -> manufactured reference -> provenance materialization -> configured spectral solver -> parent-driven C physical execution -> countermodels/uncertainty -> independent reconstruction -> clean replay -> final manifest/closeout -> evidence-state promotions -> close/advance only on PASS.\n\nAll five recipe gates are mandatory and componentwise.\n',encoding='utf-8')
+          print(json.dumps({'status':'PASS','parent_sha256':PARENT_EXPECT,'derivation_sha256':deriv_sha,'lock':'FROZEN','bindings':'COMPLETE'},indent=2))
+          PY
+          python tools/rfc.py doctor
+      - name: Commit frozen lock package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add modules/C/runs/C-120-20260807T032543Z/SOURCE_REGISTER.json modules/C/runs/C-120-20260807T032543Z/PRE_EXECUTION_LOCK.json modules/C/runs/C-120-20260807T032543Z/RUN_PLAN.md modules/C/runs/C-120-20260807T032543Z/binding_sheets/C_spectral_model.bindings.json modules/C/runs/C-120-20260807T032543Z/FAILURES.jsonl
+          git commit -m 'Freeze C-120 preexecution lock and bindings'
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
