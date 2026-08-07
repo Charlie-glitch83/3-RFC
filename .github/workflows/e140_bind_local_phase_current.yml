@@ -4,12 +4,16 @@ on:
   push:
     branches:
       - agent/frontier-050-execution
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
 
 permissions:
   contents: write
 
 jobs:
   execute-local:
+    if: github.event_name == 'push' || github.event.pull_request.head.ref == 'ops/e140-local-trigger-20260807'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -107,7 +111,15 @@ jobs:
             'invariant_tolerance':('dimensionless','ledger residual'),
           }
           for rec in sheet['bindings']:
-              p=rec['path']; rec['value']=values[p]; rec['origin_kind']='INTERNAL_DERIVATION'; rec['origin_path']=str(spec_path); rec['origin_sha256']=h; rec['module']='E'; rec['derivation_object']='E140_FROZEN_DERIVATION_SPEC'; rec['units'],rec['dimensions']=units[p]; rec['justification']='Exact value from current frozen parent-driven E derivation; no historical failure, public target, or manufactured numerical value used.'
+              p=rec['path']
+              rec['value']=values[p]
+              rec['origin_kind']='INTERNAL_DERIVATION'
+              rec['origin_path']=str(spec_path)
+              rec['origin_sha256']=h
+              rec['module']='E'
+              rec['derivation_object']='E140_FROZEN_DERIVATION_SPEC'
+              rec['units'],rec['dimensions']=units[p]
+              rec['justification']='Exact value from current frozen parent-driven E derivation; no historical failure, public target, or manufactured numerical value used.'
           sheet_path.write_text(json.dumps(sheet,indent=2)+'\n')
           print(json.dumps({'frozen_derivation_sha256':h,'binding_paths':[r['path'] for r in sheet['bindings']]},indent=2))
           PY
@@ -130,5 +142,3 @@ jobs:
           git commit -m 'Bind and execute E140 frozen local phase'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-
-# trigger current frozen E140 local phase
