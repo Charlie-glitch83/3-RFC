@@ -22,7 +22,7 @@ jobs:
       - run: python tools/rfc.py firewall-scan
 
   reconcile-a100-queue:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'agent/a100-queue-reconcile-v2'
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'agent/a100-queue-reconcile-v3'
     runs-on: ubuntu-latest
     env:
       BRANCH: agent/frontier-050-execution
@@ -67,7 +67,7 @@ jobs:
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
-      - name: Commit queue only, rebase, push, and verify
+      - name: Commit queue only, clean generated refresh, rebase, push, and verify
         shell: bash
         run: |
           set -euo pipefail
@@ -75,6 +75,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add WORK_QUEUE.json
           git commit -m 'Reconcile A-100 queue and authorize B-110'
+          git restore .
           git fetch origin "$BRANCH"
           git rebase "origin/$BRANCH"
           FINAL_SHA=$(git rev-parse HEAD)
