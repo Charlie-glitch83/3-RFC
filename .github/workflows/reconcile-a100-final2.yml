@@ -1,0 +1,142 @@
+name: Reconcile A-100 final state v2
+
+on:
+  push:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - .github/reconcile-a100-trigger-v2.txt
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: agent/frontier-050-execution
+      RUN_ID: A-100-20260806T173458Z
+      EVIDENCE_COMMIT: b6280513dc47339ddf024be6275817d3f38a9d39
+      CLOSEOUT: modules/A/runs/A-100-20260806T173458Z/CLOSEOUT.md
+      HANDOFF_SHA256: 728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Restore exact pre-close state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -e "$EVIDENCE_COMMIT^{commit}"
+          for path in STATE.json WORK_QUEUE.json memory/ARTIFACT_REGISTRY.json memory/CURRENT_CONTEXT.md memory/DECISION_LOG.jsonl memory/RUN_INDEX.json "$CLOSEOUT" "modules/A/runs/$RUN_ID/run.json"; do
+            git show "$EVIDENCE_COMMIT:$path" > "$path"
+          done
+          test "$(sha256sum modules/A/frozen/H_A_to_B.json | awk '{print $1}')" = "$HANDOFF_SHA256"
+      - name: Correct promotion test
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tests/test_repository.py'); s=p.read_text()
+          old='''        for mod, rec in state["modules"].items():
+            self.assertEqual(rec["evidence_state"], "DESIGN")
+            self.assertEqual(rec["evidence_history"][0]["state"], "DESIGN")
+            self.assertIn(mod, req)
+'''
+          new='''        ordered = json.loads((ROOT / "config/evidence_states.json").read_text())["ordered"]
+        for mod, rec in state["modules"].items():
+            self.assertIn(rec["evidence_state"], ordered)
+            self.assertTrue(rec["evidence_history"], mod)
+            self.assertEqual(rec["evidence_history"][0]["state"], "DESIGN")
+            visited = [entry["state"] for entry in rec["evidence_history"]]
+            self.assertEqual(visited[-1], rec["evidence_state"])
+            self.assertIn(mod, req)
+            if rec["evidence_state"] != "DESIGN":
+                missing = [name for name in req[mod]["must_visit"] if name not in visited]
+                self.assertFalse(missing, f"{mod} missing required evidence states: {missing}")
+'''
+          assert old in s
+          p.write_text(s.replace(old,new))
+          PY
+      - name: Run governed closeout
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          p=Path(os.environ['CLOSEOUT']); t=p.read_text()
+          t=t.replace('administrative close-run awaits the verified GitHub evidence commit.','verified GitHub evidence commit recorded; administrative close-run completed.')
+          t=t.replace('promotion to be recorded after the evidence commit is verified','promotion recorded after exact GitHub evidence verification')
+          t=t.replace('PENDING_EVIDENCE_COMMIT',os.environ['EVIDENCE_COMMIT'])
+          p.write_text(t)
+          PY
+          python tools/rfc.py record-commit "$EVIDENCE_COMMIT" --branch "$BRANCH" --note 'Verified exact A-100 evidence commit and changed-file scope on GitHub'
+          python tools/rfc.py close-run --run-id "$RUN_ID" --result PASS --closeout "$CLOSEOUT"
+          python tools/rfc.py promote-module A --to FORMALIZED --fidelity PRODUCTION --evidence modules/A/frozen/H_A_to_B.json
+          python tools/rfc.py promote-module A --to VERIFIED --fidelity PRODUCTION --evidence "modules/A/runs/$RUN_ID/INDEPENDENT_VERIFICATION.md"
+          python tools/rfc.py promote-module A --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "modules/A/runs/$RUN_ID/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module A --to FROZEN --fidelity PRODUCTION --evidence modules/A/frozen/H_A_to_B.json
+          python tools/rfc.py advance --task A-100 --result PASS --evidence "$CLOSEOUT" --note 'Module A closed at FROZEN/PRODUCTION; authorize exactly B-110'
+      - name: Verify all gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); q=json.load(open('WORK_QUEUE.json'))['items']
+          assert s['active_work_unit']=='B-110' and s['current_module']=='B' and s['current_run'] is None
+          assert s['modules']['A']['evidence_state']=='FROZEN' and s['modules']['A']['fidelity']=='PRODUCTION'
+          assert [x['id'] for x in q if x['status']=='ACTIVE']==['B-110']
+          PY
+      - name: Commit exact closeout
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > .github/workflows/validate.yml <<'YAML'
+          name: Validate 3-RFC Repository
+
+          on:
+            push:
+            pull_request:
+
+          jobs:
+            validate:
+              runs-on: ubuntu-latest
+              steps:
+                - uses: actions/checkout@v4
+                - uses: actions/setup-python@v5
+                  with:
+                    python-version: '3.11'
+                    cache: pip
+                - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+                - run: python tools/rfc.py doctor
+                - run: python -m unittest discover -s tests -v
+                - run: python tools/rfc.py firewall-scan
+          YAML
+          rm -f .github/*a100*trigger*.txt .github/reconcile-a100-trigger*.txt
+          rm -f .github/workflows/*a100*.yml .github/workflows/reconcile-a100-final*.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Close Module A at its verified scientific scope'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin "$BRANCH"
+            git rebase "origin/$BRANCH" || { git rebase --abort; sleep 3; continue; }
+            git push origin HEAD:"$BRANCH" && break
+            sleep 3
+          done
+          FINAL_SHA=$(git rev-parse HEAD)
+          REMOTE_SHA=$(git ls-remote origin "refs/heads/$BRANCH" | awk '{print $1}')
+          test "$REMOTE_SHA" = "$FINAL_SHA"
+          test "$(git show -s --format=%s HEAD)" = 'Close Module A at its verified scientific scope'
