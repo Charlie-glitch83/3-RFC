@@ -1,11 +1,37 @@
-# D-130 pre-execution failure closeout
+# D-130 failed pre-execution attempt closeout
 
-Result: FAIL before primary numerical execution.
+- Run ID: `D-130-20260807T044911Z`
+- Work unit: `D-130`
+- Module: `D`
+- Result: `FAIL`
+- Evidence state reached: `DESIGN` with a preserved incomplete pre-execution attempt; no physical D execution accepted
+- Fidelity reached: `UNSTARTED` for the full Module D claim
 
-The run correctly froze exact parent/source hashes and candidate classes, then executed the two required manufactured Wolfram calls. During the post-lock audit, the frozen PRE_EXECUTION_LOCK was found not to explicitly freeze the intrinsic execution interval, the bound `max_step`, or the preregistered refinement matrix. Those are numerical/stopping controls and therefore cannot be added after derivation execution under the repository no-retune rule.
+## Scientific objects produced
+The attempt correctly identified the exact frozen C parent and its SHA-256, constructed the lawful dimensionless linear conservative O(2)-equivariant relaxation family up to intrinsic-clock reparameterization, and preserved the obstruction that C contains no physical time scale, temperature map, equation of state, phase order parameter, or phase threshold.
 
-No configured D transport solver, physical thermal history, phase-event law, physical temperature law, or Module D PASS claim was executed or accepted in this run. The exact C parent, source hashes, candidate classes, and the physical-temperature/clock obstruction remain valid inputs for a fresh run; the incomplete lock itself is preserved as failed evidence only.
+## Componentwise gate results
+No Module D PASS gates are claimed. No configured transport solver, physical temperature history, or phase-event history was accepted.
 
-Strongest supported claim: exact C admits a lawful dimensionless linear relaxation family up to intrinsic clock reparameterization, while nonlinear transport remains underdetermined and no physical temperature/clock/phase threshold is supplied by C.
+## Failures preserved and corrections made
+The PRE_EXECUTION_LOCK was frozen before Wolfram but did not explicitly freeze the intrinsic execution interval, bound `max_step`, or preregistered refinement matrix. Those are numerical/stopping controls. Because D-WL-001 and D-WL-002 were subsequently executed, adding those controls afterward would violate the no-retune rule. This run is therefore preserved as a failed pre-execution attempt rather than repaired in place.
 
-Strongest unsupported claim: a complete generated RFC physical thermal history suitable for Module E has not been established.
+The raw Wolfram outputs are retained only as failed-attempt evidence/regression material and are not generative parents or expected targets for the fresh D run.
+
+## Independent reconstruction
+Not claimed for this failed run.
+
+## Replay/restart/convergence evidence
+Not claimed for this failed run. Required replay scope is a fresh D-130 run from exact `H_C_to_D` with a complete lock frozen before any Wolfram or numerical execution.
+
+## Strongest supported claim
+The exact C parent admits a lawful dimensionless linear conservative relaxation family on the inherited simplex up to intrinsic-clock reparameterization, while nonlinear transport remains underdetermined and no physical temperature, clock, or phase threshold is supplied by C.
+
+## Strongest unsupported claim
+A complete generated RFC physical thermal history suitable for Module E has not been established.
+
+## Remaining gaps
+A fresh D run must freeze all numerical controls before execution and must either derive the missing physical thermal/phase objects lawfully from admitted premises or preserve the obstruction honestly.
+
+## Exact next child
+No child is activated. `D-130` remains the sole authorized work unit and must restart fresh.
