@@ -1,0 +1,87 @@
+{
+  "schema_version": "2.0",
+  "module": "D",
+  "title": "Nonequilibrium Thermal and Phase History",
+  "parents": [
+    "C"
+  ],
+  "children": [
+    "E"
+  ],
+  "objective": "Evolve the microscopic state through nonequilibrium thermodynamics, transport, phase changes, entropy production, and clock/frame-consistent expansion.",
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "triadic_descent": {
+    "CIF": "distribution and phase possibilities",
+    "QV": "collisions, transport and phase-event selection",
+    "RFL": "thermal history, entropy and event memory"
+  },
+  "derive_exactly": [
+    "nonequilibrium state variables and clocks from C",
+    "collision/transport operators with exact ownership",
+    "phase-event witnesses and entropy production law",
+    "stiff solver and uncertainty/covariance evolution"
+  ],
+  "wolfram_calls": [
+    "D-WL-001",
+    "D-WL-002"
+  ],
+  "local_commands": [
+    "python tools/run_reference_checks.py --module D --output <RUN_DIR>/reference_checks.json",
+    "python tools/director.py solver-copy --module D --solver transport --destination <RUN_DIR>",
+    "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/D_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/D_transport.bindings.json --output <RUN_DIR>/solver_configs/D_transport.json",
+    "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/D_transport.json --output-dir <RUN_DIR>/solver_outputs/transport"
+  ],
+  "numerical_execution": [
+    "positive distribution manufactured cases",
+    "stiffness and time-step convergence",
+    "conservation and entropy ledger"
+  ],
+  "required_outputs": [
+    "temperature and distribution histories",
+    "phase/event ledger",
+    "transport and collision operators",
+    "entropy and conservation ledger",
+    "uncertainty/covariance",
+    "H_D_to_E"
+  ],
+  "mandatory_gates": [
+    "positive distributions",
+    "energy/charge conservation",
+    "event ordering",
+    "stiff-solver convergence",
+    "restart and independent reconstruction"
+  ],
+  "forbidden_shortcuts": [
+    "using a standard thermal history as initial data",
+    "fitting transition temperatures to observations"
+  ],
+  "hard_stop_conditions": [
+    "negative distributions beyond tolerance",
+    "energy/charge drift",
+    "event order depends on observed target values"
+  ],
+  "claim_boundary": "Generated RFC thermal history, not yet primordial abundances.",
+  "operator_sequence": [
+    "freeze exact parents and source hashes",
+    "complete PRE_EXECUTION_LOCK.json before derivation execution",
+    "run Wolfram calls in listed order and record outputs",
+    "run manufactured reference checks",
+    "derive/execute the actual parent-driven system",
+    "run countermodels, ablations, convergence, restart, replay and independent reconstruction",
+    "finalize output manifest only after files stop changing",
+    "state strongest supported and unsupported claims",
+    "commit and verify SHA/diff"
+  ],
+  "solver_bindings": [
+    {
+      "solver": "transport",
+      "template": "configured_runs/templates/D_transport.template.json",
+      "purpose": "Integrate the frozen nonequilibrium thermal/transport state with explicit invariants.",
+      "copy_command": "python tools/director.py solver-copy --module D --solver transport --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/D_transport.json --output-dir <RUN_DIR>/solver_outputs/transport",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/D_transport.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/D_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/D_transport.bindings.json --output <RUN_DIR>/solver_configs/D_transport.json"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-07T05:22:40.976086+00:00
+Generated: 2026-08-07T05:34:32.472651+00:00
 
 ## Project truth
 
@@ -64,7 +64,7 @@ Evolve the microscopic state through nonequilibrium thermodynamics, transport, p
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 10
+- frozen artifacts: 11
 - indexed runs: 10
 
 ## Recent runs
