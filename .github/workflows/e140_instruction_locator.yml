@@ -17,24 +17,15 @@ jobs:
         with:
           ref: agent/frontier-050-execution
           fetch-depth: 0
-      - name: Locate exact E instructions and derivation authorities
+      - name: Locate exact E workflow sequence
         shell: bash
         run: |
           set -euo pipefail
-          echo '=== MODULE E FILES ==='
-          find modules/E -maxdepth 3 -type f -print | sort
-          echo '=== PROTOCOL / SPEC FILES ==='
-          find . -type f \( -iname '*protocol*' -o -iname '*spec*' -o -iname '*constitution*' -o -iname '*crosswalk*' -o -iname '*derivation*' \) -print | sort
-          echo '=== E REFERENCES IN THEORY/CONFIG/DOCS ==='
-          grep -RIl --exclude-dir=.git -E 'Primordial Nuclear|Module E|reaction network|rate law|isotope' theory config docs modules/E recipes/E | sort | head -200
-          echo '=== CANONICAL P29/P30 E-RELEVANT LINES ==='
-          grep -nEi -C 4 'nuclear|nucleosynthesis|reaction|isotope|abundance|freeze-out|freezeout|rate law|kernel|delta|alpha|first action' \
-            'sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md' \
-            'sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md' \
-            | head -1200
-          echo '=== SUCCESSFUL C/D LINEAGE E-RELEVANT LINES ==='
-          grep -nEi -C 4 'species|charge|mass|mix|population|thermal|temperature|clock|phase|operator|covariance|energy' \
-            modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json \
-            modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json \
-            modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json \
-            | head -1200
+          echo '=== E140 WORKFLOW FILES AND TRIGGERS ==='
+          for f in .github/workflows/*e140* .github/workflows/*E140*; do
+            [ -f "$f" ] || continue
+            echo "--- $f ---"
+            sed -n '1,55p' "$f"
+          done
+          echo '=== CURRENT E RUN CORE FILES ==='
+          find modules/E/runs/E-140-20260807T161406Z -maxdepth 2 -type f -print | sort
