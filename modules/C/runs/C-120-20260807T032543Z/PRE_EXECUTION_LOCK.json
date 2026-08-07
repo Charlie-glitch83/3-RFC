@@ -1,21 +1,101 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "run_id": "C-120-20260807T032543Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-07T03:27:00Z",
+  "generation_mode": "GENERATION_SEALED",
+  "authority_hashes": [
+    {"path": "recipes/C/recipe.json", "git_blob_sha1": "1c92e6fd04fea03a894515cf9dee33950e349d86"},
+    {"path": "recipes/C/gates.json", "git_blob_sha1": "4a8bfca9a0dd3dd3e11eec55fb347fba7fd1452f"}
+  ],
+  "parent_hashes": [
+    {"path": "modules/B/frozen/H_B_to_C.json", "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"}
+  ],
+  "definition_hashes": [
+    {"path": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json", "sha256": "578cd6bc04f37fe17e769cc27fe9f02700568feb399cf2fd529a796984eb8ee9"}
+  ],
+  "candidate_classes": [
+    "V_C=R^3 inherited B carrier space",
+    "uniform conserved mode span{(1,1,1)}",
+    "two-dimensional zero-sum internal excitation doublet V_perp",
+    "O(2)-equivalent bases within the exactly degenerate doublet",
+    "dimensionful mass realization explicitly obstructed until a lawful scale is generated"
+  ],
+  "equations_and_laws": [
+    "M_C = I - Q_B = L_B/(delta+2)",
+    "M_C u = 0",
+    "M_C|V_perp = [3/(delta+2)] I_2",
+    "G^T=-G, G u=0, [M_C,G]=0",
+    "Q_total = sum_i p_i = 1",
+    "U(theta)=exp(-i theta M_C), theta dimensionless"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "delta, Q_B, L_B counting measure, M_C, G and theta are dimensionless",
+    "M_C eigenvalues are dimensionless constitutive gaps, not measured masses",
+    "no metric geometry is imported",
+    "no calibrated duration or external physical clock is introduced; B event-order origin is inherited only",
+    "O(2) doublet basis rotations are internal representation freedom at this scope"
+  ],
+  "methods": [
+    "post-lock exact Wolfram C-WL-001 and C-WL-002 captures",
+    "provenance-bound spectral_model audit",
+    "parent-driven primary microscopic-constitution execution",
+    "analytic independent reconstruction from H_B_to_C without trusting primary gates",
+    "countermodels and ablations",
+    "inherited source-decimal representation envelope propagation",
+    "restart checkpoint and second clean-checkout replay"
+  ],
+  "tolerances": [
+    {"name": "spectral_symmetry_reconstruction_commutator", "value": 1e-10},
+    {"name": "conservation_positivity_unitarity", "value": 1e-10},
+    {"name": "independent_reconstruction", "value": 1e-10}
+  ],
+  "stopping_rules": [
+    "hard stop on exact parent hash mismatch",
+    "hard stop on unresolved solver binding token or provenance mismatch",
+    "hard stop if any mandatory component gate fails",
+    "hard stop if a measured/public constant, Standard Model identity, or dimensionful scale enters generation",
+    "hard stop if clean replay scientific hashes disagree"
+  ],
+  "expected_invariants": [
+    "M_C is real symmetric and positive semidefinite",
+    "spectrum is one zero uniform mode plus an exactly degenerate positive doublet",
+    "rows and columns of M_C sum to zero",
+    "canonical G is antisymmetric, annihilates uniform mode, and commutes with M_C",
+    "prethermal node populations are positive and sum to one",
+    "stochastic covariance remains exactly zero because no stochastic input is admitted",
+    "dimensionful mass and empirical particle identity remain unassigned"
+  ],
+  "tests": [
+    "reference manufactured C spectral test",
+    "remove parent interaction complement: no microscopic gap",
+    "split the degenerate doublet without parent evidence: O(2) invariance fails",
+    "negate M_C: positivity fails",
+    "inject a nonconserving diagonal term: total-carrier conservation fails",
+    "inject Standard Model labels or a dimensionful scale: source/claim firewall fails",
+    "clean replay and independent spectral reconstruction"
+  ],
+  "gates": [
+    "units and dimensions",
+    "symmetry/constraint closure",
+    "positivity/unitarity or declared alternative",
+    "no Standard Model label without derivation or correspondence theorem",
+    "independent symbolic and numerical checks"
+  ],
+  "falsifiers": [
+    "parent H_B_to_C SHA-256 mismatch",
+    "M_C differs from I-Q_B or L_B/(delta+2)",
+    "M_C is not symmetric positive semidefinite within 1e-10",
+    "declared generator fails G^T=-G, G u=0, or [M_C,G]=0 within 1e-10",
+    "total carrier is not preserved",
+    "any Standard Model name, measured mass, coupling, or dimensionful scale enters generation",
+    "independent spectral reconstruction disagrees above 1e-10"
+  ],
+  "claim_boundary": "Module C may establish only RFC microscopic excitation types, a parent-derived dimensionless interaction/mass-gap operator, exact internal symmetry/conservation structure, deterministic prethermal populations, and a lawful degeneracy/mixing branch family. Dimensionful masses, Standard Model identities, calibrated couplings, metric spacetime, thermal history, and empirical correspondence remain unestablished.",
+  "independent_verifier_design": "Recompute M_C directly from the exact H_B_to_C Q_B and K3 Laplacian; derive its analytic uniform/doublet spectrum and canonical O(2) generator; reconstruct conservation, positivity and prethermal populations without loading primary GATE_RESULTS, CLOSEOUT or solver matrix; load the primary physical object only for final numerical comparison.",
+  "allowed_implementation_only_corrections": [
+    "relocation/path resolution",
+    "runner dependency installation",
+    "serialization/provenance-envelope normalization that does not change scientific values",
+    "logging and manifest bookkeeping"
+  ]
 }
