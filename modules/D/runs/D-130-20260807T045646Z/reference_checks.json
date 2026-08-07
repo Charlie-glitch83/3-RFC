@@ -1,0 +1,20 @@
+{
+  "module": "D",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "integration_success": true,
+    "positive_distributions": true,
+    "conserved_total": true,
+    "entropy_nondecreasing": true,
+    "approaches_equilibrium": true
+  },
+  "metrics": {
+    "max_total_error": 4.440892098500626e-16,
+    "final_state": [
+      0.5000000165657876,
+      0.4999999834342124
+    ]
+  },
+  "note": "Stiff-capable nonequilibrium manufactured exchange system."
+}
