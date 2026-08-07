@@ -35,8 +35,10 @@ jobs:
           assert d['numerical_controls']['primary_max_step']==0.0625
           assert d['numerical_controls']['refinement_matrix']==[0.25,0.125,0.0625,0.03125]
           PY
-          python tools/director.py wolfram-record --run D-130-20260807T045646Z --call D-WL-001 --output modules/D/runs/D-130-20260807T045646Z/wolfram/D-WL-001/output.txt
-          python tools/director.py wolfram-record --run D-130-20260807T045646Z --call D-WL-002 --output modules/D/runs/D-130-20260807T045646Z/wolfram/D-WL-002/output.txt
+          cp modules/D/runs/D-130-20260807T045646Z/wolfram/D-WL-001/output.txt /tmp/D-WL-001-output.txt
+          cp modules/D/runs/D-130-20260807T045646Z/wolfram/D-WL-002/output.txt /tmp/D-WL-002-output.txt
+          python tools/director.py wolfram-record --run D-130-20260807T045646Z --call D-WL-001 --output /tmp/D-WL-001-output.txt
+          python tools/director.py wolfram-record --run D-130-20260807T045646Z --call D-WL-002 --output /tmp/D-WL-002-output.txt
       - name: Run exact D manufactured reference check
         shell: bash
         run: |
