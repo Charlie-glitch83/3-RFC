@@ -1,1 +1,0 @@
-trigger governed D-130 restart
