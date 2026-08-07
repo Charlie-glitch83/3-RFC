@@ -1,0 +1,1 @@
+Temporary trigger only: synchronize stale global/context claim wording to the already-recorded frozen D claim while preserving D as the active hold point and E unauthorized.
