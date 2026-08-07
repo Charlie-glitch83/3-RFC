@@ -1,10 +1,5 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "result": "NOT_APPLICABLE_BLOCKED_BEFORE_PHYSICAL_EXECUTION",
+  "clean_checkout_reconstruction_scope": "source/rate obstruction only",
+  "physical_artifact_hash_replay": false
 }

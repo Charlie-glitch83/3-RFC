@@ -1,0 +1,17 @@
+{
+  "status": "HARD_STOP",
+  "reason": "Unresolved provenance-bound E physical rate/time bindings; materialization and physical solver execution prohibited.",
+  "unresolved_paths": [
+    "model.species",
+    "model.stoichiometry",
+    "model.rate_expressions",
+    "model.parameters",
+    "model.invariants",
+    "initial_state",
+    "t_span",
+    "max_step",
+    "positivity_tolerance",
+    "invariant_tolerance"
+  ],
+  "physical_solver_executed": false
+}

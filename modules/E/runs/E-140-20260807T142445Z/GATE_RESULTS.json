@@ -1,7 +1,32 @@
 {
-  "run_id": "",
+  "schema_version": "1.0",
+  "module": "E",
+  "run_id": "E-140-20260807T142445Z",
   "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "aggregate_scores_cannot_override": true,
+  "component_gates": {
+    "baryon/charge/energy accounting": {
+      "status": "BLOCKED",
+      "reason": "Manufactured symbolic baryon/charge conservation passes, but no source-owned nuclear energy/rate ledger exists for physical execution."
+    },
+    "network convergence": {
+      "status": "NOT_RUN",
+      "reason": "Physical solver binding prohibited by rate-source hard stop."
+    },
+    "rate-source audit": {
+      "status": "FAIL_REQUIRES_ANALYSIS",
+      "score": 0.0,
+      "reason": "No provenance-bound numerical forward/reverse rate or E rate/time normalization found in exact parent or target-blind admitted sources."
+    },
+    "no scalar-channel collapse": {
+      "status": "PASS",
+      "reason": "Historical scalar/triadic Li7 proxy outcomes were quarantined from generation; no scalar proxy promoted."
+    },
+    "withheld reaction and independent implementation checks": {
+      "status": "NOT_RUN",
+      "reason": "Requires a lawfully bound physical reaction network."
+    }
+  },
+  "blocking_gate": "rate-source audit",
+  "physical_execution_occurred": false
 }

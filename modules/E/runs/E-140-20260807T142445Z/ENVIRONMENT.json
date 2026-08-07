@@ -1,13 +1,10 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
-  "random_seeds": [],
-  "hidden_defaults_audited": false
+  "schema_version": "1.0",
+  "run_id": "E-140-20260807T142445Z",
+  "status": "FINAL",
+  "python": "3.12.13",
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_used": false,
+  "network_use_for_science": "NONE",
+  "physical_execution_status": "NOT_RUN_DUE_FROZEN_RATE_SOURCE_OBSTRUCTION"
 }

@@ -1,0 +1,14 @@
+{
+  "call_id": "E-WL-001",
+  "module": "E",
+  "purpose": "Stoichiometric baryon and charge conservation",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-07T14:40:31.379934+00:00",
+  "input_sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
+  "output_sha256": "3645fdde31d50ecdd330e0bfc50e21a3ffba526c212b88b93b0cf1022940fc0c",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/E/runs/E-140-20260807T142445Z/wolfram/E-WL-001/gate.json"
+}

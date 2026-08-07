@@ -1,0 +1,4 @@
+Symbol::undefined2: Warning: Global symbols "S, S, S" are undefined.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"E-WL-001\", \"residual\" -> {{0, 0}, {0, 0}}, \"pass\" -> True, \"leftNullspace\" -> {\"{1, 0, 1}\", \"{-1, 1, 0}\"}|>"

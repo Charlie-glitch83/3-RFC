@@ -1,8 +1,87 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "status": "FINAL_BLOCKED",
+  "generation_mode": "GENERATION_SEALED",
+  "physical_execution_occurred": false,
+  "outputs": [
+    {
+      "path": "SOURCE_REGISTER.json",
+      "sha256": "f62814fd8234eecf041dd85e5d1945e3916266295b3a1964c73549336cdd486e",
+      "bytes": 2620
+    },
+    {
+      "path": "PRE_EXECUTION_LOCK.json",
+      "sha256": "e9ece335ee5b20a044010a72300ed7c3a9825299f84ef843809ece31ec1769b8",
+      "bytes": 3900
+    },
+    {
+      "path": "reference_checks.json",
+      "sha256": "d9438732a6bafac2043fc4f1c7703d0a8a4eb7d6927cd42aff91c9e01bd68914",
+      "bytes": 570
+    },
+    {
+      "path": "solver_copy_attempt.txt",
+      "sha256": "52e631289ce900b34994a5d16722bf2fedabc9e630010c32b709ae0744a98c2e",
+      "bytes": 292
+    },
+    {
+      "path": "BINDING_HARD_STOP.json",
+      "sha256": "5bdb2c2f2649075aa311b79e73bd9cca7da2b3565e4e61fc85dbaa0e8e9ddf00",
+      "bytes": 457
+    },
+    {
+      "path": "GATE_RESULTS.json",
+      "sha256": "e84adb357a730b99812b15cb42e13566778f59d05273102ff8daddce80702499",
+      "bytes": 1240
+    },
+    {
+      "path": "INDEPENDENT_VERIFICATION.md",
+      "sha256": "4ca7b588b93e03454327f3cb403542b9dc601c7a96f9b3570545a7280665e207",
+      "bytes": 1147
+    },
+    {
+      "path": "FAILURES.jsonl",
+      "sha256": "b99c4770940b85b284cd6fd9cac077cb9f98b987dbc7775f2820c9a43b8a8eb7",
+      "bytes": 1010
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "sha256": "982af9e3c5347d533ecd6c17cb6e23364eac12dd97dd084768b875621916ae98",
+      "bytes": 297
+    },
+    {
+      "path": "CHECKPOINT_RECORD.json",
+      "sha256": "1b3294dd07af3f867316ff18462451e6c52746a761f7f232a5385f9380ed03f1",
+      "bytes": 105
+    },
+    {
+      "path": "REPLAY_RECORD.json",
+      "sha256": "1cf71108544ed1a6eedae7ea5acfc7f395477445bde0725989fc3080a94d0092",
+      "bytes": 182
+    },
+    {
+      "path": "CLOSEOUT.md",
+      "sha256": "f90b607ac421faa41cf2786c0f63db988c45a27d037e2fc6c50e993cfca668fe",
+      "bytes": 1127
+    },
+    {
+      "path": "wolfram/E-WL-001/record.json",
+      "sha256": "383c8a3cb9209c3f7af213675c5a8c905bb1cbf0e7cbc5e4b7845dc511efb9db",
+      "bytes": 612
+    },
+    {
+      "path": "wolfram/E-WL-001/gate.json",
+      "sha256": "d4ca06da91cc2f2523cc09a418f5d2d337d8936b7accab3ed14076731a9db2b1",
+      "bytes": 472
+    },
+    {
+      "path": "wolfram/E-WL-002/record.json",
+      "sha256": "145d409193ad18ae7f199d156fd53cf83dc2a2eb2f992d4382b60b74975581be",
+      "bytes": 608
+    },
+    {
+      "path": "wolfram/E-WL-002/gate.json",
+      "sha256": "b4ea827b1ee110003ef39d795cc58f73c256413d214fc9873306090330e25b9b",
+      "bytes": 511
+    }
+  ]
 }

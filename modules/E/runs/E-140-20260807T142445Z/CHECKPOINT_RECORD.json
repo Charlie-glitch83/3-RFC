@@ -1,7 +1,4 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
-  "hash_algorithm": "sha256"
+  "status": "NOT_APPLICABLE_BLOCKED_BEFORE_PHYSICAL_EXECUTION",
+  "run_id": "E-140-20260807T142445Z"
 }

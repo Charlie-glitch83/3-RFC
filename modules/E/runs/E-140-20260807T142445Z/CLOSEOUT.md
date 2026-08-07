@@ -1,28 +1,21 @@
-# Closeout
+# E-140 Closeout — Scientific Blocker Preserved
 
-- Run ID:
-- Work unit:
-- Module:
-- Result:
-- Evidence state reached:
-- Fidelity reached:
-- Frozen artifact hashes:
-- Verified GitHub commit SHA:
+## Result
 
-## Scientific objects produced
-
-## Componentwise gate results
-
-## Failures preserved and corrections made
-
-## Independent reconstruction
-
-## Replay/restart/convergence evidence
+`BLOCKED / FAIL_REQUIRES_ANALYSIS`. No physical primordial reaction network was executed.
 
 ## Strongest supported claim
 
+Module D remains the strongest frozen physical result: a generated dimensionless nonequilibrium thermal/phase history at MINIMAL_SPINE fidelity. E additionally establishes, by frozen source audit plus independent reconstruction, that its physical reaction network is not lawfully bindable from the current exact parent/source set.
+
 ## Strongest unsupported claim
 
-## Remaining gaps
+No source-owned numerical nuclear reaction-rate law, nuclear energy ledger, physical primordial isotope trajectory, isotope covariance, or physical freeze-out state has been derived. Historical/proxy Li7/Be7 target-relative results are not promoted into E.
 
-## Exact next child
+## Earliest missing object
+
+`E_SOURCE_OWNED_NUCLEAR_RATE_LAW`.
+
+## Required repair
+
+Recover or derive an exact target-blind provenance-bound E nuclear rate law (including forward/reverse rates and lawful rate/time normalization) from canonical authority. Then create a new governed E run and replay the complete E matrix.
