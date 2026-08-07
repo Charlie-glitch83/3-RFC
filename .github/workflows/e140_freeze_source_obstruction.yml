@@ -1,0 +1,135 @@
+name: E140 Freeze Source Obstruction
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    if: github.event.pull_request.head.ref == 'ops/readme-exact-startup-20260807c'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install repository locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Freeze exact E140 source obstruction before execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          RUN_ID='E-140-20260807T142445Z'
+          RUN=Path('modules/E/runs')/RUN_ID
+          state=json.loads(Path('STATE.json').read_text())
+          if state.get('active_work_unit')!='E-140' or state.get('current_module')!='E' or state.get('current_run')!=RUN_ID:
+              raise SystemExit('HARD STOP: current E140 run is not the sole authorized run')
+          if state['modules']['E']['evidence_state']!='DESIGN' or state['modules']['E']['fidelity']!='UNSTARTED':
+              raise SystemExit('HARD STOP: E evidence state changed before source obstruction freeze')
+
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+          parent='modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json'
+          dmanifest='modules/D/runs/D-130-20260807T053432Z/GENERATED_OUTPUT_MANIFEST.json'
+          w2='sources/frozen/0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f/Reproducibility Metadata - Final Revised W2 BBN Closeout.md'
+          add='sources/frozen/d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c/RFC_Module_X1_Nucleosynthesis_Theorem_Addendum_and_Metadata.md'
+          recipe='recipes/E/recipe.json'
+          work_order='recipes/E/WORK_ORDER.md'
+          limits='docs/27_BUNDLE_CAPABILITIES_AND_LIMITS.md'
+          wl1='recipes/E/wolfram/E-WL-001.wl'
+          wl2='recipes/E/wolfram/E-WL-002.wl'
+
+          manifest=json.loads(Path(dmanifest).read_text())
+          expected=None
+          for item in manifest['outputs']:
+              if item['path']=='frozen/H_D_to_E.json': expected=item['sha256']
+          actual=sha(parent)
+          if expected!='199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8' or actual!=expected:
+              raise SystemExit(f'HARD STOP: D->E parent hash mismatch expected={expected} actual={actual}')
+
+          source={
+            'schema_version':'1.0',
+            'run_id':RUN_ID,
+            'module':'E',
+            'generation_mode':'GENERATION_SEALED',
+            'public_data_declaration':'NONE',
+            'exact_parents':[{'path':parent,'sha256':actual,'role':'EXACT_PHYSICAL_PARENT_D'}],
+            'admitted_sources':[
+              {'path':w2,'sha256':sha(w2),'role':'HISTORICAL_PROXY_BOUNDARY','generative_permission':False,
+               'reason':'States fullBBNNetworkCompleted=False, reactionRateTablesUsed=False, temperatureTimeIntegrationDone=False and contains target-relative proxy/comparison results.'},
+              {'path':add,'sha256':sha(add),'role':'CANDIDATE_ADDENDUM_PROXY_NEGATIVE_CONTROL','generative_permission':False,
+               'reason':'Internal theorem/proxy nucleosynthesis suite; external physical network validation explicitly pending.'}
+            ],
+            'authority_files':[
+              {'path':recipe,'sha256':sha(recipe)}, {'path':work_order,'sha256':sha(work_order)}, {'path':limits,'sha256':sha(limits)},
+              {'path':wl1,'sha256':sha(wl1)}, {'path':wl2,'sha256':sha(wl2)}
+            ],
+            'imports':[], 'files':[], 'urls':[], 'constants':[],
+            'source_audit_findings':{
+              'physical_reaction_topology':'SYMBOLIC_MANUFACTURED_N_P_D_SKELETON_ONLY',
+              'provenance_bound_numerical_forward_rate':'NOT_FOUND',
+              'provenance_bound_numerical_reverse_rate':'NOT_FOUND',
+              'temperature_time_rate_law':'NOT_FOUND',
+              'primordial_abundances_preloaded':False,
+              'historical_target_conditioned_proxy_allowed_for_generation':False
+            }
+          }
+          (RUN/'SOURCE_REGISTER.json').write_text(json.dumps(source,indent=2)+'\n')
+
+          lock={
+            'schema_version':'1.0','run_id':RUN_ID,'module':'E','status':'FROZEN',
+            'classification':'FROZEN_PREEXECUTION_SCIENTIFIC_OBSTRUCTION',
+            'generation_mode':'GENERATION_SEALED','frozen_before_primary_execution':True,
+            'authority_hashes':[sha(recipe),sha(work_order),sha(limits)],
+            'parent_hashes':[actual],
+            'definition_hashes':[sha(wl1),sha(wl2)],
+            'candidate_classes':['exact-parent derivation','target-blind admitted source','lawful coefficient branch family'],
+            'equations_and_laws':['manufactured symbolic skeleton n+p<->d with rates kf*n*p and kr*d; no numerical kf or kr selected'],
+            'dimensions_units_frames_gauges_clocks':['D parent supplies intrinsic dimensionless tau_D; no E nuclear rate units/normalization are source-owned'],
+            'methods':['source/rate provenance audit before physical solver binding'],
+            'tolerances':['solver template rtol=1e-9','solver template atol=1e-12'],
+            'stopping_rules':['HARD STOP on any unresolved __BIND token','HARD STOP if no exact target-blind rate source exists'],
+            'expected_invariants':['baryon number','charge','positivity'],
+            'tests':['E-WL-001 manufactured conservation check','E-WL-002 manufactured Jacobian/conservation check','Module E reference check'],
+            'gates':['baryon/charge/energy accounting','network convergence','rate-source audit','no scalar-channel collapse','withheld reaction and independent implementation checks'],
+            'falsifiers':['public or remembered abundance target influences generation','historical Li7/Be7 proxy coefficients promoted to physical rates','manufactured n,p,d example promoted as a source-owned physical network','arbitrary numerical kf or kr chosen without exact provenance'],
+            'claim_boundary':'E physical primordial network remains unexecuted unless an exact target-blind source-owned reaction/rate law is recovered or derived.',
+            'independent_verifier_design':'Reconstruct the source-boundary audit independently from H_D_to_E, SOURCE_MANIFEST, admitted W2/addendum boundary statements, E recipe, and exact Wolfram inputs without trusting primary gate conclusions.',
+            'allowed_implementation_only_corrections':['serialization','path handling','runner dependency installation; no scientific source/rate/threshold changes'],
+            'scientific_obstruction':{
+              'earliest_missing_object':'E_SOURCE_OWNED_NUCLEAR_RATE_LAW',
+              'missing':['provenance-bound numerical forward reaction rate','provenance-bound numerical reverse reaction rate','lawful E rate normalization/time law sufficient to bind the physical solver'],
+              'parent_finding':'H_D_to_E supplies D thermal/transport state and explicitly preloads no primordial abundances; it contains no nuclear rate coefficients.',
+              'source_finding':'Admitted W2 metadata explicitly records fullBBNNetworkCompleted=False, reactionRateTablesUsed=False, temperatureTimeIntegrationDone=False; addendum remains theorem/proxy with external network validation pending.',
+              'repo_rule':'Bundle limits forbid predeclaring a unique coefficient when admitted triad and parent do not determine one.',
+              'lawful_resolution':'Recover/derive an exact target-blind source-owned E rate law, or preserve an explicitly lawful branch family only if it supports all required physical gates without arbitrary selection.'
+            }
+          }
+          (RUN/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          PY
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit frozen source obstruction and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_freeze_source_obstruction.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Freeze E140 source-rate obstruction'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
