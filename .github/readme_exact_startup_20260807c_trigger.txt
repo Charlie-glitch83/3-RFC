@@ -9,3 +9,4 @@ trigger D130 serialization retry
 trigger D130 frozen interval retry
 trigger D130 final checks
 trigger D130 controller closeout
+retry D130 controller closeout with locked requirements
