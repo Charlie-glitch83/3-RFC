@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T035820Z",
+  "classification": "D_DIMENSIONLESS_NONEQUILIBRIUM_MINIMAL_SPINE",
+  "law": "dp/ds=-(I-11^T/3)p",
+  "history": [
+    {
+      "s": 0.0,
+      "population": [
+        0.5865734510957316,
+        0.24345592095871127,
+        0.16997062794555687
+      ],
+      "Theta_D": 1.0,
+      "entropy": 0.9580811666868891,
+      "E_d": 0.04944794000554232,
+      "E_RFL_memory": 0.0,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999997
+    },
+    {
+      "s": 0.34657359027997264,
+      "population": [
+        0.512401137871605,
+        0.26978040556773836,
+        0.21781845656065646
+      ],
+      "Theta_D": 0.7071067811865476,
+      "entropy": 1.028043370090653,
+      "E_d": 0.02472397000277116,
+      "E_RFL_memory": 0.02472397000277116,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999998
+    },
+    {
+      "s": 0.5,
+      "population": [
+        0.4869312290254657,
+        0.2788199271124894,
+        0.2342488438620447
+      ],
+      "Theta_D": 0.6065306597126334,
+      "entropy": 1.0464993060163919,
+      "E_d": 0.018190880536317917,
+      "E_RFL_memory": 0.0312570594692244,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999998
+    },
+    {
+      "s": 1.0,
+      "population": [
+        0.42649516633795465,
+        0.3002692810950221,
+        0.27323555256702314
+      ],
+      "Theta_D": 0.36787944117144233,
+      "entropy": 1.0791878640787336,
+      "E_d": 0.006692050966117102,
+      "E_RFL_memory": 0.04275588903942522,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999999
+    }
+  ],
+  "configured_solver_final": [
+    0.4264951662293344,
+    0.3002692811335726,
+    0.2732355526370929
+  ],
+  "analytic_final": [
+    0.42649516633795465,
+    0.3002692810950221,
+    0.27323555256702314
+  ],
+  "configured_solver_final_l2_error": 1.3488613097926308e-10,
+  "minimum_population": 0.16997062794555687,
+  "charge_max_abs_drift": 2.220446049250313e-16,
+  "dimensionless_total_energy_max_abs_drift": 0.0,
+  "entropy_gain": 0.12110669739184443,
+  "events": [
+    {
+      "id": "D_RELAXATION_ONSET",
+      "s": 0.0,
+      "meaning": "nonuniform inherited state begins lawful transport"
+    },
+    {
+      "id": "D_HALF_DISEQUILIBRIUM_POWER",
+      "s": 0.34657359027997264,
+      "meaning": "E_d/E_d(0)=1/2"
+    },
+    {
+      "id": "D_ONE_E_FOLD_AMPLITUDE",
+      "s": 1.0,
+      "meaning": "Theta_D=e^-1"
+    }
+  ],
+  "phase_status": "NO_FINITE_NONTRIVIAL_PHASE_TRANSITION_DERIVED_IN_LINEAR_EXACT_DEGENERATE_MINIMAL_SPINE",
+  "dimensionful_temperature_status": "NOT_DERIVED_NO_ENERGY_SCALE_IN_C_PARENT",
+  "expansion_status": "NOT_DERIVED_NO_GEOMETRY_OR_SCALE_FACTOR_IN_C_PARENT",
+  "convergence": [
+    {
+      "max_step": 0.03125,
+      "success": true,
+      "final_l2_error_vs_analytic": 3.538354038227941e-10,
+      "nfev": 114
+    },
+    {
+      "max_step": 0.015625,
+      "success": true,
+      "final_l2_error_vs_analytic": 1.348861122210199e-10,
+      "nfev": 170
+    },
+    {
+      "max_step": 0.0078125,
+      "success": true,
+      "final_l2_error_vs_analytic": 1.4744128612754214e-10,
+      "nfev": 290
+    }
+  ],
+  "restart": {
+    "checkpoint_s": 0.5,
+    "checkpoint_population": [
+      0.4869312290254657,
+      0.2788199271124894,
+      0.2342488438620447
+    ],
+    "final_l2_error_vs_analytic": 7.432479924430071e-10
+  },
+  "success": true
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_D_to_E",
+  "from_module": "D",
+  "to_module": "E",
+  "run_id": "D-130-20260807T035820Z",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "object_id": "H_C_to_D",
+    "path": "modules/C/frozen/H_C_to_D.json",
+    "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+  },
+  "transport_law": {
+    "raw_clock_equation": "dp/dtau = -M_C p",
+    "intrinsic_clock": "s = g_C tau, where g_C is the C dimensionless doublet gap",
+    "intrinsic_equation": "dp/ds = -(M_C/g_C) p = -(I-11^T/3)p",
+    "analytic_solution": "p(s)=u+exp(-s)(p(0)-u), u=(1,1,1)/3",
+    "projector_equivalence_l2_error": 1.9229626863835638e-16,
+    "generator_matrix": [
+      [
+        -0.6666666666666667,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      [
+        0.3333333333333333,
+        -0.6666666666666667,
+        0.3333333333333333
+      ],
+      [
+        0.3333333333333333,
+        0.3333333333333333,
+        -0.6666666666666667
+      ]
+    ],
+    "spectrum": [
+      0.0,
+      -1.0,
+      -1.0
+    ],
+    "ownership": "C supplies M_C, g_C, conserved carrier and p(0); D only normalizes the collision-count clock and executes redistribution."
+  },
+  "distribution_history": [
+    {
+      "s": 0.0,
+      "population": [
+        0.5865734510957316,
+        0.24345592095871127,
+        0.16997062794555687
+      ],
+      "Theta_D": 1.0,
+      "entropy": 0.9580811666868891,
+      "E_d": 0.04944794000554232,
+      "E_RFL_memory": 0.0,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999997
+    },
+    {
+      "s": 0.34657359027997264,
+      "population": [
+        0.512401137871605,
+        0.26978040556773836,
+        0.21781845656065646
+      ],
+      "Theta_D": 0.7071067811865476,
+      "entropy": 1.028043370090653,
+      "E_d": 0.02472397000277116,
+      "E_RFL_memory": 0.02472397000277116,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999998
+    },
+    {
+      "s": 0.5,
+      "population": [
+        0.4869312290254657,
+        0.2788199271124894,
+        0.2342488438620447
+      ],
+      "Theta_D": 0.6065306597126334,
+      "entropy": 1.0464993060163919,
+      "E_d": 0.018190880536317917,
+      "E_RFL_memory": 0.0312570594692244,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999998
+    },
+    {
+      "s": 1.0,
+      "population": [
+        0.42649516633795465,
+        0.3002692810950221,
+        0.27323555256702314
+      ],
+      "Theta_D": 0.36787944117144233,
+      "entropy": 1.0791878640787336,
+      "E_d": 0.006692050966117102,
+      "E_RFL_memory": 0.04275588903942522,
+      "E_total": 0.04944794000554232,
+      "Q_total": 0.9999999999999999
+    }
+  ],
+  "entropy_gain_over_one_intrinsic_e_fold": 0.12110669739184443,
+  "events": [
+    {
+      "id": "D_RELAXATION_ONSET",
+      "s": 0.0,
+      "meaning": "nonuniform inherited state begins lawful transport"
+    },
+    {
+      "id": "D_HALF_DISEQUILIBRIUM_POWER",
+      "s": 0.34657359027997264,
+      "meaning": "E_d/E_d(0)=1/2"
+    },
+    {
+      "id": "D_ONE_E_FOLD_AMPLITUDE",
+      "s": 1.0,
+      "meaning": "Theta_D=e^-1"
+    }
+  ],
+  "phase_status": "NO_FINITE_NONTRIVIAL_PHASE_TRANSITION_DERIVED_IN_LINEAR_EXACT_DEGENERATE_MINIMAL_SPINE",
+  "dimensionful_temperature_status": "NOT_DERIVED_NO_ENERGY_SCALE_IN_C_PARENT",
+  "physical_time_status": "NOT_DERIVED",
+  "metric_expansion_status": "NOT_DERIVED_NO_GEOMETRY_OR_SCALE_FACTOR_IN_C_PARENT",
+  "charge_conservation_residual": 2.220446049250313e-16,
+  "dimensionless_energy_ledger_residual": 0.0,
+  "uncertainty": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
+    "stochastic_covariance": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "intrinsic_clock_shape_invariant_under_delta_envelope": true,
+    "reason": "normalization by the parent-derived doublet gap removes the inherited decimal-scale variation from the intrinsic relaxation shape; no stochastic variable is admitted"
+  },
+  "restart": {
+    "checkpoint_s": 0.5,
+    "checkpoint_population": [
+      0.4869312290254657,
+      0.2788199271124894,
+      0.2342488438620447
+    ],
+    "final_l2_error_vs_analytic": 7.432479924430071e-10
+  },
+  "independent_verification": {
+    "method": "ANALYTIC_PROJECTOR_SEMIGROUP_RECONSTRUCTION_WITHOUT_PRIMARY_SOLVER_TRAJECTORY",
+    "pass": true,
+    "checks": {
+      "projector_idempotence_error": 1.7554167342883506e-16,
+      "final_vs_primary_analytic_l2_error": 0.0,
+      "population_sum_error": 2.220446049250313e-16,
+      "minimum_population": 0.27323555256702314,
+      "entropy_gain": 0.12110669739184443,
+      "ledger_error": 0.0
+    },
+    "formula": "p(s)=u+e^-s(p0-u)",
+    "claim_boundary_checked": true
+  },
+  "e_readiness": {
+    "distribution_and_intrinsic_clock": "DERIVED",
+    "dimensionful_temperature": "NOT_DERIVED",
+    "dimensionful_reaction_rates": "NOT_DERIVED",
+    "primordial_abundances": "NOT_DERIVED_RESERVED_FOR_E"
+  },
+  "claim_boundary": "D may claim a generated dimensionless RFC nonequilibrium relaxation/entropy history and intrinsic event ordering at MINIMAL_SPINE fidelity. It may not claim dimensionful temperature, physical duration, metric expansion, calibrated collision rates, a finite phase transition, primordial abundances, or empirical correspondence."
+}

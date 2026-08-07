@@ -1,0 +1,14 @@
+{
+  "method": "ANALYTIC_PROJECTOR_SEMIGROUP_RECONSTRUCTION_WITHOUT_PRIMARY_SOLVER_TRAJECTORY",
+  "pass": true,
+  "checks": {
+    "projector_idempotence_error": 1.7554167342883506e-16,
+    "final_vs_primary_analytic_l2_error": 0.0,
+    "population_sum_error": 2.220446049250313e-16,
+    "minimum_population": 0.27323555256702314,
+    "entropy_gain": 0.12110669739184443,
+    "ledger_error": 0.0
+  },
+  "formula": "p(s)=u+e^-s(p0-u)",
+  "claim_boundary_checked": true
+}

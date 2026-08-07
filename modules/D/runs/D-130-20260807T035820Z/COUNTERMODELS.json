@@ -1,0 +1,23 @@
+{
+  "overall": "PASS",
+  "tests": [
+    {
+      "id": "NO_QV_TRANSPORT",
+      "law": "dp/ds=0",
+      "rejected_because": "fails the frozen nonzero-relaxation selection and produces zero entropy growth"
+    },
+    {
+      "id": "NONCONSERVATIVE_SINK",
+      "law": "dp_i/ds=-p_i",
+      "rejected_because": "violates Q_total conservation"
+    },
+    {
+      "id": "ASYMMETRIC_IMPORTED_TARGET_RATE",
+      "rejected_because": "not parent-owned and violates generation-sealed no-target rule"
+    },
+    {
+      "id": "PHYSICAL_TEMPERATURE_IMPORT",
+      "rejected_because": "C parent contains no lawful dimensionful energy scale"
+    }
+  ]
+}

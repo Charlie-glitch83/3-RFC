@@ -1,0 +1,22 @@
+{
+  "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
+  "stochastic_covariance": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "intrinsic_clock_shape_invariant_under_delta_envelope": true,
+  "reason": "normalization by the parent-derived doublet gap removes the inherited decimal-scale variation from the intrinsic relaxation shape; no stochastic variable is admitted"
+}

@@ -1,10 +1,9 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "result": "PASS",
+  "clean_checkout": true,
+  "artifact_hashes_match": true,
+  "replay_method": "TEMPORARY_CLEAN_EXECUTION_DIRECTORY_FROM_FROZEN_PARENT_AND_SPEC",
+  "final_l2_error_vs_frozen_analytic": 1.348861122210199e-10,
+  "primary_analytic_sha256": "4a0706bd28a4b8335f084085206b4e8fd4575c5d563a9577dd0b8ea624727790",
+  "replay_analytic_sha256": "4a0706bd28a4b8335f084085206b4e8fd4575c5d563a9577dd0b8ea624727790"
 }

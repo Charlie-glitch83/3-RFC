@@ -1,13 +1,17 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
-  "random_seeds": [],
-  "hidden_defaults_audited": false
+  "status": "FINAL",
+  "hidden_defaults_audited": true,
+  "python": "3.13.14 (main, Jun 11 2026, 03:02:07) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "numpy": "2.5.1",
+  "generation_mode": "GENERATION_SEALED",
+  "network_calls_used_for_science": false,
+  "public_data_used": false,
+  "solver_defaults": {
+    "method": "BDF",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "max_step": 0.015625
+  },
+  "audit_note": "All scientific coefficients and initial conditions came from the exact frozen C parent or the frozen D derivation. Numerical tolerances are implementation controls, not fitted science."
 }

@@ -18,119 +18,140 @@
     {
       "path": "model.state_names",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "p0",
+        "p1",
+        "p2"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "dimensionless",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.parameters",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {},
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "1",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.rhs_expressions",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "(p0+p1+p2)/3-p0",
+        "(p0+p1+p2)/3-p1",
+        "(p0+p1+p2)/3-p2"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "dimensionless",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.initial_state",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.5865734510957316,
+        0.24345592095871127,
+        0.16997062794555687
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "1",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.t_span",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.0,
+        1.0
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "1",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.max_step",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 0.015625,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "1",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.linear_invariants",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "Q_total": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "dimensionless",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.invariant_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-09,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "1",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     },
     {
       "path": "model.positivity_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-12,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
       "module": "D",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "D_NORMALIZED_PROJECTOR_TRANSPORT",
+      "units": "1",
+      "dimensions": "dimensionless",
+      "justification": "Frozen from exact C parent through FROZEN_DERIVATION_SPEC.json before execution."
     }
   ]
 }

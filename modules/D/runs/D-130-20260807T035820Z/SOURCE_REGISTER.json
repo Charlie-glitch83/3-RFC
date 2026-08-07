@@ -1,10 +1,19 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T035820Z",
+  "module": "D",
+  "public_data_declaration": "NONE",
+  "generation_mode": "GENERATION_SEALED",
+  "sources": [
+    {
+      "role": "EXACT_FROZEN_PARENT",
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+    },
+    {
+      "role": "INTERNAL_FROZEN_DERIVATION",
+      "path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8"
+    }
+  ]
 }

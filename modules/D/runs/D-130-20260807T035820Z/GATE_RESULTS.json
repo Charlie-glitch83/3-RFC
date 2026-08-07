@@ -1,7 +1,15 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "module": "D",
+  "overall": "PASS",
+  "component_scores": {
+    "positive distributions": 1.0,
+    "energy/charge conservation": 1.0,
+    "event ordering": 1.0,
+    "stiff-solver convergence": 1.0,
+    "restart and independent reconstruction": 1.0
+  },
+  "minimum_component_score": 1.0,
+  "threshold": 0.95,
+  "aggregate_scores_cannot_override": true,
+  "frozen_science_changed_after_lock": false
 }

@@ -1,8 +1,71 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "status": "FINAL",
+  "finalized_utc": "2026-08-07T04:03:27.391641+00:00",
+  "outputs": [
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "8705cb0e6253d5c7ee44af58a1a9c96cfdf01dcc238431f437e32ade78efe1a8",
+      "bytes": 4046
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/SOURCE_REGISTER.json",
+      "sha256": "eb2da3ef8391ea8d8401e545b4c4ac8aaa9e38249d038eb9583ed22e5b2c3a28",
+      "bytes": 587
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/PRE_EXECUTION_LOCK.json",
+      "sha256": "863f2d662c0712ce041772890c1165e6356de6bbc7746cc4e05b206ba4c3e396",
+      "bytes": 1645
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/solver_outputs/transport/result.json",
+      "sha256": "d82f16055b1299df9d9b6a9ad494c0146e34bf790daafa0357a29c6d60178877",
+      "bytes": 9511
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/primary/D_THERMAL_HISTORY.json",
+      "sha256": "9fecf9de494e6fbd043851f1d58a783cd066b2f505352632add884e880afb43e",
+      "bytes": 3421
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/COUNTERMODELS.json",
+      "sha256": "5a141af225790eec5504730e6eccc5357dc36da2eef544a560a22e6533fdffb9",
+      "bytes": 641
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/UNCERTAINTY_COVARIANCE.json",
+      "sha256": "0485962bb9b0103441364e5a7690597dfbb8a8e11dc12c93da09bb5965107663",
+      "bytes": 475
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/CHECKPOINT_RECORD.json",
+      "sha256": "9d696acca4f3b8b445f406de752aaec755a8c82c5fc6cadba83a8f64f14a7fc3",
+      "bytes": 183
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "c53a0bf62b9132c3e4140917c76caef59b1f12cdbab25d68e8e4ec4fa216010d",
+      "bytes": 468
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "5b869305c56950b2df82272524f96e0e11e663dcd31f08a568aaac53e69966bf",
+      "bytes": 713
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/GATE_RESULTS.json",
+      "sha256": "79f9ce14a820bdf9b6ef415359996b4efc501c3b6020144b751df9be3deb8382",
+      "bytes": 403
+    },
+    {
+      "path": "modules/D/runs/D-130-20260807T035820Z/REPLAY_RECORD.json",
+      "sha256": "3615d3739a8e14f2b477293ebf4c7ad23d6a9c7264ac5f6a1c59bec94c3e9c42",
+      "bytes": 423
+    },
+    {
+      "path": "modules/D/frozen/H_D_to_E.json",
+      "sha256": "2df9e5dde9416f61b123d53203badf6e707832e18c9b9ce0c53b880e5baff495",
+      "bytes": 5531
+    }
+  ]
 }
