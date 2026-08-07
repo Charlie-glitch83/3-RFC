@@ -1,0 +1,41 @@
+name: C120 Governed Startup
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  start-c120:
+    if: github.event.pull_request.head.ref == 'agent/c120-startup-trigger'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout execution branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Run repository startup exactly
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash bootstrap.sh
+          bash tools/start_work.sh
+      - name: Commit generated governed workspace
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git status --short
+          if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo 'HARD STOP: startup produced no governed workspace changes'
+            exit 1
+          fi
+          git add -A
+          git commit -m 'Prepare C-120 governed workspace'
+          git push origin HEAD:agent/frontier-050-execution
+          git rev-parse HEAD
