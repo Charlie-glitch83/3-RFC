@@ -1,0 +1,50 @@
+name: One-use D130 step2 hash inventory
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    if: github.event.pull_request.head.ref == 'ops/readme-exact-startup-20260807b'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Print fresh D run tree and exact hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN=modules/D/runs/D-130-20260807T053432Z
+          echo '=== RUN TREE ==='
+          find "$RUN" -maxdepth 4 -type f -print | sort
+          echo '=== REQUIRED HASHES ==='
+          for f in \
+            README.md \
+            STATE.json \
+            WORK_QUEUE.json \
+            work_packets/ACTIVE_WORK_PACKET.md \
+            recipes/D/WORK_ORDER.md \
+            recipes/D/recipe.json \
+            recipes/D/gates.json \
+            modules/D/spec.json \
+            modules/C/frozen/H_C_to_D.json \
+            modules/C/frozen/H_C_to_D_MANIFEST.json \
+            configured_runs/templates/D_transport.template.json \
+            configured_runs/binding_sheets/D_transport.bindings.json \
+            rfc_engine/solvers/transport.py \
+            tools/materialize_solver_config.py \
+            tools/run_configured_solver.py \
+            tools/rfc.py \
+            tools/director.py; do
+            test -f "$f"
+            sha256sum "$f"
+          done
+          echo '=== RUN FILE HASHES ==='
+          find "$RUN" -maxdepth 4 -type f -print0 | sort -z | xargs -0 sha256sum
