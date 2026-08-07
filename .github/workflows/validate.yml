@@ -9,7 +9,6 @@ permissions:
 
 jobs:
   validate:
-    if: github.event_name != 'push' || github.event.head_commit.message != 'Trigger governed A-100 closeout repair'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,104 +21,64 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - run: python tools/rfc.py firewall-scan
 
-  repair-a100-closeout:
-    if: github.event_name == 'push' && github.event.head_commit.message == 'Trigger governed A-100 closeout repair'
+  reconcile-a100-queue:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'agent/a100-queue-reconcile-v2'
     runs-on: ubuntu-latest
     env:
       BRANCH: agent/frontier-050-execution
-      PACKET_SHA256: e8aa474142b947011e95c63c0818812c26db72af0331520dfe580e3d099e039d
-      RUN_ID: A-100-20260806T173458Z
+      EVIDENCE_COMMIT: b6280513dc47339ddf024be6275817d3f38a9d39
+      HANDOFF_SHA256: 728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: agent/frontier-050-execution
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Apply and normalize complete governed A-100 closeout packet
+      - name: Reconcile and verify governed queue
         shell: bash
         run: |
           set -euo pipefail
-          base64 -d .a100_closeout_repair/payload.b64 > /tmp/a100-closeout-repair.tar.xz
-          echo "$PACKET_SHA256  /tmp/a100-closeout-repair.tar.xz" | sha256sum -c -
-          tar -xJf /tmp/a100-closeout-repair.tar.xz -C .
+          git cat-file -e "$EVIDENCE_COMMIT^{commit}"
+          test "$(sha256sum modules/A/frozen/H_A_to_B.json | awk '{print $1}')" = "$HANDOFF_SHA256"
           python - <<'PY'
-          import json, os
-          from datetime import datetime, timezone
+          import json
           from pathlib import Path
-          from rfc_engine.provenance import tree_manifest
-          run_id = os.environ['RUN_ID']
-          run_path = Path('modules/A/runs') / run_id
-          digest = tree_manifest(run_path)['sha256']
-          idx_path = Path('memory/RUN_INDEX.json')
-          idx = json.loads(idx_path.read_text())
-          rec = next(x for x in idx['runs'] if x['run_id'] == run_id)
-          rec['tree_sha256'] = digest
-          rec['status'] = 'PASS'
-          rec['closeout'] = str(run_path / 'CLOSEOUT.md')
-          idx_path.write_text(json.dumps(idx, indent=2) + '\n')
-          reg_path = Path('memory/ARTIFACT_REGISTRY.json')
-          reg = json.loads(reg_path.read_text())
-          artifact = next(x for x in reg['artifacts'] if x.get('kind') == 'RUN_BUNDLE' and x.get('run_id') == run_id)
-          artifact['sha256'] = digest
-          reg_path.write_text(json.dumps(reg, indent=2) + '\n')
-          state = json.load(open('STATE.json'))
-          queue = json.load(open('WORK_QUEUE.json'))['items']
-          active = [x for x in queue if x['status'] == 'ACTIVE']
-          assert state['active_work_unit'] == 'B-110'
-          assert state['current_module'] == 'B'
+          state=json.loads(Path('STATE.json').read_text())
+          assert state['active_work_unit']=='B-110'
+          assert state['current_module']=='B'
           assert state['current_run'] is None
-          assert state['modules']['A']['evidence_state'] == 'FROZEN'
-          assert state['modules']['A']['fidelity'] == 'PRODUCTION'
-          assert len(active) == 1 and active[0]['id'] == 'B-110'
-          closeout = (run_path / 'CLOSEOUT.md').read_text()
-          assert 'PENDING_EVIDENCE_COMMIT' not in closeout
-          assert 'b6280513dc47339ddf024be6275817d3f38a9d39' in closeout
+          assert state['modules']['A']['evidence_state']=='FROZEN'
+          assert state['modules']['A']['fidelity']=='PRODUCTION'
+          assert 'b6280513dc47339ddf024be6275817d3f38a9d39' in Path('modules/A/runs/A-100-20260806T173458Z/CLOSEOUT.md').read_text()
+          p=Path('WORK_QUEUE.json'); q=json.loads(p.read_text())
+          for item in q['items']:
+              if item['id']=='A-100': item['status']='PASS'
+              elif item['id']=='B-110': item['status']='ACTIVE'
+              elif item['status']=='ACTIVE': raise AssertionError(item['id'])
+          assert [x['id'] for x in q['items'] if x['status']=='ACTIVE']==['B-110']
+          assert next(x for x in q['items'] if x['id']=='FRONTIER-050')['status']=='PASS'
+          p.write_text(json.dumps(q,indent=2)+'\n')
           PY
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
-      - name: Remove temporary recovery machinery and publish exact repair
+      - name: Commit queue only, rebase, push, and verify
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf .a100_closeout_repair
-          rm -f .github/a100-closeout-repair-trigger.txt .github/a100-finalize-trigger.txt .github/a100-finalize-v2-trigger.txt .github/a100-finalize-v3-trigger.txt .github/a100-finalize-v4-trigger.txt .github/a100-finalize-v5-trigger.txt
-          rm -f .github/workflows/finalize-a100*.yml .github/workflows/reconcile-a100-b110-once.yml
-          cat > .github/workflows/validate.yml <<'YAML'
-          name: Validate 3-RFC Repository
-
-          on:
-            push:
-            pull_request:
-
-          jobs:
-            validate:
-              runs-on: ubuntu-latest
-              steps:
-                - uses: actions/checkout@v4
-                - uses: actions/setup-python@v5
-                  with:
-                    python-version: '3.11'
-                    cache: pip
-                - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-                - run: python tools/rfc.py doctor
-                - run: python -m unittest discover -s tests -v
-                - run: python tools/rfc.py firewall-scan
-          YAML
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'Repair and verify complete Module A closeout state'
+          git add WORK_QUEUE.json
+          git commit -m 'Reconcile A-100 queue and authorize B-110'
           git fetch origin "$BRANCH"
           git rebase "origin/$BRANCH"
           FINAL_SHA=$(git rev-parse HEAD)
           git push origin HEAD:"$BRANCH"
           REMOTE_SHA=$(git ls-remote origin "refs/heads/$BRANCH" | awk '{print $1}')
           test "$REMOTE_SHA" = "$FINAL_SHA"
-          git diff-tree --no-commit-id --name-only -r "$FINAL_SHA" | tee /tmp/a100-repair-files.txt
-          test -s /tmp/a100-repair-files.txt
-          echo "Verified closeout repair commit: $FINAL_SHA"
+          echo "Verified queue reconciliation commit: $FINAL_SHA"
