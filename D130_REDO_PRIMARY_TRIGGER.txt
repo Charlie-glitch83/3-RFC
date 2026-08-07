@@ -1,2 +1,3 @@
 Temporary trigger only: execute the frozen fresh D-130 physical thermal history. Do not merge.
 Retry after repository-byte implementation hashes were frozen; no scientific change and no prior primary execution.
+Full-matrix retry after run 31224389719: BDF passed, physical materializer stopped only on repo import path. Runner now exposes repo root on PYTHONPATH; frozen science and materializer bytes unchanged.
