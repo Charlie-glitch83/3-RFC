@@ -1,15 +1,15 @@
 name: Execute D-130 frozen diagnostic once
 
 on:
-  push:
+  pull_request:
     branches: [agent/frontier-050-execution]
-    paths: ['.github/d130-execute-trigger.txt']
 
 permissions:
   contents: write
 
 jobs:
   execute:
+    if: github.event.pull_request.head.ref == 'ops/d130-execute-trigger'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -135,14 +135,12 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import hashlib,json
-          from datetime import datetime,timezone
+          import json
           from pathlib import Path
           run=Path('modules/D/runs/D-130-20260807T044911Z')
           primary=json.loads((run/'primary/PRIMARY_DIAGNOSTICS.json').read_text())
           indep=json.loads((run/'independent/INDEPENDENT_RECONSTRUCTION.json').read_text())
           replay=json.loads((run/'REPLAY_RECORD.json').read_text())
-          ref=json.loads((run/'reference_checks.json').read_text())
           solver=json.loads((run/'solver_outputs/transport/result.json').read_text())
           phase=json.loads((run/'primary/PHASE_EVENT_LEDGER.json').read_text())
           gates={
