@@ -1,1 +1,2 @@
 Temporary trigger only: execute the frozen fresh D-130 physical thermal history. Do not merge.
+Retry after repository-byte implementation hashes were frozen; no scientific change and no prior primary execution.
