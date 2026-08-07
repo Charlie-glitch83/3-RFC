@@ -7,3 +7,4 @@ trigger D130 steps 5-6
 trigger D130 finish
 trigger D130 serialization retry
 trigger D130 frozen interval retry
+trigger D130 final checks
