@@ -13,6 +13,12 @@ def dump(p,obj):
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def entry(p):
  p=Path(p); return {'path':str(p.relative_to(ROOT)),'sha256':sha(p),'bytes':p.stat().st_size}
+def load_failures():
+ rows=[]; p=RUN/'FAILURES.jsonl'
+ if p.exists():
+  for line in p.read_text(encoding='utf-8').splitlines():
+   if line.strip(): rows.append(json.loads(line))
+ return rows
 
 if sha(ROOT/'modules/B/frozen/H_B_to_C.json')!=PARENT_SHA: raise SystemExit('HARD STOP: exact parent mismatch')
 if sha(RUN/'FROZEN_DERIVATION_SPEC.json')!=DERIV_SHA: raise SystemExit('HARD STOP: frozen derivation mismatch')
@@ -49,11 +55,3 @@ for p in sorted(RUN.rglob('*')):
 for p in [module_frozen,ROOT/'modules/C/frozen/H_C_to_D_MANIFEST.json']: paths.append(entry(p))
 dump(RUN/'GENERATED_OUTPUT_MANIFEST.json',{'run_id':RUN_ID,'status':'FINAL','finalized_utc':now(),'outputs':paths,'hash_algorithm':'sha256','manifest_self_excluded':True})
 print(json.dumps({'run_id':RUN_ID,'handoff_sha256':h,'manifest_outputs':len(paths),'ready_for_controller_close':True},indent=2))
-
-def load_failures():
- rows=[]
- p=RUN/'FAILURES.jsonl'
- if p.exists():
-  for line in p.read_text(encoding='utf-8').splitlines():
-   if line.strip(): rows.append(json.loads(line))
- return rows
