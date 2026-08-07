@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "run_id": "D-130-20260807T220342Z",
-  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "status": "FROZEN_BEFORE_FULL_MATRIX_RERUN_AFTER_IMPLEMENTATION_ONLY_CORRECTION",
   "frozen_science_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
   "implementations": [
     {
       "path": "modules/D/runs/D-130-20260807T220342Z/execute_d130_physical.py",
-      "sha256": "39dfe2b38251036e050ece9ad820589b182b4a813c6dc18ad429a0f7a7b7e959",
+      "sha256": "ed72860ee2105de8ab7a511763b707f9a940074206950c8e37034458bfa5781b",
       "role": "PRIMARY_PHYSICAL_HISTORY_MATERIALIZER"
     },
     {
@@ -17,5 +17,13 @@
   ],
   "allowed_change_scope": "Implementation-only corrections may repair serialization, path handling, dependency/setup, output formatting, or execution plumbing. They may not change the frozen parent, law, coefficients, event definitions/order, interval, tolerances, gates, falsifiers, temperature classification, or claim boundary.",
   "primary_execution_occurred_at_lock": false,
-  "correction_basis": "GitHub Actions runs 31224209866 and 31224303383 both stopped before Wolfram/reference/primary execution. The second runner compiled the exact committed scripts and reported these repository-byte SHA-256 values; only the lock hashes are corrected."
+  "correction_basis": "GitHub Actions runs 31224209866 and 31224303383 both stopped before Wolfram/reference/primary execution. The second runner compiled the exact committed scripts and reported these repository-byte SHA-256 values; only the lock hashes are corrected.",
+  "postprimary_correction": {
+    "failure_run": 31224620497,
+    "old_sha256": "39dfe2b38251036e050ece9ad820589b182b4a813c6dc18ad429a0f7a7b7e959",
+    "new_sha256": "ed72860ee2105de8ab7a511763b707f9a940074206950c8e37034458bfa5781b",
+    "scope": "One-line gate-summary iteration fix only; skip top-level metadata strings when requiring primary gate pass flags.",
+    "scientific_change": false,
+    "required_rerun": "FULL_FROZEN_MATRIX"
+  }
 }

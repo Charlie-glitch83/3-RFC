@@ -427,7 +427,7 @@ def main() -> int:
         'outputs': manifest_rows,
     })
 
-    if not all(v['pass'] for k, v in primary_gates.items() if k != 'independent_reconstruction'):
+    if not all(v['pass'] for k, v in primary_gates.items() if isinstance(v, dict) and k != 'independent_reconstruction'):
         raise SystemExit('FROZEN D PRIMARY GATES FAILED')
     print(json.dumps({
         'run_id': run.name,
