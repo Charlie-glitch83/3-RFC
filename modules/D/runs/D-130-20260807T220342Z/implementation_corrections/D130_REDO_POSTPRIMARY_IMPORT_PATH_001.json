@@ -1,0 +1,21 @@
+{
+  "failure_id": "D130_REDO_POSTPRIMARY_IMPORT_PATH_001",
+  "classification": "IMPLEMENTATION_ONLY_POSTPRIMARY",
+  "actions_run": 31224389719,
+  "failure": "The exact frozen authority checks, both repository Wolfram gates, manufactured reference check, provenance-bound config materialization, configured BDF transport solve, local pipeline, tests, and director doctor all passed. The separate physical-history materializer then stopped at process startup with ModuleNotFoundError: No module named 'rfc_engine' because Python was invoked on a script path inside the run directory, which changed sys.path[0] away from the repository root.",
+  "successful_evidence_before_stop": {
+    "wolfram_D_WL_001": "PASS_WITH_MANUAL_INTERPRETATION",
+    "wolfram_D_WL_002": "PASS_WITH_MANUAL_INTERPRETATION",
+    "manufactured_reference": "PASS",
+    "configured_transport": "PASS",
+    "configured_transport_config_sha256": "f457a60713ea494bde04ec5788d85473559a15d3c20dd8ae2ad765bb7c88c107",
+    "configured_transport_result_sha256": "1a0d0163b61843ed8378bb9ef0e3c0ef16cd6efe0f08a36490b1c75666157d5a",
+    "module_local_pipeline": "PASS"
+  },
+  "resolution": "Runner-only path correction: invoke the already hash-locked materializer with the repository root on PYTHONPATH. Do not change the frozen scientific derivation, implementation script bytes, parent, coefficients, event definitions/order, interval, tolerances, gates, falsifiers, temperature classification, or claim boundary. Rerun the entire frozen matrix from authority verification through independent reconstruction; do not reuse the successful BDF output from this failed attempt as evidence.",
+  "scientific_change": false,
+  "frozen_implementation_bytes_changed": false,
+  "primary_BDF_execution_occurred": true,
+  "physical_history_materialization_occurred": false,
+  "required_replay_scope": "FULL_FROZEN_MATRIX"
+}
