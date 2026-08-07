@@ -1,13 +1,49 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
+  "run_id": "D-130-20260807T220342Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "hardware": {
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "software": [
+    {
+      "package": "numpy",
+      "version": "2.3.5"
+    },
+    {
+      "package": "scipy",
+      "version": "1.17.0"
+    },
+    {
+      "package": "sympy",
+      "version": "1.14.0"
+    },
+    {
+      "package": "networkx",
+      "version": "3.6.1"
+    },
+    {
+      "package": "jsonschema",
+      "version": "4.26.0"
+    }
+  ],
+  "python": "3.12.13 (main, Jun 16 2026, 22:05:08) [GCC 13.3.0]",
+  "imports": [
+    "hashlib",
+    "json",
+    "math",
+    "pathlib",
+    "numpy",
+    "scipy"
+  ],
+  "commands": [
+    "repository work-order commands only; exact execution commands captured during execution phase"
+  ],
+  "network_policy": "DISABLED_FOR_SCIENTIFIC_GENERATION_AFTER_DEPENDENCY_SETUP",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true,
+  "notes": [
+    "No stochastic variable admitted. No public thermal, laboratory, SI, Kelvin, MeV, Standard Model, or historical D output enters generation."
+  ]
 }

@@ -1,10 +1,108 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T220342Z",
+  "module": "D",
+  "generation_mode": "GENERATION_SEALED",
+  "public_data_declaration": "NONE",
+  "exact_parents": [
+    {
+      "object_id": "H_C_to_D",
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+      "role": "SOLE_DIRECT_PHYSICAL_PARENT"
+    }
+  ],
+  "inherited_authorities": [
+    {
+      "path": "modules/B/frozen/H_B_to_C.json",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+      "role": "PHYSICAL_CLOCK_ORIGIN_AND_PREGEOMETRY_ANCESTRY"
+    },
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "role": "TRIAD_KERNEL_AND_RELATIONAL_ANCESTRY"
+    }
+  ],
+  "module_authorities": [
+    {
+      "path": "recipes/D/recipe.json",
+      "sha256": "1ad9720aa394d62df35bf6161414522f7a5563e8a8f94f5c8cd0c5e0b466cb16"
+    },
+    {
+      "path": "recipes/D/WORK_ORDER.md",
+      "sha256": "4588a02fc5baff38bc83b5390161cf44f1cdd98a1acd137860d9ec36efccd365"
+    },
+    {
+      "path": "recipes/D/MODEL_PROMPT.md",
+      "sha256": "593c38094b4f9a7b3c23df6d39cd4bf864748a209fb38be700a82d4694a105c7"
+    },
+    {
+      "path": "modules/D/spec.json",
+      "sha256": "895114ac15efd3dfc5859ceba6e855012f8950217626f339346a245a9f49820c"
+    },
+    {
+      "path": "configured_runs/BINDING_PROTOCOL.md",
+      "sha256": "a4610c3b1c058b3ef1967c7e3e442c2a40955641fad32e9b95a998b55ffde1ae"
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d"
+    },
+    {
+      "path": "docs/10_EXECUTION_PROTOCOL.md",
+      "sha256": "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d"
+    },
+    {
+      "path": "docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md",
+      "sha256": "ce98bd016b75d6750d09f7485b54b4879d29c1a73bc8b1c9a369af50a8b5f083"
+    },
+    {
+      "path": "recipes/D/wolfram/D-WL-001.wl",
+      "sha256": "2b79fea2537665d78d41026231229eb2bf132725f8e42b732ce1a491ea2818e3"
+    },
+    {
+      "path": "recipes/D/wolfram/D-WL-002.wl",
+      "sha256": "65647a0c42124403f9898a76cb82f929f3f941af358c04476f514cb77af2c099"
+    },
+    {
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+    },
+    {
+      "path": "modules/B/frozen/H_B_to_C.json",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"
+    },
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+    }
+  ],
+  "internal_derivations": [
+    {
+      "path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+      "object_id": "D130_FROZEN_DERIVATION_SPEC"
+    }
+  ],
+  "imports": [
+    "hashlib",
+    "json",
+    "math",
+    "pathlib",
+    "numpy",
+    "scipy"
+  ],
+  "files": [
+    "modules/C/frozen/H_C_to_D.json",
+    "modules/B/frozen/H_B_to_C.json",
+    "modules/A/frozen/H_A_to_B.json",
+    "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json"
+  ],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "historical_failures_used_for_generation": false,
+  "historical_D_outputs_used_for_generation": false,
+  "public_data_used": false,
+  "laboratory_or_SI_anchor_used": false
 }

@@ -1,0 +1,11 @@
+{
+  "run_id": "D-130-20260807T220342Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "parent_sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+  "derivation_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+  "source_register_sha256": "03ad53b8f93e8243ccbcb2a8c6a3f9431e256059665a11e8523a051ea38cb8bc",
+  "pre_execution_lock_sha256": "72bbc9426b7144b51653011f457efe84d1391ee9f7f4d873597309c418f6c91a",
+  "environment_sha256": "75e99b86a6bf7b828c0d3c12300d052c9551c9eaf03e7cc9db7a8a202f97727b",
+  "falsifier_registry_sha256": "a05904716d2cfc1ea862c990e35d253744cbcd93ff35c61334b41f0d73ff73bf",
+  "binding_sheet_sha256": "2c0fe6fa356791329111607beb16d7fbb01d9068ab8c4c67be450c70cf2e6207"
+}

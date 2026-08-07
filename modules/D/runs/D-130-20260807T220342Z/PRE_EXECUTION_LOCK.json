@@ -1,21 +1,126 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T220342Z",
+  "status": "FROZEN",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    "1ad9720aa394d62df35bf6161414522f7a5563e8a8f94f5c8cd0c5e0b466cb16",
+    "4588a02fc5baff38bc83b5390161cf44f1cdd98a1acd137860d9ec36efccd365",
+    "593c38094b4f9a7b3c23df6d39cd4bf864748a209fb38be700a82d4694a105c7",
+    "895114ac15efd3dfc5859ceba6e855012f8950217626f339346a245a9f49820c",
+    "a4610c3b1c058b3ef1967c7e3e442c2a40955641fad32e9b95a998b55ffde1ae",
+    "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+    "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d",
+    "ce98bd016b75d6750d09f7485b54b4879d29c1a73bc8b1c9a369af50a8b5f083",
+    "2b79fea2537665d78d41026231229eb2bf132725f8e42b732ce1a491ea2818e3",
+    "65647a0c42124403f9898a76cb82f929f3f941af358c04476f514cb77af2c099",
+    "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+    "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+    "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+  ],
+  "parent_hashes": [
+    "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+  ],
+  "definition_hashes": [
+    "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+    "2b79fea2537665d78d41026231229eb2bf132725f8e42b732ce1a491ea2818e3",
+    "65647a0c42124403f9898a76cb82f929f3f941af358c04476f514cb77af2c099"
+  ],
+  "candidate_classes": [
+    "unique complete-support conservative K3 parent generator",
+    "O(2)-invariant intrinsic spectral-temperature correspondence",
+    "three exact source-derived phase/event witnesses",
+    "parent decimal-envelope replay family",
+    "semantic countermodels and edge-withheld ablation"
+  ],
+  "equations_and_laws": [
+    "dp/dtau_D=-M_C p",
+    "a=1/(delta+2)",
+    "g_C=3a",
+    "U_D=p^T M_C p",
+    "Q_RFL=U_D(0)-U_D",
+    "S_D=-sum p_i log p_i",
+    "sigma_D=a sum_(i<j)(p_i-p_j)(log p_i-log p_j)>=0",
+    "V_eff=exp(S_D)",
+    "Theta_D=g_C/log(2 q0/qexc) [diagnostic correspondence only]"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "dimensionless carrier fractions",
+    "parent-gap-scaled dimensionless constitutive energy",
+    "tau_D intrinsic post-event transport clock",
+    "B/C finite relational pregeometry frame",
+    "no metric/FRW gauge",
+    "no SI/Kelvin/MeV calibration"
+  ],
+  "methods": [
+    "BDF primary transport",
+    "closed-form spectral reconstruction",
+    "DOP853 independent cross-check"
+  ],
+  "tolerances": [
+    "rtol=1e-9",
+    "atol=1e-12",
+    "positivity=1e-12",
+    "linear invariant=1e-9",
+    "energy ledger=1e-9",
+    "entropy production=-1e-10 floor",
+    "convergence/restart/independent=1e-8"
+  ],
+  "stopping_rules": [
+    "execute exact t_span [0,1/a]",
+    "hard stop on negative distribution, conservation drift, source/hash mismatch, forbidden anchor, or unordered events"
+  ],
+  "expected_invariants": [
+    "sum_i p_i=1",
+    "Q_total=sum_i p_i=1",
+    "U_D+Q_RFL=U_D(0)",
+    "S_D nondecreasing",
+    "V_eff nondecreasing"
+  ],
+  "tests": [
+    "D-WL-001",
+    "D-WL-002",
+    "manufactured reference check",
+    "parent-driven BDF history",
+    "dyadic max-step convergence",
+    "semantic countermodels",
+    "edge-withheld ablation",
+    "decimal-envelope replay",
+    "midpoint restart",
+    "analytic reconstruction",
+    "DOP853 reconstruction",
+    "clean replay"
+  ],
+  "gates": [
+    "positive distributions",
+    "energy/charge conservation",
+    "event ordering",
+    "stiff-solver convergence",
+    "restart and independent reconstruction"
+  ],
+  "falsifiers": [
+    "H_C_to_D SHA-256 mismatch",
+    "M_C is not symmetric or has nonzero row sum above 1e-12",
+    "g_C differs from 3a above 1e-12",
+    "initial parent distribution is nonpositive or not normalized above 1e-12",
+    "any public/remembered thermal target or SI/laboratory anchor enters generation",
+    "any primary abundance/distribution falls below -1e-12",
+    "total carrier/Q_total drift exceeds 1e-9",
+    "U_D+Q_RFL conservation drift exceeds 1e-9",
+    "entropy production falls below -1e-10",
+    "phase events are not strictly ordered as frozen",
+    "finest two BDF max-step results differ above 1e-8 L_inf",
+    "midpoint restart differs above 1e-8 L_inf",
+    "analytic independent reconstruction differs above 1e-8 L_inf",
+    "withholding an inherited edge fails to materially change the state above 1e-8"
+  ],
+  "claim_boundary": "Module D physically instantiates and numerically executes the RFC MINIMAL_SPINE nonequilibrium thermal/phase trajectory on the exact C three-carrier relational state: parent-derived conservative collision/transport, positive distribution history, parent-gap-scaled constitutive-energy transfer into RFL memory, nonnegative entropy production, nonmetric state-space expansion, intrinsic spectral-temperature history, exact phase-event chronology, inherited decimal-envelope uncertainty, restart and independent reconstruction. No Kelvin/MeV calibration, Standard Model species identity, metric/FRW expansion, public transition temperature, neutrino/radiation transport, primordial abundance network, or empirical agreement is claimed.",
+  "independent_verifier_design": "Reconstruct M_C, a, g_C and p0 from H_C_to_D without trusting D outputs; use the exact K3 spectral solution p=u+(p0-u)e^(-g_C tau), independently reconstruct U/S/V_eff/Theta/events, and cross-check final state with DOP853. Compare to primary BDF within 1e-8.",
+  "allowed_implementation_only_corrections": [
+    "serialization",
+    "path handling",
+    "runner dependency setup",
+    "output formatting",
+    "capture/manifest plumbing; no change to parent, law, coefficients, phase witnesses, interval, tolerances, gates, falsifiers, or claim boundary"
+  ]
 }

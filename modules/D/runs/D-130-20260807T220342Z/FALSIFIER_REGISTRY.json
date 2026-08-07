@@ -1,0 +1,22 @@
+{
+  "run_id": "D-130-20260807T220342Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "falsifiers": [
+    "H_C_to_D SHA-256 mismatch",
+    "M_C is not symmetric or has nonzero row sum above 1e-12",
+    "g_C differs from 3a above 1e-12",
+    "initial parent distribution is nonpositive or not normalized above 1e-12",
+    "any public/remembered thermal target or SI/laboratory anchor enters generation",
+    "any primary abundance/distribution falls below -1e-12",
+    "total carrier/Q_total drift exceeds 1e-9",
+    "U_D+Q_RFL conservation drift exceeds 1e-9",
+    "entropy production falls below -1e-10",
+    "phase events are not strictly ordered as frozen",
+    "finest two BDF max-step results differ above 1e-8 L_inf",
+    "midpoint restart differs above 1e-8 L_inf",
+    "analytic independent reconstruction differs above 1e-8 L_inf",
+    "withholding an inherited edge fails to materially change the state above 1e-8"
+  ],
+  "all_tested_or_hard_stopped": false,
+  "result": "PENDING_EXECUTION"
+}
