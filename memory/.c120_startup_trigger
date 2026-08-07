@@ -1,1 +1,2 @@
 C-120 governed startup trigger
+retry 2 after runner dependency installation
