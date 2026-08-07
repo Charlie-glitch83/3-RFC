@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "run_id": "D-130-20260807T045646Z",
+  "classification": "INTERNAL_DERIVATION_FROM_FROZEN_PREEXECUTION_SPEC",
+  "generation_mode": "GENERATION_SEALED",
+  "source_parent": {
+    "path": "modules/C/frozen/H_C_to_D.json",
+    "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+  },
+  "frozen_spec": "modules/D/runs/D-130-20260807T045646Z/FROZEN_DERIVATION_SPEC.json",
+  "derivation": {
+    "state_names": ["p1", "p2", "p3"],
+    "parameters": {},
+    "rhs_expressions": [
+      "(-2*p1 + p2 + p3)/3",
+      "(p1 - 2*p2 + p3)/3",
+      "(p1 + p2 - 2*p3)/3"
+    ],
+    "rhs_identity": "dp/ds = -(I-11^T/3)p = -P_perp p",
+    "t_span": [0.0, 1.0],
+    "max_step": 0.0625,
+    "linear_invariants": {
+      "Q_total": [1.0, 1.0, 1.0]
+    },
+    "invariant_tolerance": 1e-10,
+    "positivity_tolerance": 1e-12
+  },
+  "units_dimensions": {
+    "state_names": "dimensionless population coordinates",
+    "parameters": "none",
+    "rhs_expressions": "population per unit intrinsic dimensionless clock s",
+    "t_span": "dimensionless intrinsic clock s; not physical time",
+    "max_step": "dimensionless intrinsic clock s",
+    "linear_invariants": "dimensionless total-carrier charge",
+    "invariant_tolerance": "dimensionless absolute drift",
+    "positivity_tolerance": "dimensionless population floor"
+  },
+  "selection_proof": [
+    "Exact C conservation fixes the uniform mode as a zero mode.",
+    "Exact inherited O(2) symmetry on V_perp forces any linear equivariant action there to be scalar.",
+    "Positivity-preserving Markov relaxation fixes the scalar sign to nonnegative decay.",
+    "The scalar rate is absorbed into intrinsic s, leaving the normalized projector branch without selecting physical time."
+  ],
+  "physical_scope": {
+    "physical_time_derived": false,
+    "physical_temperature_derived": false,
+    "phase_threshold_derived": false,
+    "permitted_claim": "dimensionless normalized transport diagnostic only"
+  }
+}
