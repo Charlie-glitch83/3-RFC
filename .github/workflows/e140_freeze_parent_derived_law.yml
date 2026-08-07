@@ -1,0 +1,219 @@
+name: E140 Freeze Parent Derived Law
+
+on:
+  push:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install repository locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Freeze exact E140 parent-derived law before execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, itertools, json
+          from pathlib import Path
+
+          RUN_ID='E-140-20260807T155635Z'
+          RUN=Path('modules/E/runs')/RUN_ID
+          state=json.loads(Path('STATE.json').read_text())
+          if state.get('active_work_unit')!='E-140' or state.get('current_module')!='E' or state.get('current_run')!=RUN_ID:
+              raise SystemExit('HARD STOP: fresh E140 run is not sole authorized run')
+          if state['modules']['E']['evidence_state']!='DESIGN' or state['modules']['E']['fidelity']!='UNSTARTED':
+              raise SystemExit('HARD STOP: E evidence state changed before freeze')
+
+          def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+          parent='modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json'
+          dspec='modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json'
+          dmanifest='modules/D/runs/D-130-20260807T053432Z/GENERATED_OUTPUT_MANIFEST.json'
+          cconst='modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json'
+          recipe='recipes/E/recipe.json'
+          work='recipes/E/WORK_ORDER.md'
+          gates='recipes/E/gates.json'
+          prompt='recipes/E/MODEL_PROMPT.md'
+          atlas='theory/DERIVATION_ATLAS.md'
+          cross='theory/ENHANCEMENT_CROSSWALK.json'
+          wl1='recipes/E/wolfram/E-WL-001.wl'
+          wl2='recipes/E/wolfram/E-WL-002.wl'
+
+          dm=json.loads(Path(dmanifest).read_text())
+          expected=next(x['sha256'] for x in dm['outputs'] if x['path']=='frozen/H_D_to_E.json')
+          parent_sha=sha(parent)
+          if parent_sha != expected or parent_sha != '199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8':
+              raise SystemExit('HARD STOP: exact D->E parent hash mismatch')
+
+          D=json.loads(Path(parent).read_text())
+          DS=json.loads(Path(dspec).read_text())
+          p=list(map(float,D['final_population']))
+          g=float(DS['transport_derivation']['gap_g_C'])
+          a=float(DS['transport_derivation']['edge_rate_a'])
+          if abs(g-3*a)>1e-15:
+              raise SystemExit('HARD STOP: parent gap/pair-rate relation not exact enough')
+
+          # E candidate class is frozen by exact E-WL programs: n+p <-> d with
+          # baryon [1,1,2] and charge [0,1,1].  D does not select a basis label,
+          # so preserve all ordered assignments. The third anonymous parent
+          # carrier is split equally between the two free one-baryon reactants;
+          # no bound-state abundance is preloaded.
+          branches=[]
+          for n_idx,p_idx in itertools.permutations(range(3),2):
+              r_idx=next(k for k in range(3) if k not in (n_idx,p_idx))
+              y0=[p[n_idx]+0.5*p[r_idx], p[p_idx]+0.5*p[r_idx], 0.0]
+              branches.append({
+                  'branch_id':f'N{n_idx}_P{p_idx}_R{r_idx}',
+                  'assignment':{'n_parent_index':n_idx,'p_parent_index':p_idx,'symmetric_reservoir_parent_index':r_idx},
+                  'initial_state':y0,
+                  'initial_baryon':y0[0]+y0[1]+2*y0[2],
+                  'initial_charge':y0[1]+y0[2]
+              })
+          central=[0.5,0.5,0.0]
+          tau_end=1.0/a
+          baseline_step=tau_end/128.0
+          spec={
+            'schema_version':'1.0','object_id':'E140_FROZEN_DERIVATION_SPEC','run_id':RUN_ID,'module':'E',
+            'status':'FROZEN_BEFORE_PRIMARY_EXECUTION','generation_mode':'GENERATION_SEALED','fidelity':'MINIMAL_SPINE',
+            'exact_parent':{'object_id':'H_D_to_E','path':parent,'sha256':parent_sha},
+            'triadic_descent':{
+              'CIF':'the exact E n+p<->d reaction possibility graph and complete lawful parent-assignment branch family',
+              'QV':'forward association driven by the exact D collective relaxation gap g_C, plus one-e-fold reaction-flow freeze-out witness',
+              'RFL':'single-edge reopening at the exact D pair rate a=g_C/3, conserved abundance ledgers, branch/uncertainty memory and restartable E handoff'
+            },
+            'nbody_mode':'RELATIONAL_GRAMMAR_ACTIVE',
+            'species_constitution':{
+              'solver_labels':['n','p','d'],
+              'status':'RFC_INTERNAL_NUCLEAR_ROLES_ONLY',
+              'baryon_vector':[1.0,1.0,2.0],
+              'charge_vector':[0.0,1.0,1.0],
+              'empirical_standard_model_correspondence':'NOT_CLAIMED_AT_E_MINIMAL_SPINE',
+              'graph':'n+p <-> d',
+              'stoichiometry':[[-1.0,1.0],[-1.0,1.0],[1.0,-1.0]],
+              'source':'exact frozen E-WL-001/E-WL-002 candidate class'
+            },
+            'parent_to_E_interface':{
+              'reason':'D carries three anonymous positive populations and exact O(2)-covariant unresolved internal labeling; E must not invent a preferred parent-index-to-nuclear-role identification.',
+              'central_symmetry_quotient_initial_state':central,
+              'branch_rule':'for each ordered n,p parent assignment, split the remaining anonymous parent carrier equally between free n and p; set d=0 so no primordial bound abundance is preloaded',
+              'branch_family':branches,
+              'branch_count':len(branches),
+              'selection_status':'NO_SINGLE_BRANCH_SELECTED; full family is physical output until a later lawful witness distinguishes it'
+            },
+            'rate_law':{
+              'forward_expression':'kf*n*p','reverse_expression':'kr*d',
+              'kf':g,'kf_derivation':'exact D collective nonzero relaxation eigenvalue g_C; QV association/compression rate',
+              'kr':a,'kr_derivation':'exact D complete-support pair edge rate a=g_C/3; RFL reopening/memory rate',
+              'ratio_kf_over_kr':g/a,
+              'new_fitted_or_public_coefficients':False
+            },
+            'intrinsic_energy_ledger':{
+              'energy_vector':[0.5*g,0.5*g,g],
+              'definition':'E_E=(g_C/2)*(n+p+2d); exact baryon-proportional internal energy at minimal spine',
+              'dimensionful_nuclear_binding_energy':'NOT_CLAIMED',
+              'conservation_reason':'stoichiometric baryon conservation implies exact intrinsic-energy conservation'
+            },
+            'clock_and_interval':{
+              'clock':'tau_E continues the dimensionless parent-normalized intrinsic clock from the D handoff; no SI seconds',
+              't_span':[0.0,tau_end],
+              'definition':'one exact inherited pair-edge time 1/a',
+              'max_step':baseline_step,
+              'max_step_definition':'(1/a)/128',
+              'convergence_steps':[tau_end/32.0,tau_end/64.0,tau_end/128.0,tau_end/256.0]
+            },
+            'freezeout_witness':{
+              'net_flow':'J=kf*n*p-kr*d',
+              'event':'E_REACTION_FLOW_ONE_EFOLD_LOCK',
+              'definition':'first tau_E where |J(tau_E)| <= |J(0)|/e',
+              'reason':'parameter-free one-e-fold suppression of QV reaction flow relative to its own frozen initial value; RFL records the locked abundance state'
+            },
+            'uncertainty':{
+              'stochastic_covariance':'ZERO_INHERITED',
+              'branch_uncertainty':'all six lawful D-basis assignments are executed and preserved componentwise',
+              'decimal_envelope':'rederive kf=g_C and kr=g_C/3 and execute every branch for each of the three frozen D/C decimal-envelope members; no retuning',
+              'covariance_types':['branch covariance','decimal-envelope covariance','combined deterministic ensemble covariance']
+            },
+            'network_size_convergence':{
+              'refinement':'duplicate each forward/reverse reaction into 2 and 4 equal-rate route copies while preserving total kf and kr',
+              'expected':'ODE and final abundance vector invariant under route refinement',
+              'tolerance_linf':1e-8
+            },
+            'withheld_reaction_tests':[
+              {'id':'NO_RFL_REOPENING','change':'kr=0','required_effect':'final vector differs from full law by >1e-6 L_inf'},
+              {'id':'NO_QV_ASSOCIATION','change':'kf=0','required_effect':'final vector differs from full law by >1e-6 L_inf'}
+            ],
+            'countermodels':[
+              'SCALAR_COLLAPSE: replace species vector by baryon scalar; must fail charge/bound-channel reconstruction',
+              'CHARGE_BREAK: perturb one stoichiometric coefficient; exact charge/baryon nullspace must fail',
+              'PUBLIC_TARGET_INJECTION: any observed abundance target in generation is an immediate firewall failure'
+            ],
+            'restart':'restart each branch at the midpoint accepted primary state and require final L_inf <=1e-8',
+            'independent_verifier_design':'independently integrate the one-dimensional reduced equation d_dot=kf*(n0-d)*(p0-d)-kr*d with DOP853/high precision for every branch and envelope member, reconstruct n=n0-d and p=p0-d, and compare against primary branch outputs without trusting gate summaries',
+            'falsifiers':[
+              'any abundance below -1e-12','baryon drift above 1e-9','charge drift above 1e-9','intrinsic energy drift above 1e-9',
+              'route-refinement final L_inf above 1e-8','midpoint restart final L_inf above 1e-8','independent final L_inf above 1e-8',
+              'any branch hidden by an aggregate score','any public/remembered abundance target influences generation'
+            ],
+            'claim_boundary':'Internally generated RFC primordial three-role nuclear branch family at MINIMAL_SPINE fidelity, with source-owned stoichiometry, parent-derived dimensionless rates, conservation, freeze-out witness, deterministic branch/envelope uncertainty, convergence, restart and independent reconstruction. No empirical isotope correspondence, SI time, dimensionful nuclear binding energies, public abundance fit, or external BBN validation is claimed.'
+          }
+          (RUN/'FROZEN_DERIVATION_SPEC.json').write_text(json.dumps(spec,indent=2)+'\n')
+
+          source={
+            'schema_version':'1.0','run_id':RUN_ID,'module':'E','generation_mode':'GENERATION_SEALED','public_data_declaration':'NONE',
+            'exact_parents':[{'object_id':'H_D_to_E','path':parent,'sha256':parent_sha,'generative_permission':True}],
+            'lineage_objects':[{'path':dspec,'sha256':sha(dspec)},{'path':cconst,'sha256':sha(cconst)}],
+            'authority_files':[{'path':x,'sha256':sha(x)} for x in [recipe,work,gates,prompt,atlas,cross,wl1,wl2]],
+            'historical_failure_policy':'Old failed scalar/Li7 outcomes are regression-only under ENHANCEMENT_CROSSWALK and are not used to select species, rates, initial states, branches, thresholds or expected abundances.',
+            'imports':[],'files':[],'urls':[],'constants':[],
+            'derived_objects':[{'path':str(RUN/'FROZEN_DERIVATION_SPEC.json'),'sha256':sha(RUN/'FROZEN_DERIVATION_SPEC.json'),'role':'FROZEN_PARENT_DRIVEN_E_LAW'}]
+          }
+          (RUN/'SOURCE_REGISTER.json').write_text(json.dumps(source,indent=2)+'\n')
+
+          lock={
+            'run_id':RUN_ID,'status':'FROZEN','frozen_utc':'2026-08-07T15:00:00Z',
+            'authority_hashes':[sha(recipe),sha(work),sha(gates),sha(prompt),sha(atlas),sha(cross)],
+            'parent_hashes':[parent_sha,sha(dspec),sha(cconst)],
+            'definition_hashes':[sha(wl1),sha(wl2),sha(RUN/'FROZEN_DERIVATION_SPEC.json')],
+            'candidate_classes':['full six-branch parent-index assignment family','permutation-symmetry quotient central state','route-refined equivalent reaction representations'],
+            'equations_and_laws':['n+p<->d','dn/dtau= -kf*n*p+kr*d','dp/dtau= -kf*n*p+kr*d','dd/dtau= kf*n*p-kr*d','kf=g_C','kr=a=g_C/3'],
+            'dimensions_units_frames_gauges_clocks':['dimensionless abundance roles','tau_E inherited dimensionless intrinsic clock','no SI time','no dimensionful nuclear mass/binding claim','all D-basis assignments preserved as lawful branches'],
+            'methods':['BDF primary configured solver','DOP853 reduced independent integrator','dyadic max-step convergence','route-duplication network-size convergence','midpoint restart','clean replay'],
+            'tolerances':['rtol=1e-9','atol=1e-12','positivity=1e-12','invariants=1e-9','convergence/restart/independent L_inf=1e-8'],
+            'stopping_rules':['stop on public/remembered abundance target influence','stop on baryon or charge failure','stop if any branch is suppressed by aggregate scoring'],
+            'expected_invariants':['baryon n+p+2d','charge p+d','intrinsic energy (g_C/2)*(n+p+2d)','positivity'],
+            'tests':['E-WL-001','E-WL-002','manufactured E reference','six-branch primary execution','three-member decimal envelope','route-refinement convergence','withheld forward/reverse reactions','midpoint restart','independent reduced integration','clean replay'],
+            'gates':['baryon/charge/energy accounting','network convergence','rate-source audit','no scalar-channel collapse','withheld reaction and independent implementation checks'],
+            'falsifiers':spec['falsifiers'],'claim_boundary':spec['claim_boundary'],
+            'independent_verifier_design':spec['independent_verifier_design'],
+            'allowed_implementation_only_corrections':['serialization','path handling','runner dependency installation','numerical implementation defects that do not change species constitution, branch family, rate law, interval, thresholds, gates, falsifiers or claim boundary']
+          }
+          (RUN/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          (RUN/'RUN_PLAN.md').write_text('# Run Plan — E-140\n\nExecute the frozen parent-derived E law in `FROZEN_DERIVATION_SPEC.json` exactly. Preserve all six lawful parent-label branches and the three-member inherited decimal envelope. Do not import historical BBN outcomes or public abundance targets.\n')
+          PY
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit frozen E law and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_freeze_parent_derived_law.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Freeze parent-derived E140 reaction law'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
