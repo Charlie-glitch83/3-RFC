@@ -1,0 +1,1 @@
+This file exists only to trigger the one-shot B110 Governed Closeout pull-request workflow against agent/frontier-050-execution. It is not scientific evidence and must not be included in the finalized generated-output manifest.
