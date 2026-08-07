@@ -1,4 +1,4 @@
 Reconcile frozen Module A state with sole active child B-110
 verified_state_sha=d1eb1494144d411cc7755e5de950433d80aceff9
-packet_mode=prepare_active_without_run_creation
-retry=2026-08-06T19:40:00-05:00
+workflow_fix_commit=f72701517e2cc88068279fbcf5c41d467d2b0c03
+retry=2026-08-06T19:43:00-05:00
