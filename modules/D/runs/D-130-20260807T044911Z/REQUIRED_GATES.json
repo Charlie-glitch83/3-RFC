@@ -1,0 +1,26 @@
+{
+  "module": "D",
+  "componentwise": [
+    {
+      "gate": "positive distributions",
+      "required": "PASS"
+    },
+    {
+      "gate": "energy/charge conservation",
+      "required": "PASS"
+    },
+    {
+      "gate": "event ordering",
+      "required": "PASS"
+    },
+    {
+      "gate": "stiff-solver convergence",
+      "required": "PASS"
+    },
+    {
+      "gate": "restart and independent reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}
