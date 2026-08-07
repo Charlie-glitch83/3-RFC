@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-07T15:59:04.858523+00:00
+Generated: 2026-08-07T16:14:06.424367+00:00
 
 ## Project truth
 
@@ -64,7 +64,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 14
+- frozen artifacts: 15
 - indexed runs: 13
 
 ## Recent runs
@@ -76,7 +76,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 - D-130-20260807T045646Z: BLOCKED (D)
 - D-130-20260807T053432Z: PASS (D)
 - E-140-20260807T142445Z: BLOCKED (E)
-- E-140-20260807T155635Z: CREATED (E)
+- E-140-20260807T155635Z: BLOCKED (E)
 
 ## Recent decisions
 
@@ -91,7 +91,6 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 
 ## Recent failures
 
-- SRC-010-FIREWALL-TOKEN-BOUNDARY: The mechanical scanner matched DESI inside design and public_data inside a NONE declaration key.
 - SRC-010-RUN-ID-STATE-DRIFT: Generated timestamped run workspace existed but current_run and RUN_INDEX were not retained by the startup commit; verifier now resolves and registers the sole governed SRC-010 workspace.
 - AUTH-020-FIREWALL-PROTOCOL-WORDING: The mechanical firewall scanner matched protocol wording inside AUTHORITY_SOURCE_TRACE.json even though no external target values were used. The trace wording was normalized without changing sources, definitions, claims, or gates.
 - XWALK-030-MISSING-PROVENANCE-AND-MD: The prebuilt crosswalk lacked required source hashes and evidence states, and its Markdown deliverable was absent. Provenance and review structure were added without changing original dispositions.
@@ -99,6 +98,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 - REC-040-DISCOVERY-ORDERING: The temporary discovery record was removed before a later replay attempted to consume it. The record is now reconstructed from all exact remote refs before recovery and removed only after incorporation.
 - REC-040-VERIFIED-SHA-RACE: Concurrent successful replays caused formal transition bookkeeping to record an earlier valid evidence SHA instead of the final clean replay SHA. Provenance was corrected to the final verified commit without changing run evidence, classifications, gates, result, or next-child authorization.
 - E-140-20260807T144032Z: Frozen rate-source audit found no lawful target-blind provenance-bound E nuclear rate law; physical E execution blocked.
+- E-140-20260807T161405Z: Pre-execution derivation mismatch preserved; E remains active for fresh parent-law derivation.
 
 ## Resume commands
 

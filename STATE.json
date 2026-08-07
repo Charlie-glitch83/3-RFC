@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "E-140",
   "current_module": "E",
-  "current_run": "E-140-20260807T155635Z",
+  "current_run": "E-140-20260807T161406Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -272,7 +272,7 @@
     "E": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": "E-140-20260807T155635Z",
+      "active_run": "E-140-20260807T161406Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -282,7 +282,8 @@
         }
       ],
       "completed_runs": [
-        "E-140-20260807T142445Z"
+        "E-140-20260807T142445Z",
+        "E-140-20260807T155635Z"
       ]
     },
     "F": {
@@ -469,7 +470,7 @@
     }
   },
   "last_verified_commit": "44ed126d494f41e0448e5e751b3b17b5d8f1848e",
-  "last_updated_utc": "2026-08-07T15:56:35.146199+00:00",
+  "last_updated_utc": "2026-08-07T16:14:06.741786+00:00",
   "strongest_supported_claim": "Generated RFC dimensionless nonequilibrium thermal/phase history at MINIMAL_SPINE fidelity from the exact C parent, including conservative transport, positive distributions, entropy production, internal conjugate temperature, thermodynamic state-volume expansion, a parameter-free RFL-memory balance phase event, inherited uncertainty envelope, restart, clean replay, and independent reconstruction.",
   "strongest_unsupported_claim": "No source-owned numerical nuclear reaction-rate law, nuclear energy ledger, physical primordial isotope trajectory, isotope covariance, or physical freeze-out state has been derived. E is blocked at E_SOURCE_OWNED_NUCLEAR_RATE_LAW; historical/proxy abundance-target results are not generative parents.",
   "last_verified_branch": "agent/frontier-050-execution"

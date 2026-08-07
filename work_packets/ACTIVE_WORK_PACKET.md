@@ -4,7 +4,7 @@
 
 - Module: `E`
 - Objective: Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.
-- Run workspace: `modules/E/runs/E-140-20260807T155635Z`
+- Run workspace: `modules/E/runs/E-140-20260807T161406Z`
 
 ## Exact sequence
 
@@ -16,13 +16,13 @@
    - `python tools/director.py wolfram-show --call E-WL-001`
    - `python tools/director.py wolfram-show --call E-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module E --output modules/E/runs/E-140-20260807T155635Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module E --output modules/E/runs/E-140-20260807T161406Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module E --solver reaction_network --destination modules/E/runs/E-140-20260807T155635Z`
+   - `python tools/director.py solver-copy --module E --solver reaction_network --destination modules/E/runs/E-140-20260807T161406Z`
    - fill `configured_runs/binding_sheets/E_reaction_network.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/E/runs/E-140-20260807T155635Z/solver_templates/E_reaction_network.template.json --binding-sheet modules/E/runs/E-140-20260807T155635Z/binding_sheets/E_reaction_network.bindings.json --output modules/E/runs/E-140-20260807T155635Z/solver_configs/E_reaction_network.json`
-   - `python tools/run_configured_solver.py --config modules/E/runs/E-140-20260807T155635Z/solver_configs/E_reaction_network.json --output-dir modules/E/runs/E-140-20260807T155635Z/solver_outputs/reaction_network`
+   - `python tools/materialize_solver_config.py --template modules/E/runs/E-140-20260807T161406Z/solver_templates/E_reaction_network.template.json --binding-sheet modules/E/runs/E-140-20260807T161406Z/binding_sheets/E_reaction_network.bindings.json --output modules/E/runs/E-140-20260807T161406Z/solver_configs/E_reaction_network.json`
+   - `python tools/run_configured_solver.py --config modules/E/runs/E-140-20260807T161406Z/solver_configs/E_reaction_network.json --output-dir modules/E/runs/E-140-20260807T161406Z/solver_outputs/reaction_network`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.
