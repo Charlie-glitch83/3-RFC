@@ -13,3 +13,4 @@ retry D130 controller closeout with locked requirements
 trigger D130 claim surface finalization
 trigger exact README session start
 retry exact README session start with locked dependencies
+trigger E140 source obstruction freeze
