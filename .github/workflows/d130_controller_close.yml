@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install locked requirements
+        run: python -m pip install -r requirements-lock.txt
       - name: Record verified D130 evidence commit
         run: python tools/rfc.py record-commit 44ed126d494f41e0448e5e751b3b17b5d8f1848e --branch agent/frontier-050-execution --note 'Verified D130 closeout commit, fetched artifacts, diff, tests, doctor and firewall.'
       - name: Close D130 PASS run
