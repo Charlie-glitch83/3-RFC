@@ -1,1 +1,3 @@
 Reconcile frozen Module A state with sole active child B-110
+verified_state_sha=d1eb1494144d411cc7755e5de950433d80aceff9
+retry=2026-08-06T19:22:00-05:00
