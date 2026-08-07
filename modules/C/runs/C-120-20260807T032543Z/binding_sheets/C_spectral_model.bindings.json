@@ -2,34 +2,71 @@
   "schema_version": "1.0",
   "template": "configured_runs/templates/C_spectral_model.template.json",
   "template_sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d",
-  "expected_binding_paths": ["model.matrix", "model.symmetry_generators"],
+  "expected_binding_paths": [
+    "model.matrix",
+    "model.symmetry_generators"
+  ],
   "binding_rule": "Every value requires an exact admitted source, exact parent artifact, or hashed internal derivation record. Module P alone may bind preregistered public comparison sources.",
   "bindings": [
     {
       "path": "model.matrix",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": [[0.2998860433035446,-0.1499430216517723,-0.1499430216517723],[-0.1499430216517723,0.2998860433035446,-0.1499430216517723],[-0.1499430216517723,-0.1499430216517723,0.2998860433035446]],
+      "value": [
+        [
+          0.2998860433035446,
+          -0.1499430216517723,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          0.2998860433035446,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          -0.1499430216517723,
+          0.2998860433035446
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
       "origin_path": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
       "origin_sha256": "578cd6bc04f37fe17e769cc27fe9f02700568feb399cf2fd529a796984eb8ee9",
       "module": "C",
-      "derivation_object": "constitution_law",
+      "derivation_object": "constitution_law.matrix",
       "units": "dimensionless intrinsic constitutive gap",
       "dimensions": "1",
-      "justification": "M_C=I-Q_B=L_B/(delta+2), derived only from exact H_B_to_C."
+      "justification": "Exact director-frozen C constitution matrix M_C=I-Q_B=L_B/(delta+2)."
     },
     {
       "path": "model.symmetry_generators",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": [[[0.0,-0.5773502691896258,0.5773502691896258],[0.5773502691896258,0.0,-0.5773502691896258],[-0.5773502691896258,0.5773502691896258,0.0]]],
+      "value": [
+        [
+          [
+            0.0,
+            -0.5773502691896258,
+            0.5773502691896258
+          ],
+          [
+            0.5773502691896258,
+            0.0,
+            -0.5773502691896258
+          ],
+          [
+            -0.5773502691896258,
+            0.5773502691896258,
+            0.0
+          ]
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
       "origin_path": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
       "origin_sha256": "578cd6bc04f37fe17e769cc27fe9f02700568feb399cf2fd529a796984eb8ee9",
       "module": "C",
       "derivation_object": "symmetry.canonical_generator",
-      "units": "dimensionless internal generator",
+      "units": "dimensionless",
       "dimensions": "1",
-      "justification": "Canonical O(2) generator on the exactly degenerate zero-sum doublet; it annihilates the uniform mode and commutes with M_C."
+      "justification": "Exact director-frozen O(2) generator on the degenerate nonconstant excitation subspace."
     }
   ]
 }

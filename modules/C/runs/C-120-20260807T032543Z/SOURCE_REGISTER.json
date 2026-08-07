@@ -1,41 +1,98 @@
 {
   "run_id": "C-120-20260807T032543Z",
-  "status": "FROZEN_PRE_EXECUTION",
-  "generation_mode": "GENERATION_SEALED",
   "exact_parents": [
     {
-      "object_id": "H_B_to_C",
       "path": "modules/B/frozen/H_B_to_C.json",
       "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
-      "fidelity": "MINIMAL_SPINE",
-      "use": "sole physical parent for C generation"
+      "object_id": "H_B_to_C"
     }
   ],
   "admitted_sources": [],
-  "internal_derivations": [
+  "imports": [
+    "Python standard library for lock preparation; numerical execution environment frozen separately"
+  ],
+  "files": [
     {
-      "object_id": "C_FROZEN_DERIVATION_SPEC",
+      "path": "README.md",
+      "sha256": "0c0420ae09b4794cd7c80dcf4c9deac3656a133255ed585b055302b33a95038c"
+    },
+    {
+      "path": "STATE.json",
+      "sha256": "1ff38065efc9ebcd4e74d50c142465628ab7f4e2e67529734c44ec51d7f3cbac"
+    },
+    {
+      "path": "WORK_QUEUE.json",
+      "sha256": "832d5e97d24d1b0e9ed2c7b454c35bee54939073d2189ecdba81d6d4ff0169fe"
+    },
+    {
+      "path": "recipes/C/WORK_ORDER.md",
+      "sha256": "ea6f1c13b5ffcf9dcde5d1d08cfbaa84d590b3d9195a55ea91521098e3cbb803"
+    },
+    {
+      "path": "recipes/C/recipe.json",
+      "sha256": "6451efceef8b53659fb58c4d591648e2e24b1340e43d1a62e364c5d98f0d9ad8"
+    },
+    {
+      "path": "recipes/C/gates.json",
+      "sha256": "c3904dadee5019da0dbabdfcb3ea4e30e793502b24dfe02daabbb3f957f40c0b"
+    },
+    {
+      "path": "modules/C/spec.json",
+      "sha256": "ca8e81068e8bc9b7c5711738f3c45e2751f30f6e5a9cff2a0c65ef4ef7b8dacb"
+    },
+    {
+      "path": "recipes/C/wolfram/C-WL-001.wl",
+      "sha256": "d0ae5feced49a969069ea0d4c8f5749595517e4a18d405a9572a623927f56c7c"
+    },
+    {
+      "path": "recipes/C/wolfram/C-WL-002.wl",
+      "sha256": "21f29d05d58f46ae8c29f85a6cd185f63fc89f3c48146a668436507a46d393cf"
+    },
+    {
+      "path": "configured_runs/templates/C_spectral_model.template.json",
+      "sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d"
+    },
+    {
+      "path": "rfc_engine/solvers/spectral_model.py",
+      "sha256": "e784413787a7053c01929469da2c434c925b21f9c946e629764ad6a653127d31"
+    },
+    {
+      "path": "tools/materialize_solver_config.py",
+      "sha256": "df51b784a21d3affe244df3ee1303a2f21fbaf71cfa1e47cde1b979cb3d273f5"
+    },
+    {
+      "path": "tools/run_configured_solver.py",
+      "sha256": "0939e59a63c7164fd4e4c867a7a560719d342f03029bca5b961355d689e7371e"
+    },
+    {
+      "path": "tools/rfc.py",
+      "sha256": "9b7111647975766790b6625ccd8a225e8bc21ce1ab800c785638a482ee917a81"
+    },
+    {
+      "path": "tools/director.py",
+      "sha256": "cbba8f1681e163ab0e39940c28b38b85ee5d98fe1af89a794e46867da4dfc6b2"
+    },
+    {
       "path": "modules/C/runs/C-120-20260807T032543Z/FROZEN_DERIVATION_SPEC.json",
       "sha256": "578cd6bc04f37fe17e769cc27fe9f02700568feb399cf2fd529a796984eb8ee9",
-      "use": "frozen parent-only microscopic constitution and solver bindings"
+      "kind": "FROZEN_INTERNAL_DERIVATION"
     }
   ],
-  "governing_files": [
-    {"path": "recipes/C/WORK_ORDER.md", "git_blob_sha1": "797a892967018d92b92195af6a79b29a11792c55"},
-    {"path": "recipes/C/recipe.json", "git_blob_sha1": "1c92e6fd04fea03a894515cf9dee33950e349d86"},
-    {"path": "recipes/C/gates.json", "git_blob_sha1": "4a8bfca9a0dd3dd3e11eec55fb347fba7fd1452f"},
-    {"path": "modules/C/spec.json", "git_blob_sha1": "25109639492c0075f551ed9c91619b23c3729f3e"},
-    {"path": "modules/C/runs/C-120-20260807T032543Z/wolfram/C-WL-001/input.wl", "git_blob_sha1": "941bca4d91027e7d874b3d5951c1a1fb359daccf"},
-    {"path": "modules/C/runs/C-120-20260807T032543Z/wolfram/C-WL-002/input.wl", "git_blob_sha1": "4e9f22b2fd4d7b40d6f042e33624e5badfaa862e"},
-    {"path": "rfc_engine/solvers/spectral_model.py", "git_blob_sha1": "4e0ed1f9e4441f85a23ba80b4ea287774e6e6fbc"}
-  ],
-  "imports": ["python-standard-library", "numpy", "scipy"],
-  "files": [],
   "urls": [],
   "constants": [
-    {"name": "delta", "value": 4.6692, "origin": "H_B_to_C.operator.delta", "dimensions": "1"},
-    {"name": "spectral_tolerance", "value": 1e-10, "origin": "C spectral template", "dimensions": "1"}
+    {
+      "name": "delta",
+      "value": 4.6692,
+      "dimensions": "1",
+      "origin": "H_B_to_C through FROZEN_DERIVATION_SPEC"
+    },
+    {
+      "name": "solver_tolerance",
+      "value": 1e-10,
+      "dimensions": "1",
+      "origin": "configured_runs/templates/C_spectral_model.template.json"
+    }
   ],
   "public_data_declaration": "NONE",
-  "public_data_used_for_generation": false
+  "generation_mode": "GENERATION_SEALED"
 }
