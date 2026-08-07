@@ -6,91 +6,25 @@
   "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
   "generation_mode": "GENERATION_SEALED",
   "fidelity": "MINIMAL_SPINE",
-  "authority": {
-    "work_order": {
-      "path": "recipes/E/WORK_ORDER.md",
-      "sha256": "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7"
-    },
-    "recipe": {
-      "path": "recipes/E/recipe.json",
-      "sha256": "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f"
-    },
-    "gates": {
-      "path": "recipes/E/gates.json",
-      "sha256": "1452d72412a6570ebd9c571734c6da0a34148076a10507e23c50927c8b0df04b"
-    },
-    "derivation_atlas": {
-      "path": "theory/DERIVATION_ATLAS.md",
-      "sha256": "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875"
-    },
-    "enhancement_crosswalk": {
-      "path": "theory/ENHANCEMENT_CROSSWALK.json",
-      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72"
-    },
-    "operator_prompt": {
-      "path": "MODEL_OPERATOR_PROMPT.md",
-      "sha256": "a972eb4377066379b2d2b40de43a1bf37004341263fc0cdc919020ef11c2209f"
-    },
-    "wolfram_E_WL_001": {
-      "path": "recipes/E/wolfram/E-WL-001.wl",
-      "sha256": "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668"
-    },
-    "wolfram_E_WL_002": {
-      "path": "recipes/E/wolfram/E-WL-002.wl",
-      "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43"
-    }
-  },
   "exact_parent": {
     "object_id": "H_D_to_E",
     "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
     "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8"
   },
-  "ancestry": [
-    {
-      "object_id": "H_A_to_B",
-      "path": "modules/A/frozen/H_A_to_B.json",
-      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
-    },
-    {
-      "object_id": "H_B_to_C",
-      "path": "modules/B/frozen/H_B_to_C.json",
-      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"
-    },
-    {
-      "object_id": "H_C_to_D",
-      "path": "modules/C/frozen/H_C_to_D.json",
-      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
-    },
-    {
-      "object_id": "D130_FROZEN_DERIVATION_SPEC",
-      "path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
-      "sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10"
-    },
-    {
-      "object_id": "D_UNCERTAINTY_COVARIANCE",
-      "path": "modules/D/runs/D-130-20260807T053432Z/primary/UNCERTAINTY_COVARIANCE.json",
-      "sha256": "e427da870592169658308c8ec47e3d0789d54324720b51e56f0837bb02cf469a"
-    }
-  ],
   "triadic_descent": {
-    "CIF": "The exact E symbolic reaction hypergraph supplies the three source-owned nuclear roles n,p,d and reversible possibility n+p<->d on the inherited three-channel carrier.",
-    "QV": "Reaction flow uses the unique positive parent microscopic interaction gap g_C as the forward selection scale; no public rate or fitted coefficient is admitted.",
-    "RFL": "Reverse reopening is the same parent interaction scale multiplied by the exact residual D internal conjugate-temperature availability Theta_D; abundance, reaction-progress, binding-memory and covariance are stabilized downstream."
+    "CIF": "E opens the source-owned three-species possibility basis [n,p,d] and the two ordered reversible reaction channels fixed by the E stoichiometric program.",
+    "QV": "The inherited recursive kernel weights the ordered forward/reverse reaction channels by its first two normalized modal weights; mass-action flow selects the unique positivity-preserving equilibrium and recursively compresses residual disequilibrium.",
+    "RFL": "The stabilized isotope-abundance state, additive conservation ledgers, freeze-out witness, delta-envelope uncertainty state, restart record and H_E_to_F are retained as downstream memory."
   },
-  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
-  "state_space": {
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE_REACTION_HYPERGRAPH_SPECIALIZATION",
+  "species_and_graph": {
     "species": [
       "n",
       "p",
       "d"
     ],
-    "species_semantics": "E-internal source-owned nuclear role labels fixed by E-WL-001/002; no empirical identity calibration claimed",
-    "initial_state": [
-      0.42649518039142953,
-      0.3002692761073055,
-      0.2732355435012648
-    ],
-    "clock": "tau_E is a dimensionless intrinsic reaction-flow clock derived from the E linearized equilibrium rate; not SI time",
+    "semantics": "RFC Module-E internal primordial species labels in the exact E program order; no empirical Standard Model/nuclear correspondence is claimed at MINIMAL_SPINE.",
+    "ordered_parent_map": "D final_population indices 0,1,2 map index-preservingly to E program species n,p,d.",
     "stoichiometry": [
       [
         -1,
@@ -105,162 +39,136 @@
         -1
       ]
     ],
-    "invariants": {
-      "baryon": [
-        1,
-        1,
-        2
-      ],
-      "charge": [
-        0,
-        1,
-        1
-      ]
-    }
-  },
-  "candidate_class": {
-    "name": "LOWEST_ORDER_POSITIVE_MASS_ACTION_ON_EXACT_E_HYPEREDGE_WITH_NO_NEW_DIMENSIONLESS_CONSTANTS",
-    "rate_form": [
+    "reactions": [
+      "n+p->d",
+      "d->n+p"
+    ],
+    "rate_expressions": [
       "kf*n*p",
       "kr*d"
     ],
-    "selection_rule": "Use only exact parent scalars with typed E roles. The unique parent interaction gap g_C sets QV forward flow. The only exact D scalar that types residual thermal reopening at the E boundary is Theta_D, so the lowest-order RFL reopening coefficient is g_C*Theta_D. Higher-order functions or extra constants are reserved, not selected at MINIMAL_SPINE.",
-    "branch_status": "UNIQUE_WITHIN_FROZEN_LOWEST_ORDER_NO_NEW_CONSTANT_CLASS",
-    "forbidden": "No old Li7 mechanism, target-relative abundance, public nuclear table, remembered physical constant, or generic old triad coefficient is generative."
+    "invariants": {
+      "baryon": [
+        1.0,
+        1.0,
+        2.0
+      ],
+      "charge": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "energy": [
+        0.449829064955317,
+        0.449829064955317,
+        0.899658129910634
+      ]
+    },
+    "energy_interpretation": "Internal parent-gap-scaled additive carrier energy E_i=g_C*A_i; this is conserved exactly by E stoichiometry. No dimensionful nuclear binding energy is claimed."
   },
   "rate_law": {
-    "equations": [
-      "r_f=kf*n*p",
-      "r_r=kr*d",
-      "dy/dtau_E=S.(r_f,r_r)",
-      "kf=g_C",
-      "kr=g_C*Theta_D"
+    "canonical_kernel_expression": "w_j=delta^-j at the E reaction-clock origin; normalize over the two exact ordered E reaction channels.",
+    "delta": 4.6692,
+    "closure_depth": 18,
+    "raw_weights": [
+      0.21416945086952796,
+      0.04586855368575515
     ],
-    "g_C": 0.449829064955317,
-    "Theta_D": 0.15693892391588327,
-    "kf": 0.449829064955317,
-    "kr": 0.07059568940017541,
-    "units": "dimensionless per intrinsic tau_E under normalized abundance convention"
+    "kf_expression": "delta^-1/(delta^-1+delta^-2)=delta/(delta+1)",
+    "kr_expression": "delta^-2/(delta^-1+delta^-2)=1/(delta+1)",
+    "kf": 0.8236082692443377,
+    "kr": 0.17639173075566217,
+    "kf_plus_kr": 0.9999999999999999,
+    "kf_over_kr": 4.669199999999999,
+    "units": "inverse intrinsic E reaction-clock unit after kf+kr=1 gauge fixing",
+    "uniqueness_statement": "For the exact two ordered E reaction channels, canonical kernel ordering and the intrinsic-clock normalization kf+kr=1 uniquely fix kf and kr. No observational or historical abundance coefficient enters."
   },
-  "equilibrium_and_clock": {
-    "extent_equation": "dx/dtau_E=kf(n0-x)(p0-x)-kr(d0+x)",
-    "admissible_equilibrium_extent": 0.11011262221511942,
-    "rejected_equilibrium_root": [
-      0.7735907581994989
+  "initial_state": {
+    "source": "exact D final_population",
+    "value": [
+      0.42649518039142953,
+      0.3002692761073055,
+      0.2732355435012648
     ],
-    "linearized_relaxation_rate_lambda_E": 0.29845174952815007,
+    "positive": true
+  },
+  "equilibrium": {
+    "extent_equation": "F(x)=kf(n0-x)(p0-x)-kr(d0+x)=0",
+    "roots": [
+      0.08085886632050861,
+      0.8600750410477545
+    ],
+    "selected_extent": 0.08085886632050861,
+    "selection_rule": "unique root on the positivity-preserving stoichiometric interval [-d0,min(n0,p0)]",
+    "state": [
+      0.34563631407092094,
+      0.21941040978679693,
+      0.35409440982177337
+    ],
+    "forward_reverse_balance_residual": 6.938893903907228e-18
+  },
+  "freeze_out": {
+    "residual_extent_fraction_expression": "q_E=delta^-nClosure",
+    "q_E": 8.987427844512123e-13,
+    "witness": "first state on the monotone physical extent branch satisfying |x_eq-x|/|x_eq-x0| <= q_E",
+    "target_extent": 0.08085886632043593,
+    "derived_t_freeze": 43.06683838094887,
+    "interpretation": "QV has compressed the remaining reaction disequilibrium to the canonical recursive closure-depth factor; RFL stores the resulting abundance state."
+  },
+  "execution": {
     "t_span": [
       0.0,
-      3.35062535763651
+      43.06683838094887
     ],
-    "t_span_definition": "exactly one local E reaction-relaxation e-fold 1/lambda_E from the inherited D boundary state",
-    "max_step": 0.026176760606535236,
-    "max_step_definition": "(1/lambda_E)/128",
+    "method": "BDF",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "max_step": 0.33645967485116307,
+    "max_step_definition": "t_freeze/128, inheriting the immediately-parent D baseline resolution convention",
     "convergence_steps": [
-      0.10470704242614094,
-      0.05235352121307047,
-      0.026176760606535236,
-      0.013088380303267618
-    ]
-  },
-  "energy_memory_law": {
-    "free_excitation_energy": "E_free=g_C*(n+p)",
-    "rfl_binding_memory": "H_bind=2*g_C*(d-d0)",
-    "conserved_total": "E_free+H_bind=g_C*(n0+p0)",
-    "event_energy_quantum": 0.899658129910634,
-    "scope": "dimensionless RFC excitation/binding-memory accounting only; no MeV binding energy or public mass calibration claimed"
-  },
-  "freeze_out_witness": {
-    "equilibrium_condition": "kf*n*p=kr*d",
-    "memory_balance_event": "E_REACTION_MEMORY_BALANCE_CROSSING when realized extent x equals remaining equilibrium extent x_eq-x, i.e. x=x_eq/2",
-    "endpoint": "one derived E relaxation e-fold; terminal net flux and residual-to-equilibrium are recorded, not forced to zero"
+      1.3458386994046523,
+      0.6729193497023261,
+      0.33645967485116307,
+      0.16822983742558154
+    ],
+    "positivity_tolerance": 1e-09,
+    "invariant_tolerance": 1e-09
   },
   "uncertainty": {
-    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
-    "stochastic_covariance_inherited": [
-      [
-        0.0,
-        0.0,
-        0.0
-      ],
-      [
-        0.0,
-        0.0,
-        0.0
-      ],
-      [
-        0.0,
-        0.0,
-        0.0
-      ]
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_PLUS_DERIVED_E_ENVELOPE_COVARIANCE",
+    "delta_members": [
+      4.66915,
+      4.6692,
+      4.66925
     ],
-    "decimal_envelope_replays": [
-      {
-        "delta": 4.66915,
-        "g_C": 0.44983243741706214,
-        "Theta_D_reconstructed": 0.1569400234182829,
-        "initial_E_state": [
-          0.42649417767698133,
-          0.3002697627246746,
-          0.27323605959834396
-        ],
-        "kf": 0.44983243741706214,
-        "kr": 0.07059671326253701,
-        "x_equilibrium": 0.1101118095230108,
-        "lambda_E": 0.29845498066796394,
-        "t_end_one_E_efold": 3.3505890830232663
-      },
-      {
-        "delta": 4.6692,
-        "g_C": 0.449829064955317,
-        "Theta_D_reconstructed": 0.156938923204168,
-        "initial_E_state": [
-          0.42649516633795465,
-          0.3002692810950221,
-          0.27323555256702314
-        ],
-        "kf": 0.449829064955317,
-        "kr": 0.07059568908002518,
-        "x_equilibrium": 0.11011261883253481,
-        "lambda_E": 0.29845174817312803,
-        "t_end_one_E_efold": 3.3506253728489233
-      },
-      {
-        "delta": 4.66925,
-        "g_C": 0.4498256925441392,
-        "Theta_D_reconstructed": 0.15693782300540146,
-        "initial_E_state": [
-          0.4264961549873716,
-          0.30026879946922536,
-          0.273235045543403
-        ],
-        "kf": 0.4498256925441392,
-        "kr": 0.07059466491977424,
-        "x_equilibrium": 0.11011342813020025,
-        "lambda_E": 0.2984485157408695,
-        "t_end_one_E_efold": 3.3506616627581374
-      }
-    ]
+    "rule": "For each frozen delta member, inherit its D final_at_one_gap_efold state, rederive kf, kr, equilibrium, freeze witness and final E state with no retuning; report componentwise envelope and diagnostic covariance separately from stochastic covariance.",
+    "stochastic_covariance": "ZERO_NO_STOCHASTIC_VARIABLE_ADMITTED"
   },
+  "network_size_rule": "The E source graph has exactly two ordered reaction channels. N=1 forward-only and reverse-only truncations are mandatory withheld-reaction ablations; N=2 is the source-complete minimal-spine network. No unsupported third reaction may be added for a cosmetic size sequence.",
   "countermodels": [
-    "SIGN_FLIP_RATE: kf<0 must violate positivity/flow direction",
-    "CONSERVATION_BREAK: perturb one stoichiometric entry must fail baryon/charge nullspace",
-    "SCALAR_CHANNEL_COLLAPSE: replace distinct CIF topology/QV flow/RFL reopening roles with one undifferentiated scalar mechanism and require semantic rejection"
+    "SCALAR_COLLAPSE: replace ordered kernel weights by kf=kr=1/2",
+    "FORWARD_WITHHELD: remove n+p->d",
+    "REVERSE_WITHHELD: remove d->n+p",
+    "CHANNEL_SWAP: exchange the two canonical kernel weights"
   ],
-  "ablations": [
-    "withhold reverse reaction kr*d",
-    "remove RFL binding-memory ledger",
-    "replace parent-derived kr=g_C*Theta_D by kf=kr scalar collapse as negative control"
+  "gates": [
+    "baryon/charge/energy accounting",
+    "network convergence",
+    "rate-source audit",
+    "no scalar-channel collapse",
+    "withheld reaction and independent implementation checks"
   ],
   "falsifiers": [
-    "any abundance below -1e-12",
-    "baryon or charge drift above 1e-9",
-    "dimensionless excitation+binding-memory drift above 1e-9",
-    "network refinement final-state L_inf change above 1e-8",
-    "midpoint restart final-state L_inf change above 1e-8",
-    "independent scalar-extent reconstruction final-state L_inf change above 1e-8",
-    "historical/public abundance target influences generation"
+    "exact D parent SHA mismatch",
+    "any historical/public abundance target enters generation",
+    "kf/kr differs from inherited delta above 1e-12",
+    "kf+kr differs from 1 above 1e-12",
+    "stoichiometric invariant residual exceeds 1e-12",
+    "any abundance below -1e-9",
+    "BDF refinement changes final state above 1e-8 L_infinity",
+    "independent extent reconstruction differs above 1e-8 L_infinity",
+    "full two-channel network is not distinguishable from scalar-collapse or withheld-channel countermodels"
   ],
-  "independent_verifier_design": "Reduce the exact three-species network to the single reaction extent x using baryon/charge conservation, integrate the scalar Riccati law independently of ReactionNetwork, reconstruct n,p,d and energy-memory ledgers, and compare against primary output without trusting primary gate summaries.",
-  "claim_boundary": "Internally generated RFC primordial three-role nuclear state at MINIMAL_SPINE fidelity only. No public abundance fit, no empirical isotope calibration, no MeV binding energies, no SI duration, and no external BBN validation is claimed."
+  "independent_verifier_design": "Reconstruct delta and nClosure from H_A_to_B ancestry, reconstruct kf/kr from the first two normalized kernel weights, inherit the exact D final population, solve the one-dimensional reaction-extent Riccati equation independently, derive the unique feasible equilibrium and q_E freeze witness, then compare against primary solver outputs without trusting primary gate summaries.",
+  "claim_boundary": "Module E may establish an internally generated RFC minimal-spine primordial three-species reaction state, source-owned two-channel rate law, conserved baryon/charge/internal-energy ledgers, freeze-out witness and inherited uncertainty envelope. It does not establish calibrated nuclear reaction rates, MeV binding energies, SI time, Standard Model isotope correspondence, or empirical abundance agreement."
 }

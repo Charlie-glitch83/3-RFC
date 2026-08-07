@@ -4,67 +4,73 @@
   "status": "FROZEN",
   "frozen_before_primary_execution": true,
   "authority_hashes": [
-    "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7",
     "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f",
-    "1452d72412a6570ebd9c571734c6da0a34148076a10507e23c50927c8b0df04b",
-    "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875",
-    "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72",
-    "a972eb4377066379b2d2b40de43a1bf37004341263fc0cdc919020ef11c2209f",
-    "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
-    "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43"
+    "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7",
+    "c3a6bd65808eaf9fbe85e4951a666a2287bbd6c74f928a55ccd7518c51387fcd",
+    "3a73e6482152d8d2d465e711be19d634e170f5a6bcee2b564fa046b133014cc8",
+    "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+    "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d",
+    "ce98bd016b75d6750d09f7485b54b4879d29c1a73bc8b1c9a369af50a8b5f083",
+    "fa57dad1c09fb3aeb7d4f842d186997ccd14a5a786eb92a3c5b73a20b78bd8e7",
+    "a4610c3b1c058b3ef1967c7e3e442c2a40955641fad32e9b95a998b55ffde1ae"
   ],
   "parent_hashes": [
     "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8"
   ],
   "definition_hashes": [
-    "c193896dfb3881321c7e3f00e9e2423460173ce0ddfcd5098d8fe920cd83b6e4"
+    "0554938438646913bbaa40e8e9a0e3bee7bbf2c4d1cdc4c714169422bc87a668",
+    "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43",
+    "b1849c62a4cc29d8f399648568947dec4dfb4429e9a1ebe6da7d7776d2e164b2"
   ],
   "candidate_classes": [
-    "LOWEST_ORDER_POSITIVE_MASS_ACTION_ON_EXACT_E_HYPEREDGE_WITH_NO_NEW_DIMENSIONLESS_CONSTANTS"
+    "exact ordered E two-channel kernel manifestation",
+    "withheld-channel ablations",
+    "scalar-collapse countermodel"
   ],
   "equations_and_laws": [
-    "r_f=kf*n*p",
-    "r_r=kr*d",
-    "dy/dtau_E=S.(r_f,r_r)",
-    "kf=g_C",
-    "kr=g_C*Theta_D",
-    "E_free+H_bind=g_C*(n0+p0)"
+    "n+p<->d mass action",
+    "kf=delta/(delta+1)",
+    "kr=1/(delta+1)",
+    "extent F(x)=kf(n0-x)(p0-x)-kr(d0+x)",
+    "q_E=delta^-18"
   ],
   "dimensions_units_frames_gauges_clocks": [
-    "tau_E is a dimensionless intrinsic reaction-flow clock derived from the E linearized equilibrium rate; not SI time",
-    "dimensionless per intrinsic tau_E under normalized abundance convention"
+    "abundances are dimensionless RFC carrier abundances",
+    "tau_E intrinsic dimensionless reaction clock",
+    "kf+kr=1 fixes reaction-clock gauge",
+    "energy ledger is parent-gap-scaled dimensionless internal energy"
   ],
   "methods": [
-    "BDF primary reaction integrator",
-    "scalar reaction-extent independent implementation"
+    "BDF primary",
+    "analytic/closed-form extent independent reconstruction"
   ],
   "tolerances": [
     "rtol=1e-9",
     "atol=1e-12",
-    "positivity=1e-12",
-    "invariants=1e-9",
-    "convergence/restart/independent L_inf=1e-8"
+    "positivity=1e-9",
+    "invariant=1e-9",
+    "reconstruction/convergence=1e-8"
   ],
   "stopping_rules": [
-    "one local E reaction-relaxation e-fold",
-    "hard stop on public/remembered target use",
-    "hard stop on baryon/charge failure"
+    "primary execution ends at derived q_E freeze witness",
+    "any unresolved __BIND token is hard stop"
   ],
   "expected_invariants": [
     "baryon",
     "charge",
-    "dimensionless excitation+RFL binding memory"
+    "parent-gap-scaled internal energy",
+    "positivity"
   ],
   "tests": [
-    "E-WL-001",
-    "E-WL-002",
-    "manufactured E reference check",
-    "network convergence",
-    "withheld reverse reaction",
-    "countermodels",
+    "exact Wolfram E-WL-001 and E-WL-002",
+    "manufactured reference check",
+    "rate refinement",
+    "withheld channels",
+    "scalar collapse",
+    "delta envelope",
     "restart",
-    "uncertainty envelope",
-    "independent scalar reconstruction"
+    "clean replay",
+    "independent extent reconstruction"
   ],
   "gates": [
     "baryon/charge/energy accounting",
@@ -74,20 +80,22 @@
     "withheld reaction and independent implementation checks"
   ],
   "falsifiers": [
-    "any abundance below -1e-12",
-    "baryon or charge drift above 1e-9",
-    "dimensionless excitation+binding-memory drift above 1e-9",
-    "network refinement final-state L_inf change above 1e-8",
-    "midpoint restart final-state L_inf change above 1e-8",
-    "independent scalar-extent reconstruction final-state L_inf change above 1e-8",
-    "historical/public abundance target influences generation"
+    "exact D parent SHA mismatch",
+    "any historical/public abundance target enters generation",
+    "kf/kr differs from inherited delta above 1e-12",
+    "kf+kr differs from 1 above 1e-12",
+    "stoichiometric invariant residual exceeds 1e-12",
+    "any abundance below -1e-9",
+    "BDF refinement changes final state above 1e-8 L_infinity",
+    "independent extent reconstruction differs above 1e-8 L_infinity",
+    "full two-channel network is not distinguishable from scalar-collapse or withheld-channel countermodels"
   ],
-  "claim_boundary": "Internally generated RFC primordial three-role nuclear state at MINIMAL_SPINE fidelity only. No public abundance fit, no empirical isotope calibration, no MeV binding energies, no SI duration, and no external BBN validation is claimed.",
-  "independent_verifier_design": "Reduce the exact three-species network to the single reaction extent x using baryon/charge conservation, integrate the scalar Riccati law independently of ReactionNetwork, reconstruct n,p,d and energy-memory ledgers, and compare against primary output without trusting primary gate summaries.",
+  "claim_boundary": "Module E may establish an internally generated RFC minimal-spine primordial three-species reaction state, source-owned two-channel rate law, conserved baryon/charge/internal-energy ledgers, freeze-out witness and inherited uncertainty envelope. It does not establish calibrated nuclear reaction rates, MeV binding energies, SI time, Standard Model isotope correspondence, or empirical abundance agreement.",
+  "independent_verifier_design": "Reconstruct delta and nClosure from H_A_to_B ancestry, reconstruct kf/kr from the first two normalized kernel weights, inherit the exact D final population, solve the one-dimensional reaction-extent Riccati equation independently, derive the unique feasible equilibrium and q_E freeze witness, then compare against primary solver outputs without trusting primary gate summaries.",
   "allowed_implementation_only_corrections": [
     "serialization",
     "path handling",
-    "relocation safety",
-    "numerical implementation defects only; no changes to frozen science, rates, tests, thresholds, gates or claim scope"
+    "numerical root/event location implementation",
+    "runner dependency installation; no source/rate/equation/gate/threshold/claim changes"
   ]
 }

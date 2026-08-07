@@ -9,55 +9,62 @@
       "object_id": "H_D_to_E",
       "path": "modules/D/runs/D-130-20260807T053432Z/frozen/H_D_to_E.json",
       "sha256": "199b89ccbdea06714a5539c5d3baf53cd332e5b65922676c6c8d37cc7c824af8",
-      "role": "EXACT_DIRECT_PHYSICAL_PARENT"
+      "role": "SOLE_DIRECT_PHYSICAL_PARENT"
     }
   ],
-  "admitted_ancestry": [
+  "inherited_canonical_authorities": [
     {
       "path": "modules/A/frozen/H_A_to_B.json",
-      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "role": "CANONICAL_RECURSIVE_KERNEL_AND_DEPTH"
     },
     {
       "path": "modules/B/frozen/H_B_to_C.json",
-      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+      "role": "ANCESTRY_AND_DELTA_CONTINUITY"
     },
     {
-      "path": "modules/C/frozen/H_C_to_D.json",
-      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
-    },
-    {
-      "path": "modules/D/runs/D-130-20260807T053432Z/FROZEN_DERIVATION_SPEC.json",
-      "sha256": "0d4c4b16b8777198eae6644eb6bf7b67b840357c0cc9e21bcfaf2fb159806c10"
-    },
-    {
-      "path": "modules/D/runs/D-130-20260807T053432Z/primary/UNCERTAINTY_COVARIANCE.json",
-      "sha256": "e427da870592169658308c8ec47e3d0789d54324720b51e56f0837bb02cf469a"
+      "path": "modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json",
+      "sha256": "3255975f872f42fdbf08f5c0c901884edf4c7e22a4de01b70689fedf43903393",
+      "role": "INTERNAL_GAP_AND_CONSERVATION_SCALE"
     }
   ],
-  "authority_files": [
-    {
-      "path": "recipes/E/WORK_ORDER.md",
-      "sha256": "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7"
-    },
+  "module_authorities": [
     {
       "path": "recipes/E/recipe.json",
       "sha256": "c6e8996887ddb6ed2798e9de933e636b256b3d28aff6586bdf330bf0fcf6442f"
     },
     {
-      "path": "recipes/E/gates.json",
-      "sha256": "1452d72412a6570ebd9c571734c6da0a34148076a10507e23c50927c8b0df04b"
+      "path": "recipes/E/WORK_ORDER.md",
+      "sha256": "b573b9fdff0ad7f8b6406954d1fcc44a1d8878598072c2a6c5eb3e543d6cbad7"
     },
     {
-      "path": "theory/DERIVATION_ATLAS.md",
-      "sha256": "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875"
+      "path": "recipes/E/MODEL_PROMPT.md",
+      "sha256": "c3a6bd65808eaf9fbe85e4951a666a2287bbd6c74f928a55ccd7518c51387fcd"
     },
     {
-      "path": "theory/ENHANCEMENT_CROSSWALK.json",
-      "sha256": "ee4e89bb0e4dd85fea37cda3584cd21cdedca5ae1043a487e239d61a6c827e72"
+      "path": "modules/E/spec.json",
+      "sha256": "3a73e6482152d8d2d465e711be19d634e170f5a6bcee2b564fa046b133014cc8"
     },
     {
-      "path": "MODEL_OPERATOR_PROMPT.md",
-      "sha256": "a972eb4377066379b2d2b40de43a1bf37004341263fc0cdc919020ef11c2209f"
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d"
+    },
+    {
+      "path": "docs/10_EXECUTION_PROTOCOL.md",
+      "sha256": "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d"
+    },
+    {
+      "path": "docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md",
+      "sha256": "ce98bd016b75d6750d09f7485b54b4879d29c1a73bc8b1c9a369af50a8b5f083"
+    },
+    {
+      "path": "docs/00_SCIENTIFIC_CONSTITUTION.md",
+      "sha256": "fa57dad1c09fb3aeb7d4f842d186997ccd14a5a786eb92a3c5b73a20b78bd8e7"
+    },
+    {
+      "path": "configured_runs/BINDING_PROTOCOL.md",
+      "sha256": "a4610c3b1c058b3ef1967c7e3e442c2a40955641fad32e9b95a998b55ffde1ae"
     },
     {
       "path": "recipes/E/wolfram/E-WL-001.wl",
@@ -68,26 +75,9 @@
       "sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43"
     }
   ],
-  "internal_derivations": [
-    {
-      "path": "modules/E/runs/E-140-20260807T155635Z/FROZEN_DERIVATION_SPEC.json",
-      "sha256": "c193896dfb3881321c7e3f00e9e2423460173ce0ddfcd5098d8fe920cd83b6e4",
-      "object_id": "E140_FROZEN_DERIVATION_SPEC"
-    }
-  ],
-  "excluded_generative_material": [
-    "prior E blocked run",
-    "historical scalar Li7 lane",
-    "target-relative W2/W3/W4 proxy outputs",
-    "public nuclear-rate or abundance tables"
-  ],
-  "imports": [
-    "math",
-    "json",
-    "hashlib"
-  ],
-  "files": [],
+  "historical_failures_used_for_generation": false,
+  "public_or_observed_abundance_targets_used": false,
+  "imports": [],
   "urls": [],
-  "constants": [],
-  "rate_source_audit": "PASS_PARENT_DERIVED_NO_PUBLIC_OR_HISTORICAL_FAILURE_PARENT"
+  "constants": []
 }
