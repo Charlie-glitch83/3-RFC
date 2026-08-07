@@ -55,9 +55,14 @@ class RepositoryTests(unittest.TestCase):
         state = json.loads((ROOT / "STATE.json").read_text())
         req = json.loads((ROOT / "config/module_evidence_requirements.json").read_text())["modules"]
         for mod, rec in state["modules"].items():
-            self.assertEqual(rec["evidence_state"], "DESIGN")
-            self.assertEqual(rec["evidence_history"][0]["state"], "DESIGN")
             self.assertIn(mod, req)
+            history = rec["evidence_history"]
+            self.assertGreaterEqual(len(history), 1)
+            self.assertEqual(history[0]["state"], "DESIGN")
+            self.assertEqual(history[-1]["state"], rec["evidence_state"])
+            visited = {entry["state"] for entry in history}
+            if rec["evidence_state"] == "FROZEN":
+                self.assertTrue(set(req[mod].get("must_visit", [])).issubset(visited))
 
     def test_module_work_units_have_targets(self):
         queue = json.loads((ROOT / "WORK_QUEUE.json").read_text())
