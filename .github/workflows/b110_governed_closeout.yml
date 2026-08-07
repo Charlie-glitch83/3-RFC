@@ -30,7 +30,7 @@ jobs:
           python-version: '3.13'
 
       - name: Install execution dependencies
-        run: python -m pip install --disable-pip-version-check numpy networkx scipy
+        run: python -m pip install --disable-pip-version-check numpy networkx scipy sympy
 
       - name: Execute frozen Module B in primary checkout
         working-directory: primary_checkout
@@ -42,13 +42,8 @@ jobs:
           python tools/rfc.py doctor
           python tools/run_reference_checks.py --module B --output "$RUN/reference_checks.json"
           mkdir -p "$RUN/solver_configs" "$RUN/solver_outputs/big_implosion"
-          python tools/materialize_solver_config.py \
-            --template configured_runs/templates/B_big_implosion.template.json \
-            --binding-sheet "$RUN/binding_sheets/B_big_implosion.bindings.json" \
-            --output "$RUN/solver_configs/B_big_implosion.json"
-          python tools/run_configured_solver.py \
-            --config "$RUN/solver_configs/B_big_implosion.json" \
-            --output-dir "$RUN/solver_outputs/big_implosion"
+          python tools/materialize_solver_config.py --template configured_runs/templates/B_big_implosion.template.json --binding-sheet "$RUN/binding_sheets/B_big_implosion.bindings.json" --output "$RUN/solver_configs/B_big_implosion.json"
+          python tools/run_configured_solver.py --config "$RUN/solver_configs/B_big_implosion.json" --output-dir "$RUN/solver_outputs/big_implosion"
           python "$RUN/primary_module_b.py"
           python "$RUN/independent_module_b.py"
           python "$RUN/validate_module_b.py"
