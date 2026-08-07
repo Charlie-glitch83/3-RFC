@@ -141,7 +141,7 @@ jobs:
           }
           obj={
             'schema_version':'1.0','run_id':'D-130-20260807T045646Z','status':'FROZEN_BEFORE_PRIMARY_NUMERICAL_EXECUTION',
-            'frozen_utc':datetime.now(timezone.utc).isoformat(),
+            'frozen_utc':datetime.now(datetime.timezone.utc).isoformat() if False else datetime.now(timezone.utc).isoformat(),
             'source_commit_before_preparation':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
             'hashes':{k:{'path':str(v),'sha256':sha(v)} for k,v in files.items()},
             'imports':['numpy','scipy.integrate.solve_ivp','sympy via frozen transport engine','python standard library'],
@@ -163,5 +163,12 @@ jobs:
           git config user.email 'actions@users.noreply.github.com'
           git add -A
           git commit -m 'Freeze fresh D-130 numerical implementation and bindings'
-          git pull --rebase origin agent/frontier-050-execution
-          git push origin HEAD:agent/frontier-050-execution
+          for attempt in 1 2 3 4 5; do
+            git fetch origin agent/frontier-050-execution
+            git rebase origin/agent/frontier-050-execution
+            if git push origin HEAD:agent/frontier-050-execution; then
+              exit 0
+            fi
+            sleep 1
+          done
+          exit 1
