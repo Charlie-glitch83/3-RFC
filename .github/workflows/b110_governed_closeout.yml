@@ -38,6 +38,7 @@ jobs:
         run: |
           set -euo pipefail
           RUN='modules/B/runs/B-110-20260807T002248Z'
+          python tools/repair_registered_run_tree.py --run-id A-100-20260806T173458Z --record memory/A100_TREE_REGISTRY_REPAIR.json
           python tools/rfc.py doctor
           python tools/run_reference_checks.py --module B --output "$RUN/reference_checks.json"
           mkdir -p "$RUN/solver_configs" "$RUN/solver_outputs/big_implosion"
@@ -94,6 +95,7 @@ jobs:
         run: |
           set -euo pipefail
           RUN='modules/B/runs/B-110-20260807T002248Z'
+          python tools/repair_registered_run_tree.py --run-id A-100-20260806T173458Z
           python tools/rfc.py doctor
           python tools/run_reference_checks.py --module B --output "$RUN/reference_checks.json"
           mkdir -p "$RUN/solver_configs" "$RUN/solver_outputs/big_implosion"
@@ -117,8 +119,7 @@ jobs:
           run=pathlib.Path('replay_checkout/modules/B/runs/B-110-20260807T002248Z')
           second={rel:hashlib.sha256((run/rel).read_bytes()).hexdigest() for rel in first}
           matches={rel:{'primary_sha256':first[rel],'replay_sha256':second[rel],'match':first[rel]==second[rel]} for rel in first}
-          ok=all(v['match'] for v in matches.values())
-          if not ok:
+          if not all(v['match'] for v in matches.values()):
               raise SystemExit('HARD STOP: clean replay scientific hashes differ')
           ref=subprocess.check_output(['git','-C','replay_checkout','rev-parse','HEAD'],text=True).strip()
           rec={
@@ -147,7 +148,7 @@ jobs:
           python tools/rfc.py promote-module B --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$RUN/primary/BIG_IMPLOSION_PHYSICAL_STATE.json"
           python tools/rfc.py promote-module B --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
           python tools/rfc.py promote-module B --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/B/frozen/H_B_to_C.json
-          python tools/rfc.py close-run B-110-20260807T002248Z --result PASS --closeout "$RUN/CLOSEOUT.md"
+          python tools/rfc.py close-run --run-id B-110-20260807T002248Z --result PASS --closeout "$RUN/CLOSEOUT.md"
           python tools/rfc.py advance --task B-110 --result PASS --evidence "$RUN/CLOSEOUT.md" --note 'Module B closed at its verified first-physical-state scope; exactly one immediate child may advance.'
           python tools/rfc.py context
           python tools/director.py prepare-active
