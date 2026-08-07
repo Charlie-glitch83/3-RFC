@@ -1,0 +1,22 @@
+{
+  "run_id": "D-130-20260807T053432Z",
+  "classification": "IMPLEMENTATION_ONLY_CORRECTIONS",
+  "changes_frozen_science": false,
+  "corrections": [
+    {
+      "issue": "NumPy boolean serialization in generated gate record",
+      "scope": "serialization only",
+      "resolution": "Cast generated boolean diagnostics to built-in Python bool before JSON serialization.",
+      "frozen_objects_changed": false
+    },
+    {
+      "issue": "Execution verifier recomputed 1/g_C instead of using the already frozen numeric execution_interval.t_span endpoint",
+      "scope": "implementation/wiring only",
+      "resolution": "Use the exact frozen t_span endpoint from FROZEN_DERIVATION_SPEC for primary comparison, restart horizon, and clean-replay analytic reconstruction.",
+      "frozen_objects_changed": false,
+      "thresholds_changed": false,
+      "laws_changed": false,
+      "parents_changed": false
+    }
+  ]
+}
