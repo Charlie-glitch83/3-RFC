@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "transport",
+  "model": {
+    "state_names": [
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "parameters": {
+      "a": 0.1499430216517723
+    },
+    "rhs_expressions": [
+      "a*(p1-p0)+a*(p2-p0)",
+      "a*(p0-p1)+a*(p2-p1)",
+      "a*(p0-p2)+a*(p1-p2)"
+    ],
+    "initial_state": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "t_span": [
+      0.0,
+      6.669200000000001
+    ],
+    "method": "BDF",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "max_step": 0.05210312500000001,
+    "linear_invariants": {
+      "total_carrier": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "Q_total": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "invariant_tolerance": 1e-09,
+    "positivity_required": true,
+    "positivity_tolerance": 1e-12
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-130-20260807T220342Z/solver_templates/D_transport.template.json",
+    "template_sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-130-20260807T220342Z/binding_sheets/D_transport.bindings.json",
+    "binding_sheet_sha256": "2c0fe6fa356791329111607beb16d7fbb01d9068ab8c4c67be450c70cf2e6207",
+    "bindings": [
+      {
+        "path": "model.state_names",
+        "value": [
+          "p0",
+          "p1",
+          "p2"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "typed C carrier labels",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.parameters",
+        "value": {
+          "a": 0.1499430216517723
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "inverse tau_D",
+        "dimensions": "intrinsic transport rates",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.rhs_expressions",
+        "value": [
+          "a*(p1-p0)+a*(p2-p0)",
+          "a*(p0-p1)+a*(p2-p1)",
+          "a*(p0-p2)+a*(p1-p2)"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "carrier fraction per tau_D",
+        "dimensions": "conservative complete-support flow",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.initial_state",
+        "value": [
+          0.5865734510957316,
+          0.24345592095871127,
+          0.16997062794555687
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "normalized carrier fractions",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.t_span",
+        "value": [
+          0.0,
+          6.669200000000001
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "tau_D",
+        "dimensions": "intrinsic post-event transport clock",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.max_step",
+        "value": 0.05210312500000001,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "tau_D",
+        "dimensions": "numerical resolution",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.linear_invariants",
+        "value": {
+          "total_carrier": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Q_total": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "conserved linear ledgers",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.invariant_tolerance",
+        "value": 1e-09,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "ledger residual tolerance",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      },
+      {
+        "path": "model.positivity_tolerance",
+        "value": 1e-12,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-130-20260807T220342Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "7360a9fc28e71d54ed6424f3d34ab6498f83958d0b940764060a058e621e8506",
+        "module": "D",
+        "derivation_object": "D130_FROZEN_DERIVATION_SPEC",
+        "units": "dimensionless",
+        "dimensions": "carrier fraction tolerance",
+        "justification": "Exact frozen parent-derived D binding; no historical D result, public target, remembered thermal constant, or laboratory/SI anchor used."
+      }
+    ]
+  }
+}

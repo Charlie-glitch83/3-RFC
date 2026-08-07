@@ -1,0 +1,14 @@
+{
+  "call_id": "D-WL-001",
+  "module": "D",
+  "purpose": "Exact two-state transport conservation and Lyapunov decay",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-07T22:43:41.648673+00:00",
+  "input_sha256": "2b79fea2537665d78d41026231229eb2bf132725f8e42b732ce1a491ea2818e3",
+  "output_sha256": "ae70a693f688ad802c33deddb4f02e7197c9060f58e699cb7eed31182f1192b3",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/D/runs/D-130-20260807T220342Z/wolfram/D-WL-001/gate.json"
+}

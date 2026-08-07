@@ -1,0 +1,106 @@
+{
+  "run_id": "D-130-20260807T220342Z",
+  "classification": "DYADIC_BDF_MAX_STEP_CONVERGENCE",
+  "runs": [
+    {
+      "max_step": 0.20841250000000003,
+      "final_state": [
+        0.3459414182827689,
+        0.3288585997868977,
+        0.3251999819303331
+      ],
+      "minimum_state": 0.16997062794555687,
+      "invariants": {
+        "total_carrier": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 3.3306690738754696e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        },
+        "Q_total": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 3.3306690738754696e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        }
+      }
+    },
+    {
+      "max_step": 0.10420625000000001,
+      "final_state": [
+        0.3459414175004033,
+        0.3288586000645669,
+        0.32519998243502946
+      ],
+      "minimum_state": 0.16997062794555687,
+      "invariants": {
+        "total_carrier": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 3.3306690738754696e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        },
+        "Q_total": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 3.3306690738754696e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        }
+      }
+    },
+    {
+      "max_step": 0.05210312500000001,
+      "final_state": [
+        0.3459414163255845,
+        0.32885860048152177,
+        0.3251999831928936
+      ],
+      "minimum_state": 0.16997062794555687,
+      "invariants": {
+        "total_carrier": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 5.551115123125783e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        },
+        "Q_total": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 5.551115123125783e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        }
+      }
+    },
+    {
+      "max_step": 0.026051562500000004,
+      "final_state": [
+        0.34594141633205233,
+        0.3288586004792265,
+        0.3251999831887214
+      ],
+      "minimum_state": 0.16997062794555687,
+      "invariants": {
+        "total_carrier": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 9.992007221626409e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        },
+        "Q_total": {
+          "initial": 0.9999999999999997,
+          "max_abs_drift": 9.992007221626409e-16,
+          "tolerance": 1e-09,
+          "pass": true
+        }
+      }
+    }
+  ],
+  "successive_final_linf": [
+    7.823656167360582e-10,
+    1.1748187978000146e-09,
+    6.4678262745587745e-12
+  ],
+  "finest_pair_linf": 6.4678262745587745e-12,
+  "tolerance": 1e-08,
+  "pass": true
+}

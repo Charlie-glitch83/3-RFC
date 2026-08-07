@@ -1,0 +1,38 @@
+{
+  "run_id": "D-130-20260807T220342Z",
+  "classification": "PRIMARY_GATE_INPUTS_PENDING_INDEPENDENT_RECONSTRUCTION",
+  "positive_distributions": {
+    "pass": true,
+    "minimum": 0.16997062794555687,
+    "tolerance": 1e-12
+  },
+  "energy_charge_conservation": {
+    "pass": true,
+    "max_linear_invariant_drift": 5.551115123125783e-16,
+    "max_energy_ledger_residual": 0.0,
+    "tolerance": 1e-09
+  },
+  "event_ordering": {
+    "pass": true,
+    "max_witness_residual": 1.3877787807814457e-17
+  },
+  "stiff_solver_convergence": {
+    "pass": true,
+    "finest_pair_linf": 6.4678262745587745e-12,
+    "tolerance": 1e-08
+  },
+  "restart": {
+    "pass": true,
+    "linf": 4.1358971802907263e-10,
+    "tolerance": 1e-08
+  },
+  "entropy_and_countermodels": {
+    "pass": true,
+    "minimum_entropy_production": 0.0003281437198948973,
+    "countermodels_pass": true
+  },
+  "independent_reconstruction": {
+    "pass": false,
+    "status": "PENDING_SEPARATE_IMPLEMENTATION"
+  }
+}

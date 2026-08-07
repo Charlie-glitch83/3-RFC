@@ -17,6 +17,13 @@
     "analytic independent reconstruction differs above 1e-8 L_inf",
     "withholding an inherited edge fails to materially change the state above 1e-8"
   ],
-  "all_tested_or_hard_stopped": false,
-  "result": "PENDING_EXECUTION"
+  "all_tested_or_hard_stopped": true,
+  "result": "PASS_PENDING_CLEAN_REPLAY",
+  "execution_evidence": [
+    "GATE_RESULTS.json",
+    "COUNTERMODELS_AND_ABLATIONS.json",
+    "CONVERGENCE.json",
+    "CHECKPOINT_RECORD.json",
+    "independent/INDEPENDENT_RECONSTRUCTION.json"
+  ]
 }

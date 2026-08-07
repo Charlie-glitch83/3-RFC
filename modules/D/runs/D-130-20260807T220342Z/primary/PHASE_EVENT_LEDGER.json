@@ -1,0 +1,60 @@
+{
+  "run_id": "D-130-20260807T220342Z",
+  "classification": "SOURCE_DERIVED_PHASE_EVENT_CHRONOLOGY",
+  "events": [
+    {
+      "event": "QV_RFL_MEMORY_BALANCE",
+      "tau_D": 0.7704561960983979,
+      "rule": "U_D=Q_RFL=U_D(0)/2",
+      "meaning": "first exact balance crossing between remaining constitutive excitation and stabilized RFL transfer memory",
+      "state": [
+        0.512401137871605,
+        0.26978040556773836,
+        0.21781845656065646
+      ],
+      "U_D": 0.022243120616659735,
+      "Q_RFL": 0.02224312061665972,
+      "S_D": 1.028043370090653,
+      "Theta_D": 0.17292007842614163,
+      "V_eff": 2.795590543814611,
+      "witness_residual": 1.3877787807814457e-17
+    },
+    {
+      "event": "GLOBAL_RELAXATION_EFOLD",
+      "tau_D": 2.2230666666666665,
+      "rule": "||p-u||=exp(-1)||p(0)-u||",
+      "meaning": "one exact nonuniform parent-gap relaxation e-fold",
+      "state": [
+        0.42649516633795465,
+        0.3002692810950221,
+        0.27323555256702314
+      ],
+      "U_D": 0.006020558057443573,
+      "Q_RFL": 0.038465683175875884,
+      "S_D": 1.0791878640787336,
+      "Theta_D": 0.11509811799445421,
+      "V_eff": 2.9422890418660717,
+      "witness_residual": 0.0
+    },
+    {
+      "event": "EDGE_TIMESCALE_STABILIZATION",
+      "tau_D": 6.669200000000001,
+      "rule": "tau_D=1/a=3/g_C",
+      "meaning": "one complete-support edge timescale; three global amplitude e-folds; frozen D export boundary",
+      "state": [
+        0.34594141638985576,
+        0.3288586004587113,
+        0.3251999831514329
+      ],
+      "U_D": 0.00011027036728880613,
+      "Q_RFL": 0.04437597086603065,
+      "S_D": 1.098246579497598,
+      "Theta_D": 0.0568811840796572,
+      "V_eff": 2.9989030730788078,
+      "witness_residual": 0.0
+    }
+  ],
+  "strictly_ordered": true,
+  "max_witness_residual": 1.3877787807814457e-17,
+  "observed_target_used_for_ordering": false
+}

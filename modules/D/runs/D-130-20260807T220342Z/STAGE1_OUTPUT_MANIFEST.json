@@ -1,0 +1,90 @@
+{
+  "status": "PHYSICALLY_EXECUTED_AND_INDEPENDENTLY_RECONSTRUCTED_PENDING_CLEAN_REPLAY",
+  "outputs": [
+    {
+      "path": "reference_checks.json",
+      "sha256": "a2581b4a09e1b275e838e6d2c4922e699bc581344dbfd73a9da2adf6e684d2ad",
+      "bytes": 495
+    },
+    {
+      "path": "solver_configs/D_transport.json",
+      "sha256": "f457a60713ea494bde04ec5788d85473559a15d3c20dd8ae2ad765bb7c88c107",
+      "bytes": 7969
+    },
+    {
+      "path": "solver_outputs/transport/result.json",
+      "sha256": "1a0d0163b61843ed8378bb9ef0e3c0ef16cd6efe0f08a36490b1c75666157d5a",
+      "bytes": 16505
+    },
+    {
+      "path": "primary/THERMAL_DISTRIBUTION_HISTORY.json",
+      "sha256": "2abb95171ecb81eb464c351101780419206c3d0a029fd7064f3ce18435ba3fdf",
+      "bytes": 16662
+    },
+    {
+      "path": "primary/TEMPERATURE_HISTORY.json",
+      "sha256": "906d2f0f46f9ff9e3eca10eefe10687b4818a37344f68b7148875cc35e3d396f",
+      "bytes": 15624
+    },
+    {
+      "path": "primary/PHASE_EVENT_LEDGER.json",
+      "sha256": "0d630ac07ec1e3d900c103dbaa08bbcc8a2a3a6d7d3609d14d5f86e28f28010f",
+      "bytes": 1908
+    },
+    {
+      "path": "primary/TRANSPORT_COLLISION_OPERATORS.json",
+      "sha256": "73a11bf372884a5bd7c2ae61f7ea1dc592f8a367668930ab7a660a631a5ae7f3",
+      "bytes": 1132
+    },
+    {
+      "path": "primary/ENTROPY_CONSERVATION_LEDGER.json",
+      "sha256": "e74871b236b16eb63f55c224434bddbc5c0caa94060a5e3077485f4dbc63d078",
+      "bytes": 23188
+    },
+    {
+      "path": "primary/UNCERTAINTY_COVARIANCE.json",
+      "sha256": "fc78d017641f82ccdaa7515d263317df25be35dedb1517e4b626a1fe1168d84f",
+      "bytes": 3751
+    },
+    {
+      "path": "COUNTERMODELS_AND_ABLATIONS.json",
+      "sha256": "a18647fa1d0116b6bfc51f6c29d2c8c387d62ac810384390ec7b804082a9dca5",
+      "bytes": 1080
+    },
+    {
+      "path": "CONVERGENCE.json",
+      "sha256": "3778f55b6b070cf010d1c67418287c593064dc18248b51259f82b73179ca33fb",
+      "bytes": 2712
+    },
+    {
+      "path": "CHECKPOINT_RECORD.json",
+      "sha256": "67afe2545bbb5b6ef769199d373b8af3d9e5905b3dc772766ce421484a3d84b6",
+      "bytes": 491
+    },
+    {
+      "path": "PRIMARY_GATE_INPUTS.json",
+      "sha256": "985a406034ab7201831d23161725387b9b60f518a90f04a4d0d29eda5f597d3b",
+      "bytes": 976
+    },
+    {
+      "path": "independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "498eccb00d15257e7d13e6f5f8a10fe5bd5bd6dd2b50dab3ae7e3ad68355b995",
+      "bytes": 1039
+    },
+    {
+      "path": "GATE_RESULTS.json",
+      "sha256": "2e7118b0724be8cba9963376d45385e10be00fd8ce335483399250ca7a4fc44c",
+      "bytes": 1226
+    },
+    {
+      "path": "INDEPENDENT_VERIFICATION.md",
+      "sha256": "c0a01c0f80df20faa34732a42b05fcd8c7d04cdd83a89d3167f1586af627f610",
+      "bytes": 779
+    },
+    {
+      "path": "primary/H_D_to_E.preliminary.json",
+      "sha256": "6c5a3fbd689ac4808c4cb289801e6943ed7b9ed6b08ccd3643bdf11a06709749",
+      "bytes": 2686
+    }
+  ]
+}

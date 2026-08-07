@@ -1,0 +1,38 @@
+{
+  "run_id": "D-130-20260807T220342Z",
+  "classification": "INDEPENDENT_PARENT_ONLY_RECONSTRUCTION",
+  "method": "ANALYTIC_K3_SPECTRAL_RECONSTRUCTION_PLUS_DOP853",
+  "trusted_primary_gate_summary": false,
+  "parent_path": "modules/C/frozen/H_C_to_D.json",
+  "parent_matrix_reconstructed": [
+    [
+      0.29988604330354474,
+      -0.1499430216517723,
+      -0.1499430216517723
+    ],
+    [
+      -0.1499430216517723,
+      0.2998860433035446,
+      -0.1499430216517723
+    ],
+    [
+      -0.1499430216517723,
+      -0.1499430216517723,
+      0.2998860433035446
+    ]
+  ],
+  "parent_initial_state_reconstructed": [
+    0.5865734510957316,
+    0.24345592095871127,
+    0.16997062794555687
+  ],
+  "a_reconstructed": 0.1499430216517723,
+  "g_C_reconstructed": 0.449829064955317,
+  "analytic_history_linf": 1.6405191649582207e-09,
+  "analytic_final_linf": 6.427125498476016e-11,
+  "DOP853_final_linf": 6.427086640670154e-11,
+  "event_time_linf": 0.0,
+  "temperature_endpoint_linf": 7.33309524214576e-11,
+  "tolerance": 1e-08,
+  "pass": true
+}

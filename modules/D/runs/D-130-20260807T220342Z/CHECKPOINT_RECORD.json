@@ -1,7 +1,23 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
-  "hash_algorithm": "sha256"
+  "run_id": "D-130-20260807T220342Z",
+  "checkpoint_id": "D_MIDPOINT_TRANSPORT_STATE",
+  "tau_D": 3.3346000000000005,
+  "state": [
+    0.3898388409725578,
+    0.3132789720559749,
+    0.2968821869714672
+  ],
+  "restart_final_state": [
+    0.3459414159119948,
+    0.32885860062830874,
+    0.32519998345969625
+  ],
+  "primary_final_state": [
+    0.3459414163255845,
+    0.32885860048152177,
+    0.3251999831928936
+  ],
+  "linf": 4.1358971802907263e-10,
+  "tolerance": 1e-08,
+  "pass": true
 }

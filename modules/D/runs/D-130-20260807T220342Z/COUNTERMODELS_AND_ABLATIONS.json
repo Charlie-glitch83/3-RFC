@@ -1,0 +1,46 @@
+{
+  "run_id": "D-130-20260807T220342Z",
+  "classification": "SEMANTIC_COUNTERMODELS_AND_ABLATIONS",
+  "scalar_collapse": {
+    "final_state": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "linf_from_parent_driven_final": 0.01260808299225119,
+    "rejected": true
+  },
+  "edge_withheld": {
+    "withheld_edge": [
+      0,
+      2
+    ],
+    "final_state": [
+      0.4122005066072291,
+      0.3288586005010971,
+      0.25894089289167405
+    ],
+    "linf_from_full_K3_final": 0.06625909030121957,
+    "rejected": true
+  },
+  "anti_diffusion": {
+    "solver_success": false,
+    "final_state": [
+      5.419797131159027,
+      -1.4719027735093146,
+      -2.9478943576497136
+    ],
+    "entropy_change_if_defined": null,
+    "rejected": true
+  },
+  "nonconservative_parameterized": {
+    "family": "G_epsilon = G_D + epsilon E_00, epsilon != 0",
+    "total_derivative_at_parent_state": "epsilon*p0(0) != 0",
+    "rejected": true
+  },
+  "public_temperature_anchor": {
+    "used": false,
+    "rejected_by_firewall": true
+  },
+  "pass": true
+}

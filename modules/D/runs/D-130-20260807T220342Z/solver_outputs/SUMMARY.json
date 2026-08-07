@@ -1,0 +1,19 @@
+{
+  "classification": "MODULE_LOCAL_EXECUTION_PIPELINE",
+  "run": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-130-20260807T220342Z",
+  "configuration_count": 1,
+  "overall": "PASS",
+  "results": [
+    {
+      "config": "D_transport.json",
+      "solver": "transport",
+      "returncode": 0,
+      "success": true,
+      "classification": "TRANSPORT_ODE_EXECUTION",
+      "manifest": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-130-20260807T220342Z/solver_outputs/D_transport/manifest.json",
+      "stdout": "{\n  \"solver\": \"transport\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"f457a60713ea494bde04ec5788d85473559a15d3c20dd8ae2ad765bb7c88c107\",\n  \"result_sha256\": \"1a0d0163b61843ed8378bb9ef0e3c0ef16cd6efe0f08a36490b1c75666157d5a\",\n  \"environment_sha256\": \"0a268d773c218cd387987ded1f6797a8a566864f883f788ac31ff57316506084\",\n  \"success\": true,\n  \"classification\": \"TRANSPORT_ODE_EXECUTION\"\n}",
+      "stderr": ""
+    }
+  ],
+  "warning": "Local solver success is necessary but does not replace source admission, Wolfram gates, convergence matrices, restart/replay, independent reconstruction, or module closeout."
+}

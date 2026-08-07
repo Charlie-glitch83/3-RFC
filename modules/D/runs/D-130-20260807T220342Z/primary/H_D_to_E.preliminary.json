@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_D_to_E_PRELIMINARY",
+  "from_module": "D",
+  "to_module": "E",
+  "run_id": "D-130-20260807T220342Z",
+  "evidence_state": "PHYSICALLY_EXECUTED_PENDING_INDEPENDENT_AND_CLEAN_REPLAY",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parent": {
+    "object_id": "H_C_to_D",
+    "path": "modules/C/frozen/H_C_to_D.json",
+    "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+  },
+  "clock": "tau_D, intrinsic dimensionless post-Big-Implosion transport clock. tau_D=0 is the C->D interface; no seconds or pre-event time are imported.",
+  "final_distribution": [
+    0.3459414163255845,
+    0.32885860048152177,
+    0.3251999831928936
+  ],
+  "intrinsic_temperature_final": 0.056881184006326246,
+  "phase_events": [
+    {
+      "event": "QV_RFL_MEMORY_BALANCE",
+      "tau_D": 0.7704561960983979
+    },
+    {
+      "event": "GLOBAL_RELAXATION_EFOLD",
+      "tau_D": 2.2230666666666665
+    },
+    {
+      "event": "EDGE_TIMESCALE_STABILIZATION",
+      "tau_D": 6.669200000000001
+    }
+  ],
+  "entropy_final": 1.0982465795013165,
+  "rfl_memory_final": 0.044375970867154876,
+  "uncertainty": {
+    "final_state_covariance": [
+      [
+        1.7902421935770697e-14,
+        -8.721243482805375e-15,
+        -9.181178393546128e-15
+      ],
+      [
+        -8.721243482805375e-15,
+        4.248592070913395e-15,
+        4.472651382945673e-15
+      ],
+      [
+        -9.181178393546128e-15,
+        4.472651382945673e-15,
+        4.70852698012757e-15
+      ]
+    ],
+    "event_time_covariance": [
+      [
+        3.336479263250986e-11,
+        9.627044174277713e-11,
+        2.888113252321791e-10
+      ],
+      [
+        9.627044174277713e-11,
+        2.7777777777401585e-10,
+        8.333333333331497e-10
+      ],
+      [
+        2.888113252321791e-10,
+        8.333333333331497e-10,
+        2.500000000032756e-09
+      ]
+    ]
+  },
+  "claim_boundary": "Module D physically instantiates and numerically executes the RFC MINIMAL_SPINE nonequilibrium thermal/phase trajectory on the exact C three-carrier relational state: parent-derived conservative collision/transport, positive distribution history, parent-gap-scaled constitutive-energy transfer into RFL memory, nonnegative entropy production, nonmetric state-space expansion, intrinsic spectral-temperature history, exact phase-event chronology, inherited decimal-envelope uncertainty, restart and independent reconstruction. No Kelvin/MeV calibration, Standard Model species identity, metric/FRW expansion, public transition temperature, neutrino/radiation transport, primordial abundance network, or empirical agreement is claimed."
+}

@@ -1,6 +1,6 @@
 {
   "run_id": "D-130-20260807T220342Z",
-  "status": "FROZEN_PRE_EXECUTION",
+  "status": "PHYSICALLY_EXECUTED_PENDING_CLEAN_REPLAY",
   "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {
     "machine": "x86_64",
@@ -38,9 +38,16 @@
     "scipy"
   ],
   "commands": [
-    "repository work-order commands only; exact execution commands captured during execution phase"
+    "director wolfram-show/record D-WL-001 D-WL-002",
+    "run_reference_checks module D",
+    "director solver-copy D transport (preserved idempotency refusal)",
+    "materialize_solver_config D_transport",
+    "run_configured_solver D_transport",
+    "finish_local_phase D",
+    "execute_d130_physical.py with repo-root PYTHONPATH",
+    "independent_reconstruct_d130.py"
   ],
-  "network_policy": "DISABLED_FOR_SCIENTIFIC_GENERATION_AFTER_DEPENDENCY_SETUP",
+  "network_policy": "DEPENDENCY_INSTALL_ONLY; SCIENTIFIC_GENERATION USED NO NETWORK/PUBLIC DATA",
   "random_seeds": [],
   "hidden_defaults_audited": true,
   "notes": [

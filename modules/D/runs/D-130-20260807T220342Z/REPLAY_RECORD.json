@@ -1,10 +1,7 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
+  "run_id": "D-130-20260807T220342Z",
+  "result": "PENDING_CLEAN_CHECKOUT_REPLAY",
   "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "artifact_hashes_match": false,
+  "independent_reconstruction_pass": true
 }

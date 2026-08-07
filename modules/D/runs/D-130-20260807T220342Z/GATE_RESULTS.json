@@ -1,7 +1,45 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "D-130-20260807T220342Z",
+  "aggregate_scores_cannot_override": true,
+  "componentwise": {
+    "positive distributions": {
+      "pass": true,
+      "minimum": 0.16997062794555687,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    "energy/charge conservation": {
+      "pass": true,
+      "max_linear_invariant_drift": 5.551115123125783e-16,
+      "max_energy_ledger_residual": 0.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    "event ordering": {
+      "pass": true,
+      "max_witness_residual": 1.3877787807814457e-17,
+      "status": "PASS"
+    },
+    "stiff-solver convergence": {
+      "pass": true,
+      "finest_pair_linf": 6.4678262745587745e-12,
+      "tolerance": 1e-08,
+      "status": "PASS"
+    },
+    "restart and independent reconstruction": {
+      "pass": true,
+      "status": "PASS",
+      "restart_linf": 4.1358971802907263e-10,
+      "analytic_history_linf": 1.6405191649582207e-09,
+      "DOP853_final_linf": 6.427086640670154e-11,
+      "tolerance": 1e-08
+    },
+    "entropy/countermodels": {
+      "pass": true,
+      "minimum_entropy_production": 0.0003281437198948973,
+      "countermodels_pass": true,
+      "status": "PASS"
+    }
+  },
+  "overall": "PASS"
 }
