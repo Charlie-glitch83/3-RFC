@@ -1,0 +1,4 @@
+Symbol::undefined2: Warning: Global symbols "G, X, G, X, X, G, X" are undefined.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"C-WL-002\", \"invarianceSolution\" -> \"x21 == -x12 && x22 == x11\", \"candidate\" -> \"{{x11, x12}, {-x12, x11}}\"|>"
