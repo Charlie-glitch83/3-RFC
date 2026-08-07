@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  PYTHONPATH: ${{ github.workspace }}
+
 jobs:
   execute:
     if: github.event.pull_request.head.ref == 'ops/d130-redo-primary-trigger-20260807'
@@ -141,7 +144,7 @@ jobs:
           (run/'FALSIFIER_REGISTRY.json').write_text(json.dumps(reg,indent=2)+'\n')
           env=json.loads((run/'ENVIRONMENT.json').read_text())
           env['status']='PHYSICALLY_EXECUTED_PENDING_CLEAN_REPLAY'
-          env['commands']=['director wolfram-show/record D-WL-001 D-WL-002','run_reference_checks module D','director solver-copy D transport (preserved idempotency refusal)','materialize_solver_config D_transport','run_configured_solver D_transport','finish_local_phase D','execute_d130_physical.py','independent_reconstruct_d130.py']
+          env['commands']=['director wolfram-show/record D-WL-001 D-WL-002','run_reference_checks module D','director solver-copy D transport (preserved idempotency refusal)','materialize_solver_config D_transport','run_configured_solver D_transport','finish_local_phase D','execute_d130_physical.py with repo-root PYTHONPATH','independent_reconstruct_d130.py']
           env['network_policy']='DEPENDENCY_INSTALL_ONLY; SCIENTIFIC_GENERATION USED NO NETWORK/PUBLIC DATA'
           (run/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
           PY
@@ -176,7 +179,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          rm -f .github/workflows/d130_redo_primary_execute.yml
+          rm -f .github/workflows/d130_redo_primary_execute.yml .github/workflows/d130_redo_impl_lock_fix.yml
           git config user.name '3-RFC governed executor'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
