@@ -1,0 +1,53 @@
+name: E140 Restart To Exact Repository Derivation
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+
+permissions:
+  contents: write
+
+jobs:
+  restart:
+    if: github.event.pull_request.head.ref == 'ops/e140-instruction-locator-20260807'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-lock.txt
+      - name: Preserve pre-execution mismatch and restart E
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN='modules/E/runs/E-140-20260807T161406Z'
+          cat > "$RUN/CLOSEOUT.md" <<'EOF'
+          # E-140 Pre-Execution Derivation Superseded By Exact Repository Carrier
+
+          Result: BLOCKED before primary execution.
+
+          Repository discovery located the pre-existing authoritative `e140_freeze_parent_derivation.yml`, which derives the full 9-species K3 pair-composite/memory hypergraph from exact C/D parents. The earlier provisional freeze is preserved but superseded before any physical E execution. It is not a scientific parent.
+          EOF
+          printf '%s\n' '{"failure_id":"E140-PREEXEC-SUPERSEDED-BY-REPO-DERIVATION","run_id":"E-140-20260807T161406Z","category":"PREEXECUTION_DERIVATION_SUPERSEDED","description":"Exact repository parent-derivation carrier was located after provisional freeze and before physical execution.","changes_frozen_science":true,"required_replay_scope":"fresh E run using repository e140_freeze_parent_derivation.yml"}' > "$RUN/FAILURES.jsonl"
+          python tools/rfc.py close-run --run-id E-140-20260807T161406Z --result BLOCKED --closeout "$RUN/CLOSEOUT.md"
+          python tools/rfc.py advance --task E-140 --result FAIL --evidence "$RUN/CLOSEOUT.md" --note 'Pre-execution freeze superseded by exact repository E parent-derivation carrier; E remains active.'
+          bash tools/start_work.sh
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit and remove carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/e140_restart_to_exact_repo_derivation.yml
+          git config user.name '3-RFC governed executor'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Restart E140 on exact repository derivation carrier'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
