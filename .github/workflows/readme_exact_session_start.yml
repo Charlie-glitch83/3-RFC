@@ -17,6 +17,11 @@ jobs:
         with:
           ref: agent/frontier-050-execution
           fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install repository locked dependencies
+        run: python -m pip install -r requirements-lock.txt
       - name: Run exact root README startup commands
         shell: bash
         run: |
