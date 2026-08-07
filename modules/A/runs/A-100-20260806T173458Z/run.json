@@ -2,9 +2,11 @@
   "run_id": "A-100-20260806T173458Z",
   "module": "A",
   "task_id": "A-100",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-06T17:34:58.347372+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/A/runs/A-100-20260806T173458Z"
+  "workspace": "modules/A/runs/A-100-20260806T173458Z",
+  "closed_utc": "2026-08-07T00:10:43.219845+00:00",
+  "closeout": "modules/A/runs/A-100-20260806T173458Z/CLOSEOUT.md"
 }
