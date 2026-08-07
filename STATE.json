@@ -467,7 +467,7 @@
   },
   "last_verified_commit": "44ed126d494f41e0448e5e751b3b17b5d8f1848e",
   "last_updated_utc": "2026-08-07T13:51:08.185768+00:00",
-  "strongest_supported_claim": "The exact frozen B first physical state supports a parent-derived dimensionless microscopic constitution M_C=I-Q_B with one conserved uniform mode, an exactly degenerate positive internal excitation doublet, O(2) internal law symmetry, conserved total carrier, deterministic prethermal populations, and unitary dimensionless internal phase evolution at MINIMAL_SPINE fidelity.",
-  "strongest_unsupported_claim": "No dimensionful masses, empirical particle identities, calibrated couplings, metric spacetime, nonequilibrium thermal history, or Standard Model correspondence has been derived.",
+  "strongest_supported_claim": "Generated RFC dimensionless nonequilibrium thermal/phase history at MINIMAL_SPINE fidelity from the exact C parent, including conservative transport, positive distributions, entropy production, internal conjugate temperature, thermodynamic state-volume expansion, a parameter-free RFL-memory balance phase event, inherited uncertainty envelope, restart, clean replay, and independent reconstruction.",
+  "strongest_unsupported_claim": "No Kelvin calibration, SI duration, metric expansion, Standard Model phase identity, primordial abundances, or empirical correspondence is established by Module D.",
   "last_verified_branch": "agent/frontier-050-execution"
 }
