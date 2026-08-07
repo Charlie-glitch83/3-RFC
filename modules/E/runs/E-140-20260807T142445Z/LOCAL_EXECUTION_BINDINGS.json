@@ -1,0 +1,15 @@
+{
+  "module": "E",
+  "bindings": [
+    {
+      "solver": "reaction_network",
+      "template": "configured_runs/templates/E_reaction_network.template.json",
+      "purpose": "Execute the internally derived primordial reaction network with stoichiometric invariants.",
+      "copy_command": "python tools/director.py solver-copy --module E --solver reaction_network --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/E_reaction_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/E_reaction_network.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/E_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/E_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/E_reaction_network.json"
+    }
+  ]
+}
