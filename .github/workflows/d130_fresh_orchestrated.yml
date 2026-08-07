@@ -23,7 +23,7 @@ jobs:
           cache: pip
       - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
       - name: Execute governed D-130 orchestration
-        run: python modules/D/runs/D-130-20260807T045646Z/orchestrate_fresh_d130.py
+        run: python tools/d130_closeout_orchestrator.py
       - name: Commit exact verified scientific scope
         shell: bash
         run: |
