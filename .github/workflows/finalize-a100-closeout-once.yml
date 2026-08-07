@@ -51,32 +51,15 @@ jobs:
           assert hashlib.sha256(canonical).hexdigest()==manifest['tree_sha256']==os.environ['OUTPUT_TREE_SHA256']
           assert manifest['status']=='FINAL' and len(manifest['outputs'])==56
           PY
-      - name: Correct promotion-state test guardrail
+      - name: Verify promotion-state guardrail is progression-safe
         shell: bash
         run: |
+          set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          p=Path('tests/test_repository.py')
-          s=p.read_text()
-          old='''        for mod, rec in state["modules"].items():
-              self.assertEqual(rec["evidence_state"], "DESIGN")
-              self.assertEqual(rec["evidence_history"][0]["state"], "DESIGN")
-              self.assertIn(mod, req)
-          '''
-          new='''        ordered = json.loads((ROOT / "config/evidence_states.json").read_text())["ordered"]
-          for mod, rec in state["modules"].items():
-              self.assertIn(rec["evidence_state"], ordered)
-              self.assertTrue(rec["evidence_history"], mod)
-              self.assertEqual(rec["evidence_history"][0]["state"], "DESIGN")
-              visited = [entry["state"] for entry in rec["evidence_history"]]
-              self.assertEqual(visited[-1], rec["evidence_state"])
-              self.assertIn(mod, req)
-              if rec["evidence_state"] != "DESIGN":
-                  missing = [name for name in req[mod]["must_visit"] if name not in visited]
-                  self.assertFalse(missing, f"{mod} missing required evidence states: {missing}")
-          '''
-          assert old in s
-          p.write_text(s.replace(old,new))
+          s=Path('tests/test_repository.py').read_text()
+          assert 'history[-1]["state"], rec["evidence_state"]' in s
+          assert 'if rec["evidence_state"] == "FROZEN"' in s
           PY
       - name: Record, close, promote, and authorize one child
         shell: bash
