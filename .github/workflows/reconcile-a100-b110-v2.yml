@@ -1,0 +1,72 @@
+name: Reconcile A-100 to B-110 v2
+
+on:
+  push:
+    branches: [agent/frontier-050-execution]
+    paths: ['.github/reconcile-a100-b110-v2-trigger.txt']
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Reconcile exact queue state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          sp=Path('STATE.json'); qp=Path('WORK_QUEUE.json')
+          s=json.loads(sp.read_text()); q=json.loads(qp.read_text())
+          assert s['active_work_unit']=='B-110' and s['current_module']=='B' and s['current_run'] is None
+          assert s['modules']['A']['evidence_state']=='FROZEN' and s['modules']['A']['fidelity']=='PRODUCTION'
+          found=set()
+          for item in q['items']:
+              if item['id']=='A-100': item['status']='PASS'; found.add('A-100')
+              elif item['id']=='B-110': item['status']='ACTIVE'; found.add('B-110')
+              elif item.get('status')=='ACTIVE': item['status']='BLOCKED'
+          assert found=={'A-100','B-110'}
+          assert [x['id'] for x in q['items'] if x['status']=='ACTIVE']==['B-110']
+          qp.write_text(json.dumps(q,indent=2,ensure_ascii=False)+'\n')
+          PY
+          python tools/director.py prepare-active
+      - name: Run README checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'B-110' work_packets/ACTIVE_WORK_PACKET.md
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+      - name: Commit and verify
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/reconcile-a100-b110-v2-trigger.txt .github/workflows/reconcile-a100-b110-v2.yml
+          rm -f .github/reconcile-a100-b110-trigger.txt .github/workflows/reconcile-a100-b110-once.yml
+          rm -f .github/a100-*-trigger.txt
+          rm -f .github/workflows/finalize-a100-*.yml .github/workflows/apply-a100-evidence-once.yml .github/workflows/repair-a100-admin-closeout.yml
+          rm -rf .a100_closeout_repair
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Reconcile Module A closeout and activate B-110'
+          git fetch origin agent/frontier-050-execution
+          git rebase origin/agent/frontier-050-execution
+          sha=$(git rev-parse HEAD)
+          git push origin HEAD:agent/frontier-050-execution
+          test "$(git ls-remote origin refs/heads/agent/frontier-050-execution | awk '{print $1}')" = "$sha"
+          echo "FINAL_SHA=$sha" >> "$GITHUB_STEP_SUMMARY"
