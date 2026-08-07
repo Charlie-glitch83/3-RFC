@@ -56,7 +56,7 @@ jobs:
           assert len(active)==1 and active[0]['id']=='B-110'
           queue_path.write_text(json.dumps(queue,indent=2,ensure_ascii=False)+'\n')
           PY
-          bash tools/start_work.sh
+          python tools/director.py prepare-active
       - name: Verify complete governed state
         shell: bash
         run: |
