@@ -1,0 +1,3 @@
+authorized_by_user=2026-08-08
+scope=monitorable_final_b115_repair
+trigger=1
