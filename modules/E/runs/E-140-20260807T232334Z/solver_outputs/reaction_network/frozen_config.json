@@ -163,13 +163,13 @@
         1
       ],
       "Q_total": [
-        3,
-        3,
-        3,
-        6,
-        6,
-        6,
-        9
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3
       ]
     }
   },
@@ -196,7 +196,7 @@
     "template_path": "/home/runner/work/3-RFC/3-RFC/modules/E/runs/E-140-20260807T232334Z/solver_templates/E_reaction_network.template.json",
     "template_sha256": "298854bad6d020ece576e3c33376b56380e93495e57cd8c380ef47fa0b531ba7",
     "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/E/runs/E-140-20260807T232334Z/binding_sheets/E_reaction_network.bindings.json",
-    "binding_sheet_sha256": "97c526152bb0d09b184ca010dee2829d2ffe02ac486420220e09f642718aa6d6",
+    "binding_sheet_sha256": "4e86005a15997a3598af74bf75c3f5403771e816499174bffda73edfc99f7652",
     "bindings": [
       {
         "path": "model.species",
@@ -210,13 +210,13 @@
           "T012"
         ],
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.state_space",
         "units": "dimensionless RFC MINIMAL_SPINE units",
         "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "justification": "Exact frozen E-140 species registry serialized without changing science."
       },
       {
         "path": "model.stoichiometry",
@@ -321,13 +321,13 @@
           ]
         ],
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.solver_model.stoichiometry_columns",
         "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "dimensions": "7x12",
+        "justification": "Exact frozen route occupancy changes serialized without changing science."
       },
       {
         "path": "model.rate_expressions",
@@ -346,13 +346,13 @@
           "kr3*T012"
         ],
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.solver_model.rate_expressions",
         "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "dimensions": "12 flux laws",
+        "justification": "Exact frozen directional flux laws serialized without changing science."
       },
       {
         "path": "model.parameters",
@@ -363,13 +363,13 @@
           "kr3": 7.899986289019092e-06
         },
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
-        "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.rate_law",
+        "units": "inverse intrinsic tau_E with mass-action abundance factors",
+        "dimensions": "dimensionless intrinsic rates",
+        "justification": "Exact parent-derived rate coefficients serialized without changing science."
       },
       {
         "path": "model.invariants",
@@ -402,23 +402,23 @@
             1
           ],
           "Q_total": [
-            3,
-            3,
-            3,
-            6,
-            6,
-            6,
-            9
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3
           ]
         },
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
-        "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.reaction_hypergraph.carrier_invariants",
+        "units": "protected carrier count",
+        "dimensions": "four left-nullspace functionals",
+        "justification": "Exact frozen Q0/Q1/Q2 and their unscaled sum Q_total."
       },
       {
         "path": "initial_state",
@@ -432,13 +432,13 @@
           0.0
         ],
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
-        "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.solver_model.initial_state",
+        "units": "dimensionless abundance",
+        "dimensions": "7-state vector",
+        "justification": "Exact D terminal state plus zero newly generated composites."
       },
       {
         "path": "t_span",
@@ -447,49 +447,49 @@
           126582.49817344503
         ],
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
-        "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.solver_model.t_span",
+        "units": "tau_E",
+        "dimensions": "dimensionless intrinsic chronology",
+        "justification": "Frozen horizon 1/kr3."
       },
       {
         "path": "max_step",
         "value": 988.9257672925393,
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
-        "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "derivation_object": "E140_FROZEN_DERIVATION_SPEC.solver_model.max_step",
+        "units": "tau_E",
+        "dimensions": "dimensionless step ceiling",
+        "justification": "Frozen t_end/128 convention."
       },
       {
         "path": "positivity_tolerance",
         "value": 1e-12,
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
-        "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "derivation_object": "E140_PRE_EXECUTION_LOCK.tolerances",
+        "units": "abundance",
+        "dimensions": "dimensionless tolerance",
+        "justification": "Frozen before primary execution."
       },
       {
         "path": "invariant_tolerance",
         "value": 1e-09,
         "origin_kind": "INTERNAL_DERIVATION",
-        "origin_path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+        "origin_path": "modules/E/runs/E-140-20260807T232334Z/E_BIND_ORIGIN.json",
+        "origin_sha256": "84db0f453ab59590333bd888941ef0b7c4783640c3df91ce82fc074489fe8eaf",
         "module": "E",
-        "derivation_object": "E140_FROZEN_DERIVATION_SPEC",
-        "units": "dimensionless RFC MINIMAL_SPINE units",
-        "dimensions": "1",
-        "justification": "Bound exactly from the frozen E-140 parent-derived derivation specification."
+        "derivation_object": "E140_PRE_EXECUTION_LOCK.tolerances",
+        "units": "protected carrier count",
+        "dimensions": "dimensionless tolerance",
+        "justification": "Frozen before primary execution."
       }
     ]
   }

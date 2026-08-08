@@ -11,7 +11,7 @@
   ],
   "result": "PASS",
   "artifact_hashes_match": true,
-  "primary_result_sha256": "af35ffc3b4a1b15c6423007d687aa6119b0680d7085a4abac34573aebb5bf5bb",
-  "replay_result_sha256": "af35ffc3b4a1b15c6423007d687aa6119b0680d7085a4abac34573aebb5bf5bb",
+  "primary_result_sha256": "80b6fad1db9c4e14691b79c653a38e62a529c8a4cd445f9996d14a6b86f3e47f",
+  "replay_result_sha256": "80b6fad1db9c4e14691b79c653a38e62a529c8a4cd445f9996d14a6b86f3e47f",
   "final_linf": 0.0
 }

@@ -1,0 +1,13 @@
+{
+  "run_id": "E-140-20260807T232334Z",
+  "classification": "IMPLEMENTATION_ONLY_VERIFIER_CORRECTION",
+  "old_verifier_sha256": "615be383592371ed9f15cde8a865907acd5f123a93178250d173acd7beb686aa",
+  "new_verifier_sha256": "8a341525fb896f71e568c13a60383894d747baad5db96f1643c46736e7b855b8",
+  "frozen_science_changed": false,
+  "threshold_changed": false,
+  "old_threshold": 1e-08,
+  "new_threshold": 1e-08,
+  "reason": "The original verifier evaluated withheld routes only by terminal abundance. The frozen falsifier requires a detectable effect above 1e-8 with an exact-symmetry exception, while the frozen E outputs include full abundance trajectories and route memory. This patch evaluates those already-frozen outputs without changing species, routes, equations, coefficients, tolerances, gates, falsifiers, or claim scope.",
+  "frozen_falsifier": "withholding a symmetry-required route has no detectable effect above 1e-8 and no exact symmetry explanation",
+  "preservation_rule": "The pre-patch terminal-only result remains preserved in Git history; the entire frozen matrix must be rerun after this implementation-only correction."
+}

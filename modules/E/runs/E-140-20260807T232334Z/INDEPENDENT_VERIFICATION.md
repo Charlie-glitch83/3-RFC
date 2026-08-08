@@ -4,9 +4,9 @@ The verifier reconstructed the E minimal-spine constitutive matrix, composite oc
 
 - parent-matrix reconstruction L_inf: `1.1102230246251565e-16`
 - stoichiometry reconstruction L_inf: `0.0`
-- DOP853 final-state L_inf vs primary: `8.326672684688674e-15`
-- independent carrier-invariant drift: `3.885780586188048e-16`
-- restart L_inf: `0.0`
+- DOP853 final-state L_inf vs primary: `8.548717289613705e-15`
+- independent carrier-invariant drift: `3.3306690738754696e-16`
+- restart L_inf: `1.734723475976807e-18`
 - exact-config replay L_inf: `0.0`
 - exact replay result-hash match: `True`
 

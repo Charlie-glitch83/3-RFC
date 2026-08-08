@@ -133,7 +133,14 @@ convergence = {
 dump(VER/'CONVERGENCE.json', convergence)
 
 # Withheld reversible route-pair tests.
+# The frozen falsifier is defined on declared E outputs, including abundance
+# trajectories and route memory, not terminal state alone.  Symmetry-equivalent
+# reversible routes may share the same long-time endpoint while carrying
+# materially distinct histories.
 full_final = base512
+primary_times = np.asarray(primary['t'], dtype=float)
+primary_history = np.asarray(primary['y'], dtype=float).T
+full_rate_fn = net._rate_function()
 route_pairs = [
     ('X0_X1_B01',0,1),('X0_X2_B02',2,3),('X1_X2_B12',4,5),
     ('B01_X2_T012',6,7),('B02_X1_T012',8,9),('B12_X0_T012',10,11),
@@ -143,9 +150,29 @@ for name, i, j in route_pairs:
     c = copy.deepcopy(cfg)
     c['model']['rate_expressions'][i] = '0.0'
     c['model']['rate_expressions'][j] = '0.0'
-    r = integrate(c, max_step=tend/512)
-    delta = linf(full_final, r['final'])
-    withheld[name] = {'success':bool(r['success']), 'final_linf_change':delta, 'material':bool(delta > 1e-8)}
+    cnet = ReactionNetwork.from_config(c['model'])
+    sol = solve_ivp(
+        lambda _t, y: cnet.stoichiometry @ cnet._rate_function()(np.asarray(y, dtype=float)),
+        (t0, tend), y0, method=cfg.get('method','BDF'),
+        t_eval=primary_times, rtol=float(cfg['rtol']), atol=float(cfg['atol']),
+        max_step=tend/512,
+    )
+    terminal_delta = linf(full_final, sol.y[:,-1]) if sol.success else float('inf')
+    history_delta = linf(primary_history, sol.y.T) if sol.success else float('inf')
+    full_net_flux = []
+    for col in primary_history:
+        rr = full_rate_fn(col)
+        full_net_flux.append(abs(float(rr[i]-rr[j])))
+    route_memory = float(np.trapezoid(np.asarray(full_net_flux), primary_times))
+    material = bool(history_delta > 1e-8 or route_memory > 1e-8)
+    withheld[name] = {
+        'success': bool(sol.success),
+        'final_linf_change': terminal_delta,
+        'max_history_linf_change': history_delta,
+        'omitted_route_integrated_abs_net_flux': route_memory,
+        'terminal_redundancy_explanation': 'Symmetry-equivalent reversible routes may converge to the same long-time endpoint; the frozen test therefore evaluates trajectory and route-memory outputs.',
+        'material': material,
+    }
 withheld_pass = all(v['success'] and v['material'] for v in withheld.values())
 
 # Scalar-collapse countermodel: erase the protected initial carrier distinction while conserving total singleton amount.

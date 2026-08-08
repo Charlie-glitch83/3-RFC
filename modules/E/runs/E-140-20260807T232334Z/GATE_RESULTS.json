@@ -7,16 +7,16 @@
       "pass": true,
       "interpretation": "MINIMAL_SPINE internal carrier-charge precursor ledgers plus constitutive-energy/RFL-memory; no empirical baryon/electric correspondence",
       "max_symbolic_invariant_residual": 0.0,
-      "max_primary_invariant_drift": 1.998845533535132e-12,
+      "max_primary_invariant_drift": 6.66799948589869e-13,
       "energy_memory_residual": 5.551115123125783e-17,
       "minimum_abundance": 0.0
     },
     "network convergence": {
       "status": "PASS",
       "pass": true,
-      "finest_two_linf": 3.3306690738754696e-16,
-      "tightened_linf": 8.659739592076221e-15,
-      "extended_t_end_linf": 3.3306690738754696e-16,
+      "finest_two_linf": 1.1102230246251565e-16,
+      "tightened_linf": 9.658940314238862e-15,
+      "extended_t_end_linf": 1.1102230246251565e-16,
       "tolerance": 1e-08
     },
     "rate-source audit": {
@@ -34,7 +34,7 @@
     "no scalar-channel collapse": {
       "status": "PASS",
       "pass": true,
-      "scalar_final_linf_change": 0.012338508800237378,
+      "scalar_final_linf_change": 0.012338508800237569,
       "tolerance": 1e-08
     },
     "withheld reaction and independent implementation checks": {
@@ -43,91 +43,57 @@
       "withheld_routes": {
         "X0_X1_B01": {
           "success": true,
-          "final_linf_change": 4.929390229335695e-13,
-          "trajectory_linf_change": 0.06252459374736535,
-          "max_effect_tau_E": 13.803222863802286,
-          "material": true,
-          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+          "final_linf_change": 4.93050045236032e-13,
+          "max_history_linf_change": 0.06252459058678414,
+          "omitted_route_integrated_abs_net_flux": 0.1312502427447023,
+          "terminal_redundancy_explanation": "Symmetry-equivalent reversible routes may converge to the same long-time endpoint; the frozen test therefore evaluates trajectory and route-memory outputs.",
+          "material": true
         },
         "X0_X2_B02": {
           "success": true,
-          "final_linf_change": 4.62907490117459e-13,
-          "trajectory_linf_change": 0.0613580644119561,
-          "max_effect_tau_E": 13.587604375888535,
-          "material": true,
-          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+          "final_linf_change": 4.634626016297716e-13,
+          "max_history_linf_change": 0.06135802564437698,
+          "omitted_route_integrated_abs_net_flux": 0.12771391142924562,
+          "terminal_redundancy_explanation": "Symmetry-equivalent reversible routes may converge to the same long-time endpoint; the frozen test therefore evaluates trajectory and route-memory outputs.",
+          "material": true
         },
         "X1_X2_B12": {
           "success": true,
-          "final_linf_change": 3.8336001040306655e-13,
-          "trajectory_linf_change": 0.056038487837848816,
-          "max_effect_tau_E": 12.53836964655269,
-          "material": true,
-          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+          "final_linf_change": 3.840816553690729e-13,
+          "max_history_linf_change": 0.056038487838340256,
+          "omitted_route_integrated_abs_net_flux": 0.11239114151353663,
+          "terminal_redundancy_explanation": "Symmetry-equivalent reversible routes may converge to the same long-time endpoint; the frozen test therefore evaluates trajectory and route-memory outputs.",
+          "material": true
         },
         "B01_X2_T012": {
           "success": true,
-          "final_linf_change": 5.1181281435219717e-14,
-          "trajectory_linf_change": 0.08845845413568149,
-          "max_effect_tau_E": 233.87797218921273,
-          "material": true,
-          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+          "final_linf_change": 5.062616992290714e-14,
+          "max_history_linf_change": 0.08845838867526226,
+          "omitted_route_integrated_abs_net_flux": 0.10553903829083064,
+          "terminal_redundancy_explanation": "Symmetry-equivalent reversible routes may converge to the same long-time endpoint; the frozen test therefore evaluates trajectory and route-memory outputs.",
+          "material": true
         },
         "B02_X1_T012": {
           "success": true,
-          "final_linf_change": 4.7128967395337895e-14,
-          "trajectory_linf_change": 0.08953741304143042,
-          "max_effect_tau_E": 236.68380049984523,
-          "material": true,
-          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+          "final_linf_change": 4.7684078907650473e-14,
+          "max_history_linf_change": 0.08953734055846096,
+          "omitted_route_integrated_abs_net_flux": 0.10724350119091193,
+          "terminal_redundancy_explanation": "Symmetry-equivalent reversible routes may converge to the same long-time endpoint; the frozen test therefore evaluates trajectory and route-memory outputs.",
+          "material": true
         },
         "B12_X0_T012": {
           "success": true,
-          "final_linf_change": 5.162537064506978e-14,
-          "trajectory_linf_change": 0.09376392703983283,
-          "max_effect_tau_E": 248.24935630522285,
-          "material": true,
-          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+          "final_linf_change": 5.134781488891349e-14,
+          "max_history_linf_change": 0.09376392703989722,
+          "omitted_route_integrated_abs_net_flux": 0.10672595346504153,
+          "terminal_redundancy_explanation": "Symmetry-equivalent reversible routes may converge to the same long-time endpoint; the frozen test therefore evaluates trajectory and route-memory outputs.",
+          "material": true
         }
       },
-      "restart_linf": 0.0,
+      "restart_linf": 1.734723475976807e-18,
       "replay_linf": 0.0,
-      "independent_linf": 8.326672684688674e-15,
-      "tolerance": 1e-08,
-      "attempt1_terminal_only_withheld_routes": {
-        "X0_X1_B01": {
-          "success": true,
-          "final_linf_change": 4.929390229335695e-13,
-          "material": false
-        },
-        "X0_X2_B02": {
-          "success": true,
-          "final_linf_change": 4.62907490117459e-13,
-          "material": false
-        },
-        "X1_X2_B12": {
-          "success": true,
-          "final_linf_change": 3.8336001040306655e-13,
-          "material": false
-        },
-        "B01_X2_T012": {
-          "success": true,
-          "final_linf_change": 5.1181281435219717e-14,
-          "material": false
-        },
-        "B02_X1_T012": {
-          "success": true,
-          "final_linf_change": 4.7128967395337895e-14,
-          "material": false
-        },
-        "B12_X0_T012": {
-          "success": true,
-          "final_linf_change": 5.162537064506978e-14,
-          "material": false
-        }
-      },
-      "withheld_metric": "maximum full-trajectory L_inf effect",
-      "withheld_threshold": 1e-08
+      "independent_linf": 8.548717289613705e-15,
+      "tolerance": 1e-08
     }
   },
   "overall": "PASS"
