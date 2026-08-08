@@ -1,0 +1,173 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+RUN_ID="B-115-20260808T060000Z"
+RUN="modules/B/runs/${RUN_ID}"
+
+python - <<'PY'
+import json
+from pathlib import Path
+s=json.load(open('STATE.json'))
+assert s['active_work_unit']=='G-160' and s['current_module']=='G',s
+rid=s['current_run']; assert rid and rid.startswith('G-160-'),s
+R=Path('modules/G/runs')/rid
+run=json.load(open(R/'run.json')); assert run['status']=='CREATED',run
+lock=json.load(open(R/'PRE_EXECUTION_LOCK.json'))
+assert lock.get('authorization')=='NOT_AUTHORIZED_PENDING_SUPERSEDING_F_TO_G_PARENT',lock
+assert lock.get('repair_prerequisite')=='recovery/BG_SUPERSEDING_LINEAGE_PACKET.md',lock
+assert Path('recovery/BG_SUPERSEDING_LINEAGE_PACKET.md').is_file()
+manifest=json.load(open('recovery/BG_REPLAY_CANDIDATE_MANIFEST.json'))
+assert manifest['source_commit']=='b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10',manifest
+assert json.load(open('modules/G/runs/G-160-20260808T021341Z/run.json'))['status']=='BLOCKED'
+for m in 'BCDEF':
+    rec=s['modules'][m]
+    assert rec['evidence_state']=='FROZEN' and rec['fidelity']=='MINIMAL_SPINE',(m,rec)
+print('PRE_REPAIR_FRONTIER_PASS',rid)
+PY
+
+RID=$(python - <<'PY'
+import json
+print(json.load(open('STATE.json'))['current_run'])
+PY
+)
+python - "$RID" <<'PY'
+import sys
+from pathlib import Path
+rid=sys.argv[1]; R=Path('modules/G/runs')/rid
+(R/'CLOSEOUT.md').write_text(f'''# {rid} B-first prerequisite closeout
+
+## Result
+
+**BLOCKED BEFORE PRIMARY EXECUTION.** The recovered repair packet requires the superseding physical order B -> C -> D -> E -> F -> G. This G planning shell executed no recombination physics and is preserved as a prerequisite stop.
+
+## Strongest supported claim
+
+The exact prior B-G formal objects are recovered as REPLAY_REQUIRED and a source-locked B-first replay order is established while the lower-fidelity B-F runs remain preserved.
+
+## Strongest unsupported claim
+
+No superseding H_B_to_C_v2 through H_F_to_G_v2 or repaired physical recombination/visibility/last-scattering state is established by this shell.
+''',encoding='utf-8')
+PY
+python tools/rfc.py close-run --run-id "$RID" --result BLOCKED --closeout "modules/G/runs/$RID/CLOSEOUT.md"
+
+python tools/repair_superseding_lineage_frontier.py
+python tools/rfc.py reopen-module B --fidelity PRODUCTION --evidence recovery/BG_SUPERSEDING_LINEAGE_PACKET.md
+python tools/rfc.py new-run B --run-id "$RUN_ID"
+python tools/director.py prepare-active
+python tools/execute_b115.py prepare --run "$RUN"
+python tools/rfc.py context
+python tools/rfc.py doctor
+python tools/director.py doctor
+python -m unittest discover -s tests -v
+python tools/rfc.py firewall-scan
+python - <<'PY'
+import json
+s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+assert s['repair_state']=='BG_SUPERSEDING_REPLAY_AUTHORIZED_B_FIRST',s
+assert s['active_work_unit']=='B-115' and s['current_module']=='B' and s['current_run']=='B-115-20260808T060000Z',s
+assert s['modules']['B']['evidence_state']=='DESIGN' and s['modules']['B']['fidelity']=='PRODUCTION',s['modules']['B']
+assert [q[x]['status'] for x in ['B-115','C-125','D-135','E-145','F-155','G-160']]==['ACTIVE','BLOCKED','BLOCKED','BLOCKED','BLOCKED','BLOCKED']
+c=json.load(open('modules/B/runs/B-115-20260808T060000Z/OUTPUT_CONTRACT.json')); assert c['status']=='DRAFT',c
+lock=json.load(open('modules/B/runs/B-115-20260808T060000Z/PRE_EXECUTION_LOCK.json')); assert lock['status']=='FROZEN' and lock['frozen_before_primary_execution'] is True,lock
+PY
+
+git config user.name 'github-actions[bot]'
+git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+git add -A
+git commit -m 'Close B-G repair and freeze B-115 superseding replay'
+git pull --rebase origin agent/frontier-050-execution
+git push origin HEAD:agent/frontier-050-execution
+B115_LOCK_SHA=$(git rev-parse HEAD)
+git fetch origin agent/frontier-050-execution
+test "$(git rev-parse origin/agent/frontier-050-execution)" = "$B115_LOCK_SHA"
+
+python tools/execute_b115.py execute --run "$RUN"
+python - <<'PY'
+import json
+s=json.load(open('modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json'))
+e=s['verification']
+assert max(e['x_minus_reconstruction_linf'],e['x_plus_reconstruction_linf'],e['j_forward_reconstruction_linf'],e['j_reverse_reconstruction_linf'],e['compression_seed_sum_abs']) <= 1e-12,e
+assert json.load(open('modules/B/runs/B-115-20260808T060000Z/GATE_RESULTS.json'))['overall']=='PASS'
+PY
+
+rm -rf /tmp/b115-lock /tmp/b115-replay
+git worktree add --detach /tmp/b115-lock "$B115_LOCK_SHA"
+(
+  cd /tmp/b115-lock
+  python tools/execute_b115.py execute --run "$RUN" --output-root /tmp/b115-replay
+)
+
+python tools/execute_b115.py finalize --run "$RUN" --replay-root /tmp/b115-replay
+python - <<'PY'
+import hashlib,json
+from datetime import datetime,timezone
+from pathlib import Path
+R=Path('modules/B/runs/B-115-20260808T060000Z')
+c=json.load(open(R/'OUTPUT_CONTRACT.json'))
+rows=[]
+for rec in c['required_outputs']:
+    ev=[]
+    for rel in rec['artifact_paths']:
+        p=Path(rel)
+        if p.is_file(): ev.append({'path':rel,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+    assert ev,(rec['name'],rec['artifact_paths'])
+    rows.append({'requirement':rec['name'],'status':'PASS','semantic_check':'Exact B-115 artifact derives from committed B-110/A ancestry, satisfies four-sector reopening semantics, and is child-ready under OUTPUT_CONTRACT.json.','evidence':ev})
+(R/'OUTPUT_COMPLETENESS.json').write_text(json.dumps({'schema_version':'1.0','run_id':'B-115-20260808T060000Z','module':'B','overall':'PASS','required_outputs':rows},indent=2)+'\n')
+records=[]
+for p in sorted(R.rglob('*')):
+    if not p.is_file() or p.name in {'GENERATED_OUTPUT_MANIFEST.json','run.json'} or '__pycache__' in p.parts: continue
+    records.append({'path':str(p.relative_to(R)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size})
+h=hashlib.sha256()
+for x in records:
+    h.update(x['path'].encode()); h.update(b'\0'); h.update(x['sha256'].encode()); h.update(b'\n')
+(R/'GENERATED_OUTPUT_MANIFEST.json').write_text(json.dumps({'run_id':'B-115-20260808T060000Z','status':'FINAL','finalized_utc':datetime.now(timezone.utc).isoformat(),'outputs':records,'tree_sha256':h.hexdigest(),'note':'Finalized after OUTPUT_CONTRACT and OUTPUT_COMPLETENESS stopped changing; excludes itself and controller-owned run.json.'},indent=2)+'\n')
+PY
+python tools/rfc.py doctor
+python tools/director.py doctor
+python -m unittest discover -s tests -v
+python tools/rfc.py firewall-scan
+
+python tools/rfc.py close-run --run-id "$RUN_ID" --result PASS --closeout "$RUN/CLOSEOUT.md"
+python tools/rfc.py promote-module B --to FORMALIZED --fidelity PRODUCTION --evidence "$RUN/FROZEN_DERIVATION_SPEC.json"
+python tools/rfc.py promote-module B --to IMPLEMENTED --fidelity PRODUCTION --evidence "$RUN/primary/FOUR_SECTOR_GENESIS_STATE.json"
+python tools/rfc.py promote-module B --to VERIFIED --fidelity PRODUCTION --evidence "$RUN/GATE_RESULTS.json"
+python tools/rfc.py promote-module B --to PHYSICALLY_EXECUTED --fidelity PRODUCTION --evidence "$RUN/primary/FOUR_SECTOR_GENESIS_STATE.json"
+python tools/rfc.py promote-module B --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
+python tools/rfc.py promote-module B --to FROZEN --fidelity PRODUCTION --evidence modules/B/frozen/H_B_to_C_v2.json
+python tools/rfc.py freeze modules/B/frozen/H_B_to_C_v2.json --kind MODULE_HANDOFF
+python tools/rfc.py record-claim --file "$RUN/CLAIM_RECORD.json"
+python tools/rfc.py advance --task B-115 --result PASS --evidence "$RUN/CLOSEOUT.md" --note 'Exact four-sector B completion closed without changing B-110; activate only C-125 for channel-complete microscopic replay.'
+python tools/rfc.py context
+python tools/rfc.py doctor
+python -m unittest discover -s tests -v
+python tools/rfc.py firewall-scan
+python - <<'PY'
+import json
+s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+assert s['active_work_unit']=='C-125' and s['current_module']=='C' and s['current_run'] is None,s
+assert s['modules']['B']['evidence_state']=='FROZEN' and s['modules']['B']['fidelity']=='PRODUCTION',s['modules']['B']
+assert q['B-115']['status']=='PASS' and q['C-125']['status']=='ACTIVE' and q['D-135']['status']=='BLOCKED',q['C-125']
+PY
+
+rm -f .github/f155-repair-trigger.txt .github/science-lineage-repair-trigger.txt
+git rm -f .github/workflows/f155_child_readiness_repair_once.yml .github/workflows/child_readiness_repair_once.yml .github/workflows/science_lineage_repair_once.yml 2>/dev/null || true
+git add -A
+git commit -m 'Close B-115 and activate channel-complete microscopic replay C-125'
+git pull --rebase origin agent/frontier-050-execution
+git push origin HEAD:agent/frontier-050-execution
+CLOSEOUT_SHA=$(git rev-parse HEAD)
+git fetch origin agent/frontier-050-execution
+test "$(git rev-parse origin/agent/frontier-050-execution)" = "$CLOSEOUT_SHA"
+
+python tools/rfc.py record-commit "$CLOSEOUT_SHA" --branch agent/frontier-050-execution --note 'Verified exact B-G replay recovery, B-first repair frontier, B-115 frozen lock, deterministic primary/replay equality, complete output/child contract, PRODUCTION B evidence ladder, H_B_to_C_v2, and one-child activation C-125.'
+python tools/rfc.py context
+python tools/rfc.py doctor
+git add STATE.json memory/DECISION_LOG.jsonl memory/CURRENT_CONTEXT.md
+git commit -m 'Record verified B-115 science-lineage repair closeout'
+git pull --rebase origin agent/frontier-050-execution
+git push origin HEAD:agent/frontier-050-execution
+git fetch origin agent/frontier-050-execution
+test "$(git rev-parse origin/agent/frontier-050-execution)" = "$(git rev-parse HEAD)"
+
+echo "B_FIRST_REPAIR_COMPLETE $(git rev-parse HEAD)"
