@@ -1,0 +1,18 @@
+{
+  "module": "C",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "mass_operator_hermitian": true,
+    "eigenbasis_unitary": true,
+    "spectral_reconstruction": true,
+    "positive_spectrum": true
+  },
+  "metrics": {
+    "eigenvalues": [
+      0.9733718702664603,
+      2.1266281297335397
+    ]
+  },
+  "note": "Generic microscopic-constitution manufactured case. It does not import Standard Model labels or values."
+}

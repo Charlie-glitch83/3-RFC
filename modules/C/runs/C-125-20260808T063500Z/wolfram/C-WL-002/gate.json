@@ -1,0 +1,12 @@
+{
+  "call_id": "C-WL-002",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "invarianceSolution",
+    "candidate"
+  ],
+  "decision_rule": "Substitute only source-derived symmetry generators. Empty, inconsistent, or empirically selected solution families are BLOCKED.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

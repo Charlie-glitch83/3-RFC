@@ -1,0 +1,14 @@
+{
+  "call_id": "C-WL-001",
+  "module": "C",
+  "purpose": "Hermitian mass/mixing candidate and exact spectral invariants",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-08T06:46:21.177504+00:00",
+  "input_sha256": "d0ae5feced49a969069ea0d4c8f5749595517e4a18d405a9572a623927f56c7c",
+  "output_sha256": "38017c6eb9da0057b2c78cbea285b3ccef34f35a45d6980c73fbef38e2803937",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-001/gate.json"
+}

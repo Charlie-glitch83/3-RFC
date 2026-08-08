@@ -1,0 +1,14 @@
+{
+  "call_id": "C-WL-001",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "characteristicPolynomial",
+    "trace",
+    "determinant",
+    "eigenvalues"
+  ],
+  "decision_rule": "Reject non-Hermitian candidates; compare exact invariants with the independently reconstructed matrix.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

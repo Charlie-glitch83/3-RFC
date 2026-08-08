@@ -1,0 +1,14 @@
+{
+  "call_id": "C-WL-002",
+  "module": "C",
+  "purpose": "Generic continuous-symmetry invariance equation solver",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-08T06:46:21.244053+00:00",
+  "input_sha256": "21f29d05d58f46ae8c29f85a6cd185f63fc89f3c48146a668436507a46d393cf",
+  "output_sha256": "9efb9f3d28edc5ad063da819044a267d2fb1cec686c1929105ce78602b404c35",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-002/gate.json"
+}

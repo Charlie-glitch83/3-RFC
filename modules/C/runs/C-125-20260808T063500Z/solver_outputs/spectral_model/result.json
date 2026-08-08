@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "classification": "SPECTRAL_MODEL_AUDIT",
+  "shape": [
+    3,
+    3
+  ],
+  "symmetric": true,
+  "symmetry_error": 0.0,
+  "eigenvalues": [
+    -9.983632990116885e-33,
+    0.4498290649553169,
+    0.44982906495531694
+  ],
+  "eigenvectors": [
+    [
+      0.5773502691896254,
+      0.07911200533501933,
+      0.8126548820246751
+    ],
+    [
+      0.5773502691896258,
+      0.6642237696753046,
+      -0.4748404473767942
+    ],
+    [
+      0.5773502691896257,
+      -0.7433357750103243,
+      -0.33781443464788047
+    ]
+  ],
+  "reconstruction_error": 3.3766115072321297e-16,
+  "orthogonality_error": 6.12902684754277e-16,
+  "symmetry_generator_audits": [
+    {
+      "index": 0,
+      "commutator_error": 1.1105751912039322e-16,
+      "pass": true
+    }
+  ],
+  "pass_flags": {
+    "finite": true,
+    "required_symmetry": true,
+    "reconstruction": true,
+    "orthogonality": true,
+    "generator_invariance": true
+  }
+}
