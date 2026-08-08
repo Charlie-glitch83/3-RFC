@@ -1,0 +1,217 @@
+name: F150 Governed Preexecution Freeze Once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/f150-preexec-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  freeze-f150:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install frozen dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Verify exact active F frontier and parent
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='F-150',s
+          assert s['current_module']=='F',s
+          assert s['current_run']=='F-150-20260808T013006Z',s
+          assert s['modules']['E']['evidence_state']=='FROZEN',s['modules']['E']
+          p=Path('modules/E/frozen/H_E_to_F.json')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf'
+          d=json.load(open('modules/F/runs/F-150-20260808T013006Z/FROZEN_DERIVATION_SPEC.json'))
+          assert d['status']=='FROZEN_PRE_EXECUTION',d
+          assert d['direct_parent']['sha256']=='975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf'
+          PY
+      - name: Preserve failed verbatim F-WL-002 context and apply syntax-only correction
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          run=Path('modules/F/runs/F-150-20260808T013006Z')
+          prog=Path('recipes/F/wolfram/F-WL-002.wl')
+          original=prog.read_text()
+          assert 'C = {{1, 1/4}, {1/4, 1/2}};' in original
+          assert 'T.C.Transpose[T]' in original
+          original_sha=hashlib.sha256(prog.read_bytes()).hexdigest()
+          failed='''Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp, Cp" are undefined.\nSet::wrsym: Symbol C is Protected.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= "<|\\"call\\" -> \\"F-WL-002\\", \\"propagated\\" -> \\"{{1, a}, {0, 1}} . C . {{1, 0}, {a, 1}}\\", \\"principalMinors\\" -> {\\"{1, a}\\", \\"Det[{{1, a}, {0, 1}} . C . {{1, 0}, {a, 1}}]\\"}, \\"determinantPreservedNonnegative\\" -> False|>"\n'''
+          evidence=run/'wolfram'/'F-WL-002'
+          evidence.mkdir(parents=True,exist_ok=True)
+          (evidence/'prelock_failed_verbatim_output.txt').write_text(failed)
+          corrected=original.replace('C = {{1, 1/4}, {1/4, 1/2}};','cov = {{1, 1/4}, {1/4, 1/2}};').replace('T.C.Transpose[T]','T.cov.Transpose[T]')
+          assert corrected != original
+          prog.write_text(corrected)
+          corrected_sha=hashlib.sha256(prog.read_bytes()).hexdigest()
+          ledger={
+            'schema_version':'1.0','run_id':'F-150-20260808T013006Z',
+            'classification':'PRE_PRIMARY_IMPLEMENTATION_ONLY_CORRECTION',
+            'context_reconstructed_before_correction':True,
+            'frozen_science_changed':False,'scientific_definitions_changed':False,
+            'species_changed':False,'reactions_changed':False,'coefficients_changed':False,
+            'initial_state_changed':False,'integration_interval_changed':False,
+            'tolerances_changed':False,'gates_changed':False,'falsifiers_changed':False,
+            'claim_boundary_changed':False,
+            'corrections':[{
+              'id':'F150-WL-002-001','object':'recipes/F/wolfram/F-WL-002.wl',
+              'original_sha256':original_sha,'corrected_sha256':corrected_sha,
+              'change':'Rename the local covariance matrix symbol C to cov in its assignment and multiplication only.',
+              'reason':'The Wolfram kernel protects built-in symbol C. Repository context shows F-WL-002 is a manufactured congruence/PSD implementation check, not the physical F law; preserving the exact matrix, transfer matrix, minors and PSD predicate while changing only the local symbol restores the intended check.',
+              'failed_verbatim_attempt_preserved':'wolfram/F-WL-002/prelock_failed_verbatim_output.txt',
+              'expected_corrected_result':{'principal_minor_1':'(2 + a + a^2)/2','determinant':'7/16','determinantPreservedNonnegative':True}
+            }],
+            'required_replay_scope':'Run the complete official F Wolfram sequence after PRE_EXECUTION_LOCK is frozen; then run the full frozen F numerical and verification matrix.'
+          }
+          (run/'IMPLEMENTATION_CORRECTION_LEDGER.json').write_text(json.dumps(ledger,indent=2)+'\n')
+          PY
+      - name: Freeze source register, bindings, environment and lock
+        run: |
+          python - <<'PY'
+          import hashlib,json,platform,subprocess,sys
+          from datetime import datetime,timezone
+          from pathlib import Path
+          root=Path('.')
+          run=root/'modules/F/runs/F-150-20260808T013006Z'
+          deriv=run/'FROZEN_DERIVATION_SPEC.json'
+          d=json.loads(deriv.read_text())
+          sha=lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          deriv_sha=sha(deriv)
+          canonical=[
+            ('Triadic emergence and theorem architecture','sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md','cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e','triad, First Action, recursive kernel, domain specialization, memory and no-retune rules'),
+            ('P29 metadata and reproducibility context','sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md','82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215','source and provenance discipline only'),
+            ('Revised triadic N-body proof','sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf','0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28','relational identity, directed lanes, local witnesses, route/event/branch classes, no-loss memory and refinement grammar'),
+            ('N-body metadata','sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf','caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94','witness/provenance structure'),
+            ('Universe architecture and full ledger','sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md','4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6','module ordering, handoff and freeze architecture only; historical numerical bridge values excluded')]
+          for _,p,h,_ in canonical:
+            assert sha(p)==h,(p,sha(p),h)
+          source={
+            'schema_version':'1.0','run_id':'F-150-20260808T013006Z','status':'FROZEN_BEFORE_PRIMARY_EXECUTION','generation_mode':'GENERATION_SEALED',
+            'exact_parents':[
+              {'object_id':'H_E_to_F','path':'modules/E/frozen/H_E_to_F.json','sha256':'975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf','role':'DIRECT_PARENT'},
+              {'object_id':'H_D_to_E','path':'modules/D/frozen/H_D_to_E.json','sha256':'37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231','role':'THERMAL_ANCESTRY'},
+              {'object_id':'H_C_to_D','path':'modules/C/frozen/H_C_to_D.json','sha256':'41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78','role':'MICROSCOPIC_CONSTITUTION_ANCESTRY'},
+              {'object_id':'H_B_to_C','path':'modules/B/frozen/H_B_to_C.json','sha256':'c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492','role':'FIRST_PHYSICAL_STATE_ANCESTRY'},
+              {'object_id':'H_A_to_B','path':'modules/A/frozen/H_A_to_B.json','sha256':'728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7','role':'TRIAD_KERNEL_RELATIONAL_GRAMMAR_ANCESTRY'}],
+            'admitted_sources':[{'label':a,'path':p,'sha256':h,'classification':'CANONICAL_AUTHORITY','generative_scope':g} for a,p,h,g in canonical],
+            'procedure_only_sources':[
+              {'repository':'Charlie-glitch83/2-RFC','commit':'b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10','path':'science/POST_NUCLEAR_PLASMA.md','source_object_sha256':'6a27da6d5a1f5cf6bbff350c53f3f4099478ce86589672b135f2e9335f540c3d','classification':'HISTORICAL_WARNING_PROCEDURE_ONLY','allowed_use':'construction coverage and ownership boundaries only','forbidden_use':'former PASS status, richer parent assumptions, empirical names, conventional coefficients or old numerical outputs'},
+              {'repository':'Charlie-glitch83/2-RFC','commit':'b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10','path':'proofs/POST_NUCLEAR_PERSISTENCE.md','source_object_sha256':'18386cb915ace3b3d0e6fe31b12e12ea2520a9811fbff53d14203c49c2a09092','classification':'HISTORICAL_WARNING_PROCEDURE_ONLY','allowed_use':'proof-obligation structure only','forbidden_use':'old theorem as current parent or evidence'},
+              {'repository':'Charlie-glitch83/2-RFC','commit':'b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10','path':'modules/F/MODULE_F_WOLFRAM_VERIFICATION.md','source_object_sha256':'931f94ff33862a01504ace4a7174956d123c2722365781821f18970797658031','classification':'HISTORICAL_WARNING_PROCEDURE_ONLY','allowed_use':'representative verification categories only','forbidden_use':'old numerical results or PASS inheritance'}],
+            'imports':[{'module':'numpy','owner':'prebuilt reaction/transport verification'},{'module':'sympy','owner':'prebuilt symbolic parsers'},{'module':'scipy.integrate.solve_ivp','owner':'prebuilt reaction/transport solvers'},{'module':'scipy.linalg.expm','owner':'independent covariance propagator'}],
+            'files':[], 'urls':[],
+            'constants':[
+              {'name':'kf2','value':d['reaction_continuation_law']['parameters']['kf2'],'origin':'exact H_E_to_F inherited route law'},
+              {'name':'kr2','value':d['reaction_continuation_law']['parameters']['kr2'],'origin':'exact H_E_to_F inherited route law'},
+              {'name':'kf3','value':d['reaction_continuation_law']['parameters']['kf3'],'origin':'exact H_E_to_F inherited route law'},
+              {'name':'kr3','value':d['reaction_continuation_law']['parameters']['kr3'],'origin':'exact H_E_to_F inherited route law'},
+              {'name':'eC','value':d['energy_memory_law']['species_energy'][0],'origin':'exact H_E_to_F constitutive-energy ledger'}],
+            'derivation_object':{'path':str(deriv),'sha256':deriv_sha},
+            'public_data_declaration':'NONE','network_policy':'DISABLED_DURING_GENERATION'}
+          file_paths=['work_packets/ACTIVE_WORK_PACKET.md','recipes/F/WORK_ORDER.md','recipes/F/recipe.json','modules/F/spec.json','docs/09_DERIVATION_PROTOCOL.md','docs/10_EXECUTION_PROTOCOL.md','docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md','rfc_engine/solvers/reaction_network.py','rfc_engine/solvers/transport.py','tools/run_configured_solver.py','tools/materialize_solver_config.py']
+          for p in file_paths:
+            blob=subprocess.check_output(['git','rev-parse',f'HEAD:{p}'],text=True).strip()
+            source['files'].append({'path':p,'git_blob_sha':blob})
+          (run/'SOURCE_REGISTER.json').write_text(json.dumps(source,indent=2)+'\n')
+
+          origin=str(deriv)
+          def bind(sheet_path, values, meta):
+            sheet=json.loads(Path(sheet_path).read_text())
+            for rec in sheet['bindings']:
+              p=rec['path']; rec['value']=values[p]; rec['origin_kind']='INTERNAL_DERIVATION'; rec['origin_path']=origin; rec['origin_sha256']=deriv_sha; rec['module']='F'; rec['derivation_object']=meta[p][0]; rec['units']=meta[p][1]; rec['dimensions']=meta[p][2]; rec['justification']=meta[p][3]
+            Path(sheet_path).write_text(json.dumps(sheet,indent=2)+'\n')
+          rn=d['reaction_continuation_law']; num=d['clock_and_numerics']; st=d['state_space']
+          rv={
+            'model.species':st['species_order'],'model.stoichiometry':rn['stoichiometry'],'model.rate_expressions':rn['rate_expressions'],'model.parameters':rn['parameters'],'model.invariants':d['protected_carrier_ledgers'],
+            'initial_state':st['initial_composition'],'t_span':num['t_span'],'max_step':num['max_step'],'positivity_tolerance':num['positivity_tolerance'],'invariant_tolerance':num['invariant_tolerance']}
+          rv['model.invariants']={k:d['protected_carrier_ledgers'][k] for k in ['Q0','Q1','Q2','Q_total']}
+          rmeta={p:(f'F150_FROZEN_DERIVATION_SPEC.{p}','dimensionless RFC MINIMAL_SPINE units','frozen parent-derived object','Exact serialization of the frozen F parent-driven derivation; no empirical binding.') for p in rv}
+          bind(run/'binding_sheets/F_reaction_network.bindings.json',rv,rmeta)
+          tr=d['transport_model']
+          tv={'model.state_names':tr['state_names'],'model.parameters':tr['parameters'],'model.rhs_expressions':tr['rhs_expressions'],'model.initial_state':tr['initial_state'],'model.t_span':num['t_span'],'model.max_step':num['max_step'],'model.linear_invariants':tr['linear_invariants'],'model.invariant_tolerance':num['invariant_tolerance'],'model.positivity_tolerance':num['positivity_tolerance']}
+          tmeta={p:(f'F150_FROZEN_DERIVATION_SPEC.{p}','dimensionless RFC MINIMAL_SPINE units','frozen parent-derived object','Exact eight-state no-loss energy-memory lift of the frozen E route system.') for p in tv}
+          bind(run/'binding_sheets/F_transport.bindings.json',tv,tmeta)
+
+          env={'run_id':'F-150-20260808T013006Z','status':'CAPTURED','operating_system':platform.platform(),'hardware':{'machine':platform.machine(),'processor':platform.processor()},'software':['requirements-lock.txt sha256='+sha('requirements-lock.txt')],'python':sys.version,'imports':['numpy','sympy','scipy.integrate.solve_ivp','scipy.linalg.expm'],'commands':['materialize F reaction_network config','materialize F transport config','official Wolfram F-WL-001/F-WL-002 after lock','configured reaction_network solve','configured transport solve','full F verification matrix'],'network_policy':'DISABLED_DURING_GENERATION','random_seeds':[],'hidden_defaults_audited':True}
+          (run/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
+          PY
+          python tools/materialize_solver_config.py --template modules/F/runs/F-150-20260808T013006Z/solver_templates/F_reaction_network.template.json --binding-sheet modules/F/runs/F-150-20260808T013006Z/binding_sheets/F_reaction_network.bindings.json --output modules/F/runs/F-150-20260808T013006Z/solver_configs/F_reaction_network.json
+          python tools/materialize_solver_config.py --template modules/F/runs/F-150-20260808T013006Z/solver_templates/F_transport.template.json --binding-sheet modules/F/runs/F-150-20260808T013006Z/binding_sheets/F_transport.bindings.json --output modules/F/runs/F-150-20260808T013006Z/solver_configs/F_transport.json
+          python - <<'PY'
+          import hashlib,json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          run=Path('modules/F/runs/F-150-20260808T013006Z')
+          sha=lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          d=json.loads((run/'FROZEN_DERIVATION_SPEC.json').read_text())
+          lock={
+            'schema_version':'1.0','run_id':'F-150-20260808T013006Z','module':'F','status':'FROZEN_BEFORE_PRIMARY_EXECUTION','frozen_utc':datetime.now(timezone.utc).isoformat(),'generation_mode':'GENERATION_SEALED',
+            'authority_hashes':[x['sha256'] for x in json.loads((run/'SOURCE_REGISTER.json').read_text())['admitted_sources']],
+            'parent_hashes':['975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf','37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231','41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78','c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492','728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7'],
+            'definition_hashes':[{'path':'FROZEN_DERIVATION_SPEC.json','sha256':sha(run/'FROZEN_DERIVATION_SPEC.json')},{'path':'solver_configs/F_reaction_network.json','sha256':sha(run/'solver_configs/F_reaction_network.json')},{'path':'solver_configs/F_transport.json','sha256':sha(run/'solver_configs/F_transport.json')},{'path':'recipes/F/wolfram/F-WL-001.wl','sha256':sha('recipes/F/wolfram/F-WL-001.wl')},{'path':'recipes/F/wolfram/F-WL-002.wl','sha256':sha('recipes/F/wolfram/F-WL-002.wl')}],
+            'candidate_classes':['exact E seven-state internal composite persistence','exact inherited reversible residual-route continuation','eight-state no-loss constitutive-energy/RFL transport lift','internal bound/free occupancy coordinate','internal route-activity transfer seed','typed unassigned or dormant unwitnessed physical channels'],
+            'equations_and_laws':['dy_F/dtau_F=S_E r_E(y_F)','x_free_F=(X0+X1+X2)/Q_total','kappa_int_F=sum directional inherited route fluxes','dRFL_M/dtau_F=-dU_F/dtau_F','Sigma_F0=L Sigma_E L^T','Sigma_F=Phi Sigma_F0 Phi^T'],
+            'dimensions_units_frames_gauges_clocks':['all active F quantities dimensionless internal RFC MINIMAL_SPINE units','tau_F starts at exact E->F handoff','no seconds, Kelvin, MeV, metric/FRW coordinate, electromagnetic gauge or empirical species map derived'],
+            'methods':['official corrected F-WL-001/F-WL-002 manufactured checks after lock','BDF reaction_network and transport with provenance-bound configs','DOP853 independent reconstruction','matrix-exponential linearized covariance propagation','split restart and exact-parent replay','max-step convergence N=64,128,256,512','semantic countermodels F-CM-001..005'],
+            'tolerances':[{'name':'rtol','value':1e-9},{'name':'atol','value':1e-12},{'name':'positivity','value':1e-12},{'name':'linear_invariant','value':1e-9},{'name':'covariance_psd','value':1e-18}],
+            'stopping_rules':['hard stop on exact parent hash mismatch','hard stop on any unresolved binding token','hard stop on composition-lineage loss','hard stop on carrier/energy ledger failure','hard stop on covariance non-PSD without diagnosed branch','hard stop on an unwitnessed empirical electric/photon/neutrino/atomic assignment'],
+            'expected_invariants':['Q0','Q1','Q2','Q_total','U_plus_RFL','nonnegative represented state','exact E initial-state replay'],
+            'tests':['official Wolfram sequence','manufactured F reference check','reaction-network primary','eight-state transport primary','fixed-point persistence','countermodels and ablations','convergence','restart','replay','covariance PSD','independent DOP853 reconstruction'],
+            'gates':['charge neutrality where derived','energy and particle accounting','covariance positive semidefinite','replay from E'],
+            'falsifiers':['any claimed electromagnetic neutrality without a derived electromagnetic charge operator','loss of Q0/Q1/Q2/Q_total or U+RFL above frozen tolerance','negative represented state below tolerance','propagated covariance eigenvalue below -1e-18','failure to reconstruct exact E entry state/routes/rates/energy ledger','textbook plasma reset or imported public recombination target','silent deletion of an active inherited route family','nonzero backreaction from an unwitnessed dormant channel'],
+            'claim_boundary':d['claim_boundary'],
+            'independent_verifier_design':d['independent_verification_design'],
+            'allowed_implementation_only_corrections':['syntax/name/path/serialization corrections that do not change species, route law, coefficients, initial state, interval, tolerances, gates, falsifiers or claim scope; preserve failure and rerun the full frozen matrix afterward'],
+            'implementation_correction_ledger':'IMPLEMENTATION_CORRECTION_LEDGER.json',
+            'frozen_before_primary_execution':True}
+          (run/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          PY
+      - name: Validate frozen pre-execution package
+        run: |
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          run=Path('modules/F/runs/F-150-20260808T013006Z')
+          lock=json.load(open(run/'PRE_EXECUTION_LOCK.json'))
+          assert lock['status']=='FROZEN_BEFORE_PRIMARY_EXECUTION'
+          assert lock['frozen_before_primary_execution'] is True
+          src=json.load(open(run/'SOURCE_REGISTER.json'))
+          assert src['public_data_declaration']=='NONE'
+          for p in [run/'solver_configs/F_reaction_network.json',run/'solver_configs/F_transport.json']:
+            text=p.read_text(); assert '__BIND_' not in text,text
+          assert not (run/'solver_outputs/reaction_network/result.json').exists()
+          assert not (run/'solver_outputs/transport/result.json').exists()
+          PY
+      - name: Commit and push frozen F pre-execution package
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add recipes/F/wolfram/F-WL-002.wl modules/F/runs/F-150-20260808T013006Z
+          git commit -m 'Freeze Module F parent-driven minimal-spine execution'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "FREEZE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Verify remote freeze SHA
+        run: |
+          git fetch origin agent/frontier-050-execution
+          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
+          test "$REMOTE" = "$FREEZE_SHA"
+          echo "Verified F pre-execution freeze SHA: $REMOTE"
