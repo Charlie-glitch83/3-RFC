@@ -1,0 +1,34 @@
+{
+  "classification": "SEMANTIC_FALSIFIERS",
+  "countermodels": [
+    {
+      "id": "DROP_ROUTE_PAIR",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "PARTIAL_COMPLETED_SHELL",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "ALTER_ANOMALY_CHARGE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "LIFT_NEUTRAL_ZERO_MODE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "OMIT_REVERSE_LEGAL_ROUTE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "INSTANTIATE_UNSOURCED_WJ_OR_PHASE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "IMPORT_MEASURED_PARTICLE_VALUE",
+      "result": "FAIL_AS_EXPECTED"
+    }
+  ],
+  "overall": "PASS"
+}

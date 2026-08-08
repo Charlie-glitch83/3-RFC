@@ -1,0 +1,13 @@
+{
+  "method": "DIRECT_H_B_TO_C_V2_PLUS_H_A_TO_B_RECONSTRUCTION_AND_EXACT_THEOREM_IDENTITIES",
+  "trusted_primary_gate_summary": false,
+  "comparisons": {
+    "D_QV": 0.0,
+    "Lambda_hat_C": 0.0,
+    "shell_weights": 0.0,
+    "spectral_core": 0.0,
+    "anomaly_max": 2.220446049250313e-16
+  },
+  "branch_family_preservation": "PASS_NO_UNSOURCED_INSTANTIATION",
+  "pass": true
+}

@@ -135,6 +135,21 @@
       "created_utc": "2026-08-08T06:37:27.034244+00:00",
       "work_unit": "C-125",
       "run_id": "C-125-20260808T063010Z"
+    },
+    {
+      "path": "modules/C/runs/C-125-20260808T063500Z",
+      "sha256": "0068379fc8637938af5d06d2dbd1d6dbe924408d84cf28b8873618163e49688b",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-08T06:46:31.725127+00:00",
+      "work_unit": "C-125",
+      "run_id": "C-125-20260808T063500Z"
+    },
+    {
+      "path": "modules/C/frozen/H_C_to_D_v2.json",
+      "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614",
+      "kind": "MODULE_HANDOFF",
+      "created_utc": "2026-08-08T06:46:32.168531+00:00",
+      "work_unit": "C-125"
     }
   ]
 }

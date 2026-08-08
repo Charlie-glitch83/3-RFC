@@ -1,58 +1,231 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.1",
   "run_id": "C-125-20260808T063500Z",
   "module": "C",
-  "status": "DRAFT",
+  "status": "PASS",
   "required_outputs": [
     {
       "name": "typed fields and excitations",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "interaction and symmetry structure",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "mass/mixing generation or lawful branch family",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "charge and conservation ownership",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "prethermal populations and covariance",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_C_to_D",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     }
   ],
-  "child_bindings": {},
-  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+  "child_bindings": {
+    "microscopic_field_excitation_registry": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "interaction_generator": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "symmetry_and_charge_registry": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "mass_mixing_operators": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "rate_generating_interaction_grammar": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "bound_nucleon_role_states": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "photon_role_state": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "neutrino_role_family": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "asymmetry_source": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "prethermal_populations": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "covariance": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "restart": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/C/runs/C-125-20260808T063500Z/CHECKPOINT_RECORD.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
+      ],
+      "derived_absence": false
+    }
+  },
+  "note": "Child-ready as an explicit source-owned branch family. D must branch or obstruct; it may not substitute missing microscopic values."
 }

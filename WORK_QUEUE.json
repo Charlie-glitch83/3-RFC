@@ -446,7 +446,7 @@
       "id": "C-125",
       "title": "Supersede Module C: Channel-Complete Microscopic Constitution",
       "module": "C",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "B-115"
       ],
@@ -484,7 +484,7 @@
       "id": "D-135",
       "title": "Supersede Module D: Channel-Complete Nonequilibrium Thermal History",
       "module": "D",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "C-125"
       ],

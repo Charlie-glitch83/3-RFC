@@ -1,0 +1,15 @@
+{
+  "claim_id": "RFC-C-125-CHANNEL-COMPLETE-MICROSCOPIC-BRANCH-FAMILY-20260808",
+  "text": "C-125 reconstructs from exact H_B_to_C_v2 and recovered C theorem the complete finite-relational microscopic law and explicit lawful branch family: route-pair complex/unitary probability structure, three completed shells, maximal U(1)xSU(2)xSU(3) branch, anomaly-closed charge registry, endogenous positive scale/stabilization law, protected photon-role zero mode, source-owned mass/mixing/neutrino operator family, invariant interaction/rate grammar, singlet proton/neutron-role bound-state family, asymmetry source family and prethermal projector-occupation law. Parent-fixed quantities are executed numerically; unresolved source-owned route/kernel/phase/scale/topological variables remain explicit rather than guessed.",
+  "owner": "C",
+  "evidence_state": "FROZEN",
+  "fidelity": "PRODUCTION",
+  "supported": true,
+  "evidence": [
+    "modules/C/frozen/H_C_to_D_v2.json",
+    "modules/C/runs/C-125-20260808T063500Z/GATE_RESULTS.json",
+    "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+    "modules/C/runs/C-125-20260808T063500Z/REPLAY_RECORD.json"
+  ],
+  "strongest_unsupported_claim": "No unique source selection of the unresolved route matrices/phases/block norms/scale representative/topological branch, no empirical particle identification, no measured masses/couplings/mixings/lifetimes/abundances, no unique SI calibration, no continuum renormalized QFT/loop/lattice precision, no thermal history, no surviving baryon asymmetry, and no empirical agreement is claimed."
+}

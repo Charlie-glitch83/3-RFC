@@ -1,0 +1,51 @@
+{
+  "run_id": "C-125-20260808T063500Z",
+  "classification": "PARENT_DECIMAL_ENVELOPE_PLUS_EXPLICIT_MODEL_BRANCH_FAMILY",
+  "stochastic_physical_uncertainty": false,
+  "parent_fixed_envelope": [
+    {
+      "delta": 4.66915,
+      "D_QV": 0.11391441051853995,
+      "Lambda_hat_C": 0.1948626956932667,
+      "shell_weights": [
+        0.9999034898392979,
+        9.650084738974027e-05,
+        9.31331237621204e-09
+      ]
+    },
+    {
+      "delta": 4.6692,
+      "D_QV": 0.11391476538223405,
+      "Lambda_hat_C": 0.19486299920904607,
+      "shell_weights": [
+        0.9999034960399903,
+        9.649464789406941e-05,
+        9.312115728244279e-09
+      ]
+    },
+    {
+      "delta": 4.66925,
+      "D_QV": 0.11391512022647657,
+      "Lambda_hat_C": 0.19486330270771574,
+      "shell_weights": [
+        0.9999035022402178,
+        9.648844886301412e-05,
+        9.310919246839326e-09
+      ]
+    }
+  ],
+  "model_branch_variables": [
+    "admissible frozen route matrices W_{j,[r]}",
+    "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+    "N_1>0",
+    "N_2>0",
+    "N_3>0",
+    "source-owned W_j matrix elements",
+    "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+    "Lambda_M>0 from recursive-memory ancestry",
+    "source-owned C_nu",
+    "epsilon from source-owned CP invariant",
+    "I_top from witnessed topological event route"
+  ],
+  "collapsed_to_single_fit": false
+}

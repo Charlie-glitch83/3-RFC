@@ -181,9 +181,12 @@
       "run_id": "C-125-20260808T063500Z",
       "module": "C",
       "task_id": "C-125",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/C/runs/C-125-20260808T063500Z",
-      "created_utc": "2026-08-08T06:37:27.099780+00:00"
+      "created_utc": "2026-08-08T06:37:27.099780+00:00",
+      "closed_utc": "2026-08-08T06:46:31.722620+00:00",
+      "tree_sha256": "0068379fc8637938af5d06d2dbd1d6dbe924408d84cf28b8873618163e49688b",
+      "closeout": "modules/C/runs/C-125-20260808T063500Z/CLOSEOUT.md"
     }
   ]
 }

@@ -1,8 +1,234 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "C-125-20260808T063500Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-08T06:46:28.305994+00:00",
+  "outputs": [
+    {
+      "path": "CHECKPOINT_RECORD.json",
+      "sha256": "2eff3c8b10458e9db62d07fe8937f01eae7cded95e2d266ab74694c75bd0e270",
+      "bytes": 779
+    },
+    {
+      "path": "CLAIM_RECORD.json",
+      "sha256": "55a2806afc9e983189233466da1bcbb1d0c4230f7a9250a7dd922369f2d2be0f",
+      "bytes": 1613
+    },
+    {
+      "path": "CLOSEOUT.md",
+      "sha256": "3a8a82446495496d39374da82e947fef132169cd1cee0e03542109ed0c544211",
+      "bytes": 1509
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "sha256": "369de445ef0a2bcd837ee4c3e61d3fa2eb77611c95466dc194c00d04430e72f7",
+      "bytes": 337
+    },
+    {
+      "path": "FAILURES.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "FROZEN_DERIVATION_SPEC.json",
+      "sha256": "dab6e448aec272d7af78085693d9f89e93ffcf78d5f8ef6dc64c5bf096f5e6a6",
+      "bytes": 12930
+    },
+    {
+      "path": "FROZEN_RECIPE.json",
+      "sha256": "228d332b2a5dcb4e1d223614f7dfdf2d6d674da08d4284d8c95b10d372dfd1dc",
+      "bytes": 4950
+    },
+    {
+      "path": "GATE_RESULTS.json",
+      "sha256": "f2862bf3effbb378fd411b89d7a575ac9d612df02288f320940a8d5154dfff1e",
+      "bytes": 818
+    },
+    {
+      "path": "IMPLEMENTATION_CORRECTION_LEDGER.json",
+      "sha256": "2fac856085add106849290dc970e37c5f0dca6a179bb562fe60a4d067c9aa3be",
+      "bytes": 1824
+    },
+    {
+      "path": "INDEPENDENT_VERIFICATION.md",
+      "sha256": "927c99056f13417802ff4c51d3fb3c132115295cfd70fcb181cd3966b0752797",
+      "bytes": 842
+    },
+    {
+      "path": "LOCAL_EXECUTION_BINDINGS.json",
+      "sha256": "b9780dec3c98121141bbb19bb8a39069af50b240d68afb2bbdbb9bf6c4d4d6f0",
+      "bytes": 981
+    },
+    {
+      "path": "OUTPUT_COMPLETENESS.json",
+      "sha256": "e8da5e5754366da4891fd55f918af2ac3491f1ab24b7c902234688216a491cba",
+      "bytes": 6674
+    },
+    {
+      "path": "OUTPUT_CONTRACT.json",
+      "sha256": "31e17696b2305327c17ee8c5292efa2a804bfad0693a035ffc15f7a93fd00918",
+      "bytes": 9412
+    },
+    {
+      "path": "PRE_EXECUTION_LOCK.json",
+      "sha256": "9c67210b2c3f3d5653acfe6bbd3265073692396f731e84ff77f8e8178a6b0d5f",
+      "bytes": 2692
+    },
+    {
+      "path": "PRIMARY_GATE_INPUTS.json",
+      "sha256": "6d3e85dcd8e273cc9284778a6c55a62b659a661215983eda3e4b29abe5ac8667",
+      "bytes": 968
+    },
+    {
+      "path": "REPLAY_RECORD.json",
+      "sha256": "af9b1b1c62434de2ce1410c5de5ec8f5c7046084ddd1ee902f9f6835aca5591b",
+      "bytes": 1660
+    },
+    {
+      "path": "REQUIRED_GATES.json",
+      "sha256": "48c901257162ca44f6b3da8491557f3a12c6095a29f8f186505797062b941e8e",
+      "bytes": 675
+    },
+    {
+      "path": "RUN_LOCAL_PHASE.sh",
+      "sha256": "114df8fee7d93a22446d63436377d0d5f2e135cdbc4622cc948ead54d06f2a87",
+      "bytes": 533
+    },
+    {
+      "path": "RUN_PLAN.md",
+      "sha256": "1af649476b27784e24cc11cba2d21f7312784b9605cdd1771dbc51fc8c43eb1b",
+      "bytes": 516
+    },
+    {
+      "path": "SOURCE_REGISTER.json",
+      "sha256": "444199667b44094e7f67a90f182b659a2008540df130add103e7b260196d37a8",
+      "bytes": 2135
+    },
+    {
+      "path": "WOLFRAM_SEQUENCE.md",
+      "sha256": "468e6c746c3e08b6fb79e01e7817569fef3621d3d6e5c298ab63f735ebacb4dc",
+      "bytes": 773
+    },
+    {
+      "path": "WORK_ORDER.md",
+      "sha256": "ea6f1c13b5ffcf9dcde5d1d08cfbaa84d590b3d9195a55ea91521098e3cbb803",
+      "bytes": 3654
+    },
+    {
+      "path": "binding_sheets/C_spectral_model.bindings.json",
+      "sha256": "d01242be6d6b55c66f99195fbd0df3c72b225c0dccb6e204591973d5ae2d77a4",
+      "bytes": 2438
+    },
+    {
+      "path": "independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "9c4748a3ae1187974dc3968264d7eae6b8a133338a285b66e1c4c61df2b241ff",
+      "bytes": 378
+    },
+    {
+      "path": "primary/BRANCH_FAMILY.json",
+      "sha256": "f7b3720dcd237af96c6800996ebcbb0fe14468fd0a8900af68bbb25596660579",
+      "bytes": 7307
+    },
+    {
+      "path": "primary/COUNTERMODEL_RESULTS.json",
+      "sha256": "77eac51f910ce19573d07409474de9a4cc5f177afe908dd9b8c123fe8f49248e",
+      "bytes": 707
+    },
+    {
+      "path": "primary/MICROSCOPIC_CONSTITUTION_V2.json",
+      "sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc",
+      "bytes": 14204
+    },
+    {
+      "path": "primary/UNCERTAINTY_ENVELOPE.json",
+      "sha256": "382e7d582e974688a2c2a130435aa07f4b492889501025b25e6368f1226568d2",
+      "bytes": 1443
+    },
+    {
+      "path": "reference_checks.json",
+      "sha256": "53ea809b8a03f71f448d1544aaca5992473163cbf1c313d7233b9bd541479070",
+      "bytes": 462
+    },
+    {
+      "path": "solver_configs/C_spectral_model.json",
+      "sha256": "591cc3faf610d862eaba323dea3f28f3baecb9eb65fc6f851c3f19f5c83bfb26",
+      "bytes": 3562
+    },
+    {
+      "path": "solver_outputs/spectral_model/environment.json",
+      "sha256": "0f74c1042d1c33f37233c6f276ebe8d4e3f0c65ad1052d2c1b9a21184a4a8d9f",
+      "bytes": 271
+    },
+    {
+      "path": "solver_outputs/spectral_model/frozen_config.json",
+      "sha256": "591cc3faf610d862eaba323dea3f28f3baecb9eb65fc6f851c3f19f5c83bfb26",
+      "bytes": 3562
+    },
+    {
+      "path": "solver_outputs/spectral_model/manifest.json",
+      "sha256": "afe5801a9fdb4a959123835a078f812cd55821c170eaaf49d3fc3e9643523784",
+      "bytes": 404
+    },
+    {
+      "path": "solver_outputs/spectral_model/result.json",
+      "sha256": "0fee4d11d09cbe61b62bbd1f42f178e7e1ca9d736ae0b5bfa733bb3379e92f81",
+      "bytes": 938
+    },
+    {
+      "path": "solver_templates/C_spectral_model.template.json",
+      "sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d",
+      "bytes": 568
+    },
+    {
+      "path": "wolfram/C-WL-001/gate.json",
+      "sha256": "ff67c6cef0a90f568cf919d9f2d7de3cf737f2e2397da391cd60ebf1c1d894d1",
+      "bytes": 537
+    },
+    {
+      "path": "wolfram/C-WL-001/input.wl",
+      "sha256": "d0ae5feced49a969069ea0d4c8f5749595517e4a18d405a9572a623927f56c7c",
+      "bytes": 542
+    },
+    {
+      "path": "wolfram/C-WL-001/output.txt",
+      "sha256": "38017c6eb9da0057b2c78cbea285b3ccef34f35a45d6980c73fbef38e2803937",
+      "bytes": 483
+    },
+    {
+      "path": "wolfram/C-WL-001/record.json",
+      "sha256": "26dafbbbdef553933a737a334044a44a861756477ced90de3da3026688d21f5d",
+      "bytes": 628
+    },
+    {
+      "path": "wolfram/C-WL-002/gate.json",
+      "sha256": "ccaec59a95f005bfea7f8daad8fd98750f858dcc8230d0341c51b558570e9390",
+      "bytes": 522
+    },
+    {
+      "path": "wolfram/C-WL-002/input.wl",
+      "sha256": "21f29d05d58f46ae8c29f85a6cd185f63fc89f3c48146a668436507a46d393cf",
+      "bytes": 360
+    },
+    {
+      "path": "wolfram/C-WL-002/output.txt",
+      "sha256": "9efb9f3d28edc5ad063da819044a267d2fb1cec686c1929105ce78602b404c35",
+      "bytes": 296
+    },
+    {
+      "path": "wolfram/C-WL-002/pre_correction_input.wl",
+      "sha256": "57bb0d0466bd8114b7c4bd819c8431ac6e2f0b8c1a5b75bd472e37d1b6835442",
+      "bytes": 269
+    },
+    {
+      "path": "wolfram/C-WL-002/pre_correction_output.txt",
+      "sha256": "cd976b2cf5566b26ec1d92053fab7bba1d745e9da078ca1060fa46334612e3e9",
+      "bytes": 145
+    },
+    {
+      "path": "wolfram/C-WL-002/record.json",
+      "sha256": "0aee670ce99067d7810ce1dfdb53826deebdc057197188e55df6fe1043df1ac6",
+      "bytes": 621
+    }
+  ],
+  "tree_sha256": "b9781ed983850df1a125500a6bc576436a7ab146cc4173030c4dd6c54d861708",
+  "note": "Final after C125 scientific artifacts and child contract stopped changing; excludes itself and controller run.json."
 }

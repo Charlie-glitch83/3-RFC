@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "C-125",
-  "current_module": "C",
-  "current_run": "C-125-20260808T063500Z",
+  "active_work_unit": "D-135",
+  "current_module": "D",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -198,9 +198,9 @@
       "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "C": {
-      "evidence_state": "DESIGN",
+      "evidence_state": "FROZEN",
       "fidelity": "PRODUCTION",
-      "active_run": "C-125-20260808T063500Z",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -260,6 +260,48 @@
             "evidence_state": "FROZEN",
             "fidelity": "MINIMAL_SPINE"
           }
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/C/runs/C-125-20260808T063500Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-08T06:46:31.775996+00:00",
+          "work_unit": "C-125"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "timestamp_utc": "2026-08-08T06:46:31.826156+00:00",
+          "work_unit": "C-125"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/C/runs/C-125-20260808T063500Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-08T06:46:31.876023+00:00",
+          "work_unit": "C-125"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "timestamp_utc": "2026-08-08T06:46:31.925986+00:00",
+          "work_unit": "C-125"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-08T06:46:32.069613+00:00",
+          "work_unit": "C-125"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/C/frozen/H_C_to_D_v2.json",
+          "timestamp_utc": "2026-08-08T06:46:32.119192+00:00",
+          "work_unit": "C-125"
         }
       ],
       "promotion_evidence": [
@@ -268,13 +310,20 @@
         "modules/C/runs/C-120-20260807T032543Z/GATE_RESULTS.json",
         "modules/C/runs/C-120-20260807T032543Z/primary/MICROSCOPIC_CONSTITUTION.json",
         "modules/C/runs/C-120-20260807T032543Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/C/frozen/H_C_to_D.json"
+        "modules/C/frozen/H_C_to_D.json",
+        "modules/C/runs/C-125-20260808T063500Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/GATE_RESULTS.json",
+        "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+        "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/C/frozen/H_C_to_D_v2.json"
       ],
-      "last_promoted_utc": "2026-08-07T03:47:27.694219+00:00",
+      "last_promoted_utc": "2026-08-08T06:46:32.119203+00:00",
       "completed_runs": [
         "C-120-20260807T032543Z",
         "C-125-20260808T061947Z",
-        "C-125-20260808T063010Z"
+        "C-125-20260808T063010Z",
+        "C-125-20260808T063500Z"
       ],
       "reopened_from": {
         "evidence_state": "FROZEN",
@@ -666,7 +715,7 @@
     }
   },
   "last_verified_commit": "084cd65dc963d57f19b529b37496097d660854a6",
-  "last_updated_utc": "2026-08-08T06:37:27.100201+00:00",
+  "last_updated_utc": "2026-08-08T06:46:32.267402+00:00",
   "strongest_supported_claim": "The unchanged physically executed B-110 Big-Implosion state now has a complete, nonduplicated, independently reconstructed and cleanly replayed four-sector genesis partition at PRODUCTION fidelity. H_B_to_C_v2 is frozen and child-ready, preserving exact first-physical-state ancestry while supplying ordinary, radiative, compression-relic and dissipative-tail preparticle seeds for the sole active C-125 microscopic replay.",
   "strongest_unsupported_claim": "No superseding channel-complete microscopic constitution H_C_to_D_v2, full nonequilibrium thermal history H_D_to_E_v2, source-owned nucleosynthesis H_E_to_F_v2, child-ready post-nuclear plasma/opacity H_F_to_G_v2, physical recombination/visibility/last-scattering state, or empirical agreement is yet established by the repaired lineage.",
   "last_verified_branch": "agent/frontier-050-execution",

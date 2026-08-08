@@ -1,7 +1,146 @@
 {
   "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "run_id": "C-125-20260808T063500Z",
+  "module": "C",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "typed fields and excitations",
+      "status": "PASS",
+      "semantic_check": "Generated from exact B/A ancestry and recovered C theorem; unresolved source-owned branch variables remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+          "sha256": "f7b3720dcd237af96c6800996ebcbb0fe14468fd0a8900af68bbb25596660579"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "9c4748a3ae1187974dc3968264d7eae6b8a133338a285b66e1c4c61df2b241ff"
+        },
+        {
+          "path": "modules/C/frozen/H_C_to_D_v2.json",
+          "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614"
+        }
+      ]
+    },
+    {
+      "requirement": "interaction and symmetry structure",
+      "status": "PASS",
+      "semantic_check": "Generated from exact B/A ancestry and recovered C theorem; unresolved source-owned branch variables remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+          "sha256": "f7b3720dcd237af96c6800996ebcbb0fe14468fd0a8900af68bbb25596660579"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "9c4748a3ae1187974dc3968264d7eae6b8a133338a285b66e1c4c61df2b241ff"
+        },
+        {
+          "path": "modules/C/frozen/H_C_to_D_v2.json",
+          "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614"
+        }
+      ]
+    },
+    {
+      "requirement": "mass/mixing generation or lawful branch family",
+      "status": "PASS",
+      "semantic_check": "Generated from exact B/A ancestry and recovered C theorem; unresolved source-owned branch variables remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+          "sha256": "f7b3720dcd237af96c6800996ebcbb0fe14468fd0a8900af68bbb25596660579"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "9c4748a3ae1187974dc3968264d7eae6b8a133338a285b66e1c4c61df2b241ff"
+        },
+        {
+          "path": "modules/C/frozen/H_C_to_D_v2.json",
+          "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614"
+        }
+      ]
+    },
+    {
+      "requirement": "charge and conservation ownership",
+      "status": "PASS",
+      "semantic_check": "Generated from exact B/A ancestry and recovered C theorem; unresolved source-owned branch variables remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+          "sha256": "f7b3720dcd237af96c6800996ebcbb0fe14468fd0a8900af68bbb25596660579"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "9c4748a3ae1187974dc3968264d7eae6b8a133338a285b66e1c4c61df2b241ff"
+        },
+        {
+          "path": "modules/C/frozen/H_C_to_D_v2.json",
+          "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614"
+        }
+      ]
+    },
+    {
+      "requirement": "prethermal populations and covariance",
+      "status": "PASS",
+      "semantic_check": "Generated from exact B/A ancestry and recovered C theorem; unresolved source-owned branch variables remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+          "sha256": "f7b3720dcd237af96c6800996ebcbb0fe14468fd0a8900af68bbb25596660579"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "9c4748a3ae1187974dc3968264d7eae6b8a133338a285b66e1c4c61df2b241ff"
+        },
+        {
+          "path": "modules/C/frozen/H_C_to_D_v2.json",
+          "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614"
+        }
+      ]
+    },
+    {
+      "requirement": "H_C_to_D",
+      "status": "PASS",
+      "semantic_check": "Generated from exact B/A ancestry and recovered C theorem; unresolved source-owned branch variables remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+          "sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/primary/BRANCH_FAMILY.json",
+          "sha256": "f7b3720dcd237af96c6800996ebcbb0fe14468fd0a8900af68bbb25596660579"
+        },
+        {
+          "path": "modules/C/runs/C-125-20260808T063500Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "9c4748a3ae1187974dc3968264d7eae6b8a133338a285b66e1c4c61df2b241ff"
+        },
+        {
+          "path": "modules/C/frozen/H_C_to_D_v2.json",
+          "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614"
+        }
+      ]
+    }
+  ]
 }

@@ -1,7 +1,14 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "C-125-20260808T063500Z",
+  "checkpoints": [
+    {
+      "checkpoint_id": "C125-MICROSCOPIC-BRANCH-FAMILY",
+      "state_path": "modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json",
+      "state_sha256": "bea488159fa9b34bd512f8d80115268f5c938c21a9139a19974ab6f825eab1fc",
+      "restart_test": "PASS",
+      "contract": "D-135 consumes H_C_to_D_v2 and must evolve every admitted source-owned microscopic branch or preserve obstruction; no conventional coefficient may replace a branch variable."
+    }
+  ],
+  "restart_contract": "D-135 consumes H_C_to_D_v2 and must evolve every admitted source-owned microscopic branch or preserve obstruction; no conventional coefficient may replace a branch variable.",
   "hash_algorithm": "sha256"
 }

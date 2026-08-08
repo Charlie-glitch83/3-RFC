@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-08T06:42:57.213528+00:00
+Generated: 2026-08-08T06:46:32.320934+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `C-125` — Supersede Module C: Channel-Complete Microscopic Constitution
-- Current module: `C`
+- Active work unit: `D-135` — Supersede Module D: Channel-Complete Nonequilibrium Thermal History
+- Current module: `D`
 - Last verified commit: `084cd65dc963d57f19b529b37496097d660854a6`
 
 ## Strongest supported claim
@@ -20,16 +20,16 @@ No superseding channel-complete microscopic constitution H_C_to_D_v2, full noneq
 
 ## Immediate objective
 
-Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2, including source-owned charge/symmetry/mass-mixing/interaction and photon/neutrino/nucleon-role states.
+Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asymmetry, annihilation/freeze-out/decoupling and photon/neutrino transport.
 
 ## Required deliverables
 
-- modules/C/runs/<RUN_ID>/OUTPUT_CONTRACT.json
-- modules/C/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/C/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/C/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/C/runs/<RUN_ID>/CLOSEOUT.md
-- versioned superseding H_C_to_D_v2 handoff and manifest
+- modules/D/runs/<RUN_ID>/OUTPUT_CONTRACT.json
+- modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/D/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/D/runs/<RUN_ID>/CLOSEOUT.md
+- versioned superseding H_D_to_E_v2 handoff and manifest
 
 ## Mandatory gates
 
@@ -44,7 +44,7 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 
 - A: `FROZEN` / `PRODUCTION`
 - B: `FROZEN` / `PRODUCTION`
-- C: `DESIGN` / `PRODUCTION`
+- C: `FROZEN` / `PRODUCTION`
 - D: `FROZEN` / `MINIMAL_SPINE`
 - E: `FROZEN` / `MINIMAL_SPINE`
 - F: `FROZEN` / `MINIMAL_SPINE`
@@ -65,7 +65,7 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 17
+- frozen artifacts: 19
 - indexed runs: 17
 
 ## Recent runs
@@ -77,18 +77,18 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 - B-115-20260808T060000Z: PASS (B)
 - C-125-20260808T061947Z: BLOCKED (C)
 - C-125-20260808T063010Z: BLOCKED (C)
-- C-125-20260808T063500Z: CREATED (C)
+- C-125-20260808T063500Z: PASS (C)
 
 ## Recent decisions
 
-- PROMOTE-B-VERIFIED-20260808T060926Z: Promoted Module B from IMPLEMENTED to VERIFIED at PRODUCTION
-- PROMOTE-B-PHYSICALLY_EXECUTED-20260808T060926Z: Promoted Module B from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
-- PROMOTE-B-INDEPENDENTLY_REPRODUCED-20260808T060926Z: Promoted Module B from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
-- PROMOTE-B-FROZEN-20260808T060926Z: Promoted Module B from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
-- ADVANCE-B-115-20260808T060926Z: Marked B-115 PASS and activated C-125
-- COMMIT-c3df3e28a30d: Verified B-first science-lineage repair: exact four-sector B-115 completion, independent replay, child-ready output contract, PRODUCTION freeze, and single-child activation C-125.
-- REOPEN-C-20260808T062547Z: Reopened Module C from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
 - COMMIT-084cd65dc963: Verified C-125 channel-complete microscopic replay, exact parent/source lineage, spectral corroboration, clean replay, complete D child contract, PRODUCTION evidence ladder, H_C_to_D_v2 and one-child activation D-135.
+- PROMOTE-C-FORMALIZED-20260808T064631Z: Promoted Module C from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-C-IMPLEMENTED-20260808T064631Z: Promoted Module C from FORMALIZED to IMPLEMENTED at PRODUCTION
+- PROMOTE-C-VERIFIED-20260808T064631Z: Promoted Module C from IMPLEMENTED to VERIFIED at PRODUCTION
+- PROMOTE-C-PHYSICALLY_EXECUTED-20260808T064632Z: Promoted Module C from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
+- PROMOTE-C-INDEPENDENTLY_REPRODUCED-20260808T064632Z: Promoted Module C from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-C-FROZEN-20260808T064632Z: Promoted Module C from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- ADVANCE-C-125-20260808T064632Z: Marked C-125 PASS and activated D-135
 
 ## Recent failures
 

@@ -1,7 +1,5 @@
 {
   "run_id": "C-125-20260808T063500Z",
-  "module": "C",
-  "overall": "PASS",
   "componentwise": {
     "units and dimensions": {
       "pass": true,
@@ -21,14 +19,22 @@
     },
     "independent symbolic and numerical checks": {
       "pass": true,
-      "status": "PASS",
-      "independent_pass": true,
-      "clean_replay": true
+      "status": "PASS"
     },
     "required output completeness and D child-readiness": {
       "pass": true,
       "status": "PASS"
     }
   },
-  "aggregate_scores_cannot_override": true
+  "overall": "PASS",
+  "wolfram": {
+    "C-WL-001": {
+      "pass": true,
+      "path": "modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-001/gate.json"
+    },
+    "C-WL-002": {
+      "pass": true,
+      "path": "modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-002/gate.json"
+    }
+  }
 }
