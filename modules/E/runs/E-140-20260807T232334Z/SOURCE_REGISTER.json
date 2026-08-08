@@ -4,199 +4,53 @@
   "status": "BOUND_BEFORE_PRE_EXECUTION_LOCK",
   "generation_mode": "GENERATION_SEALED",
   "exact_parents": [
-    {
-      "object_id": "H_D_to_E",
-      "path": "modules/D/frozen/H_D_to_E.json",
-      "sha256": "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231",
-      "role": "DIRECT_PARENT"
-    },
-    {
-      "object_id": "H_C_to_D",
-      "path": "modules/C/frozen/H_C_to_D.json",
-      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
-      "role": "MICROSCOPIC_CONSTITUTION_ANCESTRY"
-    },
-    {
-      "object_id": "H_B_to_C",
-      "path": "modules/B/frozen/H_B_to_C.json",
-      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
-      "role": "FIRST_PHYSICAL_STATE_ANCESTRY"
-    },
-    {
-      "object_id": "H_A_to_B",
-      "path": "modules/A/frozen/H_A_to_B.json",
-      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
-      "role": "TRIAD_KERNEL_RELATIONAL_GRAMMAR_ANCESTRY"
-    }
+    {"object_id":"H_D_to_E","path":"modules/D/frozen/H_D_to_E.json","sha256":"37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231","role":"DIRECT_PARENT"},
+    {"object_id":"H_C_to_D","path":"modules/C/frozen/H_C_to_D.json","sha256":"41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78","role":"MICROSCOPIC_CONSTITUTION_ANCESTRY"},
+    {"object_id":"H_B_to_C","path":"modules/B/frozen/H_B_to_C.json","sha256":"c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492","role":"FIRST_PHYSICAL_STATE_ANCESTRY"},
+    {"object_id":"H_A_to_B","path":"modules/A/frozen/H_A_to_B.json","sha256":"728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7","role":"TRIAD_KERNEL_RELATIONAL_GRAMMAR_ANCESTRY"}
   ],
   "admitted_sources": [
-    {
-      "label": "Triadic emergence and theorem architecture",
-      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
-      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
-      "classification": "CANONICAL_AUTHORITY",
-      "generative_scope": "triad, First Action, recursive kernel, domain specialization, memory and no-retune rules"
-    },
-    {
-      "label": "P29 metadata and reproducibility context",
-      "path": "sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md",
-      "sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
-      "classification": "CANONICAL_AUTHORITY",
-      "generative_scope": "source and provenance discipline only"
-    },
-    {
-      "label": "Revised triadic N-body proof",
-      "path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
-      "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
-      "classification": "CANONICAL_AUTHORITY",
-      "generative_scope": "relational identity, directed lanes, local witnesses, route/event/branch classes, no-loss memory and refinement grammar; no direct point-body mechanics in E"
-    },
-    {
-      "label": "N-body metadata",
-      "path": "sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf",
-      "sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
-      "classification": "CANONICAL_AUTHORITY",
-      "generative_scope": "witness/provenance structure"
-    },
-    {
-      "label": "Universe architecture and full ledger",
-      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
-      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
-      "classification": "CANONICAL_AUTHORITY",
-      "generative_scope": "module ordering, handoff and freeze architecture only; historical BBN numerical lanes excluded"
-    }
+    {"label":"Triadic emergence and theorem architecture","path":"sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md","sha256":"cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e","classification":"CANONICAL_AUTHORITY","generative_scope":"triad, First Action, recursive kernel, domain specialization, memory and no-retune rules"},
+    {"label":"P29 metadata and reproducibility context","path":"sources/frozen/82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215/Presentation 29 revised Metadata.md","sha256":"82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215","classification":"CANONICAL_AUTHORITY","generative_scope":"source and provenance discipline only"},
+    {"label":"Revised triadic N-body proof","path":"sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf","sha256":"0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28","classification":"CANONICAL_AUTHORITY","generative_scope":"relational identity, directed lanes, local witnesses, route/event/branch classes, no-loss memory and refinement grammar; no direct point-body mechanics in E"},
+    {"label":"N-body metadata","path":"sources/frozen/caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94/A_Triadic_Solution_to_the_General_N_Body_Problem_Metadata_Revised.pdf","sha256":"caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94","classification":"CANONICAL_AUTHORITY","generative_scope":"witness/provenance structure"},
+    {"label":"Universe architecture and full ledger","path":"sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md","sha256":"4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6","classification":"CANONICAL_AUTHORITY","generative_scope":"module ordering, handoff and freeze architecture only; historical BBN numerical lanes excluded"}
   ],
   "procedure_only_sources": [
-    {
-      "repository": "Charlie-glitch83/2-RFC",
-      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
-      "path": "modules/E/MODULE_E_DETAILED_SCIENTIFIC_REPAIR_PLAN.md",
-      "source_object_sha256": "b117ccb08694785fc45b690b66d5ebf266fb7d3d27775954802064e4ccef5b91",
-      "classification": "HISTORICAL_WARNING_PROCEDURE_ONLY",
-      "allowed_use": "scientific construction order and coverage checklist",
-      "forbidden_use": "historical results, PASS claims, old physical values or parents"
-    },
-    {
-      "repository": "Charlie-glitch83/2-RFC",
-      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
-      "path": "modules/E/MODULE_E_TRIAD_KERNEL_DERIVATION_LOCK.md",
-      "source_object_sha256": "ecc81783d8144992ee7669fed903b1b046b2ab701b49dee3bdfeee9b79def57e",
-      "classification": "HISTORICAL_WARNING_PROCEDURE_ONLY",
-      "allowed_use": "NEW-DERIVATION doctrine consistent with current recipe",
-      "forbidden_use": "historical numerical outputs"
-    }
+    {"repository":"Charlie-glitch83/2-RFC","commit":"b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10","path":"modules/E/MODULE_E_DETAILED_SCIENTIFIC_REPAIR_PLAN.md","source_object_sha256":"b117ccb08694785fc45b690b66d5ebf266fb7d3d27775954802064e4ccef5b91","classification":"HISTORICAL_WARNING_PROCEDURE_ONLY","allowed_use":"scientific construction order and coverage checklist","forbidden_use":"historical results, PASS claims, old physical values or parents"},
+    {"repository":"Charlie-glitch83/2-RFC","commit":"b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10","path":"modules/E/MODULE_E_TRIAD_KERNEL_DERIVATION_LOCK.md","source_object_sha256":"ecc81783d8144992ee7669fed903b1b046b2ab701b49dee3bdfeee9b79def57e","classification":"HISTORICAL_WARNING_PROCEDURE_ONLY","allowed_use":"NEW-DERIVATION doctrine consistent with current recipe","forbidden_use":"historical numerical outputs"}
   ],
   "regression_or_comparison_only_sources": [
-    {
-      "sha256": "65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70",
-      "role": "gap/regression evidence only"
-    },
-    {
-      "sha256": "0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f",
-      "role": "old W2/BBN regression and no-retune lessons only"
-    },
-    {
-      "sha256": "d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c",
-      "role": "nucleosynthesis addendum structure/regression only"
-    },
-    {
-      "sha256": "ac37b05c67b26c882d171b7986a5c1a5536a4ecbdf1152731897f876972bb7fe",
-      "role": "completed-shell comparison only; no generative topology or coefficients"
-    }
+    {"sha256":"65cbeb7259c126ecab705a9f5dca54a6c3e510a7cbe592448b7d7305f3c74e70","role":"gap/regression evidence only"},
+    {"sha256":"0e54ae0a037fc0e35329c452c25e71d71f716dc6a700982083a207afd9adde8f","role":"old W2/BBN regression and no-retune lessons only"},
+    {"sha256":"d44cb226d6ebc35fae8d4122f86ce8a80a3a6458b209c328a55ecfbaa44b561c","role":"nucleosynthesis addendum structure/regression only"},
+    {"sha256":"ac37b05c67b26c882d171b7986a5c1a5536a4ecbdf1152731897f876972bb7fe","role":"completed-shell comparison only; no generative topology or coefficients"}
   ],
   "imports": [
-    {
-      "module": "numpy",
-      "owner": "prebuilt reaction_network solver"
-    },
-    {
-      "module": "sympy",
-      "owner": "prebuilt reaction_network symbolic rate parser"
-    },
-    {
-      "module": "scipy.integrate.solve_ivp",
-      "owner": "prebuilt reaction_network integrator"
-    }
+    {"module":"numpy","owner":"prebuilt reaction_network solver"},
+    {"module":"sympy","owner":"prebuilt reaction_network symbolic rate parser"},
+    {"module":"scipy.integrate.solve_ivp","owner":"prebuilt reaction_network integrator"}
   ],
   "files": [
-    {
-      "path": "work_packets/ACTIVE_WORK_PACKET.md",
-      "git_blob_sha": "c2395a4370dd9ad670866ce6b7a8270314751dec",
-      "role": "sole active execution order"
-    },
-    {
-      "path": "recipes/E/WORK_ORDER.md",
-      "git_blob_sha": "77a8b689e5393730b58908147b980148b3b223ff",
-      "role": "module work order"
-    },
-    {
-      "path": "modules/E/spec.json",
-      "git_blob_sha": "59fad3b2ef731a4ada49b2578385b5d29ec26043",
-      "role": "module objective/output/gate contract"
-    },
-    {
-      "path": "docs/09_DERIVATION_PROTOCOL.md",
-      "git_blob_sha": "4f2cb36642ad05877dab768a89ab072753902172",
-      "role": "derivation protocol"
-    },
-    {
-      "path": "docs/10_EXECUTION_PROTOCOL.md",
-      "git_blob_sha": "e91997528fa0406a6de63c79c0fe6b1e951119e6",
-      "role": "execution protocol"
-    },
-    {
-      "path": "docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md",
-      "git_blob_sha": "c1bc412bf43b660b535751a488c0f3860e5b5a33",
-      "role": "zero-design binding/derivation protocol"
-    },
-    {
-      "path": "rfc_engine/solvers/reaction_network.py",
-      "git_blob_sha": "83034023bc59b4083d5514d6cc055c3c8459c023",
-      "role": "prebuilt numerical engine"
-    },
-    {
-      "path": "tools/run_configured_solver.py",
-      "git_blob_sha": "9fec8e88ee525b0599621dfee7fc90241863d2ea",
-      "role": "configured solver runner"
-    },
-    {
-      "path": "modules/E/runs/E-140-20260807T232334Z/Module_E_Source_Asset_Register.md",
-      "git_blob_sha": "32c5d9aa61047a62ddc87110692d7d0de64fff09",
-      "role": "E.0 source classification"
-    },
-    {
-      "path": "modules/E/runs/E-140-20260807T232334Z/Module_E_Parent_Integrity_Certificate.md",
-      "git_blob_sha": "ed11e1f3b002a15b15c9b1327f9d2ef4adcb4442",
-      "role": "E.1 parent audit"
-    }
+    {"path":"work_packets/ACTIVE_WORK_PACKET.md","git_blob_sha":"c2395a4370dd9ad670866ce6b7a8270314751dec","role":"sole active execution order"},
+    {"path":"recipes/E/WORK_ORDER.md","git_blob_sha":"77a8b689e5393730b58908147b980148b3b223ff","role":"module work order"},
+    {"path":"modules/E/spec.json","git_blob_sha":"59fad3b2ef731a4ada49b2578385b5d29ec26043","role":"module objective/output/gate contract"},
+    {"path":"docs/09_DERIVATION_PROTOCOL.md","git_blob_sha":"4f2cb36642ad05877dab768a89ab072753902172","role":"derivation protocol"},
+    {"path":"docs/10_EXECUTION_PROTOCOL.md","git_blob_sha":"e91997528fa0406a6de63c79c0fe6b1e951119e6","role":"execution protocol"},
+    {"path":"docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md","git_blob_sha":"c1bc412bf43b660b535751a488c0f3860e5b5a33","role":"zero-design binding/derivation protocol"},
+    {"path":"rfc_engine/solvers/reaction_network.py","git_blob_sha":"83034023bc59b4083d5514d6cc055c3c8459c023","role":"prebuilt numerical engine"},
+    {"path":"tools/run_configured_solver.py","git_blob_sha":"9fec8e88ee525b0599621dfee7fc90241863d2ea","role":"configured solver runner"},
+    {"path":"modules/E/runs/E-140-20260807T232334Z/Module_E_Source_Asset_Register.md","git_blob_sha":"32c5d9aa61047a62ddc87110692d7d0de64fff09","role":"E.0 source classification"},
+    {"path":"modules/E/runs/E-140-20260807T232334Z/Module_E_Parent_Integrity_Certificate.md","git_blob_sha":"ed11e1f3b002a15b15c9b1327f9d2ef4adcb4442","role":"E.1 parent audit"}
   ],
   "urls": [],
   "constants": [
-    {
-      "name": "delta",
-      "value": 4.6692,
-      "origin": "frozen A/B/C/D lineage"
-    },
-    {
-      "name": "a",
-      "value": 0.1499430216517723,
-      "expression": "1/(delta+2)",
-      "origin": "H_D_to_E.transport_collision_law.edge_rate_a"
-    },
-    {
-      "name": "g_C",
-      "value": 0.449829064955317,
-      "expression": "3*a",
-      "origin": "H_D_to_E.transport_collision_law.gap_g_C"
-    },
-    {
-      "name": "Theta_D_final",
-      "value": 0.056881184006326246,
-      "units": "dimensionless parent-gap energy coordinate",
-      "origin": "H_D_to_E.thermal_state.Theta_D_final",
-      "restriction": "no Kelvin/MeV correspondence and no public calibration"
-    }
+    {"name":"delta","value":4.6692,"origin":"frozen A/B/C/D lineage"},
+    {"name":"a","value":0.1499430216517723,"expression":"1/(delta+2)","origin":"H_D_to_E.transport_collision_law.edge_rate_a"},
+    {"name":"g_C","value":0.449829064955317,"expression":"3*a","origin":"H_D_to_E.transport_collision_law.gap_g_C"},
+    {"name":"Theta_D_final","value":0.056881184006326246,"units":"dimensionless parent-gap energy coordinate","origin":"H_D_to_E.thermal_state.Theta_D_final","restriction":"no Kelvin/MeV correspondence and no public calibration"}
   ],
-  "public_data_declaration": "NONE; public network/data access and remembered empirical targets are forbidden during E generation",
+  "public_data_declaration": "NONE",
+  "public_data_policy_note": "At primary execution the declaration was the stronger text 'NONE; public network/data access and remembered empirical targets are forbidden during E generation'. This closeout normalization changes only the controller enum; the original blob is preserved in IMPLEMENTATION_CORRECTION_LEDGER.json and Git history.",
   "network_policy": "DISABLED_DURING_GENERATION"
 }
