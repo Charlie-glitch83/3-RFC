@@ -67,3 +67,25 @@ jobs:
         run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
       - name: Execute resume-safe B-first repair closeout
         run: bash tools/run_b115_resume_closeout.sh
+
+  c125-channel-complete-repair:
+    if: github.event.pull_request.head.ref == 'ops/c125-repair-20260808'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: c125-channel-complete-repair
+      cancel-in-progress: false
+    steps:
+      - name: Checkout authoritative execution branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install frozen repository dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Execute governed C-125 superseding replay
+        run: bash tools/run_c125_resume_closeout.sh
