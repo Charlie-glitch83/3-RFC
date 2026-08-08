@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "run_id": "G-160-20260808T021341Z",
+  "module": "G",
+  "status": "BLOCKED_UNDERDETERMINED",
+  "generation_mode": "GENERATION_SEALED",
+  "stage": "PRE_EXECUTION_DERIVATION",
+  "reason": "The exact F parent and currently admitted canonical source corpus do not uniquely derive the physical charge/radiation/atomic specialization required to bind and execute G's physical recombination and visibility solvers. Proceeding would require retyping an internal F coordinate/activity as electron ionization or photon opacity, or inserting an unwitnessed recombination/opacity coefficient. Both are forbidden by the exact parent contract and zero-design protocol.",
+  "direct_parent": {
+    "object_id": "H_F_to_G",
+    "path": "modules/F/frozen/H_F_to_G.json",
+    "sha256": "bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154"
+  },
+  "parent_constraints": [
+    "species identities remain INTERNAL_RFC_COMPOSITE_IDENTITIES_ONLY and empirical isotope correspondence is UNASSIGNED",
+    "electromagnetic charge status is NOT_DERIVED_AT_MINIMAL_SPINE",
+    "physical photon opacity status is NOT_DERIVED",
+    "radiation is constitutive-energy memory with photon identity unassigned",
+    "neutrino channel is dormant with no parent witness and zero backreaction",
+    "the F restart contract forbids reinterpretation of internal bound/free coordinates as empirical electrons/ions/photons",
+    "the F restart contract requires a newly witnessed source-owned radiation/charge specialization before a photon opacity/optical-depth law may be derived"
+  ],
+  "canonical_source_findings": [
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "finding": "P29 names CMB visibility/recombination/transparency as a domain projection but explicitly classifies recombination solutions and spectra as external proof obligations; it does not provide a unique current physical modal basis or coefficient set that can specialize H_F_to_G."
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "finding": "P30 STEP 6W explicitly marks physical recombination redshift, visibility function, last-scattering thickness, CMB temperature normalization, photon number density, electron ionization fraction history and Thomson optical depth as pending/not invented, and states that STEP 6W does not generate a physical visibility function. Its historical readiness markers therefore cannot be promoted into current G physical bindings."
+    },
+    {
+      "path": "sources/frozen/dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b/2RFC_Architecture_Intent_and_Drift_Deep_Soak_20260805.md",
+      "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
+      "finding": "The architecture audit states that domain-specific modal bases must contain the distinct physical variables, laws, constraints and observables; generic triadic relabeling/readiness scores are not a physical derivation. It identifies G as recombination and physical primordial-radiation-surface execution."
+    }
+  ],
+  "repository_obligations_checked": {
+    "work_order": "recipes/G/WORK_ORDER.md",
+    "recipe": "recipes/G/recipe.json",
+    "spec": "modules/G/spec.json",
+    "required_objects": [
+      "nonequilibrium recombination network from F",
+      "opacity and optical-depth law",
+      "visibility/radiation-surface construction",
+      "uncertainty and restart packet"
+    ],
+    "hard_stop_relevant": "rate lineage missing",
+    "solver_binding_status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION"
+  },
+  "exact_missing_witness_set": [
+    {
+      "id": "G-MISS-001",
+      "object": "charge/radiation specialization witness",
+      "requirement": "A source-owned derivation mapping current RFC carriers to the interaction charge or equivalent coupling that actually controls the G radiation interaction. It need not be Standard Model charge by name, but it must be mathematically explicit, non-arbitrary, and parent-compatible."
+    },
+    {
+      "id": "G-MISS-002",
+      "object": "bound/free recombination specialization",
+      "requirement": "A source-owned law defining which current F states are the G free and bound sectors and the exact recombination/ionization transitions between them, including all coefficients or a unique coefficient-generating rule."
+    },
+    {
+      "id": "G-MISS-003",
+      "object": "radiation interaction/opacity law",
+      "requirement": "A source-owned coupling from the derived G radiation state to the derived G matter state that produces a nonnegative physical opacity rate. F's kappa_int route-activity seed may be inherited as evidence but cannot be renamed photon opacity without this witness."
+    },
+    {
+      "id": "G-MISS-004",
+      "object": "G chronology/transport coordinate specialization",
+      "requirement": "A uniquely derived coordinate and horizon on which optical depth is integrated. It may be an RFC intrinsic coordinate, but it must be tied to the derived radiation interaction rather than imported as a public recombination redshift/time history."
+    }
+  ],
+  "unresolved_bindings": {
+    "G_recombination_network": [
+      "model.species if a new G atomic/radiative specialization changes the F basis",
+      "model.stoichiometry for actual G recombination/ionization routes",
+      "model.rate_expressions for actual G recombination/ionization routes",
+      "model.parameters for those routes",
+      "t_span/max_step if the G chronology differs from inherited tau_F"
+    ],
+    "G_visibility": [
+      "model.time",
+      "model.opacity_rate",
+      "model.normalization_tolerance only after the physical opacity object exists"
+    ]
+  },
+  "rejected_shortcuts": [
+    "Do not reinterpret F's internal_bound_free_coordinate as an electron ionization fraction.",
+    "Do not reinterpret F's terminal_total_directional_route_activity as photon opacity.",
+    "Do not insert Thomson scattering, hydrogen binding energies, public recombination redshifts, CMB temperature, photon density, or remembered atomic coefficients.",
+    "Do not use P30 STEP 6W readiness scores/markers as physical recombination, visibility, or last-scattering states.",
+    "Do not execute manufactured G reference/Wolfram checks as a substitute for the missing physical law.",
+    "Do not lower or redefine G's mandatory rate/opacity-lineage gate."
+  ],
+  "what_is_already_available": [
+    "exact F seven-state internal composite composition and covariance",
+    "exact inherited residual reversible route graph and rates",
+    "exact protected Q0/Q1/Q2/Q_total carrier ledgers",
+    "exact internal bound/free occupancy coordinate with forbidden empirical interpretation",
+    "exact constitutive-energy/RFL memory ledger",
+    "nonnegative internal route-activity transfer seed",
+    "generic manufactured visibility normalization identity G-WL-001",
+    "generic manufactured three-state conservation template G-WL-002",
+    "prebuilt reaction-network and visibility numerical engines"
+  ],
+  "next_lawful_action": "Locate or derive, from already admitted source bytes and exact A-F ancestry, a source-owned G charge/radiation/atomic specialization satisfying G-MISS-001 through G-MISS-004. If no such witness exists in the admitted corpus, the scientific lineage must remain blocked here until the architecture authorizes a new exact source object; public comparison data remain forbidden for generation.",
+  "primary_execution_started": false,
+  "wolfram_manufactured_checks_used_as_physical_evidence": false,
+  "public_data_used": false,
+  "frozen_parent_changed": false,
+  "claim_boundary": "No physical recombination, opacity, visibility, radiation surface, CMB surface, or last-scattering state is claimed by this blocked run. The obstruction itself is the evidence product."
+}
