@@ -40,24 +40,12 @@
       "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
       "classification": "ADMITTED_SOURCE",
       "relevant_scope": "requires each domain to supply a lawful specialization rather than relabel a familiar equation; D-G are grammar-active and keep domain kinetic/field laws domain-specific"
-    },
-    {
-      "label": "Execution-ready autopilot",
-      "path": "docs/25_EXECUTION_READY_AUTOPILOT.md",
-      "sha256": "e37f83058303f08355f731a369a347a64ec5d1c6a700982083a207afd9adde8f",
-      "classification": "PROCEDURAL_AUTHORITY",
-      "relevant_scope": "stop at BLOCKED_UNDERDETERMINED rather than insert a remembered standard value"
-    },
-    {
-      "label": "Zero-design operator protocol",
-      "path": "docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md",
-      "sha256": "c1bc412bf43b660b535751a488c0f3860e5b5a33",
-      "classification": "PROCEDURAL_AUTHORITY",
-      "relevant_scope": "bindings require exact parents/sources/hashed derivations; underdetermined coefficients are hard stops"
     }
   ],
   "imports": [],
   "files": [
+    "docs/25_EXECUTION_READY_AUTOPILOT.md",
+    "docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md",
     "recipes/G/WORK_ORDER.md",
     "recipes/G/recipe.json",
     "modules/G/spec.json",
