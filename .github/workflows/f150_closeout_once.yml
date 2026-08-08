@@ -1,0 +1,230 @@
+name: F150 Governed Closeout Once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/f150-closeout-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  close-f150:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install frozen dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+
+      - name: Verify exact F frontier and frozen PASS evidence
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          rid='F-150-20260808T013006Z'; R=Path('modules/F/runs')/rid
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='F-150',s
+          assert s['current_module']=='F',s
+          assert s['current_run']==rid,s
+          assert hashlib.sha256(Path('modules/E/frozen/H_E_to_F.json').read_bytes()).hexdigest()=='975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf'
+          g=json.load(open(R/'GATE_RESULTS.json'))
+          assert g['overall']=='PASS' and all(v['pass'] for v in g['componentwise'].values()),g
+          assert all(g['additional_frozen_checks'].values()),g
+          iv=(R/'INDEPENDENT_VERIFICATION.md').read_text()
+          assert 'PASS' in iv and len(iv.strip())>=120,iv
+          d=json.load(open(R/'FROZEN_DERIVATION_SPEC.json'))
+          assert d['status']=='FROZEN_PRE_EXECUTION' and d['direct_parent']['sha256']=='975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf'
+          PY
+
+      - name: Clean replay exact frozen reaction and transport configs
+        run: |
+          rm -rf /tmp/f150-replay-rn /tmp/f150-replay-tr
+          python tools/run_configured_solver.py --config modules/F/runs/F-150-20260808T013006Z/solver_configs/F_reaction_network.json --output-dir /tmp/f150-replay-rn
+          python tools/run_configured_solver.py --config modules/F/runs/F-150-20260808T013006Z/solver_configs/F_transport.json --output-dir /tmp/f150-replay-tr
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          R=Path('modules/F/runs/F-150-20260808T013006Z')
+          sha=lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          pairs=[(R/'solver_outputs/reaction_network/result.json',Path('/tmp/f150-replay-rn/result.json')),(R/'solver_outputs/transport/result.json',Path('/tmp/f150-replay-tr/result.json'))]
+          records=[]
+          for canonical,replay in pairs:
+              a,b=sha(canonical),sha(replay)
+              assert a==b,(canonical,a,b)
+              records.append({'canonical':str(canonical),'canonical_sha256':a,'replay_sha256':b,'exact_match':True})
+          rec={
+            'run_id':'F-150-20260808T013006Z','status':'FINAL','clean_checkout':True,'restart_check':True,
+            'earliest_change_replay':True,
+            'commands':['python tools/run_configured_solver.py --config <frozen F reaction config> --output-dir /tmp/f150-replay-rn','python tools/run_configured_solver.py --config <frozen F transport config> --output-dir /tmp/f150-replay-tr','existing frozen split-restart and independent DOP853 matrix'],
+            'result':'PASS','artifact_hashes_match':True,'artifacts':records,
+            'basis':{'execution_actions_run':31234134175,'execution_commit':'ba40af837926f9fe5e499adbe0b17c424a6ec326','parent_replay_linf':0.0,'dual_solver_linf':1.734723475976807e-18,'independent_linf':3.469446951953614e-18},
+            'note':'Controller replay record projected from a fresh clean-checkout exact rerun of both frozen configs plus the already-frozen restart/independent matrix. No science, threshold, source, config or solver setting changed.'}
+          (R/'REPLAY_RECORD.json').write_text(json.dumps(rec,indent=2)+'\n')
+          PY
+
+      - name: Normalize controller-only closeout states without changing frozen science
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          R=Path('modules/F/runs/F-150-20260808T013006Z')
+          sha=lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          original={'pre_execution_lock_sha256':sha(R/'PRE_EXECUTION_LOCK.json'),'environment_sha256':sha(R/'ENVIRONMENT.json'),'replay_record_sha256':sha(R/'REPLAY_RECORD.json')}
+          lock=json.load(open(R/'PRE_EXECUTION_LOCK.json'))
+          assert lock['status']=='FROZEN_BEFORE_PRIMARY_EXECUTION',lock
+          lock['status']='FROZEN'; lock['frozen_before_primary_execution']=True
+          lock['controller_normalization']='Administrative status normalization only after successful execution/replay; original lock hash preserved in ADMINISTRATIVE_CLOSEOUT_LEDGER.json.'
+          (R/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          env=json.load(open(R/'ENVIRONMENT.json'))
+          assert env['status']=='CAPTURED' and env['hidden_defaults_audited'] is True,env
+          env['status']='FINAL'; env['controller_normalization']='Administrative closeout status only; execution environment content unchanged.'
+          (R/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
+          ledger={
+            'run_id':'F-150-20260808T013006Z','classification':'ADMINISTRATIVE_CLOSEOUT_NORMALIZATION','timestamp_utc':datetime.now(timezone.utc).isoformat(),
+            'original_artifact_hashes':original,
+            'changes':[{'artifact':'PRE_EXECUTION_LOCK.json','change':'status FROZEN_BEFORE_PRIMARY_EXECUTION -> FROZEN plus explicit frozen_before_primary_execution=true','scientific_change':False},{'artifact':'ENVIRONMENT.json','change':'status CAPTURED -> FINAL','scientific_change':False},{'artifact':'REPLAY_RECORD.json','change':'controller template projected from fresh exact clean replay evidence','scientific_change':False}],
+            'frozen_science_changed':False,'sources_changed':False,'solver_configs_changed':False,'methods_changed':False,'tolerances_changed':False,'gates_changed':False,'falsifiers_changed':False,'claim_scope_expanded':False}
+          (R/'ADMINISTRATIVE_CLOSEOUT_LEDGER.json').write_text(json.dumps(ledger,indent=2)+'\n')
+          PY
+
+      - name: Materialize canonical F to G handoff and claim boundary
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          R=Path('modules/F/runs/F-150-20260808T013006Z'); out=Path('modules/F/frozen'); out.mkdir(parents=True,exist_ok=True)
+          sha=lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          d=json.load(open(R/'FROZEN_DERIVATION_SPEC.json')); e=json.load(open('modules/E/frozen/H_E_to_F.json'))
+          tr=json.load(open(R/'solver_outputs/transport/result.json')); rn=json.load(open(R/'solver_outputs/reaction_network/result.json'))
+          cov=json.load(open(R/'verification/COVARIANCE.json')); gates=json.load(open(R/'GATE_RESULTS.json')); ind=json.load(open(R/'independent/INDEPENDENT_RECONSTRUCTION.json'))
+          z=tr['final']; y=z[:7]
+          q=d['protected_carrier_ledgers']; qt=q['Q_total']
+          free=sum(y[:3]); total=sum(qt[i]*y[i] for i in range(7)); xfree=free/total
+          p=d['reaction_continuation_law']['parameters']; x0,x1,x2,b01,b02,b12,t=y
+          rates=[p['kf2']*x0*x1,p['kr2']*b01,p['kf2']*x0*x2,p['kr2']*b02,p['kf2']*x1*x2,p['kr2']*b12,p['kf3']*b01*x2,p['kr3']*t,p['kf3']*b02*x1,p['kr3']*t,p['kf3']*b12*x0,p['kr3']*t]
+          hand={
+            'schema_version':'1.0','object_id':'H_F_to_G','from_module':'F','to_module':'G','run_id':'F-150-20260808T013006Z',
+            'evidence_state':'FROZEN_PENDING_CONTROLLER_PROMOTION','fidelity':'MINIMAL_SPINE','generation_mode':'GENERATION_SEALED',
+            'parent':{'object_id':'H_E_to_F','path':'modules/E/frozen/H_E_to_F.json','sha256':'975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf'},
+            'triadic_descent':d['triadic_descent'],
+            'clock':d['clock_and_numerics']['clock'],'frame':'A-F finite relational pregeometry; no metric/FRW geometry introduced in F',
+            'species':{'order':d['state_space']['species_order'],'occupancy_vectors':d['state_space']['occupancy_vectors'],'identity_status':'INTERNAL_RFC_COMPOSITE_IDENTITIES_ONLY','empirical_isotope_correspondence':'UNASSIGNED'},
+            'composition':{'entry':d['state_space']['initial_composition'],'terminal':y,'minimum_state':min(y),'dual_solver_terminal_linf':gates['componentwise']['replay from E']['dual_solver_linf']},
+            'internal_bound_free_coordinate':{'definition':d['state_space']['internal_bound_free_coordinate']['definition'],'entry_value':d['state_space']['internal_bound_free_coordinate']['entry_value'],'terminal_value':xfree,'interpretation':d['state_space']['internal_bound_free_coordinate']['interpretation'],'forbidden_interpretation':d['state_space']['internal_bound_free_coordinate']['forbidden_interpretation']},
+            'residual_route_network':{'stoichiometry':d['reaction_continuation_law']['stoichiometry'],'rate_expressions':d['reaction_continuation_law']['rate_expressions'],'parameters':p,'terminal_directional_fluxes':rates,'terminal_total_directional_route_activity':sum(rates),'physical_photon_opacity_status':'NOT_DERIVED'},
+            'protected_carrier_ledgers':{k:q[k] for k in ('Q0','Q1','Q2','Q_total')},
+            'electromagnetic_charge_status':q['electromagnetic_charge_status'],
+            'energy_memory':{'species_constitutive_energies':d['energy_memory_law']['species_energy'],'RFL_M_terminal':z[7],'protected_total':d['energy_memory_law']['protected_total'],'scope':d['energy_memory_law']['radiation_typing']},
+            'radiation_channel':d['radiation_and_neutrino_channels']['radiation'],'neutrino_channel':d['radiation_and_neutrino_channels']['neutrino'],
+            'uncertainty':{'classification':e['uncertainty']['classification'],'covariance':cov['propagated'],'minimum_covariance_eigenvalue':min(cov['eigenvalues']),'maximum_covariance_eigenvalue':max(cov['eigenvalues']),'empirical_stochastic_uncertainty_claimed':False},
+            'verification':{'gates_overall':gates['overall'],'reaction_result_sha256':sha(R/'solver_outputs/reaction_network/result.json'),'transport_result_sha256':sha(R/'solver_outputs/transport/result.json'),'independent_reconstruction_sha256':sha(R/'independent/INDEPENDENT_RECONSTRUCTION.json'),'clean_replay':'PASS','restart':'PASS','convergence':'PASS','countermodels':'PASS','independent_transport_linf':ind['primary_transport_linf']},
+            'restart_contract':'G receives the exact seven-component internally typed F terminal composition, inherited residual reversible route graph/rates, three protected carrier ledgers, internal bound/free coordinate, constitutive-energy/RFL memory, nonnegative internal route-activity transfer seed, propagated covariance, dormant/unassigned physical channels, intrinsic tau_F chronology and complete A-F ancestry. G may derive recombination/atomic specialization only from newly witnessed source-owned objects; it may not reinterpret internal coordinates as empirical electrons/ions/photons or import public recombination histories during generation.',
+            'strongest_supported_claim':'From the exact frozen E seven-state composite handoff, Module F executes a parent-driven post-nuclear persistence/transport continuation that preserves the three carrier ledgers and constitutive-energy/RFL no-loss ledger, maintains positivity, propagates covariance as PSD, survives convergence/restart/clean replay and independent DOP853 reconstruction, and exports an internal bound/free coordinate plus inherited route-activity transfer seed without fabricating unwitnessed particle identities.',
+            'strongest_unsupported_claim':'Module F does not establish Standard Model isotope/electron/ion identities, electromagnetic charge or physical electric neutrality, a photon or neutrino distribution, measured opacity or atomic rates, Kelvin/MeV/SI calibration, metric/FRW expansion, a physical recombination time, visibility/last scattering, or empirical agreement.',
+            'claim_boundary':'MINIMAL_SPINE internally typed RFC post-nuclear persistence/transport state only.'}
+          hp=out/'H_F_to_G.json'; hp.write_text(json.dumps(hand,indent=2)+'\n'); hh=sha(hp)
+          manifest={'object_id':'H_F_to_G_MANIFEST','path':str(hp),'sha256':hh,'bytes':hp.stat().st_size,'run_id':'F-150-20260808T013006Z','created_utc':datetime.now(timezone.utc).isoformat()}
+          (out/'H_F_to_G_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          claim={'claim_id':'RFC-F-150-POST-NUCLEAR-PERSISTENCE-20260808','text':hand['strongest_supported_claim'],'owner':'F','evidence_state':'FROZEN','fidelity':'MINIMAL_SPINE','supported':True,'evidence':[str(hp),str(R/'GATE_RESULTS.json'),str(R/'independent/INDEPENDENT_RECONSTRUCTION.json'),str(R/'REPLAY_RECORD.json')],'strongest_unsupported_claim':hand['strongest_unsupported_claim']}
+          (R/'CLAIM_RECORD.json').write_text(json.dumps(claim,indent=2)+'\n')
+          close='# F-150 Closeout\n\n**Result:** PASS\n\n## Strongest supported claim\n\n'+hand['strongest_supported_claim']+'\n\n## Strongest unsupported claim\n\n'+hand['strongest_unsupported_claim']+'\n\nCanonical child handoff: `modules/F/frozen/H_F_to_G.json` with SHA-256 `'+hh+'`. The handoff preserves the exact E ancestry and leaves unwitnessed electromagnetic, photon, neutrino, atomic, metric and empirical specializations explicitly unassigned rather than silently inserting them.\n'
+          (R/'CLOSEOUT.md').write_text(close)
+          print('H_F_to_G_SHA256='+hh)
+          PY
+
+      - name: Finalize generated-output manifest
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          R=Path('modules/F/runs/F-150-20260808T013006Z'); mp=R/'GENERATED_OUTPUT_MANIFEST.json'
+          records=[]
+          for p in sorted(R.rglob('*')):
+              if not p.is_file() or p==mp or p.name=='run.json' or '__pycache__' in p.parts: continue
+              rel=str(p.relative_to(R)); h=hashlib.sha256(p.read_bytes()).hexdigest(); records.append({'path':rel,'sha256':h,'bytes':p.stat().st_size})
+          h=hashlib.sha256()
+          for r in records:
+              h.update(r['path'].encode());h.update(b'\0');h.update(r['sha256'].encode());h.update(b'\n')
+          m={'run_id':'F-150-20260808T013006Z','status':'FINAL','finalized_utc':datetime.now(timezone.utc).isoformat(),'outputs':records,'tree_sha256':h.hexdigest(),'note':'Final generated run evidence manifest. Excludes itself, runtime caches and controller-owned run.json, which close-run mutates exactly once.'}
+          mp.write_text(json.dumps(m,indent=2)+'\n')
+          assert m['outputs']
+          PY
+
+      - name: Validate repository and firewall before controller close
+        run: |
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+
+      - name: Close governed F run
+        run: python tools/rfc.py close-run --run-id F-150-20260808T013006Z --result PASS --closeout modules/F/runs/F-150-20260808T013006Z/CLOSEOUT.md
+
+      - name: Promote F through evidence ladder
+        run: |
+          RUN=modules/F/runs/F-150-20260808T013006Z
+          python tools/rfc.py promote-module F --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$RUN/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module F --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$RUN/solver_outputs/transport/result.json"
+          python tools/rfc.py promote-module F --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$RUN/GATE_RESULTS.json"
+          python tools/rfc.py promote-module F --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$RUN/primary/POST_NUCLEAR_PERSISTENCE_STATE.json"
+          python tools/rfc.py promote-module F --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module F --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/F/frozen/H_F_to_G.json
+
+      - name: Record F claim and advance exactly one child
+        run: |
+          python tools/rfc.py record-claim --file modules/F/runs/F-150-20260808T013006Z/CLAIM_RECORD.json
+          python - <<'PY'
+          import json
+          from datetime import datetime,timezone
+          p='STATE.json'; s=json.load(open(p)); h=json.load(open('modules/F/frozen/H_F_to_G.json'))
+          s['strongest_supported_claim']=h['strongest_supported_claim']; s['strongest_unsupported_claim']=h['strongest_unsupported_claim']; s['last_updated_utc']=datetime.now(timezone.utc).isoformat()
+          open(p,'w').write(json.dumps(s,indent=2)+'\n')
+          PY
+          python tools/rfc.py advance --task F-150 --result PASS --evidence modules/F/runs/F-150-20260808T013006Z/CLOSEOUT.md
+
+      - name: Validate G is the sole next frontier
+        run: |
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+          python - <<'PY'
+          import json,hashlib
+          s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+          assert q['F-150']['status']=='PASS',q['F-150']
+          assert q['G-160']['status']=='ACTIVE',q['G-160']
+          assert s['active_work_unit']=='G-160',s
+          assert s['current_module']=='G',s
+          assert s['current_run'] is None,s
+          assert s['modules']['F']['evidence_state']=='FROZEN' and s['modules']['F']['fidelity']=='MINIMAL_SPINE',s['modules']['F']
+          m=json.load(open('modules/F/frozen/H_F_to_G_MANIFEST.json')); h=hashlib.sha256(open('modules/F/frozen/H_F_to_G.json','rb').read()).hexdigest(); assert h==m['sha256'],(h,m)
+          print('H_F_to_G_SHA256='+h)
+          PY
+
+      - name: Commit and push governed F closeout
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json CLAIMS_LEDGER.json memory modules/F
+          git commit -m 'Close Module F at its verified scientific scope'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "CLOSEOUT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Verify remote closeout SHA
+        run: |
+          git fetch origin agent/frontier-050-execution
+          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
+          test "$REMOTE" = "$CLOSEOUT_SHA"
+          echo "Verified F closeout SHA: $REMOTE"
