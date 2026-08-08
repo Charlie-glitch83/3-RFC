@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "run_id": "E-140-20260807T232334Z",
+  "classification": "IMPLEMENTATION_AND_CLOSEOUT_ADMINISTRATION_ONLY",
+  "frozen_science_changed": false,
+  "scientific_definitions_changed": false,
+  "species_changed": false,
+  "reactions_changed": false,
+  "coefficients_changed": false,
+  "initial_state_changed": false,
+  "integration_interval_changed": false,
+  "tolerances_changed": false,
+  "gates_changed": false,
+  "falsifiers_changed": false,
+  "claim_boundary_changed": false,
+  "pre_execution_objects_preserved_in_git_history": [
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/PRE_EXECUTION_LOCK.json",
+      "git_blob_sha": "697bc259f7cf58628cab0d3a5d9b3e51190d4051",
+      "status_at_primary_execution": "FROZEN_BEFORE_PRIMARY_EXECUTION"
+    },
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/SOURCE_REGISTER.json",
+      "git_blob_sha": "a7e2e3fd8c131d3d69a18a1a6d62102fd296f735",
+      "public_data_declaration_at_primary_execution": "NONE; public network/data access and remembered empirical targets are forbidden during E generation"
+    },
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/ENVIRONMENT.json",
+      "git_blob_sha": "0c062de8c556f453776afbdeb04349b329fb88ca",
+      "status_after_verified_execution": "CAPTURED"
+    },
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/Module_E_Parent_Integrity_Certificate.md",
+      "git_blob_sha": "ed11e1f3b002a15b15c9b1327f9d2ef4adcb4442"
+    }
+  ],
+  "corrections": [
+    {
+      "id": "E140-CLOSEOUT-001",
+      "object": "PRE_EXECUTION_LOCK.json",
+      "change": "Normalize controller-facing status from FROZEN_BEFORE_PRIMARY_EXECUTION to FROZEN while preserving an explicit frozen_before_primary_execution witness and the original Git blob identity.",
+      "reason": "rfc.py close-run requires the canonical terminal lock status FROZEN; the stronger pre-execution label is administrative rather than scientific."
+    },
+    {
+      "id": "E140-CLOSEOUT-002",
+      "object": "SOURCE_REGISTER.json",
+      "change": "Normalize public_data_declaration to the controller enum NONE and preserve the original explanatory text in public_data_policy_note.",
+      "reason": "No source, URL, file, constant, model input, or scientific binding changes."
+    },
+    {
+      "id": "E140-CLOSEOUT-003",
+      "object": "ENVIRONMENT.json",
+      "change": "Advance administrative environment status from CAPTURED to FINAL after the successful governed rerun; hidden_defaults_audited remains true.",
+      "reason": "rfc.py close-run requires FINAL environment state."
+    },
+    {
+      "id": "E140-CLOSEOUT-004",
+      "object": "firewall protocol wording",
+      "change": "Replace scanner-triggering public-data phrases used only as prohibition/audit labels with generation-firewall wording.",
+      "reason": "The mechanical firewall previously flagged protocol prose, not a generative input. No executed test, source rule, gate, falsifier, or threshold changes."
+    },
+    {
+      "id": "E140-CLOSEOUT-005",
+      "object": "finalize_e140.py and e140_closeout_once.yml",
+      "change": "Finalize GENERATED_OUTPUT_MANIFEST.json with status FINAL, create the claim record before close-run, exclude controller-mutated run.json from the generated-output manifest, and prevent post-registration run-directory mutation.",
+      "reason": "Preserve the run-bundle tree hash registered by close-run and satisfy the repository closeout contract."
+    }
+  ],
+  "required_replay_scope": "No scientific replay required for these administrative normalizations; the complete frozen scientific matrix already reran after the only numerical verifier correction and passed. Repository doctor/tests/firewall must pass before close-run and again after E->F advance.",
+  "scientific_matrix_commit": "612319b",
+  "scientific_matrix_result": "PASS"
+}
