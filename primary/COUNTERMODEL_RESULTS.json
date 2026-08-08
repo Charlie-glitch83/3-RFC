@@ -1,0 +1,30 @@
+{
+  "countermodels": [
+    {
+      "id": "REMOVE_DIRECTED_PAIR",
+      "expected": "complex structure unavailable",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "WRONG_U1_CHARGE",
+      "expected": "anomaly closure fails",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "REMOVE_RFL_STABILIZATION",
+      "expected": "v_C and mass operators undefined",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "SCALARIZE_THREE_SHELLS",
+      "expected": "generation closure lost",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "IMPORT_MEASURED_SCALE",
+      "expected": "generation firewall violation",
+      "result": "FAIL_AS_EXPECTED"
+    }
+  ],
+  "overall": "PASS"
+}

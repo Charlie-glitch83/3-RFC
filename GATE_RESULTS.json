@@ -1,0 +1,43 @@
+{
+  "run_id": "3-RFC",
+  "overall": "PASS",
+  "componentwise": {
+    "three_shells": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "anomaly_closure": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "hermitian": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "unitary": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "neutral_zero_mode": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "positive_mass_operators": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "bound_nucleon_roles": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "population_positive_normalized": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "covariance_psd": {
+      "pass": true,
+      "status": "PASS"
+    }
+  },
+  "aggregate_scores_cannot_override": true
+}
