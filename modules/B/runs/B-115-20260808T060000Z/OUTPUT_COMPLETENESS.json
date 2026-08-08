@@ -1,7 +1,105 @@
 {
   "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "run_id": "B-115-20260808T060000Z",
+  "module": "B",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "physically executed Big Implosion state",
+      "status": "PASS",
+      "semantic_check": "Exact B-115 sector-completion output is artifact-backed, independently reconstructed, cleanly replayed and child-ready under the frozen superseding contract.",
+      "evidence": [
+        {
+          "path": "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+          "sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16"
+        },
+        {
+          "path": "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+          "sha256": "f0412e866e6dfbba16a65271fe787362c6b99ef21298796ef64678c62da2a3e3"
+        }
+      ]
+    },
+    {
+      "requirement": "intrinsic physical event order and clock origin",
+      "status": "PASS",
+      "semantic_check": "Exact B-115 sector-completion output is artifact-backed, independently reconstructed, cleanly replayed and child-ready under the frozen superseding contract.",
+      "evidence": [
+        {
+          "path": "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+          "sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16"
+        },
+        {
+          "path": "modules/B/runs/B-115-20260808T060000Z/frozen/H_B_to_C_v2.json",
+          "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77"
+        }
+      ]
+    },
+    {
+      "requirement": "generated geometry or explicitly typed pregeometry",
+      "status": "PASS",
+      "semantic_check": "Exact B-115 sector-completion output is artifact-backed, independently reconstructed, cleanly replayed and child-ready under the frozen superseding contract.",
+      "evidence": [
+        {
+          "path": "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+          "sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16"
+        },
+        {
+          "path": "modules/B/runs/B-115-20260808T060000Z/frozen/H_B_to_C_v2.json",
+          "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77"
+        }
+      ]
+    },
+    {
+      "requirement": "field/current/conservation-bearing state",
+      "status": "PASS",
+      "semantic_check": "Exact B-115 sector-completion output is artifact-backed, independently reconstructed, cleanly replayed and child-ready under the frozen superseding contract.",
+      "evidence": [
+        {
+          "path": "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+          "sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16"
+        },
+        {
+          "path": "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+          "sha256": "f0412e866e6dfbba16a65271fe787362c6b99ef21298796ef64678c62da2a3e3"
+        }
+      ]
+    },
+    {
+      "requirement": "ordinary, radiative, compression-relic, and dissipative-tail sector seeds only where derived",
+      "status": "PASS",
+      "semantic_check": "Exact B-115 sector-completion output is artifact-backed, independently reconstructed, cleanly replayed and child-ready under the frozen superseding contract.",
+      "evidence": [
+        {
+          "path": "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+          "sha256": "f0412e866e6dfbba16a65271fe787362c6b99ef21298796ef64678c62da2a3e3"
+        }
+      ]
+    },
+    {
+      "requirement": "route, event, branch, memory, uncertainty, and no-loss ancestry",
+      "status": "PASS",
+      "semantic_check": "Exact B-115 sector-completion output is artifact-backed, independently reconstructed, cleanly replayed and child-ready under the frozen superseding contract.",
+      "evidence": [
+        {
+          "path": "modules/B/runs/B-115-20260808T060000Z/frozen/H_B_to_C_v2.json",
+          "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77"
+        }
+      ]
+    },
+    {
+      "requirement": "restartable H_B_to_C",
+      "status": "PASS",
+      "semantic_check": "Exact B-115 sector-completion output is artifact-backed, independently reconstructed, cleanly replayed and child-ready under the frozen superseding contract.",
+      "evidence": [
+        {
+          "path": "modules/B/frozen/H_B_to_C_v2.json",
+          "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77"
+        },
+        {
+          "path": "modules/B/runs/B-115-20260808T060000Z/CHECKPOINT_RECORD.json",
+          "sha256": "cb52e33631de6ddbebf17e2b5cedf67464b0394c66b0f0d890a975cc26194690"
+        }
+      ]
+    }
+  ]
 }

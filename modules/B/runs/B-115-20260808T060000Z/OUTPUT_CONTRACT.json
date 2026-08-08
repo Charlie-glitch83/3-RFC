@@ -2,65 +2,200 @@
   "schema_version": "1.0",
   "run_id": "B-115-20260808T060000Z",
   "module": "B",
-  "status": "DRAFT",
+  "status": "PASS",
   "required_outputs": [
     {
       "name": "physically executed Big Implosion state",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "intrinsic physical event order and clock origin",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/frozen/H_B_to_C_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "generated geometry or explicitly typed pregeometry",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/frozen/H_B_to_C_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "field/current/conservation-bearing state",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "ordinary, radiative, compression-relic, and dissipative-tail sector seeds only where derived",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "route, event, branch, memory, uncertainty, and no-loss ancestry",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-115-20260808T060000Z/frozen/H_B_to_C_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "restartable H_B_to_C",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/frozen/H_B_to_C_v2.json",
+        "modules/B/runs/B-115-20260808T060000Z/CHECKPOINT_RECORD.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     }
   ],
-  "child_bindings": {},
-  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+  "child_bindings": {
+    "first_physical_state": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/frozen/H_B_to_C_v2.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "intrinsic_clock_origin": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/frozen/H_B_to_C_v2.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "pregeometry_or_geometry": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/frozen/H_B_to_C_v2.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "ordinary_sector_seed": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "radiative_sector_seed": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "compression_relic_seed": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "dissipative_tail_seed": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "field_current_conservation_state": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "route_event_branch_memory": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/frozen/H_B_to_C_v2.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "uncertainty": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/frozen/H_B_to_C_v2.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "restart": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/B/runs/B-115-20260808T060000Z/CHECKPOINT_RECORD.json",
+        "modules/B/frozen/H_B_to_C_v2.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    },
+    "no_loss_ancestry": {
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/A/frozen/H_A_to_B.json",
+        "modules/B/frozen/H_B_to_C_v2.json"
+      ],
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "derived_absence": false
+    }
+  },
+  "note": "Every B spec output and repaired C child binding is artifact-backed. The dissipative-tail coordinate is a derived exact zero on this reciprocal-current branch, not an omitted sector.",
+  "implementation_correction": "Normalized serializer keys to the frozen B->C contract only; scientific artifacts, projector law, values, gates, falsifiers, claim boundary and thresholds are unchanged."
 }

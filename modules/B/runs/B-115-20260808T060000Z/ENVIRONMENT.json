@@ -1,10 +1,11 @@
 {
   "run_id": "B-115-20260808T060000Z",
-  "status": "CAPTURED_PRE_EXECUTION",
+  "status": "FINAL",
   "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
   "network_policy": "DISABLED_DURING_GENERATION",
   "random_seeds": [],
   "hidden_defaults_audited": true,
-  "scientific_inputs": "exact repository bytes only"
+  "scientific_inputs": "exact repository bytes only",
+  "replay": "fresh detached worktree exact match"
 }

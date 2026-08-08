@@ -148,9 +148,12 @@
       "run_id": "B-115-20260808T060000Z",
       "module": "B",
       "task_id": "B-115",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/B/runs/B-115-20260808T060000Z",
-      "created_utc": "2026-08-08T06:09:13.915865+00:00"
+      "created_utc": "2026-08-08T06:09:13.915865+00:00",
+      "closed_utc": "2026-08-08T06:09:25.823608+00:00",
+      "tree_sha256": "e773c7118040de44192225becc892d963400e02a67125cff86536829f446c473",
+      "closeout": "modules/B/runs/B-115-20260808T060000Z/CLOSEOUT.md"
     }
   ]
 }

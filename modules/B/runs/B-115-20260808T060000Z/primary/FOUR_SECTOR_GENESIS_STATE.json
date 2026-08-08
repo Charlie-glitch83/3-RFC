@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "object_id": "B_FOUR_SECTOR_GENESIS_STATE_V2",
+  "run_id": "B-115-20260808T060000Z",
+  "status": "PHYSICALLY_EXECUTED_SECTOR_COMPLETION_ON_PRESERVED_B110_EVENT",
+  "generation_mode": "GENERATION_SEALED",
+  "source_big_implosion": {
+    "path": "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+    "sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16",
+    "changed": false
+  },
+  "projector_law": {
+    "complete_carrier_space": "(H_x direct_sum H_x) direct_sum (H_j direct_sum H_j)",
+    "ordinary_seed": "o0=(x_minus+x_plus)/2",
+    "compression_relic_seed": "c0=(x_minus-x_plus)/2",
+    "radiative_seed": "r0=(j_forward-j_reverse)/2",
+    "dissipative_tail_seed": "t0=(j_forward+j_reverse)/2",
+    "projectors": [
+      "P_ord=(I+E)/2 on state block",
+      "P_comp=(I-E)/2 on state block",
+      "P_rad=(I-R)/2 on current block",
+      "P_tail=(I+R)/2 on current block"
+    ],
+    "completeness": "sum(P_a)=I and P_a P_b=delta_ab P_a",
+    "reopening": [
+      "x_minus=o0+c0",
+      "x_plus=o0-c0",
+      "j_forward=t0+r0",
+      "j_reverse=t0-r0"
+    ]
+  },
+  "sectors": {
+    "ordinary": {
+      "parity": "EVENT_EVEN",
+      "seed": [
+        0.6901001535495629,
+        0.20671327445213408,
+        0.10318657199830282
+      ]
+    },
+    "compression_relic": {
+      "parity": "EVENT_ODD",
+      "seed": [
+        0.10352670245383133,
+        -0.03674264650657719,
+        -0.06678405594725405
+      ],
+      "persistence_generator_status": "INHERITED_B_THEOREM_REPLAY_REQUIRED_FOR_CHILD_USE"
+    },
+    "radiative": {
+      "parity": "ROUTE_ODD",
+      "edge_seed": [
+        0.09351289930693892,
+        0.11354050560072351,
+        0.020027606293784587
+      ]
+    },
+    "dissipative_tail": {
+      "parity": "ROUTE_EVEN",
+      "edge_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "DORMANT_EXACT_ZERO_ON_CURRENT_RECIPROCAL_BRANCH"
+    }
+  },
+  "verification": {
+    "x_minus_reconstruction_linf": 6.938893903907228e-18,
+    "x_plus_reconstruction_linf": 0.0,
+    "j_forward_reconstruction_linf": 0.0,
+    "j_reverse_reconstruction_linf": 0.0,
+    "compression_seed_sum_abs": 9.71445146547012e-17,
+    "tail_max_abs": 0.0
+  },
+  "claim_boundary": "Exact four-sector preparticle seed partition only; sector names are genesis roles, not mature particle identities."
+}

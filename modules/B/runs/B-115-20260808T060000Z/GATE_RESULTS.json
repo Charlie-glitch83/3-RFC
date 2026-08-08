@@ -1,7 +1,40 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "B-115-20260808T060000Z",
+  "classification": "B115_COMPONENTWISE_GATES",
+  "overall": "PASS",
+  "componentwise": {
+    "exact parent bytes": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "four-sector projector completeness": {
+      "pass": true,
+      "status": "PASS",
+      "errors": {
+        "x_minus_reconstruction_linf": 6.938893903907228e-18,
+        "x_plus_reconstruction_linf": 0.0,
+        "j_forward_reconstruction_linf": 0.0,
+        "j_reverse_reconstruction_linf": 0.0,
+        "compression_seed_sum_abs": 9.71445146547012e-17,
+        "tail_max_abs": 0.0
+      }
+    },
+    "total ledger preservation": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "no later physics smuggled": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "independent reconstruction": {
+      "pass": true,
+      "status": "PASS"
+    },
+    "required output completeness and C child-readiness": {
+      "pass": true,
+      "status": "PASS",
+      "final_contract_checked_at_close": true
+    }
+  }
 }

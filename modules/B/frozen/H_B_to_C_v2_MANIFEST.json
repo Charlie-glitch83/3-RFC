@@ -1,0 +1,10 @@
+{
+  "object_id": "H_B_to_C_V2",
+  "path": "modules/B/frozen/H_B_to_C_v2.json",
+  "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+  "bytes": 9707,
+  "run_id": "B-115-20260808T060000Z",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "preserves_prior_handoff": "modules/B/frozen/H_B_to_C.json"
+}

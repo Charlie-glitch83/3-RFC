@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "B-115",
-  "current_module": "B",
-  "current_run": "B-115-20260808T060000Z",
+  "active_work_unit": "C-125",
+  "current_module": "C",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -66,9 +66,9 @@
       "last_promoted_utc": "2026-08-07T00:11:19.343756+00:00"
     },
     "B": {
-      "evidence_state": "DESIGN",
+      "evidence_state": "FROZEN",
       "fidelity": "PRODUCTION",
-      "active_run": "B-115-20260808T060000Z",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -128,6 +128,48 @@
             "evidence_state": "FROZEN",
             "fidelity": "MINIMAL_SPINE"
           }
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/B/runs/B-115-20260808T060000Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-08T06:09:25.891443+00:00",
+          "work_unit": "B-115"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+          "timestamp_utc": "2026-08-08T06:09:25.956656+00:00",
+          "work_unit": "B-115"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/B/runs/B-115-20260808T060000Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-08T06:09:26.021399+00:00",
+          "work_unit": "B-115"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+          "timestamp_utc": "2026-08-08T06:09:26.086734+00:00",
+          "work_unit": "B-115"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/B/runs/B-115-20260808T060000Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-08T06:09:26.151185+00:00",
+          "work_unit": "B-115"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/B/frozen/H_B_to_C_v2.json",
+          "timestamp_utc": "2026-08-08T06:09:26.216624+00:00",
+          "work_unit": "B-115"
         }
       ],
       "promotion_evidence": [
@@ -136,11 +178,18 @@
         "modules/B/runs/B-110-20260807T002248Z/GATE_RESULTS.json",
         "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
         "modules/B/runs/B-110-20260807T002248Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/B/frozen/H_B_to_C.json"
+        "modules/B/frozen/H_B_to_C.json",
+        "modules/B/runs/B-115-20260808T060000Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/GATE_RESULTS.json",
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/B/frozen/H_B_to_C_v2.json"
       ],
-      "last_promoted_utc": "2026-08-07T03:10:58.104049+00:00",
+      "last_promoted_utc": "2026-08-08T06:09:26.216642+00:00",
       "completed_runs": [
-        "B-110-20260807T002248Z"
+        "B-110-20260807T002248Z",
+        "B-115-20260808T060000Z"
       ],
       "reopened_from": {
         "evidence_state": "FROZEN",
@@ -599,7 +648,7 @@
     }
   },
   "last_verified_commit": "548dbbcb1fcd56a3aeb0dbc34de934b51f8697fb",
-  "last_updated_utc": "2026-08-08T06:09:13.916312+00:00",
+  "last_updated_utc": "2026-08-08T06:09:26.410467+00:00",
   "strongest_supported_claim": "The exact prior B-G formal derivation/handoff corpus is recovered as REPLAY_REQUIRED, the existing A-F executed line remains preserved at its earned fidelity, and the repository now has a source-locked B-first superseding replay order whose first target is H_B_to_C_v2.",
   "strongest_unsupported_claim": "No superseding H_B_to_C_v2 through H_F_to_G_v2 has yet been freshly executed and frozen in 3-RFC, so no repaired physical recombination/visibility/last-scattering state is currently established.",
   "last_verified_branch": "agent/frontier-050-execution",

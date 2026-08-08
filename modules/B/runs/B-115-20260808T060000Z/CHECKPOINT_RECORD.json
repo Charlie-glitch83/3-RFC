@@ -1,7 +1,14 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "B-115-20260808T060000Z",
+  "checkpoints": [
+    {
+      "checkpoint_id": "B115-SECTOR-COMPLETE-FIRST-PHYSICAL-STATE",
+      "state_path": "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+      "state_sha256": "f0412e866e6dfbba16a65271fe787362c6b99ef21298796ef64678c62da2a3e3",
+      "restart_test": "PASS"
+    }
+  ],
+  "restart_contract": "C-125 restarts from exact H_B_to_C_v2 with B-110 first physical state unchanged and the four projector seeds explicit.",
+  "state_schema": "B first physical state + four-sector genesis partition",
   "hash_algorithm": "sha256"
 }

@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-08T06:09:14.174433+00:00
+Generated: 2026-08-08T06:09:26.481692+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `B-115` — Supersede Module B Handoff: Four-Sector First-Physical Completion
-- Current module: `B`
+- Active work unit: `C-125` — Supersede Module C: Channel-Complete Microscopic Constitution
+- Current module: `C`
 - Last verified commit: `548dbbcb1fcd56a3aeb0dbc34de934b51f8697fb`
 
 ## Strongest supported claim
@@ -20,16 +20,16 @@ No superseding H_B_to_C_v2 through H_F_to_G_v2 has yet been freshly executed and
 
 ## Immediate objective
 
-Replay the exact four-sector completion on the already executed Big-Implosion state and emit H_B_to_C_v2.
+Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2, including source-owned charge/symmetry/mass-mixing/interaction and photon/neutrino/nucleon-role states.
 
 ## Required deliverables
 
-- modules/B/runs/<RUN_ID>/OUTPUT_CONTRACT.json
-- modules/B/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/B/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/B/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/B/runs/<RUN_ID>/CLOSEOUT.md
-- versioned superseding H_B_to_C_v2 handoff and manifest
+- modules/C/runs/<RUN_ID>/OUTPUT_CONTRACT.json
+- modules/C/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/C/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/C/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/C/runs/<RUN_ID>/CLOSEOUT.md
+- versioned superseding H_C_to_D_v2 handoff and manifest
 
 ## Mandatory gates
 
@@ -43,7 +43,7 @@ Replay the exact four-sector completion on the already executed Big-Implosion st
 ## Module states
 
 - A: `FROZEN` / `PRODUCTION`
-- B: `DESIGN` / `PRODUCTION`
+- B: `FROZEN` / `PRODUCTION`
 - C: `FROZEN` / `MINIMAL_SPINE`
 - D: `FROZEN` / `MINIMAL_SPINE`
 - E: `FROZEN` / `MINIMAL_SPINE`
@@ -65,7 +65,7 @@ Replay the exact four-sector completion on the already executed Big-Implosion st
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 13
+- frozen artifacts: 15
 - indexed runs: 14
 
 ## Recent runs
@@ -77,18 +77,18 @@ Replay the exact four-sector completion on the already executed Big-Implosion st
 - F-150-20260808T013006Z: PASS (F)
 - G-160-20260808T021341Z: BLOCKED (G)
 - G-160-20260808T051613Z: BLOCKED (G)
-- B-115-20260808T060000Z: CREATED (B)
+- B-115-20260808T060000Z: PASS (B)
 
 ## Recent decisions
 
-- PROMOTE-F-PHYSICALLY_EXECUTED-20260808T021034Z: Promoted Module F from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
-- PROMOTE-F-INDEPENDENTLY_REPRODUCED-20260808T021034Z: Promoted Module F from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
-- PROMOTE-F-FROZEN-20260808T021035Z: Promoted Module F from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
-- ADVANCE-F-150-20260808T021035Z: Marked F-150 PASS and activated G-160
-- BG-SOURCE-LINEAGE-REPAIR-CLOSEOUT-20260808: Closed the false G obstruction as a source-recovery defect; recovered exact B-G formal science as REPLAY_REQUIRED and started a fresh governed G run requiring versioned B->F replay before G primary execution.
-- COMMIT-548dbbcb1fcd: Verified B-G source-lineage repair closeout; false G obstruction superseded; exact replay corpus recovered.
-- BG-SUPERSEDING-REPLAY-FRONTIER-20260808: Close the source-lineage repair by preserving B-F MINIMAL_SPINE evidence, blocking G primary execution, and authorizing the exact recovered superseding replay order B->C->D->E->F->G beginning at B-115.
 - REOPEN-B-20260808T060913Z: Reopened Module B from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
+- PROMOTE-B-FORMALIZED-20260808T060925Z: Promoted Module B from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-B-IMPLEMENTED-20260808T060925Z: Promoted Module B from FORMALIZED to IMPLEMENTED at PRODUCTION
+- PROMOTE-B-VERIFIED-20260808T060926Z: Promoted Module B from IMPLEMENTED to VERIFIED at PRODUCTION
+- PROMOTE-B-PHYSICALLY_EXECUTED-20260808T060926Z: Promoted Module B from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
+- PROMOTE-B-INDEPENDENTLY_REPRODUCED-20260808T060926Z: Promoted Module B from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-B-FROZEN-20260808T060926Z: Promoted Module B from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- ADVANCE-B-115-20260808T060926Z: Marked B-115 PASS and activated C-125
 
 ## Recent failures
 

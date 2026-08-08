@@ -1,0 +1,51 @@
+{
+  "run_id": "B-115-20260808T060000Z",
+  "method": "INDEPENDENT_EVENT_ROUTE_SWAP_RECONSTRUCTION",
+  "trusted_primary_gate_summary": false,
+  "input_state_sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16",
+  "reconstructed_sectors": {
+    "ordinary": {
+      "parity": "EVENT_EVEN",
+      "seed": [
+        0.6901001535495629,
+        0.20671327445213408,
+        0.10318657199830282
+      ]
+    },
+    "compression_relic": {
+      "parity": "EVENT_ODD",
+      "seed": [
+        0.10352670245383133,
+        -0.03674264650657719,
+        -0.06678405594725405
+      ],
+      "persistence_generator_status": "INHERITED_B_THEOREM_REPLAY_REQUIRED_FOR_CHILD_USE"
+    },
+    "radiative": {
+      "parity": "ROUTE_ODD",
+      "edge_seed": [
+        0.09351289930693892,
+        0.11354050560072351,
+        0.020027606293784587
+      ]
+    },
+    "dissipative_tail": {
+      "parity": "ROUTE_EVEN",
+      "edge_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "DORMANT_EXACT_ZERO_ON_CURRENT_RECIPROCAL_BRANCH"
+    }
+  },
+  "reconstruction_errors": {
+    "x_minus_reconstruction_linf": 6.938893903907228e-18,
+    "x_plus_reconstruction_linf": 0.0,
+    "j_forward_reconstruction_linf": 0.0,
+    "j_reverse_reconstruction_linf": 0.0,
+    "compression_seed_sum_abs": 9.71445146547012e-17,
+    "tail_max_abs": 0.0
+  },
+  "pass": true
+}

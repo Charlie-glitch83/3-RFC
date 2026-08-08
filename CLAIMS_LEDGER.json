@@ -54,6 +54,24 @@
       "recorded_utc": "2026-08-08T02:10:35.198527+00:00",
       "work_unit": "F-150",
       "superseding_replay_status": "PRESERVED_LOWER_FIDELITY_EVIDENCE_NOT_SUPERSEDING_CHILD_PARENT"
+    },
+    {
+      "claim_id": "RFC-B-115-SECTOR-COMPLETE-GENESIS-20260808",
+      "text": "The unchanged physically executed B-110 Big-Implosion state admits the exact recovered four-projector genesis partition, producing ordinary, radiative, compression-relic and dissipative-tail seed coordinates that completely reopen the state/current pair and form a child-ready B->C parent at PRODUCTION fidelity.",
+      "owner": "B",
+      "evidence_state": "FROZEN",
+      "fidelity": "PRODUCTION",
+      "supported": true,
+      "evidence": [
+        "modules/B/frozen/H_B_to_C_v2.json",
+        "modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json",
+        "modules/B/runs/B-115-20260808T060000Z/GATE_RESULTS.json",
+        "modules/B/runs/B-115-20260808T060000Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/B/runs/B-115-20260808T060000Z/REPLAY_RECORD.json"
+      ],
+      "strongest_unsupported_claim": "B-115 does not derive microscopic particles, photons, neutrinos, nucleons, gauge identities, thermal history, recombination or empirical correspondence.",
+      "recorded_utc": "2026-08-08T06:09:26.345214+00:00",
+      "work_unit": "B-115"
     }
   ]
 }

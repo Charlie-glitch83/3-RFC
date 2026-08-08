@@ -1,0 +1,330 @@
+{
+  "schema_version": "2.0",
+  "object_id": "H_B_to_C_V2",
+  "from_module": "B",
+  "to_module": "C",
+  "run_id": "B-115-20260808T060000Z",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "object_id": "H_A_to_B",
+    "path": "modules/A/frozen/H_A_to_B.json",
+    "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+  },
+  "triadic_descent": {
+    "CIF": "exact inherited A modal state and complete relational support",
+    "QV": "source-locked Big Implosion counting-Laplacian crossing",
+    "RFL": "first physical relational carrier with event origin, pregeometry, conserved current ledger, reopening memory, and restart contract"
+  },
+  "first_physical_event": {
+    "name": "BIG_IMPLOSION",
+    "pre_event_physical_time": null,
+    "intrinsic_event_order_origin": 0,
+    "clock_statement": "Physical ordering begins at this crossing. tau_B=0 is an event-order origin, not an imported pre-event time or calibrated duration."
+  },
+  "carrier": {
+    "node_count": 3,
+    "node_semantics": [
+      "A_MODAL_CHANNEL_0",
+      "A_MODAL_CHANNEL_1",
+      "A_MODAL_CHANNEL_2"
+    ],
+    "support": "complete inherited A relational support",
+    "edge_measure": "unit incidence/counting measure",
+    "weighted_edges": [
+      [
+        0,
+        1,
+        1.0
+      ],
+      [
+        0,
+        2,
+        1.0
+      ],
+      [
+        1,
+        2,
+        1.0
+      ]
+    ]
+  },
+  "operator": {
+    "expression": "Q_B=(I+L/(delta-1))^-1",
+    "delta": 4.6692,
+    "laplacian": [
+      [
+        2.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        2.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        2.0
+      ]
+    ],
+    "matrix": [
+      [
+        0.7001139566964553,
+        0.1499430216517723,
+        0.1499430216517723
+      ],
+      [
+        0.1499430216517723,
+        0.7001139566964554,
+        0.1499430216517723
+      ],
+      [
+        0.1499430216517723,
+        0.1499430216517723,
+        0.7001139566964554
+      ]
+    ],
+    "eigenvalues": [
+      0.5501709350446827,
+      0.550170935044683,
+      0.9999999999999997
+    ]
+  },
+  "physical_state": [
+    0.5865734510957316,
+    0.24345592095871127,
+    0.16997062794555687
+  ],
+  "pregeometry": {
+    "type": "FINITE_RELATIONAL_GRAPH_WITH_SCALAR_CARRIER_AND_ANTISYMMETRIC_EDGE_CURRENT",
+    "metric_geometry": false,
+    "scalar_carrier": [
+      0.5865734510957316,
+      0.24345592095871127,
+      0.16997062794555687
+    ],
+    "edge_currents": [
+      {
+        "i": 0,
+        "j": 1,
+        "J_ij": 0.09351289930693892,
+        "J_ji": -0.09351289930693892
+      },
+      {
+        "i": 0,
+        "j": 2,
+        "J_ij": 0.11354050560072351,
+        "J_ji": -0.11354050560072351
+      },
+      {
+        "i": 1,
+        "j": 2,
+        "J_ij": 0.020027606293784587,
+        "J_ji": -0.020027606293784587
+      }
+    ],
+    "current_divergence": [
+      0.20705340490766244,
+      -0.07348529301315433,
+      -0.1335681118945081
+    ],
+    "compression_relic_ledger_residual": [
+      0.20705340490766266,
+      -0.07348529301315437,
+      -0.1335681118945081
+    ],
+    "divergence_residual_norm": 2.2591401799415137e-16,
+    "ledger_residual_sum": 1.942890293094024e-16
+  },
+  "sector_seed_status": {
+    "ordinary": "NOT_DERIVED_IN_B",
+    "radiative": "NOT_DERIVED_IN_B",
+    "compression_relic": {
+      "status": "SIGNED_LEDGER_DERIVED_NOT_INDEPENDENT_POSITIVE_SECTOR",
+      "signed_residual": [
+        0.20705340490766266,
+        -0.07348529301315437,
+        -0.1335681118945081
+      ]
+    },
+    "dissipative_tail": "NOT_DERIVED_IN_B_REVERSIBLE_OPERATOR"
+  },
+  "no_loss": {
+    "reopened_parent_state": [
+      0.7936268560033941,
+      0.1699706279455569,
+      0.03640251605104876
+    ],
+    "reopening_error": 1.1123893155135927e-16,
+    "ancestry_preserved": true,
+    "parent_hash_preserved": true
+  },
+  "uncertainty": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_ONLY",
+    "stochastic_physical_uncertainty": false,
+    "covariance": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "covariance_reason": "No stochastic or empirical random variable is admitted in B.",
+    "runs": [
+      {
+        "delta": 4.66915,
+        "input_state": [
+          0.7936247927467817,
+          0.16997200619958272,
+          0.036403201053635606
+        ],
+        "post_event_state": [
+          0.5865707636365733,
+          0.2434572301638438,
+          0.1699720061995827
+        ],
+        "compression_ratio": 0.5501675625829378,
+        "ledger_error": -2.220446049250313e-16,
+        "reopening_error": 1.1188630228279524e-16
+      },
+      {
+        "delta": 4.6692,
+        "input_state": [
+          0.7936268560033942,
+          0.1699706279455569,
+          0.036402516051048765
+        ],
+        "post_event_state": [
+          0.5865734510957316,
+          0.24345592095871127,
+          0.16997062794555687
+        ],
+        "compression_ratio": 0.5501709350446828,
+        "ledger_error": -2.220446049250313e-16,
+        "reopening_error": 1.1123893155135927e-16
+      },
+      {
+        "delta": 4.66925,
+        "input_state": [
+          0.7936289192199208,
+          0.16996924971246366,
+          0.0364018310676155
+        ],
+        "post_event_state": [
+          0.5865761385234763,
+          0.24345461176405997,
+          0.1699692497124636
+        ],
+        "compression_ratio": 0.5501743074558609,
+        "ledger_error": 0.0,
+        "reopening_error": 1.3877787807814457e-17
+      }
+    ],
+    "max_post_event_component_deviation_from_nominal": 2.6874591582126683e-06
+  },
+  "restart": {
+    "run_id": "B-110-20260807T002248Z",
+    "checkpoints": [
+      {
+        "run_id": "B-110-20260807T002248Z",
+        "checkpoint_id": "B-FIRST-PHYSICAL-STATE",
+        "state_path": "primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+        "state_sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16",
+        "restart_test": "PASS",
+        "reopened_parent_l2_error": 1.1123893155135927e-16,
+        "contract": "Child C starts from H_B_to_C physical state and event-order origin; parent reopening remains available by exact inverse and ancestry hash."
+      }
+    ],
+    "restart_contract": "Child C starts from H_B_to_C physical state and event-order origin; parent reopening remains available by exact inverse and ancestry hash.",
+    "state_schema": "B_FIRST_PHYSICAL_STATE + H_B_to_C",
+    "hash_algorithm": "sha256"
+  },
+  "independent_verification": {
+    "method": "ANALYTIC_K3_SPECTRAL_RECONSTRUCTION_WITHOUT_PRIMARY_MATRIX_INVERSE",
+    "pass": true,
+    "comparisons": {
+      "primary_state_l2_error": 1.1443916996305594e-16,
+      "reopening_l2_error": 1.303699802838727e-16,
+      "divergence_vs_parent_minus_state_l2_error": 6.206335383118183e-17,
+      "primary_relic_residual_l2_error": 1.1443916996305594e-16,
+      "ledger_error": -1.1102230246251565e-16
+    }
+  },
+  "claim_boundary": "First physical RFC state plus exact four-sector preparticle genesis contract.",
+  "supersedes_for_repaired_lineage": {
+    "object_id": "H_B_to_C",
+    "path": "modules/B/frozen/H_B_to_C.json",
+    "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+    "preserved": true
+  },
+  "sector_seeds": {
+    "ordinary": {
+      "parity": "EVENT_EVEN",
+      "seed": [
+        0.6901001535495629,
+        0.20671327445213408,
+        0.10318657199830282
+      ]
+    },
+    "compression_relic": {
+      "parity": "EVENT_ODD",
+      "seed": [
+        0.10352670245383133,
+        -0.03674264650657719,
+        -0.06678405594725405
+      ],
+      "persistence_generator_status": "INHERITED_B_THEOREM_REPLAY_REQUIRED_FOR_CHILD_USE"
+    },
+    "radiative": {
+      "parity": "ROUTE_ODD",
+      "edge_seed": [
+        0.09351289930693892,
+        0.11354050560072351,
+        0.020027606293784587
+      ]
+    },
+    "dissipative_tail": {
+      "parity": "ROUTE_EVEN",
+      "edge_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "DORMANT_EXACT_ZERO_ON_CURRENT_RECIPROCAL_BRANCH"
+    }
+  },
+  "sector_projector_verification": {
+    "x_minus_reconstruction_linf": 6.938893903907228e-18,
+    "x_plus_reconstruction_linf": 0.0,
+    "j_forward_reconstruction_linf": 0.0,
+    "j_reverse_reconstruction_linf": 0.0,
+    "compression_seed_sum_abs": 9.71445146547012e-17,
+    "tail_max_abs": 0.0
+  },
+  "replay_required_derivation_sources": [
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md",
+      "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1a"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/B/MODULE_B_TO_C_SCIENTIFIC_HANDOFF.md",
+      "sha256": "beeead174edb8f12f2a62a5040535050bdb700fc0b0ab482ab57ecc317b8dcfb"
+    }
+  ],
+  "restart_contract": "C-125 must consume this exact sector-complete B parent, preserve the common Big-Implosion ancestry and earn every microscopic identity through its own derivation.",
+  "strongest_supported_claim": "The unchanged B-110 Big-Implosion state now has an exact complete nonduplicated four-sector genesis partition that reopens both the pre/post carrier pair and directed-current pair and is ready for full microscopic replay.",
+  "strongest_unsupported_claim": "No particle, photon, neutrino, nucleon, gauge group, thermal history, recombination state or empirical correspondence is established by the B sector partition itself."
+}

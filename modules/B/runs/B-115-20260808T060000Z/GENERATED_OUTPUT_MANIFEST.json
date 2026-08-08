@@ -1,8 +1,149 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "B-115-20260808T060000Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-08T06:09:21.447102+00:00",
+  "outputs": [
+    {
+      "path": "CHECKPOINT_RECORD.json",
+      "sha256": "cb52e33631de6ddbebf17e2b5cedf67464b0394c66b0f0d890a975cc26194690",
+      "bytes": 614
+    },
+    {
+      "path": "CLAIM_RECORD.json",
+      "sha256": "a727c8a46a2ef836436af08ce90f7aabfe1422dc6d90958767813af305e464c1",
+      "bytes": 1034
+    },
+    {
+      "path": "CLOSEOUT.md",
+      "sha256": "43bf8364ea189997491f79c1afb90ee593af66f95531fef35ee317feb1d408d5",
+      "bytes": 806
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "sha256": "325005173b631a8aa54c39de75504d71a8128b8062a29566016573b6c0c46660",
+      "bytes": 411
+    },
+    {
+      "path": "FAILURES.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "FROZEN_DERIVATION_SPEC.json",
+      "sha256": "f74c0bffc57842a336bd2cf6191bbba9bd08e8594cdaa917d79ef78eb53dd430",
+      "bytes": 3362
+    },
+    {
+      "path": "FROZEN_RECIPE.json",
+      "sha256": "4dce575dc5af1b62b9b92d59d5e119041dc5f3ce79df9a515424cfc78daad837",
+      "bytes": 5196
+    },
+    {
+      "path": "GATE_RESULTS.json",
+      "sha256": "679788107e4f8b9cffd44c875f842389edd93945549732abed5e09f9e67ad4df",
+      "bytes": 1030
+    },
+    {
+      "path": "INDEPENDENT_VERIFICATION.md",
+      "sha256": "b005e33a2d8383fb7394fc0a0350f8091f303911421324bca38e17e7919492ba",
+      "bytes": 583
+    },
+    {
+      "path": "LOCAL_EXECUTION_BINDINGS.json",
+      "sha256": "76bfd77697236e53d55d1665268c1ff33184494680012a3d31d54e4c8dcb98e2",
+      "bytes": 960
+    },
+    {
+      "path": "OUTPUT_COMPLETENESS.json",
+      "sha256": "e69ca26bf15949e02a1c2931551a9658f86ad3bb89780695797786eca729efd9",
+      "bytes": 4783
+    },
+    {
+      "path": "OUTPUT_CONTRACT.json",
+      "sha256": "ba9f3e65d96f62dfce7bd5767117d8376c5b84a68a1c1b973b43ca4396092294",
+      "bytes": 6918
+    },
+    {
+      "path": "PRE_EXECUTION_LOCK.json",
+      "sha256": "e3b68b7fa75670fd8499af41c7d655b958fe626f71e34c00fbedf70192f1575b",
+      "bytes": 3769
+    },
+    {
+      "path": "REPLAY_RECORD.json",
+      "sha256": "66b4a3c328a2ef2096612802d1e464606bbf588ed49f513243f7e71153c5c699",
+      "bytes": 1173
+    },
+    {
+      "path": "REQUIRED_GATES.json",
+      "sha256": "a95176a9dcf20fbbb2d53943723eb526f5941099943663fe3a22fe876624c8b0",
+      "bytes": 813
+    },
+    {
+      "path": "RUN_LOCAL_PHASE.sh",
+      "sha256": "869060f0fd39539a8a3f8e5324ce4058a5781d9c9245e20536b71685aa0510c3",
+      "bytes": 518
+    },
+    {
+      "path": "RUN_PLAN.md",
+      "sha256": "0fba3d34039c4c76eb96c5465819d9c30e3a38ce81d6ed5c7220ff23ba51cda0",
+      "bytes": 373
+    },
+    {
+      "path": "SOURCE_REGISTER.json",
+      "sha256": "ec83b3728ae88864fb85371ab9eed4a03abfe40d0a9c4572338a4fa1fcd94b49",
+      "bytes": 2042
+    },
+    {
+      "path": "WOLFRAM_SEQUENCE.md",
+      "sha256": "2a0a4fafe74fc76d822734d7cb518986c03f8198662ad53567c03c22a6ccbb42",
+      "bytes": 770
+    },
+    {
+      "path": "WORK_ORDER.md",
+      "sha256": "e8a5222a2bce6f88acd5a65acc201668c05b208a2f6c53edd866337c22a70c91",
+      "bytes": 3849
+    },
+    {
+      "path": "binding_sheets/B_big_implosion.bindings.json",
+      "sha256": "90900834f000232727700dd43ecc49469a8c0accab8bd213595bad815ad35361",
+      "bytes": 2321
+    },
+    {
+      "path": "frozen/H_B_to_C_v2.json",
+      "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "bytes": 9707
+    },
+    {
+      "path": "frozen/H_B_to_C_v2_MANIFEST.json",
+      "sha256": "27691d853b396c14b55ae5d29c5f093c6a40c7d8a3d899948b2780c123fa5f94",
+      "bytes": 348
+    },
+    {
+      "path": "independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "59b7ae898cedebc7afb1aa9cb4b96f10900c9d1722fad5369eb7f78e6601a25a",
+      "bytes": 1373
+    },
+    {
+      "path": "primary/FOUR_SECTOR_GENESIS_STATE.json",
+      "sha256": "f0412e866e6dfbba16a65271fe787362c6b99ef21298796ef64678c62da2a3e3",
+      "bytes": 2392
+    },
+    {
+      "path": "solver_templates/B_big_implosion.template.json",
+      "sha256": "13f90965db1214ce6e7e722b1f8c4af204e001ccfff535672c7718f28dc80242",
+      "bytes": 744
+    },
+    {
+      "path": "wolfram/B-WL-001/input.wl",
+      "sha256": "1b44c82c8d7cfbaf95afa72f4b54c3a556e66df0846caf40bf3bda882f5989fa",
+      "bytes": 619
+    },
+    {
+      "path": "wolfram/B-WL-002/input.wl",
+      "sha256": "0297bdc846ef0d0b435680525501a9ae3a6ee84b387ed72138ef910e1b6333cc",
+      "bytes": 632
+    }
+  ],
+  "tree_sha256": "024b01fcc2f3d1e811be9e027b41e94f22d78b526fcabdfd86f476f0615ac923",
+  "note": "Finalized after contract normalization and completeness evidence. Excludes itself and controller-owned run.json."
 }

@@ -1,10 +1,29 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "B-115-20260808T060000Z",
+  "result": "PASS",
+  "clean_checkout": true,
+  "artifact_hashes_match": true,
+  "method": "fresh detached git worktree from committed B-115 preexecution lock; unchanged execute_b115.py sector replay",
+  "artifacts": {
+    "sector": {
+      "primary_sha256": "f0412e866e6dfbba16a65271fe787362c6b99ef21298796ef64678c62da2a3e3",
+      "replay_sha256": "f0412e866e6dfbba16a65271fe787362c6b99ef21298796ef64678c62da2a3e3",
+      "match": true
+    },
+    "handoff": {
+      "primary_sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "replay_sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "match": true
+    },
+    "independent": {
+      "primary_sha256": "59b7ae898cedebc7afb1aa9cb4b96f10900c9d1722fad5369eb7f78e6601a25a",
+      "replay_sha256": "59b7ae898cedebc7afb1aa9cb4b96f10900c9d1722fad5369eb7f78e6601a25a",
+      "match": true
+    },
+    "gates": {
+      "primary_sha256": "679788107e4f8b9cffd44c875f842389edd93945549732abed5e09f9e67ad4df",
+      "replay_sha256": "679788107e4f8b9cffd44c875f842389edd93945549732abed5e09f9e67ad4df",
+      "match": true
+    }
+  }
 }
