@@ -1,1 +1,1 @@
-trigger: f155-child-readiness-repair-20260808-rerun-2
+trigger: f155-child-readiness-repair-20260808-rerun-3
