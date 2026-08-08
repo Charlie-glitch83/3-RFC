@@ -1,0 +1,110 @@
+name: E140 Governed Execution Once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/e140-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  execute-e140:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install frozen dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Verify active E-140 frontier
+        run: |
+          python tools/director.py active
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='E-140', s
+          assert s['current_run']=='E-140-20260807T232334Z', s
+          lock=json.load(open('modules/E/runs/E-140-20260807T232334Z/PRE_EXECUTION_LOCK.json'))
+          assert lock['status']=='FROZEN_BEFORE_PRIMARY_EXECUTION', lock
+          assert lock['fidelity']=='MINIMAL_SPINE', lock
+          PY
+      - name: Record exact Wolfram outputs
+        run: |
+          python tools/director.py wolfram-record --run E-140-20260807T232334Z --call E-WL-001 --output modules/E/runs/E-140-20260807T232334Z/wolfram/E-WL-001/output.txt
+          python tools/director.py wolfram-record --run E-140-20260807T232334Z --call E-WL-002 --output modules/E/runs/E-140-20260807T232334Z/wolfram/E-WL-002/output.txt
+      - name: Run manufactured reference check
+        run: python tools/run_reference_checks.py --module E --output modules/E/runs/E-140-20260807T232334Z/reference_checks.json
+      - name: Copy and bind exact E solver
+        run: |
+          RUN=modules/E/runs/E-140-20260807T232334Z
+          python tools/director.py solver-copy --module E --solver reaction_network --destination "$RUN" --force
+          python - <<'PY'
+          import hashlib,json,pathlib
+          run=pathlib.Path('modules/E/runs/E-140-20260807T232334Z')
+          origin=run/'FROZEN_DERIVATION_SPEC.json'
+          h=hashlib.sha256(origin.read_bytes()).hexdigest()
+          spec=json.loads(origin.read_text())
+          sm=spec['solver_model']
+          cols=sm['stoichiometry_columns']
+          stoich=[list(row) for row in zip(*cols)]
+          values={
+            'model.species':sm['species_order'],
+            'model.stoichiometry':stoich,
+            'model.rate_expressions':sm['rate_expressions'],
+            'model.parameters':sm['parameters'],
+            'model.invariants':spec['reaction_hypergraph']['carrier_invariants'] | {'Q_total':[3,3,3,6,6,6,9]},
+            'initial_state':sm['initial_state'],
+            't_span':sm['t_span'],
+            'max_step':sm['max_step'],
+            'positivity_tolerance':sm['positivity_tolerance'],
+            'invariant_tolerance':sm['invariant_tolerance'],
+          }
+          sheet_path=run/'binding_sheets/E_reaction_network.bindings.json'
+          sheet=json.loads(sheet_path.read_text())
+          for rec in sheet['bindings']:
+            rec['value']=values[rec['path']]
+            rec['origin_kind']='INTERNAL_DERIVATION'
+            rec['origin_path']=str(origin)
+            rec['origin_sha256']=h
+            rec['module']='E'
+            rec['derivation_object']='E140_FROZEN_DERIVATION_SPEC'
+            rec['units']='dimensionless RFC MINIMAL_SPINE units'
+            rec['dimensions']='1'
+            rec['justification']='Bound exactly from the frozen E-140 parent-derived derivation specification.'
+          sheet_path.write_text(json.dumps(sheet,indent=2)+'\n')
+          print('FROZEN_DERIVATION_SHA256',h)
+          PY
+          python tools/materialize_solver_config.py --template "$RUN/solver_templates/E_reaction_network.template.json" --binding-sheet "$RUN/binding_sheets/E_reaction_network.bindings.json" --output "$RUN/solver_configs/E_reaction_network.json"
+      - name: Execute primary E reaction network
+        run: |
+          RUN=modules/E/runs/E-140-20260807T232334Z
+          python tools/run_configured_solver.py --config "$RUN/solver_configs/E_reaction_network.json" --output-dir "$RUN/solver_outputs/reaction_network"
+      - name: Validate primary output
+        run: |
+          python - <<'PY'
+          import json
+          p='modules/E/runs/E-140-20260807T232334Z/solver_outputs/reaction_network/result.json'
+          r=json.load(open(p))
+          assert r['success'] is True, r
+          assert all(x['pass'] for x in r['invariants'].values()), r['invariants']
+          assert r['pass_flags']['positivity'] is True, r['pass_flags']
+          PY
+      - name: Commit generated E primary evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add modules/E/runs/E-140-20260807T232334Z
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit'
+          else
+            git commit -m 'Execute frozen Module E primary reaction network'
+            git push origin HEAD:agent/frontier-050-execution
+          fi
