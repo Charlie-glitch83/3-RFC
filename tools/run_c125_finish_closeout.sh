@@ -36,9 +36,13 @@ import hashlib,json,sys
 from datetime import datetime,timezone
 from pathlib import Path
 rid=sys.argv[1]; R=Path('modules/C/runs')/rid
-close=R/'CLOSEOUT.md'; text=close.read_text()
+close=R/'CLOSEOUT.md'; text=close.read_text(); claim=json.load(open(R/'CLAIM_RECORD.json'))
 if '## Result' not in text:
     text=text.replace('# C-125 Closeout\n\n','# C-125 Closeout\n\n## Result\n\n**PASS.**\n\n',1)
+if '## Strongest supported claim' not in text:
+    text += '\n## Strongest supported claim\n\n'+claim['text']+'\n'
+if '## Strongest unsupported claim' not in text:
+    text += '\n## Strongest unsupported claim\n\n'+claim['strongest_unsupported_claim']+'\n'
 close.write_text(text)
 assert all(x in text for x in ['Result','Strongest supported claim','Strongest unsupported claim'])
 # Finalize manifest again because only closeout formatting changed after the prior manifest.
