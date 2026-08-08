@@ -1,0 +1,149 @@
+name: Repair False G Obstruction and Reopen Child-Ready F Once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/child-readiness-repair-trigger.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: child-readiness-repair-once
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    if: github.event.pull_request.head.ref == 'ops/child-readiness-repair-20260808'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install frozen repository dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+
+      - name: Verify exact pre-repair frontier
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='G-160',s
+          assert s['current_module']=='G',s
+          assert s['current_run']=='G-160-20260808T021341Z',s
+          f=s['modules']['F']
+          assert f['evidence_state']=='FROZEN' and f['fidelity']=='MINIMAL_SPINE',f
+          hp=Path('modules/F/frozen/H_F_to_G.json')
+          h=json.load(open(hp))
+          assert h['electromagnetic_charge_status']=='NOT_DERIVED_AT_MINIMAL_SPINE',h['electromagnetic_charge_status']
+          assert h['residual_route_network']['physical_photon_opacity_status']=='NOT_DERIVED',h['residual_route_network']
+          assert 'PHOTON_IDENTITY_UNASSIGNED' in h['radiation_channel']['status'],h['radiation_channel']
+          g=json.load(open('modules/G/runs/G-160-20260808T021341Z/G_DERIVATION_OBSTRUCTION.json'))
+          assert g['classification']=='BLOCKED_UNDERDETERMINED_PRE_PRIMARY',g
+          assert json.load(open('modules/G/runs/G-160-20260808T021341Z/GATE_RESULTS.json'))['overall']=='BLOCKED_UNDERDETERMINED'
+          PY
+
+      - name: Close preserved G obstruction run as BLOCKED
+        run: |
+          python tools/rfc.py close-run \
+            --run-id G-160-20260808T021341Z \
+            --result BLOCKED \
+            --closeout modules/G/runs/G-160-20260808T021341Z/CLOSEOUT.md
+
+      - name: Apply repository-wide child-readiness repair
+        run: python tools/repair_child_readiness.py
+
+      - name: Reopen Module F at higher fidelity
+        run: |
+          python tools/rfc.py reopen-module F \
+            --fidelity PRODUCTION \
+            --evidence audit/CHILD_READINESS_REPAIR_20260808.json
+
+      - name: Create governed F-155 repair workspace from repository controller
+        run: |
+          python tools/director.py doctor
+          python tools/director.py active
+          python tools/director.py prepare-active --create-run
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='F-155',s
+          assert s['current_module']=='F',s
+          rid=s['current_run']
+          assert rid and rid.startswith('F-155-'),s
+          r=Path('modules/F/runs')/rid
+          assert (r/'OUTPUT_CONTRACT.json').is_file(),r/'OUTPUT_CONTRACT.json'
+          c=json.load(open(r/'OUTPUT_CONTRACT.json'))
+          expected=json.load(open('modules/F/spec.json'))['required_outputs']
+          assert [x['name'] for x in c['required_outputs']]==expected,(c,expected)
+          assert c['status']=='DRAFT'
+          print(rid)
+          PY
+
+      - name: Verify controller rejects incomplete child-ready PASS
+        run: |
+          python - <<'PY'
+          import json,importlib.util
+          from pathlib import Path
+          root=Path('.')
+          spec=importlib.util.spec_from_file_location('rfc',root/'tools/rfc.py')
+          mod=importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+          rid=json.load(open('STATE.json'))['current_run']
+          ok,errors=mod.validate_required_output_contract(root/'modules/F/runs'/rid,'F')
+          assert ok is False
+          assert errors
+          print('\n'.join(errors))
+          PY
+
+      - name: Run full repository validation
+        run: |
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+
+      - name: Commit repaired governed frontier
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'HARD STOP: repair workflow produced no governed changes'
+            exit 1
+          fi
+          git commit -m 'Repair child-readiness closure and reopen Module F'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "REPAIR_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Verify remote repaired SHA and frontier
+        run: |
+          git fetch origin agent/frontier-050-execution
+          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
+          test "$REMOTE" = "$REPAIR_SHA"
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='F-155',s
+          assert s['current_module']=='F',s
+          assert s['modules']['F']['evidence_state']=='DESIGN',s['modules']['F']
+          assert s['modules']['F']['fidelity']=='PRODUCTION',s['modules']['F']
+          assert s['modules']['G']['evidence_state']=='BLOCKED',s['modules']['G']
+          q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+          assert q['F-155']['status']=='ACTIVE',q['F-155']
+          assert q['G-160']['status']=='BLOCKED',q['G-160']
+          assert q['G-160']['depends_on']==['F-155'],q['G-160']
+          PY
+          echo "Verified repair SHA: $REMOTE"
