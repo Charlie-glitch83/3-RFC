@@ -573,8 +573,8 @@
       ]
     }
   },
-  "last_verified_commit": "4a9f3f5e5b76c9612120b427cffd60642c891662",
-  "last_updated_utc": "2026-08-08T05:16:13.315046+00:00",
+  "last_verified_commit": "548dbbcb1fcd56a3aeb0dbc34de934b51f8697fb",
+  "last_updated_utc": "2026-08-08T05:16:18.074759+00:00",
   "strongest_supported_claim": "The current A-F executed line remains valid at its declared fidelity, and the exact prior B-G formal theorem/repair/handoff corpus has now been recovered as REPLAY_REQUIRED source material. That corpus contains the upstream four-sector, microscopic charge/symmetry/photon/neutrino/nucleon, thermal, nucleosynthesis, plasma/opacity and recombination constructions that the reduced MINIMAL_SPINE handoffs omitted; no historical PASS is inherited.",
   "strongest_unsupported_claim": "3-RFC has not yet freshly replayed and physically executed the recovered B-G higher-science lineage into a superseding H_F_to_G parent, so no new 3-RFC physical recombination/visibility/last-scattering result is frozen yet.",
   "last_verified_branch": "agent/frontier-050-execution",

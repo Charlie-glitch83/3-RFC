@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T05:16:13.423872+00:00
+Generated: 2026-08-08T05:16:18.138208+00:00
 
 ## Project truth
 
@@ -8,7 +8,7 @@ Generated: 2026-08-08T05:16:13.423872+00:00
 - Generation mode: `GENERATION_SEALED`
 - Active work unit: `G-160` — Close Module G: Nonequilibrium Recombination and Last-Scattering State
 - Current module: `G`
-- Last verified commit: `4a9f3f5e5b76c9612120b427cffd60642c891662`
+- Last verified commit: `548dbbcb1fcd56a3aeb0dbc34de934b51f8697fb`
 
 ## Strongest supported claim
 
@@ -79,7 +79,6 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 
 ## Recent decisions
 
-- PROMOTE-F-FORMALIZED-20260808T021034Z: Promoted Module F from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-F-IMPLEMENTED-20260808T021034Z: Promoted Module F from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
 - PROMOTE-F-VERIFIED-20260808T021034Z: Promoted Module F from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
 - PROMOTE-F-PHYSICALLY_EXECUTED-20260808T021034Z: Promoted Module F from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
@@ -87,6 +86,7 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 - PROMOTE-F-FROZEN-20260808T021035Z: Promoted Module F from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 - ADVANCE-F-150-20260808T021035Z: Marked F-150 PASS and activated G-160
 - BG-SOURCE-LINEAGE-REPAIR-CLOSEOUT-20260808: Closed the false G obstruction as a source-recovery defect; recovered exact B-G formal science as REPLAY_REQUIRED and started a fresh governed G run requiring versioned B->F replay before G primary execution.
+- COMMIT-548dbbcb1fcd: Verified B-G source-lineage repair closeout; false G obstruction superseded; exact replay corpus recovered.
 
 ## Recent failures
 
