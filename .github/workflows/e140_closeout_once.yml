@@ -1,0 +1,116 @@
+name: E140 Governed Closeout Once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/e140-closeout-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  close-e140:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install frozen dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Verify E-140 ready for closeout
+        run: |
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='E-140',s
+          assert s['current_run']=='E-140-20260807T232334Z',s
+          g=json.load(open('modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json'))
+          assert g['overall']=='PASS',g
+          assert all(v['pass'] for v in g['componentwise'].values()),g
+          v=json.load(open('modules/E/runs/E-140-20260807T232334Z/verification/VERIFICATION_SUMMARY.json'))
+          assert all(v[k] for k in ['convergence_pass','withheld_pass','scalar_pass','restart_pass','replay_pass','independent_pass','covariance_pass','freeze_pass']),v
+          PY
+      - name: Materialize canonical E handoff and closeout
+        run: python modules/E/runs/E-140-20260807T232334Z/finalize_e140.py
+      - name: Close governed E run
+        run: python tools/rfc.py close-run --run-id E-140-20260807T232334Z --result PASS --closeout modules/E/runs/E-140-20260807T232334Z/CLOSEOUT.md
+      - name: Re-finalize run manifest after controller close
+        run: python modules/E/runs/E-140-20260807T232334Z/finalize_e140.py
+      - name: Promote E through evidence ladder
+        run: |
+          RUN=modules/E/runs/E-140-20260807T232334Z
+          python tools/rfc.py promote-module E --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$RUN/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module E --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$RUN/solver_outputs/reaction_network/result.json"
+          python tools/rfc.py promote-module E --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$RUN/GATE_RESULTS.json"
+          python tools/rfc.py promote-module E --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$RUN/primary/PRIMORDIAL_COMPOSITE_NETWORK_STATE.json"
+          python tools/rfc.py promote-module E --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module E --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/E/frozen/H_E_to_F.json
+      - name: Record E claim and state claim surface
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('modules/E/runs/E-140-20260807T232334Z/CLAIM_RECORD.json')
+          claim={
+            'claim_id':'RFC-E-140-PRIMORDIAL-COMPOSITE-NETWORK-20260808',
+            'text':'From the exact frozen D three-carrier state, Module E derives and physically executes a source-owned seven-state reversible primordial-composite reaction network with parent-derived binding and rates, exact internal carrier accounting, positive abundance dynamics, material witnessed reaction routes, constitutive binding-memory transfer, convergence, freeze-out, covariance, restart/replay and independent reconstruction.',
+            'owner':'E','evidence_state':'FROZEN','fidelity':'MINIMAL_SPINE','supported':True,
+            'evidence':['modules/E/frozen/H_E_to_F.json','modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json','modules/E/runs/E-140-20260807T232334Z/independent/INDEPENDENT_RECONSTRUCTION.json','modules/E/runs/E-140-20260807T232334Z/REPLAY_RECORD.json'],
+            'strongest_unsupported_claim':'Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics.'
+          }
+          p.write_text(json.dumps(claim,indent=2)+'\n')
+          PY
+          python tools/rfc.py record-claim --file modules/E/runs/E-140-20260807T232334Z/CLAIM_RECORD.json
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          p='STATE.json'
+          s=json.load(open(p))
+          s['strongest_supported_claim']='From the exact frozen D three-carrier state, Module E derives and physically executes a source-owned seven-state reversible primordial-composite reaction network with parent-derived binding and rates, exact internal carrier accounting, positive abundance dynamics, material witnessed reaction routes, constitutive binding-memory transfer, convergence, freeze-out, covariance, restart/replay and independent reconstruction.'
+          s['strongest_unsupported_claim']='Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics.'
+          s['last_updated_utc']=datetime.now(timezone.utc).isoformat()
+          open(p,'w').write(json.dumps(s,indent=2)+'\n')
+          PY
+      - name: Advance exactly one child E to F
+        run: python tools/rfc.py advance --task E-140 --result PASS --evidence modules/E/runs/E-140-20260807T232334Z/CLOSEOUT.md
+      - name: Validate repository after advance
+        run: |
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          q=json.load(open('WORK_QUEUE.json'))['items']
+          by={x['id']:x for x in q}
+          assert by['E-140']['status']=='PASS',by['E-140']
+          assert by['F-150']['status']=='ACTIVE',by['F-150']
+          assert s['active_work_unit']=='F-150',s
+          assert s['current_module']=='F',s
+          assert s['current_run'] is None,s
+          assert s['modules']['E']['evidence_state']=='FROZEN',s['modules']['E']
+          assert s['modules']['E']['fidelity']=='MINIMAL_SPINE',s['modules']['E']
+          PY
+      - name: Commit and push governed E closeout
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json CLAIMS_LEDGER.json memory modules/E
+          git commit -m 'Close Module E at its verified scientific scope'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "CLOSEOUT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Verify remote closeout SHA
+        run: |
+          git fetch origin agent/frontier-050-execution
+          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
+          test "$REMOTE" = "$CLOSEOUT_SHA"
+          echo "Verified closeout SHA: $REMOTE"
