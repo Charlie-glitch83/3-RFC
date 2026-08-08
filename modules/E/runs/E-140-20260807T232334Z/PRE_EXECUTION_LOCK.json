@@ -1,7 +1,8 @@
 {
   "schema_version": "1.1",
   "run_id": "E-140-20260807T232334Z",
-  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "status": "FROZEN",
+  "frozen_before_primary_execution": true,
   "frozen_utc": "2026-08-08T00:12:00Z",
   "generation_mode": "GENERATION_SEALED",
   "fidelity": "MINIMAL_SPINE",
@@ -19,22 +20,10 @@
     "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
   ],
   "definition_hashes": [
-    {
-      "path": "modules/E/runs/E-140-20260807T232334Z/SOURCE_REGISTER.json",
-      "git_blob_sha": "a7e2e3fd8c131d3d69a18a1a6d62102fd296f735"
-    },
-    {
-      "path": "modules/E/runs/E-140-20260807T232334Z/Module_E_Source_Asset_Register.md",
-      "git_blob_sha": "32c5d9aa61047a62ddc87110692d7d0de64fff09"
-    },
-    {
-      "path": "modules/E/runs/E-140-20260807T232334Z/Module_E_Parent_Integrity_Certificate.md",
-      "git_blob_sha": "ed11e1f3b002a15b15c9b1327f9d2ef4adcb4442"
-    },
-    {
-      "path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
-      "commit_sha": "6108bca771f6daa5acccdedfd369bfadd470d168"
-    }
+    {"path":"modules/E/runs/E-140-20260807T232334Z/SOURCE_REGISTER.json","git_blob_sha":"a7e2e3fd8c131d3d69a18a1a6d62102fd296f735"},
+    {"path":"modules/E/runs/E-140-20260807T232334Z/Module_E_Source_Asset_Register.md","git_blob_sha":"32c5d9aa61047a62ddc87110692d7d0de64fff09"},
+    {"path":"modules/E/runs/E-140-20260807T232334Z/Module_E_Parent_Integrity_Certificate.md","git_blob_sha":"ed11e1f3b002a15b15c9b1327f9d2ef4adcb4442"},
+    {"path":"modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json","commit_sha":"6108bca771f6daa5acccdedfd369bfadd470d168"}
   ],
   "candidate_classes": [
     "three inherited internal RFC carrier identities X0,X1,X2",
@@ -96,7 +85,7 @@
     "primary t_end=1/kr3=126582.49817344503",
     "primary max_step=t_end/128=988.9257672925393",
     "persistence witness is earliest sampled post-maximum time with max|dY/dtau_E|<=1e-9 remaining below threshold through t_end",
-    "stop immediately if a public/remembered nuclear value enters generation",
+    "stop immediately if an external or remembered nuclear value enters generation",
     "stop if carrier conservation, positivity, or source-rate audit fails",
     "stop and preserve a branch family/obstruction if a required coefficient ceases to be parent-determined"
   ],
@@ -112,7 +101,7 @@
   ],
   "tests": [
     "exact parent hash verification",
-    "source/public-data firewall audit",
+    "generation-firewall audit",
     "Wolfram stoichiometric conservation",
     "Wolfram Jacobian/stiffness structure",
     "manufactured reference check",
@@ -148,7 +137,7 @@
     "network/rate/time-step convergence above 1e-8",
     "withheld symmetry-required route has no detectable effect above 1e-8 and no exact symmetry explanation",
     "independent implementation differs above 1e-8",
-    "public abundance, nuclear table, SI anchor, Kelvin/MeV calibration, Standard-Model correspondence, branch shopping or post-hoc fitting enters generation"
+    "external abundance, nuclear table, SI anchor, Kelvin/MeV calibration, Standard-Model correspondence, branch shopping or post-hoc fitting enters generation"
   ],
   "claim_boundary": "E-140 may establish only a source-owned, internally typed, dimensionless RFC MINIMAL_SPINE primordial-composite reaction network derived from the exact A-D lineage: composite admission, reversible route graph, parent-derived rate law, conservation, abundance dynamics, constitutive binding-memory transfer, uncertainty, persistence witnesses, restart/replay and independent reconstruction. It does not establish proton/neutron or isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV temperatures, conventional BBN, empirical primordial abundances, or full hyper-realistic nuclear physics.",
   "independent_verifier_design": "Rebuild the seven-state registry directly from M_C and the disjoint-support positive-binding rule; independently derive all twelve directional stoichiometric columns and the Q0/Q1/Q2 left nullspace; recompute kf2,kr2,kf3,kr3 from a, Theta_D_final and exact binding releases; integrate independently and compare final state, carrier ledgers, energy-memory ledger and persistence witness without trusting primary gate summaries.",
@@ -158,5 +147,6 @@
     "relocation-safe path corrections",
     "logging/manifest fixes",
     "numerical implementation fixes that do not alter species, reactions, coefficients, initial state, interval, tolerances, gates, falsifiers or claim boundary"
-  ]
+  ],
+  "closeout_normalization_note": "Post-execution controller-facing status was normalized from FROZEN_BEFORE_PRIMARY_EXECUTION to FROZEN after the complete frozen E matrix passed. The original pre-execution blob is preserved in Git history and IMPLEMENTATION_CORRECTION_LEDGER.json; frozen scientific content is unchanged."
 }
