@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T06:46:32.320934+00:00
+Generated: 2026-08-08T06:46:36.544432+00:00
 
 ## Project truth
 
@@ -8,7 +8,7 @@ Generated: 2026-08-08T06:46:32.320934+00:00
 - Generation mode: `GENERATION_SEALED`
 - Active work unit: `D-135` — Supersede Module D: Channel-Complete Nonequilibrium Thermal History
 - Current module: `D`
-- Last verified commit: `084cd65dc963d57f19b529b37496097d660854a6`
+- Last verified commit: `ff72654b32d1d17dc37f462c5558603848a8dd9f`
 
 ## Strongest supported claim
 
@@ -81,7 +81,6 @@ Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asym
 
 ## Recent decisions
 
-- COMMIT-084cd65dc963: Verified C-125 channel-complete microscopic replay, exact parent/source lineage, spectral corroboration, clean replay, complete D child contract, PRODUCTION evidence ladder, H_C_to_D_v2 and one-child activation D-135.
 - PROMOTE-C-FORMALIZED-20260808T064631Z: Promoted Module C from DESIGN to FORMALIZED at PRODUCTION
 - PROMOTE-C-IMPLEMENTED-20260808T064631Z: Promoted Module C from FORMALIZED to IMPLEMENTED at PRODUCTION
 - PROMOTE-C-VERIFIED-20260808T064631Z: Promoted Module C from IMPLEMENTED to VERIFIED at PRODUCTION
@@ -89,6 +88,7 @@ Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asym
 - PROMOTE-C-INDEPENDENTLY_REPRODUCED-20260808T064632Z: Promoted Module C from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
 - PROMOTE-C-FROZEN-20260808T064632Z: Promoted Module C from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
 - ADVANCE-C-125-20260808T064632Z: Marked C-125 PASS and activated D-135
+- COMMIT-ff72654b32d1: Verified source-safe C-125 branch-family microscopic replay; connected Wolfram, parent spectral corroboration, exact branch-family preservation, clean replay, D child contract, PRODUCTION evidence ladder and one-child activation D-135.
 
 ## Recent failures
 
