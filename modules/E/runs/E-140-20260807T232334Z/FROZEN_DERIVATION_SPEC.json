@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E140_FROZEN_DERIVATION_SPEC",
+  "run_id": "E-140-20260807T232334Z",
+  "module": "E",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "fidelity": "MINIMAL_SPINE",
+  "exact_parent": {
+    "object_id": "H_D_to_E",
+    "path": "modules/D/frozen/H_D_to_E.json",
+    "sha256": "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231"
+  },
+  "ancestry": [
+    {
+      "object_id": "H_C_to_D",
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+      "role": "MICROSCOPIC_CONSTITUTION"
+    },
+    {
+      "object_id": "H_B_to_C",
+      "path": "modules/B/frozen/H_B_to_C.json",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+      "role": "FIRST_PHYSICAL_STATE"
+    },
+    {
+      "object_id": "H_A_to_B",
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "role": "TRIAD_KERNEL_RELATIONAL_GRAMMAR"
+    }
+  ],
+  "triadic_descent": {
+    "CIF": "All internally typed nonempty carrier-composite possibilities generated from the exact three distinguishable C/D carrier identities, subject to the parent constitutive energy and no-loss admission rule.",
+    "QV": "A local witnessed capture/reopening event may promote two disjoint admitted carrier-composites to their union when the exact parent constitutive quadratic form gives strictly positive binding release. Reverse reopening is fixed by the same binding release and the inherited dimensionless spectral coordinate; no independent reverse coefficient is allowed.",
+    "RFL": "The stabilized composite abundance trajectory, route ancestry, carrier-conservation ledgers, binding-memory transfer, covariance envelope, and persistence state are retained without empirical isotope naming."
+  },
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "state_space": {
+    "primitive_carriers": ["X0", "X1", "X2"],
+    "primitive_semantics": "The three exact inherited C/D physical carrier identities. These are RFC internal carrier labels, not proton/neutron/Standard-Model correspondence labels.",
+    "composite_representation": "A composite is an occupancy vector n=(n0,n1,n2) over the three inherited carrier identities.",
+    "candidate_domain": "nonnegative integer occupancy vectors, filtered by the exact parent binding witness and minimal-spine no-loss event rule",
+    "clock": "tau_E continuing the intrinsic dimensionless post-Big-Implosion ordering from the D export boundary; no seconds are claimed",
+    "energy_units": "dimensionless parent constitutive-gap units",
+    "metric_geometry": false,
+    "empirical_species_correspondence": "UNASSIGNED"
+  },
+  "parent_constitutive_energy": {
+    "classification": "DERIVED_LAW_REUSED_FROM_C",
+    "matrix": [
+      [0.29988604330354474, -0.1499430216517723, -0.1499430216517723],
+      [-0.1499430216517723, 0.2998860433035446, -0.1499430216517723],
+      [-0.1499430216517723, -0.1499430216517723, 0.2998860433035446]
+    ],
+    "edge_rate_a": 0.1499430216517723,
+    "gap_g_C": 0.449829064955317,
+    "energy_function": "E_C(n)=n^T M_C n = a[(n0-n1)^2+(n0-n2)^2+(n1-n2)^2]",
+    "binding_witness": "B(x,y)=E_C(x)+E_C(y)-E_C(x+y)",
+    "admission_rule": "A new composite state is bound/admissible only when x and y have disjoint protected carrier support and B(x,y)>0. Overlapping-support capture is not admitted as a stabilized species at MINIMAL_SPINE.",
+    "reason": "This is the coefficient-free specialization of the exact C constitutive operator to additive carrier occupancy; it introduces no new fitted physical parameter."
+  },
+  "derived_species_registry": [
+    {"id":"X0","occupancy":[1,0,0],"E_C":0.2998860433035446,"status":"PRIMITIVE_INHERITED"},
+    {"id":"X1","occupancy":[0,1,0],"E_C":0.2998860433035446,"status":"PRIMITIVE_INHERITED"},
+    {"id":"X2","occupancy":[0,0,1],"E_C":0.2998860433035446,"status":"PRIMITIVE_INHERITED"},
+    {"id":"B01","occupancy":[1,1,0],"E_C":0.2998860433035446,"binding_from_singletons":0.2998860433035446,"status":"STRICTLY_BOUND_INTERNAL_COMPOSITE"},
+    {"id":"B02","occupancy":[1,0,1],"E_C":0.2998860433035446,"binding_from_singletons":0.2998860433035446,"status":"STRICTLY_BOUND_INTERNAL_COMPOSITE"},
+    {"id":"B12","occupancy":[0,1,1],"E_C":0.2998860433035446,"binding_from_singletons":0.2998860433035446,"status":"STRICTLY_BOUND_INTERNAL_COMPOSITE"},
+    {"id":"T012","occupancy":[1,1,1],"E_C":0.0,"binding_from_dimer_plus_complement":0.5997720866070892,"status":"FULLY_CLOSED_INTERNAL_COMPOSITE"}
+  ],
+  "excluded_composites": {
+    "same_type_double_occupancy": "B(e_i,e_i)=-4a<0, so repeated same-type capture is anti-bound under the exact parent law.",
+    "overlapping_support_higher_occupancy": "Overlapping-support additions are nonpositive-binding or neutral under the parent quadratic form and therefore are not stabilized MINIMAL_SPINE species.",
+    "direct_three_body_jump": "Reserved rather than active: it skips the witnessed two-body RFL intermediate and therefore violates the frozen local event/promotion/no-loss construction at this fidelity."
+  },
+  "reaction_hypergraph": {
+    "elementary_reversible_pairs": [
+      "X0 + X1 <-> B01",
+      "X0 + X2 <-> B02",
+      "X1 + X2 <-> B12",
+      "B01 + X2 <-> T012",
+      "B02 + X1 <-> T012",
+      "B12 + X0 <-> T012"
+    ],
+    "route_rule": "Each forward event unions two disjoint carrier-support sets; each reverse event reopens exactly the immediately stored partition. All three symmetry-equivalent routes to T012 remain explicit and are not quotient-collapsed.",
+    "carrier_invariants": {
+      "Q0": [1,0,0,1,1,0,1],
+      "Q1": [0,1,0,1,0,1,1],
+      "Q2": [0,0,1,0,1,1,1]
+    },
+    "total_carrier": "Q_total=Q0+Q1+Q2 is exactly conserved; no empirical baryon-number name is assigned at this scope."
+  },
+  "rate_law": {
+    "classification": "D2_EFFECTIVE_LAW_DERIVED_FROM_PARENT_EDGE_RATE_AND_LOCAL_DETAILED_BALANCE",
+    "temperature_coordinate": 0.056881184006326246,
+    "temperature_symbol": "Theta_E0=Theta_D_final",
+    "temperature_status": "dimensionless parent-gap spectral coordinate; no Kelvin/MeV interpretation",
+    "forward_rule": "k_f(r)=m_r*a where m_r is the number of previously open parent-K3 edges closed by the witnessed union event; m=1 for singleton+singleton and m=2 for dimer+complement.",
+    "reverse_rule": "k_r(r)=k_f(r)*exp[-B_r/Theta_E0]; forward and reverse are not independently adjustable.",
+    "pair_capture": {
+      "binding_B2": 0.2998860433035446,
+      "k_f2": 0.1499430216517723,
+      "k_r2": 0.0007695933391028973
+    },
+    "trimer_completion": {
+      "binding_B3": 0.5997720866070892,
+      "k_f3": 0.2998860433035446,
+      "k_r3": 0.000007899986289019092
+    },
+    "coefficient_freedom": "NONE at E0 after the frozen specialization: all coefficients descend from a, edge-closure multiplicity, B(x,y), and Theta_D_final.",
+    "scope_limit": "This is an internally derived RFC minimal-spine reaction law. It is not a measured nuclear cross section, decay rate, or Standard-Model BBN rate."
+  },
+  "solver_model": {
+    "species_order": ["X0","X1","X2","B01","B02","B12","T012"],
+    "stoichiometry_columns": [
+      [-1,-1,0,1,0,0,0], [1,1,0,-1,0,0,0],
+      [-1,0,-1,0,1,0,0], [1,0,1,0,-1,0,0],
+      [0,-1,-1,0,0,1,0], [0,1,1,0,0,-1,0],
+      [0,0,-1,-1,0,0,1], [0,0,1,1,0,0,-1],
+      [0,-1,0,0,-1,0,1], [0,1,0,0,1,0,-1],
+      [-1,0,0,0,0,-1,1], [1,0,0,0,0,1,-1]
+    ],
+    "stoichiometry_storage": "solver requires species x reaction matrix, so the listed reaction-column vectors are transposed when bound",
+    "rate_expressions": [
+      "kf2*X0*X1", "kr2*B01",
+      "kf2*X0*X2", "kr2*B02",
+      "kf2*X1*X2", "kr2*B12",
+      "kf3*B01*X2", "kr3*T012",
+      "kf3*B02*X1", "kr3*T012",
+      "kf3*B12*X0", "kr3*T012"
+    ],
+    "parameters": {
+      "kf2": 0.1499430216517723,
+      "kr2": 0.0007695933391028973,
+      "kf3": 0.2998860433035446,
+      "kr3": 0.000007899986289019092
+    },
+    "initial_state": [0.3459414163255845,0.32885860048152177,0.3251999831928936,0.0,0.0,0.0,0.0],
+    "initial_state_rule": "inherit the exact D final three-carrier distribution verbatim; all newly admitted E composites begin at zero because no earlier module generated them",
+    "t_span": [0.0,126582.49817344503],
+    "t_end_rule": "one inverse timescale of the slowest derived elementary reverse coefficient: 1/kr3",
+    "max_step": 988.9257672925393,
+    "max_step_rule": "t_end/128, following the parent run's frozen resolution convention",
+    "method": "BDF",
+    "rtol": 1e-9,
+    "atol": 1e-12,
+    "positivity_tolerance": 1e-12,
+    "invariant_tolerance": 1e-9
+  },
+  "energy_and_memory_ledger": {
+    "species_constitutive_energies": [0.2998860433035446,0.2998860433035446,0.2998860433035446,0.2998860433035446,0.2998860433035446,0.2998860433035446,0.0],
+    "internal_energy": "U_E(tau)=sum_s E_C(s) Y_s(tau)",
+    "binding_memory": "Q_E,RFL(tau)=U_E(0)-U_E(tau)",
+    "ledger": "U_E(tau)+Q_E,RFL(tau)=U_E(0) by definition of transferred constitutive binding memory; negative Q_E,RFL would falsify the claimed net-binding direction.",
+    "scope": "Constitutive energy accounting only; no SI/nuclear rest-mass energy claim."
+  },
+  "freeze_and_event_witnesses": {
+    "onset": "tau_E=0 at the D export boundary because the derived bound routes have positive forward flux on the inherited positive singleton state.",
+    "persistence_metric": "R_E(tau)=max_s |dY_s/dtau_E|",
+    "freeze_threshold": 1e-9,
+    "freeze_rule": "A persistence witness is recorded at the earliest sampled time after the last route-family maximum for which R_E<=1e-9 and remains below threshold to t_end.",
+    "late_decay": "NONE_DERIVED_AT_E0; all admitted E0 states are network states under reversible capture/reopening only."
+  },
+  "uncertainty": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_PLUS_NUMERICAL_ERROR",
+    "rule": "Recompute the entire E law and solution for the exact inherited delta/source-decimal envelope when those parent members are materialized; do not tune. Until then the nominal run carries the exact D exported covariance and explicit model-scope uncertainty.",
+    "stochastic_nuclear_uncertainty": false,
+    "empirical_rate_uncertainty": "NOT_APPLICABLE_NO_EMPIRICAL_RATE_USED"
+  },
+  "countermodels": [
+    "SCALAR_COLLAPSE: replace X0,X1,X2 by one scalar carrier before E; must erase route identity and fail the no-scalar-channel gate.",
+    "SAME_TYPE_CAPTURE: admit Xi+Xi as bound despite B<0; must be rejected by the binding witness.",
+    "EDGE_WITHHELD: remove one symmetry-required singleton capture or one trimer-completion route; must materially alter at least one abundance/route-memory output or fail symmetry/route completeness.",
+    "INDEPENDENT_REVERSE_RATE: alter kr independently of B,Theta,kf; must fail rate-source/detailed-balance audit.",
+    "PUBLIC_BBN_RATE: insert any remembered or public nuclear rate/abundance; forbidden by generation firewall.",
+    "DIRECT_THREE_BODY_JUMP: activate X0+X1+X2->T012 without an explicit new local-promotion witness; rejected at E0 because it bypasses protected intermediate memory."
+  ],
+  "falsifiers": [
+    "exact parent/source hash mismatch",
+    "any empirical particle/isotope identity is used as a generative label",
+    "E_C(n) differs from n^T M_C n",
+    "an admitted stabilized composite has nonpositive binding witness",
+    "a same-type or overlapping-support capture is admitted without a new source-owned law",
+    "any reaction violates Q0,Q1,Q2 above 1e-12 symbolically or 1e-9 numerically",
+    "forward/reverse coefficient ratio differs from exp(B/Theta_E0) above 1e-12 relative error",
+    "any abundance falls below -1e-12",
+    "constitutive energy plus RFL binding-memory ledger drifts above 1e-9",
+    "network-size/rate/time-step convergence exceeds 1e-8 L_inf on declared outputs",
+    "withholding a symmetry-required route has no detectable effect above 1e-8 and no exact symmetry explanation",
+    "independent implementation differs above 1e-8 L_inf",
+    "public abundance, measured nuclear table, Kelvin/MeV calibration, or Standard-Model correspondence enters generation"
+  ],
+  "independent_verifier_design": "Reconstruct the 7-state registry directly from the parent M_C quadratic form and disjoint-support binding rule; rebuild all 12 directional stoichiometric columns and carrier nullspace without reading the primary solver config; recompute rates from a, Theta_D_final and binding releases; integrate with an independent explicit/stiff method and compare final state, carrier ledgers, energy-memory ledger and freeze witness.",
+  "claim_boundary": "E-140 may establish only a source-owned, internally typed, dimensionless RFC MINIMAL_SPINE primordial-composite reaction network derived from the exact A-D lineage: bound composite admission, reversible route graph, parent-derived rate law, conservation, abundance dynamics, constitutive binding-memory transfer, covariance/numerical uncertainty, persistence witnesses, restart/replay and independent reconstruction. It does not establish proton/neutron or isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV temperatures, conventional BBN, empirical primordial abundances, or full hyper-realistic nuclear physics."
+}
