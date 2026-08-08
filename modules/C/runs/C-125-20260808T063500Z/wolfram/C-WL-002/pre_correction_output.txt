@@ -1,0 +1,1 @@
+Out[1]= <|"call" -> "C-WL-002", "commutator" -> {{0, 0, 0}, {0, -2, 0}, {0, 0, 2}}, "eigenvalues" -> {3.`50., 1.`50., 0}, "invariant" -> False|>
