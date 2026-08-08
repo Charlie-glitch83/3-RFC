@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "run_id": "G-160-20260808T021341Z",
+  "module": "G",
+  "status": "BLOCKED_UNDERDETERMINED",
+  "stage": "PRE_EXECUTION_DERIVATION_AND_BINDING_AUDIT",
+  "generation_mode": "GENERATION_SEALED",
+  "primary_execution_started": false,
+  "pre_execution_lock_frozen": false,
+  "exact_parent": {
+    "object_id": "H_F_to_G",
+    "path": "modules/F/frozen/H_F_to_G.json",
+    "sha256": "bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154",
+    "run_id": "F-150-20260808T013006Z"
+  },
+  "required_G_objects": [
+    "nonequilibrium recombination network from F",
+    "physical opacity and optical-depth law",
+    "visibility/radiation-surface construction",
+    "uncertainty and restart packet"
+  ],
+  "parent_objects_present": [
+    "seven internal RFC composite abundances and occupancy vectors",
+    "residual reversible route network and exact rates",
+    "Q0/Q1/Q2/Q_total protected carrier ledgers",
+    "internal bound/free coordinate",
+    "constitutive-energy/RFL memory ledger",
+    "internal directional route-activity transfer seed",
+    "covariance and restart ancestry"
+  ],
+  "parent_objects_explicitly_not_derived_at_F_scope": [
+    "empirical isotope correspondence",
+    "electromagnetic charge operator or charged-species correspondence",
+    "physical photon identity and photon distribution",
+    "physical electromagnetic opacity/scattering law",
+    "atomic identity map and bound atomic levels",
+    "neutrino physical channel",
+    "Kelvin/MeV or metric/FRW calibration"
+  ],
+  "missing_unique_bindings": [
+    {
+      "binding_group": "G_recombination_network",
+      "missing": [
+        "physically typed recombining/ionizing state species",
+        "witnessed recombination/ionization stoichiometry",
+        "source-owned recombination and ionization rate law",
+        "coefficients and their dimensions/units",
+        "a physical clock/thermodynamic argument if required by those rates"
+      ]
+    },
+    {
+      "binding_group": "G_visibility",
+      "missing": [
+        "physical photon-radiation carrier",
+        "matter-radiation interaction witness",
+        "source-owned nonnegative physical opacity rate over a declared clock",
+        "lawful mapping from the opacity history to a physical last-scattering/radiation surface"
+      ]
+    }
+  ],
+  "rejected_shortcuts": [
+    {
+      "shortcut": "reinterpret F internal bound/free occupancy as electron ionization fraction",
+      "reason": "F explicitly types it as an internal RFC free-carrier occupancy coordinate and forbids electron/proton/textbook-plasma interpretation"
+    },
+    {
+      "shortcut": "reinterpret F internal route activity kappa_int_F as photon opacity",
+      "reason": "F explicitly records physical photon opacity as not derived and exports route activity only as source-transfer evidence for a later independently witnessed radiation/charge specialization"
+    },
+    {
+      "shortcut": "bind a standard recombination or Thomson opacity law from memory",
+      "reason": "violates generation sealing, exact binding provenance, and the zero-design underdetermination rule"
+    },
+    {
+      "shortcut": "use historical P29/P30 recombination-redshift or packet proxies as the physical solution",
+      "reason": "historical/proxy values do not constitute the current parent-driven physical law and would violate the no-retune/evidence-state boundary"
+    },
+    {
+      "shortcut": "execute the manufactured G Wolfram and solver templates with synthetic coefficients",
+      "reason": "manufactured checks prove implementation invariants only and cannot replace the actual parent-driven G derivation"
+    }
+  ],
+  "context_determination": {
+    "repository_broken_assumption": false,
+    "interpretation": "The unbound G templates and empty binding values are behaving as designed. They expose that the current frozen F MINIMAL_SPINE parent stops before the physical radiation/charge/atomic specialization required to select G's recombination and opacity coefficients.",
+    "source_corpus_result": "The admitted architecture identifies G's role and requires a domain-specific lawful specialization, but the current admitted source/parent combination does not uniquely select that physical specialization. Presentation 29 itself treats recombination as an external proof obligation in its historical theorem architecture; the later realization blueprint requires the physical solution to be generated from F rather than imported."
+  },
+  "falsifier_that_triggered_stop": "rate lineage missing / admitted premises do not select a unique physical opacity and recombination law",
+  "lawful_next_resolution": {
+    "required_object": "A source-owned, parent-compatible radiation/charge/atomic specialization witness that derives the physical G species identities, reaction/transition law and opacity coupling without retroactively importing public targets or remembered Standard-Model defaults.",
+    "ownership_constraint": "The repair must respect existing module ownership and cannot silently retroactively redefine a frozen earlier scientific object. If the missing witness belongs to C/F ownership, the repository must authorize a governed upstream enhancement/reopen path rather than inserting it inside G by fiat.",
+    "once_resolved": "Bind the two existing G solver templates from the exact witness, freeze PRE_EXECUTION_LOCK, run G-WL-001/G-WL-002 exactly and record them, execute the stiff network and visibility engines, then convergence/restart/replay/covariance/countermodels/independent reconstruction."
+  },
+  "claim": "G-160 is blocked before primary execution because the current exact frozen parent and admitted source corpus do not uniquely derive the physical recombination-rate and photon-opacity specialization required by the module. No public or remembered standard value was inserted."
+}
