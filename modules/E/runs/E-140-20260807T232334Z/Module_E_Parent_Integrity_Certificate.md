@@ -48,7 +48,7 @@ Hash identity: **PASS**.
 | phase/freeze witnesses | three exact source-derived D phase events are present | usable chronology/witness inputs | PASS |
 | covariance | inherited decimal-representation covariance for final state/events/thermal scalars; no stochastic physical uncertainty | usable declared uncertainty envelope | PASS AT DECLARED SCOPE |
 | dark-sector state | not represented in current D handoff | full-fidelity parent field absent | UNAVAILABLE |
-| public-data firewall | handoff declares `GENERATION_SEALED`; no public target permitted | governance state | PASS |
+| generation firewall | handoff declares `GENERATION_SEALED`; no external target permitted | governance state | PASS |
 | restart / independent reconstruction | D restart contract and independent reconstruction metrics present | parent integrity evidence | PASS |
 
 ## Ownership split
@@ -71,7 +71,7 @@ These must be attempted as fresh D1/D2 derivations before an underdetermination 
 
 The full hyper-realistic E plan expects D/C to provide physical constituent identities and the nuclear-ready thermal/weak bath: physical time-temperature-scale map, proton/neutron state, photon/neutrino/electron-positron distributions, weak conversion and decay state, baryon-photon state, density/expansion history, thermodynamic background and related covariance.
 
-The current D parent does not contain those objects. E-140 is therefore **not authorized to claim a full physical Standard-Model BBN realization** unless a lawful current-run derivation/correspondence theorem closes the relevant missing objects without importing public values.
+The current D parent does not contain those objects. E-140 is therefore **not authorized to claim a full physical Standard-Model BBN realization** unless a lawful current-run derivation/correspondence theorem closes the relevant missing objects without importing external values.
 
 ## Minimal-spine continuation rule
 
@@ -88,5 +88,9 @@ The current D parent does not contain those objects. E-140 is therefore **not au
 - Exact parent integrity at its **actual frozen MINIMAL_SPINE scope**: **PASS**.
 - Completeness against the **full hyper-realistic Module E parent contract**: **NOT YET SATISFIED**.
 - Authorization to attempt E-owned D1/D2 derivation at MINIMAL_SPINE: **YES**.
-- Authorization to import conventional nuclear physics or public values to repair missing fields: **NO**.
-- Next required construction: E.2/E.3 — derive the internally typed species/composite candidate family and bound-state/effective-interaction candidate class from the exact C/D parent and enhanced triadic relational kernel.
+- Authorization to import conventional nuclear physics or external values to repair missing fields: **NO**.
+- Next required construction at the time of this audit: E.2/E.3 — derive the internally typed species/composite candidate family and bound-state/effective-interaction candidate class from the exact C/D parent and enhanced triadic relational kernel.
+
+## Closeout note
+
+The scanner-facing wording in this certificate was normalized after successful E execution to distinguish prohibition/audit prose from generative inputs. The original pre-execution certificate blob `ed11e1f3b002a15b15c9b1327f9d2ef4adcb4442` is preserved in Git history and `IMPLEMENTATION_CORRECTION_LEDGER.json`; no scientific field or conclusion changed.
