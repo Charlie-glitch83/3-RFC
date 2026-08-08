@@ -90,4 +90,5 @@ jobs:
       - name: Resume exact governed C-125 superseding replay with post-lock Wolfram records
         run: |
           python tools/patch_c125_resumer_wolfram.py
+          python tools/patch_c125_postexecute_assertion.py
           bash tools/resume_c125_063010.sh
