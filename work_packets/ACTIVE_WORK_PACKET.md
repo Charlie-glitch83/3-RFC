@@ -4,7 +4,7 @@
 
 - Module: `G`
 - Objective: Generate recombination, visibility, opacity, and radiation-surface histories from the physical plasma state.
-- Run workspace: `modules/G/runs/G-160-20260808T021341Z`
+- Run workspace: `modules/G/runs/G-160-20260808T051613Z`
 
 ## Exact sequence
 
@@ -16,17 +16,17 @@
    - `python tools/director.py wolfram-show --call G-WL-001`
    - `python tools/director.py wolfram-show --call G-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module G --output modules/G/runs/G-160-20260808T021341Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module G --output modules/G/runs/G-160-20260808T051613Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module G --solver reaction_network --destination modules/G/runs/G-160-20260808T021341Z`
+   - `python tools/director.py solver-copy --module G --solver reaction_network --destination modules/G/runs/G-160-20260808T051613Z`
    - fill `configured_runs/binding_sheets/G_recombination_network.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/G/runs/G-160-20260808T021341Z/solver_templates/G_recombination_network.template.json --binding-sheet modules/G/runs/G-160-20260808T021341Z/binding_sheets/G_recombination_network.bindings.json --output modules/G/runs/G-160-20260808T021341Z/solver_configs/G_recombination_network.json`
-   - `python tools/run_configured_solver.py --config modules/G/runs/G-160-20260808T021341Z/solver_configs/G_recombination_network.json --output-dir modules/G/runs/G-160-20260808T021341Z/solver_outputs/reaction_network`
-   - `python tools/director.py solver-copy --module G --solver visibility --destination modules/G/runs/G-160-20260808T021341Z`
+   - `python tools/materialize_solver_config.py --template modules/G/runs/G-160-20260808T051613Z/solver_templates/G_recombination_network.template.json --binding-sheet modules/G/runs/G-160-20260808T051613Z/binding_sheets/G_recombination_network.bindings.json --output modules/G/runs/G-160-20260808T051613Z/solver_configs/G_recombination_network.json`
+   - `python tools/run_configured_solver.py --config modules/G/runs/G-160-20260808T051613Z/solver_configs/G_recombination_network.json --output-dir modules/G/runs/G-160-20260808T051613Z/solver_outputs/reaction_network`
+   - `python tools/director.py solver-copy --module G --solver visibility --destination modules/G/runs/G-160-20260808T051613Z`
    - fill `configured_runs/binding_sheets/G_visibility.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/G/runs/G-160-20260808T021341Z/solver_templates/G_visibility.template.json --binding-sheet modules/G/runs/G-160-20260808T021341Z/binding_sheets/G_visibility.bindings.json --output modules/G/runs/G-160-20260808T021341Z/solver_configs/G_visibility.json`
-   - `python tools/run_configured_solver.py --config modules/G/runs/G-160-20260808T021341Z/solver_configs/G_visibility.json --output-dir modules/G/runs/G-160-20260808T021341Z/solver_outputs/visibility`
+   - `python tools/materialize_solver_config.py --template modules/G/runs/G-160-20260808T051613Z/solver_templates/G_visibility.template.json --binding-sheet modules/G/runs/G-160-20260808T051613Z/binding_sheets/G_visibility.bindings.json --output modules/G/runs/G-160-20260808T051613Z/solver_configs/G_visibility.json`
+   - `python tools/run_configured_solver.py --config modules/G/runs/G-160-20260808T051613Z/solver_configs/G_visibility.json --output-dir modules/G/runs/G-160-20260808T051613Z/solver_outputs/visibility`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.

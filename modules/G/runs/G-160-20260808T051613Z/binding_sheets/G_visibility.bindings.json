@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/G_visibility.template.json",
+  "template_sha256": "f0aeaccc8e6593fe2a026f3ffc40a7f29ddbb0559684a47df716332bc6918e4f",
+  "expected_binding_paths": [
+    "model.time",
+    "model.opacity_rate",
+    "model.normalization_tolerance"
+  ],
+  "binding_rule": "Every value requires an exact admitted source, exact parent artifact, or hashed internal derivation record. Module P alone may bind preregistered public comparison sources.",
+  "bindings": [
+    {
+      "path": "model.time",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "G",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.opacity_rate",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "G",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    },
+    {
+      "path": "model.normalization_tolerance",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": null,
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "",
+      "origin_sha256": "",
+      "module": "G",
+      "derivation_object": "",
+      "units": "",
+      "dimensions": "",
+      "justification": ""
+    }
+  ]
+}

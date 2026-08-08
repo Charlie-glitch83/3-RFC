@@ -1,7 +1,24 @@
 {
-  "run_id": "",
+  "run_id": "G-160-20260808T021341Z",
   "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "classification": "SOURCE_LINEAGE_RECOVERY_DEFECT_SUPERSEDED",
+  "scientific_G_obstruction_established": false,
+  "primary_execution_performed": false,
+  "componentwise": {
+    "source admission and parent completeness": {
+      "pass": false,
+      "status": "REPAIR_REQUIRED",
+      "reason": "The attempt did not admit/replay the exact prior B-G formal derivation corpus and therefore could not lawfully conclude source-level absence."
+    },
+    "G physical solver execution": {
+      "pass": false,
+      "status": "NOT_RUN",
+      "reason": "No primary G solver was authorized."
+    },
+    "preservation of failed attempt": {
+      "pass": true,
+      "status": "PASS",
+      "reason": "Original obstruction evidence is retained verbatim in *_PRE_REPAIR files and existing obstruction records."
+    }
+  }
 }

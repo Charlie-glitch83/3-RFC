@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "run_id": "G-160-20260808T021341Z",
+  "classification": "FALSE_OBSTRUCTION_SOURCE_RECOVERY_REPAIR",
+  "timestamp_utc": "2026-08-08T05:16:08.134961+00:00",
+  "scientific_failure": false,
+  "primary_execution_performed": false,
+  "root_causes": [
+    "REC-040 was explicitly scoped to recover five Module-L objects and did not replay B-G formal science.",
+    "The live B-F executions closed MINIMAL_SPINE substitutes while several recipe/spec required child-ready objects were omitted.",
+    "The G attempt treated the reduced H_F_to_G as exhaustive of all recoverable source science.",
+    "Two globally INTERPRETIVE_SYNTHESIS audit documents were locally upgraded to ADMITTED_SOURCE."
+  ],
+  "corrections": [
+    {
+      "path": "sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
+      "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+      "from": "ADMITTED_SOURCE",
+      "to": "INTERPRETIVE_SYNTHESIS"
+    },
+    {
+      "path": "sources/frozen/dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b/2RFC_Architecture_Intent_and_Drift_Deep_Soak_20260805.md",
+      "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
+      "from": "ADMITTED_SOURCE",
+      "to": "INTERPRETIVE_SYNTHESIS"
+    }
+  ],
+  "preservation": [
+    "Original source register, gates and closeout copied verbatim to *_PRE_REPAIR files.",
+    "All B-F frozen MINIMAL_SPINE runs remain unchanged as valid lower-fidelity evidence.",
+    "No historical B-G PASS state is inherited."
+  ],
+  "required_next_science": "Fresh versioned B->C->D->E->F theorem replay from exact recovered objects, producing a superseding child-ready F->G parent before any G primary recombination/visibility execution."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "repair": "B-G source-lineage recovery and false G obstruction closeout",
+  "recovered_objects": 56,
+  "old_g_attempt": "G-160-20260808T021341Z",
+  "old_g_attempt_result": "BLOCKED_SUPERSEDED_SOURCE_LINEAGE_DEFECT",
+  "historical_pass_inherited": false,
+  "b_f_frozen_runs_overwritten": false,
+  "new_active_run": "G-160-20260808T051613Z",
+  "primary_G_execution_authorized": false,
+  "next_science": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
+}

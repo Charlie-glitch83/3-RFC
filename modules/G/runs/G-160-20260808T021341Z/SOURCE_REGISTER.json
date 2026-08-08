@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "run_id": "G-160-20260808T021341Z",
-  "status": "AUDITED_PRE_EXECUTION_BLOCKED_UNDERDETERMINED",
+  "status": "CLOSED_SOURCE_LINEAGE_DEFECT_SUPERSEDED",
   "generation_mode": "GENERATION_SEALED",
   "exact_parents": [
     {
@@ -31,14 +31,14 @@
       "label": "Deep-soak realization blueprint",
       "path": "sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
       "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
-      "classification": "ADMITTED_SOURCE",
+      "classification": "INTERPRETIVE_SYNTHESIS",
       "relevant_scope": "requires G recombination/visibility/opacity/radiation states to be generated from the F parent rather than public history"
     },
     {
       "label": "Architecture intent and drift audit",
       "path": "sources/frozen/dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b/2RFC_Architecture_Intent_and_Drift_Deep_Soak_20260805.md",
       "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
-      "classification": "ADMITTED_SOURCE",
+      "classification": "INTERPRETIVE_SYNTHESIS",
       "relevant_scope": "requires each domain to supply a lawful specialization rather than relabel a familiar equation; D-G are grammar-active and keep domain kinetic/field laws domain-specific"
     }
   ],
@@ -60,5 +60,20 @@
   "constants": [],
   "public_data_declaration": "NONE",
   "network_policy": "DISABLED_DURING_GENERATION",
-  "audit_conclusion": "The exact F parent does not supply a derived electromagnetic charge operator, physical photon identity/opacity, atomic identity map, or source-owned recombination/ionization coefficients. The admitted canonical sources define G's role and general modal-specialization obligation but do not uniquely select those missing physical objects for this current parent. The G solver binding sheets therefore remain intentionally unbound."
+  "audit_conclusion": "The exact F parent does not supply a derived electromagnetic charge operator, physical photon identity/opacity, atomic identity map, or source-owned recombination/ionization coefficients. The admitted canonical sources define G's role and general modal-specialization obligation but do not uniquely select those missing physical objects for this current parent. The G solver binding sheets therefore remain intentionally unbound.",
+  "repair_note": "The prior underdetermination conclusion is not a scientific G obstruction. REC-040 recovered Module L only, while docs/18 marks prior formal A-M laws REPLAY_REQUIRED by default. Exact B-G formal science has now been recovered for fresh replay. The current F MINIMAL_SPINE handoff remains valid lower-fidelity evidence but is not exhaustive of the recoverable theorem lineage.",
+  "source_classification_corrections": [
+    {
+      "path": "sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
+      "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+      "from": "ADMITTED_SOURCE",
+      "to": "INTERPRETIVE_SYNTHESIS"
+    },
+    {
+      "path": "sources/frozen/dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b/2RFC_Architecture_Intent_and_Drift_Deep_Soak_20260805.md",
+      "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
+      "from": "ADMITTED_SOURCE",
+      "to": "INTERPRETIVE_SYNTHESIS"
+    }
+  ]
 }

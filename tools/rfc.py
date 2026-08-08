@@ -7,6 +7,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 import zipfile
 from datetime import datetime, timezone
@@ -316,7 +317,7 @@ def cmd_new_run(args: argparse.Namespace) -> int:
     dest.mkdir(parents=True)
     for name in [
         "RUN_PLAN.md", "SOURCE_REGISTER.json", "PRE_EXECUTION_LOCK.json", "ENVIRONMENT.json",
-        "CHECKPOINT_RECORD.json", "GENERATED_OUTPUT_MANIFEST.json", "REPLAY_RECORD.json",
+        "CHECKPOINT_RECORD.json", "GENERATED_OUTPUT_MANIFEST.json", "OUTPUT_COMPLETENESS.json", "REPLAY_RECORD.json",
         "GATE_RESULTS.json", "INDEPENDENT_VERIFICATION.md", "CLOSEOUT.md"
     ]:
         copy_template(name, dest / name)
@@ -404,7 +405,7 @@ def cmd_firewall_scan(_: argparse.Namespace) -> int:
         "FROZEN_WORK_UNIT_RECIPE.json", "FROZEN_RECIPE.json", "REQUIRED_GATES.json",
         "WOLFRAM_SEQUENCE.md", "MODEL_PROMPT.md", "WORK_MODEL_PROMPT.md",
         "CLOSEOUT.md", "GATE_RESULTS.json", "INDEPENDENT_VERIFICATION.md",
-        "REPLAY_RECORD.json", "CHECKPOINT_RECORD.json", "GENERATED_OUTPUT_MANIFEST.json",
+        "REPLAY_RECORD.json", "CHECKPOINT_RECORD.json", "GENERATED_OUTPUT_MANIFEST.json", "OUTPUT_COMPLETENESS.json",
         "ENVIRONMENT.json", "CLAIM_RECORD.json", "IMPLEMENTATION_CORRECTION_LEDGER.json",
     }
     findings = []
@@ -640,6 +641,12 @@ def cmd_close_run(args: argparse.Namespace) -> int:
     if not closeout.exists() or path not in closeout.parents and closeout != path / "CLOSEOUT.md":
         print("closeout must exist inside the run workspace", file=sys.stderr)
         return 2
+    if args.result == "PASS":
+        guard = subprocess.run([sys.executable, str(ROOT / "tools/scientific_completion_guard.py"), "--run", str(path.relative_to(ROOT))])
+        if guard.returncode != 0:
+            print("PASS rejected by scientific completion/source-class guard", file=sys.stderr)
+            return 2
+
     if args.result == "PASS":
         gate_path = path / "GATE_RESULTS.json"
         iv_path = path / "INDEPENDENT_VERIFICATION.md"

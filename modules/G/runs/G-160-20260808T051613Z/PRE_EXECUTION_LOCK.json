@@ -1,0 +1,23 @@
+{
+  "run_id": "",
+  "status": "DRAFT",
+  "frozen_utc": null,
+  "authority_hashes": [],
+  "parent_hashes": [],
+  "definition_hashes": [],
+  "candidate_classes": [],
+  "equations_and_laws": [],
+  "dimensions_units_frames_gauges_clocks": [],
+  "methods": [],
+  "tolerances": [],
+  "stopping_rules": [],
+  "expected_invariants": [],
+  "tests": [],
+  "gates": [],
+  "falsifiers": [],
+  "claim_boundary": "",
+  "independent_verifier_design": "",
+  "allowed_implementation_only_corrections": [],
+  "authorization": "NOT_AUTHORIZED_PENDING_SUPERSEDING_F_TO_G_PARENT",
+  "repair_prerequisite": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
+}

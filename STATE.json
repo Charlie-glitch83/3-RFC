@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "G-160",
   "current_module": "G",
-  "current_run": "G-160-20260808T021341Z",
+  "current_run": "G-160-20260808T051613Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -403,7 +403,7 @@
     "G": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": "G-160-20260808T021341Z",
+      "active_run": "G-160-20260808T051613Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -411,6 +411,9 @@
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
         }
+      ],
+      "completed_runs": [
+        "G-160-20260808T021341Z"
       ]
     },
     "HU": {
@@ -571,8 +574,9 @@
     }
   },
   "last_verified_commit": "4a9f3f5e5b76c9612120b427cffd60642c891662",
-  "last_updated_utc": "2026-08-08T02:13:41.124197+00:00",
-  "strongest_supported_claim": "From the exact frozen E seven-state composite handoff, Module F executes a parent-driven post-nuclear persistence/transport continuation that preserves the three carrier ledgers and constitutive-energy/RFL no-loss ledger, maintains positivity, propagates covariance as PSD, survives convergence/restart/clean replay and independent DOP853 reconstruction, and exports an internal bound/free coordinate plus inherited route-activity transfer seed without fabricating unwitnessed particle identities.",
-  "strongest_unsupported_claim": "Module F does not establish Standard Model isotope/electron/ion identities, electromagnetic charge or physical electric neutrality, a photon or neutrino distribution, measured opacity or atomic rates, Kelvin/MeV/SI calibration, metric/FRW expansion, a physical recombination time, visibility/last scattering, or empirical agreement.",
-  "last_verified_branch": "agent/frontier-050-execution"
+  "last_updated_utc": "2026-08-08T05:16:13.315046+00:00",
+  "strongest_supported_claim": "The current A-F executed line remains valid at its declared fidelity, and the exact prior B-G formal theorem/repair/handoff corpus has now been recovered as REPLAY_REQUIRED source material. That corpus contains the upstream four-sector, microscopic charge/symmetry/photon/neutrino/nucleon, thermal, nucleosynthesis, plasma/opacity and recombination constructions that the reduced MINIMAL_SPINE handoffs omitted; no historical PASS is inherited.",
+  "strongest_unsupported_claim": "3-RFC has not yet freshly replayed and physically executed the recovered B-G higher-science lineage into a superseding H_F_to_G parent, so no new 3-RFC physical recombination/visibility/last-scattering result is frozen yet.",
+  "last_verified_branch": "agent/frontier-050-execution",
+  "repair_state": "BG_SOURCE_LINEAGE_REPAIR_CLOSED"
 }

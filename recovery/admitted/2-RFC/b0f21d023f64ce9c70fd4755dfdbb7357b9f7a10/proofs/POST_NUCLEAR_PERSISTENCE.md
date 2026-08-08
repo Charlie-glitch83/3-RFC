@@ -1,0 +1,93 @@
+# Module F — Post-Nuclear Persistence Proof
+
+## Theorem
+
+Let `P_E->F` be an admitted, nonobstructed Module E branch with positive normalized state, complete isotope/reaction/decay registries, closed baryon-charge-energy ledgers, explicit photon/neutrino/electron/ion distributions, and attached covariance, memory, and ancestry. Let the enhanced completed Module A kernel and the frozen Module C-E event laws generate the finite Module F operator `L_F(t)` defined in `science/POST_NUCLEAR_PLASMA.md`.
+
+Then, on every declared finite refinement and finite physical interval:
+
+1. the Module F initial-value problem has a unique solution;
+2. positivity and normalization are preserved;
+3. stable isotope abundances remain constant except through explicit witnessed residual, decay, injection, or transport routes;
+4. exact charge, baryon, represented lepton, probability, total energy-momentum, branch, and ancestry ledgers close;
+5. lawful kinetic-to-moment/fluid reductions preserve retained observables and admit reopening within their declared error bounds;
+6. relational Gauss law has a unique mean-zero solution on every connected globally neutral branch;
+7. plasma, transport, opacity, drag, diffusion, damping, and atomic-candidate operators are generated from the sealed parent and kernel;
+8. atomic promotion is no-loss and preserves constituent identity through an isometric event lift;
+9. the first state satisfying all atomic-materiality and restart conditions defines a physical recombination-entry surface;
+10. the resulting `P_F->G` is complete enough for Module G to solve nonequilibrium recombination without importing a conventional post-BBN or recombination state.
+
+## Proof
+
+### 1. Existence and uniqueness
+
+The declared relational, phase-space, field, and atomic-candidate supports are finite. Therefore `L_F(t)` is a finite matrix superoperator. Piecewise continuity of the generated geometry and event coefficients implies a unique time-ordered exponential solution.
+
+### 2. Positivity and normalization
+
+The Hamiltonian part is trace preserving. Each transport block is constructed as a completely positive trace-preserving finite shift generator. Every event block has Lindblad form with nonnegative generated rate. Hence the full propagator is completely positive and trace preserving. Therefore `rho_F(t) >= 0` and `Tr rho_F(t)=1`.
+
+### 3. Composition persistence
+
+For isotope number operator `N_a`,
+
+`d <N_a>/dt = Tr(N_a L_F[rho_F])`.
+
+Hamiltonian and transport terms commute with the globally integrated stable-isotope count. Only routes whose stoichiometric vector has nonzero component `nu_ar` contribute. When all such witnessed residual, decay, injection, and conversion routes vanish or are rigorously retired, `dY_a/dt=0`. No unrepresented abundance drift is possible.
+
+### 4. Conservation
+
+For every exact conserved operator `Q`, `[Q,H_F]=0` and `[Q,J_r]=0` for all conserving routes. Cyclicity of trace gives `d Tr(Q rho_F)/dt=0`. Conditional violations are exactly the declared weak or other violating event contributions. Internal energy and momentum exchanges occur in paired source-destination terms, so their sector sum vanishes. Geometry work closes through the inherited geometry equation.
+
+### 5. Reduction and reopening
+
+Moment projection `P_m` and maximum-entropy reconstruction `R_m` satisfy `P_m R_m=I` on the retained moment domain. A reduction is accepted only when every material observable residual and discarded covariance are bounded by `epsilon_red`. If a discarded mode becomes material, Module A promotion reopens the finer representation. Thus accepted reductions are no-loss at the claimed scope.
+
+### 6. Charge closure
+
+For connected geometry, `L_Q=B^T C B` is positive semidefinite with kernel spanned by the constant vector. Global neutrality places `rho_Q` in the image of `L_Q`. Therefore `phi_Q=L_Q^+ rho_Q` is the unique mean-zero solution, and `E_Q=-B phi_Q` satisfies the discrete relational Gauss law.
+
+### 7. Plasma and transport construction
+
+Susceptibility and retarded-current response are moments/resolvents of the generated state and Liouvillian. Their poles and eigenvalues define screening, plasma modes, damping, and instabilities. The pseudoinverse of the fast dissipative block generates the transport matrix. Positivity of `-L_fast` on the nonstationary subspace makes diffusion and dissipative quadratic forms nonnegative.
+
+### 8. Photon, neutrino, and thermal continuity
+
+Photon and neutrino states are marginals of the same positive normalized evolution. Sector energy and momentum currents are projections of paired collision/event blocks, so exchange reciprocity is exact. Scalar temperatures or fluid variables are admitted only after a moment-projection sufficiency test; otherwise the full distribution remains active.
+
+### 9. Opacity, drag, diffusion, and damping
+
+Every extinction or redistribution contribution is a nonnegative event expectation generated by an admitted microscopic route. Momentum and energy exchange are distinct moments of the same collision operator. Tight coupling and diffusion are Schur-complement reductions of the generated fast block, accepted only under spectral-gap and reconstruction-error conditions.
+
+### 10. Atomic candidates and no-loss promotion
+
+The atomic-candidate Hamiltonian is a finite self-adjoint projection of the inherited nuclear, electron, charge-Green, spin, radiation, and medium operators. Bound candidates are spectral states below their generated ionization threshold. Capture event lift `U_atom` is an isometry on its admitted input subspace, with emitted or absorbed photon/record carriers included. Hence charge, energy, angular momentum, constituent identity, memory, and ancestry are preserved, and ionization can lawfully reopen the parent state.
+
+### 11. Recombination-entry surface
+
+The readiness predicate requires persistent post-nuclear composition, complete residual scheduling, restartable particle/radiation/plasma/perturbation states, closed ledgers, complete atomic candidates and transition seeds, non-negligible slow atomic occupation, positive stabilized capture, failed safe elimination of the atomic block, and material opacity/electron-density sensitivity. The first physical time satisfying this finite predicate exists when the set is nonempty and is unique by the infimum definition on the ordered physical clock. If the set is empty, the branch is obstructed rather than assigned a conventional entry coordinate.
+
+### 12. Child completeness
+
+The exported packet contains coordinates, background, isotope and charge state, full radiation and lepton states, temperatures and chemical potentials, plasma and electromagnetic response, opacity/drag/sound/diffusion/damping seeds, atomic and transition registries, residual events, perturbations, fields, dark-sector permissions, entropy, covariance, memory, ancestry, and restart data. Therefore Module G need not reconstruct the post-nuclear interval or import a public recombination state.
+
+This proves the theorem within the finite-relational, internal-unit, generated-plasma boundary.
+
+## Falsifiers and obstructions
+
+Module F fails on a branch if any mandatory condition occurs:
+
+- negative state or distribution;
+- normalization loss;
+- unexplained isotope drift;
+- charge, baryon, energy, or momentum nonclosure;
+- missing material residual route or decay;
+- nonreciprocal internal exchange;
+- inconsistent kinetic/fluid overlap;
+- nonpositive dissipative transport;
+- unconverged frequency, angular, spatial, moment, or atomic support;
+- atomic state without a constituent/witness/event-lift ancestry;
+- recombination-entry packet missing a material Module G field;
+- public history or target used to choose or repair the branch.
+
+A failure obstructs the branch. It does not authorize retuning Modules A-E.
