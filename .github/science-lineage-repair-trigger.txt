@@ -1,4 +1,4 @@
 authorized_by_user=2026-08-08
 scope=close_out_science_lineage_repairs_and_b115
 branch=agent/frontier-050-execution
-retrigger=corrected_b_first_01
+retrigger=corrected_b_first_02
