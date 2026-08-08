@@ -94,6 +94,7 @@ jobs:
             echo 'No E140 rerun changes to commit'
           else
             git commit -m 'Rerun frozen Module E matrix after verifier correction'
+            git pull --rebase origin agent/frontier-050-execution
             git push origin HEAD:agent/frontier-050-execution
           fi
 
