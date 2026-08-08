@@ -1,21 +1,32 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "2.0",
+  "run_id": "C-125-20260808T063010Z",
+  "status": "FROZEN",
+  "frozen_before_primary_execution": true,
+  "definition_sha256": "ed9356a105070b8387f7b3a304cf2a3d45624522fdcc52b9f14dcdabe65baaef",
+  "source_register_sha256": "480dd26b233aaef1a860dfb7982ea48af99d51638d9f4051cc1588e8e4e20386",
+  "generation_mode": "GENERATION_SEALED",
+  "fidelity": "PRODUCTION",
+  "claim_boundary": "Complete finite-relational internal-unit microscopic role constitution and lawful scale family; no empirical identity or measured parameter agreement.",
+  "falsifiers": [
+    "anomaly residual above tolerance",
+    "negative probability",
+    "non-Hermitian H_C",
+    "unitarity residual above tolerance",
+    "neutral protected mode lifted",
+    "any public/remembered particle value enters generation",
+    "missing p/n/photon/neutrino child role",
+    "replay mismatch"
+  ],
+  "allowed_implementation_only_corrections": [
+    "relocation",
+    "serialization",
+    "contract-key normalization with unchanged science"
+  ],
+  "corroborative_solver_binding": {
+    "config_path": "modules/C/runs/C-125-20260808T063010Z/solver_configs/C_spectral_model.json",
+    "config_sha256": "6498cfa72a1c4914869847a47b8e2c0624e768b1a427304ffc2f18b56c78952d",
+    "binding_sha256": "7b74dae57373dd0444089a8e6b126c4a0c748b46630ee85ef80dae64ff49e108",
+    "purpose": "corroborative parent-derived spectral audit only"
+  }
 }

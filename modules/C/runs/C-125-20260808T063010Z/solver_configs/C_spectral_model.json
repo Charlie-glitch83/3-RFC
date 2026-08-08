@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "spectral_model",
+  "model": {
+    "matrix": [
+      [
+        0.29988604330354474,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "symmetry_generators": [
+      [
+        [
+          0.0,
+          -0.5773502691896258,
+          0.5773502691896258
+        ],
+        [
+          0.5773502691896258,
+          0.0,
+          -0.5773502691896258
+        ],
+        [
+          -0.5773502691896258,
+          0.5773502691896258,
+          0.0
+        ]
+      ]
+    ],
+    "require_symmetric": true,
+    "require_generator_invariance": true,
+    "tolerance": 1e-10
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/C/runs/C-125-20260808T063010Z/solver_templates/C_spectral_model.template.json",
+    "template_sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/C/runs/C-125-20260808T063010Z/binding_sheets/C_spectral_model.bindings.json",
+    "binding_sheet_sha256": "7b74dae57373dd0444089a8e6b126c4a0c748b46630ee85ef80dae64ff49e108",
+    "bindings": [
+      {
+        "path": "model.matrix",
+        "value": [
+          [
+            0.29988604330354474,
+            -0.1499430216517723,
+            -0.1499430216517723
+          ],
+          [
+            -0.1499430216517723,
+            0.2998860433035446,
+            -0.1499430216517723
+          ],
+          [
+            -0.1499430216517723,
+            -0.1499430216517723,
+            0.2998860433035446
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/C/runs/C-125-20260808T063010Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "ed9356a105070b8387f7b3a304cf2a3d45624522fdcc52b9f14dcdabe65baaef",
+        "module": "C",
+        "derivation_object": "I-Q_B",
+        "units": "dimensionless",
+        "dimensions": "1",
+        "justification": "Corroborative exact parent spectral audit; full C-125 generator is execute_c125.py from recovered theorem sources."
+      },
+      {
+        "path": "model.symmetry_generators",
+        "value": [
+          [
+            [
+              0.0,
+              -0.5773502691896258,
+              0.5773502691896258
+            ],
+            [
+              0.5773502691896258,
+              0.0,
+              -0.5773502691896258
+            ],
+            [
+              -0.5773502691896258,
+              0.5773502691896258,
+              0.0
+            ]
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/C/runs/C-125-20260808T063010Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "ed9356a105070b8387f7b3a304cf2a3d45624522fdcc52b9f14dcdabe65baaef",
+        "module": "C",
+        "derivation_object": "conserved-mode O(2) audit generator",
+        "units": "dimensionless",
+        "dimensions": "1",
+        "justification": "Corroborative exact parent spectral audit; full C-125 generator is execute_c125.py from recovered theorem sources."
+      }
+    ]
+  }
+}

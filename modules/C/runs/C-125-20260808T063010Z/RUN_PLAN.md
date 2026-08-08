@@ -1,9 +1,3 @@
-# Run Plan — C-125
+# C-125 Run Plan
 
-PRE-CHEWED MODULE PLAN
-
-Objective: Derive and execute the microscopic field, particle, interaction, mass, mixing, and prethermal population content from the first physical state.
-
-The exact derivation obligations, calls, outputs, gates, and stop conditions are frozen in `FROZEN_RECIPE.json`, `WORK_ORDER.md`, and `REQUIRED_GATES.json`.
-
-Before execution, replace every placeholder in the source register, pre-execution lock, environment, expected outcomes, tolerances, falsifiers, and claim boundary with exact frozen values.
+Replay the exact recovered channel-complete microscopic theorem from `H_B_to_C_v2` at PRODUCTION fidelity. Freeze before execution; use no public particle data; preserve a lawful branch family where the source law does not select an empirical representative.

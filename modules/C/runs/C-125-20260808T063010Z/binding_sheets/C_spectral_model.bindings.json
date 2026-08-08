@@ -11,28 +11,62 @@
     {
       "path": "model.matrix",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        [
+          0.29988604330354474,
+          -0.1499430216517723,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          0.2998860433035446,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          -0.1499430216517723,
+          0.2998860433035446
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/C/runs/C-125-20260808T063010Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "ed9356a105070b8387f7b3a304cf2a3d45624522fdcc52b9f14dcdabe65baaef",
       "module": "C",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I-Q_B",
+      "units": "dimensionless",
+      "dimensions": "1",
+      "justification": "Corroborative exact parent spectral audit; full C-125 generator is execute_c125.py from recovered theorem sources."
     },
     {
       "path": "model.symmetry_generators",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        [
+          [
+            0.0,
+            -0.5773502691896258,
+            0.5773502691896258
+          ],
+          [
+            0.5773502691896258,
+            0.0,
+            -0.5773502691896258
+          ],
+          [
+            -0.5773502691896258,
+            0.5773502691896258,
+            0.0
+          ]
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/C/runs/C-125-20260808T063010Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "ed9356a105070b8387f7b3a304cf2a3d45624522fdcc52b9f14dcdabe65baaef",
       "module": "C",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "conserved-mode O(2) audit generator",
+      "units": "dimensionless",
+      "dimensions": "1",
+      "justification": "Corroborative exact parent spectral audit; full C-125 generator is execute_c125.py from recovered theorem sources."
     }
   ]
 }
