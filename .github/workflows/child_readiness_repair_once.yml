@@ -1,4 +1,4 @@
-name: Repair False G Obstruction and Reopen Child-Ready F Once
+name: Close B-G Repair and Reopen B-First Superseding Replay Once
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: child-readiness-repair-once
+  group: bg-superseding-repair-once
   cancel-in-progress: false
 
 jobs:
@@ -23,39 +23,33 @@ jobs:
         with:
           ref: agent/frontier-050-execution
           fetch-depth: 0
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
-
       - name: Install frozen repository dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
 
-      - name: Verify exact current repair frontier
+      - name: Verify exact recovered repair prerequisite
         run: |
           python - <<'PY'
-          import hashlib,json
+          import json
           from pathlib import Path
           s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='G-160',s
-          assert s['current_module']=='G',s
-          assert s['current_run'] and s['current_run'].startswith('G-160-'),s
-          assert s['modules']['F']['evidence_state']=='FROZEN',s['modules']['F']
-          assert s['modules']['F']['fidelity']=='MINIMAL_SPINE',s['modules']['F']
-          p=Path('modules/F/frozen/H_F_to_G.json')
-          assert hashlib.sha256(p.read_bytes()).hexdigest()=='bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154'
-          parent=json.load(open(p))
-          assert parent['electromagnetic_charge_status']=='NOT_DERIVED_AT_MINIMAL_SPINE'
-          assert parent['residual_route_network']['physical_photon_opacity_status']=='NOT_DERIVED'
-          assert 'PHOTON_IDENTITY_UNASSIGNED' in parent['radiation_channel']['status']
-          idx=json.load(open('memory/RUN_INDEX.json'))['runs']
-          old=[r for r in idx if r['run_id']=='G-160-20260808T021341Z']
-          assert old and old[0]['status']=='BLOCKED',old
-          assert s.get('repair_state')=='BG_SOURCE_LINEAGE_REPAIR_CLOSED',s.get('repair_state')
+          assert s['active_work_unit']=='G-160' and s['current_module']=='G',s
+          rid=s['current_run']; assert rid and rid.startswith('G-160-'),s
+          R=Path('modules/G/runs')/rid
+          lock=json.load(open(R/'PRE_EXECUTION_LOCK.json'))
+          assert lock['authorization']=='NOT_AUTHORIZED_PENDING_SUPERSEDING_F_TO_G_PARENT',lock
+          assert lock['repair_prerequisite']=='recovery/BG_SUPERSEDING_LINEAGE_PACKET.md',lock
+          assert Path(lock['repair_prerequisite']).is_file()
+          assert json.load(open('modules/G/runs/G-160-20260808T021341Z/run.json'))['status']=='BLOCKED'
+          for m in 'BCDEF':
+              rec=s['modules'][m]
+              assert rec['evidence_state']=='FROZEN' and rec['fidelity']=='MINIMAL_SPINE',(m,rec)
           PY
 
-      - name: Close current blank G retry as superseded BLOCKED attempt
+      - name: Close current G recovery-planning shell as BLOCKED
         run: |
           RID=$(python - <<'PY'
           import json
@@ -65,91 +59,80 @@ jobs:
           python - "$RID" <<'PY'
           import json,sys
           from pathlib import Path
-          rid=sys.argv[1]
-          R=Path('modules/G/runs')/rid
-          run=json.load(open(R/'run.json'))
-          assert run['status']=='CREATED',run
-          (R/'CLOSEOUT.md').write_text(f'''# {rid} Superseded Pre-Execution Closeout
+          rid=sys.argv[1]; R=Path('modules/G/runs')/rid
+          (R/'CLOSEOUT.md').write_text(f'''# {rid} Superseding-Lineage Prerequisite Closeout
 
 ## Result
 
-**BLOCKED / SUPERSEDED BEFORE SCIENTIFIC EXECUTION.**
+**BLOCKED BEFORE PRIMARY EXECUTION.**
 
-This retry workspace was automatically created after the preserved G-160 obstruction was closed. No G primary physics was executed here. The recovered B-G source corpus is valuable `REPLAY_REQUIRED` science, but it has not yet been freshly replayed into a child-ready F parent. The exact current `H_F_to_G` still leaves the material plasma/radiation/opacity bindings required by Module G unresolved.
+The exact recovered B-G corpus is now available as `REPLAY_REQUIRED`, but the frozen repair packet requires a versioned superseding replay in the order B -> C -> D -> E -> F -> G. This G planning shell is therefore closed without executing recombination physics.
 
 ## Strongest supported claim
 
-The recovered B-G formal corpus supplies the scientific construction path needed for a superseding F-to-G lineage, while the preserved G obstruction remains valid evidence against treating the old reduced F parent as exhaustive.
+The repository has exact recovered source material and a frozen scientific replay order for constructing a child-ready superseding F-to-G parent while preserving the earlier lower-fidelity runs.
 
 ## Strongest unsupported claim
 
-No freshly replayed child-ready F parent, physical recombination history, opacity history, visibility function, radiation surface, or G child handoff is established by this retry.
-
-The canonical repair frontier moves upstream to F-155; this G workspace is preserved as a blocked pre-execution attempt.
+No `H_B_to_C_v2`, `H_C_to_D_v2`, `H_D_to_E_v2`, `H_E_to_F_v2`, `H_F_to_G_v2`, physical recombination history, opacity history, visibility function or radiation surface has yet been freshly executed and frozen in the superseding 3-RFC lineage.
 ''',encoding='utf-8')
           PY
           python tools/rfc.py close-run --run-id "$RID" --result BLOCKED --closeout "modules/G/runs/$RID/CLOSEOUT.md"
 
-      - name: Apply repository-wide child-readiness repair
+      - name: Install B-first superseding replay frontier and closure guards
         run: |
-          python tools/repair_child_readiness.py
-          python tools/rfc.py reopen-module F --fidelity PRODUCTION --evidence audit/CHILD_READINESS_REPAIR_20260808.json
+          python tools/repair_superseding_lineage_frontier.py
+          python tools/rfc.py reopen-module B --fidelity PRODUCTION --evidence recovery/BG_SUPERSEDING_LINEAGE_PACKET.md
 
-      - name: Create governed F-155 repair workspace
+      - name: Create governed B-115 workspace
         run: |
-          python tools/rfc.py new-run F --run-id F-155-20260808T054200Z
-          python tools/director.py prepare-active
+          python tools/director.py doctor
+          python tools/director.py active
+          python tools/director.py prepare-active --create-run
           python - <<'PY'
           import json
           from pathlib import Path
-          s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='F-155',s
-          assert s['current_module']=='F',s
-          assert s['current_run']=='F-155-20260808T054200Z',s
-          assert s['modules']['F']['evidence_state']=='DESIGN',s['modules']['F']
-          assert s['modules']['F']['fidelity']=='PRODUCTION',s['modules']['F']
-          assert s['modules']['G']['evidence_state']=='BLOCKED',s['modules']['G']
-          R=Path('modules/F/runs/F-155-20260808T054200Z')
-          c=json.load(open(R/'OUTPUT_CONTRACT.json'))
-          required=json.load(open('modules/F/spec.json'))['required_outputs']
+          s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+          assert s['active_work_unit']=='B-115' and s['current_module']=='B',s
+          assert s['modules']['B']['evidence_state']=='DESIGN' and s['modules']['B']['fidelity']=='PRODUCTION',s['modules']['B']
+          assert q['B-115']['status']=='ACTIVE' and q['C-125']['status']=='BLOCKED' and q['D-135']['status']=='BLOCKED' and q['E-145']['status']=='BLOCKED' and q['F-155']['status']=='BLOCKED',q
+          assert q['G-160']['status']=='BLOCKED' and q['G-160']['depends_on']==['F-155'],q['G-160']
+          rid=s['current_run']; assert rid and rid.startswith('B-115-'),s
+          R=Path('modules/B/runs')/rid
+          c=json.load(open(R/'OUTPUT_CONTRACT.json')); required=json.load(open('modules/B/spec.json'))['required_outputs']
           assert [x['name'] for x in c['required_outputs']]==required
           assert c['status']=='DRAFT'
           packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
-          assert '# ACTIVE WORK PACKET — F-155' in packet
-          assert str(R) in packet
+          assert '# ACTIVE WORK PACKET — B-115' in packet and str(R) in packet
+          print(rid)
           PY
 
-      - name: Verify incomplete F cannot falsely PASS
+      - name: Verify incomplete superseding B cannot falsely PASS
         run: |
           python - <<'PY'
-          import importlib.util
+          import importlib.util,json
           from pathlib import Path
-          spec=importlib.util.spec_from_file_location('rfc',Path('tools/rfc.py'))
-          mod=importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
-          ok,errors=mod.validate_required_output_contract(Path('modules/F/runs/F-155-20260808T054200Z'),'F')
-          assert ok is False
-          assert errors
+          spec=importlib.util.spec_from_file_location('rfc',Path('tools/rfc.py')); m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+          rid=json.load(open('STATE.json'))['current_run']; ok,errors=m.validate_required_output_contract(Path('modules/B/runs')/rid,'B')
+          assert ok is False and errors
           print('\n'.join(errors))
           PY
 
       - name: Validate repaired repository
         run: |
-          python tools/director.py doctor
           python tools/rfc.py doctor
+          python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
 
-      - name: Commit repaired governed frontier
+      - name: Commit closed repair and governed B-first frontier
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          if git diff --cached --quiet; then
-            echo 'HARD STOP: repair workflow produced no governed changes'
-            exit 1
-          fi
-          git commit -m 'Repair child-readiness closure and reopen Module F'
+          if git diff --cached --quiet; then echo 'HARD STOP: repair produced no governed changes'; exit 1; fi
+          git commit -m 'Close B-G source repair and reopen B-first superseding replay'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
           echo "REPAIR_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
@@ -157,17 +140,14 @@ The canonical repair frontier moves upstream to F-155; this G workspace is prese
       - name: Verify remote repair SHA and frontier
         run: |
           git fetch origin agent/frontier-050-execution
-          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
-          test "$REMOTE" = "$REPAIR_SHA"
+          test "$(git rev-parse origin/agent/frontier-050-execution)" = "$REPAIR_SHA"
           python - <<'PY'
           import json
-          s=json.load(open('STATE.json'))
-          q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
-          assert s['active_work_unit']=='F-155',s
-          assert s['current_run']=='F-155-20260808T054200Z',s
-          assert s['modules']['F']['evidence_state']=='DESIGN' and s['modules']['F']['fidelity']=='PRODUCTION',s['modules']['F']
+          s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+          assert s['repair_state']=='BG_SUPERSEDING_REPLAY_AUTHORIZED_B_FIRST',s
+          assert s['active_work_unit']=='B-115' and s['current_run'].startswith('B-115-'),s
+          assert s['modules']['B']['evidence_state']=='DESIGN' and s['modules']['B']['fidelity']=='PRODUCTION',s['modules']['B']
           assert s['modules']['G']['evidence_state']=='BLOCKED',s['modules']['G']
-          assert q['F-155']['status']=='ACTIVE'
-          assert q['G-160']['status']=='BLOCKED' and q['G-160']['depends_on']==['F-155']
+          assert [q[x]['status'] for x in ['B-115','C-125','D-135','E-145','F-155','G-160']]==['ACTIVE','BLOCKED','BLOCKED','BLOCKED','BLOCKED','BLOCKED']
           PY
-          echo "Verified repair SHA: $REMOTE"
+          echo "Verified repair SHA: $REPAIR_SHA"
