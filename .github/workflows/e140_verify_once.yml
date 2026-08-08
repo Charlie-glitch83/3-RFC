@@ -36,10 +36,10 @@ jobs:
           lock=json.load(open('modules/E/runs/E-140-20260807T232334Z/PRE_EXECUTION_LOCK.json'))
           assert lock['status']=='FROZEN_BEFORE_PRIMARY_EXECUTION',lock
           PY
-      - name: Execute frozen verification matrix
+      - name: Execute full frozen matrix and corrected route-materiality interpretation
         id: matrix
         continue-on-error: true
-        run: python modules/E/runs/E-140-20260807T232334Z/verification/verify_e140.py
+        run: python modules/E/runs/E-140-20260807T232334Z/verification/verify_e140_attempt2.py
       - name: Commit verification evidence even on failure
         if: always()
         run: |
@@ -49,7 +49,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No verification changes to commit'
           else
-            git commit -m 'Preserve frozen Module E verification matrix'
+            git commit -m 'Reverify frozen Module E with trajectory route materiality'
             git push origin HEAD:agent/frontier-050-execution
           fi
       - name: Enforce frozen componentwise verdict
