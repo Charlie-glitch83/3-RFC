@@ -37,6 +37,17 @@ jobs:
           v=json.load(open('modules/E/runs/E-140-20260807T232334Z/verification/VERIFICATION_SUMMARY.json'))
           assert all(v[k] for k in ['convergence_pass','withheld_pass','scalar_pass','restart_pass','replay_pass','independent_pass','covariance_pass','freeze_pass']),v
           PY
+      - name: Apply implementation-only finalizer key fix
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('modules/E/runs/E-140-20260807T232334Z/finalize_e140.py')
+          text=p.read_text()
+          old="'occupancy_vectors':spec['species_registry']['occupancy_vectors'],"
+          new="'occupancy_vectors':{r['id']:r['occupancy'] for r in spec['derived_species_registry']},"
+          assert old in text, 'expected stale finalizer lookup not found'
+          p.write_text(text.replace(old,new,1))
+          PY
       - name: Materialize canonical E handoff and closeout
         run: python modules/E/runs/E-140-20260807T232334Z/finalize_e140.py
       - name: Close governed E run
