@@ -1,0 +1,13 @@
+{
+  "run_id": "F-150-20260808T013006Z",
+  "classification": "PRESERVED_FAILED_VERBATIM_ATTEMPT_PLUS_SYNTAX_ONLY_CONTEXT_RESOLUTION",
+  "source_program": "recipes/F/wolfram/F-WL-002.wl",
+  "source_program_sha256": "3f96f7879700b9d124f0ec51652561bf03c76bf620ded89dd7a1af4d162ad89d",
+  "failed_attempt": "wolfram/F-WL-002.failed_verbatim_connected_output.txt",
+  "observed_context": "In Wolfram Language, C is Protected, so the manufactured covariance matrix assignment is rejected before the intended congruence calculation.",
+  "resolution": "For the manufactured algebra check only, rename local matrix symbol C to cov. Matrix entries, transfer matrix, assumptions, determinant test and expected mathematical statement are unchanged.",
+  "scientific_definition_changed": false,
+  "threshold_changed": false,
+  "physical_F_law_changed": false,
+  "corrected_result": "wolfram/F-WL-002.corrected_connected_output.txt"
+}

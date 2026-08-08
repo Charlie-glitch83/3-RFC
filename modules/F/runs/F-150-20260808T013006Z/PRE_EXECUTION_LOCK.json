@@ -1,21 +1,96 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "1.0",
+  "run_id": "F-150-20260808T013006Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "frozen_utc": "2026-08-08T02:04:07.197048+00:00",
+  "authority_hashes": [
+    "b4aa226ef4185da09330375afc51ff1959147bce1d3b4770226876840984403d",
+    "9108762324e581e48493e81d8cbaf7efb115f3d78b3756ebe3b4270f01292a8d",
+    "ce98bd016b75d6750d09f7485b54b4879d29c1a73bc8b1c9a369af50a8b5f083"
+  ],
+  "parent_hashes": [
+    "975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf"
+  ],
+  "definition_hashes": [
+    "6be203e7db8d6bef1b8edd06e1335904de069005d10df6909869d8306ea4a65e",
+    "6b5693f13e1dd1e76ede263381199403af08ffc0c59e4c822cdf377c596b5636",
+    "25ecd96fbf91f48a1399c0ab0d15ffed9da273e15cd7a3a49ff8334b6c1d7957"
+  ],
+  "candidate_classes": [
+    "exact seven-state E continuation",
+    "eight-state E+RFL no-loss transport lift",
+    "explicit dormant/unassigned unwitnessed physical channels"
+  ],
+  "equations_and_laws": [
+    "dy_F/dtau_F=S_E r_E(y_F)",
+    "dRFL_M/dtau_F=-dU_F/dtau_F",
+    "Sigma_F=Phi L Sigma_E L^T Phi^T"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "dimensionless intrinsic tau_F continuation only",
+    "A-E finite relational pregeometry",
+    "no metric/FRW clock",
+    "no Kelvin/MeV/SI calibration"
+  ],
+  "methods": [
+    "BDF primary reaction_network",
+    "BDF primary transport",
+    "DOP853 independent reconstruction",
+    "matrix-exponential linearized covariance propagation"
+  ],
+  "tolerances": [
+    "rtol=1e-9",
+    "atol=1e-12",
+    "positivity=1e-12",
+    "invariant drift=1e-9",
+    "covariance PSD lambda_min>=-1e-18",
+    "primary-vs-independent linf<=1e-8",
+    "restart linf<=1e-8"
+  ],
+  "stopping_rules": [
+    "hard stop on composition lineage loss",
+    "hard stop on carrier/energy ledger failure",
+    "hard stop on unexplained non-PSD covariance",
+    "BLOCKED_UNDERDETERMINED rather than import unwitnessed plasma coefficients"
+  ],
+  "expected_invariants": [
+    "Q0",
+    "Q1",
+    "Q2",
+    "Q_total",
+    "U_plus_RFL"
+  ],
+  "tests": [
+    "F-WL-001 manufactured charge algebra",
+    "F-WL-002 manufactured covariance congruence with preserved failed verbatim attempt",
+    "manufactured F reference check",
+    "parent-driven dual-solver execution",
+    "convergence",
+    "restart",
+    "replay",
+    "countermodels",
+    "independent DOP853",
+    "covariance PSD"
+  ],
+  "gates": [
+    "charge neutrality where derived",
+    "energy and particle accounting",
+    "covariance positive semidefinite",
+    "replay from E"
+  ],
+  "falsifiers": [
+    "H_E_to_F hash mismatch",
+    "any empirical/SM charge, photon, neutrino or atomic identity inserted without witness",
+    "carrier drift>1e-9",
+    "U+RFL drift>1e-9",
+    "negative state below -1e-12",
+    "covariance lambda_min<-1e-18",
+    "replay mismatch",
+    "independent endpoint disagreement>1e-8"
+  ],
+  "claim_boundary": "At MINIMAL_SPINE fidelity Module F may establish a deterministic, positive, restartable post-nuclear RFC composite persistence/transport state that continues the exact E reversible route law, preserves three carrier ledgers and constitutive-energy/RFL memory, derives an internal bound/free occupancy coordinate and nonnegative inherited route-activity transfer seed, and propagates the inherited covariance without loss. It does not establish Standard-Model isotope/electron/ion identities, electromagnetic charge or neutrality, a physical photon or neutrino distribution, measured opacity, atomic data, Kelvin/MeV calibration, metric/FRW expansion, a public recombination coordinate, visibility/last scattering, or empirical agreement. Those absent identities may not be inserted downstream without a new witnessed derivation.",
+  "independent_verifier_design": "Independently reconstruct the seven-state RHS and eight-state energy-memory lift directly from H_E_to_F without reading primary solver summaries; integrate with DOP853, verify fixed-point persistence, carrier/energy ledgers, route activity, covariance PSD, restart split-vs-direct equality, max-step convergence, exact-parent replay and all countermodels.",
+  "allowed_implementation_only_corrections": [
+    "syntax/name changes that do not alter matrices/equations/values/tests/thresholds/claim scope; preserve failed attempt and rerun full frozen matrix"
+  ]
 }

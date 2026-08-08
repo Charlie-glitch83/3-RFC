@@ -1,11 +1,5 @@
-# Independent Verification
+# F-150 Independent Verification
 
-## Inputs reconstructed
+Method: direct reconstruction from exact `H_E_to_F`, separate DOP853 evolution, split restart, max-step convergence, deterministic covariance lift/propagation, and structural countermodels.
 
-## Methods independent from primary execution
-
-## Results
-
-## Disagreements
-
-## Verdict
+Verdict: **PASS**.

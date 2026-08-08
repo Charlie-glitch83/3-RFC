@@ -1,13 +1,31 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
+  "run_id": "F-150-20260808T013006Z",
+  "status": "CAPTURED",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "hardware": {
+    "runner": "github-hosted ubuntu-latest"
+  },
+  "software": [
+    "Python 3.11",
+    "numpy",
+    "scipy",
+    "sympy"
+  ],
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
+  "imports": [
+    "numpy",
+    "scipy",
+    "sympy"
+  ],
+  "commands": [
+    "run_reference_checks F",
+    "materialize F reaction_network",
+    "run F reaction_network",
+    "materialize F transport",
+    "run F transport",
+    "verify_f150.py"
+  ],
   "network_policy": "DISABLED_DURING_GENERATION",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true
 }

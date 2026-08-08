@@ -1,7 +1,32 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "module": "F",
+  "overall": "PASS",
+  "componentwise": {
+    "charge neutrality where derived": {
+      "pass": true,
+      "metric": "derived carrier ledgers preserved; no fabricated EM operator"
+    },
+    "energy and particle accounting": {
+      "pass": true,
+      "max_drift": 0.0
+    },
+    "covariance positive semidefinite": {
+      "pass": true,
+      "lambda_min": -3.6352988147566336e-30,
+      "lambda_max": 3.661146247788715e-14
+    },
+    "replay from E": {
+      "pass": true,
+      "parent_initial_linf": 0.0,
+      "dual_solver_linf": 1.734723475976807e-18,
+      "independent_linf": 3.469446951953614e-18
+    }
+  },
+  "additional_frozen_checks": {
+    "positivity": true,
+    "restart": true,
+    "convergence": true,
+    "countermodels": true,
+    "reference": true
+  }
 }

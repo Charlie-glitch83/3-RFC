@@ -1,0 +1,20 @@
+{
+  "module": "F",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "reaction_preserves_charge": true,
+    "neutrality_preserved": true,
+    "composition_nonnegative": true,
+    "restart_state_finite": true
+  },
+  "metrics": {
+    "max_charge": 0.0,
+    "final_state": [
+      0.2619170044094017,
+      0.2619170044094017,
+      0.3380829955905984
+    ]
+  },
+  "note": "Manufactured plasma persistence case."
+}

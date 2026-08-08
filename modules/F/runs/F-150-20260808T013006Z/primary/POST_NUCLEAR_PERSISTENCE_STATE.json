@@ -1,0 +1,35 @@
+{
+  "run_id": "F-150-20260808T013006Z",
+  "entry_state": [
+    0.01586715781451039,
+    0.0021566344122218237,
+    0.0012624268897508102,
+    0.006667156204078111,
+    0.003902746437921267,
+    0.0005304539961466856,
+    0.319504355869066,
+    0.2907735333309454
+  ],
+  "terminal_state": [
+    0.01586715781451039,
+    0.002156634412221824,
+    0.00126242688975081,
+    0.0066671562040781125,
+    0.0039027464379212664,
+    0.0005304539961466857,
+    0.319504355869066,
+    0.2907735333309454
+  ],
+  "free_carrier_fraction_entry": 0.019286219116483025,
+  "internal_route_activity_entry": 3.2230001244652664e-05,
+  "electromagnetic_charge_status": "NOT_DERIVED_AT_MINIMAL_SPINE",
+  "photon_status": "CONSTITUTIVE_ENERGY_MEMORY_PRESENT_PHOTON_IDENTITY_UNASSIGNED",
+  "neutrino_status": "DORMANT_NO_PARENT_WITNESS_ZERO_BACKREACTION",
+  "invariant_drifts": {
+    "Q0": 0.0,
+    "Q1": 0.0,
+    "Q2": 0.0,
+    "Q_total": 0.0,
+    "U_plus_RFL": 0.0
+  }
+}

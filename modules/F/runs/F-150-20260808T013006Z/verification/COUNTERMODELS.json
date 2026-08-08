@@ -1,0 +1,25 @@
+{
+  "componentwise": {
+    "TEXTBOOK_PLASMA_RESET": {
+      "pass": true,
+      "reason": "No electromagnetic charge/species witness exists in exact parent; reset is inadmissible."
+    },
+    "SCALAR_COMPOSITION_COLLAPSE": {
+      "pass": true,
+      "reason": "Q_total alone cannot reconstruct seven composition entries plus three separately protected carriers."
+    },
+    "DROP_ACTIVE_ROUTE_FAMILY": {
+      "pass": true,
+      "reason": "Directional route activity is material even at detailed-balance endpoint."
+    },
+    "FABRICATED_EM_CHARGE_OR_NEUTRINO": {
+      "pass": true,
+      "reason": "Unwitnessed channels remain unassigned/dormant."
+    },
+    "DROP_RFL_ENERGY_MEMORY": {
+      "pass": true,
+      "reason": "RFL memory is required for inherited protected energy total."
+    }
+  },
+  "pass": true
+}

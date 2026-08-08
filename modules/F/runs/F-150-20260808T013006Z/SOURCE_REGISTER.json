@@ -1,10 +1,107 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
+  "schema_version": "1.0",
+  "run_id": "F-150-20260808T013006Z",
+  "status": "BOUND_BEFORE_PRE_EXECUTION_LOCK",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "object_id": "H_E_to_F",
+      "path": "modules/E/frozen/H_E_to_F.json",
+      "sha256": "975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf",
+      "role": "DIRECT_PARENT"
+    }
+  ],
+  "admitted_sources": [
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "classification": "CANONICAL_AUTHORITY",
+      "generative_scope": "triad, First Action, recursive kernel, no-loss memory and no-retune rules"
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "classification": "CANONICAL_AUTHORITY",
+      "generative_scope": "module ordering and BBN-to-recombination persistence architecture only; old numerical scores and conventional physical values excluded"
+    }
+  ],
+  "procedure_only_sources": [
+    {
+      "repository": "Charlie-glitch83/2-RFC",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "path": "science/POST_NUCLEAR_PLASMA.md",
+      "classification": "HISTORICAL_WARNING_PROCEDURE_ONLY",
+      "allowed_use": "coverage/ownership/claim-boundary context",
+      "forbidden_use": "old results, richer parent assumptions, conventional particle identities or coefficients"
+    },
+    {
+      "repository": "Charlie-glitch83/2-RFC",
+      "commit": "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10",
+      "path": "proofs/POST_NUCLEAR_PERSISTENCE.md",
+      "classification": "HISTORICAL_WARNING_PROCEDURE_ONLY",
+      "allowed_use": "proof-obligation and obstruction context",
+      "forbidden_use": "old PASS status or physical values"
+    }
+  ],
+  "imports": [
+    {
+      "module": "numpy",
+      "owner": "prebuilt solvers/verification"
+    },
+    {
+      "module": "sympy",
+      "owner": "prebuilt symbolic parser/verification"
+    },
+    {
+      "module": "scipy",
+      "owner": "prebuilt integrators and independent reconstruction"
+    }
+  ],
+  "files": [
+    {
+      "path": "modules/F/runs/F-150-20260808T013006Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "6be203e7db8d6bef1b8edd06e1335904de069005d10df6909869d8306ea4a65e",
+      "role": "frozen parent-driven F derivation"
+    },
+    {
+      "path": "rfc_engine/solvers/reaction_network.py",
+      "sha256": "993cdfe43d6c2150a4dc361b870b049b05b22fbe5daf6708d103370eeb69dcaf",
+      "role": "prebuilt reaction engine"
+    },
+    {
+      "path": "rfc_engine/solvers/transport.py",
+      "sha256": "c810f56867a272bfd7276c9f358f75869f7773c75d355121ac0990529d3bfdc2",
+      "role": "prebuilt transport engine"
+    },
+    {
+      "path": "tools/materialize_solver_config.py",
+      "sha256": "df51b784a21d3affe244df3ee1303a2f21fbaf71cfa1e47cde1b979cb3d273f5",
+      "role": "binding materializer"
+    }
+  ],
   "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "constants": [
+    {
+      "name": "kf2",
+      "value": 0.1499430216517723,
+      "origin": "H_E_to_F.reaction_network.parameters"
+    },
+    {
+      "name": "kr2",
+      "value": 0.0007695933391028973,
+      "origin": "H_E_to_F.reaction_network.parameters"
+    },
+    {
+      "name": "kf3",
+      "value": 0.2998860433035446,
+      "origin": "H_E_to_F.reaction_network.parameters"
+    },
+    {
+      "name": "kr3",
+      "value": 7.899986289019092e-06,
+      "origin": "H_E_to_F.reaction_network.parameters"
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION"
 }
