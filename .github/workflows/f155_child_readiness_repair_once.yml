@@ -1,0 +1,139 @@
+name: F155 Child-Readiness Repair Once
+
+on:
+  push:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/f155-repair-trigger.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: f155-child-readiness-repair
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install frozen repository dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+
+      - name: Verify exact pre-repair frontier
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='G-160',s
+          assert s['current_module']=='G',s
+          assert s['current_run']=='G-160-20260808T021341Z',s
+          assert s['modules']['F']['evidence_state']=='FROZEN',s['modules']['F']
+          assert s['modules']['F']['fidelity']=='MINIMAL_SPINE',s['modules']['F']
+          p=Path('modules/F/frozen/H_F_to_G.json')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154'
+          g=json.load(open('modules/G/runs/G-160-20260808T021341Z/G_DERIVATION_OBSTRUCTION.json'))
+          assert g['classification']=='BLOCKED_UNDERDETERMINED_PRE_PRIMARY',g
+          PY
+
+      - name: Close preserved G obstruction attempt as BLOCKED
+        run: |
+          python tools/rfc.py close-run \
+            --run-id G-160-20260808T021341Z \
+            --result BLOCKED \
+            --closeout modules/G/runs/G-160-20260808T021341Z/CLOSEOUT.md
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['current_run'] is None,s
+          r=json.load(open('modules/G/runs/G-160-20260808T021341Z/run.json'))
+          assert r['status']=='BLOCKED',r
+          PY
+
+      - name: Apply child-readiness repair and reopen F
+        run: |
+          python tools/repair_child_readiness.py
+          python tools/rfc.py reopen-module F \
+            --fidelity PRODUCTION \
+            --evidence audit/CHILD_READINESS_REPAIR_20260808.json
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); q=json.load(open('WORK_QUEUE.json'))['items']; by={x['id']:x for x in q}
+          assert s['active_work_unit']=='F-155',s
+          assert s['current_module']=='F',s
+          assert s['current_run'] is None,s
+          assert s['modules']['F']['evidence_state']=='DESIGN',s['modules']['F']
+          assert s['modules']['F']['fidelity']=='PRODUCTION',s['modules']['F']
+          assert s['modules']['G']['evidence_state']=='BLOCKED',s['modules']['G']
+          assert by['F-150']['status']=='PASS',by['F-150']
+          assert by['F-155']['status']=='ACTIVE',by['F-155']
+          assert by['G-160']['status']=='BLOCKED' and by['G-160']['depends_on']==['F-155'],by['G-160']
+          PY
+
+      - name: Create exact governed F155 workspace
+        run: |
+          python tools/rfc.py new-run F --run-id F-155-20260808T054200Z
+          python tools/director.py prepare-active
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.load(open('STATE.json')); rid=s['current_run']; assert rid=='F-155-20260808T054200Z',s
+          R=Path('modules/F/runs')/rid
+          assert (R/'OUTPUT_CONTRACT.json').exists(),R/'OUTPUT_CONTRACT.json'
+          c=json.load(open(R/'OUTPUT_CONTRACT.json'))
+          required=json.load(open('modules/F/spec.json'))['required_outputs']
+          assert [x['name'] for x in c['required_outputs']]==required,(c,required)
+          packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
+          assert '# ACTIVE WORK PACKET — F-155' in packet,packet[:300]
+          assert str(R) in packet,packet[:600]
+          PY
+
+      - name: Validate repaired repository
+        run: |
+          python tools/director.py doctor
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+
+      - name: Commit governed repair closeout
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json CLAIMS_LEDGER.json config/required_output_contracts.json docs/28_REQUIRED_OUTPUT_AND_CHILD_READINESS_PROTOCOL.md audit/CHILD_READINESS_REPAIR_20260808.json audit/CHILD_READINESS_REPAIR_20260808.md memory modules/G/runs/G-160-20260808T021341Z modules/F/runs/F-155-20260808T054200Z recipes/F tools/rfc.py tests/test_child_readiness_contract.py work_packets/ACTIVE_WORK_PACKET.md
+          git status --short
+          if git diff --cached --quiet; then
+            echo 'HARD STOP: repair produced no governed changes'
+            exit 1
+          fi
+          git commit -m 'Repair child-readiness closure and reopen Module F'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "REPAIR_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Verify remote repair SHA and exact frontier
+        run: |
+          git fetch origin agent/frontier-050-execution
+          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
+          test "$REMOTE" = "$REPAIR_SHA"
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='F-155',s
+          assert s['current_run']=='F-155-20260808T054200Z',s
+          assert s['modules']['F']['evidence_state']=='DESIGN' and s['modules']['F']['fidelity']=='PRODUCTION',s['modules']['F']
+          assert s['modules']['G']['evidence_state']=='BLOCKED',s['modules']['G']
+          PY
+          echo "Verified repair SHA: $REMOTE"
