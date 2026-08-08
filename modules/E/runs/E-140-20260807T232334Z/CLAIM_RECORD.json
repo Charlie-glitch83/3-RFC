@@ -1,0 +1,15 @@
+{
+  "claim_id": "RFC-E-140-PRIMORDIAL-COMPOSITE-NETWORK-20260808",
+  "text": "From the exact frozen D three-carrier state, Module E derives and physically executes a source-owned seven-state reversible primordial-composite reaction network with parent-derived binding and rates, exact internal carrier accounting, positive abundance dynamics, material witnessed reaction routes, constitutive binding-memory transfer, convergence, freeze-out, covariance, restart/replay and independent reconstruction.",
+  "owner": "E",
+  "evidence_state": "FROZEN",
+  "fidelity": "MINIMAL_SPINE",
+  "supported": true,
+  "evidence": [
+    "modules/E/frozen/H_E_to_F.json",
+    "modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json",
+    "modules/E/runs/E-140-20260807T232334Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+    "modules/E/runs/E-140-20260807T232334Z/REPLAY_RECORD.json"
+  ],
+  "strongest_unsupported_claim": "Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics."
+}

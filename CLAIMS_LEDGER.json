@@ -17,6 +17,23 @@
       "strongest_unsupported_claim": "Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation.",
       "recorded_utc": "2026-08-07T22:47:47.610722+00:00",
       "work_unit": "D-130"
+    },
+    {
+      "claim_id": "RFC-E-140-PRIMORDIAL-COMPOSITE-NETWORK-20260808",
+      "text": "From the exact frozen D three-carrier state, Module E derives and physically executes a source-owned seven-state reversible primordial-composite reaction network with parent-derived binding and rates, exact internal carrier accounting, positive abundance dynamics, material witnessed reaction routes, constitutive binding-memory transfer, convergence, freeze-out, covariance, restart/replay and independent reconstruction.",
+      "owner": "E",
+      "evidence_state": "FROZEN",
+      "fidelity": "MINIMAL_SPINE",
+      "supported": true,
+      "evidence": [
+        "modules/E/frozen/H_E_to_F.json",
+        "modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json",
+        "modules/E/runs/E-140-20260807T232334Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/E/runs/E-140-20260807T232334Z/REPLAY_RECORD.json"
+      ],
+      "strongest_unsupported_claim": "Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics.",
+      "recorded_utc": "2026-08-08T01:05:53.942882+00:00",
+      "work_unit": "E-140"
     }
   ]
 }

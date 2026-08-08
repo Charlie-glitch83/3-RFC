@@ -1,0 +1,358 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E_PRIMORDIAL_COMPOSITE_NETWORK_STATE",
+  "run_id": "E-140-20260807T232334Z",
+  "evidence_state": "PHYSICALLY_EXECUTED_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "object_id": "H_D_to_E",
+    "path": "modules/D/frozen/H_D_to_E.json",
+    "sha256": "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231"
+  },
+  "species_order": [
+    "X0",
+    "X1",
+    "X2",
+    "B01",
+    "B02",
+    "B12",
+    "T012"
+  ],
+  "species_identity_status": "INTERNAL_RFC_COMPOSITE_IDENTITIES_ONLY; EMPIRICAL_ISOTOPE_CORRESPONDENCE_UNASSIGNED",
+  "initial_state": [
+    0.3459414163255845,
+    0.32885860048152177,
+    0.3251999831928936,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "terminal_state": [
+    0.01586715781451039,
+    0.0021566344122218237,
+    0.0012624268897508102,
+    0.006667156204078111,
+    0.003902746437921267,
+    0.0005304539961466856,
+    0.319504355869066
+  ],
+  "minimum_abundance": 0.0,
+  "clock": "tau_E, dimensionless continuation of tau_D",
+  "t_span": [
+    0.0,
+    126582.49817344503
+  ],
+  "reaction_model": {
+    "species": [
+      "X0",
+      "X1",
+      "X2",
+      "B01",
+      "B02",
+      "B12",
+      "T012"
+    ],
+    "stoichiometry": [
+      [
+        -1,
+        1,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1
+      ],
+      [
+        -1,
+        1,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    ],
+    "rate_expressions": [
+      "kf2*X0*X1",
+      "kr2*B01",
+      "kf2*X0*X2",
+      "kr2*B02",
+      "kf2*X1*X2",
+      "kr2*B12",
+      "kf3*B01*X2",
+      "kr3*T012",
+      "kf3*B02*X1",
+      "kr3*T012",
+      "kf3*B12*X0",
+      "kr3*T012"
+    ],
+    "parameters": {
+      "kf2": 0.1499430216517723,
+      "kr2": 0.0007695933391028973,
+      "kf3": 0.2998860433035446,
+      "kr3": 7.899986289019092e-06
+    },
+    "invariants": {
+      "Q0": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "Q1": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "Q2": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "Q_total": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3
+      ]
+    }
+  },
+  "freeze_out": {
+    "metric": "max_s |dY_s/dtau_E|",
+    "threshold": 1e-09,
+    "last_route_family_peak_tau": 5.591511745560618,
+    "freeze_tau": 7489.242801811339,
+    "freeze_state": [
+      0.015866703564535182,
+      0.0021567215201304508,
+      0.0012625186541313986,
+      0.006667729411391596,
+      0.003903314988762807,
+      0.0005304811891043841,
+      0.3195036683608863
+    ],
+    "final_rhs_norm": 4.235164736271502e-22,
+    "remains_below_threshold_to_t_end": true,
+    "pass": true
+  },
+  "constitutive_energy_memory": {
+    "species_constitutive_energies": [
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.0
+    ],
+    "U_initial": 0.29988604330354457,
+    "U_final": 0.009112509972599138,
+    "Q_RFL_final": 0.2907735333309454,
+    "max_ledger_residual": 5.551115123125783e-17,
+    "tolerance": 1e-09,
+    "pass": true,
+    "scope": "dimensionless constitutive-energy/RFL-memory ledger only"
+  },
+  "abundance_covariance": [
+    [
+      2.579572796268242e-14,
+      -1.9334947352289836e-15,
+      -9.70003139988356e-16,
+      4.861673464275515e-15,
+      3.3460861562677218e-15,
+      -8.8315136802513e-16,
+      -1.2513815493396312e-14
+    ],
+    [
+      -1.9334947352289836e-15,
+      1.4492329491846649e-16,
+      7.27056808410043e-17,
+      -3.644022010598619e-16,
+      -2.5080276765776833e-16,
+      6.619578726202716e-17,
+      9.379613713208517e-16
+    ],
+    [
+      -9.70003139988356e-16,
+      7.270568084100426e-17,
+      3.6475268034882593e-17,
+      -1.8281470997015192e-16,
+      -1.2582370549627847e-16,
+      3.320935936790369e-17,
+      4.705600996954358e-16
+    ],
+    [
+      4.861673464275515e-15,
+      -3.6440220105986176e-16,
+      -1.8281470997015192e-16,
+      9.162706672805824e-16,
+      6.306307113555386e-16,
+      -1.6644591604772028e-16,
+      -2.3584558190849387e-15
+    ],
+    [
+      3.346086156267721e-15,
+      -2.5080276765776833e-16,
+      -1.2582370549627843e-16,
+      6.306307113555386e-16,
+      4.3403669713857667e-16,
+      -1.1455775044273925e-16,
+      -1.6232263282158972e-15
+    ],
+    [
+      -8.8315136802513e-16,
+      6.619578726202712e-17,
+      3.32093593679037e-17,
+      -1.6644591604772033e-16,
+      -1.1455775044273923e-16,
+      3.023587238845896e-17,
+      4.284272685847419e-16
+    ],
+    [
+      -1.2513815493396312e-14,
+      9.379613713208515e-16,
+      4.705600996954358e-16,
+      -2.3584558190849387e-15,
+      -1.623226328215897e-15,
+      4.2842726858474186e-16,
+      6.070601241776155e-15
+    ]
+  ],
+  "uncertainty_classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_PLUS_NUMERICAL_ERROR",
+  "checkpoint": {
+    "run_id": "E-140-20260807T232334Z",
+    "checkpoints": [
+      {
+        "checkpoint_id": "E140-MIDPOINT",
+        "state_path": "verification/checkpoint_midpoint.json",
+        "state_sha256": "8a91090b98cd49f70317c63d7771a36b24d22383087ed3b52397aeae4f667a5d",
+        "restart_test": "PASS",
+        "restart_linf": 1.734723475976807e-18
+      }
+    ],
+    "restart_contract": "Restart from exact tau_E=t_end/2 species state under unchanged frozen E law and reproduce the full final state.",
+    "state_schema": "E140 seven-state MINIMAL_SPINE reaction network",
+    "hash_algorithm": "sha256"
+  },
+  "verification_summary": {
+    "primary_result_sha256": "80b6fad1db9c4e14691b79c653a38e62a529c8a4cd445f9996d14a6b86f3e47f",
+    "config_sha256": "6d9beef9b1ae7de7afd5e8652de5f4ebbc72dec8cbe6a1d4138a2078ead3791c",
+    "frozen_derivation_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+    "primary_final": [
+      0.01586715781451039,
+      0.0021566344122218237,
+      0.0012624268897508102,
+      0.006667156204078111,
+      0.003902746437921267,
+      0.0005304539961466856,
+      0.319504355869066
+    ],
+    "primary_minimum_abundance": 0.0,
+    "convergence_pass": true,
+    "withheld_pass": true,
+    "scalar_pass": true,
+    "restart_pass": true,
+    "replay_pass": true,
+    "independent_pass": true,
+    "covariance_pass": true,
+    "freeze_pass": true,
+    "gates_overall": "PASS"
+  },
+  "claim_boundary": "Internally generated, dimensionless, reaction-resolved RFC MINIMAL_SPINE primordial-composite network only. No Standard Model isotope identity, measured nuclear mass/binding/cross section/lifetime, Kelvin/MeV scale, conventional precision BBN or empirical abundance agreement is established."
+}

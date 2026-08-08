@@ -1,43 +1,42 @@
 # Current Context
 
-Generated: 2026-08-07T23:23:33.956610+00:00
+Generated: 2026-08-08T01:05:56.984258+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `E-140` — Close Module E: Primordial Nuclear Network
-- Current module: `E`
+- Active work unit: `F-150` — Close Module F: Post-Nuclear Plasma and Radiation Persistence
+- Current module: `F`
 - Last verified commit: `4a9f3f5e5b76c9612120b427cffd60642c891662`
 
 ## Strongest supported claim
 
-From the exact frozen C prethermal three-carrier state, Module D generates and physically executes a conservative parent-derived nonequilibrium transport history with positive carrier distributions, exact carrier and constitutive-energy/RFL accounting, nonnegative entropy production, ordered source-derived phase witnesses, intrinsic spectral-temperature history, inherited decimal-envelope covariance, restart, independent parent-only reconstruction, and exact clean-checkout replay.
+From the exact frozen D three-carrier state, Module E derives and physically executes a source-owned seven-state reversible primordial-composite reaction network with parent-derived binding and rates, exact internal carrier accounting, positive abundance dynamics, material witnessed reaction routes, constitutive binding-memory transfer, convergence, freeze-out, covariance, restart/replay and independent reconstruction.
 
 ## Strongest unsupported claim
 
-Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation.
+Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics.
 
 ## Immediate objective
 
-Execute a source-owned reaction network to generate primordial isotope abundances and their full uncertainty state.
+Carry isotope, plasma, radiation, neutrino, and transport states from nucleosynthesis into recombination without losing lineage or covariance.
 
 ## Required deliverables
 
-- modules/E/runs/<RUN_ID>/RUN_PLAN.md
-- modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/E/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/E/runs/<RUN_ID>/CLOSEOUT.md
+- modules/F/runs/<RUN_ID>/RUN_PLAN.md
+- modules/F/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/F/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/F/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/F/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- baryon/charge/energy accounting
-- network convergence
-- rate-source audit
-- no scalar-channel collapse
-- withheld reaction and independent implementation checks
+- charge neutrality where derived
+- energy and particle accounting
+- covariance positive semidefinite
+- replay from E
 
 ## Module states
 
@@ -45,7 +44,7 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 - B: `FROZEN` / `MINIMAL_SPINE`
 - C: `FROZEN` / `MINIMAL_SPINE`
 - D: `FROZEN` / `MINIMAL_SPINE`
-- E: `DESIGN` / `UNSTARTED`
+- E: `FROZEN` / `MINIMAL_SPINE`
 - F: `DESIGN` / `UNSTARTED`
 - G: `DESIGN` / `UNSTARTED`
 - HU: `DESIGN` / `UNSTARTED`
@@ -64,12 +63,11 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 9
-- indexed runs: 9
+- frozen artifacts: 10
+- indexed runs: 10
 
 ## Recent runs
 
-- AUTH-020-20260806T071800Z: PASS (THEORY)
 - XWALK-030-20260806T130603Z: PASS (THEORY)
 - REC-040-20260806T135256Z: PASS (RECOVERY)
 - FRONTIER-050-20260806T142549Z: PASS (AUDIT)
@@ -77,17 +75,18 @@ Execute a source-owned reaction network to generate primordial isotope abundance
 - B-110-20260807T002248Z: PASS (B)
 - C-120-20260807T032543Z: PASS (C)
 - D-130-20260807T220342Z: PASS (D)
+- E-140-20260807T232334Z: PASS (E)
 
 ## Recent decisions
 
-- PROMOTE-D-IMPLEMENTED-20260807T224747Z: Promoted Module D from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
-- PROMOTE-D-VERIFIED-20260807T224747Z: Promoted Module D from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
-- PROMOTE-D-PHYSICALLY_EXECUTED-20260807T224747Z: Promoted Module D from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
-- PROMOTE-D-INDEPENDENTLY_REPRODUCED-20260807T224747Z: Promoted Module D from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
-- PROMOTE-D-FROZEN-20260807T224747Z: Promoted Module D from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
-- COMMIT-4a9f3f5e5b76: Verified rebuilt Module D frozen closeout commit and diff; D remains the active starting point and E is not authorized.
-- SYNC-D-FROZEN-FRONTIER-CLAIMS-20260807T2249Z: Synchronized global frontier claim summaries to the already-recorded frozen Module-D claim after D closeout; preserved D as the active hold point and left E unauthorized.
 - ADVANCE-D-130-20260807T232330Z: Marked D-130 PASS and activated E-140
+- PROMOTE-E-FORMALIZED-20260808T010553Z: Promoted Module E from DESIGN to FORMALIZED at MINIMAL_SPINE
+- PROMOTE-E-IMPLEMENTED-20260808T010553Z: Promoted Module E from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
+- PROMOTE-E-VERIFIED-20260808T010553Z: Promoted Module E from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
+- PROMOTE-E-PHYSICALLY_EXECUTED-20260808T010553Z: Promoted Module E from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
+- PROMOTE-E-INDEPENDENTLY_REPRODUCED-20260808T010553Z: Promoted Module E from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
+- PROMOTE-E-FROZEN-20260808T010553Z: Promoted Module E from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-E-140-20260808T010554Z: Marked E-140 PASS and activated F-150
 
 ## Recent failures
 

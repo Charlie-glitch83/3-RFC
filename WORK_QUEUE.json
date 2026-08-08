@@ -333,7 +333,7 @@
       "id": "E-140",
       "title": "Close Module E: Primordial Nuclear Network",
       "module": "E",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "D-130"
       ],
@@ -371,7 +371,7 @@
       "id": "F-150",
       "title": "Close Module F: Post-Nuclear Plasma and Radiation Persistence",
       "module": "F",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "E-140"
       ],

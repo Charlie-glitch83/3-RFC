@@ -113,7 +113,7 @@ handoff = {
   'frame':'A-D finite relational pregeometry; no metric/FRW geometry introduced in E',
   'species':{
     'order':species,
-    'occupancy_vectors':spec['species_registry']['occupancy_vectors'],
+    'occupancy_vectors':{r['id']:r['occupancy'] for r in spec['derived_species_registry']},
     'identity_status':'INTERNAL_RFC_COMPOSITE_IDENTITIES_ONLY',
     'empirical_isotope_correspondence':'UNASSIGNED'
   },

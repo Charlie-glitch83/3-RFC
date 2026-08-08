@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "E-140",
-  "current_module": "E",
-  "current_run": "E-140-20260807T232334Z",
+  "active_work_unit": "F-150",
+  "current_module": "F",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -267,17 +267,71 @@
       "last_promoted_utc": "2026-08-07T22:47:47.542044+00:00"
     },
     "E": {
-      "evidence_state": "DESIGN",
-      "fidelity": "UNSTARTED",
-      "active_run": "E-140-20260807T232334Z",
+      "evidence_state": "FROZEN",
+      "fidelity": "MINIMAL_SPINE",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-08T01:05:53.573717+00:00",
+          "work_unit": "E-140"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/E/runs/E-140-20260807T232334Z/solver_outputs/reaction_network/result.json",
+          "timestamp_utc": "2026-08-08T01:05:53.631829+00:00",
+          "work_unit": "E-140"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-08T01:05:53.690886+00:00",
+          "work_unit": "E-140"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/E/runs/E-140-20260807T232334Z/primary/PRIMORDIAL_COMPOSITE_NETWORK_STATE.json",
+          "timestamp_utc": "2026-08-08T01:05:53.749157+00:00",
+          "work_unit": "E-140"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/E/runs/E-140-20260807T232334Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-08T01:05:53.807729+00:00",
+          "work_unit": "E-140"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/E/frozen/H_E_to_F.json",
+          "timestamp_utc": "2026-08-08T01:05:53.866531+00:00",
+          "work_unit": "E-140"
         }
-      ]
+      ],
+      "completed_runs": [
+        "E-140-20260807T232334Z"
+      ],
+      "promotion_evidence": [
+        "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/E/runs/E-140-20260807T232334Z/solver_outputs/reaction_network/result.json",
+        "modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json",
+        "modules/E/runs/E-140-20260807T232334Z/primary/PRIMORDIAL_COMPOSITE_NETWORK_STATE.json",
+        "modules/E/runs/E-140-20260807T232334Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/E/frozen/H_E_to_F.json"
+      ],
+      "last_promoted_utc": "2026-08-08T01:05:53.866545+00:00"
     },
     "F": {
       "evidence_state": "DESIGN",
@@ -463,8 +517,8 @@
     }
   },
   "last_verified_commit": "4a9f3f5e5b76c9612120b427cffd60642c891662",
-  "last_updated_utc": "2026-08-07T23:23:34.136452+00:00",
-  "strongest_supported_claim": "From the exact frozen C prethermal three-carrier state, Module D generates and physically executes a conservative parent-derived nonequilibrium transport history with positive carrier distributions, exact carrier and constitutive-energy/RFL accounting, nonnegative entropy production, ordered source-derived phase witnesses, intrinsic spectral-temperature history, inherited decimal-envelope covariance, restart, independent parent-only reconstruction, and exact clean-checkout replay.",
-  "strongest_unsupported_claim": "Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation.",
+  "last_updated_utc": "2026-08-08T01:05:54.038529+00:00",
+  "strongest_supported_claim": "From the exact frozen D three-carrier state, Module E derives and physically executes a source-owned seven-state reversible primordial-composite reaction network with parent-derived binding and rates, exact internal carrier accounting, positive abundance dynamics, material witnessed reaction routes, constitutive binding-memory transfer, convergence, freeze-out, covariance, restart/replay and independent reconstruction.",
+  "strongest_unsupported_claim": "Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics.",
   "last_verified_branch": "agent/frontier-050-execution"
 }

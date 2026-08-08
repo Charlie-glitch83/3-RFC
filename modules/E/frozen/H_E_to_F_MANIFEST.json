@@ -1,0 +1,8 @@
+{
+  "object_id": "H_E_to_F",
+  "sha256": "975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf",
+  "bytes": 9438,
+  "generation_mode": "GENERATION_SEALED",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "MINIMAL_SPINE"
+}

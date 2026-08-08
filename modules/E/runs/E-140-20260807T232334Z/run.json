@@ -2,9 +2,11 @@
   "run_id": "E-140-20260807T232334Z",
   "module": "E",
   "task_id": "E-140",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-07T23:23:34.132980+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/E/runs/E-140-20260807T232334Z"
+  "workspace": "modules/E/runs/E-140-20260807T232334Z",
+  "closed_utc": "2026-08-08T01:05:53.493204+00:00",
+  "closeout": "modules/E/runs/E-140-20260807T232334Z/CLOSEOUT.md"
 }
