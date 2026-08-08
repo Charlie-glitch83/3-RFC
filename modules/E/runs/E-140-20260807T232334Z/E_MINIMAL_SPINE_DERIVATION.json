@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E140_MINIMAL_SPINE_DERIVATION",
+  "run_id": "E-140-20260807T232334Z",
+  "module": "E",
+  "status": "DERIVED_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "fidelity": "MINIMAL_SPINE",
+  "exact_parent": {
+    "object_id": "H_D_to_E",
+    "path": "modules/D/frozen/H_D_to_E.json",
+    "sha256": "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231"
+  },
+  "ancestry": [
+    {
+      "object_id": "H_C_to_D",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+    },
+    {
+      "object_id": "H_B_to_C",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"
+    },
+    {
+      "object_id": "H_A_to_B",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+    }
+  ],
+  "triadic_specialization": {
+    "CIF_E": "All finite nonempty subset-composites of the three exact parent carrier identities that are distinguishable by their protected ancestry vector and admitted on complete inherited K3 support.",
+    "QV_E": "Witnessed association/dissociation routes on inherited complete support, using the exact parent constitutive quadratic form for binding and the exact parent edge rate as the only kinetic prefactor.",
+    "RFL_E": "The positive normalized composite abundance history, conserved carrier ledger, route/event history, freeze-out witness, covariance envelope and restart state.",
+    "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+    "direct_many_body_backreaction": 0.0
+  },
+  "state_space": {
+    "primitive_internal_carriers": ["X0", "X1", "X2"],
+    "composite_species": ["B01", "B02", "B12", "T012"],
+    "species_order": ["X0", "X1", "X2", "B01", "B02", "B12", "T012"],
+    "ancestry_vectors": {
+      "X0": [1,0,0],
+      "X1": [0,1,0],
+      "X2": [0,0,1],
+      "B01": [1,1,0],
+      "B02": [1,0,1],
+      "B12": [0,1,1],
+      "T012": [1,1,1]
+    },
+    "empirical_correspondence": "UNASSIGNED",
+    "standard_model_labels_used": false,
+    "selection_rule": "At MINIMAL_SPINE, admit each nonempty subset of the three protected carrier identities exactly once. Repeated identical-carrier occupancy is not admitted because the parent supplies no independent witness that distinguishes a second copy of the same internal carrier at this scope."
+  },
+  "parent_constitutive_energy": {
+    "classification": "D2_EFFECTIVE_BOUND_STATE_DIAGNOSTIC_FROM_D1_PARENT",
+    "matrix": [[0.2998860433035446,-0.1499430216517723,-0.1499430216517723],[-0.1499430216517723,0.2998860433035446,-0.1499430216517723],[-0.1499430216517723,-0.1499430216517723,0.2998860433035446]],
+    "expression": "E_C(n)=n^T M_C n for ancestry/occupancy vector n",
+    "units": "dimensionless parent-gap energy coordinate",
+    "values": {
+      "X0": 0.2998860433035446,
+      "X1": 0.2998860433035446,
+      "X2": 0.2998860433035446,
+      "B01": 0.2998860433035446,
+      "B02": 0.2998860433035446,
+      "B12": 0.2998860433035446,
+      "T012": 0.0
+    },
+    "binding_release": {
+      "heterotypic_pair_association": 0.2998860433035446,
+      "pair_plus_complement_to_triad": 0.5997720866070892,
+      "same_type_pair_countermodel": -0.5997720866070892
+    },
+    "interpretation": "The exact parent Laplacian complement energetically admits heterotypic subset closure and rejects same-type doubling at this scope. These are internal RFC composite identities only, not measured nuclear binding energies."
+  },
+  "reaction_hypergraph": {
+    "forward_routes": [
+      {"id":"R01F","reaction":"X0 + X1 -> B01","witness":"complete K3 edge 0-1 and positive parent-derived binding release"},
+      {"id":"R02F","reaction":"X0 + X2 -> B02","witness":"complete K3 edge 0-2 and positive parent-derived binding release"},
+      {"id":"R12F","reaction":"X1 + X2 -> B12","witness":"complete K3 edge 1-2 and positive parent-derived binding release"},
+      {"id":"R01_2F","reaction":"B01 + X2 -> T012","witness":"no-loss ancestry union plus positive parent-derived binding release"},
+      {"id":"R02_1F","reaction":"B02 + X1 -> T012","witness":"no-loss ancestry union plus positive parent-derived binding release"},
+      {"id":"R12_0F","reaction":"B12 + X0 -> T012","witness":"no-loss ancestry union plus positive parent-derived binding release"}
+    ],
+    "reverse_rule": "Every admitted forward route has one ancestry-exact reverse route; forward and reverse are one route pair and are not tuned independently.",
+    "stoichiometry_species_by_reaction": [
+      [-1,1,0,0,0,0,0,0,0,0,0,-1],
+      [-1,0,0,1,-1,0,0,0,0,0,-1,0],
+      [0,0,-1,0,-1,0,0,1,-1,0,0,0],
+      [1,-1,0,0,0,0,-1,1,0,0,0,0],
+      [0,0,1,-1,0,0,0,0,0,-1,1,0],
+      [0,0,0,0,0,-1,0,0,1,0,0,1],
+      [0,0,0,0,0,1,1,-1,0,1,0,-1]
+    ],
+    "reaction_order": ["R01F","R01R","R02F","R02R","R12F","R12R","R01_2F","R01_2R","R02_1F","R02_1R","R12_0F","R12_0R"]
+  },
+  "invariants": {
+    "carrier_0": [1,0,0,1,1,0,1],
+    "carrier_1": [0,1,0,1,0,1,1],
+    "carrier_2": [0,0,1,0,1,1,1],
+    "total_carrier_count": [1,1,1,2,2,2,3],
+    "note": "The three ancestry-carrier ledgers are the fundamental exact invariants. Physical baryon/electric-charge names are not assigned at this scope."
+  },
+  "rate_law": {
+    "classification": "D2_COEFFICIENT_FREE_MINIMAL_SPECIALIZATION",
+    "parent_edge_rate": 0.1499430216517723,
+    "parent_gap": 0.449829064955317,
+    "thermal_coordinate": 0.056881184006326246,
+    "forward_prefactor_rule": "kF=a for every inherited complete-support association route; no new route coefficient is introduced.",
+    "detailed_balance_rule": "For a route with positive parent-derived binding release B_r, kR_r = a*exp(-B_r/Theta_E). This is the minimal canonical detailed-balance specialization of the already-derived D spectral-temperature coordinate; it fixes the reverse/forward ratio rather than introducing an independent coefficient.",
+    "Theta_E_rule": "Theta_E is inherited as the D export spectral coordinate Theta_D_final for the E entry state and is held fixed in E0 because the current reaction-network engine has no explicit background-evolution input. Background feedback is therefore outside this minimal-spine claim.",
+    "parameters": {
+      "a": 0.1499430216517723,
+      "kr_pair": 0.0007695933391028973,
+      "kr_triad": 0.000007899986289019092
+    },
+    "rate_expressions": [
+      "a*X0*X1","kr_pair*B01",
+      "a*X0*X2","kr_pair*B02",
+      "a*X1*X2","kr_pair*B12",
+      "a*B01*X2","kr_triad*T012",
+      "a*B02*X1","kr_triad*T012",
+      "a*B12*X0","kr_triad*T012"
+    ],
+    "unresolved_full_fidelity_physics": ["dimensional temperature/time scale","physical constituent correspondence","measured or field-theoretic nuclear matrix elements","radiation/weak bath evolution","background feedback"]
+  },
+  "initial_state": {
+    "rule": "Lift the exact D terminal three-carrier distribution into the E species basis with all newly opened composites initially unoccupied.",
+    "value": [0.3459414163255845,0.32885860048152177,0.3251999831928936,0.0,0.0,0.0,0.0]
+  },
+  "clock_and_interval": {
+    "clock": "tau_E, dimensionless continuation of the post-Big-Implosion intrinsic ordering parameter; tau_E=0 at D export.",
+    "freeze_metric": "max absolute abundance derivative",
+    "freeze_threshold": 1e-12,
+    "primary_interval_rule": "Integrate until the internally generated derivative norm is <=1e-12 and remains below threshold under interval doubling. A fixed public or conventional nucleosynthesis time is forbidden.",
+    "solver_seed_interval": [0.0,6.669200000000001],
+    "interval_growth": "double end time until freeze criterion passes",
+    "max_step_rule": "accepted_t_end/128",
+    "positivity_tolerance": 1e-12,
+    "invariant_tolerance": 1e-9
+  },
+  "uncertainty": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_PLUS_NUMERICAL_ONLY",
+    "rule": "Recompute the entire E derivation for the inherited delta envelope 4.66915, 4.6692, 4.66925 without retuning. No empirical rate uncertainty is asserted at MINIMAL_SPINE."
+  },
+  "countermodels_and_ablations": [
+    "SCALAR_COLLAPSE: replace X0,X1,X2 by one scalar before composite construction; reject because ancestry-resolved routes and three exact carrier invariants disappear.",
+    "EDGE_WITHHELD: remove one inherited K3 association lane; reject if the terminal state changes materially and route completeness breaks.",
+    "SAME_TYPE_ADMISSION: add Xi+Xi composite using the same parent energy law; reject because its derived binding release is negative (-4a).",
+    "INDEPENDENT_REVERSE_COEFFICIENT: choose reverse rate separately; forbidden because it breaks frozen detailed-balance ownership.",
+    "PUBLIC_NUCLEAR_INPUT: any isotope mass, cross section, lifetime, abundance target, Kelvin/MeV temperature or standard BBN rate enters generation; hard fail.",
+    "NO_RFL_MEMORY: discard route ancestry after integration; reject because the E output would violate protected no-loss memory."
+  ],
+  "falsifiers": [
+    "direct parent SHA-256 mismatch",
+    "any empirical/Standard Model species label enters generation",
+    "same-type composite is admitted despite negative parent-derived binding release",
+    "any stoichiometric route violates one of the three ancestry-carrier invariants above 1e-12",
+    "any abundance falls below -1e-12",
+    "invariant drift exceeds 1e-9",
+    "public or remembered abundance/rate/scale enters generation",
+    "reverse coefficient is independently tuned",
+    "network-size/withheld-route tests are not performed",
+    "independent integrator/reconstruction disagrees above frozen numerical tolerance"
+  ],
+  "claim_boundary": "E0 establishes only an internally typed, source-owned, dimensionless primordial-composite reaction spine generated from the exact A-D RFC lineage. It may demonstrate witnessed composite formation, reversible reaction flow, conserved ancestry carriers, freeze-out, covariance, replay and independent reconstruction. It does not establish empirical proton/neutron/isotope identity, dimensional nuclear masses/binding energies, standard BBN rates, Kelvin/MeV thermal history, measured primordial abundances, or empirical agreement."
+}
