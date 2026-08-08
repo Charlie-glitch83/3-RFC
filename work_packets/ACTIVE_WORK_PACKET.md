@@ -1,28 +1,28 @@
-# ACTIVE WORK PACKET — C-125
+# ACTIVE WORK PACKET — D-135
 
 **This is the only authorized work. Execute it in order.**
 
-- Module: `C`
-- Objective: Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2, including source-owned charge/symmetry/mass-mixing/interaction and photon/neutrino/nucleon-role states.
-- Run workspace: `modules/C/runs/C-125-20260808T063500Z`
+- Module: `D`
+- Objective: Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asymmetry, annihilation/freeze-out/decoupling and photon/neutrino transport.
+- Run workspace: `modules/D/runs/D-135-20260808T163243Z`
 
 ## Exact sequence
 
-1. Read `recipes/C/WORK_ORDER.md` and `recipes/C/recipe.json`.
+1. Read `recipes/D/WORK_ORDER.md` and `recipes/D/recipe.json`.
 2. Verify all exact parent hashes and fill the run source register.
 3. Freeze the pre-execution lock before primary execution.
 4. Run these Wolfram calls exactly and record their complete outputs:
 
-   - `python tools/director.py wolfram-show --call C-WL-001`
-   - `python tools/director.py wolfram-show --call C-WL-002`
+   - `python tools/director.py wolfram-show --call D-WL-001`
+   - `python tools/director.py wolfram-show --call D-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module C --output modules/C/runs/C-125-20260808T063500Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module D --output modules/D/runs/D-135-20260808T163243Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module C --solver spectral_model --destination modules/C/runs/C-125-20260808T063500Z`
-   - fill `configured_runs/binding_sheets/C_spectral_model.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/C/runs/C-125-20260808T063500Z/solver_templates/C_spectral_model.template.json --binding-sheet modules/C/runs/C-125-20260808T063500Z/binding_sheets/C_spectral_model.bindings.json --output modules/C/runs/C-125-20260808T063500Z/solver_configs/C_spectral_model.json`
-   - `python tools/run_configured_solver.py --config modules/C/runs/C-125-20260808T063500Z/solver_configs/C_spectral_model.json --output-dir modules/C/runs/C-125-20260808T063500Z/solver_outputs/spectral_model`
+   - `python tools/director.py solver-copy --module D --solver transport --destination modules/D/runs/D-135-20260808T163243Z`
+   - fill `configured_runs/binding_sheets/D_transport.bindings.json` after it is copied into the run; every value requires an origin SHA-256
+   - `python tools/materialize_solver_config.py --template modules/D/runs/D-135-20260808T163243Z/solver_templates/D_transport.template.json --binding-sheet modules/D/runs/D-135-20260808T163243Z/binding_sheets/D_transport.bindings.json --output modules/D/runs/D-135-20260808T163243Z/solver_configs/D_transport.json`
+   - `python tools/run_configured_solver.py --config modules/D/runs/D-135-20260808T163243Z/solver_configs/D_transport.json --output-dir modules/D/runs/D-135-20260808T163243Z/solver_outputs/transport`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.
@@ -31,12 +31,12 @@
 
 ## Required deliverables
 
-- modules/C/runs/<RUN_ID>/OUTPUT_CONTRACT.json
-- modules/C/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/C/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/C/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/C/runs/<RUN_ID>/CLOSEOUT.md
-- versioned superseding H_C_to_D_v2 handoff and manifest
+- modules/D/runs/<RUN_ID>/OUTPUT_CONTRACT.json
+- modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/D/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/D/runs/<RUN_ID>/CLOSEOUT.md
+- versioned superseding H_D_to_E_v2 handoff and manifest
 
 ## Componentwise gates
 
@@ -49,4 +49,4 @@
 
 ## Commit message
 
-`Close C-125 superseding C replay at verified scope`
+`Close D-135 superseding D replay at verified scope`

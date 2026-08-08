@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "run_id": "D-135-20260808T163243Z",
+  "module": "D",
+  "status": "DRAFT",
+  "required_outputs": [
+    {
+      "name": "temperature and distribution histories",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "phase/event ledger",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "transport and collision operators",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "entropy and conservation ledger",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "uncertainty/covariance",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "H_D_to_E",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    }
+  ],
+  "child_bindings": {},
+  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+}

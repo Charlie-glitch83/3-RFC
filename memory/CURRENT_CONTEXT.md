@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T06:46:36.544432+00:00
+Generated: 2026-08-08T16:32:47.317920+00:00
 
 ## Project truth
 
@@ -66,11 +66,10 @@ Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asym
 
 - admitted sources: 85
 - frozen artifacts: 19
-- indexed runs: 17
+- indexed runs: 18
 
 ## Recent runs
 
-- E-140-20260807T232334Z: PASS (E)
 - F-150-20260808T013006Z: PASS (F)
 - G-160-20260808T021341Z: BLOCKED (G)
 - G-160-20260808T051613Z: BLOCKED (G)
@@ -78,6 +77,7 @@ Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asym
 - C-125-20260808T061947Z: BLOCKED (C)
 - C-125-20260808T063010Z: BLOCKED (C)
 - C-125-20260808T063500Z: PASS (C)
+- D-135-20260808T163243Z: CREATED (D)
 
 ## Recent decisions
 
