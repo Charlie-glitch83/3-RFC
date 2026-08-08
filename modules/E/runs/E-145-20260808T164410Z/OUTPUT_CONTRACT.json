@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "run_id": "E-145-20260808T164410Z",
+  "module": "E",
+  "status": "DRAFT",
+  "required_outputs": [
+    {
+      "name": "reaction graph and rates with source lineage",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "abundance trajectories",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "isotope covariance",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "conservation and positivity ledger",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "freeze-out/event witnesses",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "H_E_to_F",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    }
+  ],
+  "child_bindings": {},
+  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+}

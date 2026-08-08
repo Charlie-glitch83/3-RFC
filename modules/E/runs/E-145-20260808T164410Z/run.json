@@ -1,0 +1,10 @@
+{
+  "run_id": "E-145-20260808T164410Z",
+  "module": "E",
+  "task_id": "E-145",
+  "status": "CREATED",
+  "created_utc": "2026-08-08T16:44:10.775621+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "modules/E/runs/E-145-20260808T164410Z"
+}

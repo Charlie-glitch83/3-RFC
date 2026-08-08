@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T16:42:15.777236+00:00
+Generated: 2026-08-08T16:44:14.815060+00:00
 
 ## Project truth
 
@@ -66,11 +66,10 @@ Execute the recovered source-owned nuclear network with isotope identities, rate
 
 - admitted sources: 85
 - frozen artifacts: 20
-- indexed runs: 18
+- indexed runs: 19
 
 ## Recent runs
 
-- F-150-20260808T013006Z: PASS (F)
 - G-160-20260808T021341Z: BLOCKED (G)
 - G-160-20260808T051613Z: BLOCKED (G)
 - B-115-20260808T060000Z: PASS (B)
@@ -78,6 +77,7 @@ Execute the recovered source-owned nuclear network with isotope identities, rate
 - C-125-20260808T063010Z: BLOCKED (C)
 - C-125-20260808T063500Z: PASS (C)
 - D-135-20260808T163243Z: PASS (D)
+- E-145-20260808T164410Z: CREATED (E)
 
 ## Recent decisions
 

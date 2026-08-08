@@ -1,0 +1,30 @@
+{
+  "module": "E",
+  "componentwise": [
+    {
+      "gate": "baryon/charge/energy accounting",
+      "required": "PASS"
+    },
+    {
+      "gate": "network convergence",
+      "required": "PASS"
+    },
+    {
+      "gate": "rate-source audit",
+      "required": "PASS"
+    },
+    {
+      "gate": "no scalar-channel collapse",
+      "required": "PASS"
+    },
+    {
+      "gate": "withheld reaction and independent implementation checks",
+      "required": "PASS"
+    },
+    {
+      "gate": "required output completeness and F child-readiness",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}
