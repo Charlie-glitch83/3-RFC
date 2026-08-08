@@ -1,0 +1,25 @@
+{
+  "method": "DIRECT_D_V2_PLUS_RECOVERED_E_THEOREM_RECONSTRUCTION",
+  "core_role_registry_complete": true,
+  "rate_source_single_amplitude": true,
+  "reverse_route_generated_not_tuned": true,
+  "configuration_generator_stochastic_by_construction": true,
+  "abundance_moment_is_generator_identity": true,
+  "bottleneck_not_target_temperature": true,
+  "freezeout_intrinsic_gap_crossing": true,
+  "public_inputs_used": false,
+  "branch_variables_preserved": [
+    "admissible frozen route matrices W_{j,[r]}",
+    "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+    "N_1>0",
+    "N_2>0",
+    "N_3>0",
+    "source-owned W_j matrix elements",
+    "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+    "Lambda_M>0 from recursive-memory ancestry",
+    "source-owned C_nu",
+    "epsilon from source-owned CP invariant",
+    "I_top from witnessed topological event route"
+  ],
+  "pass": true
+}

@@ -1,7 +1,14 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "E-145-20260808T164410Z",
+  "checkpoints": [
+    {
+      "checkpoint_id": "E145-POST-NUCLEAR-BRANCH-FAMILY",
+      "state_path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+      "state_sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281",
+      "restart_test": "PASS",
+      "contract": "F-155 consumes H_E_to_F_v2 and must evolve every admitted isotope/plasma/radiation branch or preserve obstruction; no conventional post-BBN composition may replace the generated branch family."
+    }
+  ],
+  "restart_contract": "F-155 consumes H_E_to_F_v2 and must evolve every admitted isotope/plasma/radiation branch or preserve obstruction; no conventional post-BBN composition may replace the generated branch family.",
   "hash_algorithm": "sha256"
 }

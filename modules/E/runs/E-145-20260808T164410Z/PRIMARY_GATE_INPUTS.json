@@ -1,7 +1,4 @@
 {
-  "run_id": "E-145-20260808T164410Z",
-  "module": "E",
-  "overall": "PASS",
   "componentwise": {
     "baryon/charge/energy accounting": {
       "pass": true
@@ -19,13 +16,11 @@
       "pass": true
     },
     "withheld reaction and independent implementation checks": {
-      "pass": true,
-      "clean_replay": true
+      "pass": true
     },
     "required output completeness and F child-readiness": {
       "pass": true,
       "provisional": "finalize constructs contract after replay"
     }
-  },
-  "aggregate_scores_cannot_override": true
+  }
 }

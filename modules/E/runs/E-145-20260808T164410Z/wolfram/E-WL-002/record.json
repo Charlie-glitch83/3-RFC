@@ -1,0 +1,14 @@
+{
+  "call_id": "E-WL-002",
+  "module": "E",
+  "purpose": "Reaction Jacobian and stiffness structure",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-08T16:49:58.729491+00:00",
+  "input_sha256": "8e5ddbe53a8010cf0a20eeaa20e442b914379ea406da5bec49fbc338a7956d43",
+  "output_sha256": "f3283345ee70f9843abb5360911f73b45da5e4ab51887d118a49db9504398f39",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/E/runs/E-145-20260808T164410Z/wolfram/E-WL-002/gate.json"
+}

@@ -19,132 +19,172 @@
     {
       "path": "model.species",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "n",
+        "p",
+        "Dcheck"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "model.stoichiometry",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "model.rate_expressions",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "k*n*p",
+        "k*Dcheck"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "model.parameters",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "k": 0.1499430216517723
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "model.invariants",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "baryon": [
+          1,
+          1,
+          2
+        ],
+        "charge": [
+          0,
+          1,
+          1
+        ]
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "initial_state",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.5,
+        0.5,
+        0.0
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "t_span",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.0,
+        6.669200000000001
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "max_step",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 0.05210312500000001,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "positivity_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-12,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     },
     {
       "path": "invariant_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-09,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
       "module": "E",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "E145_FROZEN_DERIVATION_SPEC.corroborative_reaction_check",
+      "units": "dimensionless implementation-check units",
+      "dimensions": "manufactured reversible route",
+      "justification": "Frozen corroborative conservation/positivity implementation check only; does not instantiate a physical isotope binding or public nuclear rate."
     }
   ]
 }

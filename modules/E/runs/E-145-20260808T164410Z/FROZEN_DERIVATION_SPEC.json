@@ -1,0 +1,229 @@
+{
+  "schema_version": "2.1",
+  "run_id": "E-145-20260808T164410Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/D/frozen/H_D_to_E_v2.json",
+    "sha256": "66ff28571390b3bc30151a9833d32da70e72840e90b42dcd97fdfd18263bdc66",
+    "bytes": 38427
+  },
+  "isotope_role_registry": [
+    {
+      "id": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "D_role",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "T_role",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "He3_role",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "He4_role",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "Li6_role",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "Li7_role",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "Be7_role",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    }
+  ],
+  "nuclear_branch_family": {
+    "classification": "SOURCE_OWNED_FINITE_RELATIONAL_NUCLEAR_BRANCH_FAMILY",
+    "nuclear_hamiltonian": "H_ZN^E=P_ZN[sum_i h_i^C + sum_{m=2}^A sum_|I|=m K_I^(m)(t)+Sigma_med(t)]P_ZN",
+    "binding": "B_ZNlambda=E_sep(Z,N)-E_ZNlambda; only B>0 states enter the bound registry",
+    "mass": "M_ZNlambda=Z M_p+N M_n-B_ZNlambda when the free-nucleon threshold controls; otherwise use the same spectral partition registry",
+    "reaction_admission": [
+      "reactant/product states admitted",
+      "projected event matrix element nonzero",
+      "baryon/charge/conditional-lepton ledgers close",
+      "kinematic domain nonempty",
+      "Module-A witness and event lift",
+      "protected signatures reopen",
+      "not a no-loss duplicate",
+      "inverse status explicit"
+    ],
+    "reaction_classes": [
+      "radiative capture",
+      "photodisintegration",
+      "strong exchange",
+      "charge exchange",
+      "weak conversion",
+      "beta decay",
+      "charged-lepton capture",
+      "neutrino-induced reaction",
+      "multibody formation",
+      "breakup",
+      "radioactive decay"
+    ],
+    "rate_law": "lambda_r(t)=S_r^-1 sum_kappa_in,kappa_out P_in(kappa,t)|A_r(kappa,t)|^2 Delta_sigma_r(E_f-E_i) B_r(kappa,t); A_r=sum_j delta^-j exp(-alpha j t) W_jr <f|Phi_jr|i>",
+    "reverse_law": "J_reverse=Theta_C J_r^dagger Theta_C^-1; on equilibrium subdomains gamma_reverse=gamma_forward*pi_in/pi_out",
+    "configuration_process": "dp_E/dt=Q_E(t)p_E; q_{eta+nu_r,eta}=lambda_r h_r>=0; diagonal columns close to zero; p_E=T exp[int Q_E] p_D->E",
+    "abundance_law": "Y_a(t)=E[N_a]/B_total; dY/dt is the exact stoichiometric moment of Q_E(t)",
+    "bottleneck_release": "first generated surface with nonzero D-role slow component, positive local derivative, positive integrated current over stabilization interval, and witnessed route to higher assembly",
+    "freezeout": "route-specific final downward restricted-Liouvillian-gap crossing against generated evolution rate; isotope persistent only after all material routes freeze or become residual/decay routes with bounded future tail",
+    "adaptive_completeness": "promote only witnessed nonduplicate states/routes closing material flux, reverse, decay, resonance, conservation, covariance or downstream-persistence gap; stop only at finite closure or certified omitted-flux bound",
+    "covariance": "propagate parent covariance with tangent equation plus generated nuclear/network/numerical/spatial/branch terms; no public abundance covariance",
+    "parent_thermal_branch": {
+      "classification": "SOURCE_OWNED_FINITE_RELATIONAL_THERMAL_BRANCH_FAMILY",
+      "master_generator": "d rho_D/dt=-i[H_C,rho_D]+sum_r gamma_r(J_r rho_D J_r^dagger-1/2{J_r^dagger J_r,rho_D}), gamma_r>=0",
+      "channel_rule": "Every active jump J_r descends from exactly one C interaction/event route; lawful inverse routes remain separate.",
+      "distribution_rule": "f_{a,k}=Tr(rho_D n_{a,k}); df/dt=Tr(n_{a,k} L_D[rho_D])",
+      "temperature_rule": "A scalar/sector temperature exists only after a source-owned relative-entropy residual to the moment-matching generalized Gibbs manifold crosses its frozen internal threshold; before that the full distribution state is primary.",
+      "thermodynamics": "rho,p,s,h,c_s^2, susceptibilities, screening and transport are marginals/response objects of rho_D,H_C and the finite relational geometry.",
+      "phase_rule": "Phase/crossover branches are classified by generated constrained free-energy minimizers, coexistence/barriers/curvature and witnessed event connectivity; no target temperature is inserted.",
+      "asymmetry_transport": "d n_Q/dt = S_C + diffusion + conversion - washout - dilution + witnessed_dark_transfer; S_C inherits C asymmetry_source and may vanish on lawful branches.",
+      "freezeout_decoupling": "Compare restricted-Liouvillian relaxation gap to generated physical evolution rate. Down/up crossings define freeze-out/decoupling and recoupling; insufficient integrated relaxation defines freeze-in.",
+      "photon_transport": "Protected photon-role population is an exact L_D marginal with collision/entropy-transfer currents generated only from witnessed C vertices.",
+      "neutrino_transport": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+      "pair_entropy_transfer": "particle-antiparticle annihilation/inverse routes and photon/neutrino energy currents close total energy; no standard temperature ratio is inserted.",
+      "dark_policy": {
+        "compression_relic": "collective/dormant unless separately witnessed microscopic invariant coupling exists",
+        "dissipative_tail": "dormant exact-zero B branch"
+      },
+      "branch_variables": [
+        "admissible frozen route matrices W_{j,[r]}",
+        "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+        "N_1>0",
+        "N_2>0",
+        "N_3>0",
+        "source-owned W_j matrix elements",
+        "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+        "Lambda_M>0 from recursive-memory ancestry",
+        "source-owned C_nu",
+        "epsilon from source-owned CP invariant",
+        "I_top from witnessed topological event route"
+      ],
+      "branch_policy": "Every unresolved route/kernel/phase/scale/topological variable is retained explicitly. D must evolve every admitted branch or preserve an obstruction; no measured value may select a branch."
+    },
+    "radiation_neutrino_carryover": {
+      "photon": {
+        "role": {
+          "status": "EXACT_PROTECTED_NEUTRAL_ZERO_MODE_FOR_EVERY_POSITIVE_G1_G2_VC_BRANCH",
+          "mass_squared": "0",
+          "identity": "INTERNAL_PHOTON_ROLE_NOT_EMPIRICAL_CORRESPONDENCE"
+        },
+        "law": "Protected photon-role population is an exact L_D marginal with collision/entropy-transfer currents generated only from witnessed C vertices.",
+        "spectrum": "SOURCE_OWNED_BRANCH_FAMILY_NOT_PUBLIC_HISTORY"
+      },
+      "neutrino": {
+        "roles": {
+          "count": 3,
+          "law": {
+            "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+            "branch_variables": [
+              "Lambda_M>0 from recursive-memory ancestry",
+              "source-owned C_nu"
+            ],
+            "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+            "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+          },
+          "identity": "INTERNAL_NEUTRAL_COMPLETED_SHELL_ROLES"
+        },
+        "law": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+        "spectra": "SOURCE_OWNED_BRANCH_FAMILY_INCLUDING_LAWFUL_MASSLESS_BRANCH"
+      }
+    },
+    "clock": {
+      "origin": "Big Implosion t_phys=0+",
+      "unit_family": "t_phys=t_B tau_B, t_B>0",
+      "recursive_depth_is_time": false
+    }
+  },
+  "corroborative_reaction_check": {
+    "classification": "IMPLEMENTATION_ONLY_NOT_PHYSICAL_E_BRANCH",
+    "species": [
+      "n",
+      "p",
+      "Dcheck"
+    ],
+    "stoichiometry": [
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "rate_expressions": [
+      "k*n*p",
+      "k*Dcheck"
+    ],
+    "parameters": {
+      "k": 0.1499430216517723
+    },
+    "initial_state": [
+      0.5,
+      0.5,
+      0.0
+    ],
+    "t_span": [
+      0.0,
+      6.669200000000001
+    ]
+  },
+  "falsifiers": [
+    "public/remembered binding energy, cross section, lifetime or abundance enters generation",
+    "a conditional isotope role is promoted without positive spectral binding witness",
+    "forward/reverse rates are independently tuned",
+    "baryon/charge/energy ledger fails",
+    "negative configuration probability or abundance",
+    "a historical Li7 result is inherited as target",
+    "unresolved D/C branch variable is silently instantiated",
+    "required E->F binding is missing",
+    "clean replay differs"
+  ],
+  "claim_boundary": "Complete finite-relational generated-network nuclear branch family and executed conservation/positivity implementation check. No measured nuclear-data precision, public BBN-code equivalence, observed abundance agreement, unique SI scale or unique unresolved parent branch."
+}

@@ -1,7 +1,122 @@
 {
   "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "run_id": "E-145-20260808T164410Z",
+  "module": "E",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "reaction graph and rates with source lineage",
+      "status": "PASS",
+      "semantic_check": "Generated from exact D-v2 ancestry and recovered E theorem; conditional isotope/rate branches remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+          "sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281"
+        },
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978"
+        },
+        {
+          "path": "modules/E/frozen/H_E_to_F_v2.json",
+          "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+        }
+      ]
+    },
+    {
+      "requirement": "abundance trajectories",
+      "status": "PASS",
+      "semantic_check": "Generated from exact D-v2 ancestry and recovered E theorem; conditional isotope/rate branches remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+          "sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281"
+        },
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978"
+        },
+        {
+          "path": "modules/E/frozen/H_E_to_F_v2.json",
+          "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+        }
+      ]
+    },
+    {
+      "requirement": "isotope covariance",
+      "status": "PASS",
+      "semantic_check": "Generated from exact D-v2 ancestry and recovered E theorem; conditional isotope/rate branches remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+          "sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281"
+        },
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978"
+        },
+        {
+          "path": "modules/E/frozen/H_E_to_F_v2.json",
+          "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+        }
+      ]
+    },
+    {
+      "requirement": "conservation and positivity ledger",
+      "status": "PASS",
+      "semantic_check": "Generated from exact D-v2 ancestry and recovered E theorem; conditional isotope/rate branches remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+          "sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281"
+        },
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978"
+        },
+        {
+          "path": "modules/E/frozen/H_E_to_F_v2.json",
+          "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+        }
+      ]
+    },
+    {
+      "requirement": "freeze-out/event witnesses",
+      "status": "PASS",
+      "semantic_check": "Generated from exact D-v2 ancestry and recovered E theorem; conditional isotope/rate branches remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+          "sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281"
+        },
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978"
+        },
+        {
+          "path": "modules/E/frozen/H_E_to_F_v2.json",
+          "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+        }
+      ]
+    },
+    {
+      "requirement": "H_E_to_F",
+      "status": "PASS",
+      "semantic_check": "Generated from exact D-v2 ancestry and recovered E theorem; conditional isotope/rate branches remain explicit; independent reconstruction and clean replay PASS.",
+      "evidence": [
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+          "sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281"
+        },
+        {
+          "path": "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978"
+        },
+        {
+          "path": "modules/E/frozen/H_E_to_F_v2.json",
+          "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,25 @@
+{
+  "countermodels": [
+    {
+      "id": "E-CM-PUBLIC-ABUNDANCE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "E-CM-INDEPENDENT-REVERSE-RATE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "E-CM-UNWITNESSED-ISOTOPE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "E-CM-LI7-INHERITANCE",
+      "result": "FAIL_AS_EXPECTED"
+    },
+    {
+      "id": "E-CM-SCALAR-COLLAPSE",
+      "result": "FAIL_AS_EXPECTED"
+    }
+  ],
+  "overall": "PASS"
+}

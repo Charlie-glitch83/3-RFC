@@ -1,10 +1,48 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "schema_version": "2.1",
+  "run_id": "E-145-20260808T164410Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/D/frozen/H_D_to_E_v2.json",
+      "sha256": "66ff28571390b3bc30151a9833d32da70e72840e90b42dcd97fdfd18263bdc66",
+      "bytes": 38427,
+      "classification": "DIRECT_PARENT"
+    }
+  ],
+  "replay_required_sources": [
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+      "sha256": "fd9f46d1d08e8ddfa082fc9e0e90f42daef1eceef39abb23826eaa8137d306d0",
+      "bytes": 31159,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+      "sha256": "520c081be3ad2d63037eefbbf2441fa17ea1a1e5578d8073819e1efec3c5e2b6",
+      "bytes": 5482,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/E/MODULE_E_TO_F_SCIENTIFIC_HANDOFF.md",
+      "sha256": "d822c81f820ec68d4edb15bdf5c2a984e71ae29cca2ff826c8bcc276a3c1cd07",
+      "bytes": 15179,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/E/MODULE_E_MANUSCRIPT_SOURCE_TRACEABILITY.md",
+      "sha256": "32be1f4bd723f98fd415beb41bfc52fef3e7ecd1d970ac2515ec1de9fad4af1d",
+      "bytes": 1448,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/E/MODULE_E_WOLFRAM_VERIFICATION.md",
+      "sha256": "f0eca67c399a7e6562f637a1ae0e17b2a0c09ce1805acd7cf75cb75c36063d34",
+      "bytes": 2924,
+      "classification": "REPLAY_REQUIRED"
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION"
 }

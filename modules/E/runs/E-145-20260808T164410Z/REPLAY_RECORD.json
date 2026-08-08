@@ -1,10 +1,28 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "E-145-20260808T164410Z",
+  "result": "PASS",
+  "clean_checkout": true,
+  "artifact_hashes_match": true,
+  "artifacts": {
+    "primary/NUCLEOSYNTHESIS_V2.json": {
+      "primary_sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281",
+      "replay_sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281",
+      "match": true
+    },
+    "primary/COUNTERMODEL_RESULTS.json": {
+      "primary_sha256": "07357209dc98ff697b612d44bdf950be0ee707b81065ff6aae195492d4721260",
+      "replay_sha256": "07357209dc98ff697b612d44bdf950be0ee707b81065ff6aae195492d4721260",
+      "match": true
+    },
+    "PRIMARY_GATE_INPUTS.json": {
+      "primary_sha256": "170c8f309bb3a6b7e22678d8e44cad3581c8ab2ded13b0c0f44bf755a5dc0265",
+      "replay_sha256": "170c8f309bb3a6b7e22678d8e44cad3581c8ab2ded13b0c0f44bf755a5dc0265",
+      "match": true
+    },
+    "independent/INDEPENDENT_RECONSTRUCTION.json": {
+      "primary_sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978",
+      "replay_sha256": "707d951dfefe8550e0ef906c83df9db8b720d233831f80b9709e09416acb1978",
+      "match": true
+    }
+  }
 }

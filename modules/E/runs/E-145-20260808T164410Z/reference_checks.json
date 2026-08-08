@@ -1,0 +1,20 @@
+{
+  "module": "E",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "stoichiometric_baryon_conservation": true,
+    "stoichiometric_charge_conservation": true,
+    "trajectory_baryon_conservation": true,
+    "trajectory_charge_conservation": true,
+    "abundances_nonnegative": true
+  },
+  "metrics": {
+    "final_abundances": [
+      0.3124467311205106,
+      0.21244673112051063,
+      0.23755326887948935
+    ]
+  },
+  "note": "Manufactured reversible reaction-network case; actual rates and species must be source-derived."
+}

@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-08T16:44:14.815060+00:00
+Generated: 2026-08-08T16:50:05.457983+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `E-145` — Supersede Module E: Source-Owned Primordial Nucleosynthesis
-- Current module: `E`
+- Active work unit: `F-155` — Supersede Module F: Child-Ready Post-Nuclear Plasma
+- Current module: `F`
 - Last verified commit: `ff72654b32d1d17dc37f462c5558603848a8dd9f`
 
 ## Strongest supported claim
@@ -20,16 +20,16 @@ No superseding channel-complete microscopic constitution H_C_to_D_v2, full noneq
 
 ## Immediate objective
 
-Execute the recovered source-owned nuclear network with isotope identities, rates, abundances, covariance and plasma-ready output.
+Execute charge/plasma composition, photon/neutrino persistence, atomic candidates, opacity/transport and recombination-entry state from H_E_to_F_v2.
 
 ## Required deliverables
 
-- modules/E/runs/<RUN_ID>/OUTPUT_CONTRACT.json
-- modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/E/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/E/runs/<RUN_ID>/CLOSEOUT.md
-- versioned superseding H_E_to_F_v2 handoff and manifest
+- modules/F/runs/<RUN_ID>/OUTPUT_CONTRACT.json
+- modules/F/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/F/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/F/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/F/runs/<RUN_ID>/CLOSEOUT.md
+- versioned superseding H_F_to_G_v2 handoff and manifest
 
 ## Mandatory gates
 
@@ -46,7 +46,7 @@ Execute the recovered source-owned nuclear network with isotope identities, rate
 - B: `FROZEN` / `PRODUCTION`
 - C: `FROZEN` / `PRODUCTION`
 - D: `FROZEN` / `PRODUCTION`
-- E: `FROZEN` / `MINIMAL_SPINE`
+- E: `FROZEN` / `PRODUCTION`
 - F: `FROZEN` / `MINIMAL_SPINE`
 - G: `BLOCKED` / `UNSTARTED`
 - HU: `DESIGN` / `UNSTARTED`
@@ -65,7 +65,7 @@ Execute the recovered source-owned nuclear network with isotope identities, rate
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 20
+- frozen artifacts: 21
 - indexed runs: 19
 
 ## Recent runs
@@ -77,18 +77,18 @@ Execute the recovered source-owned nuclear network with isotope identities, rate
 - C-125-20260808T063010Z: BLOCKED (C)
 - C-125-20260808T063500Z: PASS (C)
 - D-135-20260808T163243Z: PASS (D)
-- E-145-20260808T164410Z: CREATED (E)
+- E-145-20260808T164410Z: PASS (E)
 
 ## Recent decisions
 
-- REOPEN-D-20260808T164207Z: Reopened Module D from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
-- PROMOTE-D-FORMALIZED-20260808T164215Z: Promoted Module D from DESIGN to FORMALIZED at PRODUCTION
-- PROMOTE-D-IMPLEMENTED-20260808T164215Z: Promoted Module D from FORMALIZED to IMPLEMENTED at PRODUCTION
-- PROMOTE-D-VERIFIED-20260808T164215Z: Promoted Module D from IMPLEMENTED to VERIFIED at PRODUCTION
-- PROMOTE-D-PHYSICALLY_EXECUTED-20260808T164215Z: Promoted Module D from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
-- PROMOTE-D-INDEPENDENTLY_REPRODUCED-20260808T164215Z: Promoted Module D from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
-- PROMOTE-D-FROZEN-20260808T164215Z: Promoted Module D from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
-- ADVANCE-D-135-20260808T164215Z: Marked D-135 PASS and activated E-145
+- REOPEN-E-20260808T164958Z: Reopened Module E from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
+- PROMOTE-E-FORMALIZED-20260808T165005Z: Promoted Module E from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-E-IMPLEMENTED-20260808T165005Z: Promoted Module E from FORMALIZED to IMPLEMENTED at PRODUCTION
+- PROMOTE-E-VERIFIED-20260808T165005Z: Promoted Module E from IMPLEMENTED to VERIFIED at PRODUCTION
+- PROMOTE-E-PHYSICALLY_EXECUTED-20260808T165005Z: Promoted Module E from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
+- PROMOTE-E-INDEPENDENTLY_REPRODUCED-20260808T165005Z: Promoted Module E from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-E-FROZEN-20260808T165005Z: Promoted Module E from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- ADVANCE-E-145-20260808T165005Z: Marked E-145 PASS and activated F-155
 
 ## Recent failures
 

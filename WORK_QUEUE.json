@@ -522,7 +522,7 @@
       "id": "E-145",
       "title": "Supersede Module E: Source-Owned Primordial Nucleosynthesis",
       "module": "E",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "D-135"
       ],
@@ -560,7 +560,7 @@
       "id": "F-155",
       "title": "Supersede Module F: Child-Ready Post-Nuclear Plasma",
       "module": "F",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "E-145"
       ],

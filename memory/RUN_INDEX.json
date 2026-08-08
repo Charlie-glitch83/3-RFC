@@ -203,9 +203,12 @@
       "run_id": "E-145-20260808T164410Z",
       "module": "E",
       "task_id": "E-145",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/E/runs/E-145-20260808T164410Z",
-      "created_utc": "2026-08-08T16:44:10.775993+00:00"
+      "created_utc": "2026-08-08T16:44:10.775993+00:00",
+      "closed_utc": "2026-08-08T16:50:04.970759+00:00",
+      "tree_sha256": "4afde1924d3974838dd2760d42451f9eac02941671d6aac1c565c0c0dbbeaf29",
+      "closeout": "modules/E/runs/E-145-20260808T164410Z/CLOSEOUT.md"
     }
   ]
 }

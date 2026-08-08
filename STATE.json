@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "E-145",
-  "current_module": "E",
-  "current_run": "E-145-20260808T164410Z",
+  "active_work_unit": "F-155",
+  "current_module": "F",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -465,8 +465,8 @@
     },
     "E": {
       "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
-      "active_run": "E-145-20260808T164410Z",
+      "fidelity": "PRODUCTION",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -515,10 +515,64 @@
           "evidence": "modules/E/frozen/H_E_to_F.json",
           "timestamp_utc": "2026-08-08T01:05:53.866531+00:00",
           "work_unit": "E-140"
+        },
+        {
+          "state": "DESIGN",
+          "fidelity": "PRODUCTION",
+          "evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+          "timestamp_utc": "2026-08-08T16:49:58.480094+00:00",
+          "work_unit": "E-145",
+          "reopened_from": {
+            "evidence_state": "FROZEN",
+            "fidelity": "MINIMAL_SPINE"
+          }
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-08T16:50:05.035658+00:00",
+          "work_unit": "E-145"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/E/runs/E-145-20260808T164410Z/solver_outputs/reaction_network/result.json",
+          "timestamp_utc": "2026-08-08T16:50:05.096207+00:00",
+          "work_unit": "E-145"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/E/runs/E-145-20260808T164410Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-08T16:50:05.155768+00:00",
+          "work_unit": "E-145"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+          "timestamp_utc": "2026-08-08T16:50:05.215336+00:00",
+          "work_unit": "E-145"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-08T16:50:05.274628+00:00",
+          "work_unit": "E-145"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/E/frozen/H_E_to_F_v2.json",
+          "timestamp_utc": "2026-08-08T16:50:05.334565+00:00",
+          "work_unit": "E-145"
         }
       ],
       "completed_runs": [
-        "E-140-20260807T232334Z"
+        "E-140-20260807T232334Z",
+        "E-145-20260808T164410Z"
       ],
       "promotion_evidence": [
         "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
@@ -526,9 +580,20 @@
         "modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json",
         "modules/E/runs/E-140-20260807T232334Z/primary/PRIMORDIAL_COMPOSITE_NETWORK_STATE.json",
         "modules/E/runs/E-140-20260807T232334Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/E/frozen/H_E_to_F.json"
+        "modules/E/frozen/H_E_to_F.json",
+        "modules/E/runs/E-145-20260808T164410Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/E/runs/E-145-20260808T164410Z/solver_outputs/reaction_network/result.json",
+        "modules/E/runs/E-145-20260808T164410Z/GATE_RESULTS.json",
+        "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+        "modules/E/runs/E-145-20260808T164410Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/E/frozen/H_E_to_F_v2.json"
       ],
-      "last_promoted_utc": "2026-08-08T01:05:53.866545+00:00"
+      "last_promoted_utc": "2026-08-08T16:50:05.334576+00:00",
+      "reopened_from": {
+        "evidence_state": "FROZEN",
+        "fidelity": "MINIMAL_SPINE"
+      },
+      "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "F": {
       "evidence_state": "FROZEN",
@@ -780,7 +845,7 @@
     }
   },
   "last_verified_commit": "ff72654b32d1d17dc37f462c5558603848a8dd9f",
-  "last_updated_utc": "2026-08-08T16:44:10.776414+00:00",
+  "last_updated_utc": "2026-08-08T16:50:05.394751+00:00",
   "strongest_supported_claim": "The unchanged physically executed B-110 Big-Implosion state now has a complete, nonduplicated, independently reconstructed and cleanly replayed four-sector genesis partition at PRODUCTION fidelity. H_B_to_C_v2 is frozen and child-ready, preserving exact first-physical-state ancestry while supplying ordinary, radiative, compression-relic and dissipative-tail preparticle seeds for the sole active C-125 microscopic replay.",
   "strongest_unsupported_claim": "No superseding channel-complete microscopic constitution H_C_to_D_v2, full nonequilibrium thermal history H_D_to_E_v2, source-owned nucleosynthesis H_E_to_F_v2, child-ready post-nuclear plasma/opacity H_F_to_G_v2, physical recombination/visibility/last-scattering state, or empirical agreement is yet established by the repaired lineage.",
   "last_verified_branch": "agent/frontier-050-execution",

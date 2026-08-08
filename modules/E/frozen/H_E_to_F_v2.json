@@ -1,0 +1,757 @@
+{
+  "schema_version": "2.1",
+  "object_id": "H_E_to_F_V2",
+  "from_module": "E",
+  "to_module": "F",
+  "run_id": "E-145-20260808T164410Z",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/D/frozen/H_D_to_E_v2.json",
+    "sha256": "66ff28571390b3bc30151a9833d32da70e72840e90b42dcd97fdfd18263bdc66",
+    "bytes": 38427
+  },
+  "isotope_registry": [
+    {
+      "id": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "D_role",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "T_role",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "He3_role",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "He4_role",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "Li6_role",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "Li7_role",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    },
+    {
+      "id": "Be7_role",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+    }
+  ],
+  "reaction_graph": {
+    "registry": [
+      {
+        "id": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "D_role",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "T_role",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      }
+    ],
+    "route_classes": [
+      "radiative capture",
+      "photodisintegration",
+      "strong exchange",
+      "charge exchange",
+      "weak conversion",
+      "beta decay",
+      "charged-lepton capture",
+      "neutrino-induced reaction",
+      "multibody formation",
+      "breakup",
+      "radioactive decay"
+    ],
+    "admission_rule": [
+      "reactant/product states admitted",
+      "projected event matrix element nonzero",
+      "baryon/charge/conditional-lepton ledgers close",
+      "kinematic domain nonempty",
+      "Module-A witness and event lift",
+      "protected signatures reopen",
+      "not a no-loss duplicate",
+      "inverse status explicit"
+    ],
+    "rate_law": "lambda_r(t)=S_r^-1 sum_kappa_in,kappa_out P_in(kappa,t)|A_r(kappa,t)|^2 Delta_sigma_r(E_f-E_i) B_r(kappa,t); A_r=sum_j delta^-j exp(-alpha j t) W_jr <f|Phi_jr|i>",
+    "reverse_law": "J_reverse=Theta_C J_r^dagger Theta_C^-1; on equilibrium subdomains gamma_reverse=gamma_forward*pi_in/pi_out",
+    "source_lineage": [
+      {
+        "path": "modules/D/frozen/H_D_to_E_v2.json",
+        "sha256": "66ff28571390b3bc30151a9833d32da70e72840e90b42dcd97fdfd18263bdc66",
+        "bytes": 38427
+      },
+      {
+        "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+        "sha256": "fd9f46d1d08e8ddfa082fc9e0e90f42daef1eceef39abb23826eaa8137d306d0",
+        "bytes": 31159
+      },
+      {
+        "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+        "sha256": "520c081be3ad2d63037eefbbf2441fa17ea1a1e5578d8073819e1efec3c5e2b6",
+        "bytes": 5482
+      }
+    ],
+    "public_rate_table_used": false
+  },
+  "source_owned_rates": {
+    "law": "lambda_r(t)=S_r^-1 sum_kappa_in,kappa_out P_in(kappa,t)|A_r(kappa,t)|^2 Delta_sigma_r(E_f-E_i) B_r(kappa,t); A_r=sum_j delta^-j exp(-alpha j t) W_jr <f|Phi_jr|i>",
+    "reverse": "J_reverse=Theta_C J_r^dagger Theta_C^-1; on equilibrium subdomains gamma_reverse=gamma_forward*pi_in/pi_out",
+    "independent_fitted_rates": false
+  },
+  "abundance_trajectories": {
+    "classification": "EXACT_SOURCE_OWNED_BRANCH_FAMILY",
+    "law": "dp_E/dt=Q_E(t)p_E; q_{eta+nu_r,eta}=lambda_r h_r>=0; diagonal columns close to zero; p_E=T exp[int Q_E] p_D->E",
+    "abundance_moment": "Y_a(t)=E[N_a]/B_total; dY/dt is the exact stoichiometric moment of Q_E(t)",
+    "initial_state": "exact H_D_to_E_v2 nuclear-ready branch",
+    "branch_parameters": [
+      "admissible frozen route matrices W_{j,[r]}",
+      "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+      "N_1>0",
+      "N_2>0",
+      "N_3>0",
+      "source-owned W_j matrix elements",
+      "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+      "Lambda_M>0 from recursive-memory ancestry",
+      "source-owned C_nu",
+      "epsilon from source-owned CP invariant",
+      "I_top from witnessed topological event route"
+    ],
+    "normalization": "sum configuration probabilities=1; sum_a A_a Y_a=1 on baryon-normalized branch",
+    "status": "FORMALLY_EXECUTED_FOR_EVERY_ADMITTED_FINITE_BRANCH_BY_TIME_ORDERED_EXPONENTIAL"
+  },
+  "isotope_covariance": {
+    "classification": "PARENT_COVARIANCE_PLUS_EXPLICIT_NUCLEAR_BRANCH_FAMILY",
+    "law": "propagate parent covariance with tangent equation plus generated nuclear/network/numerical/spatial/branch terms; no public abundance covariance",
+    "parent_covariance": {
+      "classification": "PARENT_DECIMAL_ENVELOPE_PLUS_EXPLICIT_MODEL_BRANCH_FAMILY",
+      "members": [
+        {
+          "delta": 4.66915,
+          "initial": [
+            0.9999034898392979,
+            9.650084738974027e-05,
+            9.31331237621204e-09
+          ],
+          "final": [
+            0.36651990740112744,
+            0.3167424483147459,
+            0.3167376442841258
+          ],
+          "minimum": 9.31331237621204e-09
+        },
+        {
+          "delta": 4.6692,
+          "initial": [
+            0.9999034960399903,
+            9.649464789406941e-05,
+            9.312115728244279e-09
+          ],
+          "final": [
+            0.3665199077098423,
+            0.3167424480060914,
+            0.3167376442840662
+          ],
+          "minimum": 9.312115728244279e-09
+        },
+        {
+          "delta": 4.66925,
+          "initial": [
+            0.9999035022402178,
+            9.648844886301412e-05,
+            9.310919246839326e-09
+          ],
+          "final": [
+            0.36651990801853407,
+            0.31674244769746024,
+            0.3167376442840073
+          ],
+          "minimum": 9.310919246839326e-09
+        }
+      ],
+      "fixed_shell_terminal_covariance": [
+        [
+          6.35318236315155e-20,
+          -6.351937683792605e-20,
+          -1.2195459882700501e-23
+        ],
+        [
+          -6.351937683792605e-20,
+          6.350693248284637e-20,
+          1.2193070628451115e-23
+        ],
+        [
+          -1.2195459882700501e-23,
+          1.2193070628451115e-23,
+          2.34104847966969e-27
+        ]
+      ],
+      "model_branch_variables": [
+        "admissible frozen route matrices W_{j,[r]}",
+        "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+        "N_1>0",
+        "N_2>0",
+        "N_3>0",
+        "source-owned W_j matrix elements",
+        "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+        "Lambda_M>0 from recursive-memory ancestry",
+        "source-owned C_nu",
+        "epsilon from source-owned CP invariant",
+        "I_top from witnessed topological event route"
+      ],
+      "collapsed_to_single_fit": false
+    },
+    "stochastic_public_nuclear_uncertainty_used": false,
+    "branch_parameters": [
+      "admissible frozen route matrices W_{j,[r]}",
+      "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+      "N_1>0",
+      "N_2>0",
+      "N_3>0",
+      "source-owned W_j matrix elements",
+      "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+      "Lambda_M>0 from recursive-memory ancestry",
+      "source-owned C_nu",
+      "epsilon from source-owned CP invariant",
+      "I_top from witnessed topological event route"
+    ]
+  },
+  "freezeout_witnesses": {
+    "bottleneck_release": "first generated surface with nonzero D-role slow component, positive local derivative, positive integrated current over stabilization interval, and witnessed route to higher assembly",
+    "route_freezeout": "route-specific final downward restricted-Liouvillian-gap crossing against generated evolution rate; isotope persistent only after all material routes freeze or become residual/decay routes with bounded future tail",
+    "adaptive_completeness": "promote only witnessed nonduplicate states/routes closing material flux, reverse, decay, resonance, conservation, covariance or downstream-persistence gap; stop only at finite closure or certified omitted-flux bound",
+    "public_onset_temperature_used": false
+  },
+  "plasma_ready_composition": {
+    "composition": "conditional isotope abundance branch family plus free p/n roles",
+    "charge_ownership": "exact inherited C charge registry plus D lepton/photon carriers",
+    "radiation": {
+      "role": {
+        "status": "EXACT_PROTECTED_NEUTRAL_ZERO_MODE_FOR_EVERY_POSITIVE_G1_G2_VC_BRANCH",
+        "mass_squared": "0",
+        "identity": "INTERNAL_PHOTON_ROLE_NOT_EMPIRICAL_CORRESPONDENCE"
+      },
+      "law": "Protected photon-role population is an exact L_D marginal with collision/entropy-transfer currents generated only from witnessed C vertices.",
+      "spectrum": "SOURCE_OWNED_BRANCH_FAMILY_NOT_PUBLIC_HISTORY"
+    },
+    "neutrino": {
+      "roles": {
+        "count": 3,
+        "law": {
+          "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+          "branch_variables": [
+            "Lambda_M>0 from recursive-memory ancestry",
+            "source-owned C_nu"
+          ],
+          "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+          "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+        },
+        "identity": "INTERNAL_NEUTRAL_COMPLETED_SHELL_ROLES"
+      },
+      "law": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+      "spectra": "SOURCE_OWNED_BRANCH_FAMILY_INCLUDING_LAWFUL_MASSLESS_BRANCH"
+    },
+    "thermal_history": [
+      {
+        "id": "D135-RELAX-HALF",
+        "tau": 0.7704561960983979,
+        "rule": "nonuniform power reduced by 1/2"
+      },
+      {
+        "id": "D135-GLOBAL-EFOLD",
+        "tau": 2.223066666666667,
+        "rule": "nonuniform amplitude reduced by e^-1"
+      },
+      {
+        "id": "D135-EDGE-STABILIZATION",
+        "tau": 6.669200000000001,
+        "rule": "one parent edge timescale / three global amplitude e-folds"
+      }
+    ],
+    "entropy": {
+      "shell_entropy": [
+        0.0009888632376247332,
+        0.0009900295693816249,
+        0.0009911538013992925,
+        0.0010018005245218803,
+        0.0010120287434021553,
+        0.001050505560030042,
+        0.0010877715985970365,
+        0.0011243239148749685,
+        0.0012288850932558662,
+        0.001330863304052239,
+        0.0014310302508527785,
+        0.0019212364313157758,
+        0.002392171750176933,
+        0.0028500305948534633,
+        0.004932309650223441,
+        0.006893551776864093,
+        0.008775047316371727,
+        0.01059656755301296,
+        0.016914707470602853,
+        0.022842834245771028,
+        0.02849793527879268,
+        0.033941938690286236,
+        0.04726213832887305,
+        0.05978420347851632,
+        0.07170055282604969,
+        0.08312656156210232,
+        0.0941394120787876,
+        0.1276703938981211,
+        0.15850761632403307,
+        0.18726486240921658,
+        0.21431815516096595,
+        0.23992329334557713,
+        0.28253784906048474,
+        0.32186625407181135,
+        0.35841762896924567,
+        0.39256287637799314,
+        0.4245859208674713,
+        0.4547121508614991,
+        0.4876851435248404,
+        0.5185688307714426,
+        0.5475623000812657,
+        0.57483364665858,
+        0.6005270001480043,
+        0.6247675236342832,
+        0.6476650741209418,
+        0.6693169492626455,
+        0.6898099922402173,
+        0.7092222345131007,
+        0.7276241986269094,
+        0.7450799461811817,
+        0.7616479315287743,
+        0.7773817051479788,
+        0.7923304991126675,
+        0.8065397189589795,
+        0.8200513604129949,
+        0.8329043651896816,
+        0.8451349269266282,
+        0.8567767559579815,
+        0.8678613098458912,
+        0.8784179952159337,
+        0.8884743453812991,
+        0.8980561774103977,
+        0.9071877316377635,
+        0.9158917960974585,
+        0.9241898179409447,
+        0.9321020035646813,
+        0.9396474088990727,
+        0.9468440210866651,
+        0.9537088325934457,
+        0.9602579086448382,
+        0.9665064487513779,
+        0.9724688429831974,
+        0.9781587235635585,
+        0.9835890122766524,
+        0.9887719641213287,
+        0.9937192075883302,
+        0.9984417818923905,
+        1.0029501714509474,
+        1.0072543378671082,
+        1.0113637496450674,
+        1.0152874098406608,
+        1.019033881827564,
+        1.0226113133403114,
+        1.0260274589384093,
+        1.0292897010209958,
+        1.0324050695084652,
+        1.0353802602960016,
+        1.0382216525737988,
+        1.040935325099769,
+        1.0435270715025526,
+        1.046002414685538,
+        1.0483666203962692,
+        1.050624710019951,
+        1.0527814726507014,
+        1.0548414764896379,
+        1.05680907961481,
+        1.0586884401642915,
+        1.060483525970433,
+        1.0621981236802673,
+        1.0638358473943348,
+        1.0654001468537397,
+        1.0668943152029953,
+        1.0683214963541836,
+        1.0696846919760983,
+        1.0709867681303356,
+        1.0722304615747587,
+        1.0734183857533361,
+        1.0745530364900553,
+        1.0756367974034227,
+        1.0766719450569626,
+        1.07766065386012,
+        1.078605000733042,
+        1.0795069695478563,
+        1.0803684553582737,
+        1.0811912684286116,
+        1.0819771380726477,
+        1.0827277163121045,
+        1.083444581363961,
+        1.0841292409652628,
+        1.0847831355435895,
+        1.0854076412408802,
+        1.086004072797862,
+        1.086573686305947,
+        1.087117681833059,
+        1.087637205929511,
+        1.0881333540197136,
+        1.0886071726851927,
+        1.0890596618440969,
+        1.0894917768321013,
+        1.0899044303893661,
+        1.090298494557959,
+        1.0906748024939295,
+        1.0910341501980059,
+        1.0913772981686944,
+        1.0917049729813573,
+        1.0920178687966822,
+        1.092316648801778,
+        1.09260194658698,
+        1.0928743674612922,
+        1.0931344897092559,
+        1.0933828657919027,
+        1.0936200234943154,
+        1.0938464670222063,
+        1.0940626780498124,
+        1.0942691167212835,
+        1.094466222607661,
+        1.0946544156214233,
+        1.0948340968905004,
+        1.095005649593563,
+        1.0951694397583107,
+        1.0953258170244071,
+        1.0954751153726312,
+        1.0956176538217455,
+        1.0957537370945112,
+        1.0958836562542182,
+        1.096007689313036,
+        1.0961261018134283,
+        1.0961724448299959
+      ],
+      "entropy_production": [
+        4.158685067245285,
+        3.897528833571903,
+        3.8072824224509896,
+        3.5504499250439805,
+        3.46007539347482,
+        3.305260161983507,
+        3.2287230438177903,
+        3.1768788137768853,
+        3.0797549003242453,
+        3.017059786144769,
+        2.9698986852628897,
+        2.8219339461458186,
+        2.731872320432433,
+        2.6652497763253504,
+        2.4694365971312173,
+        2.353371069809372,
+        2.2699461313300913,
+        2.2046144456307615,
+        2.041378006440112,
+        1.9350564820451355,
+        1.8558025687451065,
+        1.7924543971475067,
+        1.6704031670300175,
+        1.5817295839158154,
+        1.5117458380047972,
+        1.4537514827808968,
+        1.4041187460162412,
+        1.278753382180306,
+        1.1857498258266397,
+        1.1113195609717212,
+        1.049023148934079,
+        0.9953185083389195,
+        0.9145793594426962,
+        0.8473928372707835,
+        0.7897973359159896,
+        0.7393920713803553,
+        0.6946056366863744,
+        0.654349478628389,
+        0.6120963662770573,
+        0.5740203987372924,
+        0.5394414152878039,
+        0.5078399727743765,
+        0.4788092448155434,
+        0.4520238171042951,
+        0.42721869745879143,
+        0.4041747574505019,
+        0.3827083658366415,
+        0.3626638364252969,
+        0.34390781510023866,
+        0.3263250336456613,
+        0.30981504653616987,
+        0.2942896874608961,
+        0.2796710614127043,
+        0.2658899411491265,
+        0.2528844730347229,
+        0.24059912246168513,
+        0.2289838068563215,
+        0.21799317706258067,
+        0.207586017194977,
+        0.1977247399064055,
+        0.1883749591247844,
+        0.17950512616178796,
+        0.17108621802664897,
+        0.1630914690287882,
+        0.15549613849734417,
+        0.14827730880860965,
+        0.14141370898556566,
+        0.13488555998484214,
+        0.12867443846608898,
+        0.12276315638497058,
+        0.11713565419265794,
+        0.11177690578388089,
+        0.10667283362931367,
+        0.10181023276948399,
+        0.09717670254682025,
+        0.09276058511794925,
+        0.08855090992633487,
+        0.08453734343086108,
+        0.08071014348307237,
+        0.07706011782774094,
+        0.07357858627085884,
+        0.07025734611817405,
+        0.06708864053775064,
+        0.06406512954312686,
+        0.06117986333065914,
+        0.05842625773651144,
+        0.055798071606284035,
+        0.05328938589413108,
+        0.05089458432893056,
+        0.04860833550312014,
+        0.046425576255564184,
+        0.044341496233612145,
+        0.042351523531604575,
+        0.040451311313726604,
+        0.038636725338484695,
+        0.03690383231036548,
+        0.03524888899156672,
+        0.033668332013191034,
+        0.032158768331069364,
+        0.030716966276526068,
+        0.02933984715698095,
+        0.0280244773653851,
+        0.02676806096115402,
+        0.02556793268854963,
+        0.02442155140141706,
+        0.023326493865837912,
+        0.022280448914653958,
+        0.021281211929975598,
+        0.020326679631737555,
+        0.019414845152132102,
+        0.018543793377346875,
+        0.01771169653948675,
+        0.016916810042877675,
+        0.016157468510148522,
+        0.015432082034581638,
+        0.014739132626217281,
+        0.014077170840108726,
+        0.013444812575955766,
+        0.01284073603910718,
+        0.012263678853619574,
+        0.01171243531870141,
+        0.011185853800459085,
+        0.010682834251402977,
+        0.010202325850669202,
+        0.009743324758372524,
+        0.009304871977928408,
+        0.00888605132057456,
+        0.008485987466681983,
+        0.008103844118782986,
+        0.007738822241550291,
+        0.007390158384251818,
+        0.007057123081470368,
+        0.006739019328126764,
+        0.006435181125074462,
+        0.006144972091749245,
+        0.005867784142556713,
+        0.005603036223867266,
+        0.005350173108662202,
+        0.005108664246037128,
+        0.004878002662920843,
+        0.004657703915510585,
+        0.004447305088057021,
+        0.004246363836758319,
+        0.004054457476638902,
+        0.003871182109399315,
+        0.003696151790326496,
+        0.0035289977324514106,
+        0.0033693675462322967,
+        0.0032169245131282646,
+        0.003071346891508569,
+        0.002932327253420715,
+        0.0027995718508112737,
+        0.00267280000986316,
+        0.0025517435521765705,
+        0.002436146241582139,
+        0.002325763255432808,
+        0.002220360679275291,
+        0.0021791034480643117
+      ],
+      "minimum_entropy_production": 0.0021791034480643117,
+      "temperature_status": "BRANCH_DEFINED_ONLY_WHEN_GIBBS_RELATIVE_ENTROPY_WITNESS_PASSES",
+      "recursive_memory_entropy_distinct": true
+    },
+    "clock": {
+      "origin": "Big Implosion t_phys=0+",
+      "unit_family": "t_phys=t_B tau_B, t_B>0",
+      "recursive_depth_is_time": false
+    },
+    "post_nuclear_status": "RESTARTABLE_BRANCH_FAMILY_FOR_F; F must evolve each admitted branch or preserve obstruction"
+  },
+  "charge_ownership": "exact inherited C charge registry plus D lepton/photon carriers",
+  "radiation_neutrino_carryover": {
+    "photon": {
+      "role": {
+        "status": "EXACT_PROTECTED_NEUTRAL_ZERO_MODE_FOR_EVERY_POSITIVE_G1_G2_VC_BRANCH",
+        "mass_squared": "0",
+        "identity": "INTERNAL_PHOTON_ROLE_NOT_EMPIRICAL_CORRESPONDENCE"
+      },
+      "law": "Protected photon-role population is an exact L_D marginal with collision/entropy-transfer currents generated only from witnessed C vertices.",
+      "spectrum": "SOURCE_OWNED_BRANCH_FAMILY_NOT_PUBLIC_HISTORY"
+    },
+    "neutrino": {
+      "roles": {
+        "count": 3,
+        "law": {
+          "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+          "branch_variables": [
+            "Lambda_M>0 from recursive-memory ancestry",
+            "source-owned C_nu"
+          ],
+          "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+          "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+        },
+        "identity": "INTERNAL_NEUTRAL_COMPLETED_SHELL_ROLES"
+      },
+      "law": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+      "spectra": "SOURCE_OWNED_BRANCH_FAMILY_INCLUDING_LAWFUL_MASSLESS_BRANCH"
+    }
+  },
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "restart": {
+    "checkpoint_id": "E145-POST-NUCLEAR-BRANCH-FAMILY",
+    "state_path": "modules/E/runs/E-145-20260808T164410Z/primary/NUCLEOSYNTHESIS_V2.json",
+    "state_sha256": "7810c94a37e793fdec71aefbb09bd3f18a80bd8796c949fb749b6c78e63d2281",
+    "restart_test": "PASS",
+    "contract": "F-155 consumes H_E_to_F_v2 and must evolve every admitted isotope/plasma/radiation branch or preserve obstruction; no conventional post-BBN composition may replace the generated branch family."
+  },
+  "ancestry": [
+    {
+      "path": "modules/D/frozen/H_D_to_E_v2.json",
+      "sha256": "66ff28571390b3bc30151a9833d32da70e72840e90b42dcd97fdfd18263bdc66",
+      "bytes": 38427
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+      "sha256": "fd9f46d1d08e8ddfa082fc9e0e90f42daef1eceef39abb23826eaa8137d306d0",
+      "bytes": 31159
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+      "sha256": "520c081be3ad2d63037eefbbf2441fa17ea1a1e5578d8073819e1efec3c5e2b6",
+      "bytes": 5482
+    }
+  ],
+  "claim_boundary": "Complete finite-relational generated-network nuclear branch family and executed conservation/positivity implementation check. No measured nuclear-data precision, public BBN-code equivalence, observed abundance agreement, unique SI scale or unique unresolved parent branch.",
+  "strongest_supported_claim": "E-145 reconstructs the recovered finite-relational nucleosynthesis theorem from exact H_D_to_E_v2: conditional isotope-role spectral registry, channel-complete witnessed forward/reverse reaction hypergraph, source-owned amplitude/rate law, exact stochastic configuration process and abundance-moment trajectories, intrinsic bottleneck/freeze-out rules, conservation/positivity, covariance/ancestry and restartable plasma-ready F packet. Unresolved D/C nuclear spectral and route variables remain explicit rather than fitted.",
+  "strongest_unsupported_claim": "No unique source instantiation of unresolved nuclear spectra/rate amplitudes, no measured binding energies/cross sections/lifetimes, no public BBN-code equivalence, no observed primordial abundance agreement, no unique SI calibration and no empirical validation are claimed."
+}

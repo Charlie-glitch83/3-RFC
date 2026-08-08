@@ -1,21 +1,41 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "2.1",
+  "run_id": "E-145-20260808T164410Z",
+  "status": "FROZEN",
+  "frozen_before_primary_execution": true,
+  "frozen_utc": "2026-08-08T16:49:58.587123+00:00",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "definition_sha256": "4e21a43c8917a04e73e1eb059c4e12e1891e11e5cf036b5b9a5be90631563e01",
+  "source_register_sha256": "916272f6521cac178a115e04a2ca649fb00e730d992b5541d54975fb42d0bf0c",
+  "candidate_classes": [
+    "conditional isotope-role spectral branches",
+    "source-owned forward/reverse reaction hypergraphs",
+    "finite nuclear configuration processes"
+  ],
+  "selection_rule": "Preserve every source-owned D/C nuclear branch. Admit a bound role only after its positive internal spectral witness; never insert a public isotope property or abundance.",
+  "expected_invariants": [
+    "finite self-adjoint nuclear sectors",
+    "forward/reverse one-amplitude closure",
+    "nonnegative configuration generator with zero column sums",
+    "baryon/charge/energy closure",
+    "positive normalized nuclear history",
+    "route-specific freezeout"
+  ],
+  "falsifiers": [
+    "public/remembered binding energy, cross section, lifetime or abundance enters generation",
+    "a conditional isotope role is promoted without positive spectral binding witness",
+    "forward/reverse rates are independently tuned",
+    "baryon/charge/energy ledger fails",
+    "negative configuration probability or abundance",
+    "a historical Li7 result is inherited as target",
+    "unresolved D/C branch variable is silently instantiated",
+    "required E->F binding is missing",
+    "clean replay differs"
+  ],
+  "claim_boundary": "Complete finite-relational generated-network nuclear branch family and executed conservation/positivity implementation check. No measured nuclear-data precision, public BBN-code equivalence, observed abundance agreement, unique SI scale or unique unresolved parent branch.",
+  "required_post_lock_wolfram": [
+    "E-WL-001",
+    "E-WL-002"
+  ]
 }
