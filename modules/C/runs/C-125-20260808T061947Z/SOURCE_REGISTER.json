@@ -1,10 +1,52 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "schema_version": "2.0",
+  "run_id": "C-125-20260808T061947Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parent": {
+    "path": "modules/B/frozen/H_B_to_C_v2.json",
+    "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+    "classification": "DIRECT_PARENT",
+    "role": "sector-complete first physical state"
+  },
+  "sources": [
+    {
+      "path": "modules/B/frozen/H_B_to_C_v2.json",
+      "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "classification": "DIRECT_PARENT",
+      "role": "sector-complete first physical state"
+    },
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "classification": "ANCESTRY",
+      "role": "enhanced kernel"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/MICROSCOPIC_PHYSICS.md",
+      "sha256": "abb7f49afc4cdcd5f4d66c25f33cc3aeb53150f51762cd3c005039538102bbd3",
+      "classification": "REPLAY_REQUIRED",
+      "role": "completed C equations"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/MICROSCOPIC_CONSTITUTION.md",
+      "sha256": "f700736bfb397a77f56115a129fbcf181e381a0e0db74474ec581e254126cb05",
+      "classification": "REPLAY_REQUIRED",
+      "role": "C theorem proof"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/C/MODULE_C_TO_D_SCIENTIFIC_HANDOFF.md",
+      "sha256": "f687ddd80fdb5a29a9cf4cb8719d510f2a35ef83655900ce22ba4246f0147a73",
+      "classification": "REPLAY_REQUIRED",
+      "role": "C->D child contract"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/C/MODULE_C_WOLFRAM_VERIFICATION.md",
+      "sha256": "4e75be0dfb990190021dbe7dc952c4084be61e9341c1713ff18d4c24d4663524",
+      "classification": "REPLAY_REQUIRED",
+      "role": "prior exact verification design"
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION"
 }
