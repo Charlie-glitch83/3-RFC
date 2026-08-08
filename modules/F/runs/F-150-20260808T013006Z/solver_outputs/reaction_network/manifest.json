@@ -3,7 +3,7 @@
   "generation_mode": "GENERATION_SEALED",
   "config_sha256": "2031edc310751cc0eb30a638d31a6a37630b8344789b2a9a84f4aaed97a6dbc8",
   "result_sha256": "9524efd3b424afe7e6f7e2712797196b566d637fff8dfa99906e13b51be847dc",
-  "environment_sha256": "828347e74ff753aedcf914469f3082998d16c1ab06683098734a32ce06071bca",
+  "environment_sha256": "366a2df32eb353c68f48ba18d2b88ac27851e67666188dc74b922a10d74081cb",
   "success": true,
   "classification": "REACTION_NETWORK_EXECUTION"
 }
