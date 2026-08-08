@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0",
+  "run_id": "F-150-20260808T013006Z",
+  "module": "F",
+  "status": "FROZEN_PRE_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "required_fidelity": "MINIMAL_SPINE",
+  "direct_parent": {
+    "object_id": "H_E_to_F",
+    "path": "modules/E/frozen/H_E_to_F.json",
+    "sha256": "975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf",
+    "run_id": "E-140-20260807T232334Z"
+  },
+  "ancestry": [
+    {
+      "object_id": "H_D_to_E",
+      "path": "modules/D/frozen/H_D_to_E.json",
+      "sha256": "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231"
+    },
+    {
+      "object_id": "H_C_to_D",
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+    },
+    {
+      "object_id": "H_B_to_C",
+      "path": "modules/B/frozen/H_B_to_C.json",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"
+    },
+    {
+      "object_id": "H_A_to_B",
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+    }
+  ],
+  "triadic_descent": {
+    "CIF": "The exact E terminal seven-state composite possibility space, its inherited reversible route family, protected carrier ledgers, constitutive energy and uncertainty state remain the only admitted post-nuclear possibilities at the F entry surface.",
+    "QV": "F continues only witnessed E routes, classifies bound/free persistence, transports the exact constitutive-energy/RFL ledger, propagates covariance, and refuses electromagnetic, photon, neutrino or atomic identities that lack a source-owned witness.",
+    "RFL": "The restartable post-nuclear persistence state, internal bound/free coordinate, route-activity transfer seed, energy-memory state, covariance, ancestry and explicit dormant/unassigned channels are stabilized as the F->G parent."
+  },
+  "scope_resolution": {
+    "historical_F_role": "Historical 2-RFC Module F science/proof files are procedure-only construction guidance under the recovery crosswalk. Their former PASS status, richer E-parent assumptions, empirical names, conventional coefficients and numerical results are not generative parents.",
+    "current_parent_fact": "H_E_to_F contains seven internally typed RFC composite species, a reversible route/rate registry, three protected carrier ledgers, constitutive energy transferred into RFL memory, covariance and restart ancestry. It explicitly leaves empirical isotope correspondence, Kelvin/MeV calibration, measured nuclear data and metric cosmology unassigned.",
+    "minimal_spine_consequence": "F may construct a real parent-driven post-nuclear persistence/transport state from those objects, but may not manufacture Standard-Model electric charges, electrons, photons, neutrinos, atomic labels, public ionization histories or textbook plasma coefficients. Missing physical identities are exported as typed unassigned or dormant zero-backreaction channels rather than silently filled."
+  },
+  "state_space": {
+    "species_order": ["X0", "X1", "X2", "B01", "B02", "B12", "T012"],
+    "species_identity_status": "INTERNAL_RFC_COMPOSITE_IDENTITIES_ONLY",
+    "empirical_isotope_correspondence": "UNASSIGNED",
+    "occupancy_vectors": {
+      "X0": [1, 0, 0],
+      "X1": [0, 1, 0],
+      "X2": [0, 0, 1],
+      "B01": [1, 1, 0],
+      "B02": [1, 0, 1],
+      "B12": [0, 1, 1],
+      "T012": [1, 1, 1]
+    },
+    "initial_composition": [
+      0.01586715781451039,
+      0.0021566344122218237,
+      0.0012624268897508102,
+      0.006667156204078111,
+      0.003902746437921267,
+      0.0005304539961466856,
+      0.319504355869066
+    ],
+    "entry_free_species_abundance": 0.019286219116483025,
+    "entry_free_carrier_occupancy": 0.019286219116483025,
+    "entry_bound_carrier_occupancy": 0.9807137808834901,
+    "internal_bound_free_coordinate": {
+      "symbol": "x_free_F",
+      "definition": "(X0+X1+X2)/Q_total",
+      "entry_value": 0.019286219116483025,
+      "interpretation": "internally derived free-carrier occupancy fraction only",
+      "forbidden_interpretation": "not an empirical electron ionization fraction, proton fraction, or textbook plasma ionization state"
+    }
+  },
+  "reaction_continuation_law": {
+    "principle": "No new F reaction coefficient is admitted before a new witnessed F route exists. The exact E reversible network therefore remains the source-owned residual post-nuclear route law over the declared F persistence interval.",
+    "compact_expression": "dy_F/dtau_F = S_E r_E(y_F), y_F(0)=y_E_out",
+    "stoichiometry": [
+      [-1, 1, -1, 1, 0, 0, 0, 0, 0, 0, -1, 1],
+      [-1, 1, 0, 0, -1, 1, 0, 0, -1, 1, 0, 0],
+      [0, 0, -1, 1, -1, 1, -1, 1, 0, 0, 0, 0],
+      [1, -1, 0, 0, 0, 0, -1, 1, 0, 0, 0, 0],
+      [0, 0, 1, -1, 0, 0, 0, 0, -1, 1, 0, 0],
+      [0, 0, 0, 0, 1, -1, 0, 0, 0, 0, -1, 1],
+      [0, 0, 0, 0, 0, 0, 1, -1, 1, -1, 1, -1]
+    ],
+    "rate_expressions": [
+      "kf2*X0*X1",
+      "kr2*B01",
+      "kf2*X0*X2",
+      "kr2*B02",
+      "kf2*X1*X2",
+      "kr2*B12",
+      "kf3*B01*X2",
+      "kr3*T012",
+      "kf3*B02*X1",
+      "kr3*T012",
+      "kf3*B12*X0",
+      "kr3*T012"
+    ],
+    "parameters": {
+      "kf2": 0.1499430216517723,
+      "kr2": 0.0007695933391028973,
+      "kf3": 0.2998860433035446,
+      "kr3": 7.899986289019092e-06
+    },
+    "entry_directional_fluxes": [
+      5.130999005417071e-06,
+      5.130999005417071e-06,
+      3.003527662831766e-06,
+      3.003527662831766e-06,
+      4.082338621350032e-07,
+      4.082338621350032e-07,
+      2.5240800306474977e-06,
+      2.524080030647498e-06,
+      2.5240800306474977e-06,
+      2.524080030647498e-06,
+      2.5240800306474977e-06,
+      2.524080030647498e-06
+    ],
+    "entry_net_family_fluxes": [0.0, 0.0, 0.0, -4.235164736271502e-22, -4.235164736271502e-22, -4.235164736271502e-22],
+    "entry_rhs_max_abs": 1.2705494208814505e-21,
+    "entry_total_directional_route_activity": 3.2230001244652664e-05,
+    "route_activity_interpretation": "nonnegative internal event/interaction activity despite near-zero net composition drift"
+  },
+  "protected_carrier_ledgers": {
+    "Q0": [1, 0, 0, 1, 1, 0, 1],
+    "Q1": [0, 1, 0, 1, 0, 1, 1],
+    "Q2": [0, 0, 1, 0, 1, 1, 1],
+    "Q_total": [1, 1, 1, 2, 2, 2, 3],
+    "entry_values": [0.3459414163255758, 0.3288586004815126, 0.3251999831928848],
+    "electromagnetic_charge_status": "NOT_DERIVED_AT_MINIMAL_SPINE",
+    "charge_gate_rule": "The mandatory 'charge neutrality where derived' gate passes only if all actually derived carrier charges/neutral subspaces are preserved and no electromagnetic charge assignment is fabricated. No state-level electric-neutrality claim is made without an electromagnetic charge operator."
+  },
+  "energy_memory_law": {
+    "species_energy": [
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.0
+    ],
+    "entry_constitutive_energy": 0.009112509972599138,
+    "entry_RFL_memory": 0.2907735333309454,
+    "protected_total": 0.29988604330354457,
+    "transport_lift": "Append RFL_M to y_F and impose dRFL_M/dtau_F = -dU_F/dtau_F exactly, so U_F+RFL_M is a linear invariant of the eight-state transport solve.",
+    "radiation_typing": "RFL_M is inherited constitutive-energy memory. It is not silently relabeled as a photon bath or measured radiation energy."
+  },
+  "transport_model": {
+    "state_names": ["X0", "X1", "X2", "B01", "B02", "B12", "T012", "RFL_M"],
+    "parameters": {
+      "kf2": 0.1499430216517723,
+      "kr2": 0.0007695933391028973,
+      "kf3": 0.2998860433035446,
+      "kr3": 7.899986289019092e-06,
+      "eC": 0.2998860433035446
+    },
+    "rhs_expressions": [
+      "B01*kr2 + B02*kr2 + kr3*T012 - B12*kf3*X0 - kf2*X0*X1 - kf2*X0*X2",
+      "B01*kr2 + B12*kr2 + kr3*T012 - B02*kf3*X1 - kf2*X0*X1 - kf2*X1*X2",
+      "B02*kr2 + B12*kr2 + kr3*T012 - B01*kf3*X2 - kf2*X0*X2 - kf2*X1*X2",
+      "-B01*kr2 + kr3*T012 + kf2*X0*X1 - B01*kf3*X2",
+      "-B02*kr2 + kr3*T012 - B02*kf3*X1 + kf2*X0*X2",
+      "-B12*kr2 + kr3*T012 - B12*kf3*X0 + kf2*X1*X2",
+      "-3*kr3*T012 + B12*kf3*X0 + B02*kf3*X1 + B01*kf3*X2",
+      "-B01*eC*kr2 - B02*eC*kr2 - B12*eC*kr2 - 6*eC*kr3*T012 + 2*B12*eC*kf3*X0 + 2*B02*eC*kf3*X1 + eC*kf2*X0*X1 + 2*B01*eC*kf3*X2 + eC*kf2*X0*X2 + eC*kf2*X1*X2"
+    ],
+    "initial_state": [
+      0.01586715781451039,
+      0.0021566344122218237,
+      0.0012624268897508102,
+      0.006667156204078111,
+      0.003902746437921267,
+      0.0005304539961466856,
+      0.319504355869066,
+      0.2907735333309454
+    ],
+    "linear_invariants": {
+      "Q0": [1, 0, 0, 1, 1, 0, 1, 0],
+      "Q1": [0, 1, 0, 1, 0, 1, 1, 0],
+      "Q2": [0, 0, 1, 0, 1, 1, 1, 0],
+      "Q_total": [1, 1, 1, 2, 2, 2, 3, 0],
+      "U_plus_RFL": [0.2998860433035446, 0.2998860433035446, 0.2998860433035446, 0.2998860433035446, 0.2998860433035446, 0.2998860433035446, 0.0, 1.0]
+    }
+  },
+  "transport_and_opacity_ownership": {
+    "internal_interaction_activity_seed": "kappa_int_F(y)=sum_j r_j(y)>=0 over the exact inherited directional route family",
+    "entry_kappa_int_F": 3.2230001244652664e-05,
+    "units": "inverse intrinsic tau_F times represented abundance factors",
+    "ownership": "F owns this internal route-activity/transfer seed because it is a direct moment of the exact inherited F-active event family.",
+    "physical_opacity_status": "NOT_DERIVED_AS_ELECTROMAGNETIC_PHOTON_OPACITY",
+    "handoff_rule": "G may inherit kappa_int_F and the full route graph as source-transfer evidence, but must derive any photon opacity/optical-depth law from an independently witnessed radiation/charge specialization rather than retyping kappa_int_F by name."
+  },
+  "radiation_and_neutrino_channels": {
+    "radiation": {
+      "status": "CONSTITUTIVE_ENERGY_MEMORY_PRESENT_PHOTON_IDENTITY_UNASSIGNED",
+      "state": "RFL_M with exact U+RFL conservation",
+      "backreaction": "exactly the inherited constitutive-energy ledger only",
+      "not_claimed": ["photon number distribution", "frequency spectrum", "polarization", "electromagnetic scattering cross section"]
+    },
+    "neutrino": {
+      "status": "DORMANT_NO_PARENT_WITNESS_ZERO_BACKREACTION",
+      "state": [],
+      "backreaction": 0.0,
+      "reason": "No independent neutrino/lepton carrier, interaction or source-owned witness exists in H_E_to_F or its current frozen ancestry."
+    }
+  },
+  "clock_and_numerics": {
+    "clock": "tau_F, dimensionless intrinsic continuation coordinate with tau_F=0 at the exact E->F handoff",
+    "physical_seconds_claimed": false,
+    "metric_or_FRW_time_claimed": false,
+    "horizon_rule": "Use exactly one slowest inherited active reverse-route timescale, Delta_tau_F=1/kr3. This is a persistence test horizon, not a recombination age or public cosmological coordinate.",
+    "t_span": [0.0, 126582.49817344503],
+    "method": "BDF",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "max_step": 988.9257672925393,
+    "max_step_rule": "Delta_tau_F/128",
+    "positivity_tolerance": 1e-12,
+    "invariant_tolerance": 1e-09,
+    "convergence_matrix": [64, 128, 256, 512]
+  },
+  "covariance_law": {
+    "input": "H_E_to_F.uncertainty.final_state_covariance",
+    "extension": "Let L map delta y_E to (delta y_E, delta RFL_M) with delta RFL_M=-e_C*(delta X0+delta X1+delta X2+delta B01+delta B02+delta B12). Then Sigma_F,0=L Sigma_E L^T.",
+    "propagation": "Because the exact E terminal composition is a fixed point to numerical residual, propagate linearized uncertainty with Phi_F=exp(J_F(y_entry)*Delta_tau_F) and Sigma_F=Phi_F Sigma_F,0 Phi_F^T. No stochastic process noise is admitted because the parent supplies none.",
+    "psd_tolerance": 1e-18,
+    "empirical_stochastic_uncertainty_claimed": false
+  },
+  "wolfram_program_status": {
+    "F-WL-001": "manufactured charge-stoichiometry algebra check only; not the actual F charge assignment",
+    "F-WL-002": "manufactured covariance congruence check only; not the actual F covariance map",
+    "program_correction_policy": "The original F-WL-002 source uses protected Wolfram symbol C. Preserve the verbatim failed pre-lock attempt, record a syntax-only correction C->cov, and rerun the complete listed Wolfram sequence after PRE_EXECUTION_LOCK is frozen. Matrix, transfer, expectations and scientific decision remain unchanged."
+  },
+  "countermodels_and_ablations": [
+    {
+      "id": "F-CM-001",
+      "name": "TEXTBOOK_PLASMA_RESET",
+      "rejection": "Any e/p/H or empirical isotope/electric-charge reset that is not reconstructed from H_E_to_F fails exact species and ancestry identity."
+    },
+    {
+      "id": "F-CM-002",
+      "name": "SCALAR_COMPOSITION_COLLAPSE",
+      "rejection": "Replacing the seven-state composition by Q_total alone loses Q0/Q1/Q2, bound/free occupancy, route activity and covariance and therefore fails no-loss reconstruction."
+    },
+    {
+      "id": "F-CM-003",
+      "name": "DROP_ACTIVE_ROUTE_FAMILY",
+      "rejection": "Removing an inherited route family changes the declared directional activity/transfer state even when detailed-balance net flux is near zero; no route may be silently retired without a materiality proof."
+    },
+    {
+      "id": "F-CM-004",
+      "name": "FABRICATED_EM_CHARGE_OR_NEUTRINO",
+      "rejection": "Assigning electromagnetic charge, photons or neutrinos without a frozen source witness violates generation sealing; unwitnessed channels remain explicitly unassigned or dormant with zero backreaction."
+    },
+    {
+      "id": "F-CM-005",
+      "name": "DROP_RFL_ENERGY_MEMORY",
+      "rejection": "Removing RFL_M breaks the protected U+RFL ledger inherited from E and fails energy accounting."
+    }
+  ],
+  "expected_gates": {
+    "charge neutrality where derived": "PASS iff actual protected carrier charges/neutral subspace are preserved and no electromagnetic neutrality is fabricated",
+    "energy and particle accounting": "PASS iff Q0/Q1/Q2/Q_total and U+RFL drift remain <=1e-9",
+    "covariance positive semidefinite": "PASS iff propagated Sigma_F is symmetric and lambda_min>=-1e-18",
+    "replay from E": "PASS iff exact H_E_to_F bytes/hash reconstruct the F initial state, route law, rates, energy ledger and clean primary endpoint"
+  },
+  "independent_verification_design": "Independently reconstruct the seven-state RHS and eight-state energy-memory lift directly from H_E_to_F without reading primary solver summaries; integrate with DOP853, verify fixed-point persistence, carrier/energy ledgers, route activity, covariance PSD, restart split-vs-direct equality, max-step convergence, exact-parent replay and all countermodels.",
+  "claim_boundary": "At MINIMAL_SPINE fidelity Module F may establish a deterministic, positive, restartable post-nuclear RFC composite persistence/transport state that continues the exact E reversible route law, preserves three carrier ledgers and constitutive-energy/RFL memory, derives an internal bound/free occupancy coordinate and nonnegative inherited route-activity transfer seed, and propagates the inherited covariance without loss. It does not establish Standard-Model isotope/electron/ion identities, electromagnetic charge or neutrality, a physical photon or neutrino distribution, measured opacity, atomic data, Kelvin/MeV calibration, metric/FRW expansion, a public recombination coordinate, visibility/last scattering, or empirical agreement. Those absent identities may not be inserted downstream without a new witnessed derivation."
+}
