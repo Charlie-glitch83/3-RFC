@@ -1,13 +1,28 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
+  "run_id": "E-140-20260807T232334Z",
+  "status": "CAPTURED",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
+  "software": [
+    {
+      "name": "numpy",
+      "version": "2.3.5"
+    },
+    {
+      "name": "scipy",
+      "version": "1.17.0"
+    }
+  ],
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
+  "imports": [
+    "numpy",
+    "scipy",
+    "sympy via ReactionNetwork"
+  ],
+  "commands": [
+    "verification/verify_e140.py"
+  ],
+  "network_policy": "DISABLED_FOR_SCIENTIFIC_GENERATION; GitHub transport only",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true
 }

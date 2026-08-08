@@ -1,0 +1,24 @@
+{
+  "primary_result_sha256": "af35ffc3b4a1b15c6423007d687aa6119b0680d7085a4abac34573aebb5bf5bb",
+  "config_sha256": "5fc9cf9f03fe872894717ded8b6f7ee70b12e61484219bbed500b9a070d15d16",
+  "frozen_derivation_sha256": "b54571be30f4ffad4c4eace1f623609263ac648c65b081ada9b73db18dfddeab",
+  "primary_final": [
+    0.015867157814510164,
+    0.002156634412221851,
+    0.0012624268897508133,
+    0.0066671562040781,
+    0.0039027464379212205,
+    0.0005304539961466936,
+    0.3195043558690663
+  ],
+  "primary_minimum_abundance": 0.0,
+  "convergence_pass": true,
+  "withheld_pass": false,
+  "scalar_pass": true,
+  "restart_pass": true,
+  "replay_pass": true,
+  "independent_pass": true,
+  "covariance_pass": true,
+  "freeze_pass": true,
+  "gates_overall": "FAIL"
+}

@@ -1,0 +1,9 @@
+{
+  "method": "DIRECT_PARENT_RECONSTRUCTION_PLUS_SCIPY_DOP853",
+  "parent_matrix_reconstruction_linf": 1.1102230246251565e-16,
+  "stoichiometry_reconstruction_linf": 0.0,
+  "final_linf_vs_primary": 8.326672684688674e-15,
+  "max_carrier_invariant_drift": 3.885780586188048e-16,
+  "tolerance": 1e-08,
+  "pass": true
+}

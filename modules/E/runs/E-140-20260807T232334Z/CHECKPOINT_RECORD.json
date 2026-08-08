@@ -1,7 +1,15 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "E-140-20260807T232334Z",
+  "checkpoints": [
+    {
+      "checkpoint_id": "E140-MIDPOINT",
+      "state_path": "verification/checkpoint_midpoint.json",
+      "state_sha256": "06879ed6fd1f4fdc493f3d6b3795e039444cca8366fda8b717b311be08fa05b2",
+      "restart_test": "PASS",
+      "restart_linf": 0.0
+    }
+  ],
+  "restart_contract": "Restart from exact tau_E=t_end/2 species state under unchanged frozen E law and reproduce the full final state.",
+  "state_schema": "E140 seven-state MINIMAL_SPINE reaction network",
   "hash_algorithm": "sha256"
 }

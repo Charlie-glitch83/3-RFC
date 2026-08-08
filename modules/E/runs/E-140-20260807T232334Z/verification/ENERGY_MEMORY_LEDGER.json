@@ -1,0 +1,18 @@
+{
+  "species_constitutive_energies": [
+    0.2998860433035446,
+    0.2998860433035446,
+    0.2998860433035446,
+    0.2998860433035446,
+    0.2998860433035446,
+    0.2998860433035446,
+    0.0
+  ],
+  "U_initial": 0.29988604330354457,
+  "U_final": 0.009112509972599065,
+  "Q_RFL_final": 0.2907735333309455,
+  "max_ledger_residual": 5.551115123125783e-17,
+  "tolerance": 1e-09,
+  "pass": true,
+  "scope": "dimensionless constitutive-energy/RFL-memory ledger only"
+}

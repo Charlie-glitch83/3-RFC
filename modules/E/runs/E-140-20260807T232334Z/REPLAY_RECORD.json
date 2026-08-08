@@ -1,10 +1,17 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "E-140-20260807T232334Z",
+  "status": "PASS",
+  "clean_checkout": true,
+  "restart_check": true,
+  "earliest_change_replay": true,
+  "commands": [
+    "fresh Actions checkout",
+    "load committed provenance-bound solver config",
+    "rerun unchanged BDF execution"
+  ],
+  "result": "PASS",
+  "artifact_hashes_match": true,
+  "primary_result_sha256": "af35ffc3b4a1b15c6423007d687aa6119b0680d7085a4abac34573aebb5bf5bb",
+  "replay_result_sha256": "af35ffc3b4a1b15c6423007d687aa6119b0680d7085a4abac34573aebb5bf5bb",
+  "final_linf": 0.0
 }
