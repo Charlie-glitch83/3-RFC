@@ -6,6 +6,11 @@ on:
       - agent/frontier-050-execution
     paths:
       - '.github/science-lineage-repair-resume-trigger.txt'
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/science-lineage-repair-resume-trigger.txt'
 
 permissions:
   contents: write
