@@ -1,42 +1,42 @@
 # Current Context
 
-Generated: 2026-08-08T01:30:09.928122+00:00
+Generated: 2026-08-08T02:10:37.597743+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `F-150` — Close Module F: Post-Nuclear Plasma and Radiation Persistence
-- Current module: `F`
+- Active work unit: `G-160` — Close Module G: Nonequilibrium Recombination and Last-Scattering State
+- Current module: `G`
 - Last verified commit: `4a9f3f5e5b76c9612120b427cffd60642c891662`
 
 ## Strongest supported claim
 
-From the exact frozen D three-carrier state, Module E derives and physically executes a source-owned seven-state reversible primordial-composite reaction network with parent-derived binding and rates, exact internal carrier accounting, positive abundance dynamics, material witnessed reaction routes, constitutive binding-memory transfer, convergence, freeze-out, covariance, restart/replay and independent reconstruction.
+From the exact frozen E seven-state composite handoff, Module F executes a parent-driven post-nuclear persistence/transport continuation that preserves the three carrier ledgers and constitutive-energy/RFL no-loss ledger, maintains positivity, propagates covariance as PSD, survives convergence/restart/clean replay and independent DOP853 reconstruction, and exports an internal bound/free coordinate plus inherited route-activity transfer seed without fabricating unwitnessed particle identities.
 
 ## Strongest unsupported claim
 
-Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics.
+Module F does not establish Standard Model isotope/electron/ion identities, electromagnetic charge or physical electric neutrality, a photon or neutrino distribution, measured opacity or atomic rates, Kelvin/MeV/SI calibration, metric/FRW expansion, a physical recombination time, visibility/last scattering, or empirical agreement.
 
 ## Immediate objective
 
-Carry isotope, plasma, radiation, neutrino, and transport states from nucleosynthesis into recombination without losing lineage or covariance.
+Generate recombination, visibility, opacity, and radiation-surface histories from the physical plasma state.
 
 ## Required deliverables
 
-- modules/F/runs/<RUN_ID>/RUN_PLAN.md
-- modules/F/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/F/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/F/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/F/runs/<RUN_ID>/CLOSEOUT.md
+- modules/G/runs/<RUN_ID>/RUN_PLAN.md
+- modules/G/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/G/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/G/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/G/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- charge neutrality where derived
-- energy and particle accounting
-- covariance positive semidefinite
-- replay from E
+- rate and opacity lineage
+- normalization and positivity
+- stiff convergence
+- independent reconstruction
 
 ## Module states
 
@@ -45,7 +45,7 @@ Carry isotope, plasma, radiation, neutrino, and transport states from nucleosynt
 - C: `FROZEN` / `MINIMAL_SPINE`
 - D: `FROZEN` / `MINIMAL_SPINE`
 - E: `FROZEN` / `MINIMAL_SPINE`
-- F: `DESIGN` / `UNSTARTED`
+- F: `FROZEN` / `MINIMAL_SPINE`
 - G: `DESIGN` / `UNSTARTED`
 - HU: `DESIGN` / `UNSTARTED`
 - I: `DESIGN` / `UNSTARTED`
@@ -63,7 +63,7 @@ Carry isotope, plasma, radiation, neutrino, and transport states from nucleosynt
 ## Memory counts
 
 - admitted sources: 29
-- frozen artifacts: 10
+- frozen artifacts: 11
 - indexed runs: 11
 
 ## Recent runs
@@ -75,18 +75,18 @@ Carry isotope, plasma, radiation, neutrino, and transport states from nucleosynt
 - C-120-20260807T032543Z: PASS (C)
 - D-130-20260807T220342Z: PASS (D)
 - E-140-20260807T232334Z: PASS (E)
-- F-150-20260808T013006Z: CREATED (F)
+- F-150-20260808T013006Z: PASS (F)
 
 ## Recent decisions
 
-- ADVANCE-D-130-20260807T232330Z: Marked D-130 PASS and activated E-140
-- PROMOTE-E-FORMALIZED-20260808T010553Z: Promoted Module E from DESIGN to FORMALIZED at MINIMAL_SPINE
-- PROMOTE-E-IMPLEMENTED-20260808T010553Z: Promoted Module E from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
-- PROMOTE-E-VERIFIED-20260808T010553Z: Promoted Module E from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
-- PROMOTE-E-PHYSICALLY_EXECUTED-20260808T010553Z: Promoted Module E from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
-- PROMOTE-E-INDEPENDENTLY_REPRODUCED-20260808T010553Z: Promoted Module E from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
-- PROMOTE-E-FROZEN-20260808T010553Z: Promoted Module E from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 - ADVANCE-E-140-20260808T010554Z: Marked E-140 PASS and activated F-150
+- PROMOTE-F-FORMALIZED-20260808T021034Z: Promoted Module F from DESIGN to FORMALIZED at MINIMAL_SPINE
+- PROMOTE-F-IMPLEMENTED-20260808T021034Z: Promoted Module F from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
+- PROMOTE-F-VERIFIED-20260808T021034Z: Promoted Module F from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
+- PROMOTE-F-PHYSICALLY_EXECUTED-20260808T021034Z: Promoted Module F from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
+- PROMOTE-F-INDEPENDENTLY_REPRODUCED-20260808T021034Z: Promoted Module F from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
+- PROMOTE-F-FROZEN-20260808T021035Z: Promoted Module F from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-F-150-20260808T021035Z: Marked F-150 PASS and activated G-160
 
 ## Recent failures
 

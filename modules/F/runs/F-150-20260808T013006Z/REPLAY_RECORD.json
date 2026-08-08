@@ -1,10 +1,36 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "F-150-20260808T013006Z",
+  "status": "FINAL",
+  "clean_checkout": true,
+  "restart_check": true,
+  "earliest_change_replay": true,
+  "commands": [
+    "python tools/run_configured_solver.py --config <frozen F reaction config> --output-dir /tmp/f150-replay-rn",
+    "python tools/run_configured_solver.py --config <frozen F transport config> --output-dir /tmp/f150-replay-tr",
+    "existing frozen split-restart and independent DOP853 matrix"
+  ],
+  "result": "PASS",
+  "artifact_hashes_match": true,
+  "artifacts": [
+    {
+      "canonical": "modules/F/runs/F-150-20260808T013006Z/solver_outputs/reaction_network/result.json",
+      "canonical_sha256": "9524efd3b424afe7e6f7e2712797196b566d637fff8dfa99906e13b51be847dc",
+      "replay_sha256": "9524efd3b424afe7e6f7e2712797196b566d637fff8dfa99906e13b51be847dc",
+      "exact_match": true
+    },
+    {
+      "canonical": "modules/F/runs/F-150-20260808T013006Z/solver_outputs/transport/result.json",
+      "canonical_sha256": "044020cc5213212ee1272a1dceef446a7a7851246c65a9e2fe46e4c09b47791a",
+      "replay_sha256": "044020cc5213212ee1272a1dceef446a7a7851246c65a9e2fe46e4c09b47791a",
+      "exact_match": true
+    }
+  ],
+  "basis": {
+    "execution_actions_run": 31234134175,
+    "execution_commit": "ba40af837926f9fe5e499adbe0b17c424a6ec326",
+    "parent_replay_linf": 0.0,
+    "dual_solver_linf": 1.734723475976807e-18,
+    "independent_linf": 3.469446951953614e-18
+  },
+  "note": "Controller replay record projected from a fresh clean-checkout exact rerun of both frozen configs plus the already-frozen restart/independent matrix. No science, threshold, source, config or solver setting changed."
 }

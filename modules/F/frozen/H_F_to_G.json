@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "object_id": "H_F_to_G",
+  "from_module": "F",
+  "to_module": "G",
+  "run_id": "F-150-20260808T013006Z",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "object_id": "H_E_to_F",
+    "path": "modules/E/frozen/H_E_to_F.json",
+    "sha256": "975c4fcdfa2f4f861dd3085e14678116377bbe4d0fc23dd4e51f4373f9c2ecbf"
+  },
+  "triadic_descent": {
+    "CIF": "The exact E terminal seven-state composite possibility space, its inherited reversible route family, protected carrier ledgers, constitutive energy and uncertainty state remain the only admitted post-nuclear possibilities at the F entry surface.",
+    "QV": "F continues only witnessed E routes, classifies bound/free persistence, transports the exact constitutive-energy/RFL ledger, propagates covariance, and refuses electromagnetic, photon, neutrino or atomic identities that lack a source-owned witness.",
+    "RFL": "The restartable post-nuclear persistence state, internal bound/free coordinate, route-activity transfer seed, energy-memory state, covariance, ancestry and explicit dormant/unassigned channels are stabilized as the F->G parent."
+  },
+  "clock": "tau_F, dimensionless intrinsic continuation coordinate with tau_F=0 at the exact E->F handoff",
+  "frame": "A-F finite relational pregeometry; no metric/FRW geometry introduced in F",
+  "species": {
+    "order": [
+      "X0",
+      "X1",
+      "X2",
+      "B01",
+      "B02",
+      "B12",
+      "T012"
+    ],
+    "occupancy_vectors": {
+      "X0": [
+        1,
+        0,
+        0
+      ],
+      "X1": [
+        0,
+        1,
+        0
+      ],
+      "X2": [
+        0,
+        0,
+        1
+      ],
+      "B01": [
+        1,
+        1,
+        0
+      ],
+      "B02": [
+        1,
+        0,
+        1
+      ],
+      "B12": [
+        0,
+        1,
+        1
+      ],
+      "T012": [
+        1,
+        1,
+        1
+      ]
+    },
+    "identity_status": "INTERNAL_RFC_COMPOSITE_IDENTITIES_ONLY",
+    "empirical_isotope_correspondence": "UNASSIGNED"
+  },
+  "composition": {
+    "entry": [
+      0.01586715781451039,
+      0.0021566344122218237,
+      0.0012624268897508102,
+      0.006667156204078111,
+      0.003902746437921267,
+      0.0005304539961466856,
+      0.319504355869066
+    ],
+    "terminal": [
+      0.01586715781451039,
+      0.002156634412221824,
+      0.00126242688975081,
+      0.0066671562040781125,
+      0.0039027464379212664,
+      0.0005304539961466857,
+      0.319504355869066
+    ],
+    "minimum_state": 0.0005304539961466857,
+    "dual_solver_terminal_linf": 1.734723475976807e-18
+  },
+  "internal_bound_free_coordinate": {
+    "definition": "(X0+X1+X2)/Q_total",
+    "entry_value": 0.019286219116483025,
+    "terminal_value": 0.019286219116483542,
+    "interpretation": "internally derived free-carrier occupancy fraction only",
+    "forbidden_interpretation": "not an empirical electron ionization fraction, proton fraction, or textbook plasma ionization state"
+  },
+  "residual_route_network": {
+    "stoichiometry": [
+      [
+        -1,
+        1,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1
+      ],
+      [
+        -1,
+        1,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    ],
+    "rate_expressions": [
+      "kf2*X0*X1",
+      "kr2*B01",
+      "kf2*X0*X2",
+      "kr2*B02",
+      "kf2*X1*X2",
+      "kr2*B12",
+      "kf3*B01*X2",
+      "kr3*T012",
+      "kf3*B02*X1",
+      "kr3*T012",
+      "kf3*B12*X0",
+      "kr3*T012"
+    ],
+    "parameters": {
+      "kf2": 0.1499430216517723,
+      "kr2": 0.0007695933391028973,
+      "kf3": 0.2998860433035446,
+      "kr3": 7.899986289019092e-06
+    },
+    "terminal_directional_fluxes": [
+      5.130999005417072e-06,
+      5.1309990054170724e-06,
+      3.0035276628317655e-06,
+      3.003527662831766e-06,
+      4.082338621350032e-07,
+      4.0823386213500326e-07,
+      2.524080030647498e-06,
+      2.524080030647498e-06,
+      2.524080030647498e-06,
+      2.524080030647498e-06,
+      2.5240800306474985e-06,
+      2.524080030647498e-06
+    ],
+    "terminal_total_directional_route_activity": 3.223000124465267e-05,
+    "physical_photon_opacity_status": "NOT_DERIVED"
+  },
+  "protected_carrier_ledgers": {
+    "Q0": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    "Q1": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "Q2": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "Q_total": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3
+    ]
+  },
+  "electromagnetic_charge_status": "NOT_DERIVED_AT_MINIMAL_SPINE",
+  "energy_memory": {
+    "species_constitutive_energies": [
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.2998860433035446,
+      0.0
+    ],
+    "RFL_M_terminal": 0.2907735333309454,
+    "protected_total": 0.29988604330354457,
+    "scope": "RFL_M is inherited constitutive-energy memory. It is not silently relabeled as a photon bath or measured radiation energy."
+  },
+  "radiation_channel": {
+    "status": "CONSTITUTIVE_ENERGY_MEMORY_PRESENT_PHOTON_IDENTITY_UNASSIGNED",
+    "state": "RFL_M with exact U+RFL conservation",
+    "backreaction": "exactly the inherited constitutive-energy ledger only",
+    "not_claimed": [
+      "photon number distribution",
+      "frequency spectrum",
+      "polarization",
+      "electromagnetic scattering cross section"
+    ]
+  },
+  "neutrino_channel": {
+    "status": "DORMANT_NO_PARENT_WITNESS_ZERO_BACKREACTION",
+    "state": [],
+    "backreaction": 0.0,
+    "reason": "No independent neutrino/lepton carrier, interaction or source-owned witness exists in H_E_to_F or its current frozen ancestry."
+  },
+  "uncertainty": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_PLUS_NUMERICAL_ERROR",
+    "covariance": [
+      [
+        2.5795727952462472e-14,
+        -1.93349472815046e-15,
+        -9.700031376773914e-16,
+        4.861673466160082e-15,
+        3.3460861505989724e-15,
+        -8.831513661188737e-16,
+        -1.251381550687225e-14,
+        -9.061608090107595e-15
+      ],
+      [
+        -1.93349472815046e-15,
+        1.4492329391467012e-16,
+        7.27056804304122e-17,
+        -3.644022000113843e-16,
+        -2.508027664140638e-16,
+        6.61957869030284e-17,
+        9.379613692686487e-16,
+        6.792043823330071e-16
+      ],
+      [
+        -9.700031376773914e-16,
+        7.27056804304122e-17,
+        3.6475267875443715e-17,
+        -1.8281470967791876e-16,
+        -1.2582370503318867e-16,
+        3.32093592302603e-17,
+        4.705600992675323e-16,
+        3.407458900174853e-16
+      ],
+      [
+        4.861673466160082e-15,
+        -3.644022000113843e-16,
+        -1.8281470967791876e-16,
+        9.162706683539467e-16,
+        6.306307107814118e-16,
+        -1.6644591581891554e-16,
+        -2.358455823473357e-15,
+        -1.7078246325756736e-15
+      ],
+      [
+        3.3460861505989724e-15,
+        -2.508027664140638e-16,
+        -1.2582370503318867e-16,
+        6.306307107814118e-16,
+        4.3403669583983034e-16,
+        -1.1455775004677834e-16,
+        -1.6232263278570255e-15,
+        -1.1754241395447493e-15
+      ],
+      [
+        -8.831513661188737e-16,
+        6.61957869030284e-17,
+        3.32093592302603e-17,
+        -1.6644591581891554e-16,
+        -1.1455775004677834e-16,
+        3.023587226981814e-17,
+        4.2842726829109737e-16,
+        3.102363142749929e-16
+      ],
+      [
+        -1.251381550687225e-14,
+        9.379613692686487e-16,
+        4.705600992675323e-16,
+        -2.358455823473357e-15,
+        -1.6232263278570255e-15,
+        4.2842726829109737e-16,
+        6.0706012572560635e-15,
+        4.395894236602403e-15
+      ],
+      [
+        -9.061608090107595e-15,
+        6.792043823330071e-16,
+        3.407458900174853e-16,
+        -1.7078246325756736e-15,
+        -1.1754241395447493e-15,
+        3.102363142749929e-16,
+        4.395894236602403e-15,
+        3.183191469921976e-15
+      ]
+    ],
+    "minimum_covariance_eigenvalue": -3.6352988147566336e-30,
+    "maximum_covariance_eigenvalue": 3.661146247788715e-14,
+    "empirical_stochastic_uncertainty_claimed": false
+  },
+  "verification": {
+    "gates_overall": "PASS",
+    "reaction_result_sha256": "9524efd3b424afe7e6f7e2712797196b566d637fff8dfa99906e13b51be847dc",
+    "transport_result_sha256": "044020cc5213212ee1272a1dceef446a7a7851246c65a9e2fe46e4c09b47791a",
+    "independent_reconstruction_sha256": "24231d74dd0cd07453c2035c8edac2984c6a19eda2d0565b239ca7968d1ed6cf",
+    "clean_replay": "PASS",
+    "restart": "PASS",
+    "convergence": "PASS",
+    "countermodels": "PASS",
+    "independent_transport_linf": 3.469446951953614e-18
+  },
+  "restart_contract": "G receives the exact seven-component internally typed F terminal composition, inherited residual reversible route graph/rates, three protected carrier ledgers, internal bound/free coordinate, constitutive-energy/RFL memory, nonnegative internal route-activity transfer seed, propagated covariance, dormant/unassigned physical channels, intrinsic tau_F chronology and complete A-F ancestry. G may derive recombination/atomic specialization only from newly witnessed source-owned objects; it may not reinterpret internal coordinates as empirical electrons/ions/photons or import public recombination histories during generation.",
+  "strongest_supported_claim": "From the exact frozen E seven-state composite handoff, Module F executes a parent-driven post-nuclear persistence/transport continuation that preserves the three carrier ledgers and constitutive-energy/RFL no-loss ledger, maintains positivity, propagates covariance as PSD, survives convergence/restart/clean replay and independent DOP853 reconstruction, and exports an internal bound/free coordinate plus inherited route-activity transfer seed without fabricating unwitnessed particle identities.",
+  "strongest_unsupported_claim": "Module F does not establish Standard Model isotope/electron/ion identities, electromagnetic charge or physical electric neutrality, a photon or neutrino distribution, measured opacity or atomic rates, Kelvin/MeV/SI calibration, metric/FRW expansion, a physical recombination time, visibility/last scattering, or empirical agreement.",
+  "claim_boundary": "MINIMAL_SPINE internally typed RFC post-nuclear persistence/transport state only."
+}

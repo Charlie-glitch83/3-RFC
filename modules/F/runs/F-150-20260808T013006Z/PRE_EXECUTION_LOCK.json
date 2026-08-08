@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "run_id": "F-150-20260808T013006Z",
-  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "status": "FROZEN",
   "frozen_utc": "2026-08-08T02:04:43.913768+00:00",
   "authority_hashes": [
     "b4aa226ef4185da09330375afc51ff1959147bce1d3b4770226876840984403d",
@@ -92,5 +92,7 @@
   "independent_verifier_design": "Independently reconstruct the seven-state RHS and eight-state energy-memory lift directly from H_E_to_F without reading primary solver summaries; integrate with DOP853, verify fixed-point persistence, carrier/energy ledgers, route activity, covariance PSD, restart split-vs-direct equality, max-step convergence, exact-parent replay and all countermodels.",
   "allowed_implementation_only_corrections": [
     "syntax/name changes that do not alter matrices/equations/values/tests/thresholds/claim scope; preserve failed attempt and rerun full frozen matrix"
-  ]
+  ],
+  "frozen_before_primary_execution": true,
+  "controller_normalization": "Administrative status normalization only after successful execution/replay; original lock hash preserved in ADMINISTRATIVE_CLOSEOUT_LEDGER.json."
 }

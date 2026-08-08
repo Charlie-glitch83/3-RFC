@@ -1,0 +1,15 @@
+{
+  "claim_id": "RFC-F-150-POST-NUCLEAR-PERSISTENCE-20260808",
+  "text": "From the exact frozen E seven-state composite handoff, Module F executes a parent-driven post-nuclear persistence/transport continuation that preserves the three carrier ledgers and constitutive-energy/RFL no-loss ledger, maintains positivity, propagates covariance as PSD, survives convergence/restart/clean replay and independent DOP853 reconstruction, and exports an internal bound/free coordinate plus inherited route-activity transfer seed without fabricating unwitnessed particle identities.",
+  "owner": "F",
+  "evidence_state": "FROZEN",
+  "fidelity": "MINIMAL_SPINE",
+  "supported": true,
+  "evidence": [
+    "modules/F/frozen/H_F_to_G.json",
+    "modules/F/runs/F-150-20260808T013006Z/GATE_RESULTS.json",
+    "modules/F/runs/F-150-20260808T013006Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+    "modules/F/runs/F-150-20260808T013006Z/REPLAY_RECORD.json"
+  ],
+  "strongest_unsupported_claim": "Module F does not establish Standard Model isotope/electron/ion identities, electromagnetic charge or physical electric neutrality, a photon or neutrino distribution, measured opacity or atomic rates, Kelvin/MeV/SI calibration, metric/FRW expansion, a physical recombination time, visibility/last scattering, or empirical agreement."
+}

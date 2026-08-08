@@ -2,9 +2,11 @@
   "run_id": "F-150-20260808T013006Z",
   "module": "F",
   "task_id": "F-150",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-08T01:30:06.012525+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/F/runs/F-150-20260808T013006Z"
+  "workspace": "modules/F/runs/F-150-20260808T013006Z",
+  "closed_utc": "2026-08-08T02:10:33.913221+00:00",
+  "closeout": "modules/F/runs/F-150-20260808T013006Z/CLOSEOUT.md"
 }

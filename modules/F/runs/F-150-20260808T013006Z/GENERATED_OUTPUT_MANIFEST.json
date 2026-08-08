@@ -1,8 +1,249 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "F-150-20260808T013006Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-08T02:10:30.683263+00:00",
+  "outputs": [
+    {
+      "path": "ADMINISTRATIVE_CLOSEOUT_LEDGER.json",
+      "sha256": "9ba64a478dfbdcbc2cdaa0d6c3e9ef4076c2eed6adc2185e0163902da0c3dfea",
+      "bytes": 1262
+    },
+    {
+      "path": "CHECKPOINT_RECORD.json",
+      "sha256": "b14dec464f77200ae28051b9e4e7069ac8d2972a5beb0dee154e77bdce96739f",
+      "bytes": 118
+    },
+    {
+      "path": "CLAIM_RECORD.json",
+      "sha256": "084a35f138962aee7147cf711e22db351fa535c5171ca0d544ee2ecac7f80d79",
+      "bytes": 1316
+    },
+    {
+      "path": "CLOSEOUT.md",
+      "sha256": "2eea918b25e4b47eeb55aad9256208af17d8d90228aa8332f31dd3e8bd42aa33",
+      "bytes": 1275
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "sha256": "9fba7a772f26543a38113a170e6963cb249b2b47598c8aea0e032556c12108d6",
+      "bytes": 812
+    },
+    {
+      "path": "FAILURES.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "FROZEN_DERIVATION_SPEC.json",
+      "sha256": "6be203e7db8d6bef1b8edd06e1335904de069005d10df6909869d8306ea4a65e",
+      "bytes": 15546
+    },
+    {
+      "path": "FROZEN_RECIPE.json",
+      "sha256": "b4aa226ef4185da09330375afc51ff1959147bce1d3b4770226876840984403d",
+      "bytes": 5067
+    },
+    {
+      "path": "GATE_RESULTS.json",
+      "sha256": "8625e7c78b5a7ee3e1903581e703272738934a3e0522195b1a21a309d65d03e8",
+      "bytes": 796
+    },
+    {
+      "path": "INDEPENDENT_VERIFICATION.md",
+      "sha256": "8da03d4a6f93de93ab53e0b7d3ea74b36f24b131378f14d9d0b1a903330863e2",
+      "bytes": 244
+    },
+    {
+      "path": "LOCAL_EXECUTION_BINDINGS.json",
+      "sha256": "197b21fd44edb8f7a893a431b7593f9c5f85e394ec698928ac79e2c81f1d7dbb",
+      "bytes": 1811
+    },
+    {
+      "path": "PRE_EXECUTION_LOCK.json",
+      "sha256": "a5b22bb729fe3d3909725d0cc2a634dce75e476566f8a8448d4392a400c0920a",
+      "bytes": 4512
+    },
+    {
+      "path": "REPLAY_RECORD.json",
+      "sha256": "590c02954febfde10013945cfa93f97b251c2fb99f2f7a4b4e646dfe04fa700e",
+      "bytes": 1666
+    },
+    {
+      "path": "REQUIRED_GATES.json",
+      "sha256": "c58ea01462adf69ca992d47a9a962edbf17b4be9064bbfa8c7d15d74f006f58a",
+      "bytes": 419
+    },
+    {
+      "path": "RUN_LOCAL_PHASE.sh",
+      "sha256": "78b2db3c173ee8bc8aa84fbb6195f8eac3f4532832a980b858b18b20bc19bb3b",
+      "bytes": 773
+    },
+    {
+      "path": "RUN_PLAN.md",
+      "sha256": "733c3e24880712ea8a705e994b26a195513dbbbc38923d741d0d0eb487c18f53",
+      "bytes": 548
+    },
+    {
+      "path": "SOURCE_REGISTER.json",
+      "sha256": "584639cb32bee61d0d7f849c9c6f21adf70a699cfa496b52a5ae3dbf0edcd57d",
+      "bytes": 3772
+    },
+    {
+      "path": "WOLFRAM_IMPLEMENTATION_CONTEXT.json",
+      "sha256": "e48f88d29827802ea4d2478f2450e258653c3f714b38b2fade72546a94d874cb",
+      "bytes": 917
+    },
+    {
+      "path": "WOLFRAM_SEQUENCE.md",
+      "sha256": "45dbb874fe34a1731a8d948d2c7308921c65afadc8959edf4f9b2f2d77bf058c",
+      "bytes": 732
+    },
+    {
+      "path": "WORK_ORDER.md",
+      "sha256": "60423b781e4184e0b15f334c0305913678e9ae2c9d5dce10b9f565674c95f3bd",
+      "bytes": 3902
+    },
+    {
+      "path": "binding_sheets/F_reaction_network.bindings.json",
+      "sha256": "6b5693f13e1dd1e76ede263381199403af08ffc0c59e4c822cdf377c596b5636",
+      "bytes": 9910
+    },
+    {
+      "path": "binding_sheets/F_transport.bindings.json",
+      "sha256": "25ecd96fbf91f48a1399c0ab0d15ffed9da273e15cd7a3a49ff8334b6c1d7957",
+      "bytes": 8798
+    },
+    {
+      "path": "finalize_f150.py",
+      "sha256": "a16dafa258dcc852e24489a82d2efb8b1ce4d1577a2b1eb8431f805151fd5ad2",
+      "bytes": 12348
+    },
+    {
+      "path": "independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "24231d74dd0cd07453c2035c8edac2984c6a19eda2d0565b239ca7968d1ed6cf",
+      "bytes": 383
+    },
+    {
+      "path": "primary/POST_NUCLEAR_PERSISTENCE_STATE.json",
+      "sha256": "8ee4d4e203b609c2de87187e7c89eaa97bfe6183be33e33d574a8bed88cc308c",
+      "bytes": 948
+    },
+    {
+      "path": "reference_checks.json",
+      "sha256": "73549256f9429e2575e3b7ff86bf4eea3e065b2f9a46e0ea4d8d9dee953a692d",
+      "bytes": 452
+    },
+    {
+      "path": "solver_configs/F_reaction_network.json",
+      "sha256": "2031edc310751cc0eb30a638d31a6a37630b8344789b2a9a84f4aaed97a6dbc8",
+      "bytes": 12484
+    },
+    {
+      "path": "solver_configs/F_transport.json",
+      "sha256": "eb800d3071bba46141e616eedf0d898e910d33e2725f694a23ca53207b48a807",
+      "bytes": 10941
+    },
+    {
+      "path": "solver_outputs/reaction_network/environment.json",
+      "sha256": "366a2df32eb353c68f48ba18d2b88ac27851e67666188dc74b922a10d74081cb",
+      "bytes": 271
+    },
+    {
+      "path": "solver_outputs/reaction_network/frozen_config.json",
+      "sha256": "2031edc310751cc0eb30a638d31a6a37630b8344789b2a9a84f4aaed97a6dbc8",
+      "bytes": 12484
+    },
+    {
+      "path": "solver_outputs/reaction_network/manifest.json",
+      "sha256": "962564d10283efc72f3251760c73770a95d05a0ed65260dc5dae23df11f00a58",
+      "bytes": 412
+    },
+    {
+      "path": "solver_outputs/reaction_network/result.json",
+      "sha256": "9524efd3b424afe7e6f7e2712797196b566d637fff8dfa99906e13b51be847dc",
+      "bytes": 61160
+    },
+    {
+      "path": "solver_outputs/transport/environment.json",
+      "sha256": "91d57d683eb0947f83d0a54c5b01e3af40b9caab00b83e845b97b1f75e558aa5",
+      "bytes": 271
+    },
+    {
+      "path": "solver_outputs/transport/frozen_config.json",
+      "sha256": "eb800d3071bba46141e616eedf0d898e910d33e2725f694a23ca53207b48a807",
+      "bytes": 10941
+    },
+    {
+      "path": "solver_outputs/transport/manifest.json",
+      "sha256": "779d180a2b32902c05f5929b5fa34be6671c47edc25ad3fce9e99505540cd356",
+      "bytes": 402
+    },
+    {
+      "path": "solver_outputs/transport/result.json",
+      "sha256": "044020cc5213212ee1272a1dceef446a7a7851246c65a9e2fe46e4c09b47791a",
+      "bytes": 39897
+    },
+    {
+      "path": "solver_templates/F_reaction_network.template.json",
+      "sha256": "298854bad6d020ece576e3c33376b56380e93495e57cd8c380ef47fa0b531ba7",
+      "bytes": 1037
+    },
+    {
+      "path": "solver_templates/F_transport.template.json",
+      "sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+      "bytes": 1023
+    },
+    {
+      "path": "verification/CONVERGENCE.json",
+      "sha256": "2c1cc86f75dffe7db18bba6173d4d323ae8ce977cf3b8bd6db65cda7a9db68e0",
+      "bytes": 1031
+    },
+    {
+      "path": "verification/COUNTERMODELS.json",
+      "sha256": "183e4af669f3b59193fc2379524a5fcb4967c714092fb50a42cf68f27e378df0",
+      "bytes": 818
+    },
+    {
+      "path": "verification/COVARIANCE.json",
+      "sha256": "3503ea86356d5aae468c3023f79a04fde7ca86dcbfd617451baef5835826c43f",
+      "bytes": 2328
+    },
+    {
+      "path": "verification/RESTART.json",
+      "sha256": "c6a4e741d4ad2ffcfd87091b59a835c7c73c48be45922712b619711bcbd75990",
+      "bytes": 69
+    },
+    {
+      "path": "verification/verify_f150.py",
+      "sha256": "d03c4499784f1f5c23dcc025122c83c6b2173492a745e8801c05d52b376adf05",
+      "bytes": 7000
+    },
+    {
+      "path": "wolfram/F-WL-001/input.wl",
+      "sha256": "a0515c449609d8ccc1b4c3632e3e995fa4190ee368470e1bc349eef25fb9d6f0",
+      "bytes": 207
+    },
+    {
+      "path": "wolfram/F-WL-001.connected_output.txt",
+      "sha256": "ca24936b315959b77ce518552b691820d1d6a99816a541794584be11b0b4edf2",
+      "bytes": 227
+    },
+    {
+      "path": "wolfram/F-WL-002/input.wl",
+      "sha256": "3f96f7879700b9d124f0ec51652561bf03c76bf620ded89dd7a1af4d162ad89d",
+      "bytes": 416
+    },
+    {
+      "path": "wolfram/F-WL-002.corrected_connected_output.txt",
+      "sha256": "4f19029ed475e5d52b87c59543be1ca376b7d277a580e360a0d82e26084b7c53",
+      "bytes": 376
+    },
+    {
+      "path": "wolfram/F-WL-002.failed_verbatim_connected_output.txt",
+      "sha256": "f7df01f33517ff5a956a885027991edc38afa9711f8f5c6939fa0c0b46713cd1",
+      "bytes": 430
+    }
+  ],
+  "tree_sha256": "3c168b6afb64de4031b5f3a9b871b2bf8e5c74b3f1ed96cd45d66f734dd4539f",
+  "note": "Final generated run evidence manifest. Excludes itself, runtime caches and controller-owned run.json, which close-run mutates exactly once."
 }

@@ -1,0 +1,35 @@
+{
+  "run_id": "F-150-20260808T013006Z",
+  "classification": "ADMINISTRATIVE_CLOSEOUT_NORMALIZATION",
+  "timestamp_utc": "2026-08-08T02:10:30.617287+00:00",
+  "original_artifact_hashes": {
+    "pre_execution_lock_sha256": "a083cffca8e86d2464b2996c553a42fc30c21c341cd6b96a6be76a9b6ead6094",
+    "environment_sha256": "fbb10d3b186e9624ff8aef4b7157c8a1c04921be8c521bc140ef55277ed52390",
+    "replay_record_sha256": "590c02954febfde10013945cfa93f97b251c2fb99f2f7a4b4e646dfe04fa700e"
+  },
+  "changes": [
+    {
+      "artifact": "PRE_EXECUTION_LOCK.json",
+      "change": "status FROZEN_BEFORE_PRIMARY_EXECUTION -> FROZEN plus explicit frozen_before_primary_execution=true",
+      "scientific_change": false
+    },
+    {
+      "artifact": "ENVIRONMENT.json",
+      "change": "status CAPTURED -> FINAL",
+      "scientific_change": false
+    },
+    {
+      "artifact": "REPLAY_RECORD.json",
+      "change": "controller template projected from fresh exact clean replay evidence",
+      "scientific_change": false
+    }
+  ],
+  "frozen_science_changed": false,
+  "sources_changed": false,
+  "solver_configs_changed": false,
+  "methods_changed": false,
+  "tolerances_changed": false,
+  "gates_changed": false,
+  "falsifiers_changed": false,
+  "claim_scope_expanded": false
+}

@@ -371,7 +371,7 @@
       "id": "F-150",
       "title": "Close Module F: Post-Nuclear Plasma and Radiation Persistence",
       "module": "F",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "E-140"
       ],
@@ -408,7 +408,7 @@
       "id": "G-160",
       "title": "Close Module G: Nonequilibrium Recombination and Last-Scattering State",
       "module": "G",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "F-150"
       ],
