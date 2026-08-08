@@ -1,0 +1,13 @@
+{
+  "call_id": "E-WL-002",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "rhs",
+    "jacobian",
+    "conservationCheck"
+  ],
+  "decision_rule": "Require the conservation check to reduce exactly to zero and classify stiffness before numerical execution.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}
