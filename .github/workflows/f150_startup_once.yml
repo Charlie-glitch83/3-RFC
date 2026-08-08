@@ -1,0 +1,81 @@
+name: F150 Governed Startup Once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/f150-startup-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  start-f150:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install frozen dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Verify exact active F frontier
+        run: |
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='F-150',s
+          assert s['current_module']=='F',s
+          assert s['current_run'] is None,s
+          assert s['modules']['E']['evidence_state']=='FROZEN',s['modules']['E']
+          assert s['modules']['E']['fidelity']=='MINIMAL_SPINE',s['modules']['E']
+          PY
+      - name: Execute repository startup protocol exactly
+        run: |
+          python tools/director.py doctor
+          python tools/rfc.py context
+          python tools/director.py active
+          python tools/director.py prepare-active --create-run
+      - name: Verify F packet and run were created
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.load(open('STATE.json'))
+          rid=s['current_run']
+          assert rid and rid.startswith('F-150-'),s
+          run=Path('modules/F/runs')/rid
+          assert run.is_dir(),run
+          packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
+          assert '# ACTIVE WORK PACKET — F-150' in packet,packet[:200]
+          assert str(run) in packet,packet[:400]
+          for name in ['RUN_PLAN.md','SOURCE_REGISTER.json','PRE_EXECUTION_LOCK.json','ENVIRONMENT.json','CHECKPOINT_RECORD.json','GENERATED_OUTPUT_MANIFEST.json','REPLAY_RECORD.json','GATE_RESULTS.json','INDEPENDENT_VERIFICATION.md','CLOSEOUT.md','FROZEN_RECIPE.json','WORK_ORDER.md','REQUIRED_GATES.json','WOLFRAM_SEQUENCE.md','LOCAL_EXECUTION_BINDINGS.json','RUN_LOCAL_PHASE.sh']:
+              assert (run/name).exists(),run/name
+          print(rid)
+          PY
+      - name: Validate repository after startup
+        run: |
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+      - name: Commit and push governed F startup
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json memory/RUN_INDEX.json memory/CURRENT_CONTEXT.md work_packets/ACTIVE_WORK_PACKET.md modules/F
+          git commit -m 'Start Module F from frozen E handoff'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "STARTUP_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Verify remote startup SHA
+        run: |
+          git fetch origin agent/frontier-050-execution
+          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
+          test "$REMOTE" = "$STARTUP_SHA"
+          echo "Verified F startup SHA: $REMOTE"
