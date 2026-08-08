@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "run_id": "G-160-20260808T021341Z",
+  "classification": "BLOCKED_UNDERDETERMINED_PRE_PRIMARY",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parent": {
+    "path": "modules/F/frozen/H_F_to_G.json",
+    "sha256": "bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154",
+    "fidelity": "MINIMAL_SPINE"
+  },
+  "required_G_objects": [
+    "nonequilibrium recombination network from F",
+    "physical opacity and optical-depth law",
+    "visibility/radiation-surface construction",
+    "uncertainty and restart packet"
+  ],
+  "context_findings": [
+    "H_F_to_G exports internally typed RFC composites and an internal bound/free coordinate but explicitly forbids interpreting that coordinate as an empirical electron/proton ionization state.",
+    "H_F_to_G declares electromagnetic charge NOT_DERIVED_AT_MINIMAL_SPINE, photon identity unassigned, physical photon opacity NOT_DERIVED, and neutrino identity dormant/no-witness.",
+    "H_F_to_G exports its route activity only as an internal source-transfer seed and requires a new witnessed radiation/charge specialization before any photon-opacity interpretation.",
+    "Canonical P29 treats recombination solutions and precision CMB execution as external proof obligations rather than a solved internal radiation law.",
+    "Canonical P30 STEP 6W is a recombination/CMB readiness construction and explicitly does not generate a physical visibility function.",
+    "G-WL-001 and G-WL-002 are manufactured algebra/invariant checks; they do not supply the missing physical charge, radiation carrier, or opacity coefficient."
+  ],
+  "source_compatible_countermodels": [
+    {
+      "id": "G-KAPPA-0",
+      "formula": "0",
+      "value": 0.0,
+      "physical_photon_opacity_claimed": false,
+      "meaning": "No witnessed photon/radiation scattering channel is active."
+    },
+    {
+      "id": "G-KAPPA-ROUTE",
+      "formula": "sum_j r_j",
+      "value": 3.2230001244652664e-05,
+      "characteristic_tau": 31026.99228613625,
+      "physical_photon_opacity_claimed": false,
+      "meaning": "Exact inherited total directional route activity used only as a generic internal interaction hazard."
+    },
+    {
+      "id": "G-KAPPA-FWD",
+      "formula": "sum_forward_j r_j",
+      "value": 1.6115000622326332e-05,
+      "characteristic_tau": 62053.9845722725,
+      "physical_photon_opacity_claimed": false,
+      "meaning": "Association-direction event activity used only as a generic capture-like internal hazard."
+    },
+    {
+      "id": "G-KAPPA-FREE",
+      "formula": "x_free * sum_j r_j",
+      "value": 6.215948661289086e-07,
+      "characteristic_tau": 1608764.895739368,
+      "physical_photon_opacity_claimed": false,
+      "meaning": "Inherited route activity weighted by the exact internal free-carrier occupancy."
+    }
+  ],
+  "nonuniqueness_result": {
+    "conclusion": "The exact parent admits multiple nonnegative internal hazard constructions with materially distinct intrinsic visibility timescales and also admits the no-witness zero-scattering branch. No admitted source or parent witness selects one as physical photon opacity."
+  },
+  "missing_witness": {
+    "object_id": "G_RADIATION_CHARGE_OPACITY_SPECIALIZATION_WITNESS",
+    "must_supply": [
+      "typed radiation carrier or field coupled to the F state",
+      "derived interaction, charge, or scattering operator on the F state space",
+      "source-owned coupling/rate law in the intrinsic G clock",
+      "selection rule establishing why this operator is the physical opacity rather than another source-compatible hazard",
+      "mapping from executed opacity history to visibility/radiation surface without public target insertion"
+    ],
+    "forbidden_substitutes": [
+      "remembered Thomson cross section",
+      "public recombination history",
+      "standard electron/proton/hydrogen labels",
+      "CMB temperature or recombination-redshift targets",
+      "renaming F internal route activity as photon opacity",
+      "manufactured G-WL-001 or G-WL-002 templates"
+    ]
+  },
+  "decision": "Primary G execution is not authorized. Solver bindings remain unresolved hard stops until the missing source-owned specialization witness is derived or a lawful source-level branch-family execution contract is established in a governed attempt.",
+  "strongest_supported_claim": "The exact F parent and admitted canonical sources establish G input ancestry and the mathematical visibility/conservation templates, but they do not uniquely establish a physical recombination charge/radiation specialization or photon-opacity law.",
+  "strongest_unsupported_claim": "No physical RFC last-scattering surface, electron-ionization history, photon opacity, optical depth, recombination redshift, CMB surface, or G-to-HU/G-to-I physical handoff is established by this run."
+}
