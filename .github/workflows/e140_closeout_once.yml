@@ -36,34 +36,14 @@ jobs:
           assert all(v['pass'] for v in g['componentwise'].values()),g
           v=json.load(open('modules/E/runs/E-140-20260807T232334Z/verification/VERIFICATION_SUMMARY.json'))
           assert all(v[k] for k in ['convergence_pass','withheld_pass','scalar_pass','restart_pass','replay_pass','independent_pass','covariance_pass','freeze_pass']),v
+          lock=json.load(open('modules/E/runs/E-140-20260807T232334Z/PRE_EXECUTION_LOCK.json'))
+          assert lock['status']=='FROZEN' and lock['frozen_before_primary_execution'] is True,lock
+          env=json.load(open('modules/E/runs/E-140-20260807T232334Z/ENVIRONMENT.json'))
+          assert env['status']=='FINAL' and env['hidden_defaults_audited'] is True,env
+          src=json.load(open('modules/E/runs/E-140-20260807T232334Z/SOURCE_REGISTER.json'))
+          assert src['public_data_declaration']=='NONE',src
           PY
-      - name: Apply implementation-only finalizer key fix
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p=Path('modules/E/runs/E-140-20260807T232334Z/finalize_e140.py')
-          text=p.read_text()
-          old="'occupancy_vectors':spec['species_registry']['occupancy_vectors'],"
-          new="'occupancy_vectors':{r['id']:r['occupancy'] for r in spec['derived_species_registry']},"
-          assert old in text, 'expected stale finalizer lookup not found'
-          p.write_text(text.replace(old,new,1))
-          PY
-      - name: Materialize canonical E handoff and closeout
-        run: python modules/E/runs/E-140-20260807T232334Z/finalize_e140.py
-      - name: Close governed E run
-        run: python tools/rfc.py close-run --run-id E-140-20260807T232334Z --result PASS --closeout modules/E/runs/E-140-20260807T232334Z/CLOSEOUT.md
-      - name: Re-finalize run manifest after controller close
-        run: python modules/E/runs/E-140-20260807T232334Z/finalize_e140.py
-      - name: Promote E through evidence ladder
-        run: |
-          RUN=modules/E/runs/E-140-20260807T232334Z
-          python tools/rfc.py promote-module E --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$RUN/FROZEN_DERIVATION_SPEC.json"
-          python tools/rfc.py promote-module E --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$RUN/solver_outputs/reaction_network/result.json"
-          python tools/rfc.py promote-module E --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$RUN/GATE_RESULTS.json"
-          python tools/rfc.py promote-module E --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$RUN/primary/PRIMORDIAL_COMPOSITE_NETWORK_STATE.json"
-          python tools/rfc.py promote-module E --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
-          python tools/rfc.py promote-module E --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/E/frozen/H_E_to_F.json
-      - name: Record E claim and state claim surface
+      - name: Prepare frozen E claim record before bundle finalization
         run: |
           python - <<'PY'
           import json
@@ -78,6 +58,58 @@ jobs:
           }
           p.write_text(json.dumps(claim,indent=2)+'\n')
           PY
+      - name: Apply implementation-only finalizer key fix
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('modules/E/runs/E-140-20260807T232334Z/finalize_e140.py')
+          text=p.read_text()
+          old="'occupancy_vectors':spec['species_registry']['occupancy_vectors'],"
+          new="'occupancy_vectors':{r['id']:r['occupancy'] for r in spec['derived_species_registry']},"
+          if old in text:
+              text=text.replace(old,new,1)
+          else:
+              assert new in text, 'expected finalizer occupancy lookup not found'
+          p.write_text(text)
+          PY
+      - name: Materialize canonical E handoff and closeout
+        run: python modules/E/runs/E-140-20260807T232334Z/finalize_e140.py
+      - name: Finalize generated-output manifest for controller close
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('modules/E/runs/E-140-20260807T232334Z/GENERATED_OUTPUT_MANIFEST.json')
+          m=json.load(open(p))
+          m['status']='FINAL'
+          m['outputs']=[x for x in m['outputs'] if x.get('path')!='run.json']
+          h=hashlib.sha256()
+          for rec in m['outputs']:
+              h.update(rec['path'].encode()); h.update(b'\0'); h.update(rec['sha256'].encode()); h.update(b'\n')
+          m['tree_sha256']=h.hexdigest()
+          m['finalized_utc']='PRE_CONTROLLER_CLOSE_FINAL'
+          m['note']='Final generated scientific/output manifest. Excludes itself and controller-owned run.json, which close-run mutates exactly once during registration.'
+          p.write_text(json.dumps(m,indent=2)+'\n')
+          assert m['status']=='FINAL' and m['outputs']
+          PY
+      - name: Validate repository and firewall before controller close
+        run: |
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Close governed E run
+        run: python tools/rfc.py close-run --run-id E-140-20260807T232334Z --result PASS --closeout modules/E/runs/E-140-20260807T232334Z/CLOSEOUT.md
+      - name: Promote E through evidence ladder
+        run: |
+          RUN=modules/E/runs/E-140-20260807T232334Z
+          python tools/rfc.py promote-module E --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$RUN/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module E --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$RUN/solver_outputs/reaction_network/result.json"
+          python tools/rfc.py promote-module E --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$RUN/GATE_RESULTS.json"
+          python tools/rfc.py promote-module E --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$RUN/primary/PRIMORDIAL_COMPOSITE_NETWORK_STATE.json"
+          python tools/rfc.py promote-module E --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$RUN/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module E --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/E/frozen/H_E_to_F.json
+      - name: Record E claim and state claim surface
+        run: |
           python tools/rfc.py record-claim --file modules/E/runs/E-140-20260807T232334Z/CLAIM_RECORD.json
           python - <<'PY'
           import json
