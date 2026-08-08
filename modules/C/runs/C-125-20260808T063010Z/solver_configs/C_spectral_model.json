@@ -49,7 +49,7 @@
     "template_path": "/home/runner/work/3-RFC/3-RFC/modules/C/runs/C-125-20260808T063010Z/solver_templates/C_spectral_model.template.json",
     "template_sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d",
     "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/C/runs/C-125-20260808T063010Z/binding_sheets/C_spectral_model.bindings.json",
-    "binding_sheet_sha256": "7b74dae57373dd0444089a8e6b126c4a0c748b46630ee85ef80dae64ff49e108",
+    "binding_sheet_sha256": "9d6db24106a8306d54ccacab0ef13e50d52993157a6d2d8b86e504266ec3a10f",
     "bindings": [
       {
         "path": "model.matrix",
@@ -72,7 +72,7 @@
         ],
         "origin_kind": "INTERNAL_DERIVATION",
         "origin_path": "modules/C/runs/C-125-20260808T063010Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "ed9356a105070b8387f7b3a304cf2a3d45624522fdcc52b9f14dcdabe65baaef",
+        "origin_sha256": "4d1d5756a68f00685f839b8390e8eb82a54a694abe1df197053aaffe3ff1af03",
         "module": "C",
         "derivation_object": "I-Q_B",
         "units": "dimensionless",
@@ -102,7 +102,7 @@
         ],
         "origin_kind": "INTERNAL_DERIVATION",
         "origin_path": "modules/C/runs/C-125-20260808T063010Z/FROZEN_DERIVATION_SPEC.json",
-        "origin_sha256": "ed9356a105070b8387f7b3a304cf2a3d45624522fdcc52b9f14dcdabe65baaef",
+        "origin_sha256": "4d1d5756a68f00685f839b8390e8eb82a54a694abe1df197053aaffe3ff1af03",
         "module": "C",
         "derivation_object": "conserved-mode O(2) audit generator",
         "units": "dimensionless",
