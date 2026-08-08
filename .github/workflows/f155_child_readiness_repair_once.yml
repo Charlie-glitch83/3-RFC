@@ -39,35 +39,60 @@ jobs:
           s=json.load(open('STATE.json'))
           assert s['active_work_unit']=='G-160',s
           assert s['current_module']=='G',s
-          assert s['current_run']=='G-160-20260808T021341Z',s
+          assert s['current_run'] and s['current_run'].startswith('G-160-'),s
           assert s['modules']['F']['evidence_state']=='FROZEN',s['modules']['F']
           assert s['modules']['F']['fidelity']=='MINIMAL_SPINE',s['modules']['F']
           p=Path('modules/F/frozen/H_F_to_G.json')
           assert hashlib.sha256(p.read_bytes()).hexdigest()=='bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154'
-          g=json.load(open('modules/G/runs/G-160-20260808T021341Z/G_DERIVATION_OBSTRUCTION.json'))
-          assert g['classification']=='BLOCKED_UNDERDETERMINED_PRE_PRIMARY',g
+          idx=json.load(open('memory/RUN_INDEX.json'))['runs']
+          old=[r for r in idx if r['run_id']=='G-160-20260808T021341Z']
+          assert old and old[0]['status']=='BLOCKED',old
           PY
 
-      - name: Close preserved G obstruction attempt as BLOCKED
+      - name: Close current blank G retry as superseded BLOCKED attempt
         run: |
-          python tools/rfc.py close-run \
-            --run-id G-160-20260808T021341Z \
-            --result BLOCKED \
-            --closeout modules/G/runs/G-160-20260808T021341Z/CLOSEOUT.md
+          RID=$(python - <<'PY'
+          import json
+          print(json.load(open('STATE.json'))['current_run'])
+          PY
+          )
+          python - "$RID" <<'PY'
+          import json,sys
+          from pathlib import Path
+          rid=sys.argv[1]
+          R=Path('modules/G/runs')/rid
+          run=json.load(open(R/'run.json'))
+          assert run['status']=='CREATED',run
+          (R/'CLOSEOUT.md').write_text(f'''# {rid} Superseded Pre-Execution Closeout
+
+## Result
+
+**BLOCKED / SUPERSEDED BEFORE SCIENTIFIC EXECUTION.**
+
+This retry workspace was automatically created after the preserved G-160 obstruction was closed. No G primary physics was executed in this workspace. The exhaustive repository child-readiness audit establishes that the exact F-150 parent is not yet child-ready for G because Module F owns required plasma/ionization/radiation/opacity outputs that remain ungenerated in `H_F_to_G`.
+
+## Strongest supported claim
+
+The prior G obstruction remains valid evidence that the current F-150 handoff does not uniquely provide the required physical radiation/charge/opacity specialization.
+
+## Strongest unsupported claim
+
+No physical recombination history, opacity history, visibility function, radiation surface, or G child handoff is established by this retry.
+
+The canonical repair frontier is moved upstream to F-155; this G workspace is preserved as a blocked pre-execution attempt.
+''',encoding='utf-8')
+          PY
+          python tools/rfc.py close-run --run-id "$RID" --result BLOCKED --closeout "modules/G/runs/$RID/CLOSEOUT.md"
           python - <<'PY'
           import json
           s=json.load(open('STATE.json'))
           assert s['current_run'] is None,s
-          r=json.load(open('modules/G/runs/G-160-20260808T021341Z/run.json'))
-          assert r['status']=='BLOCKED',r
           PY
 
       - name: Apply child-readiness repair and reopen F
         run: |
           python tools/repair_child_readiness.py
-          python tools/rfc.py reopen-module F \
-            --fidelity PRODUCTION \
-            --evidence audit/CHILD_READINESS_REPAIR_20260808.json
+          python tools/rfc.py reopen-module F --fidelity PRODUCTION --evidence audit/CHILD_READINESS_REPAIR_20260808.json
           python - <<'PY'
           import json
           s=json.load(open('STATE.json')); q=json.load(open('WORK_QUEUE.json'))['items']; by={x['id']:x for x in q}
@@ -112,12 +137,9 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add STATE.json WORK_QUEUE.json CLAIMS_LEDGER.json config/required_output_contracts.json docs/28_REQUIRED_OUTPUT_AND_CHILD_READINESS_PROTOCOL.md audit/CHILD_READINESS_REPAIR_20260808.json audit/CHILD_READINESS_REPAIR_20260808.md memory modules/G/runs/G-160-20260808T021341Z modules/F/runs/F-155-20260808T054200Z recipes/F tools/rfc.py tests/test_child_readiness_contract.py work_packets/ACTIVE_WORK_PACKET.md
+          git add STATE.json WORK_QUEUE.json CLAIMS_LEDGER.json config/required_output_contracts.json docs/28_REQUIRED_OUTPUT_AND_CHILD_READINESS_PROTOCOL.md audit/CHILD_READINESS_REPAIR_20260808.json audit/CHILD_READINESS_REPAIR_20260808.md memory modules/G/runs modules/F/runs/F-155-20260808T054200Z recipes/F tools/rfc.py tests/test_child_readiness_contract.py work_packets/ACTIVE_WORK_PACKET.md
           git status --short
-          if git diff --cached --quiet; then
-            echo 'HARD STOP: repair produced no governed changes'
-            exit 1
-          fi
+          if git diff --cached --quiet; then echo 'HARD STOP: repair produced no governed changes'; exit 1; fi
           git commit -m 'Repair child-readiness closure and reopen Module F'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
