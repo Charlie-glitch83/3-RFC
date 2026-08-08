@@ -1,0 +1,25 @@
+{
+  "module": "F",
+  "bindings": [
+    {
+      "solver": "reaction_network",
+      "template": "configured_runs/templates/F_reaction_network.template.json",
+      "purpose": "Execute the post-nuclear plasma reaction network.",
+      "copy_command": "python tools/director.py solver-copy --module F --solver reaction_network --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/F_reaction_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/F_reaction_network.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/F_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/F_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/F_reaction_network.json"
+    },
+    {
+      "solver": "transport",
+      "template": "configured_runs/templates/F_transport.template.json",
+      "purpose": "Execute coupled plasma/radiation transport.",
+      "copy_command": "python tools/director.py solver-copy --module F --solver transport --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/F_transport.json --output-dir <RUN_DIR>/solver_outputs/transport",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/F_transport.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/F_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/F_transport.bindings.json --output <RUN_DIR>/solver_configs/F_transport.json"
+    }
+  ]
+}

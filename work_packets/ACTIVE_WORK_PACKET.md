@@ -4,7 +4,7 @@
 
 - Module: `F`
 - Objective: Execute charge/plasma composition, photon/neutrino persistence, atomic candidates, opacity/transport and recombination-entry state from H_E_to_F_v2.
-- Run workspace: `not yet created`
+- Run workspace: `modules/F/runs/F-155-20260808T165152Z`
 
 ## Exact sequence
 
@@ -16,17 +16,17 @@
    - `python tools/director.py wolfram-show --call F-WL-001`
    - `python tools/director.py wolfram-show --call F-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module F --output <RUN_DIR>/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module F --output modules/F/runs/F-155-20260808T165152Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module F --solver reaction_network --destination <RUN_DIR>`
+   - `python tools/director.py solver-copy --module F --solver reaction_network --destination modules/F/runs/F-155-20260808T165152Z`
    - fill `configured_runs/binding_sheets/F_reaction_network.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/F_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/F_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/F_reaction_network.json`
-   - `python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/F_reaction_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network`
-   - `python tools/director.py solver-copy --module F --solver transport --destination <RUN_DIR>`
+   - `python tools/materialize_solver_config.py --template modules/F/runs/F-155-20260808T165152Z/solver_templates/F_reaction_network.template.json --binding-sheet modules/F/runs/F-155-20260808T165152Z/binding_sheets/F_reaction_network.bindings.json --output modules/F/runs/F-155-20260808T165152Z/solver_configs/F_reaction_network.json`
+   - `python tools/run_configured_solver.py --config modules/F/runs/F-155-20260808T165152Z/solver_configs/F_reaction_network.json --output-dir modules/F/runs/F-155-20260808T165152Z/solver_outputs/reaction_network`
+   - `python tools/director.py solver-copy --module F --solver transport --destination modules/F/runs/F-155-20260808T165152Z`
    - fill `configured_runs/binding_sheets/F_transport.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/F_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/F_transport.bindings.json --output <RUN_DIR>/solver_configs/F_transport.json`
-   - `python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/F_transport.json --output-dir <RUN_DIR>/solver_outputs/transport`
+   - `python tools/materialize_solver_config.py --template modules/F/runs/F-155-20260808T165152Z/solver_templates/F_transport.template.json --binding-sheet modules/F/runs/F-155-20260808T165152Z/binding_sheets/F_transport.bindings.json --output modules/F/runs/F-155-20260808T165152Z/solver_configs/F_transport.json`
+   - `python tools/run_configured_solver.py --config modules/F/runs/F-155-20260808T165152Z/solver_configs/F_transport.json --output-dir modules/F/runs/F-155-20260808T165152Z/solver_outputs/transport`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.

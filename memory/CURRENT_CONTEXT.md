@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T16:50:05.457983+00:00
+Generated: 2026-08-08T16:51:56.174016+00:00
 
 ## Project truth
 
@@ -66,11 +66,10 @@ Execute charge/plasma composition, photon/neutrino persistence, atomic candidate
 
 - admitted sources: 85
 - frozen artifacts: 21
-- indexed runs: 19
+- indexed runs: 20
 
 ## Recent runs
 
-- G-160-20260808T021341Z: BLOCKED (G)
 - G-160-20260808T051613Z: BLOCKED (G)
 - B-115-20260808T060000Z: PASS (B)
 - C-125-20260808T061947Z: BLOCKED (C)
@@ -78,6 +77,7 @@ Execute charge/plasma composition, photon/neutrino persistence, atomic candidate
 - C-125-20260808T063500Z: PASS (C)
 - D-135-20260808T163243Z: PASS (D)
 - E-145-20260808T164410Z: PASS (E)
+- F-155-20260808T165152Z: CREATED (F)
 
 ## Recent decisions
 
