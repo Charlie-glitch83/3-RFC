@@ -1,0 +1,1 @@
+trigger B-first superseding replay transition current-base 2026-08-08
