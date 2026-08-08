@@ -37,16 +37,11 @@ jobs:
           assert lock['status']=='FROZEN_BEFORE_PRIMARY_EXECUTION',lock
           PY
       - name: Execute frozen verification matrix
+        id: matrix
+        continue-on-error: true
         run: python modules/E/runs/E-140-20260807T232334Z/verification/verify_e140.py
-      - name: Confirm componentwise PASS
-        run: |
-          python - <<'PY'
-          import json
-          g=json.load(open('modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json'))
-          assert g['overall']=='PASS',g
-          assert all(v['pass'] for v in g['componentwise'].values()),g
-          PY
-      - name: Commit verification evidence
+      - name: Commit verification evidence even on failure
+        if: always()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -54,6 +49,15 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No verification changes to commit'
           else
-            git commit -m 'Verify frozen Module E reaction network'
+            git commit -m 'Preserve frozen Module E verification matrix'
             git push origin HEAD:agent/frontier-050-execution
           fi
+      - name: Enforce frozen componentwise verdict
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          g=json.load(open('modules/E/runs/E-140-20260807T232334Z/GATE_RESULTS.json'))
+          assert g['overall']=='PASS',g
+          assert all(v['pass'] for v in g['componentwise'].values()),g
+          PY
