@@ -101,7 +101,7 @@ import json
 R='modules/C/runs/C-125-20260808T063500Z'
 assert json.load(open(R+'/reference_checks.json'))['overall']=='PASS'
 assert json.load(open(R+'/solver_outputs/spectral_model/result.json'))['success'] is True
-assert json.load(open(R+'/GATE_RESULTS.json'))['overall']=='PASS'
+assert json.load(open(R+'/PRIMARY_GATE_INPUTS.json'))['overall']=='PASS'
 assert json.load(open(R+'/independent/INDEPENDENT_RECONSTRUCTION.json'))['pass'] is True
 PY
 
