@@ -1,21 +1,162 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "1.1",
+  "run_id": "E-140-20260807T232334Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "frozen_utc": "2026-08-08T00:12:00Z",
+  "generation_mode": "GENERATION_SEALED",
+  "fidelity": "MINIMAL_SPINE",
+  "authority_hashes": [
+    "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+    "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+    "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+    "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+    "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+  ],
+  "parent_hashes": [
+    "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231",
+    "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+    "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+    "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+  ],
+  "definition_hashes": [
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/SOURCE_REGISTER.json",
+      "git_blob_sha": "a7e2e3fd8c131d3d69a18a1a6d62102fd296f735"
+    },
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/Module_E_Source_Asset_Register.md",
+      "git_blob_sha": "32c5d9aa61047a62ddc87110692d7d0de64fff09"
+    },
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/Module_E_Parent_Integrity_Certificate.md",
+      "git_blob_sha": "ed11e1f3b002a15b15c9b1327f9d2ef4adcb4442"
+    },
+    {
+      "path": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
+      "commit_sha": "6108bca771f6daa5acccdedfd369bfadd470d168"
+    }
+  ],
+  "candidate_classes": [
+    "three inherited internal RFC carrier identities X0,X1,X2",
+    "nonempty additive carrier-occupancy composites",
+    "strictly bound disjoint-support composites selected by B(x,y)>0",
+    "six reversible locally witnessed union/reopening route pairs",
+    "explicit route family with no scalar collapse",
+    "constitutive binding-memory transfer to RFL",
+    "lawful obstruction for same-type/overlapping anti-bound captures",
+    "reserved direct three-body branch requiring a new witness before activation"
+  ],
+  "equations_and_laws": [
+    "M_C=I-Q_B=L_B/(delta+2)",
+    "a=1/(delta+2)",
+    "g_C=3a",
+    "E_C(n)=n^T M_C n=a[(n0-n1)^2+(n0-n2)^2+(n1-n2)^2]",
+    "B(x,y)=E_C(x)+E_C(y)-E_C(x+y)",
+    "bound admission: disjoint support and B(x,y)>0",
+    "k_f(r)=m_r*a, m_r=number of parent K3 edges newly closed by the witnessed union",
+    "k_r(r)=k_f(r) exp[-B_r/Theta_E0]",
+    "Theta_E0=Theta_D_final=0.056881184006326246",
+    "dY/dtau_E=N F(Y)",
+    "Q0,Q1,Q2 left-nullspace carrier invariants",
+    "U_E=sum_s E_C(s)Y_s",
+    "Q_E,RFL=U_E(0)-U_E",
+    "U_E+Q_E,RFL=U_E(0)"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "all abundances/carrier fractions dimensionless",
+    "constitutive energies and bindings in dimensionless parent-gap units",
+    "tau_E is intrinsic dimensionless post-Big-Implosion ordering continued from D; no seconds",
+    "Theta_E0 is dimensionless parent-gap spectral coordinate; no Kelvin/MeV",
+    "B/C/D finite relational pregeometry; no metric/FRW geometry",
+    "O(2) law symmetry of the inherited C doublet remains unbroken by coefficient selection; route labels preserve carrier identity rather than choose an empirical basis"
+  ],
+  "methods": [
+    "exact symbolic binding and stoichiometric/nullspace reconstruction",
+    "Wolfram E-WL-001 and E-WL-002 verbatim manufactured checks",
+    "configured reaction_network solver with BDF",
+    "network-size/route-withholding convergence",
+    "rate-resolution and time-step convergence",
+    "restart from an interior checkpoint",
+    "earliest-change replay",
+    "source-decimal/covariance propagation",
+    "independent reconstruction without reading primary solver summaries"
+  ],
+  "tolerances": [
+    "rtol=1e-9",
+    "atol=1e-12",
+    "positivity_tolerance=1e-12",
+    "carrier_invariant_tolerance=1e-9",
+    "symbolic conservation tolerance=1e-12",
+    "network/rate/time-step convergence tolerance=1e-8 L_inf",
+    "independent reconstruction tolerance=1e-8 L_inf",
+    "energy-memory ledger tolerance=1e-9",
+    "persistence/freeze residual threshold=1e-9"
+  ],
+  "stopping_rules": [
+    "primary t_end=1/kr3=126582.49817344503",
+    "primary max_step=t_end/128=988.9257672925393",
+    "persistence witness is earliest sampled post-maximum time with max|dY/dtau_E|<=1e-9 remaining below threshold through t_end",
+    "stop immediately if a public/remembered nuclear value enters generation",
+    "stop if carrier conservation, positivity, or source-rate audit fails",
+    "stop and preserve a branch family/obstruction if a required coefficient ceases to be parent-determined"
+  ],
+  "expected_invariants": [
+    "Q0=[1,0,0,1,1,0,1] conserved",
+    "Q1=[0,1,0,1,0,1,1] conserved",
+    "Q2=[0,0,1,0,1,1,1] conserved",
+    "Q_total=Q0+Q1+Q2 conserved",
+    "all admitted abundance states nonnegative within tolerance",
+    "U_E+Q_E,RFL=U_E(0) within tolerance",
+    "all active forward/reverse rate ratios fixed by the frozen local detailed-balance rule",
+    "three symmetry-equivalent pair routes and three symmetry-equivalent trimer completion routes remain explicit"
+  ],
+  "tests": [
+    "exact parent hash verification",
+    "source/public-data firewall audit",
+    "Wolfram stoichiometric conservation",
+    "Wolfram Jacobian/stiffness structure",
+    "manufactured reference check",
+    "same-type anti-binding rejection",
+    "scalar-collapse countermodel",
+    "independent-reverse-rate countermodel",
+    "route-withholding ablations",
+    "max-step convergence",
+    "t_end convergence",
+    "restart identity",
+    "clean replay",
+    "independent integration/reconstruction",
+    "energy-memory accounting",
+    "rate-source lineage audit"
+  ],
+  "gates": [
+    "baryon/charge/energy accounting: interpreted at E-140 MINIMAL_SPINE as exact internal carrier-charge plus constitutive-energy accounting; no empirical baryon correspondence claimed",
+    "network convergence",
+    "rate-source audit",
+    "no scalar-channel collapse",
+    "withheld reaction and independent implementation checks"
+  ],
+  "falsifiers": [
+    "exact parent/source hash mismatch",
+    "empirical particle/isotope identity used generatively",
+    "E_C differs from n^T M_C n",
+    "admitted stabilized composite has nonpositive binding witness",
+    "same-type/overlapping-support capture admitted without a new source-owned law",
+    "reaction violates Q0,Q1,Q2 above symbolic/numerical tolerance",
+    "forward/reverse ratio violates exp(B/Theta_E0)",
+    "abundance below -1e-12",
+    "energy-memory ledger drift above 1e-9",
+    "network/rate/time-step convergence above 1e-8",
+    "withheld symmetry-required route has no detectable effect above 1e-8 and no exact symmetry explanation",
+    "independent implementation differs above 1e-8",
+    "public abundance, nuclear table, SI anchor, Kelvin/MeV calibration, Standard-Model correspondence, branch shopping or post-hoc fitting enters generation"
+  ],
+  "claim_boundary": "E-140 may establish only a source-owned, internally typed, dimensionless RFC MINIMAL_SPINE primordial-composite reaction network derived from the exact A-D lineage: composite admission, reversible route graph, parent-derived rate law, conservation, abundance dynamics, constitutive binding-memory transfer, uncertainty, persistence witnesses, restart/replay and independent reconstruction. It does not establish proton/neutron or isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV temperatures, conventional BBN, empirical primordial abundances, or full hyper-realistic nuclear physics.",
+  "independent_verifier_design": "Rebuild the seven-state registry directly from M_C and the disjoint-support positive-binding rule; independently derive all twelve directional stoichiometric columns and the Q0/Q1/Q2 left nullspace; recompute kf2,kr2,kf3,kr3 from a, Theta_D_final and exact binding releases; integrate independently and compare final state, carrier ledgers, energy-memory ledger and persistence witness without trusting primary gate summaries.",
+  "allowed_implementation_only_corrections": [
+    "serialization/layout changes",
+    "solver API adaptation that leaves the frozen equations and coefficients unchanged",
+    "relocation-safe path corrections",
+    "logging/manifest fixes",
+    "numerical implementation fixes that do not alter species, reactions, coefficients, initial state, interval, tolerances, gates, falsifiers or claim boundary"
+  ]
 }
