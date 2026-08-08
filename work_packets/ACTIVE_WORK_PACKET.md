@@ -4,7 +4,7 @@
 
 - Module: `C`
 - Objective: Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2, including source-owned charge/symmetry/mass-mixing/interaction and photon/neutrino/nucleon-role states.
-- Run workspace: `modules/C/runs/C-125-20260808T061947Z`
+- Run workspace: `modules/C/runs/C-125-20260808T063010Z`
 
 ## Exact sequence
 
@@ -16,13 +16,13 @@
    - `python tools/director.py wolfram-show --call C-WL-001`
    - `python tools/director.py wolfram-show --call C-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module C --output modules/C/runs/C-125-20260808T061947Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module C --output modules/C/runs/C-125-20260808T063010Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module C --solver spectral_model --destination modules/C/runs/C-125-20260808T061947Z`
+   - `python tools/director.py solver-copy --module C --solver spectral_model --destination modules/C/runs/C-125-20260808T063010Z`
    - fill `configured_runs/binding_sheets/C_spectral_model.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/C/runs/C-125-20260808T061947Z/solver_templates/C_spectral_model.template.json --binding-sheet modules/C/runs/C-125-20260808T061947Z/binding_sheets/C_spectral_model.bindings.json --output modules/C/runs/C-125-20260808T061947Z/solver_configs/C_spectral_model.json`
-   - `python tools/run_configured_solver.py --config modules/C/runs/C-125-20260808T061947Z/solver_configs/C_spectral_model.json --output-dir modules/C/runs/C-125-20260808T061947Z/solver_outputs/spectral_model`
+   - `python tools/materialize_solver_config.py --template modules/C/runs/C-125-20260808T063010Z/solver_templates/C_spectral_model.template.json --binding-sheet modules/C/runs/C-125-20260808T063010Z/binding_sheets/C_spectral_model.bindings.json --output modules/C/runs/C-125-20260808T063010Z/solver_configs/C_spectral_model.json`
+   - `python tools/run_configured_solver.py --config modules/C/runs/C-125-20260808T063010Z/solver_configs/C_spectral_model.json --output-dir modules/C/runs/C-125-20260808T063010Z/solver_outputs/spectral_model`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.

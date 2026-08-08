@@ -2,9 +2,11 @@
   "run_id": "C-125-20260808T061947Z",
   "module": "C",
   "task_id": "C-125",
-  "status": "CREATED",
+  "status": "BLOCKED",
   "created_utc": "2026-08-08T06:19:47.272813+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/C/runs/C-125-20260808T061947Z"
+  "workspace": "modules/C/runs/C-125-20260808T061947Z",
+  "closed_utc": "2026-08-08T06:30:09.948037+00:00",
+  "closeout": "modules/C/runs/C-125-20260808T061947Z/CLOSEOUT.md"
 }

@@ -1,0 +1,585 @@
+{
+  "schema_version": "2.0",
+  "run_id": "3-RFC",
+  "status": "FROZEN_PRE_EXECUTION",
+  "parent": {
+    "path": "modules/B/frozen/H_B_to_C_v2.json",
+    "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+    "classification": "DIRECT_PARENT",
+    "role": "sector-complete first physical state"
+  },
+  "theorem_sources": [
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "classification": "ANCESTRY",
+      "role": "enhanced kernel"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/MICROSCOPIC_PHYSICS.md",
+      "sha256": "abb7f49afc4cdcd5f4d66c25f33cc3aeb53150f51762cd3c005039538102bbd3",
+      "classification": "REPLAY_REQUIRED",
+      "role": "completed C equations"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/MICROSCOPIC_CONSTITUTION.md",
+      "sha256": "f700736bfb397a77f56115a129fbcf181e381a0e0db74474ec581e254126cb05",
+      "classification": "REPLAY_REQUIRED",
+      "role": "C theorem proof"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/C/MODULE_C_TO_D_SCIENTIFIC_HANDOFF.md",
+      "sha256": "f687ddd80fdb5a29a9cf4cb8719d510f2a35ef83655900ce22ba4246f0147a73",
+      "classification": "REPLAY_REQUIRED",
+      "role": "C->D child contract"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/C/MODULE_C_WOLFRAM_VERIFICATION.md",
+      "sha256": "4e75be0dfb990190021dbe7dc952c4084be61e9341c1713ff18d4c24d4663524",
+      "classification": "REPLAY_REQUIRED",
+      "role": "prior exact verification design"
+    }
+  ],
+  "candidate_class": "MAXIMAL_COMPLETE_FINITE_RELATIONAL_SYMMETRY_PRESERVING_BRANCH",
+  "definitions": {
+    "delta": 4.6692,
+    "Eminus": 0.1633627053877764,
+    "Eplus": 0.049447940005542326,
+    "D_QV": 0.11391476538223407,
+    "N_active": 6,
+    "Lambda_hat_C": 0.19486299920904607,
+    "kernel_weights": [
+      0.7858305491311782,
+      0.16830089718392405,
+      0.0360449107307299,
+      0.007719718737841579,
+      0.0016533279229507367,
+      0.00035409233336561655,
+      7.583576059402393e-05,
+      1.624170320269509e-05,
+      3.4784766561070614e-06,
+      7.449834353009213e-07,
+      1.5955269324529282e-07,
+      3.417131269709861e-08,
+      7.318451275828538e-09,
+      1.5673886909595943e-09,
+      3.356867752419246e-10,
+      7.189385231772565e-11,
+      1.5397466871782244e-11,
+      3.2976670247113515e-12
+    ],
+    "shell_weights": [
+      0.9999034960399901,
+      9.64946478940694e-05,
+      9.312115728244277e-09
+    ],
+    "kernel_representative": [
+      [
+        0.7936268560033942,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.1699706279455569,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.036402516051048765
+      ]
+    ],
+    "orientation_A": [
+      [
+        0.0,
+        0.09351289930693892,
+        0.11354050560072351
+      ],
+      [
+        -0.09351289930693892,
+        0.0,
+        0.020027606293784587
+      ],
+      [
+        -0.11354050560072351,
+        -0.020027606293784587,
+        0.0
+      ]
+    ],
+    "coupling_norms": {
+      "N1": 0.2200195813696288,
+      "N2": 0.22001958136962863,
+      "N3": 0.22001958136962865
+    },
+    "couplings": {
+      "g1": 2.1319122889341067,
+      "g2": 2.1319122889341076,
+      "g3": 2.1319122889341076
+    },
+    "stabilization": {
+      "a_C": 0.13489745845238318,
+      "b_C": 0.6472165384898387,
+      "v_hat": 0.4565381561771035,
+      "m_h_internal": 0.14314008211195492
+    },
+    "gauge_masses": {
+      "W_internal": 0.09483001090097971,
+      "Z_internal": 0.13410988753615394,
+      "neutral_mass_matrix": [
+        [
+          0.008992730967479929,
+          -0.008992730967479925
+        ],
+        [
+          -0.008992730967479925,
+          0.008992730967479922
+        ]
+      ],
+      "neutral_eigenvalues": [
+        0.0,
+        0.01798546193495985
+      ],
+      "photon_internal_mass": 0.0,
+      "triadic_gauge_masses": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "charges": {
+      "y_phi": 0.5,
+      "Q_L": 0.16666666666666666,
+      "U_R": 0.6666666666666666,
+      "D_R": -0.3333333333333333,
+      "L_L": -0.5,
+      "E_R": -1.0,
+      "electric": {
+        "Q_L_up": 0.6666666666666666,
+        "Q_L_down": -0.3333333333333333,
+        "U_R": 0.6666666666666666,
+        "D_R": -0.3333333333333333,
+        "L_L_neutral": 0.0,
+        "L_L_charged": -1.0,
+        "E_R": -1.0
+      }
+    },
+    "anomaly_residuals": [
+      0.0,
+      0.0,
+      2.220446049250313e-16
+    ],
+    "yukawa_shell_overlaps": {
+      "U": [
+        0.5027705045666034,
+        0.5027705045666034,
+        0.5027705045666034
+      ],
+      "D": [
+        0.506234112380693,
+        0.5062341123806929,
+        0.506234112380693
+      ],
+      "E": [
+        0.49718939191143224,
+        0.49718939191143213,
+        0.49718939191143224
+      ]
+    },
+    "charged_fermion_masses_internal": {
+      "U": [
+        0.031627237280776585,
+        0.031627237280776585,
+        0.031627237280776585
+      ],
+      "D": [
+        0.031845118690264185,
+        0.031845118690264185,
+        0.031845118690264185
+      ],
+      "E": [
+        0.0312761522974043,
+        0.03127615229740429,
+        0.0312761522974043
+      ]
+    },
+    "mixing": {
+      "U_Q": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "U_L": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "J_Q": 0.0,
+      "J_L": 0.0,
+      "classification": "SOURCE_DERIVED_SYMMETRY_PRESERVING_COMPLETED_SHELL_BRANCH"
+    },
+    "neutrino": {
+      "mass_operator_internal": [
+        [
+          0.004353801819093791,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.201591205529818e-07,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          4.054701934517524e-11
+        ]
+      ],
+      "masses_internal": [
+        0.004353801819093791,
+        4.201591205529818e-07,
+        4.054701934517524e-11
+      ],
+      "conjugation": "SELF_CONJUGATE_MINIMAL_BRANCH",
+      "right_handed_neutral_route": "ABSENT_NO_WITNESS"
+    },
+    "hamiltonian": {
+      "H_C_real": [
+        [
+          2.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          2.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          -1.0,
+          2.0
+        ]
+      ],
+      "H_C_imag": [
+        [
+          0.0,
+          0.09351289930693892,
+          0.11354050560072351
+        ],
+        [
+          -0.09351289930693892,
+          0.0,
+          0.020027606293784587
+        ],
+        [
+          -0.11354050560072351,
+          -0.020027606293784587,
+          0.0
+        ]
+      ],
+      "hermiticity_error": 0.0,
+      "unitarity_error_tau1": 9.54837445313255e-16
+    },
+    "bound_states": {
+      "proton_role": {
+        "role": "PROTON_ROLE",
+        "constituent_charges": [
+          0.6666666666666666,
+          0.6666666666666666,
+          -0.3333333333333333
+        ],
+        "constituent_mass_sum": 0.09509959325181735,
+        "current_operator": [
+          [
+            0.29987101528050814,
+            -0.425020803715825,
+            -0.5160472758557688
+          ],
+          [
+            -0.425020803715825,
+            0.29987101528050814,
+            -0.09102647213994375
+          ],
+          [
+            -0.5160472758557688,
+            -0.09102647213994375,
+            0.07496775382012703
+          ]
+        ],
+        "current_eigenvalues": [
+          -0.4959563980397488,
+          0.29834041019371194,
+          0.8723257722271802
+        ],
+        "binding": 0.4959563980397488,
+        "mass": 1.9486299920904605e-07,
+        "bound": true
+      },
+      "neutron_role": {
+        "role": "NEUTRON_ROLE",
+        "constituent_charges": [
+          0.6666666666666666,
+          -0.3333333333333333,
+          -0.3333333333333333
+        ],
+        "constituent_mass_sum": 0.09531747466130495,
+        "current_operator": [
+          [
+            0.29987101528050814,
+            -0.425020803715825,
+            -0.5160472758557688
+          ],
+          [
+            -0.425020803715825,
+            0.07496775382012703,
+            -0.09102647213994375
+          ],
+          [
+            -0.5160472758557688,
+            -0.09102647213994375,
+            0.07496775382012703
+          ]
+        ],
+        "current_eigenvalues": [
+          -0.544270560200451,
+          0.1643942315115468,
+          0.8296828516096665
+        ],
+        "binding": 0.544270560200451,
+        "mass": 1.9486299920904605e-07,
+        "bound": true
+      },
+      "delta_np": 0.0,
+      "beta_window": -0.0312761522974043
+    },
+    "populations": {
+      "entries": [
+        {
+          "role": "Q_L",
+          "generation": 1,
+          "particle": 0.16609902586239567,
+          "antiparticle": 0.16609902586239567,
+          "multiplicity": 6
+        },
+        {
+          "role": "U_R",
+          "generation": 1,
+          "particle": 0.08304951293119783,
+          "antiparticle": 0.08304951293119783,
+          "multiplicity": 3
+        },
+        {
+          "role": "D_R",
+          "generation": 1,
+          "particle": 0.08304951293119783,
+          "antiparticle": 0.08304951293119783,
+          "multiplicity": 3
+        },
+        {
+          "role": "L_L",
+          "generation": 1,
+          "particle": 0.055366341954131884,
+          "antiparticle": 0.055366341954131884,
+          "multiplicity": 2
+        },
+        {
+          "role": "E_R",
+          "generation": 1,
+          "particle": 0.027683170977065942,
+          "antiparticle": 0.027683170977065942,
+          "multiplicity": 1
+        },
+        {
+          "role": "Q_L",
+          "generation": 2,
+          "particle": 1.602921389875687e-05,
+          "antiparticle": 1.602921389875687e-05,
+          "multiplicity": 6
+        },
+        {
+          "role": "U_R",
+          "generation": 2,
+          "particle": 8.014606949378435e-06,
+          "antiparticle": 8.014606949378435e-06,
+          "multiplicity": 3
+        },
+        {
+          "role": "D_R",
+          "generation": 2,
+          "particle": 8.014606949378435e-06,
+          "antiparticle": 8.014606949378435e-06,
+          "multiplicity": 3
+        },
+        {
+          "role": "L_L",
+          "generation": 2,
+          "particle": 5.343071299585623e-06,
+          "antiparticle": 5.343071299585623e-06,
+          "multiplicity": 2
+        },
+        {
+          "role": "E_R",
+          "generation": 2,
+          "particle": 2.6715356497928116e-06,
+          "antiparticle": 2.6715356497928116e-06,
+          "multiplicity": 1
+        },
+        {
+          "role": "Q_L",
+          "generation": 3,
+          "particle": 1.5468826314788758e-09,
+          "antiparticle": 1.5468826314788758e-09,
+          "multiplicity": 6
+        },
+        {
+          "role": "U_R",
+          "generation": 3,
+          "particle": 7.734413157394379e-10,
+          "antiparticle": 7.734413157394379e-10,
+          "multiplicity": 3
+        },
+        {
+          "role": "D_R",
+          "generation": 3,
+          "particle": 7.734413157394379e-10,
+          "antiparticle": 7.734413157394379e-10,
+          "multiplicity": 3
+        },
+        {
+          "role": "L_L",
+          "generation": 3,
+          "particle": 5.156275438262918e-10,
+          "antiparticle": 5.156275438262918e-10,
+          "multiplicity": 2
+        },
+        {
+          "role": "E_R",
+          "generation": 3,
+          "particle": 2.578137719131459e-10,
+          "antiparticle": 2.578137719131459e-10,
+          "multiplicity": 1
+        }
+      ],
+      "gauge": {
+        "U1_phase_carrier": 0.014118726407009563,
+        "SU2_route_carriers": 0.04235617922102869,
+        "SU3_triadic_carriers": 0.1129498112560765
+      },
+      "photon_role": 0.014118726407009563,
+      "neutrino_roles": [
+        0.027683170977065942,
+        2.6715356497928116e-06,
+        2.578137719131459e-10
+      ],
+      "net_electric_charge": 0.0,
+      "matter_fraction": 0.8305752831158852,
+      "gauge_fraction": 0.16942471688411476,
+      "normalization": 1.0
+    },
+    "asymmetry_source": {
+      "value": 0.0,
+      "reason": "symmetry-preserving diagonal completed-shell branch gives J_C=0; zero is retained rather than tuned"
+    },
+    "covariance": {
+      "classification": "PROPAGATED_B_DECIMAL_ENVELOPE_ONLY",
+      "shell_weight_covariance": [
+        [
+          2.5630469311047837e-17,
+          -2.5625522932496765e-17,
+          -4.9461676374938496e-21
+        ],
+        [
+          -2.5625522932496765e-17,
+          2.562057750853847e-17,
+          4.945213085424161e-21
+        ],
+        [
+          -4.9461676374938496e-21,
+          4.945213085424161e-21,
+          9.545113672989613e-25
+        ]
+      ],
+      "eigenvalues": [
+        -1.0879502007959368e-34,
+        7.6558889694811544e-34,
+        5.1251047774097675e-17
+      ]
+    },
+    "implementation_realization": {
+      "Phi_j": "exact executed A basis projectors",
+      "W_j_U1_phase": "exp(i*2*pi*q*j/18) on each allowed invariant chiral route",
+      "orientation": "exact B radiative antisymmetric current matrix A_C",
+      "kernel_block": "exact executed A kernel-state diagonal representative",
+      "selection": "maximal complete symmetry-preserving branch; no public or remembered target used"
+    }
+  },
+  "equations": [
+    "J^2=-I",
+    "H_C=L_B+iA_C",
+    "G_C=U(1)xSU(2)xSU(3)",
+    "N_gen=18/[3(3-1)]=3",
+    "Lambda_hat=sqrt(2 D_QV/N_active)",
+    "V=-a phi^dag phi+(b/2)(phi^dag phi)^2",
+    "M0^2=(v^2/4)[[g2^2,-g1g2],[-g1g2,g1^2]]",
+    "Gamma_i->f=(2pi/t_B)|<f|V|i>|^2 Delta_sigma",
+    "M_nu=(v^2/Lambda_M) C_nu"
+  ],
+  "expected_invariants": [
+    "probability nonnegative and normalized",
+    "anomaly residuals exactly zero",
+    "one protected neutral gauge zero mode",
+    "Hermitian microscopic generator",
+    "unitary intrinsic-clock propagation",
+    "particle-antiparticle charge cancellation",
+    "positive p/n singlet binding witnesses",
+    "three completed shells"
+  ],
+  "tolerances": {
+    "algebra": 1e-10,
+    "normalization": 1e-10,
+    "psd": 1e-12,
+    "replay_hash": "exact"
+  },
+  "falsifiers": [
+    "anomaly residual above tolerance",
+    "negative probability",
+    "non-Hermitian H_C",
+    "unitarity residual above tolerance",
+    "neutral protected mode lifted",
+    "any public/remembered particle value enters generation",
+    "missing p/n/photon/neutrino child role",
+    "replay mismatch"
+  ],
+  "claim_boundary": "Complete finite-relational internal-unit microscopic role constitution and lawful scale family; no empirical identity or measured parameter agreement."
+}

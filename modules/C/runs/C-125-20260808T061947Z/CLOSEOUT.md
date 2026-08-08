@@ -1,28 +1,5 @@
-# Closeout
+# C-125-20260808T061947Z Startup-Shell Closeout
 
-- Run ID:
-- Work unit:
-- Module:
-- Result:
-- Evidence state reached:
-- Fidelity reached:
-- Frozen artifact hashes:
-- Verified GitHub commit SHA:
+**BLOCKED BEFORE SCIENTIFIC EXECUTION.**
 
-## Scientific objects produced
-
-## Componentwise gate results
-
-## Failures preserved and corrections made
-
-## Independent reconstruction
-
-## Replay/restart/convergence evidence
-
-## Strongest supported claim
-
-## Strongest unsupported claim
-
-## Remaining gaps
-
-## Exact next child
+This run was created by the generic C-125 startup path before the superseding-lineage controller reopened Module C at PRODUCTION fidelity. It contains no primary C science and is preserved as a startup-shell attempt. The repaired lineage closes this shell and proceeds from exact `H_B_to_C_v2` in a fresh governed PRODUCTION run.
