@@ -1,1 +1,2 @@
 F-150-20260808T013006Z governed freeze/execute/verify trigger
+synchronize=1
