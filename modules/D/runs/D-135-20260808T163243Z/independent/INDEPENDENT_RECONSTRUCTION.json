@@ -1,0 +1,22 @@
+{
+  "method": "DIRECT_C_V2_FIXED_SHELL_RECONSTRUCTION_PLUS_ANALYTIC_EXPONENTIAL_AND_DOP853",
+  "analytic_history_linf": 2.4319468661104793e-10,
+  "DOP853_terminal_linf": 1.1385414833142704e-10,
+  "positive": true,
+  "normalized": true,
+  "entropy_nonnegative": true,
+  "branch_variables_preserved": [
+    "admissible frozen route matrices W_{j,[r]}",
+    "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+    "N_1>0",
+    "N_2>0",
+    "N_3>0",
+    "source-owned W_j matrix elements",
+    "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+    "Lambda_M>0 from recursive-memory ancestry",
+    "source-owned C_nu",
+    "epsilon from source-owned CP invariant",
+    "I_top from witnessed topological event route"
+  ],
+  "pass": true
+}

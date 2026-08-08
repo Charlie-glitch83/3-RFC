@@ -2,9 +2,11 @@
   "run_id": "D-135-20260808T163243Z",
   "module": "D",
   "task_id": "D-135",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-08T16:32:43.261826+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/D/runs/D-135-20260808T163243Z"
+  "workspace": "modules/D/runs/D-135-20260808T163243Z",
+  "closed_utc": "2026-08-08T16:42:15.284871+00:00",
+  "closeout": "modules/D/runs/D-135-20260808T163243Z/CLOSEOUT.md"
 }

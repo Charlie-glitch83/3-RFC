@@ -1,21 +1,45 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "2.1",
+  "run_id": "D-135-20260808T163243Z",
+  "status": "FROZEN",
+  "frozen_before_primary_execution": true,
+  "frozen_utc": "2026-08-08T16:42:07.768136+00:00",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "definition_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+  "source_register_sha256": "b9756aa5db4a117f36822c0e192624beb17ed64f67b940dc49edae30719420bc",
+  "candidate_classes": [
+    "parent-fixed three-shell marginal",
+    "full source-owned finite thermal branch family"
+  ],
+  "selection_rule": "Execute only parent-fixed quantities numerically and preserve all unresolved C variables as branches; no observed thermal history or conventional coefficient may select them.",
+  "expected_invariants": [
+    "CPTP master-law family",
+    "positive normalized shell marginal",
+    "nonnegative reversible entropy production",
+    "strict source-owned event ordering",
+    "exact branch preservation"
+  ],
+  "tolerances": {
+    "normalization": 1e-09,
+    "positivity": 1e-12,
+    "replay": "exact",
+    "independent": 1e-08
+  },
+  "falsifiers": [
+    "negative distribution below -1e-12",
+    "total probability drift above 1e-9",
+    "parent/source hash mismatch",
+    "entropy production below -1e-10 on the fixed reversible shell marginal",
+    "event ordering uses a public target",
+    "any unresolved C branch variable is silently instantiated",
+    "photon/neutrino/nucleon identity is replaced by empirical correspondence",
+    "required D->E binding is missing",
+    "clean replay differs"
+  ],
+  "claim_boundary": "Channel-complete finite-relational thermal branch family plus executed parent-fixed shell marginal. No Kelvin/MeV/SI calibration, observed transition temperature, unique unresolved microscopic branch, empirical baryon ratio, continuum thermal QFT precision, primordial abundance result or empirical validation.",
+  "required_post_lock_wolfram": [
+    "D-WL-001",
+    "D-WL-002"
+  ]
 }

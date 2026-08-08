@@ -1,0 +1,25 @@
+{
+  "countermodels": [
+    {
+      "id": "D-CM-SCALAR-COLLAPSE",
+      "result": "FAIL_AS_EXPECTED",
+      "reason": "erases inherited nonuniform shell state and all fixed-shell entropy production"
+    },
+    {
+      "id": "D-CM-ANTI-DIFFUSION",
+      "result": "FAIL_AS_EXPECTED",
+      "reason": "reverses relaxation and violates nonnegative entropy-production theorem"
+    },
+    {
+      "id": "D-CM-PUBLIC-TIMELINE",
+      "result": "FAIL_AS_EXPECTED",
+      "reason": "public temperature/redshift history forbidden during generation"
+    },
+    {
+      "id": "D-CM-BRANCH-INSTANTIATION",
+      "result": "FAIL_AS_EXPECTED",
+      "reason": "unresolved C route/scale/topological variables may not be silently selected"
+    }
+  ],
+  "overall": "PASS"
+}

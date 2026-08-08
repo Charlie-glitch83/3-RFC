@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "transport",
+  "model": {
+    "state_names": [
+      "shell0",
+      "shell1",
+      "shell2"
+    ],
+    "parameters": {
+      "a": 0.1499430216517723
+    },
+    "rhs_expressions": [
+      "a*(shell1-shell0)+a*(shell2-shell0)",
+      "a*(shell0-shell1)+a*(shell2-shell1)",
+      "a*(shell0-shell2)+a*(shell1-shell2)"
+    ],
+    "initial_state": [
+      0.9999034960399903,
+      9.649464789406941e-05,
+      9.312115728244279e-09
+    ],
+    "t_span": [
+      0.0,
+      6.669200000000001
+    ],
+    "method": "BDF",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "max_step": 0.05210312500000001,
+    "linear_invariants": {
+      "total_probability": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "invariant_tolerance": 1e-09,
+    "positivity_required": true,
+    "positivity_tolerance": 1e-12
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-135-20260808T163243Z/solver_templates/D_transport.template.json",
+    "template_sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/D/runs/D-135-20260808T163243Z/binding_sheets/D_transport.bindings.json",
+    "binding_sheet_sha256": "1b673220cd9be9517d61061f941872be6eaa993c73711d4e2820cfe17aba835f",
+    "bindings": [
+      {
+        "path": "model.state_names",
+        "value": [
+          "shell0",
+          "shell1",
+          "shell2"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.state_names",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.parameters",
+        "value": {
+          "a": 0.1499430216517723
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.parameters",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.rhs_expressions",
+        "value": [
+          "a*(shell1-shell0)+a*(shell2-shell0)",
+          "a*(shell0-shell1)+a*(shell2-shell1)",
+          "a*(shell0-shell2)+a*(shell1-shell2)"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.rhs_expressions",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.initial_state",
+        "value": [
+          0.9999034960399903,
+          9.649464789406941e-05,
+          9.312115728244279e-09
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.initial_state",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.t_span",
+        "value": [
+          0.0,
+          6.669200000000001
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.t_span",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.max_step",
+        "value": 0.05210312500000001,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.max_step",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.linear_invariants",
+        "value": {
+          "total_probability": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.linear_invariants",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.invariant_tolerance",
+        "value": 1e-09,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.invariant_tolerance",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      },
+      {
+        "path": "model.positivity_tolerance",
+        "value": 1e-12,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/D/runs/D-135-20260808T163243Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "4c2e7406ef025300ea89409999eefbc683f36aeb57dd6bf40563341661a53f92",
+        "module": "D",
+        "derivation_object": "D135_FROZEN_DERIVATION_SPEC.model.positivity_tolerance",
+        "units": "intrinsic finite-relational units",
+        "dimensions": "source-owned D thermal branch family",
+        "justification": "Exact C-v2 parent-fixed shell marginal; unresolved microscopic branches remain explicit and are not numerically instantiated."
+      }
+    ]
+  }
+}

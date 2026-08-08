@@ -1,7 +1,14 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "D-135-20260808T163243Z",
+  "checkpoints": [
+    {
+      "checkpoint_id": "D135-NUCLEAR-READY-BRANCH-FAMILY",
+      "state_path": "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+      "state_sha256": "7ca9d80e6da05ff32d2290c6c69e32a73af705fbd6346f62b42094b79b498d7c",
+      "restart_test": "PASS",
+      "contract": "E-145 consumes H_D_to_E_v2 and must execute every admitted source-owned thermal/nuclear branch or preserve obstruction; no conventional BBN initial condition may replace branch variables."
+    }
+  ],
+  "restart_contract": "E-145 consumes H_D_to_E_v2 and must execute every admitted source-owned thermal/nuclear branch or preserve obstruction; no conventional BBN initial condition may replace branch variables.",
   "hash_algorithm": "sha256"
 }

@@ -1,0 +1,200 @@
+{
+  "schema_version": "2.1",
+  "run_id": "D-135-20260808T163243Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/C/frozen/H_C_to_D_v2.json",
+    "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614",
+    "bytes": 11597
+  },
+  "fixed_parent_quantities": {
+    "spectral_core": [
+      [
+        0.29988604330354474,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "a": 0.1499430216517723,
+    "gap": 0.44982906495531705,
+    "initial_shell_populations": [
+      0.9999034960399903,
+      9.649464789406941e-05,
+      9.312115728244279e-09
+    ],
+    "equilibrium_shell_populations": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "t_span": [
+      0.0,
+      6.669200000000001
+    ],
+    "max_step": 0.05210312500000001,
+    "envelope": [
+      {
+        "delta": 4.66915,
+        "D_QV": 0.11391441051853995,
+        "Lambda_hat_C": 0.1948626956932667,
+        "shell_weights": [
+          0.9999034898392979,
+          9.650084738974027e-05,
+          9.31331237621204e-09
+        ]
+      },
+      {
+        "delta": 4.6692,
+        "D_QV": 0.11391476538223405,
+        "Lambda_hat_C": 0.19486299920904607,
+        "shell_weights": [
+          0.9999034960399903,
+          9.649464789406941e-05,
+          9.312115728244279e-09
+        ]
+      },
+      {
+        "delta": 4.66925,
+        "D_QV": 0.11391512022647657,
+        "Lambda_hat_C": 0.19486330270771574,
+        "shell_weights": [
+          0.9999035022402178,
+          9.648844886301412e-05,
+          9.310919246839326e-09
+        ]
+      }
+    ]
+  },
+  "thermal_branch_family": {
+    "classification": "SOURCE_OWNED_FINITE_RELATIONAL_THERMAL_BRANCH_FAMILY",
+    "master_generator": "d rho_D/dt=-i[H_C,rho_D]+sum_r gamma_r(J_r rho_D J_r^dagger-1/2{J_r^dagger J_r,rho_D}), gamma_r>=0",
+    "channel_rule": "Every active jump J_r descends from exactly one C interaction/event route; lawful inverse routes remain separate.",
+    "distribution_rule": "f_{a,k}=Tr(rho_D n_{a,k}); df/dt=Tr(n_{a,k} L_D[rho_D])",
+    "temperature_rule": "A scalar/sector temperature exists only after a source-owned relative-entropy residual to the moment-matching generalized Gibbs manifold crosses its frozen internal threshold; before that the full distribution state is primary.",
+    "thermodynamics": "rho,p,s,h,c_s^2, susceptibilities, screening and transport are marginals/response objects of rho_D,H_C and the finite relational geometry.",
+    "phase_rule": "Phase/crossover branches are classified by generated constrained free-energy minimizers, coexistence/barriers/curvature and witnessed event connectivity; no target temperature is inserted.",
+    "asymmetry_transport": "d n_Q/dt = S_C + diffusion + conversion - washout - dilution + witnessed_dark_transfer; S_C inherits C asymmetry_source and may vanish on lawful branches.",
+    "freezeout_decoupling": "Compare restricted-Liouvillian relaxation gap to generated physical evolution rate. Down/up crossings define freeze-out/decoupling and recoupling; insufficient integrated relaxation defines freeze-in.",
+    "photon_transport": "Protected photon-role population is an exact L_D marginal with collision/entropy-transfer currents generated only from witnessed C vertices.",
+    "neutrino_transport": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+    "pair_entropy_transfer": "particle-antiparticle annihilation/inverse routes and photon/neutrino energy currents close total energy; no standard temperature ratio is inserted.",
+    "dark_policy": {
+      "compression_relic": "collective/dormant unless separately witnessed microscopic invariant coupling exists",
+      "dissipative_tail": "dormant exact-zero B branch"
+    },
+    "branch_variables": [
+      "admissible frozen route matrices W_{j,[r]}",
+      "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+      "N_1>0",
+      "N_2>0",
+      "N_3>0",
+      "source-owned W_j matrix elements",
+      "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+      "Lambda_M>0 from recursive-memory ancestry",
+      "source-owned C_nu",
+      "epsilon from source-owned CP invariant",
+      "I_top from witnessed topological event route"
+    ],
+    "branch_policy": "Every unresolved route/kernel/phase/scale/topological variable is retained explicitly. D must evolve every admitted branch or preserve an obstruction; no measured value may select a branch."
+  },
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "microscopic_registry": {
+    "internal_group": "U(1)_C x SU(2)_R x SU(3)_T",
+    "algebra_dimension": 12,
+    "generation_shells": 3,
+    "representations": {
+      "Q_L": "(3,2)",
+      "U_R": "(3,1)",
+      "D_R": "(3,1)",
+      "L_L": "(1,2)",
+      "E_R": "(1,1)",
+      "phi_C": "(1,2)"
+    },
+    "spin_statistics_chirality": {
+      "matter_spin": "1/2 route-doublet",
+      "matter_statistics": "antisymmetric exterior algebra",
+      "carrier_statistics": "symmetric algebra",
+      "chirality": "route grading",
+      "antiparticle_map": "complex conjugation + route reversal + charge inversion"
+    },
+    "empirical_identity": "UNASSIGNED_MODULE_P"
+  },
+  "charge_registry": {
+    "group": "U(1)_C x SU(2)_R x SU(3)_T",
+    "charges": {
+      "y_phi": "1/2",
+      "y_Q": "1/6",
+      "y_U": "2/3",
+      "y_D": "-1/3",
+      "y_L": "-1/2",
+      "y_E": "-1"
+    },
+    "anomaly_residuals": [
+      0.0,
+      0.0,
+      2.220446049250313e-16
+    ]
+  },
+  "nucleon_roles": {
+    "proton": "lowest stable spin-1/2 charge +1 three-triplet singlet, minimal composition UUD",
+    "neutron": "lowest spin-1/2 charge 0 three-triplet singlet, minimal composition UDD",
+    "mass_law": "lowest eigenvalues of source-instantiated finite binding operators; no observed ordering is inserted"
+  },
+  "photon_role": {
+    "status": "EXACT_PROTECTED_NEUTRAL_ZERO_MODE_FOR_EVERY_POSITIVE_G1_G2_VC_BRANCH",
+    "mass_squared": "0",
+    "identity": "INTERNAL_PHOTON_ROLE_NOT_EMPIRICAL_CORRESPONDENCE"
+  },
+  "neutrino_family": {
+    "count": 3,
+    "law": {
+      "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+      "branch_variables": [
+        "Lambda_M>0 from recursive-memory ancestry",
+        "source-owned C_nu"
+      ],
+      "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+      "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+    },
+    "identity": "INTERNAL_NEUTRAL_COMPLETED_SHELL_ROLES"
+  },
+  "asymmetry_source": {
+    "global_B": "B(U)=B(D)=1/3",
+    "global_L": "L(N)=L(E)=1",
+    "topological_permission": "Delta(B+L)=6 I_top; Delta(B-L)=0",
+    "source": "Y_C_source=epsilon*chi_B*J_C*I_top",
+    "branch_variables": [
+      "epsilon from source-owned CP invariant",
+      "I_top from witnessed topological event route"
+    ],
+    "ownership": "D owns activation/washout/survival"
+  },
+  "falsifiers": [
+    "negative distribution below -1e-12",
+    "total probability drift above 1e-9",
+    "parent/source hash mismatch",
+    "entropy production below -1e-10 on the fixed reversible shell marginal",
+    "event ordering uses a public target",
+    "any unresolved C branch variable is silently instantiated",
+    "photon/neutrino/nucleon identity is replaced by empirical correspondence",
+    "required D->E binding is missing",
+    "clean replay differs"
+  ],
+  "claim_boundary": "Channel-complete finite-relational thermal branch family plus executed parent-fixed shell marginal. No Kelvin/MeV/SI calibration, observed transition temperature, unique unresolved microscopic branch, empirical baryon ratio, continuum thermal QFT precision, primordial abundance result or empirical validation."
+}

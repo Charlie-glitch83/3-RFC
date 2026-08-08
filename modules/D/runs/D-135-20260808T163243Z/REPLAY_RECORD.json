@@ -1,10 +1,33 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "D-135-20260808T163243Z",
+  "result": "PASS",
+  "clean_checkout": true,
+  "artifact_hashes_match": true,
+  "artifacts": {
+    "primary/THERMAL_HISTORY_V2.json": {
+      "primary_sha256": "7ca9d80e6da05ff32d2290c6c69e32a73af705fbd6346f62b42094b79b498d7c",
+      "replay_sha256": "7ca9d80e6da05ff32d2290c6c69e32a73af705fbd6346f62b42094b79b498d7c",
+      "match": true
+    },
+    "primary/UNCERTAINTY_COVARIANCE.json": {
+      "primary_sha256": "35259df392a18b68d675df88bec77ef121251745aff272552aeff7309dc99829",
+      "replay_sha256": "35259df392a18b68d675df88bec77ef121251745aff272552aeff7309dc99829",
+      "match": true
+    },
+    "primary/COUNTERMODEL_RESULTS.json": {
+      "primary_sha256": "ec45922f3eb604e15f751f076f3447f6424ba41919e50df244a1470d51380617",
+      "replay_sha256": "ec45922f3eb604e15f751f076f3447f6424ba41919e50df244a1470d51380617",
+      "match": true
+    },
+    "PRIMARY_GATE_INPUTS.json": {
+      "primary_sha256": "f80d33166f4d5f6d4c23a75b05bce34d5bdf6e275fbb6715d55ffa1c77914d33",
+      "replay_sha256": "f80d33166f4d5f6d4c23a75b05bce34d5bdf6e275fbb6715d55ffa1c77914d33",
+      "match": true
+    },
+    "independent/INDEPENDENT_RECONSTRUCTION.json": {
+      "primary_sha256": "4bca135cef4f8093166999f59678905d83ca3fb42085a3f30b3ddec03ae90074",
+      "replay_sha256": "4bca135cef4f8093166999f59678905d83ca3fb42085a3f30b3ddec03ae90074",
+      "match": true
+    }
+  }
 }

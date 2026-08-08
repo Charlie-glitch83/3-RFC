@@ -484,7 +484,7 @@
       "id": "D-135",
       "title": "Supersede Module D: Channel-Complete Nonequilibrium Thermal History",
       "module": "D",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "C-125"
       ],
@@ -522,7 +522,7 @@
       "id": "E-145",
       "title": "Supersede Module E: Source-Owned Primordial Nucleosynthesis",
       "module": "E",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "D-135"
       ],

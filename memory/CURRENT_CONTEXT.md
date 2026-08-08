@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-08T16:32:47.317920+00:00
+Generated: 2026-08-08T16:42:15.777236+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `D-135` — Supersede Module D: Channel-Complete Nonequilibrium Thermal History
-- Current module: `D`
+- Active work unit: `E-145` — Supersede Module E: Source-Owned Primordial Nucleosynthesis
+- Current module: `E`
 - Last verified commit: `ff72654b32d1d17dc37f462c5558603848a8dd9f`
 
 ## Strongest supported claim
@@ -20,16 +20,16 @@ No superseding channel-complete microscopic constitution H_C_to_D_v2, full noneq
 
 ## Immediate objective
 
-Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asymmetry, annihilation/freeze-out/decoupling and photon/neutrino transport.
+Execute the recovered source-owned nuclear network with isotope identities, rates, abundances, covariance and plasma-ready output.
 
 ## Required deliverables
 
-- modules/D/runs/<RUN_ID>/OUTPUT_CONTRACT.json
-- modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/D/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/D/runs/<RUN_ID>/CLOSEOUT.md
-- versioned superseding H_D_to_E_v2 handoff and manifest
+- modules/E/runs/<RUN_ID>/OUTPUT_CONTRACT.json
+- modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/E/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/E/runs/<RUN_ID>/CLOSEOUT.md
+- versioned superseding H_E_to_F_v2 handoff and manifest
 
 ## Mandatory gates
 
@@ -45,7 +45,7 @@ Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asym
 - A: `FROZEN` / `PRODUCTION`
 - B: `FROZEN` / `PRODUCTION`
 - C: `FROZEN` / `PRODUCTION`
-- D: `FROZEN` / `MINIMAL_SPINE`
+- D: `FROZEN` / `PRODUCTION`
 - E: `FROZEN` / `MINIMAL_SPINE`
 - F: `FROZEN` / `MINIMAL_SPINE`
 - G: `BLOCKED` / `UNSTARTED`
@@ -65,7 +65,7 @@ Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asym
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 19
+- frozen artifacts: 20
 - indexed runs: 18
 
 ## Recent runs
@@ -77,18 +77,18 @@ Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asym
 - C-125-20260808T061947Z: BLOCKED (C)
 - C-125-20260808T063010Z: BLOCKED (C)
 - C-125-20260808T063500Z: PASS (C)
-- D-135-20260808T163243Z: CREATED (D)
+- D-135-20260808T163243Z: PASS (D)
 
 ## Recent decisions
 
-- PROMOTE-C-FORMALIZED-20260808T064631Z: Promoted Module C from DESIGN to FORMALIZED at PRODUCTION
-- PROMOTE-C-IMPLEMENTED-20260808T064631Z: Promoted Module C from FORMALIZED to IMPLEMENTED at PRODUCTION
-- PROMOTE-C-VERIFIED-20260808T064631Z: Promoted Module C from IMPLEMENTED to VERIFIED at PRODUCTION
-- PROMOTE-C-PHYSICALLY_EXECUTED-20260808T064632Z: Promoted Module C from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
-- PROMOTE-C-INDEPENDENTLY_REPRODUCED-20260808T064632Z: Promoted Module C from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
-- PROMOTE-C-FROZEN-20260808T064632Z: Promoted Module C from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
-- ADVANCE-C-125-20260808T064632Z: Marked C-125 PASS and activated D-135
-- COMMIT-ff72654b32d1: Verified source-safe C-125 branch-family microscopic replay; connected Wolfram, parent spectral corroboration, exact branch-family preservation, clean replay, D child contract, PRODUCTION evidence ladder and one-child activation D-135.
+- REOPEN-D-20260808T164207Z: Reopened Module D from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
+- PROMOTE-D-FORMALIZED-20260808T164215Z: Promoted Module D from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-D-IMPLEMENTED-20260808T164215Z: Promoted Module D from FORMALIZED to IMPLEMENTED at PRODUCTION
+- PROMOTE-D-VERIFIED-20260808T164215Z: Promoted Module D from IMPLEMENTED to VERIFIED at PRODUCTION
+- PROMOTE-D-PHYSICALLY_EXECUTED-20260808T164215Z: Promoted Module D from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
+- PROMOTE-D-INDEPENDENTLY_REPRODUCED-20260808T164215Z: Promoted Module D from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-D-FROZEN-20260808T164215Z: Promoted Module D from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- ADVANCE-D-135-20260808T164215Z: Marked D-135 PASS and activated E-145
 
 ## Recent failures
 

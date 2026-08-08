@@ -1,10 +1,48 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "schema_version": "2.1",
+  "run_id": "D-135-20260808T163243Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/C/frozen/H_C_to_D_v2.json",
+      "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614",
+      "bytes": 11597,
+      "classification": "DIRECT_PARENT"
+    }
+  ],
+  "replay_required_sources": [
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/THERMAL_EVOLUTION.md",
+      "sha256": "9a4f48c91c97b8a12048e61e3458e934bbe15ceac9dabc7db5b57e5a66924a4e",
+      "bytes": 30245,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/THERMAL_EVOLUTION.md",
+      "sha256": "5ee5b32e0c97db0cbc910ab125e8ee6ab2d2023428060a72aa700e30088336c7",
+      "bytes": 6875,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/D/MODULE_D_TO_E_SCIENTIFIC_HANDOFF.md",
+      "sha256": "5bbf2319c430799f58377fbc405b2c7a24608222bb46454f7761d26b0894c516",
+      "bytes": 12632,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/D/MODULE_D_MANUSCRIPT_SOURCE_TRACEABILITY.md",
+      "sha256": "55a4df089d2a21c1ffea7e3c9966ee98ba87a15fdb111fd23d9bb3604a15dfe4",
+      "bytes": 1344,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/D/MODULE_D_WOLFRAM_VERIFICATION.md",
+      "sha256": "86e5fdd614a8910834344f76b6662fba91293ffb70c79161b86b9467bc7c2671",
+      "bytes": 3898,
+      "classification": "REPLAY_REQUIRED"
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION"
 }

@@ -1,58 +1,219 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.1",
   "run_id": "D-135-20260808T163243Z",
   "module": "D",
-  "status": "DRAFT",
+  "status": "PASS",
   "required_outputs": [
     {
       "name": "temperature and distribution histories",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "phase/event ledger",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "transport and collision operators",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "entropy and conservation ledger",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "uncertainty/covariance",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_D_to_E",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     }
   ],
-  "child_bindings": {},
-  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+  "child_bindings": {
+    "nonequilibrium_distributions": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "thermal_phase_event_history": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "asymmetry_transport": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "annihilation_freezeout_decoupling": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "photon_transport": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "neutrino_transport": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "entropy_conservation_ledger": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "nuclear_ready_state": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "covariance": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "clock": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/primary/THERMAL_HISTORY_V2.json",
+        "modules/D/runs/D-135-20260808T163243Z/primary/UNCERTAINTY_COVARIANCE.json",
+        "modules/D/runs/D-135-20260808T163243Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "restart": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/D/runs/D-135-20260808T163243Z/CHECKPOINT_RECORD.json",
+        "modules/D/frozen/H_D_to_E_v2.json"
+      ],
+      "derived_absence": false
+    }
+  },
+  "note": "Child-ready as an explicit source-owned thermal branch family plus executed parent-fixed marginal. E must branch or obstruct; it may not import a standard BBN starting state."
 }

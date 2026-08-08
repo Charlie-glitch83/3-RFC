@@ -1,7 +1,4 @@
 {
-  "run_id": "D-135-20260808T163243Z",
-  "module": "D",
-  "overall": "PASS",
   "componentwise": {
     "positive distributions": {
       "pass": true
@@ -18,13 +15,11 @@
       "pass": true
     },
     "restart and independent reconstruction": {
-      "pass": true,
-      "clean_replay": true
+      "pass": true
     },
     "required output completeness and E child-readiness": {
       "pass": true,
       "provisional": "finalize constructs exact contract after replay"
     }
-  },
-  "aggregate_scores_cannot_override": true
+  }
 }

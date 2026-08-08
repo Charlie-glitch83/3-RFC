@@ -1,0 +1,78 @@
+{
+  "classification": "PARENT_DECIMAL_ENVELOPE_PLUS_EXPLICIT_MODEL_BRANCH_FAMILY",
+  "members": [
+    {
+      "delta": 4.66915,
+      "initial": [
+        0.9999034898392979,
+        9.650084738974027e-05,
+        9.31331237621204e-09
+      ],
+      "final": [
+        0.36651990740112744,
+        0.3167424483147459,
+        0.3167376442841258
+      ],
+      "minimum": 9.31331237621204e-09
+    },
+    {
+      "delta": 4.6692,
+      "initial": [
+        0.9999034960399903,
+        9.649464789406941e-05,
+        9.312115728244279e-09
+      ],
+      "final": [
+        0.3665199077098423,
+        0.3167424480060914,
+        0.3167376442840662
+      ],
+      "minimum": 9.312115728244279e-09
+    },
+    {
+      "delta": 4.66925,
+      "initial": [
+        0.9999035022402178,
+        9.648844886301412e-05,
+        9.310919246839326e-09
+      ],
+      "final": [
+        0.36651990801853407,
+        0.31674244769746024,
+        0.3167376442840073
+      ],
+      "minimum": 9.310919246839326e-09
+    }
+  ],
+  "fixed_shell_terminal_covariance": [
+    [
+      6.35318236315155e-20,
+      -6.351937683792605e-20,
+      -1.2195459882700501e-23
+    ],
+    [
+      -6.351937683792605e-20,
+      6.350693248284637e-20,
+      1.2193070628451115e-23
+    ],
+    [
+      -1.2195459882700501e-23,
+      1.2193070628451115e-23,
+      2.34104847966969e-27
+    ]
+  ],
+  "model_branch_variables": [
+    "admissible frozen route matrices W_{j,[r]}",
+    "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+    "N_1>0",
+    "N_2>0",
+    "N_3>0",
+    "source-owned W_j matrix elements",
+    "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+    "Lambda_M>0 from recursive-memory ancestry",
+    "source-owned C_nu",
+    "epsilon from source-owned CP invariant",
+    "I_top from witnessed topological event route"
+  ],
+  "collapsed_to_single_fit": false
+}
