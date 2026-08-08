@@ -1,3 +1,3 @@
 authorized_by_user=2026-08-08
-scope=resume_safe_b_first_science_lineage_repair
-trigger=1
+scope=observable_resume_safe_b_first_repair
+trigger=pr-1
