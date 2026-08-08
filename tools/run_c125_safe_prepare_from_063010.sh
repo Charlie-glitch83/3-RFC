@@ -41,7 +41,6 @@ python tools/rfc.py close-run --run-id "$OLD" --result BLOCKED --closeout "modul
 python tools/rfc.py new-run C --run-id "$RUN_ID"
 python tools/director.py prepare-active
 python tools/execute_c125.py prepare --run "$RUN"
-python tools/director.py solver-copy --module C --solver spectral_model --destination "$RUN"
 mkdir -p "$RUN/solver_configs"
 python tools/materialize_solver_config.py --template "$RUN/solver_templates/C_spectral_model.template.json" --binding-sheet "$RUN/binding_sheets/C_spectral_model.bindings.json" --output "$RUN/solver_configs/C_spectral_model.json"
 python - <<'PY'
