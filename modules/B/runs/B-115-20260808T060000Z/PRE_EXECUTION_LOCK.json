@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "run_id": "B-115-20260808T060000Z",
+  "status": "FROZEN",
+  "frozen_before_primary_execution": true,
+  "generation_mode": "GENERATION_SEALED",
+  "target_fidelity": "PRODUCTION",
+  "input_hashes": {
+    "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json": {
+      "sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16",
+      "bytes": 4491
+    },
+    "modules/B/frozen/H_B_to_C.json": {
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492",
+      "bytes": 7564
+    },
+    "modules/A/frozen/H_A_to_B.json": {
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "bytes": 14529
+    },
+    "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md": {
+      "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1a",
+      "bytes": 23545
+    },
+    "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/B/MODULE_B_TO_C_SCIENTIFIC_HANDOFF.md": {
+      "sha256": "beeead174edb8f12f2a62a5040535050bdb700fc0b0ab482ab57ecc317b8dcfb",
+      "bytes": 15433
+    }
+  },
+  "definition_hashes": [
+    {
+      "path": "modules/B/runs/B-115-20260808T060000Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "f74c0bffc57842a336bd2cf6191bbba9bd08e8594cdaa917d79ef78eb53dd430"
+    },
+    {
+      "path": "modules/B/runs/B-115-20260808T060000Z/SOURCE_REGISTER.json",
+      "sha256": "ec83b3728ae88864fb85371ab9eed4a03abfe40d0a9c4572338a4fa1fcd94b49"
+    }
+  ],
+  "candidate_classes": [
+    "ordinary event-even seed",
+    "radiative route-odd seed",
+    "compression-relic event-odd seed",
+    "dissipative-tail route-even seed including exact dormant zero on reciprocal-current branch"
+  ],
+  "equations_and_laws": [
+    "(H_x direct_sum H_x) direct_sum (H_j direct_sum H_j)",
+    "o0=(x_minus+x_plus)/2",
+    "c0=(x_minus-x_plus)/2",
+    "r0=(j_forward-j_reverse)/2",
+    "t0=(j_forward+j_reverse)/2",
+    [
+      "P_ord=(I+E)/2 on state block",
+      "P_comp=(I-E)/2 on state block",
+      "P_rad=(I-R)/2 on current block",
+      "P_tail=(I+R)/2 on current block"
+    ],
+    "sum(P_a)=I and P_a P_b=delta_ab P_a",
+    [
+      "x_minus=o0+c0",
+      "x_plus=o0-c0",
+      "j_forward=t0+r0",
+      "j_reverse=t0-r0"
+    ]
+  ],
+  "tolerances": {
+    "reconstruction_linf": 1e-12,
+    "ledger_abs": 1e-12,
+    "tail_zero_abs_if_reciprocal": 1e-12
+  },
+  "gates": [
+    "exact B-110/A parent bytes",
+    "four-projector completeness",
+    "state/current exact reopening",
+    "total-ledger consistency",
+    "no microscopic identity smuggled",
+    "clean replay and independent reconstruction",
+    "required output completeness and C child-readiness"
+  ],
+  "falsifiers": [
+    "any sector is inserted by physical label rather than projector",
+    "sector sum cannot reopen complete B carrier/current state",
+    "B-110 Big-Implosion state changes",
+    "later C particle identity is assigned inside B",
+    "public or measured target enters generation"
+  ],
+  "claim_boundary": "Completes the four exact preparticle genesis seed coordinates and B->C handoff on the already executed B Big-Implosion branch. It does not derive particle identities, mature metric spacetime, calibrated constants, thermal history, recombination, or empirical agreement.",
+  "independent_verifier_design": "Recompute the four seed coordinates independently from exact B-110 pre/post carriers and J_ij/J_ji pairs; reconstruct the complete state/current pair and compare only final values/hashes.",
+  "allowed_implementation_only_corrections": [
+    "path/serialization corrections that do not change input hashes, projector formulas, tolerances, gates, falsifiers or claim boundary"
+  ]
+}

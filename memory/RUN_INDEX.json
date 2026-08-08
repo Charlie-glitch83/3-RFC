@@ -137,9 +137,20 @@
       "run_id": "G-160-20260808T051613Z",
       "module": "G",
       "task_id": "G-160",
-      "status": "CREATED",
+      "status": "BLOCKED",
       "path": "modules/G/runs/G-160-20260808T051613Z",
-      "created_utc": "2026-08-08T05:16:13.226819+00:00"
+      "created_utc": "2026-08-08T05:16:13.226819+00:00",
+      "closed_utc": "2026-08-08T06:09:13.734571+00:00",
+      "tree_sha256": "78cb0b43635720cf3d1ae268acd031a09cd6f59c8d9a5c3c0ace2a3df92ee7e6",
+      "closeout": "modules/G/runs/G-160-20260808T051613Z/CLOSEOUT.md"
+    },
+    {
+      "run_id": "B-115-20260808T060000Z",
+      "module": "B",
+      "task_id": "B-115",
+      "status": "CREATED",
+      "path": "modules/B/runs/B-115-20260808T060000Z",
+      "created_utc": "2026-08-08T06:09:13.915865+00:00"
     }
   ]
 }

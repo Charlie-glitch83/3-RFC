@@ -16,6 +16,10 @@
     {
       "gate": "replay from E",
       "required": "PASS"
+    },
+    {
+      "gate": "required output completeness and G child-readiness",
+      "required": "PASS"
     }
   ],
   "aggregate_scores_cannot_override": true

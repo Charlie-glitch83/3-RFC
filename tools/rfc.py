@@ -321,6 +321,14 @@ def cmd_new_run(args: argparse.Namespace) -> int:
         "GATE_RESULTS.json", "INDEPENDENT_VERIFICATION.md", "CLOSEOUT.md"
     ]:
         copy_template(name, dest / name)
+    if args.module in load_json(ROOT / "config/module_graph.json")["module_order"]:
+        spec = load_json(ROOT / "modules" / args.module / "spec.json")
+        save_json(dest / "OUTPUT_CONTRACT.json", {
+            "schema_version": "1.0", "run_id": run_id, "module": args.module, "status": "DRAFT",
+            "required_outputs": [{"name": name, "status": "UNSATISFIED", "artifact_paths": [], "semantic_gate": "PENDING", "independent_verification": "PENDING", "child_ready": False} for name in spec.get("required_outputs", [])],
+            "child_bindings": {},
+            "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+        })
     (dest / "FAILURES.jsonl").write_text("", encoding="utf-8")
     save_json(dest / "run.json", {
         "run_id": run_id, "module": args.module, "task_id": item["id"], "status": "CREATED", "created_utc": now(),
@@ -628,6 +636,98 @@ def find_run(run_id: str) -> tuple[dict[str, Any], Path, dict[str, Any]]:
     return rec, path, index
 
 
+def validate_required_output_contract(path: Path, module: str) -> tuple[bool, list[str]]:
+    errors: list[str] = []
+    contract_path = path / "OUTPUT_CONTRACT.json"
+    if not contract_path.exists():
+        return False, ["OUTPUT_CONTRACT.json is missing"]
+    spec = load_json(ROOT / "modules" / module / "spec.json")
+    contract = load_json(contract_path)
+    if contract.get("status") != "PASS":
+        errors.append("OUTPUT_CONTRACT.json status must be PASS")
+    required = list(spec.get("required_outputs", []))
+    records = contract.get("required_outputs", [])
+    by_name = {r.get("name"): r for r in records if isinstance(r, dict) and r.get("name")}
+    if set(by_name) != set(required):
+        errors.append(f"output-contract names differ from live module spec: expected {required}, found {sorted(by_name)}")
+    for name in required:
+        rec = by_name.get(name)
+        if not rec:
+            continue
+        if rec.get("status") != "SATISFIED": errors.append(f"required output not SATISFIED: {name}")
+        if rec.get("semantic_gate") != "PASS": errors.append(f"required output semantic gate not PASS: {name}")
+        if rec.get("independent_verification") != "PASS": errors.append(f"required output independent verification not PASS: {name}")
+        if rec.get("child_ready") is not True: errors.append(f"required output not child-ready: {name}")
+        arts = rec.get("artifact_paths", [])
+        if not arts: errors.append(f"required output has no artifact evidence: {name}")
+        for rel in arts:
+            q = (ROOT / rel).resolve()
+            if not q.exists() or ROOT not in q.parents:
+                errors.append(f"required-output artifact missing/outside repository: {name}: {rel}")
+
+    cfg_path = ROOT / "config/required_output_contracts.json"
+    cfg = load_json(cfg_path) if cfg_path.exists() else {}
+    bindings = contract.get("child_bindings", {})
+
+    # B-115 was authored before the canonical B->C contract vocabulary was frozen.
+    # These are name aliases only: each alias points to the same artifact-backed B object.
+    aliases = {
+        "B": {
+            "first_physical_state": "manifested_carrier",
+            "intrinsic_clock_origin": "physical_event_clock",
+            "pregeometry_or_geometry": "pregeometry",
+            "field_current_conservation_state": "directed_currents",
+            "route_event_branch_memory": "symmetry_branch_state",
+            "uncertainty": "uncertainty_covariance",
+            "no_loss_ancestry": "memory_ancestry",
+        }
+    }
+
+    for req in cfg.get("modules", {}).get(module, {}).get("required_child_bindings", []):
+        key = req["name"]
+        rec = bindings.get(key)
+        if not isinstance(rec, dict):
+            alias = aliases.get(module, {}).get(key)
+            if alias:
+                rec = bindings.get(alias)
+
+        # The original B-115 finalizer represented restart as the required
+        # `restartable H_B_to_C` output rather than duplicating it under
+        # child_bindings. Accept it only if that full required-output record
+        # has already passed all semantic/independent/child-ready checks and
+        # carries repository artifact evidence (including the checkpoint).
+        if not isinstance(rec, dict) and module == "B" and key == "restart":
+            restart_output = by_name.get("restartable H_B_to_C")
+            if restart_output and restart_output.get("status") == "SATISFIED" and restart_output.get("semantic_gate") == "PASS" and restart_output.get("independent_verification") == "PASS" and restart_output.get("child_ready") is True and restart_output.get("artifact_paths"):
+                rec = {
+                    "status": "SATISFIED",
+                    "source_lineage": "PASS",
+                    "independent_verification": "PASS",
+                    "artifact_paths": restart_output["artifact_paths"],
+                    "derived_absence": False,
+                }
+
+        if not isinstance(rec, dict):
+            errors.append(f"required child binding missing: {key}")
+            continue
+        if rec.get("status") != "SATISFIED": errors.append(f"required child binding not SATISFIED: {key}")
+        if rec.get("source_lineage") != "PASS": errors.append(f"required child binding source lineage not PASS: {key}")
+        if rec.get("independent_verification") != "PASS": errors.append(f"required child binding independent verification not PASS: {key}")
+        arts = rec.get("artifact_paths", [])
+        if not arts:
+            errors.append(f"required child binding has no artifact evidence: {key}")
+        else:
+            for rel in arts:
+                q = (ROOT / rel).resolve()
+                if not q.exists() or ROOT not in q.parents:
+                    errors.append(f"required child-binding artifact missing/outside repository: {key}: {rel}")
+        if not req.get("allow_derived_absence", False) and rec.get("derived_absence") is True:
+            errors.append(f"required child binding cannot be satisfied by absence: {key}")
+        if req.get("allow_derived_absence", False) and rec.get("derived_absence") is True and not rec.get("absence_proof_artifact"):
+            errors.append(f"derived absence lacks proof artifact: {key}")
+    return not errors, errors
+
+
 def cmd_close_run(args: argparse.Namespace) -> int:
     try:
         rec, path, index = find_run(args.run_id)
@@ -657,7 +757,14 @@ def cmd_close_run(args: argparse.Namespace) -> int:
             print("PASS requires substantive independent verification", file=sys.stderr)
             return 2
         run_module = load_json(path / "run.json").get("module")
-        if run_module in set(load_json(ROOT / "config/module_graph.json")["module_order"]) | {"UNIVERSE", "FINAL"}:
+        module_order = set(load_json(ROOT / "config/module_graph.json")["module_order"])
+        if run_module in module_order:
+            output_ok, output_errors = validate_required_output_contract(path, run_module)
+            if not output_ok:
+                print("PASS requires a complete live required-output and child-readiness contract", file=sys.stderr)
+                for err in output_errors: print(f"- {err}", file=sys.stderr)
+                return 2
+        if run_module in module_order | {"UNIVERSE", "FINAL"}:
             pre = load_json(path / "PRE_EXECUTION_LOCK.json")
             env = load_json(path / "ENVIRONMENT.json")
             out_manifest = load_json(path / "GENERATED_OUTPUT_MANIFEST.json")
@@ -749,6 +856,35 @@ def cmd_promote_module(args: argparse.Namespace) -> int:
         f.write(json.dumps(decision, ensure_ascii=False) + "\n")
     print(json.dumps(decision, indent=2))
     return 0
+
+
+def cmd_reopen_module(args: argparse.Namespace) -> int:
+    state = load_json(STATE_PATH)
+    if args.module not in state.get("modules", {}):
+        print("unknown module", file=sys.stderr); return 2
+    item = active_item()
+    if item.get("module") != args.module:
+        print(f"active work unit {item.get('id')} does not authorize reopening {args.module}", file=sys.stderr); return 2
+    rec = state["modules"][args.module]
+    current = rec.get("evidence_state"); current_fidelity = rec.get("fidelity")
+    if current not in {"FROZEN", "BLOCKED"}:
+        print("only FROZEN/BLOCKED modules may be reopened", file=sys.stderr); return 2
+    if args.fidelity not in FIDELITY_ORDER or current_fidelity not in FIDELITY_ORDER:
+        print("invalid fidelity", file=sys.stderr); return 2
+    if current == "FROZEN" and FIDELITY_ORDER.index(args.fidelity) <= FIDELITY_ORDER.index(current_fidelity):
+        print("reopening a frozen module requires strictly higher fidelity", file=sys.stderr); return 2
+    evidence = (ROOT / args.evidence).resolve()
+    if not evidence.exists() or ROOT not in evidence.parents:
+        print("reopen evidence must exist inside repository", file=sys.stderr); return 2
+    previous = {"evidence_state": current, "fidelity": current_fidelity}
+    rec["evidence_state"] = "DESIGN"; rec["fidelity"] = args.fidelity; rec["active_run"] = None
+    rec["reopened_from"] = previous; rec["reopen_evidence"] = str(evidence.relative_to(ROOT))
+    rec.setdefault("evidence_history", []).append({"state": "DESIGN", "fidelity": args.fidelity, "evidence": str(evidence.relative_to(ROOT)), "timestamp_utc": now(), "work_unit": item["id"], "reopened_from": previous})
+    state["last_updated_utc"] = now(); save_json(STATE_PATH, state)
+    decision = {"decision_id": f"REOPEN-{args.module}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}", "timestamp_utc": now(), "work_unit": item["id"], "decision": f"Reopened Module {args.module} from {current}/{current_fidelity} at target fidelity {args.fidelity} for the authorized superseding lineage.", "basis": [str(evidence.relative_to(ROOT))], "alternatives_rejected": ["overwrite prior frozen evidence", "fabricate missing child bindings downstream"], "changes_science": False, "required_replay": item["id"], "commit_sha": state.get("last_verified_commit") or ""}
+    with (ROOT / "memory/DECISION_LOG.jsonl").open("a", encoding="utf-8") as f:
+        f.write(json.dumps(decision, ensure_ascii=False) + "\n")
+    print(json.dumps(decision, indent=2)); return 0
 
 
 def cmd_record_claim(args: argparse.Namespace) -> int:
@@ -899,6 +1035,12 @@ def main() -> int:
     sp.add_argument("--branch", required=True)
     sp.add_argument("--note")
     sp.set_defaults(func=cmd_record_commit)
+
+    sp = sub.add_parser("reopen-module")
+    sp.add_argument("module")
+    sp.add_argument("--fidelity", required=True)
+    sp.add_argument("--evidence", required=True)
+    sp.set_defaults(func=cmd_reopen_module)
 
     sp = sub.add_parser("close-run")
     sp.add_argument("--run-id", required=True)

@@ -49,7 +49,8 @@
     "charge neutrality where derived",
     "energy and particle accounting",
     "covariance positive semidefinite",
-    "replay from E"
+    "replay from E",
+    "required output completeness and G child-readiness"
   ],
   "forbidden_shortcuts": [
     "resetting to a textbook plasma",
@@ -58,7 +59,10 @@
   "hard_stop_conditions": [
     "composition lineage is lost",
     "charge/energy ledger fails",
-    "covariance becomes non-PSD without diagnosed branch"
+    "covariance becomes non-PSD without diagnosed branch",
+    "OUTPUT_CONTRACT.json contains any UNSATISFIED required output",
+    "a required child binding is missing source lineage or independent verification",
+    "a historical PASS/proxy/public target is used as a generative substitute"
   ],
   "claim_boundary": "Post-nuclear RFC plasma state.",
   "operator_sequence": [
@@ -93,5 +97,8 @@
       "binding_sheet": "configured_runs/binding_sheets/F_transport.bindings.json",
       "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/F_transport.template.json --binding-sheet <RUN_DIR>/binding_sheets/F_transport.bindings.json --output <RUN_DIR>/solver_configs/F_transport.json"
     }
-  ]
+  ],
+  "child_readiness_contract": "config/required_output_contracts.json#modules.F",
+  "superseding_lineage_packet": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+  "closure_rule": "A preserved lower-fidelity run may remain valid, but the superseding run cannot PASS until every live required output and required child binding is generated and independently verified."
 }

@@ -49,7 +49,8 @@
     "symmetry/constraint closure",
     "positivity/unitarity or declared alternative",
     "no Standard Model label without derivation or correspondence theorem",
-    "independent symbolic and numerical checks"
+    "independent symbolic and numerical checks",
+    "required output completeness and D child-readiness"
   ],
   "forbidden_shortcuts": [
     "importing measured masses/couplings",
@@ -59,7 +60,10 @@
   "hard_stop_conditions": [
     "Standard Model names or constants are inserted without derivation/correspondence classification",
     "positivity/unitarity or declared replacement fails",
-    "charges or conservation ownership are undefined"
+    "charges or conservation ownership are undefined",
+    "OUTPUT_CONTRACT.json contains any UNSATISFIED required output",
+    "a required child binding is missing source lineage or independent verification",
+    "a historical PASS/proxy/public target is used as a generative substitute"
   ],
   "claim_boundary": "RFC microscopic constitution at the executed scope; empirical identity remains for Module P.",
   "operator_sequence": [
@@ -84,5 +88,8 @@
       "binding_sheet": "configured_runs/binding_sheets/C_spectral_model.bindings.json",
       "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/C_spectral_model.template.json --binding-sheet <RUN_DIR>/binding_sheets/C_spectral_model.bindings.json --output <RUN_DIR>/solver_configs/C_spectral_model.json"
     }
-  ]
+  ],
+  "child_readiness_contract": "config/required_output_contracts.json#modules.C",
+  "superseding_lineage_packet": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+  "closure_rule": "A preserved lower-fidelity run may remain valid, but the superseding run cannot PASS until every live required output and required child binding is generated and independently verified."
 }

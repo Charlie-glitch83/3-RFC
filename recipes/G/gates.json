@@ -16,6 +16,10 @@
     {
       "gate": "independent reconstruction",
       "required": "PASS"
+    },
+    {
+      "gate": "required output completeness and HU/I child-readiness",
+      "required": "PASS"
     }
   ],
   "aggregate_scores_cannot_override": true

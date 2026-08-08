@@ -20,6 +20,10 @@
     {
       "gate": "restart and independent reconstruction",
       "required": "PASS"
+    },
+    {
+      "gate": "required output completeness and E child-readiness",
+      "required": "PASS"
     }
   ],
   "aggregate_scores_cannot_override": true

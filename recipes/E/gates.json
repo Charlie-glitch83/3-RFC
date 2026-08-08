@@ -20,6 +20,10 @@
     {
       "gate": "withheld reaction and independent implementation checks",
       "required": "PASS"
+    },
+    {
+      "gate": "required output completeness and F child-readiness",
+      "required": "PASS"
     }
   ],
   "aggregate_scores_cannot_override": true

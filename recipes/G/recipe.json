@@ -52,7 +52,8 @@
     "rate and opacity lineage",
     "normalization and positivity",
     "stiff convergence",
-    "independent reconstruction"
+    "independent reconstruction",
+    "required output completeness and HU/I child-readiness"
   ],
   "forbidden_shortcuts": [
     "using public CMB targets to choose recombination parameters",
@@ -61,7 +62,10 @@
   "hard_stop_conditions": [
     "public recombination history is inserted as target",
     "visibility is nonpositive or unnormalized",
-    "rate lineage missing"
+    "rate lineage missing",
+    "OUTPUT_CONTRACT.json contains any UNSATISFIED required output",
+    "a required child binding is missing source lineage or independent verification",
+    "a historical PASS/proxy/public target is used as a generative substitute"
   ],
   "claim_boundary": "Generated RFC last-scattering state, not observed CMB agreement.",
   "operator_sequence": [
@@ -96,5 +100,8 @@
       "binding_sheet": "configured_runs/binding_sheets/G_visibility.bindings.json",
       "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/G_visibility.template.json --binding-sheet <RUN_DIR>/binding_sheets/G_visibility.bindings.json --output <RUN_DIR>/solver_configs/G_visibility.json"
     }
-  ]
+  ],
+  "child_readiness_contract": "config/required_output_contracts.json#modules.G",
+  "superseding_lineage_packet": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+  "closure_rule": "A preserved lower-fidelity run may remain valid, but the superseding run cannot PASS until every live required output and required child binding is generated and independently verified."
 }

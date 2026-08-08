@@ -49,7 +49,8 @@
     "network convergence",
     "rate-source audit",
     "no scalar-channel collapse",
-    "withheld reaction and independent implementation checks"
+    "withheld reaction and independent implementation checks",
+    "required output completeness and F child-readiness"
   ],
   "forbidden_shortcuts": [
     "targeting public abundances",
@@ -59,7 +60,10 @@
   "hard_stop_conditions": [
     "solar or public abundance target influences generation",
     "scalar-channel collapse hides isotope failures",
-    "baryon/charge ledger fails"
+    "baryon/charge ledger fails",
+    "OUTPUT_CONTRACT.json contains any UNSATISFIED required output",
+    "a required child binding is missing source lineage or independent verification",
+    "a historical PASS/proxy/public target is used as a generative substitute"
   ],
   "claim_boundary": "Internally generated primordial nuclear state; observations remain sealed.",
   "operator_sequence": [
@@ -84,5 +88,8 @@
       "binding_sheet": "configured_runs/binding_sheets/E_reaction_network.bindings.json",
       "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/E_reaction_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/E_reaction_network.bindings.json --output <RUN_DIR>/solver_configs/E_reaction_network.json"
     }
-  ]
+  ],
+  "child_readiness_contract": "config/required_output_contracts.json#modules.E",
+  "superseding_lineage_packet": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+  "closure_rule": "A preserved lower-fidelity run may remain valid, but the superseding run cannot PASS until every live required output and required child binding is generated and independently verified."
 }

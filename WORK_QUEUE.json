@@ -405,12 +405,202 @@
       "required_fidelity": "MINIMAL_SPINE"
     },
     {
+      "id": "B-115",
+      "title": "Supersede Module B Handoff: Four-Sector First-Physical Completion",
+      "module": "B",
+      "status": "ACTIVE",
+      "depends_on": [
+        "B-110"
+      ],
+      "objective": "Replay the exact four-sector completion on the already executed Big-Implosion state and emit H_B_to_C_v2.",
+      "steps": [
+        "Use recovery/BG_SUPERSEDING_LINEAGE_PACKET.md as the required repair order.",
+        "Preserve the earlier MINIMAL_SPINE run and exact executed ancestry; do not inherit its PASS as proof of the superseding output.",
+        "Admit recovered equations/derivations only as REPLAY_REQUIRED and bind every use to exact hashes.",
+        "Freeze definitions, source roles, candidate classes, equations, expected outcomes, tolerances, semantic gates, falsifiers, OUTPUT_CONTRACT and independent-verifier design before primary execution.",
+        "Execute the source-owned parent-driven science at the required fidelity; no public targets, remembered coefficients or resemblance-based labels may enter generation.",
+        "Run componentwise gates, semantic countermodels, convergence/resolution, covariance, restart, clean replay and independent reconstruction.",
+        "Freeze a versioned child handoff only if every required output and child binding is SATISFIED."
+      ],
+      "deliverables": [
+        "modules/B/runs/<RUN_ID>/OUTPUT_CONTRACT.json",
+        "modules/B/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/B/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/B/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/B/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned superseding H_B_to_C_v2 handoff and manifest"
+      ],
+      "gates": [
+        "all module-spec required outputs SATISFIED",
+        "all configured child bindings SATISFIED",
+        "exact source/parent lineage",
+        "no public-data generation leakage",
+        "semantic countermodels",
+        "convergence, covariance, restart/replay and independent reconstruction"
+      ],
+      "commit_message": "Close B-115 superseding B replay at verified scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
+      "id": "C-125",
+      "title": "Supersede Module C: Channel-Complete Microscopic Constitution",
+      "module": "C",
+      "status": "BLOCKED",
+      "depends_on": [
+        "B-115"
+      ],
+      "objective": "Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2, including source-owned charge/symmetry/mass-mixing/interaction and photon/neutrino/nucleon-role states.",
+      "steps": [
+        "Use recovery/BG_SUPERSEDING_LINEAGE_PACKET.md as the required repair order.",
+        "Preserve the earlier MINIMAL_SPINE run and exact executed ancestry; do not inherit its PASS as proof of the superseding output.",
+        "Admit recovered equations/derivations only as REPLAY_REQUIRED and bind every use to exact hashes.",
+        "Freeze definitions, source roles, candidate classes, equations, expected outcomes, tolerances, semantic gates, falsifiers, OUTPUT_CONTRACT and independent-verifier design before primary execution.",
+        "Execute the source-owned parent-driven science at the required fidelity; no public targets, remembered coefficients or resemblance-based labels may enter generation.",
+        "Run componentwise gates, semantic countermodels, convergence/resolution, covariance, restart, clean replay and independent reconstruction.",
+        "Freeze a versioned child handoff only if every required output and child binding is SATISFIED."
+      ],
+      "deliverables": [
+        "modules/C/runs/<RUN_ID>/OUTPUT_CONTRACT.json",
+        "modules/C/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/C/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/C/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/C/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned superseding H_C_to_D_v2 handoff and manifest"
+      ],
+      "gates": [
+        "all module-spec required outputs SATISFIED",
+        "all configured child bindings SATISFIED",
+        "exact source/parent lineage",
+        "no public-data generation leakage",
+        "semantic countermodels",
+        "convergence, covariance, restart/replay and independent reconstruction"
+      ],
+      "commit_message": "Close C-125 superseding C replay at verified scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
+      "id": "D-135",
+      "title": "Supersede Module D: Channel-Complete Nonequilibrium Thermal History",
+      "module": "D",
+      "status": "BLOCKED",
+      "depends_on": [
+        "C-125"
+      ],
+      "objective": "Execute the recovered nonequilibrium chronology from H_C_to_D_v2, including asymmetry, annihilation/freeze-out/decoupling and photon/neutrino transport.",
+      "steps": [
+        "Use recovery/BG_SUPERSEDING_LINEAGE_PACKET.md as the required repair order.",
+        "Preserve the earlier MINIMAL_SPINE run and exact executed ancestry; do not inherit its PASS as proof of the superseding output.",
+        "Admit recovered equations/derivations only as REPLAY_REQUIRED and bind every use to exact hashes.",
+        "Freeze definitions, source roles, candidate classes, equations, expected outcomes, tolerances, semantic gates, falsifiers, OUTPUT_CONTRACT and independent-verifier design before primary execution.",
+        "Execute the source-owned parent-driven science at the required fidelity; no public targets, remembered coefficients or resemblance-based labels may enter generation.",
+        "Run componentwise gates, semantic countermodels, convergence/resolution, covariance, restart, clean replay and independent reconstruction.",
+        "Freeze a versioned child handoff only if every required output and child binding is SATISFIED."
+      ],
+      "deliverables": [
+        "modules/D/runs/<RUN_ID>/OUTPUT_CONTRACT.json",
+        "modules/D/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/D/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/D/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/D/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned superseding H_D_to_E_v2 handoff and manifest"
+      ],
+      "gates": [
+        "all module-spec required outputs SATISFIED",
+        "all configured child bindings SATISFIED",
+        "exact source/parent lineage",
+        "no public-data generation leakage",
+        "semantic countermodels",
+        "convergence, covariance, restart/replay and independent reconstruction"
+      ],
+      "commit_message": "Close D-135 superseding D replay at verified scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
+      "id": "E-145",
+      "title": "Supersede Module E: Source-Owned Primordial Nucleosynthesis",
+      "module": "E",
+      "status": "BLOCKED",
+      "depends_on": [
+        "D-135"
+      ],
+      "objective": "Execute the recovered source-owned nuclear network with isotope identities, rates, abundances, covariance and plasma-ready output.",
+      "steps": [
+        "Use recovery/BG_SUPERSEDING_LINEAGE_PACKET.md as the required repair order.",
+        "Preserve the earlier MINIMAL_SPINE run and exact executed ancestry; do not inherit its PASS as proof of the superseding output.",
+        "Admit recovered equations/derivations only as REPLAY_REQUIRED and bind every use to exact hashes.",
+        "Freeze definitions, source roles, candidate classes, equations, expected outcomes, tolerances, semantic gates, falsifiers, OUTPUT_CONTRACT and independent-verifier design before primary execution.",
+        "Execute the source-owned parent-driven science at the required fidelity; no public targets, remembered coefficients or resemblance-based labels may enter generation.",
+        "Run componentwise gates, semantic countermodels, convergence/resolution, covariance, restart, clean replay and independent reconstruction.",
+        "Freeze a versioned child handoff only if every required output and child binding is SATISFIED."
+      ],
+      "deliverables": [
+        "modules/E/runs/<RUN_ID>/OUTPUT_CONTRACT.json",
+        "modules/E/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/E/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/E/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/E/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned superseding H_E_to_F_v2 handoff and manifest"
+      ],
+      "gates": [
+        "all module-spec required outputs SATISFIED",
+        "all configured child bindings SATISFIED",
+        "exact source/parent lineage",
+        "no public-data generation leakage",
+        "semantic countermodels",
+        "convergence, covariance, restart/replay and independent reconstruction"
+      ],
+      "commit_message": "Close E-145 superseding E replay at verified scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
+      "id": "F-155",
+      "title": "Supersede Module F: Child-Ready Post-Nuclear Plasma",
+      "module": "F",
+      "status": "BLOCKED",
+      "depends_on": [
+        "E-145"
+      ],
+      "objective": "Execute charge/plasma composition, photon/neutrino persistence, atomic candidates, opacity/transport and recombination-entry state from H_E_to_F_v2.",
+      "steps": [
+        "Use recovery/BG_SUPERSEDING_LINEAGE_PACKET.md as the required repair order.",
+        "Preserve the earlier MINIMAL_SPINE run and exact executed ancestry; do not inherit its PASS as proof of the superseding output.",
+        "Admit recovered equations/derivations only as REPLAY_REQUIRED and bind every use to exact hashes.",
+        "Freeze definitions, source roles, candidate classes, equations, expected outcomes, tolerances, semantic gates, falsifiers, OUTPUT_CONTRACT and independent-verifier design before primary execution.",
+        "Execute the source-owned parent-driven science at the required fidelity; no public targets, remembered coefficients or resemblance-based labels may enter generation.",
+        "Run componentwise gates, semantic countermodels, convergence/resolution, covariance, restart, clean replay and independent reconstruction.",
+        "Freeze a versioned child handoff only if every required output and child binding is SATISFIED."
+      ],
+      "deliverables": [
+        "modules/F/runs/<RUN_ID>/OUTPUT_CONTRACT.json",
+        "modules/F/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/F/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/F/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/F/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned superseding H_F_to_G_v2 handoff and manifest"
+      ],
+      "gates": [
+        "all module-spec required outputs SATISFIED",
+        "all configured child bindings SATISFIED",
+        "exact source/parent lineage",
+        "no public-data generation leakage",
+        "semantic countermodels",
+        "convergence, covariance, restart/replay and independent reconstruction"
+      ],
+      "commit_message": "Close F-155 superseding F replay at verified scope",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
       "id": "G-160",
       "title": "Close Module G: Nonequilibrium Recombination and Last-Scattering State",
       "module": "G",
-      "status": "ACTIVE",
+      "status": "BLOCKED",
       "depends_on": [
-        "F-150"
+        "F-155"
       ],
       "objective": "Generate recombination, visibility, opacity, and radiation-surface histories from the physical plasma state.",
       "steps": [

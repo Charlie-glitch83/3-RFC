@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "G-160",
-  "current_module": "G",
-  "current_run": "G-160-20260808T051613Z",
+  "active_work_unit": "B-115",
+  "current_module": "B",
+  "current_run": "B-115-20260808T060000Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -66,9 +66,9 @@
       "last_promoted_utc": "2026-08-07T00:11:19.343756+00:00"
     },
     "B": {
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
-      "active_run": null,
+      "evidence_state": "DESIGN",
+      "fidelity": "PRODUCTION",
+      "active_run": "B-115-20260808T060000Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -117,6 +117,17 @@
           "evidence": "modules/B/frozen/H_B_to_C.json",
           "timestamp_utc": "2026-08-07T03:10:58.104036+00:00",
           "work_unit": "B-110"
+        },
+        {
+          "state": "DESIGN",
+          "fidelity": "PRODUCTION",
+          "evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+          "timestamp_utc": "2026-08-08T06:09:13.846720+00:00",
+          "work_unit": "B-115",
+          "reopened_from": {
+            "evidence_state": "FROZEN",
+            "fidelity": "MINIMAL_SPINE"
+          }
         }
       ],
       "promotion_evidence": [
@@ -130,7 +141,12 @@
       "last_promoted_utc": "2026-08-07T03:10:58.104049+00:00",
       "completed_runs": [
         "B-110-20260807T002248Z"
-      ]
+      ],
+      "reopened_from": {
+        "evidence_state": "FROZEN",
+        "fidelity": "MINIMAL_SPINE"
+      },
+      "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "C": {
       "evidence_state": "FROZEN",
@@ -401,19 +417,28 @@
       "last_promoted_utc": "2026-08-08T02:10:34.969963+00:00"
     },
     "G": {
-      "evidence_state": "DESIGN",
+      "evidence_state": "BLOCKED",
       "fidelity": "UNSTARTED",
-      "active_run": "G-160-20260808T051613Z",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
+        },
+        {
+          "state": "BLOCKED",
+          "fidelity": "UNSTARTED",
+          "evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+          "timestamp_utc": "2026-08-08T06:09:13.780590+00:00",
+          "work_unit": "G-160",
+          "reason": "G primary execution requires H_F_to_G_v2 after ordered B-C-D-E-F superseding replay."
         }
       ],
       "completed_runs": [
-        "G-160-20260808T021341Z"
+        "G-160-20260808T021341Z",
+        "G-160-20260808T051613Z"
       ]
     },
     "HU": {
@@ -574,9 +599,9 @@
     }
   },
   "last_verified_commit": "548dbbcb1fcd56a3aeb0dbc34de934b51f8697fb",
-  "last_updated_utc": "2026-08-08T05:16:18.074759+00:00",
-  "strongest_supported_claim": "The current A-F executed line remains valid at its declared fidelity, and the exact prior B-G formal theorem/repair/handoff corpus has now been recovered as REPLAY_REQUIRED source material. That corpus contains the upstream four-sector, microscopic charge/symmetry/photon/neutrino/nucleon, thermal, nucleosynthesis, plasma/opacity and recombination constructions that the reduced MINIMAL_SPINE handoffs omitted; no historical PASS is inherited.",
-  "strongest_unsupported_claim": "3-RFC has not yet freshly replayed and physically executed the recovered B-G higher-science lineage into a superseding H_F_to_G parent, so no new 3-RFC physical recombination/visibility/last-scattering result is frozen yet.",
+  "last_updated_utc": "2026-08-08T06:09:13.916312+00:00",
+  "strongest_supported_claim": "The exact prior B-G formal derivation/handoff corpus is recovered as REPLAY_REQUIRED, the existing A-F executed line remains preserved at its earned fidelity, and the repository now has a source-locked B-first superseding replay order whose first target is H_B_to_C_v2.",
+  "strongest_unsupported_claim": "No superseding H_B_to_C_v2 through H_F_to_G_v2 has yet been freshly executed and frozen in 3-RFC, so no repaired physical recombination/visibility/last-scattering state is currently established.",
   "last_verified_branch": "agent/frontier-050-execution",
-  "repair_state": "BG_SOURCE_LINEAGE_REPAIR_CLOSED"
+  "repair_state": "BG_SUPERSEDING_REPLAY_AUTHORIZED_B_FIRST"
 }

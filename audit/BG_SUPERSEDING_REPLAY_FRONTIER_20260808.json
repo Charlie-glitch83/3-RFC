@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "audit_id": "BG-SUPERSEDING-FRONTIER-20260808",
+  "result": "B_FIRST_REPLAY_REQUIRED",
+  "basis": [
+    "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+    "recovery/BG_REPLAY_CANDIDATE_MANIFEST.json",
+    "modules/G/runs/G-160-20260808T051613Z/PRE_EXECUTION_LOCK.json"
+  ],
+  "preservation": "Existing B-F MINIMAL_SPINE runs remain immutable lower-fidelity evidence; old G obstruction/planning runs remain preserved.",
+  "ordered_replay": [
+    "B-115 -> H_B_to_C_v2",
+    "C-125 -> H_C_to_D_v2",
+    "D-135 -> H_D_to_E_v2",
+    "E-145 -> H_E_to_F_v2",
+    "F-155 -> H_F_to_G_v2",
+    "G-160 -> recombination/visibility only after H_F_to_G_v2"
+  ],
+  "controller_repair": [
+    "OUTPUT_CONTRACT required for new physical runs",
+    "PASS requires live spec output completeness",
+    "child-binding contracts B through G",
+    "reopen higher-fidelity modules without erasing prior evidence"
+  ],
+  "public_data_used": false,
+  "created_utc": "2026-08-08T06:09:13.782854+00:00"
+}

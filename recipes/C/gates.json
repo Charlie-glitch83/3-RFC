@@ -20,6 +20,10 @@
     {
       "gate": "independent symbolic and numerical checks",
       "required": "PASS"
+    },
+    {
+      "gate": "required output completeness and D child-readiness",
+      "required": "PASS"
     }
   ],
   "aggregate_scores_cannot_override": true

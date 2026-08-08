@@ -1,0 +1,15 @@
+{
+  "module": "B",
+  "bindings": [
+    {
+      "solver": "big_implosion",
+      "template": "configured_runs/templates/B_big_implosion.template.json",
+      "purpose": "Execute the frozen Big Implosion compression operator on the exact A parent.",
+      "copy_command": "python tools/director.py solver-copy --module B --solver big_implosion --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/B_big_implosion.json --output-dir <RUN_DIR>/solver_outputs/big_implosion",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/B_big_implosion.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/B_big_implosion.template.json --binding-sheet <RUN_DIR>/binding_sheets/B_big_implosion.bindings.json --output <RUN_DIR>/solver_configs/B_big_implosion.json"
+    }
+  ]
+}

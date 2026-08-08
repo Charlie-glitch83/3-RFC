@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "run_id": "B-115-20260808T060000Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "object_id": "H_A_to_B",
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7"
+    },
+    {
+      "object_id": "B_FIRST_PHYSICAL_STATE",
+      "path": "modules/B/runs/B-110-20260807T002248Z/primary/BIG_IMPLOSION_PHYSICAL_STATE.json",
+      "sha256": "42b0476df3ac52dc83aa54c4713e859bf31255505a9fef907e65916d6d5c3d16"
+    },
+    {
+      "object_id": "H_B_to_C_MINIMAL_SPINE_PRESERVED",
+      "path": "modules/B/frozen/H_B_to_C.json",
+      "sha256": "c5a46fd2af85896ac0bd7069d985c7592c6ad364bd1b0492bb9eab7985559492"
+    }
+  ],
+  "replay_required_sources": [
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md",
+      "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1a",
+      "classification": "REPLAY_REQUIRED",
+      "role": "four-sector projector derivation candidate"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/B/MODULE_B_TO_C_SCIENTIFIC_HANDOFF.md",
+      "sha256": "beeead174edb8f12f2a62a5040535050bdb700fc0b0ab482ab57ecc317b8dcfb",
+      "classification": "REPLAY_REQUIRED",
+      "role": "B->C required scientific interface"
+    }
+  ],
+  "internal_derivations": [
+    {
+      "path": "modules/B/runs/B-115-20260808T060000Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "f74c0bffc57842a336bd2cf6191bbba9bd08e8594cdaa917d79ef78eb53dd430"
+    }
+  ],
+  "imports": [
+    "python standard library",
+    "numpy for deterministic vector arithmetic only"
+  ],
+  "files": [],
+  "urls": [],
+  "constants": [
+    {
+      "name": "reconstruction_tolerance",
+      "value": 1e-12,
+      "origin": "B-115 frozen verification tolerance"
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION"
+}

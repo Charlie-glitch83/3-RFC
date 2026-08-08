@@ -16,7 +16,8 @@
       ],
       "strongest_unsupported_claim": "Module D does not establish Kelvin/MeV calibration, metric/FRW expansion, Standard Model species correspondence, calibrated nuclear/particle rates, primordial abundance agreement, or empirical cosmological validation.",
       "recorded_utc": "2026-08-07T22:47:47.610722+00:00",
-      "work_unit": "D-130"
+      "work_unit": "D-130",
+      "superseding_replay_status": "PRESERVED_LOWER_FIDELITY_EVIDENCE_NOT_SUPERSEDING_CHILD_PARENT"
     },
     {
       "claim_id": "RFC-E-140-PRIMORDIAL-COMPOSITE-NETWORK-20260808",
@@ -33,7 +34,8 @@
       ],
       "strongest_unsupported_claim": "Module E does not establish Standard Model proton/neutron/isotope correspondence, measured nuclear masses/bindings/cross sections/lifetimes, Kelvin/MeV calibration, conventional precision BBN, empirical primordial abundance agreement, metric/FRW expansion, or full hyper-realistic nuclear physics.",
       "recorded_utc": "2026-08-08T01:05:53.942882+00:00",
-      "work_unit": "E-140"
+      "work_unit": "E-140",
+      "superseding_replay_status": "PRESERVED_LOWER_FIDELITY_EVIDENCE_NOT_SUPERSEDING_CHILD_PARENT"
     },
     {
       "claim_id": "RFC-F-150-POST-NUCLEAR-PERSISTENCE-20260808",
@@ -50,7 +52,8 @@
       ],
       "strongest_unsupported_claim": "Module F does not establish Standard Model isotope/electron/ion identities, electromagnetic charge or physical electric neutrality, a photon or neutrino distribution, measured opacity or atomic rates, Kelvin/MeV/SI calibration, metric/FRW expansion, a physical recombination time, visibility/last scattering, or empirical agreement.",
       "recorded_utc": "2026-08-08T02:10:35.198527+00:00",
-      "work_unit": "F-150"
+      "work_unit": "F-150",
+      "superseding_replay_status": "PRESERVED_LOWER_FIDELITY_EVIDENCE_NOT_SUPERSEDING_CHILD_PARENT"
     }
   ]
 }

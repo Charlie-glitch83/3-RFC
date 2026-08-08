@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "rule": "PASS/advance requires every live module-spec required output to be artifact-backed, semantically PASS, independently verified and child-ready. Lower-fidelity historical runs remain valid at earned scope but cannot satisfy a superseding child contract.",
+  "superseding_lineage_packet": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+  "modules": {
+    "B": {
+      "child": "C",
+      "required_child_bindings": [
+        {
+          "name": "first_physical_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "intrinsic_clock_origin",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "pregeometry_or_geometry",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "ordinary_sector_seed",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "radiative_sector_seed",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "compression_relic_seed",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "dissipative_tail_seed",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "field_current_conservation_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "route_event_branch_memory",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "uncertainty",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "restart",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "no_loss_ancestry",
+          "allow_derived_absence": false
+        }
+      ]
+    },
+    "C": {
+      "child": "D",
+      "required_child_bindings": [
+        {
+          "name": "microscopic_field_excitation_registry",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "interaction_generator",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "symmetry_and_charge_registry",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "mass_mixing_operators",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "rate_generating_interaction_grammar",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "bound_nucleon_role_states",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "photon_role_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "neutrino_role_family",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "asymmetry_source",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "prethermal_populations",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "covariance",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "restart",
+          "allow_derived_absence": false
+        }
+      ]
+    },
+    "D": {
+      "child": "E",
+      "required_child_bindings": [
+        {
+          "name": "nonequilibrium_distributions",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "thermal_phase_event_history",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "asymmetry_transport",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "annihilation_freezeout_decoupling",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "photon_transport",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "neutrino_transport",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "entropy_conservation_ledger",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "nuclear_ready_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "covariance",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "clock",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "restart",
+          "allow_derived_absence": false
+        }
+      ]
+    },
+    "E": {
+      "child": "F",
+      "required_child_bindings": [
+        {
+          "name": "isotope_registry",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "reaction_graph",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "source_owned_rates",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "abundance_trajectories",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "isotope_covariance",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "freezeout_witnesses",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "plasma_ready_composition",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "charge_ownership",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "radiation_neutrino_carryover",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "clock",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "restart",
+          "allow_derived_absence": false
+        }
+      ]
+    },
+    "F": {
+      "child": "G",
+      "required_child_bindings": [
+        {
+          "name": "plasma_composition",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "ionization_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "radiation_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "neutrino_state",
+          "allow_derived_absence": true
+        },
+        {
+          "name": "charge_or_interaction_operator",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "atomic_candidate_registry",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "opacity_law",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "transport_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "recombination_entry_state",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "source_transfer_ownership",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "covariance",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "clock",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "restart",
+          "allow_derived_absence": false
+        }
+      ]
+    },
+    "G": {
+      "children": [
+        "HU",
+        "I"
+      ],
+      "required_child_bindings": [
+        {
+          "name": "recombination_history",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "opacity_history",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "optical_depth",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "visibility_function",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "radiation_surface",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "covariance",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "clock",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "restart",
+          "allow_derived_absence": false
+        }
+      ]
+    }
+  },
+  "forbidden_substitutions": [
+    "old PASS inheritance",
+    "public or remembered target values",
+    "textbook coefficient insertion",
+    "readiness scores in place of physical outputs",
+    "renaming generic internal hazards as physical opacity",
+    "familiar-particle labels without derived role/correspondence"
+  ]
+}
