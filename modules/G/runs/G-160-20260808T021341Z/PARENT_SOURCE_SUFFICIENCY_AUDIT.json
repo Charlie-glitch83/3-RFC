@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "run_id": "G-160-20260808T021341Z",
+  "module": "G",
+  "status": "BLOCKED_UNDERDETERMINED_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "audit_scope": "Determine whether the exact frozen F parent plus currently admitted source-owned RFC construction uniquely supplies the physical atomic, radiative, opacity, and recombination objects required to freeze and execute G without importing public targets, remembered Standard-Model defaults, or historical proxy results.",
+  "exact_parent": {
+    "object_id": "H_F_to_G",
+    "path": "modules/F/frozen/H_F_to_G.json",
+    "sha256": "bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154",
+    "run_id": "F-150-20260808T013006Z",
+    "fidelity": "MINIMAL_SPINE"
+  },
+  "parent_objects_present": [
+    "seven internally typed RFC composite species X0,X1,X2,B01,B02,B12,T012",
+    "exact residual reversible route graph and four inherited route coefficients",
+    "Q0/Q1/Q2/Q_total carrier ledgers",
+    "internal bound/free occupancy coordinate with explicit non-electron interpretation",
+    "constitutive-energy/RFL memory ledger",
+    "nonnegative internal directional-route activity seed",
+    "propagated covariance",
+    "restart/replay/provenance ancestry"
+  ],
+  "parent_objects_explicitly_not_derived": [
+    "Standard-Model isotope/electron/ion identity map",
+    "electromagnetic charge operator and physical electric-neutrality state",
+    "physical photon identity, photon number distribution, spectrum, or polarization",
+    "physical photon opacity or electromagnetic scattering cross section",
+    "neutrino/lepton carrier state",
+    "atomic carrier registry",
+    "atomic level registry",
+    "atomic transition registry",
+    "capture/photoionization/bound-bound/bound-free/two-photon/collisional rate set",
+    "electron, matter, photon, ion, or neutrino temperature histories",
+    "physical expansion/redshift/conformal-time registry",
+    "Thomson optical-depth law and cross section",
+    "physical free-electron history",
+    "physical recombination-entry surface"
+  ],
+  "required_G_outputs_from_current_work_order_and_recipe": [
+    "nonequilibrium recombination history",
+    "opacity history",
+    "integrated optical depth",
+    "normalized physical visibility function",
+    "radiation/last-scattering surface state",
+    "restartable downstream transfer packet"
+  ],
+  "canonical_source_context": {
+    "presentation_30_step_6w": {
+      "role": "source-owned recombination/CMB-surface readiness scaffold",
+      "physical_recombination_redshift": "pending_not_invented",
+      "visibility_function": "pending_not_generated",
+      "cmb_surface": "internal_seed_only_public_surface_pending",
+      "photon_density": "pending_not_invented",
+      "electron_ionization_fraction_history": "pending_not_invented",
+      "thomson_optical_depth": "pending_not_invented",
+      "claim_boundary": "STEP 6W is an internal weighted readiness/seed construction and is not a physical recombination or visibility solution."
+    },
+    "presentation_25_entropy_transparency": {
+      "role": "historical symbolic entropy-transparency construction",
+      "construction": "recursive entropy -> optical-depth proxy -> symbolic visibility curve",
+      "current_use": "diagnostic/ancestry context only",
+      "reason_not_physical_generator": "The current individualized G enhancement explicitly requires symbolic optical-depth and visibility proxies to remain diagnostics rather than substitutes for atomic physics."
+    },
+    "module_G_individual_enhancement_plan": {
+      "role": "canonical individualized target",
+      "requirement": "G is not a symbolic readiness bridge; it must generate atomic/ionic populations, free-electron history, physical opacity/optical depth, normalized visibility, and a finite physical last-scattering structure from H_F.",
+      "principal_falsifier": "inability to generate a physical ionization history from the inherited state"
+    },
+    "realistic_universe_enhancement_plan": {
+      "role": "source-recovery and strengthening map",
+      "retains": "STEP 6W readiness and entropy-transparency architecture",
+      "strengthens": "readiness markers into multilevel atomic recombination and frequency/interaction-resolved radiation transport",
+      "forbids_substitution": "symbolic optical-depth/visibility proxies may diagnose the physical solution but may not replace atomic physics"
+    }
+  },
+  "source_recovery_searches_performed": [
+    "repository search: NP5 atomic recombination radiation transport",
+    "repository search: Appendix J recombination atomic radiation",
+    "project file-library search: Appendix J + recombination + atomic + radiation transport + Module G",
+    "project file-library search: NP5 + atomic recombination + radiation transport",
+    "project file-library search: hydrogen + helium + recombination + transition rates + RFC",
+    "project file-library search: Module G Source Asset Register + atomic + opacity + visibility",
+    "project file-library navigation search: NP5 / New Physics 5 / atomic-recombination strategy / radiation-transport strategy",
+    "project source recovery: Presentation 25 entropy transparency and Presentation 30 STEP 6W"
+  ],
+  "source_recovery_result": {
+    "physical_atomic_generator_found": false,
+    "physical_rate_registry_found": false,
+    "physical_opacity_registry_found": false,
+    "physical_charge_or_electron_specialization_found": false,
+    "physical_photon_specialization_found": false,
+    "NP5_named_executable_asset_found": false,
+    "Appendix_J_executable_atomic_asset_found": false,
+    "finding": "Search recovers the intended G architecture, completeness requirements, symbolic historical proxy, and explicit list of missing physical objects, but no currently admitted executable source-owned construction that uniquely instantiates those objects on the exact MINIMAL_SPINE F parent."
+  },
+  "prebuilt_solver_context": {
+    "G_recombination_network": "generic reaction-network engine requiring bound species, stoichiometry, rates, parameters, invariants, initial state, clock and tolerances",
+    "G_visibility": "generic visibility engine requiring a physical nonnegative opacity-rate history on a declared time coordinate",
+    "binding_state": "intentionally unbound",
+    "why_not_bind_from_F_internal_proxies": [
+      "H_F_to_G explicitly forbids interpreting its internal bound/free coordinate as an empirical electron ionization fraction or proton fraction.",
+      "H_F_to_G explicitly marks physical photon opacity NOT_DERIVED.",
+      "H_F_to_G types RFL_M as constitutive-energy memory, not a photon bath.",
+      "H_F_to_G leaves electromagnetic charge NOT_DERIVED_AT_MINIMAL_SPINE.",
+      "The internal directional-route activity seed is not an electromagnetic opacity and the F->G ownership rule requires G to derive any photon opacity from an independently witnessed radiation/charge specialization."
+    ]
+  },
+  "manufactured_checks": {
+    "G-WL-001": "PASS as a manufactured visibility normalization check for kappa=1; it verifies generic algebra only and supplies no physical G opacity history.",
+    "G-WL-002": "PASS as a manufactured number/charge stoichiometry check; it verifies generic algebra only and supplies no current F electromagnetic charge assignment or atomic species map."
+  },
+  "frozen_decision": {
+    "pre_execution_lock_may_be_frozen": false,
+    "primary_execution_authorized": false,
+    "visibility_execution_authorized": false,
+    "reaction_network_execution_authorized": false,
+    "reason": "The scientific definitions, atomic candidate classes, physical rate/opacity inputs, charge/electron/photon specialization, physical clock, and expected physical recombination outputs cannot be frozen without choosing scientifically generative objects that are absent from the exact parent and currently recovered admitted source corpus."
+  },
+  "forbidden_shortcuts": [
+    "do not relabel x_free_F as electron ionization fraction",
+    "do not relabel kappa_int_F as Thomson or photon opacity",
+    "do not relabel RFL_M as a physical photon bath",
+    "do not import remembered atomic constants or Standard-Model transition rates",
+    "do not use public recombination, CMB, visibility, optical-depth, or surface values during generation",
+    "do not promote Presentation 25 symbolic entropy transparency to a physical atomic solution",
+    "do not treat G-WL manufactured checks as physical derivations",
+    "do not execute generic solvers with invented bindings merely to obtain a PASS"
+  ],
+  "required_resolution_before_execution": "A new source-owned witnessed specialization must lawfully provide, or an authorized upstream superseding lineage must derive, the minimum physical identity/charge/photon/atomic/rate/opacity/clock objects needed to bind G. The resolution must preserve the exact triadic ancestry and generation firewall and must not be selected from public target agreement.",
+  "claim_boundary": "No physical recombination, visibility, opacity, last-scattering, electron-history, photon-history, or CMB-surface result is claimed by G-160 at this blocked pre-execution state."
+}
