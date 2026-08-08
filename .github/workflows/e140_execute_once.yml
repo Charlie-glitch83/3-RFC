@@ -38,8 +38,11 @@ jobs:
           PY
       - name: Record exact Wolfram outputs
         run: |
-          python tools/director.py wolfram-record --run E-140-20260807T232334Z --call E-WL-001 --output modules/E/runs/E-140-20260807T232334Z/wolfram/E-WL-001/output.txt
-          python tools/director.py wolfram-record --run E-140-20260807T232334Z --call E-WL-002 --output modules/E/runs/E-140-20260807T232334Z/wolfram/E-WL-002/output.txt
+          RUN=modules/E/runs/E-140-20260807T232334Z
+          cp "$RUN/wolfram/E-WL-001/output.txt" /tmp/E-WL-001-output.txt
+          cp "$RUN/wolfram/E-WL-002/output.txt" /tmp/E-WL-002-output.txt
+          python tools/director.py wolfram-record --run E-140-20260807T232334Z --call E-WL-001 --output /tmp/E-WL-001-output.txt
+          python tools/director.py wolfram-record --run E-140-20260807T232334Z --call E-WL-002 --output /tmp/E-WL-002-output.txt
       - name: Run manufactured reference check
         run: python tools/run_reference_checks.py --module E --output modules/E/runs/E-140-20260807T232334Z/reference_checks.json
       - name: Copy and bind exact E solver
