@@ -1,1 +1,1 @@
-trigger child-readiness repair 2026-08-08 rerun-1
+trigger child-readiness repair B-first replay 2026-08-08 rerun-2
