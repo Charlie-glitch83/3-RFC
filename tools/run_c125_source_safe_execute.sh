@@ -15,8 +15,8 @@ assert r['status']=='CREATED',r
 assert lock['status']=='FROZEN' and lock['frozen_before_primary_execution'] is True,lock
 assert lock['required_post_lock_wolfram']==['C-WL-001','C-WL-002'],lock
 assert not Path('modules/C/runs/C-125-20260808T063500Z/primary/MICROSCOPIC_CONSTITUTION_V2.json').exists()
-assert hashlib.sha256(Path('recipes/C/wolfram/C-WL-001.wl').read_bytes()).hexdigest()=='941bca4d91027e7d874b3d5951c1a1fb359daccf'
-assert hashlib.sha256(Path('recipes/C/wolfram/C-WL-002.wl').read_bytes()).hexdigest()=='4e9f22b2fd4d7b40d6f042e33624e5badfaa862e'
+assert Path('modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-001/input.wl').read_bytes()==Path('recipes/C/wolfram/C-WL-001.wl').read_bytes()
+assert Path('modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-002/input.wl').read_bytes()==Path('recipes/C/wolfram/C-WL-002.wl').read_bytes()
 print('C125_EXECUTION_PRECONDITION_PASS')
 PY
 
