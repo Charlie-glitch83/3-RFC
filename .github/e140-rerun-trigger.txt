@@ -1,0 +1,1 @@
+E-140 governed rerun trigger v2: rematerialize corrected frozen bindings, rerun primary, apply the preregistered implementation-only withheld-route verifier correction, execute the complete frozen verification matrix, preserve evidence with a rebase-safe push, and enforce componentwise gates.
