@@ -647,8 +647,8 @@
       ]
     }
   },
-  "last_verified_commit": "548dbbcb1fcd56a3aeb0dbc34de934b51f8697fb",
-  "last_updated_utc": "2026-08-08T06:09:26.410467+00:00",
+  "last_verified_commit": "c3df3e28a30d6e7d3a9c2aeddf134aaa0368b685",
+  "last_updated_utc": "2026-08-08T06:09:31.369739+00:00",
   "strongest_supported_claim": "The exact prior B-G formal derivation/handoff corpus is recovered as REPLAY_REQUIRED, the existing A-F executed line remains preserved at its earned fidelity, and the repository now has a source-locked B-first superseding replay order whose first target is H_B_to_C_v2.",
   "strongest_unsupported_claim": "No superseding H_B_to_C_v2 through H_F_to_G_v2 has yet been freshly executed and frozen in 3-RFC, so no repaired physical recombination/visibility/last-scattering state is currently established.",
   "last_verified_branch": "agent/frontier-050-execution",

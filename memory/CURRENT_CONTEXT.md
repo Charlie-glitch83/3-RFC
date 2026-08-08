@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T06:09:26.481692+00:00
+Generated: 2026-08-08T06:09:31.433142+00:00
 
 ## Project truth
 
@@ -8,7 +8,7 @@ Generated: 2026-08-08T06:09:26.481692+00:00
 - Generation mode: `GENERATION_SEALED`
 - Active work unit: `C-125` — Supersede Module C: Channel-Complete Microscopic Constitution
 - Current module: `C`
-- Last verified commit: `548dbbcb1fcd56a3aeb0dbc34de934b51f8697fb`
+- Last verified commit: `c3df3e28a30d6e7d3a9c2aeddf134aaa0368b685`
 
 ## Strongest supported claim
 
@@ -81,7 +81,6 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 
 ## Recent decisions
 
-- REOPEN-B-20260808T060913Z: Reopened Module B from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
 - PROMOTE-B-FORMALIZED-20260808T060925Z: Promoted Module B from DESIGN to FORMALIZED at PRODUCTION
 - PROMOTE-B-IMPLEMENTED-20260808T060925Z: Promoted Module B from FORMALIZED to IMPLEMENTED at PRODUCTION
 - PROMOTE-B-VERIFIED-20260808T060926Z: Promoted Module B from IMPLEMENTED to VERIFIED at PRODUCTION
@@ -89,6 +88,7 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 - PROMOTE-B-INDEPENDENTLY_REPRODUCED-20260808T060926Z: Promoted Module B from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
 - PROMOTE-B-FROZEN-20260808T060926Z: Promoted Module B from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
 - ADVANCE-B-115-20260808T060926Z: Marked B-115 PASS and activated C-125
+- COMMIT-c3df3e28a30d: Verified B-first science-lineage repair: exact four-sector B-115 completion, independent replay, child-ready output contract, PRODUCTION freeze, and single-child activation C-125.
 
 ## Recent failures
 
