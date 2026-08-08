@@ -1,0 +1,10 @@
+{
+  "run_id": "C-125-20260808T063500Z",
+  "module": "C",
+  "task_id": "C-125",
+  "status": "CREATED",
+  "created_utc": "2026-08-08T06:37:27.099461+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "modules/C/runs/C-125-20260808T063500Z"
+}

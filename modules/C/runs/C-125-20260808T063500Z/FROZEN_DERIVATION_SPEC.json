@@ -1,0 +1,403 @@
+{
+  "schema_version": "2.1",
+  "run_id": "C-125-20260808T063500Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/B/frozen/H_B_to_C_v2.json",
+    "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+    "bytes": 9707
+  },
+  "ancestry": {
+    "path": "modules/A/frozen/H_A_to_B.json",
+    "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+    "bytes": 14529
+  },
+  "fixed_parent_quantities": {
+    "E_minus": 0.16336270538777636,
+    "E_plus": 0.04944794000554233,
+    "D_QV": 0.11391476538223402,
+    "N_active": 6,
+    "Lambda_hat_C": 0.19486299920904604,
+    "recursive_weights": [
+      0.7858305491311782,
+      0.16830089718392405,
+      0.0360449107307299,
+      0.007719718737841579,
+      0.0016533279229507367,
+      0.00035409233336561655,
+      7.583576059402393e-05,
+      1.624170320269509e-05,
+      3.4784766561070614e-06,
+      7.449834353009213e-07,
+      1.5955269324529282e-07,
+      3.417131269709861e-08,
+      7.318451275828538e-09,
+      1.5673886909595943e-09,
+      3.356867752419246e-10,
+      7.189385231772565e-11,
+      1.5397466871782244e-11,
+      3.2976670247113515e-12
+    ],
+    "shell_weights": [
+      0.9999034960399901,
+      9.64946478940694e-05,
+      9.312115728244277e-09
+    ],
+    "a_C": 0.13489745845238318,
+    "b_C": 0.6472165384898387,
+    "v_hat_C": 0.4565381561771035,
+    "spectral_core": [
+      [
+        0.29988604330354474,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "spectral_generator": [
+      [
+        0.0,
+        -0.5773502691896258,
+        0.5773502691896258
+      ],
+      [
+        0.5773502691896258,
+        0.0,
+        -0.5773502691896258
+      ],
+      [
+        -0.5773502691896258,
+        0.5773502691896258,
+        0.0
+      ]
+    ],
+    "uncertainty_envelope": [
+      {
+        "delta": 4.66915,
+        "D_QV": 0.11391441051853995,
+        "Lambda_hat_C": 0.1948626956932667,
+        "shell_weights": [
+          0.9999034898392979,
+          9.650084738974027e-05,
+          9.31331237621204e-09
+        ]
+      },
+      {
+        "delta": 4.6692,
+        "D_QV": 0.11391476538223405,
+        "Lambda_hat_C": 0.19486299920904607,
+        "shell_weights": [
+          0.9999034960399903,
+          9.649464789406941e-05,
+          9.312115728244279e-09
+        ]
+      },
+      {
+        "delta": 4.66925,
+        "D_QV": 0.11391512022647657,
+        "Lambda_hat_C": 0.19486330270771574,
+        "shell_weights": [
+          0.9999035022402178,
+          9.648844886301412e-05,
+          9.310919246839326e-09
+        ]
+      }
+    ]
+  },
+  "branch_family": {
+    "classification": "SOURCE_OWNED_LAWFUL_MICROSCOPIC_BRANCH_FAMILY",
+    "fixed_parent_quantities": {
+      "E_minus": 0.16336270538777636,
+      "E_plus": 0.04944794000554233,
+      "D_QV": 0.11391476538223402,
+      "N_active": 6,
+      "Lambda_hat_C": 0.19486299920904604,
+      "recursive_weights": [
+        0.7858305491311782,
+        0.16830089718392405,
+        0.0360449107307299,
+        0.007719718737841579,
+        0.0016533279229507367,
+        0.00035409233336561655,
+        7.583576059402393e-05,
+        1.624170320269509e-05,
+        3.4784766561070614e-06,
+        7.449834353009213e-07,
+        1.5955269324529282e-07,
+        3.417131269709861e-08,
+        7.318451275828538e-09,
+        1.5673886909595943e-09,
+        3.356867752419246e-10,
+        7.189385231772565e-11,
+        1.5397466871782244e-11,
+        3.2976670247113515e-12
+      ],
+      "shell_weights": [
+        0.9999034960399901,
+        9.64946478940694e-05,
+        9.312115728244277e-09
+      ],
+      "a_C": 0.13489745845238318,
+      "b_C": 0.6472165384898387,
+      "v_hat_C": 0.4565381561771035,
+      "spectral_core": [
+        [
+          0.29988604330354474,
+          -0.1499430216517723,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          0.2998860433035446,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          -0.1499430216517723,
+          0.2998860433035446
+        ]
+      ],
+      "spectral_generator": [
+        [
+          0.0,
+          -0.5773502691896258,
+          0.5773502691896258
+        ],
+        [
+          0.5773502691896258,
+          0.0,
+          -0.5773502691896258
+        ],
+        [
+          -0.5773502691896258,
+          0.5773502691896258,
+          0.0
+        ]
+      ],
+      "uncertainty_envelope": [
+        {
+          "delta": 4.66915,
+          "D_QV": 0.11391441051853995,
+          "Lambda_hat_C": 0.1948626956932667,
+          "shell_weights": [
+            0.9999034898392979,
+            9.650084738974027e-05,
+            9.31331237621204e-09
+          ]
+        },
+        {
+          "delta": 4.6692,
+          "D_QV": 0.11391476538223405,
+          "Lambda_hat_C": 0.19486299920904607,
+          "shell_weights": [
+            0.9999034960399903,
+            9.649464789406941e-05,
+            9.312115728244279e-09
+          ]
+        },
+        {
+          "delta": 4.66925,
+          "D_QV": 0.11391512022647657,
+          "Lambda_hat_C": 0.19486330270771574,
+          "shell_weights": [
+            0.9999035022402178,
+            9.648844886301412e-05,
+            9.310919246839326e-09
+          ]
+        }
+      ]
+    },
+    "route_kernel": {
+      "law": "K_C = Khat_C / ||Khat_C||; Khat_C = sum_j p_j(c_C) sum_[r] W_{j,[r]} Phi_{j,[r]}",
+      "fixed": "p_j are exact A recursive weights; admissible Phi/W objects must be source/witness/ancestry complete",
+      "unresolved_branch_variables": [
+        "admissible frozen route matrices W_{j,[r]}",
+        "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes"
+      ],
+      "forbidden_substitutions": [
+        "diag(kernel_state) absent an explicit source theorem",
+        "familiar particle matrices",
+        "post-hoc target-selected route matrices"
+      ]
+    },
+    "couplings": {
+      "law": "N_a=(1/d_a) Tr_G(P_a K_C^dagger K_C P_a); g_a=N_a^(-1/2)",
+      "branch_variables": [
+        "N_1>0",
+        "N_2>0",
+        "N_3>0"
+      ],
+      "no_empirical_binding": true
+    },
+    "scale_and_stabilization": {
+      "Lambda_hat_C": 0.19486299920904604,
+      "physical_family": "Lambda_C=E_B*Lambda_hat_C, E_B>0",
+      "E_B": "unresolved positive Module-B unit representative; no measured anchor",
+      "a_C": 0.13489745845238318,
+      "b_C": 0.6472165384898387,
+      "v_hat_C": 0.4565381561771035,
+      "v_C": "Lambda_C*sqrt(a_C/b_C)",
+      "radial_mass_squared": "4*a_C*Lambda_C^2"
+    },
+    "gauge_mass_family": {
+      "charged": "m_WC^2=g_2^2 v_C^2/4",
+      "neutral_mass_matrix": "(v_C^2/4)*[[g_2^2,-g_1*g_2],[-g_1*g_2,g_1^2]]",
+      "neutral_eigenvalues": [
+        "0",
+        "(g_1^2+g_2^2)*v_C^2/4"
+      ],
+      "protected_photon_role": "exact zero eigenvector proportional to (g_1,g_2)",
+      "triadic_carriers": "protected massless before confinement on maximal-complete branch"
+    },
+    "fermion_mass_mixing_family": {
+      "overlap_law": "y_fg = |sum_{j in J_g} p_j exp(i(j nu+theta_f)) <f_L|W_j|f_R>| /(sqrt(sum p_j^2)*sqrt(sum |<f_L|W_j|f_R>|^2))",
+      "branch_variables": [
+        "source-owned W_j matrix elements",
+        "source-owned route phase nu/theta_f consistent with witnesses and ancestry"
+      ],
+      "mass_operator": "M_F=(v_C/sqrt(2))*sum_{f,g} y_fg(|f_Lg><f_Rg|+h.c.)",
+      "mixing": "U_Q=V_U^dagger V_D; U_L=V_E^dagger V_nu from singular systems; no identity matrix is selected unless the source branch actually yields it",
+      "CP": "J_Q/J_L derived from the selected source-owned singular systems; zero is not assumed"
+    },
+    "neutrino_family": {
+      "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+      "branch_variables": [
+        "Lambda_M>0 from recursive-memory ancestry",
+        "source-owned C_nu"
+      ],
+      "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+      "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+    },
+    "interaction_rate_grammar": {
+      "covariant_derivative": "D_C=D_B+i g1 B_C Y_C+i g2 W_C^a T_a+i g3 G_C^A lambda_A",
+      "vertex_rule": "nonzero invariant tensors only; admitted spectral states; charge/energy closure; Module-A witness; event lift; ancestry; reverse route when Hermiticity permits",
+      "rate_law": "Gamma_i->f=(2 pi/t_B)|<f|V_C|i>|^2 Delta_sigma(E_f-E_i)",
+      "width_lifetime": "Gamma_i=sum_f Gamma_i->f; tau_i=Gamma_i^-1 when Gamma_i>0"
+    },
+    "bound_state_family": {
+      "singlets": [
+        "3 x 3bar via delta",
+        "3 x 3 x 3 via epsilon"
+      ],
+      "binding_operator": "P_1[sum E_a + sigma_C sum d_R(a,b)+kappa_C L_rel+V_current]P_1",
+      "sigma_C": "Lambda_C^2/N_3",
+      "kappa_C": "Lambda_C*sum_j p_j^2",
+      "proton_role": "lowest stable spin-1/2 charge +1 three-triplet singlet, minimal composition UUD",
+      "neutron_role": "lowest spin-1/2 charge 0 three-triplet singlet, minimal composition UDD",
+      "masses": "lowest eigenvalues of source-instantiated finite binding operators; no observed ordering is inserted"
+    },
+    "asymmetry": {
+      "global_B": "B(U)=B(D)=1/3",
+      "global_L": "L(N)=L(E)=1",
+      "topological_permission": "Delta(B+L)=6 I_top; Delta(B-L)=0",
+      "source": "Y_C_source=epsilon*chi_B*J_C*I_top",
+      "branch_variables": [
+        "epsilon from source-owned CP invariant",
+        "I_top from witnessed topological event route"
+      ],
+      "ownership": "D owns activation/washout/survival"
+    },
+    "prethermal_population_family": {
+      "occupation_law": "f_{a,k}=Tr(rho_B0 P_{a,k}) >= 0",
+      "normalization": "sum admissible complete projector occupations = 1",
+      "photon_role": "protected neutral massless carrier projected from radiative sector",
+      "neutrino_roles": "three neutral completed-shell matter states",
+      "charge_neutrality": "Q_total=sum_a q_a N_a=0 on a closed connected branch absent inherited boundary charge",
+      "baryon_photon_seed": "eta_B,C=(N_B-N_Bbar)/N_gamma",
+      "equilibrium_assumed": false
+    },
+    "branch_policy": "Every unresolved route/kernel/phase/scale/topological variable is retained explicitly. D must evolve every admitted branch or preserve an obstruction; no measured value may select a branch."
+  },
+  "representation_registry": {
+    "Q_L": "(3,2)",
+    "U_R": "(3,1)",
+    "D_R": "(3,1)",
+    "L_L": "(1,2)",
+    "E_R": "(1,1)",
+    "phi_C": "(1,2)"
+  },
+  "charges": {
+    "y_phi": "1/2",
+    "y_Q": "1/6",
+    "y_U": "2/3",
+    "y_D": "-1/3",
+    "y_L": "-1/2",
+    "y_E": "-1"
+  },
+  "anomaly_residuals": [
+    0.0,
+    0.0,
+    2.220446049250313e-16
+  ],
+  "internal_group": "U(1)_C x SU(2)_R x SU(3)_T",
+  "algebra_dimension": 12,
+  "generation_count": 3,
+  "spin_statistics_chirality": {
+    "matter_spin": "1/2 route-doublet",
+    "matter_statistics": "antisymmetric exterior algebra",
+    "carrier_statistics": "symmetric algebra",
+    "chirality": "route grading",
+    "antiparticle_map": "complex conjugation + route reversal + charge inversion"
+  },
+  "corroborative_spectral_audit": {
+    "matrix": [
+      [
+        0.29988604330354474,
+        -0.1499430216517723,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        0.2998860433035446,
+        -0.1499430216517723
+      ],
+      [
+        -0.1499430216517723,
+        -0.1499430216517723,
+        0.2998860433035446
+      ]
+    ],
+    "symmetry_generator": [
+      [
+        0.0,
+        -0.5773502691896258,
+        0.5773502691896258
+      ],
+      [
+        0.5773502691896258,
+        0.0,
+        -0.5773502691896258
+      ],
+      [
+        -0.5773502691896258,
+        0.5773502691896258,
+        0.0
+      ]
+    ],
+    "scope": "exact parent-derived finite core only; not the full fermion mass/mixing operator"
+  },
+  "falsifiers": [
+    "route complex structure fails",
+    "three-shell closure fails",
+    "anomaly closure fails",
+    "Hermitian/unitary check fails",
+    "neutral protected zero mode is not exact",
+    "singlet invariants fail",
+    "a measured/public value enters generation",
+    "an unresolved source branch variable is silently instantiated",
+    "a required C->D binding is omitted",
+    "clean replay differs"
+  ],
+  "claim_boundary": "Complete finite-relational internal-unit microscopic law and explicit lawful branch family. No empirical particle identification, unique SI scale, measured masses/couplings/mixings/lifetimes/abundances, continuum renormalized QFT, loop/lattice precision, thermal history, surviving baryon asymmetry, or empirical validation."
+}

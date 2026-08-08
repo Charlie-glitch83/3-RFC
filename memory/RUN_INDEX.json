@@ -170,9 +170,20 @@
       "run_id": "C-125-20260808T063010Z",
       "module": "C",
       "task_id": "C-125",
-      "status": "CREATED",
+      "status": "BLOCKED",
       "path": "modules/C/runs/C-125-20260808T063010Z",
-      "created_utc": "2026-08-08T06:30:10.057106+00:00"
+      "created_utc": "2026-08-08T06:30:10.057106+00:00",
+      "closed_utc": "2026-08-08T06:37:27.031854+00:00",
+      "tree_sha256": "10638d075b3efccf521043ec073dcc6d55eb82d398994c9cb968b7e887d77676",
+      "closeout": "modules/C/runs/C-125-20260808T063010Z/CLOSEOUT.md"
+    },
+    {
+      "run_id": "C-125-20260808T063500Z",
+      "module": "C",
+      "task_id": "C-125",
+      "status": "CREATED",
+      "path": "modules/C/runs/C-125-20260808T063500Z",
+      "created_utc": "2026-08-08T06:37:27.099780+00:00"
     }
   ]
 }

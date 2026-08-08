@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "C-125",
   "current_module": "C",
-  "current_run": "C-125-20260808T063010Z",
+  "current_run": "C-125-20260808T063500Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -200,7 +200,7 @@
     "C": {
       "evidence_state": "DESIGN",
       "fidelity": "PRODUCTION",
-      "active_run": "C-125-20260808T063010Z",
+      "active_run": "C-125-20260808T063500Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -273,7 +273,8 @@
       "last_promoted_utc": "2026-08-07T03:47:27.694219+00:00",
       "completed_runs": [
         "C-120-20260807T032543Z",
-        "C-125-20260808T061947Z"
+        "C-125-20260808T061947Z",
+        "C-125-20260808T063010Z"
       ],
       "reopened_from": {
         "evidence_state": "FROZEN",
@@ -665,7 +666,7 @@
     }
   },
   "last_verified_commit": "084cd65dc963d57f19b529b37496097d660854a6",
-  "last_updated_utc": "2026-08-08T06:30:28.134048+00:00",
+  "last_updated_utc": "2026-08-08T06:37:27.100201+00:00",
   "strongest_supported_claim": "The unchanged physically executed B-110 Big-Implosion state now has a complete, nonduplicated, independently reconstructed and cleanly replayed four-sector genesis partition at PRODUCTION fidelity. H_B_to_C_v2 is frozen and child-ready, preserving exact first-physical-state ancestry while supplying ordinary, radiative, compression-relic and dissipative-tail preparticle seeds for the sole active C-125 microscopic replay.",
   "strongest_unsupported_claim": "No superseding channel-complete microscopic constitution H_C_to_D_v2, full nonequilibrium thermal history H_D_to_E_v2, source-owned nucleosynthesis H_E_to_F_v2, child-ready post-nuclear plasma/opacity H_F_to_G_v2, physical recombination/visibility/last-scattering state, or empirical agreement is yet established by the repaired lineage.",
   "last_verified_branch": "agent/frontier-050-execution",

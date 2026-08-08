@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "template": "configured_runs/templates/C_spectral_model.template.json",
+  "template_sha256": "1c06aa8b68baa8473d5b86df54800f1700ef57dadcdb70c743968a1addda8d8d",
+  "expected_binding_paths": [
+    "model.matrix",
+    "model.symmetry_generators"
+  ],
+  "binding_rule": "Every value requires an exact admitted source, exact parent artifact, or hashed internal derivation record. Module P alone may bind preregistered public comparison sources.",
+  "bindings": [
+    {
+      "path": "model.matrix",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": [
+        [
+          0.29988604330354474,
+          -0.1499430216517723,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          0.2998860433035446,
+          -0.1499430216517723
+        ],
+        [
+          -0.1499430216517723,
+          -0.1499430216517723,
+          0.2998860433035446
+        ]
+      ],
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "modules/C/runs/C-125-20260808T063500Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "dab6e448aec272d7af78085693d9f89e93ffcf78d5f8ef6dc64c5bf096f5e6a6",
+      "module": "C",
+      "derivation_object": "corroborative_spectral_audit.matrix",
+      "units": "dimensionless",
+      "dimensions": "finite carrier operator",
+      "justification": "Exact parent-derived corroborative finite-core audit only; not the full C branch-family mass operator."
+    },
+    {
+      "path": "model.symmetry_generators",
+      "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+      "value": [
+        [
+          [
+            0.0,
+            -0.5773502691896258,
+            0.5773502691896258
+          ],
+          [
+            0.5773502691896258,
+            0.0,
+            -0.5773502691896258
+          ],
+          [
+            -0.5773502691896258,
+            0.5773502691896258,
+            0.0
+          ]
+        ]
+      ],
+      "origin_kind": "INTERNAL_DERIVATION",
+      "origin_path": "modules/C/runs/C-125-20260808T063500Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "dab6e448aec272d7af78085693d9f89e93ffcf78d5f8ef6dc64c5bf096f5e6a6",
+      "module": "C",
+      "derivation_object": "corroborative_spectral_audit.symmetry_generator",
+      "units": "dimensionless",
+      "dimensions": "finite carrier operator",
+      "justification": "Exact parent-derived corroborative finite-core audit only; not the full C branch-family mass operator."
+    }
+  ]
+}
