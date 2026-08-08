@@ -1,3 +1,3 @@
 authorized_by_user=2026-08-08
 scope=c125_channel_complete_superseding_replay
-trigger=6_state_driven
+trigger=7_primary_gate_inputs
