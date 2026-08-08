@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T06:12:59.249762+00:00
+Generated: 2026-08-08T06:19:51.555409+00:00
 
 ## Project truth
 
@@ -66,11 +66,10 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 
 - admitted sources: 85
 - frozen artifacts: 15
-- indexed runs: 14
+- indexed runs: 15
 
 ## Recent runs
 
-- B-110-20260807T002248Z: PASS (B)
 - C-120-20260807T032543Z: PASS (C)
 - D-130-20260807T220342Z: PASS (D)
 - E-140-20260807T232334Z: PASS (E)
@@ -78,6 +77,7 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 - G-160-20260808T021341Z: BLOCKED (G)
 - G-160-20260808T051613Z: BLOCKED (G)
 - B-115-20260808T060000Z: PASS (B)
+- C-125-20260808T061947Z: CREATED (C)
 
 ## Recent decisions
 

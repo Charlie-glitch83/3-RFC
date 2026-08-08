@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "C-125",
   "current_module": "C",
-  "current_run": null,
+  "current_run": "C-125-20260808T061947Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -200,7 +200,7 @@
     "C": {
       "evidence_state": "FROZEN",
       "fidelity": "MINIMAL_SPINE",
-      "active_run": null,
+      "active_run": "C-125-20260808T061947Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -648,7 +648,7 @@
     }
   },
   "last_verified_commit": "c3df3e28a30d6e7d3a9c2aeddf134aaa0368b685",
-  "last_updated_utc": "2026-08-08T06:12:59.191076+00:00",
+  "last_updated_utc": "2026-08-08T06:19:47.273502+00:00",
   "strongest_supported_claim": "The unchanged physically executed B-110 Big-Implosion state now has a complete, nonduplicated, independently reconstructed and cleanly replayed four-sector genesis partition at PRODUCTION fidelity. H_B_to_C_v2 is frozen and child-ready, preserving exact first-physical-state ancestry while supplying ordinary, radiative, compression-relic and dissipative-tail preparticle seeds for the sole active C-125 microscopic replay.",
   "strongest_unsupported_claim": "No superseding channel-complete microscopic constitution H_C_to_D_v2, full nonequilibrium thermal history H_D_to_E_v2, source-owned nucleosynthesis H_E_to_F_v2, child-ready post-nuclear plasma/opacity H_F_to_G_v2, physical recombination/visibility/last-scattering state, or empirical agreement is yet established by the repaired lineage.",
   "last_verified_branch": "agent/frontier-050-execution",
