@@ -1,10 +1,76 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
+  "schema_version": "1.0",
+  "run_id": "G-160-20260808T021341Z",
+  "status": "AUDITED_PRE_EXECUTION_BLOCKED_UNDERDETERMINED",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "object_id": "H_F_to_G",
+      "path": "modules/F/frozen/H_F_to_G.json",
+      "sha256": "bc996dc35f7cf1c2bafc3523133c1470dd9184f4ebff97f5e94b0f0fe1840154",
+      "run_id": "F-150-20260808T013006Z",
+      "role": "DIRECT_PARENT"
+    }
+  ],
+  "admitted_sources": [
+    {
+      "label": "Triadic emergence and theorem architecture",
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "classification": "CANONICAL_AUTHORITY",
+      "relevant_scope": "triadic ancestry, domain-specific modal-basis requirement, no-retune and public-boundary rules; does not provide a current source-owned physical recombination coefficient set"
+    },
+    {
+      "label": "Universe architecture and full ledger",
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "classification": "CANONICAL_AUTHORITY",
+      "relevant_scope": "G placement, handoff architecture, provenance and validation boundary; historical packet values are not automatic current physical bindings"
+    },
+    {
+      "label": "Deep-soak realization blueprint",
+      "path": "sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
+      "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+      "classification": "ADMITTED_SOURCE",
+      "relevant_scope": "requires G recombination/visibility/opacity/radiation states to be generated from the F parent rather than public history"
+    },
+    {
+      "label": "Architecture intent and drift audit",
+      "path": "sources/frozen/dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b/2RFC_Architecture_Intent_and_Drift_Deep_Soak_20260805.md",
+      "sha256": "dd4a84a3ac27c04a6e9b20d41696ef4896a25581e1184cbb7ac25c2f22edfb4b",
+      "classification": "ADMITTED_SOURCE",
+      "relevant_scope": "requires each domain to supply a lawful specialization rather than relabel a familiar equation; D-G are grammar-active and keep domain kinetic/field laws domain-specific"
+    },
+    {
+      "label": "Execution-ready autopilot",
+      "path": "docs/25_EXECUTION_READY_AUTOPILOT.md",
+      "sha256": "e37f83058303f08355f731a369a347a64ec5d1c6a700982083a207afd9adde8f",
+      "classification": "PROCEDURAL_AUTHORITY",
+      "relevant_scope": "stop at BLOCKED_UNDERDETERMINED rather than insert a remembered standard value"
+    },
+    {
+      "label": "Zero-design operator protocol",
+      "path": "docs/26_ZERO_DESIGN_OPERATOR_PROTOCOL.md",
+      "sha256": "c1bc412bf43b660b535751a488c0f3860e5b5a33",
+      "classification": "PROCEDURAL_AUTHORITY",
+      "relevant_scope": "bindings require exact parents/sources/hashed derivations; underdetermined coefficients are hard stops"
+    }
+  ],
   "imports": [],
-  "files": [],
+  "files": [
+    "recipes/G/WORK_ORDER.md",
+    "recipes/G/recipe.json",
+    "modules/G/spec.json",
+    "modules/G/runs/G-160-20260808T021341Z/solver_templates/G_recombination_network.template.json",
+    "modules/G/runs/G-160-20260808T021341Z/solver_templates/G_visibility.template.json",
+    "modules/G/runs/G-160-20260808T021341Z/binding_sheets/G_recombination_network.bindings.json",
+    "modules/G/runs/G-160-20260808T021341Z/binding_sheets/G_visibility.bindings.json",
+    "recipes/G/wolfram/G-WL-001.wl",
+    "recipes/G/wolfram/G-WL-002.wl"
+  ],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION",
+  "audit_conclusion": "The exact F parent does not supply a derived electromagnetic charge operator, physical photon identity/opacity, atomic identity map, or source-owned recombination/ionization coefficients. The admitted canonical sources define G's role and general modal-specialization obligation but do not uniquely select those missing physical objects for this current parent. The G solver binding sheets therefore remain intentionally unbound."
 }
