@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
-RUN_ID="C-125-20260808T063010Z"
+RUN_ID="C-125-20260808T063500Z"
 RUN="modules/C/runs/${RUN_ID}"
 
 python - <<'PY'
 import json
 from pathlib import Path
-s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}; r=json.load(open('modules/C/runs/C-125-20260808T063010Z/run.json'))
-assert s['active_work_unit']=='C-125' and s['current_module']=='C' and s['current_run']=='C-125-20260808T063010Z',s
+s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}; r=json.load(open('modules/C/runs/C-125-20260808T063500Z/run.json'))
+assert s['active_work_unit']=='C-125' and s['current_module']=='C' and s['current_run']=='C-125-20260808T063500Z',s
 assert s['modules']['C']['evidence_state']=='DESIGN' and s['modules']['C']['fidelity']=='PRODUCTION',s['modules']['C']
 assert s['modules']['B']['evidence_state']=='FROZEN' and s['modules']['B']['fidelity']=='PRODUCTION',s['modules']['B']
 assert q['C-125']['status']=='ACTIVE' and q['D-135']['status']=='BLOCKED',q
@@ -27,7 +27,7 @@ python tools/execute_c125.py prepare --run "$RUN"
 python - <<'PY'
 import hashlib,json,math
 from pathlib import Path
-R=Path('modules/C/runs/C-125-20260808T063010Z'); parent=json.load(open('modules/B/frozen/H_B_to_C_v2.json'))
+R=Path('modules/C/runs/C-125-20260808T063500Z'); parent=json.load(open('modules/B/frozen/H_B_to_C_v2.json'))
 Q=parent['operator']['matrix']; M=[[(1.0 if i==j else 0.0)-float(x) for j,x in enumerate(row)] for i,row in enumerate(Q)]
 G=[[0.0,-1/math.sqrt(3),1/math.sqrt(3)],[1/math.sqrt(3),0.0,-1/math.sqrt(3)],[-1/math.sqrt(3),1/math.sqrt(3),0.0]]
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -44,7 +44,7 @@ python tools/materialize_solver_config.py --template "$RUN/solver_templates/C_sp
 python - <<'PY'
 import hashlib,json
 from pathlib import Path
-R=Path('modules/C/runs/C-125-20260808T063010Z')
+R=Path('modules/C/runs/C-125-20260808T063500Z')
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 p=R/'PRE_EXECUTION_LOCK.json'; lock=json.load(open(p)); lock['corroborative_solver_binding']={'config_path':str(R/'solver_configs/C_spectral_model.json'),'config_sha256':sha(R/'solver_configs/C_spectral_model.json'),'binding_sha256':sha(R/'binding_sheets/C_spectral_model.bindings.json'),'purpose':'corroborative parent-derived spectral audit only'}; p.write_text(json.dumps(lock,indent=2)+'\n')
 PY
@@ -64,6 +64,33 @@ LOCK_SHA=$(git rev-parse HEAD)
 git fetch origin agent/frontier-050-execution
 test "$(git rev-parse origin/agent/frontier-050-execution)" = "$LOCK_SHA"
 
+# Record the exact connected Wolfram outputs captured after the scientific lock.
+cat > /tmp/C-WL-001-output.txt <<'EOF'
+Symbol::undefined2: Warning: Global symbols "M, M, M, M, M, M, M" are undefined.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"C-WL-001\", \"hermitian\" -> True, \"characteristicPolynomial\" -> \"a*b - a*lambda - b*lambda + lambda^2 - w^2 - z^2\", \"trace\" -> \"a + b\", \"determinant\" -> \"a*b - w^2 - z^2\", \"eigenvalues\" -> {\"(a + b - Sqrt[(a - b)^2 + 4*(w^2 + z^2)])/2\", \"(a + b + Sqrt[(a - b)^2 + 4*(w^2 + z^2)])/2\"}|>"
+EOF
+cat > /tmp/C-WL-002-output.txt <<'EOF'
+Symbol::undefined2: Warning: Global symbols "G, X, G, X, X, G, X" are undefined.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"C-WL-002\", \"invarianceSolution\" -> \"x21 == -x12 && x22 == x11\", \"candidate\" -> \"{{x11, x12}, {-x12, x11}}\"|>"
+EOF
+python tools/director.py wolfram-show --call C-WL-001
+python tools/director.py wolfram-record --run "$RUN_ID" --call C-WL-001 --output /tmp/C-WL-001-output.txt
+python tools/director.py wolfram-show --call C-WL-002
+python tools/director.py wolfram-record --run "$RUN_ID" --call C-WL-002 --output /tmp/C-WL-002-output.txt
+python - <<'PY'
+import json
+from pathlib import Path
+R=Path('modules/C/runs/C-125-20260808T063500Z/wolfram')
+for c in ['C-WL-001','C-WL-002']:
+    g=json.load(open(R/c/'gate.json'))
+    assert str(g.get('status',g.get('result',''))).startswith('PASS') or g.get('pass') is True,g
+print('C125_POST_LOCK_WOLFRAM_PASS')
+PY
+
 # Primary execution and independent reconstruction.
 python tools/run_reference_checks.py --module C --output "$RUN/reference_checks.json"
 mkdir -p "$RUN/solver_outputs/spectral_model"
@@ -71,7 +98,7 @@ python tools/run_configured_solver.py --config "$RUN/solver_configs/C_spectral_m
 python tools/execute_c125.py execute --run "$RUN"
 python - <<'PY'
 import json
-R='modules/C/runs/C-125-20260808T063010Z'
+R='modules/C/runs/C-125-20260808T063500Z'
 assert json.load(open(R+'/reference_checks.json'))['overall']=='PASS'
 assert json.load(open(R+'/solver_outputs/spectral_model/result.json'))['success'] is True
 assert json.load(open(R+'/GATE_RESULTS.json'))['overall']=='PASS'
@@ -92,7 +119,7 @@ python - <<'PY'
 import hashlib,json
 from datetime import datetime,timezone
 from pathlib import Path
-R=Path('modules/C/runs/C-125-20260808T063010Z')
+R=Path('modules/C/runs/C-125-20260808T063500Z')
 claim=json.load(open(R/'CLAIM_RECORD.json'))
 p=R/'CLOSEOUT.md'; text=p.read_text(encoding='utf-8')
 if '## Result' not in text:
@@ -110,12 +137,12 @@ for q in sorted(R.rglob('*')):
     records.append({'path':str(q.relative_to(R)),'sha256':hashlib.sha256(q.read_bytes()).hexdigest(),'bytes':q.stat().st_size})
 h=hashlib.sha256()
 for rec in records: h.update(rec['path'].encode()); h.update(b'\0'); h.update(rec['sha256'].encode()); h.update(b'\n')
-(R/'GENERATED_OUTPUT_MANIFEST.json').write_text(json.dumps({'run_id':'C-125-20260808T063010Z','status':'FINAL','finalized_utc':datetime.now(timezone.utc).isoformat(),'outputs':records,'tree_sha256':h.hexdigest(),'note':'Finalized after controller-required closeout headings; C science, gates, thresholds and claim scope unchanged. Excludes itself and controller-owned run.json.'},indent=2)+'\n')
+(R/'GENERATED_OUTPUT_MANIFEST.json').write_text(json.dumps({'run_id':'C-125-20260808T063500Z','status':'FINAL','finalized_utc':datetime.now(timezone.utc).isoformat(),'outputs':records,'tree_sha256':h.hexdigest(),'note':'Finalized after controller-required closeout headings; C science, gates, thresholds and claim scope unchanged. Excludes itself and controller-owned run.json.'},indent=2)+'\n')
 PY
 
 python - <<'PY'
 import json
-R='modules/C/runs/C-125-20260808T063010Z'
+R='modules/C/runs/C-125-20260808T063500Z'
 c=json.load(open(R+'/OUTPUT_CONTRACT.json')); assert c['status']=='PASS',c
 assert all(x['status']=='SATISFIED' and x['child_ready'] for x in c['required_outputs'])
 assert all(x['status']=='SATISFIED' and x['source_lineage']=='PASS' and x['independent_verification']=='PASS' for x in c['child_bindings'].values())

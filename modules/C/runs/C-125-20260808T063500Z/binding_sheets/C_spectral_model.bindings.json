@@ -32,10 +32,10 @@
       "origin_path": "modules/C/runs/C-125-20260808T063500Z/FROZEN_DERIVATION_SPEC.json",
       "origin_sha256": "dab6e448aec272d7af78085693d9f89e93ffcf78d5f8ef6dc64c5bf096f5e6a6",
       "module": "C",
-      "derivation_object": "corroborative_spectral_audit.matrix",
+      "derivation_object": "I-Q_B",
       "units": "dimensionless",
-      "dimensions": "finite carrier operator",
-      "justification": "Exact parent-derived corroborative finite-core audit only; not the full C branch-family mass operator."
+      "dimensions": "1",
+      "justification": "Corroborative exact parent spectral audit; full C-125 generator is execute_c125.py from recovered theorem sources."
     },
     {
       "path": "model.symmetry_generators",
@@ -63,10 +63,10 @@
       "origin_path": "modules/C/runs/C-125-20260808T063500Z/FROZEN_DERIVATION_SPEC.json",
       "origin_sha256": "dab6e448aec272d7af78085693d9f89e93ffcf78d5f8ef6dc64c5bf096f5e6a6",
       "module": "C",
-      "derivation_object": "corroborative_spectral_audit.symmetry_generator",
+      "derivation_object": "conserved-mode O(2) audit generator",
       "units": "dimensionless",
-      "dimensions": "finite carrier operator",
-      "justification": "Exact parent-derived corroborative finite-core audit only; not the full C branch-family mass operator."
+      "dimensions": "1",
+      "justification": "Corroborative exact parent spectral audit; full C-125 generator is execute_c125.py from recovered theorem sources."
     }
   ]
 }

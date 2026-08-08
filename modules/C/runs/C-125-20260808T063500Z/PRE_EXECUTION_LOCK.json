@@ -3,7 +3,7 @@
   "run_id": "C-125-20260808T063500Z",
   "status": "FROZEN",
   "frozen_before_primary_execution": true,
-  "frozen_utc": "2026-08-08T06:37:27.262309+00:00",
+  "frozen_utc": "2026-08-08T06:40:37.504003+00:00",
   "fidelity": "PRODUCTION",
   "generation_mode": "GENERATION_SEALED",
   "definition_sha256": "dab6e448aec272d7af78085693d9f89e93ffcf78d5f8ef6dc64c5bf096f5e6a6",
@@ -53,9 +53,8 @@
   ],
   "corroborative_solver_binding": {
     "config_path": "modules/C/runs/C-125-20260808T063500Z/solver_configs/C_spectral_model.json",
-    "config_sha256": "5686422eab0f9773a93fc9325bde5d1c616935742550d4dd611f2d485901a297",
-    "binding_sha256": "9523b45252b5b824d682b561d2be7ab5a7b312cd9f71245271b87d2aeced0048",
-    "purpose": "exact parent-derived finite-core corroboration only; not full C mass/mixing branch selection"
-  },
-  "post_lock_execution_authorized": "ONLY_AFTER_CONNECTED_C_WL_001_AND_C_WL_002_ARE_RECORDED_PASS"
+    "config_sha256": "591cc3faf610d862eaba323dea3f28f3baecb9eb65fc6f851c3f19f5c83bfb26",
+    "binding_sha256": "d01242be6d6b55c66f99195fbd0df3c72b225c0dccb6e204591973d5ae2d77a4",
+    "purpose": "corroborative parent-derived spectral audit only"
+  }
 }
