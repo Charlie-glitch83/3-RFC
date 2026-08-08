@@ -6,6 +6,11 @@ on:
       - agent/frontier-050-execution
     paths:
       - '.github/f150-startup-trigger.txt'
+  push:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/f150-startup-trigger.txt'
 
 permissions:
   contents: write
