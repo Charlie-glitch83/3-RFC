@@ -1,0 +1,58 @@
+name: Main-dispatched D135 governed startup once
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ['.github/d135-start-trigger.txt']
+
+permissions:
+  contents: write
+
+jobs:
+  start-d135:
+    if: github.event.pull_request.head.ref == 'ops/d135-start-20260808'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Execute exact repository startup protocol
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='D-135' and s['current_module']=='D' and s['current_run'] is None,s
+          assert s['modules']['C']['evidence_state']=='FROZEN' and s['modules']['C']['fidelity']=='PRODUCTION',s['modules']['C']
+          PY
+          bash bootstrap.sh
+          bash tools/start_work.sh
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.load(open('STATE.json')); rid=s['current_run']
+          assert s['active_work_unit']=='D-135' and s['current_module']=='D' and rid and rid.startswith('D-135-'),s
+          packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
+          assert '# ACTIVE WORK PACKET — D-135' in packet and str(Path('modules/D/runs')/rid) in packet
+          print(rid)
+          PY
+      - name: Commit generated D135 governed startup
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json memory/RUN_INDEX.json memory/CURRENT_CONTEXT.md work_packets/ACTIVE_WORK_PACKET.md modules/D
+          if git diff --cached --quiet; then echo 'HARD STOP: startup produced no governed changes'; exit 1; fi
+          git commit -m 'Start D-135 superseding thermal replay'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
