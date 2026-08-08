@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E140_MINIMAL_SPINE_DERIVATION",
+  "run_id": "E-140-20260807T232334Z",
+  "module": "E",
+  "status": "DERIVED_CANDIDATE_PRE_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "fidelity": "MINIMAL_SPINE",
+  "authority": {
+    "direct_parent": {
+      "path": "modules/D/frozen/H_D_to_E.json",
+      "sha256": "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231"
+    },
+    "microscopic_parent": {
+      "path": "modules/C/frozen/H_C_to_D.json",
+      "sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78"
+    },
+    "source_register": "modules/E/runs/E-140-20260807T232334Z/SOURCE_REGISTER.json"
+  },
+  "triadic_specialization": {
+    "CIF": "All finite composite occupancy states generated from the three exact D parent carrier identities, subject to no-loss ancestry, additive carrier conservation, and exclusion of duplicate/gauge-equivalent representations.",
+    "QV": "Locally witnessed reversible association/dissociation on inherited complete K3 support, with no new kinetic coefficient: every elementary forward association reuses the exact parent edge rate a and reverse flow is fixed by the inherited spectral coordinate and the parent-derived constitutive binding increment.",
+    "RFL": "Stable composite populations, cumulative constitutive-energy transfer, reaction-route ancestry, freeze-out witnesses, covariance and restart state."
+  },
+  "nbody_mode": "RELATIONAL_GRAMMAR_ACTIVE",
+  "state_and_clock": {
+    "primitive_carriers": ["E_X0", "E_X1", "E_X2"],
+    "primitive_identity_rule": "Exact D carrier identity only; no proton/neutron/Standard-Model correspondence is asserted.",
+    "clock": "tau_E := tau_D - tau_D,entry, dimensionless continuation of the parent intrinsic post-Big-Implosion clock; tau_E=0 at H_D_to_E entry.",
+    "temperature_coordinate": "Theta_E := Theta_D_final at the minimal-spine frozen-parent-bath approximation.",
+    "Theta_E": 0.056881184006326246,
+    "temperature_units": "dimensionless parent-gap energy coordinate",
+    "physical_temperature_correspondence": "NOT_DERIVED"
+  },
+  "parent_constitutive_law": {
+    "a": 0.1499430216517723,
+    "a_expression": "1/(delta+2)",
+    "g_C": 0.449829064955317,
+    "g_C_expression": "3*a",
+    "M_C": [[0.29988604330354474,-0.1499430216517723,-0.1499430216517723],[-0.1499430216517723,0.2998860433035446,-0.1499430216517723],[-0.1499430216517723,-0.1499430216517723,0.2998860433035446]],
+    "composite_energy_rule": "For occupancy vector v in nonnegative integer^3, epsilon(v)=v^T M_C v. This is an internally dimensionless constitutive energy; it is not a measured nuclear mass.",
+    "binding_increment_rule": "For an association v+w->v+w, B(v,w)=epsilon(v)+epsilon(w)-epsilon(v+w). Positive B is an internally bound channel; B<=0 is not admitted as a bound association at this fidelity."
+  },
+  "species_derivation": {
+    "candidate_rule": "Start with the three protected primitive identities and close under positive-binding heterotypic association without duplicating a constituent identity beyond the minimal one-copy occupancy shell. This preserves every D primitive distinction and creates the smallest non-scalar composite family supported by the exact K3 interaction.",
+    "admitted_species": [
+      {"name":"E_X0","occupancy":[1,0,0],"epsilon_expression":"2*a","epsilon":0.2998860433035446},
+      {"name":"E_X1","occupancy":[0,1,0],"epsilon_expression":"2*a","epsilon":0.2998860433035446},
+      {"name":"E_X2","occupancy":[0,0,1],"epsilon_expression":"2*a","epsilon":0.2998860433035446},
+      {"name":"E_B01","occupancy":[1,1,0],"epsilon_expression":"2*a","epsilon":0.2998860433035446},
+      {"name":"E_B02","occupancy":[1,0,1],"epsilon_expression":"2*a","epsilon":0.2998860433035446},
+      {"name":"E_B12","occupancy":[0,1,1],"epsilon_expression":"2*a","epsilon":0.2998860433035446},
+      {"name":"E_T012","occupancy":[1,1,1],"epsilon_expression":"0","epsilon":0.0}
+    ],
+    "excluded_same_type_dimers": {
+      "rule": "For 2*e_i, binding increment = -4*a < 0, so same-type dimers fail the positive-binding admission witness at this fidelity.",
+      "status": "OBSTRUCTION_NOT_SPECIES"
+    },
+    "empirical_isotope_correspondence": "UNASSIGNED"
+  },
+  "reaction_hypergraph": {
+    "species_order": ["E_X0","E_X1","E_X2","E_B01","E_B02","E_B12","E_T012"],
+    "forward_routes": [
+      {"id":"E_R01","reaction":"E_X0 + E_X1 -> E_B01","binding_expression":"2*a","binding":0.2998860433035446},
+      {"id":"E_R02","reaction":"E_X0 + E_X2 -> E_B02","binding_expression":"2*a","binding":0.2998860433035446},
+      {"id":"E_R12","reaction":"E_X1 + E_X2 -> E_B12","binding_expression":"2*a","binding":0.2998860433035446},
+      {"id":"E_R012_A","reaction":"E_B01 + E_X2 -> E_T012","binding_expression":"4*a","binding":0.5997720866070892},
+      {"id":"E_R012_B","reaction":"E_B02 + E_X1 -> E_T012","binding_expression":"4*a","binding":0.5997720866070892},
+      {"id":"E_R012_C","reaction":"E_B12 + E_X0 -> E_T012","binding_expression":"4*a","binding":0.5997720866070892}
+    ],
+    "reverse_routes": "Exact inverse of every admitted forward route; no forward-only channel is allowed.",
+    "stoichiometry": [[-1,-1,0,0,0,-1,1,1,0,0,0,1],[-1,0,-1,0,-1,0,1,0,1,0,1,0],[0,-1,-1,-1,0,0,0,1,1,1,0,0],[1,0,0,-1,0,0,-1,0,0,1,0,0],[0,1,0,0,-1,0,0,-1,0,0,1,0],[0,0,1,0,0,-1,0,0,-1,0,0,1],[0,0,0,1,1,1,0,0,0,-1,-1,-1]],
+    "route_order": ["R01_f","R02_f","R12_f","R012A_f","R012B_f","R012C_f","R01_r","R02_r","R12_r","R012A_r","R012B_r","R012C_r"]
+  },
+  "invariants": {
+    "primitive_count_X0": [1,0,0,1,1,0,1],
+    "primitive_count_X1": [0,1,0,1,0,1,1],
+    "primitive_count_X2": [0,0,1,0,1,1,1],
+    "total_primitive_carrier": [1,1,1,2,2,2,3],
+    "internal_charge_rule": "The two independent primitive-count differences span the exact conserved internal charge space. No electric-charge correspondence is claimed.",
+    "baryon_correspondence": "NOT_ASSIGNED; total_primitive_carrier is the source-owned precursor ledger at MINIMAL_SPINE."
+  },
+  "rate_law": {
+    "classification": "DERIVED_MINIMAL_SPINE_MASS_ACTION_WITH_PARENT_DETAILED_BALANCE",
+    "forward_coefficient": "k_f=a for every elementary association; this is the unique no-new-coefficient complete-support specialization reusing the exact parent edge interaction timescale.",
+    "reverse_coefficient": "k_r(B)=a*exp(-B/Theta_E), using unit internal degeneracy at the minimal one-copy occupancy shell. This is the reversible canonical relation in the inherited dimensionless spectral coordinate; no Kelvin/MeV value or public rate table enters.",
+    "parameters": {
+      "a": 0.1499430216517723,
+      "kr_pair": 0.0007695933391028973,
+      "kr_trimer": 0.000007899986289019092
+    },
+    "rate_expressions": [
+      "a*E_X0*E_X1","a*E_X0*E_X2","a*E_X1*E_X2","a*E_B01*E_X2","a*E_B02*E_X1","a*E_B12*E_X0",
+      "kr_pair*E_B01","kr_pair*E_B02","kr_pair*E_B12","kr_trimer*E_T012","kr_trimer*E_T012","kr_trimer*E_T012"
+    ],
+    "detailed_balance_ratios": {
+      "pair_reverse_over_forward":"exp(-(2*a)/Theta_E)",
+      "trimer_reverse_over_forward":"exp(-(4*a)/Theta_E)"
+    }
+  },
+  "initial_state": {
+    "rule": "Map the exact H_D_to_E final primitive carrier distribution into E_X0,E_X1,E_X2 and initialize all newly opened composites at zero; no constituent is discarded or invented.",
+    "vector": [0.3459414163255845,0.32885860048152177,0.3251999831928936,0.0,0.0,0.0,0.0]
+  },
+  "energy_memory_ledger": {
+    "network_constitutive_energy": "U_E=sum_s y_s epsilon_s",
+    "reaction_release": "For each net forward route, positive B is transferred from U_E into RFL_E binding-memory ledger Q_E; reverse flow returns the same amount.",
+    "conservation_statement": "U_E + Q_E is conserved by construction for the reaction subsystem when every forward/reverse route uses the same binding increment.",
+    "thermodynamic_energy_correspondence": "NOT_CLAIMED"
+  },
+  "numerical_plan": {
+    "primary_method": "BDF",
+    "rtol": 1e-9,
+    "atol": 1e-12,
+    "positivity_tolerance": 1e-12,
+    "invariant_tolerance": 1e-9,
+    "time_unit": "tau_E",
+    "stopping_rule": "Integrate until max absolute reaction RHS < 1e-12 over the admitted species and verify persistence by a factor-two extension; t_end must be determined internally from the derived rates, not selected from a public nuclear timescale.",
+    "max_step_rule": "t_end/256 after t_end is internally established",
+    "convergence": "Repeat with max_step t_end/{64,128,256,512} and require finest-two final-state L_inf <=1e-8; repeat with rtol/atol tightened by 10 and require <=1e-8.",
+    "network_convergence": "Compare full six-association route family against each single-route withheld network; no withheld material route may be silently irrelevant above the declared 1e-8 output tolerance."
+  },
+  "uncertainty": {
+    "classification": "INHERITED_SOURCE_DECIMAL_REPRESENTATION_ENVELOPE_PLUS_MODEL_BRANCH_STATUS",
+    "parent_delta_members": [4.66915,4.6692,4.66925],
+    "rule": "For each parent decimal-envelope member, rederive a, M_C, D final state, composite energies, rates and E trajectory without retuning. Model uncertainty from the minimal one-copy composite-shell truncation is reported separately and is not fitted."
+  },
+  "countermodels": [
+    "SCALAR_COLLAPSE: replace the three primitive identities by one mean species; reject because it destroys parent distinctions and all independent primitive-count ledgers.",
+    "PUBLIC_BBN_IMPORT: insert proton/neutron/isotope labels, measured masses, lifetimes, cross sections or abundance targets; forbidden by generation seal.",
+    "NEW_FREE_RATE: replace a by an unconstrained kinetic coefficient; reject because the parent already owns the only admitted complete-support interaction timescale at this fidelity.",
+    "FORWARD_ONLY: remove reverse routes; reject because detailed balance and no-loss reopening fail.",
+    "SAME_TYPE_BINDING: admit 2*E_Xi as a bound species; reject because the exact parent constitutive binding increment is -4*a.",
+    "EDGE_WITHHELD: remove a lawful inherited heterotypic association lane; retain as required ablation and require a material trajectory change for any route classified material."
+  ],
+  "falsifiers": [
+    "exact parent SHA-256 mismatch",
+    "any public or remembered abundance/rate/mass/temperature target influences generation",
+    "any admitted composite has nonpositive parent-derived binding increment",
+    "any reaction violates any primitive-count invariant above 1e-12 symbolically",
+    "any primary abundance falls below -1e-12",
+    "total primitive carrier drift exceeds 1e-9",
+    "constitutive-energy plus RFL binding-memory drift exceeds 1e-9",
+    "finest-two max-step or tightened-tolerance final states differ above 1e-8",
+    "restart or independent integrator final state differs above 1e-8",
+    "a scalar-collapse model reproduces the full species trajectory within 1e-8",
+    "a claimed-material route can be withheld with all claimed outputs changing below 1e-8"
+  ],
+  "claim_boundary": "If executed and verified, E-140 may establish only an internally generated, dimensionless, reaction-resolved RFC primordial composite network at MINIMAL_SPINE fidelity, descended from the exact C/D three-carrier physical lineage with source-owned composite binding, reversible rates, conservation, positivity, freeze-out, covariance, memory and ancestry. It does not establish Standard Model isotope identities, measured nuclear masses/bindings, physical Kelvin/MeV temperatures, laboratory reaction rates, precision BBN, empirical primordial abundances, or full hyper-realistic D->E thermal/weak continuity."
+}
