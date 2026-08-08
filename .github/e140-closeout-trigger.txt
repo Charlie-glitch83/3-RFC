@@ -1,0 +1,1 @@
+Trigger governed E-140 closeout after verified MINIMAL_SPINE execution and controller-safe administrative finalization.
