@@ -3,14 +3,14 @@ name: Main-dispatched D135 governed execution once
 on:
   pull_request:
     branches: [main]
-    paths: ['.github/d135-execute-trigger.txt']
+    paths: ['.github/d135-start-trigger.txt']
 
 permissions:
   contents: write
 
 jobs:
   execute-d135:
-    if: github.event.pull_request.head.ref == 'ops/d135-execute-20260808'
+    if: github.event.pull_request.head.ref == 'ops/d135-start-20260808'
     runs-on: ubuntu-latest
     env:
       RUN_ID: D-135-20260808T163243Z
