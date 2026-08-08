@@ -1,0 +1,200 @@
+name: Governed Science Lineage Repair and B115 Closeout Once
+
+on:
+  push:
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - '.github/science-lineage-repair-trigger.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: science-lineage-repair-once
+  cancel-in-progress: false
+
+jobs:
+  repair-lineage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install frozen dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+
+      - name: Verify exact pre-repair frontier
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='G-160',s
+          assert s['current_module']=='G',s
+          assert s['current_run']=='G-160-20260808T021341Z',s
+          f=json.load(open('modules/F/frozen/H_F_to_G.json'))
+          assert f['electromagnetic_charge_status']=='NOT_DERIVED_AT_MINIMAL_SPINE',f
+          assert f['residual_route_network']['physical_photon_opacity_status']=='NOT_DERIVED',f
+          assert 'PHOTON_IDENTITY_UNASSIGNED' in f['radiation_channel']['status'],f
+          g=json.load(open('modules/G/runs/G-160-20260808T021341Z/G_DERIVATION_OBSTRUCTION.json'))
+          assert g['classification']=='BLOCKED_UNDERDETERMINED_PRE_PRIMARY',g
+          assert g['decision'].startswith('Do not materialize'),g
+          PY
+
+      - name: Close the preserved G obstruction run as BLOCKED
+        run: |
+          python tools/rfc.py close-run --run-id G-160-20260808T021341Z --result BLOCKED --closeout modules/G/runs/G-160-20260808T021341Z/CLOSEOUT.md
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); assert s['current_run'] is None,s
+          idx=json.load(open('memory/RUN_INDEX.json'))['runs']; rec=[x for x in idx if x['run_id']=='G-160-20260808T021341Z'][0]; assert rec['status']=='BLOCKED',rec
+          PY
+
+      - name: Recover exact B-G enhanced formal corpus as REPLAY_REQUIRED
+        run: |
+          rm -rf /tmp/2-RFC
+          git clone --quiet https://github.com/Charlie-glitch83/2-RFC.git /tmp/2-RFC
+          git -C /tmp/2-RFC checkout --quiet --detach b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10
+          test "$(git -C /tmp/2-RFC rev-parse HEAD)" = "b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10"
+          python tools/recover_bg_replay.py --source-root /tmp/2-RFC
+
+      - name: Install science-lineage and child-readiness repair
+        run: |
+          python tools/repair_science_lineage.py
+          python tools/rfc.py reopen-module B --fidelity PRODUCTION --evidence audit/SCIENCE_LINEAGE_REPAIR_20260808.json
+          python tools/rfc.py context
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+          assert s['active_work_unit']=='B-115' and s['current_module']=='B' and s['current_run'] is None,s
+          assert s['modules']['B']['evidence_state']=='DESIGN' and s['modules']['B']['fidelity']=='PRODUCTION',s['modules']['B']
+          assert q['B-115']['status']=='ACTIVE' and q['C-125']['status']=='BLOCKED' and q['G-160']['status']=='BLOCKED',q['B-115']
+          PY
+
+      - name: Commit and verify repair foundation
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Recover full B-G science and reopen canonical lineage at B'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "FOUNDATION_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git fetch origin agent/frontier-050-execution
+          test "$(git rev-parse origin/agent/frontier-050-execution)" = "$(git rev-parse HEAD)"
+
+      - name: Create governed B-115 workspace
+        run: |
+          python tools/rfc.py new-run B --run-id B-115-20260808T060000Z
+          python tools/execute_b115.py prepare --run modules/B/runs/B-115-20260808T060000Z
+          python tools/rfc.py doctor
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); assert s['current_run']=='B-115-20260808T060000Z',s
+          lock=json.load(open('modules/B/runs/B-115-20260808T060000Z/PRE_EXECUTION_LOCK.json'))
+          assert lock['status']=='FROZEN' and lock['frozen_before_primary_execution'] is True,lock
+          PY
+
+      - name: Commit B-115 pre-execution lock before primary execution
+        run: |
+          git add STATE.json memory/RUN_INDEX.json modules/B/runs/B-115-20260808T060000Z
+          git commit -m 'Freeze B-115 sector-completion replay before execution'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "B115_LOCK_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git fetch origin agent/frontier-050-execution
+          test "$(git rev-parse origin/agent/frontier-050-execution)" = "$B115_LOCK_SHA"
+
+      - name: Execute exact B-115 sector completion
+        run: |
+          python tools/execute_b115.py execute --run modules/B/runs/B-115-20260808T060000Z
+          python - <<'PY'
+          import json
+          g=json.load(open('modules/B/runs/B-115-20260808T060000Z/GATE_RESULTS.json'))
+          assert g['overall']=='PASS',g
+          s=json.load(open('modules/B/runs/B-115-20260808T060000Z/primary/FOUR_SECTOR_GENESIS_STATE.json'))
+          e=s['verification']; assert max(e['x_minus_reconstruction_linf'],e['x_plus_reconstruction_linf'],e['j_forward_reconstruction_linf'],e['j_reverse_reconstruction_linf'],e['compression_seed_sum_abs']) <= 1e-12,e
+          PY
+
+      - name: Fresh detached-worktree replay from committed B-115 lock
+        run: |
+          rm -rf /tmp/b115-lock /tmp/b115-replay
+          git worktree add --detach /tmp/b115-lock "$B115_LOCK_SHA"
+          cd /tmp/b115-lock
+          python tools/execute_b115.py execute --run modules/B/runs/B-115-20260808T060000Z --output-root /tmp/b115-replay
+          cd "$GITHUB_WORKSPACE"
+
+      - name: Finalize B-115 child-ready handoff and output contract
+        run: |
+          python tools/execute_b115.py finalize --run modules/B/runs/B-115-20260808T060000Z --replay-root /tmp/b115-replay
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          c=json.load(open('modules/B/runs/B-115-20260808T060000Z/OUTPUT_CONTRACT.json'))
+          assert c['status']=='PASS' and all(x['status']=='SATISFIED' and x['child_ready'] for x in c['required_outputs']),c
+          assert all(x['status']=='SATISFIED' and x['source_lineage']=='PASS' and x['independent_verification']=='PASS' for x in c['child_bindings'].values()),c
+          PY
+
+      - name: Close and promote B-115 through the full physical evidence ladder
+        run: |
+          R=modules/B/runs/B-115-20260808T060000Z
+          python tools/rfc.py close-run --run-id B-115-20260808T060000Z --result PASS --closeout "$R/CLOSEOUT.md"
+          python tools/rfc.py promote-module B --to FORMALIZED --fidelity PRODUCTION --evidence "$R/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module B --to IMPLEMENTED --fidelity PRODUCTION --evidence "$R/primary/FOUR_SECTOR_GENESIS_STATE.json"
+          python tools/rfc.py promote-module B --to VERIFIED --fidelity PRODUCTION --evidence "$R/GATE_RESULTS.json"
+          python tools/rfc.py promote-module B --to PHYSICALLY_EXECUTED --fidelity PRODUCTION --evidence "$R/primary/FOUR_SECTOR_GENESIS_STATE.json"
+          python tools/rfc.py promote-module B --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "$R/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module B --to FROZEN --fidelity PRODUCTION --evidence modules/B/frozen/H_B_to_C_v2.json
+          python tools/rfc.py freeze modules/B/frozen/H_B_to_C_v2.json --kind MODULE_HANDOFF
+          python tools/rfc.py record-claim --file "$R/CLAIM_RECORD.json"
+          python tools/rfc.py advance --task B-115 --result PASS --evidence "$R/CLOSEOUT.md" --note 'B-115 completed the exact four-sector genesis parent without altering B-110; activate only C-125 for full microscopic replay.'
+          python tools/rfc.py context
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); q={x['id']:x for x in json.load(open('WORK_QUEUE.json'))['items']}
+          assert s['active_work_unit']=='C-125' and s['current_module']=='C' and s['current_run'] is None,s
+          assert s['modules']['B']['evidence_state']=='FROZEN' and s['modules']['B']['fidelity']=='PRODUCTION',s['modules']['B']
+          assert q['B-115']['status']=='PASS' and q['C-125']['status']=='ACTIVE' and q['D-135']['status']=='BLOCKED',q['C-125']
+          PY
+
+      - name: Remove one-use trigger/workflow and commit B-115 closeout
+        run: |
+          git rm -f .github/science-lineage-repair-trigger.txt .github/workflows/science_lineage_repair_once.yml
+          git add -A
+          git commit -m 'Close B-115 and activate full microscopic replay C-125'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          echo "CLOSEOUT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git fetch origin agent/frontier-050-execution
+          REMOTE=$(git rev-parse origin/agent/frontier-050-execution)
+          test "$REMOTE" = "$CLOSEOUT_SHA"
+          echo "Verified B-115 closeout SHA: $REMOTE"
+
+      - name: Record verified closeout SHA in repository state
+        run: |
+          python tools/rfc.py record-commit "$CLOSEOUT_SHA" --branch agent/frontier-050-execution --note 'Verified science-lineage repair foundation, exact replay-source recovery, B-115 preexecution lock, deterministic primary/replay equality, full B evidence ladder, versioned H_B_to_C_v2, and one-child activation C-125.'
+          python tools/rfc.py context
+          python tools/rfc.py doctor
+          git add STATE.json memory/DECISION_LOG.jsonl memory/CURRENT_CONTEXT.md
+          git commit -m 'Record verified B-115 science-lineage repair closeout'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          git fetch origin agent/frontier-050-execution
+          echo "FINAL_HEAD=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          test "$(git rev-parse origin/agent/frontier-050-execution)" = "$(git rev-parse HEAD)"
