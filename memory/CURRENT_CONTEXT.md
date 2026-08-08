@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T06:30:23.767152+00:00
+Generated: 2026-08-08T06:30:28.193585+00:00
 
 ## Project truth
 
@@ -8,7 +8,7 @@ Generated: 2026-08-08T06:30:23.767152+00:00
 - Generation mode: `GENERATION_SEALED`
 - Active work unit: `C-125` — Supersede Module C: Channel-Complete Microscopic Constitution
 - Current module: `C`
-- Last verified commit: `c3df3e28a30d6e7d3a9c2aeddf134aaa0368b685`
+- Last verified commit: `084cd65dc963d57f19b529b37496097d660854a6`
 
 ## Strongest supported claim
 
@@ -81,7 +81,6 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 
 ## Recent decisions
 
-- PROMOTE-B-IMPLEMENTED-20260808T060925Z: Promoted Module B from FORMALIZED to IMPLEMENTED at PRODUCTION
 - PROMOTE-B-VERIFIED-20260808T060926Z: Promoted Module B from IMPLEMENTED to VERIFIED at PRODUCTION
 - PROMOTE-B-PHYSICALLY_EXECUTED-20260808T060926Z: Promoted Module B from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
 - PROMOTE-B-INDEPENDENTLY_REPRODUCED-20260808T060926Z: Promoted Module B from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
@@ -89,6 +88,7 @@ Replay the recovered finite-relational microscopic constitution from H_B_to_C_v2
 - ADVANCE-B-115-20260808T060926Z: Marked B-115 PASS and activated C-125
 - COMMIT-c3df3e28a30d: Verified B-first science-lineage repair: exact four-sector B-115 completion, independent replay, child-ready output contract, PRODUCTION freeze, and single-child activation C-125.
 - REOPEN-C-20260808T062547Z: Reopened Module C from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
+- COMMIT-084cd65dc963: Verified C-125 channel-complete microscopic replay, exact parent/source lineage, spectral corroboration, clean replay, complete D child contract, PRODUCTION evidence ladder, H_C_to_D_v2 and one-child activation D-135.
 
 ## Recent failures
 
