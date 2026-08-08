@@ -87,5 +87,5 @@ jobs:
           cache: pip
       - name: Install frozen repository dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Execute governed C-125 superseding replay
-        run: bash tools/run_c125_resume_closeout.sh
+      - name: Resume governed C-125 closeout after parser-only failure
+        run: bash tools/run_c125_finish_closeout.sh
