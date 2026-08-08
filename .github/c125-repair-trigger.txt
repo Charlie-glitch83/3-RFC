@@ -1,1 +1,1 @@
-trigger: c125-channel-complete-repair-20260808
+trigger: c125-channel-complete-repair-20260808-v2
