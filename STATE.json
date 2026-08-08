@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "G-160",
   "current_module": "G",
-  "current_run": null,
+  "current_run": "G-160-20260808T021341Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -403,7 +403,7 @@
     "G": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "G-160-20260808T021341Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -571,7 +571,7 @@
     }
   },
   "last_verified_commit": "4a9f3f5e5b76c9612120b427cffd60642c891662",
-  "last_updated_utc": "2026-08-08T02:10:35.429162+00:00",
+  "last_updated_utc": "2026-08-08T02:13:41.124197+00:00",
   "strongest_supported_claim": "From the exact frozen E seven-state composite handoff, Module F executes a parent-driven post-nuclear persistence/transport continuation that preserves the three carrier ledgers and constitutive-energy/RFL no-loss ledger, maintains positivity, propagates covariance as PSD, survives convergence/restart/clean replay and independent DOP853 reconstruction, and exports an internal bound/free coordinate plus inherited route-activity transfer seed without fabricating unwitnessed particle identities.",
   "strongest_unsupported_claim": "Module F does not establish Standard Model isotope/electron/ion identities, electromagnetic charge or physical electric neutrality, a photon or neutrino distribution, measured opacity or atomic rates, Kelvin/MeV/SI calibration, metric/FRW expansion, a physical recombination time, visibility/last scattering, or empirical agreement.",
   "last_verified_branch": "agent/frontier-050-execution"
