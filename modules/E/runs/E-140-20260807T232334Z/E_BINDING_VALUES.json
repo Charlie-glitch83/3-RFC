@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E140_REACTION_NETWORK_BINDING_VALUES",
+  "run_id": "E-140-20260807T232334Z",
+  "classification": "INTERNAL_DERIVATION_SERIALIZATION",
+  "generation_mode": "GENERATION_SEALED",
+  "scientific_source": "modules/E/runs/E-140-20260807T232334Z/FROZEN_DERIVATION_SPEC.json",
+  "scientific_source_git_blob_sha": "92bce5f1fad4c0f159e7386b127453e3bdd89d8e",
+  "values": {
+    "model.species": [
+      "X0",
+      "X1",
+      "X2",
+      "B01",
+      "B02",
+      "B12",
+      "T012"
+    ],
+    "model.stoichiometry": [
+      [-1,1,-1,1,0,0,0,0,0,0,-1,1],
+      [-1,1,0,0,-1,1,0,0,-1,1,0,0],
+      [0,0,-1,1,-1,1,-1,1,0,0,0,0],
+      [1,-1,0,0,0,0,-1,1,0,0,0,0],
+      [0,0,1,-1,0,0,0,0,-1,1,0,0],
+      [0,0,0,0,1,-1,0,0,0,0,-1,1],
+      [0,0,0,0,0,0,1,-1,1,-1,1,-1]
+    ],
+    "model.rate_expressions": [
+      "kf2*X0*X1",
+      "kr2*B01",
+      "kf2*X0*X2",
+      "kr2*B02",
+      "kf2*X1*X2",
+      "kr2*B12",
+      "kf3*B01*X2",
+      "kr3*T012",
+      "kf3*B02*X1",
+      "kr3*T012",
+      "kf3*B12*X0",
+      "kr3*T012"
+    ],
+    "model.parameters": {
+      "kf2": 0.1499430216517723,
+      "kr2": 0.0007695933391028973,
+      "kf3": 0.2998860433035446,
+      "kr3": 7.899986289019092e-06
+    },
+    "model.invariants": {
+      "Q0": [1,0,0,1,1,0,1],
+      "Q1": [0,1,0,1,0,1,1],
+      "Q2": [0,0,1,0,1,1,1],
+      "Q_total": [1,1,1,2,2,2,3]
+    },
+    "initial_state": [
+      0.3459414163255845,
+      0.32885860048152177,
+      0.3251999831928936,
+      0.0,0.0,0.0,0.0
+    ],
+    "t_span": [0.0,126582.49817344503],
+    "max_step": 988.9257672925393,
+    "positivity_tolerance": 1e-12,
+    "invariant_tolerance": 1e-09
+  },
+  "provenance": {
+    "H_D_to_E_sha256": "37839ecc3a570a3d9fc4ee6e29ec36ebe921bf6ae7a710f816c741d1fa498231",
+    "H_C_to_D_sha256": "41302a4ea12aab0f6d49ee74a6b89a0a9d25e66c79bb6fc137aee48f920caf78",
+    "rule": "No scientific value is introduced here; this object serializes the frozen E140 derivation into the exact solver binding paths."
+  }
+}
