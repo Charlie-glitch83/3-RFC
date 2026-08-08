@@ -6,6 +6,12 @@ on:
       - agent/frontier-050-execution
     paths:
       - .github/E140_EXECUTE_TRIGGER
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - agent/frontier-050-execution
+    paths:
+      - .github/E140_EXECUTE_TRIGGER
 
 permissions:
   contents: write
