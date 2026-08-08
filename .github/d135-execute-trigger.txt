@@ -1,0 +1,2 @@
+authorized_by_user=2026-08-08
+scope=execute_close_D135_activate_E145
