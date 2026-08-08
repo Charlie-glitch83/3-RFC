@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "object_id": "E140_BINDING_DERIVATION",
+  "run_id": "E-140-20260807T232334Z",
+  "origin_spec_git_blob": "03d8449a6723facc11390e524f6e30c1c4308afb",
+  "species": ["E_X0","E_X1","E_X2","E_B01","E_B02","E_B12","E_T012"],
+  "stoichiometry": [[-1,-1,0,0,0,-1,1,1,0,0,0,1],[-1,0,-1,0,-1,0,1,0,1,0,1,0],[0,-1,-1,-1,0,0,0,1,1,1,0,0],[1,0,0,-1,0,0,-1,0,0,1,0,0],[0,1,0,0,-1,0,0,-1,0,0,1,0],[0,0,1,0,0,-1,0,0,-1,0,0,1],[0,0,0,1,1,1,0,0,0,-1,-1,-1]],
+  "rate_expressions": ["a*E_X0*E_X1","a*E_X0*E_X2","a*E_X1*E_X2","a*E_B01*E_X2","a*E_B02*E_X1","a*E_B12*E_X0","kr_pair*E_B01","kr_pair*E_B02","kr_pair*E_B12","kr_trimer*E_T012","kr_trimer*E_T012","kr_trimer*E_T012"],
+  "parameters": {"a":0.1499430216517723,"kr_pair":0.0007695933391028973,"kr_trimer":0.000007899986289019092},
+  "invariants": {"X0_count":[1,0,0,1,1,0,1],"X1_count":[0,1,0,1,0,1,1],"X2_count":[0,0,1,0,1,1,1],"total_primitive":[1,1,1,2,2,2,3]},
+  "initial_state": [0.3459414163255845,0.32885860048152177,0.3251999831928936,0.0,0.0,0.0,0.0],
+  "t_span": [0.0,632912.4908672251],
+  "max_step": 2472.314417450098,
+  "positivity_tolerance": 1e-12,
+  "invariant_tolerance": 1e-9,
+  "t_span_derivation": "First internally tested horizon with max|rhs|<1e-12 persisted under factor-two extension; determined from derived rates only.",
+  "max_step_derivation": "t_end/256",
+  "units": "dimensionless tau_E and normalized parent-carrier abundance",
+  "generation_mode": "GENERATION_SEALED"
+}
