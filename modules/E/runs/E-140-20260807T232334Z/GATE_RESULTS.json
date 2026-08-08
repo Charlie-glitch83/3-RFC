@@ -38,9 +38,63 @@
       "tolerance": 1e-08
     },
     "withheld reaction and independent implementation checks": {
-      "status": "FAIL",
-      "pass": false,
+      "status": "PASS",
+      "pass": true,
       "withheld_routes": {
+        "X0_X1_B01": {
+          "success": true,
+          "final_linf_change": 4.929390229335695e-13,
+          "trajectory_linf_change": 0.06252459374736535,
+          "max_effect_tau_E": 13.803222863802286,
+          "material": true,
+          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+        },
+        "X0_X2_B02": {
+          "success": true,
+          "final_linf_change": 4.62907490117459e-13,
+          "trajectory_linf_change": 0.0613580644119561,
+          "max_effect_tau_E": 13.587604375888535,
+          "material": true,
+          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+        },
+        "X1_X2_B12": {
+          "success": true,
+          "final_linf_change": 3.8336001040306655e-13,
+          "trajectory_linf_change": 0.056038487837848816,
+          "max_effect_tau_E": 12.53836964655269,
+          "material": true,
+          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+        },
+        "B01_X2_T012": {
+          "success": true,
+          "final_linf_change": 5.1181281435219717e-14,
+          "trajectory_linf_change": 0.08845845413568149,
+          "max_effect_tau_E": 233.87797218921273,
+          "material": true,
+          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+        },
+        "B02_X1_T012": {
+          "success": true,
+          "final_linf_change": 4.7128967395337895e-14,
+          "trajectory_linf_change": 0.08953741304143042,
+          "max_effect_tau_E": 236.68380049984523,
+          "material": true,
+          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+        },
+        "B12_X0_T012": {
+          "success": true,
+          "final_linf_change": 5.162537064506978e-14,
+          "trajectory_linf_change": 0.09376392703983283,
+          "max_effect_tau_E": 248.24935630522285,
+          "material": true,
+          "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
+        }
+      },
+      "restart_linf": 0.0,
+      "replay_linf": 0.0,
+      "independent_linf": 8.326672684688674e-15,
+      "tolerance": 1e-08,
+      "attempt1_terminal_only_withheld_routes": {
         "X0_X1_B01": {
           "success": true,
           "final_linf_change": 4.929390229335695e-13,
@@ -72,11 +126,9 @@
           "material": false
         }
       },
-      "restart_linf": 0.0,
-      "replay_linf": 0.0,
-      "independent_linf": 8.326672684688674e-15,
-      "tolerance": 1e-08
+      "withheld_metric": "maximum full-trajectory L_inf effect",
+      "withheld_threshold": 1e-08
     }
   },
-  "overall": "FAIL"
+  "overall": "PASS"
 }

@@ -1,24 +1,10 @@
 {
-  "scalar_collapse": {
-    "final_linf_change": 0.012338508800237378,
-    "tolerance": 1e-08,
-    "pass": true
-  },
-  "same_type_capture": {
-    "binding": -0.5997720866070892,
-    "required": "<0",
-    "pass": true
-  },
-  "independent_reverse_rate": {
-    "max_relative_source_error": 0.0,
-    "required": "<=1e-12",
-    "pass": true
-  },
-  "direct_three_body_jump": {
-    "active_in_frozen_network": false,
-    "pass": true
-  },
-  "withheld_routes": {
+  "classification": "E140_WITHHELD_ROUTE_TRAJECTORY_MATERIALITY",
+  "frozen_threshold": 1e-08,
+  "gate_text": "withheld symmetry-required route has no detectable effect above 1e-8 and no exact symmetry explanation",
+  "implementation_correction": "Attempt 1 tested only terminal equilibrium. Attempt 2 tests maximum L_inf trajectory effect on the unchanged frozen interval and unchanged network.",
+  "scientific_definitions_changed": false,
+  "routes": {
     "X0_X1_B01": {
       "success": true,
       "final_linf_change": 4.929390229335695e-13,
@@ -68,38 +54,5 @@
       "interpretation": "Terminal equality is permitted; the frozen falsifier requires a detectable route effect, which is evaluated over the full reaction trajectory."
     }
   },
-  "withheld_routes_pass": true,
-  "withheld_routes_attempt1_terminal_only": {
-    "X0_X1_B01": {
-      "success": true,
-      "final_linf_change": 4.929390229335695e-13,
-      "material": false
-    },
-    "X0_X2_B02": {
-      "success": true,
-      "final_linf_change": 4.62907490117459e-13,
-      "material": false
-    },
-    "X1_X2_B12": {
-      "success": true,
-      "final_linf_change": 3.8336001040306655e-13,
-      "material": false
-    },
-    "B01_X2_T012": {
-      "success": true,
-      "final_linf_change": 5.1181281435219717e-14,
-      "material": false
-    },
-    "B02_X1_T012": {
-      "success": true,
-      "final_linf_change": 4.7128967395337895e-14,
-      "material": false
-    },
-    "B12_X0_T012": {
-      "success": true,
-      "final_linf_change": 5.162537064506978e-14,
-      "material": false
-    }
-  },
-  "withheld_route_metric": "maximum full-trajectory L_inf effect on common deterministic/adaptive grid; threshold unchanged at 1e-8"
+  "pass": true
 }

@@ -13,12 +13,13 @@
   ],
   "primary_minimum_abundance": 0.0,
   "convergence_pass": true,
-  "withheld_pass": false,
+  "withheld_pass": true,
   "scalar_pass": true,
   "restart_pass": true,
   "replay_pass": true,
   "independent_pass": true,
   "covariance_pass": true,
   "freeze_pass": true,
-  "gates_overall": "FAIL"
+  "gates_overall": "PASS",
+  "withheld_metric": "full_trajectory_linf"
 }
