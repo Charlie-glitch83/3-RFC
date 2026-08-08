@@ -50,6 +50,7 @@ jobs:
             echo 'No verification changes to commit'
           else
             git commit -m 'Reverify frozen Module E with trajectory route materiality'
+            git pull --rebase origin agent/frontier-050-execution
             git push origin HEAD:agent/frontier-050-execution
           fi
       - name: Enforce frozen componentwise verdict
