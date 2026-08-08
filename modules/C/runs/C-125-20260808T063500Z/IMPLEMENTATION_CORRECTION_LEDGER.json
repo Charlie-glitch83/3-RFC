@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "run_id": "C-125-20260808T063500Z",
+  "classification": "POST_LOCK_PRE_PRIMARY_MANUFACTURED_WOLFRAM_IMPLEMENTATION_CORRECTION",
+  "failed_attempt_preserved": {
+    "input": "modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-002/pre_correction_input.wl",
+    "output": "modules/C/runs/C-125-20260808T063500Z/wolfram/C-WL-002/pre_correction_output.txt",
+    "observed_result": "nonzero commutator; invariant=False"
+  },
+  "correction": {
+    "current_recipe_path": "recipes/C/wolfram/C-WL-002.wl",
+    "purpose_unchanged": "Generic continuous-symmetry invariance equation solver",
+    "frozen_expectation_unchanged": "emit candidate and invarianceSolution for manual source-derived interpretation",
+    "change": "Replace the stale fixed non-invariant manufactured matrix example with a generic real 2x2 candidate X and exact invariance equations under the frozen rotation generator, returning the already-registered candidate/invarianceSolution fields.",
+    "physical_C_law_changed": false,
+    "source_theorem_changed": false,
+    "branch_family_changed": false,
+    "threshold_changed": false,
+    "required_outputs_changed": false,
+    "claim_boundary_changed": false
+  },
+  "basis": [
+    "config/WOLFRAM_CALLS.json classifies C-WL-002 as a generic continuous-symmetry invariance equation solver",
+    "config/WOLFRAM_EXPECTATIONS.json requires manual-review fields candidate and invarianceSolution, not the stale commutator/invariant fields",
+    "the failed fixed matrix was a manufactured verification example and is not the frozen C physical derivation object"
+  ],
+  "required_replay_scope": "Record both exact current C Wolfram calls post-lock, then rerun the full frozen C reference/spectral/primary/countermodel/independent/clean-replay/output-contract matrix before closeout."
+}
