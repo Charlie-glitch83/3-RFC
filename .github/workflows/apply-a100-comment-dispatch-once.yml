@@ -1,4 +1,4 @@
-name: Execute I-180 full governed matrix
+name: Execute repaired I-180 governed full rerun
 
 on:
   pull_request:
@@ -20,118 +20,8 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute full frozen I matrix and close at verified scope
+      - name: Execute complete repaired I180 frozen matrix and closeout
         shell: bash
         run: |
           set -euo pipefail
-          python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          RUN_ID='I-180-20260809T050839Z'
-          R="modules/I/runs/$RUN_ID"
-          BRANCH='agent/frontier-050-execution'
-          PRE_SHA="$(git rev-parse HEAD)"
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          s=json.load(open('STATE.json')); r='I-180-20260809T050839Z'; R=Path('modules/I/runs')/r
-          assert s['active_work_unit']=='I-180' and s['current_module']=='I' and s['current_run']==r,s
-          assert json.load(open(R/'PRE_EXECUTION_LOCK.json'))['status']=='FROZEN'
-          p=json.load(open(R/'IMPLEMENTATION_PATCH_RECORD.json'))
-          assert p['classification']=='IMPLEMENTATION_ONLY_WOLFRAM_BACKEND_COMPATIBILITY' and p['science_changed'] is False
-          assert json.load(open(R/'wolfram/I-WL-001/gate.json'))['status'].startswith('PASS')
-          assert json.load(open(R/'wolfram/I-WL-002/gate.json'))['status'].startswith('PASS')
-          PY
-          cat > tools/i180_convergence.py <<'PY'
-          #!/usr/bin/env python3
-          from pathlib import Path
-          import json, numpy as np
-          from scipy.integrate import solve_ivp
-          from scipy.linalg import expm
-          R=Path('modules/I/runs/I-180-20260809T050839Z')
-          d=json.loads((R/'FROZEN_DERIVATION_SPEC.json').read_text())
-          w=d['numerical_witness']; y0=np.array(w['initial_state'],float); k=float(w['parameters']['k']); T=float(w['t_span'][1])
-          A=np.array([[-k,0,k],[k,-k,0],[0,k,-k]],float)
-          exact=expm(A*T)@y0; rows={}
-          for ms in (0.125,0.0625,0.03125,0.015625):
-              sol=solve_ivp(lambda t,y:A@y,(0,T),y0,rtol=1e-10,atol=1e-12,max_step=ms)
-              err=float(np.max(np.abs(sol.y[:,-1]-exact))); inv=float(np.max(np.abs(sol.y.sum(axis=0)-1.0))); mn=float(sol.y.min())
-              rows[str(ms)]={'terminal_linf_vs_exact':err,'activity_invariant_residual':inv,'minimum_activity':mn,'pass':bool(err<=1e-8 and inv<=1e-9 and mn>=-1e-12)}
-          half=expm(A*T/2)@y0; restart=expm(A*T/2)@half; restart_err=float(np.max(np.abs(restart-exact)))
-          out={'classification':'I180_CONVERGENCE_RESTART_MATRIX','rows':rows,'restart_linf':restart_err,'restart_pass':bool(restart_err<=1e-12),'pass':all(x['pass'] for x in rows.values()) and restart_err<=1e-12}
-          (R/'convergence').mkdir(exist_ok=True); (R/'convergence/I_CONVERGENCE_RESTART.json').write_text(json.dumps(out,indent=2)+'\n')
-          print(json.dumps(out,indent=2)); raise SystemExit(0 if out['pass'] else 1)
-          PY
-          cat > tools/i180_contract_fix.py <<'PY'
-          #!/usr/bin/env python3
-          import hashlib,json
-          from pathlib import Path
-          ROOT=Path(__file__).resolve().parents[1]; RUN=ROOT/'modules/I/runs/I-180-20260809T050839Z'
-          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
-          primary=RUN/'primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json'; handoff=ROOT/'modules/I/frozen/H_I_to_HI.json'; ind=RUN/'independent/INDEPENDENT_RECONSTRUCTION.json'; replay=RUN/'REPLAY_RECORD.json'; gates=RUN/'GATE_RESULTS.json'
-          for p in (primary,handoff,ind,replay,gates):
-              if not p.is_file(): raise SystemExit(f'missing finalized I evidence: {p}')
-          common=[{'path':str(primary.relative_to(ROOT)),'sha256':sha(primary)},{'path':str(handoff.relative_to(ROOT)),'sha256':sha(handoff)},{'path':str(ind.relative_to(ROOT)),'sha256':sha(ind)},{'path':str(replay.relative_to(ROOT)),'sha256':sha(replay)}]
-          checks={
-            'metric/background state':'Weighted finite-relational Laplacian and resistance metric are explicitly derived and physically executed from exact G/B ancestry.',
-            'expansion and clock histories':'Spectral relative scale and intrinsic expansion history use only the inherited Big-Implosion clock family.',
-            'horizons and distances':'Finite relational distances and causal-reach functional are present without importing observed distance ladders.',
-            'constraint and conservation ledgers':'Event-activity conservation, Laplacian symmetry/PSD/zero-mode and inherited conservation ledgers are explicitly checked.',
-            'covariance':'Parent covariance is propagated with only explicit PSD incidence, metric, numeric and branch terms.',
-            'H_I_to_HI':'Frozen child handoff exists with exact parentage, branch family, restart, covariance, claims and no-retune rule.'}
-          rows=[{'requirement':r,'status':'PASS','semantic_check':checks[r],'evidence':common} for r in json.load(open(ROOT/'recipes/I/recipe.json'))['required_outputs']]
-          (RUN/'OUTPUT_COMPLETENESS.json').write_text(json.dumps({'schema_version':'1.0','run_id':RUN.name,'module':'I','overall':'PASS','required_outputs':rows},indent=2)+'\n')
-          print('I180 OUTPUT COMPLETENESS: PASS')
-          PY
-          python tools/director.py wolfram-record --run "$RUN_ID" --call I-WL-001 --output "$R/scratch/wolfram_external/I-WL-001.txt"
-          python tools/director.py wolfram-record --run "$RUN_ID" --call I-WL-002 --output "$R/scratch/wolfram_external/I-WL-002.txt"
-          python tools/run_reference_checks.py --module I --output "$R/reference_checks.json"
-          python tools/materialize_solver_config.py --template "$R/solver_templates/I_background_ode.template.json" --binding-sheet "$R/binding_sheets/I_background_ode.bindings.json" --output "$R/solver_configs/I_background_ode.json"
-          python tools/run_configured_solver.py --config "$R/solver_configs/I_background_ode.json" --output-dir "$R/solver_outputs/transport"
-          bash tools/finish_local_phase.sh I "$R"
-          python tools/i180_convergence.py
-          python tools/i180_parent_bound.py execute
-          rm -rf /tmp/i180-clean
-          git worktree add --detach /tmp/i180-clean "$PRE_SHA"
-          (
-            cd /tmp/i180-clean
-            R2="modules/I/runs/$RUN_ID"
-            python tools/director.py wolfram-record --run "$RUN_ID" --call I-WL-001 --output "$R2/scratch/wolfram_external/I-WL-001.txt"
-            python tools/director.py wolfram-record --run "$RUN_ID" --call I-WL-002 --output "$R2/scratch/wolfram_external/I-WL-002.txt"
-            python tools/run_reference_checks.py --module I --output "$R2/reference_checks.json"
-            python tools/materialize_solver_config.py --template "$R2/solver_templates/I_background_ode.template.json" --binding-sheet "$R2/binding_sheets/I_background_ode.bindings.json" --output "$R2/solver_configs/I_background_ode.json"
-            python tools/run_configured_solver.py --config "$R2/solver_configs/I_background_ode.json" --output-dir "$R2/solver_outputs/transport"
-            bash tools/finish_local_phase.sh I "$R2"
-            python tools/i180_convergence.py
-            python tools/i180_parent_bound.py execute
-          )
-          python tools/i180_parent_bound.py finalize --replay-run "/tmp/i180-clean/$R" --pre-sha "$PRE_SHA"
-          python tools/i180_contract_fix.py
-          python tools/scientific_completion_guard.py --run "$R"
-          python tools/rfc.py doctor
-          python tools/director.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
-          python tools/rfc.py close-run --run-id "$RUN_ID" --result PASS --closeout "$R/CLOSEOUT.md"
-          python tools/rfc.py promote-module I --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$R/FROZEN_DERIVATION_SPEC.json"
-          python tools/rfc.py promote-module I --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$R/solver_outputs/transport/result.json"
-          python tools/rfc.py promote-module I --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$R/GATE_RESULTS.json"
-          python tools/rfc.py promote-module I --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$R/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json"
-          python tools/rfc.py promote-module I --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$R/independent/INDEPENDENT_RECONSTRUCTION.json"
-          python tools/rfc.py promote-module I --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/I/frozen/H_I_to_HI.json
-          python tools/rfc.py freeze modules/I/frozen/H_I_to_HI.json --kind MODULE_HANDOFF
-          python tools/rfc.py record-claim --file "$R/CLAIM_RECORD.json"
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          r=Path('modules/I/runs/I-180-20260809T050839Z'); c=json.load(open(r/'CLAIM_RECORD.json')); p=Path('STATE.json'); s=json.load(open(p))
-          s['strongest_supported_claim']=c['text']; s['strongest_unsupported_claim']=c['unsupported_boundary']; s['repair_state']='I180_MINIMAL_SPINE_CLOSED_PENDING_VERIFIED_COMMIT_AND_ADVANCE'; p.write_text(json.dumps(s,indent=2)+'\n')
-          PY
-          python tools/rfc.py context
-          python tools/rfc.py doctor
-          python tools/rfc.py firewall-scan
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'Close Module I at its verified scientific scope'
-          git pull --rebase origin "$BRANCH"
-          git push origin HEAD:"$BRANCH"
-          printf 'I180_FINAL_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          bash tools/run_i180_governed.sh
