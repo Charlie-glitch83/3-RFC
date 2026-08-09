@@ -709,7 +709,7 @@
       "id": "HI-190",
       "title": "Close Module HI: Transfer Operator Instantiation",
       "module": "HI",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "HU-170",
         "I-180"
@@ -747,7 +747,7 @@
       "id": "J-200",
       "title": "Close Module J: Primordial Covariance, Linear Spectra, and Finite-Volume Fields",
       "module": "J",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "HI-190"
       ],

@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-09T22:35:31.370597+00:00
+Generated: 2026-08-09T22:47:51.836831+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `HI-190` — Close Module HI: Transfer Operator Instantiation
-- Current module: `HI`
+- Active work unit: `J-200` — Close Module J: Primordial Covariance, Linear Spectra, and Finite-Volume Fields
+- Current module: `J`
 - Last verified commit: `26c08a68607721e84da1c83bb8d6e098fdeb2304`
 
 ## Strongest supported claim
@@ -20,23 +20,24 @@ No unique process-to-edge incidence branch, unique SI spacetime metric, FRW/Frie
 
 ## Immediate objective
 
-Instantiate the frozen universal transfer operator on the realized background without changing either parent's law.
+Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.
 
 ## Required deliverables
 
-- modules/HI/runs/<RUN_ID>/RUN_PLAN.md
-- modules/HI/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/HI/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/HI/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/HI/runs/<RUN_ID>/CLOSEOUT.md
+- modules/J/runs/<RUN_ID>/RUN_PLAN.md
+- modules/J/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/J/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/J/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/J/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- exact parent hashes
-- no retune of HU or I
-- operator-domain compatibility
-- independent reconstruction
+- covariance PSD
+- reality/Hermitian conditions
+- resolution and volume tests
+- no public initial-condition file
+- independent field reconstruction
 
 ## Module states
 
@@ -79,7 +80,6 @@ Instantiate the frozen universal transfer operator on the realized background wi
 
 ## Recent decisions
 
-- PROMOTE-I-FROZEN-20260809T144651Z: Promoted Module I from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 - ADVANCE-I-180-20260809T145008Z: Marked I-180 PASS and activated HI-190
 - PROMOTE-HI-FORMALIZED-20260809T223531Z: Promoted Module HI from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-HI-IMPLEMENTED-20260809T223531Z: Promoted Module HI from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
@@ -87,6 +87,7 @@ Instantiate the frozen universal transfer operator on the realized background wi
 - PROMOTE-HI-PHYSICALLY_EXECUTED-20260809T223531Z: Promoted Module HI from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
 - PROMOTE-HI-INDEPENDENTLY_REPRODUCED-20260809T223531Z: Promoted Module HI from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
 - PROMOTE-HI-FROZEN-20260809T223531Z: Promoted Module HI from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-HI-190-20260809T224751Z: Marked HI-190 PASS and activated J-200
 
 ## Recent failures
 
