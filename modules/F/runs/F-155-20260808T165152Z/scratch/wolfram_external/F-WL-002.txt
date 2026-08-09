@@ -1,0 +1,1 @@
+Out[1]= "<|\"call\" -> \"F-WL-002\", \"propagated\" -> \"{{(2 + a + a^2)/2, (1 + 2*a)/4}, {(1 + 2*a)/4, 1/2}}\", \"principalMinors\" -> {\"(2 + a + a^2)/2\", \"7/16\"}, \"determinantPreservedNonnegative\" -> True|>"
