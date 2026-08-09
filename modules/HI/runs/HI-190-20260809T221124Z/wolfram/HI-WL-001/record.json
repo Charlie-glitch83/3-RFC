@@ -1,0 +1,14 @@
+{
+  "call_id": "HI-WL-001",
+  "module": "HI",
+  "purpose": "Immutable operator-background composition",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-09T22:24:37.040037+00:00",
+  "input_sha256": "91221b34350782f28234606d9a3e5e262c66fca733cfa3079d4ace4e5298d419",
+  "output_sha256": "e91531dfb45de66d3f19d7d3f8eb704589b3354e39555935b9104c8eaa9d8866",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/HI/runs/HI-190-20260809T221124Z/wolfram/HI-WL-001/gate.json"
+}

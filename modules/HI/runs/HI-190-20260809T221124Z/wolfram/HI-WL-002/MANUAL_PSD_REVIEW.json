@@ -1,0 +1,8 @@
+{
+  "call": "HI-WL-002",
+  "manual_review": "PASS",
+  "input_psd_domain": "-1 <= r <= 1",
+  "reason": "For every real z, z^T(T C T^T)z=(T^T z)^T C (T^T z)>=0 whenever C is PSD; the exact output is symmetric.",
+  "symmetry": true,
+  "psd_preservation": true
+}

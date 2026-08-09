@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "linear_transfer",
+  "model": {
+    "generator": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "times": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "initial_state": [
+      0.5,
+      0.5
+    ],
+    "initial_covariance": [
+      [
+        0.01,
+        0.0
+      ],
+      [
+        0.0,
+        0.01
+      ]
+    ],
+    "tolerance": 1e-10
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/HI/runs/HI-190-20260809T221124Z/solver_templates/HI_instantiated_transfer.template.json",
+    "template_sha256": "6f7f5ce798ce5b90af1b5c9354461a2d017d7c441c1fe68c69652448543cc77d",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/HI/runs/HI-190-20260809T221124Z/binding_sheets/HI_instantiated_transfer.bindings.json",
+    "binding_sheet_sha256": "95645a7970363aacfb086969e8f4866e6e93a2a6cdffe39f38dd66c4f694a07e",
+    "bindings": [
+      {
+        "path": "model.generator",
+        "value": [
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            1.0,
+            -1.0
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "93ec56f492002399f9e221a491d687f71b259e2c35db7d0abfa935783b0311e3",
+        "module": "HI",
+        "derivation_object": "HI190_FROZEN_DERIVATION_SPEC.numerical_witness",
+        "units": "normalized finite-relational implementation-witness units",
+        "dimensions": "two-mode constraint-preserving linear implementation witness",
+        "justification": "Inherited unchanged from frozen HU implementation witness solely to exercise the prebuilt linear_transfer engine on clock points admitted by I; not a physical branch selector, retune, or replacement for parent-driven HI execution."
+      },
+      {
+        "path": "model.times",
+        "value": [
+          0.0,
+          0.25,
+          0.5,
+          1.0
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "93ec56f492002399f9e221a491d687f71b259e2c35db7d0abfa935783b0311e3",
+        "module": "HI",
+        "derivation_object": "HI190_FROZEN_DERIVATION_SPEC.numerical_witness",
+        "units": "normalized finite-relational implementation-witness units",
+        "dimensions": "two-mode constraint-preserving linear implementation witness",
+        "justification": "Inherited unchanged from frozen HU implementation witness solely to exercise the prebuilt linear_transfer engine on clock points admitted by I; not a physical branch selector, retune, or replacement for parent-driven HI execution."
+      },
+      {
+        "path": "model.initial_state",
+        "value": [
+          0.5,
+          0.5
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "93ec56f492002399f9e221a491d687f71b259e2c35db7d0abfa935783b0311e3",
+        "module": "HI",
+        "derivation_object": "HI190_FROZEN_DERIVATION_SPEC.numerical_witness",
+        "units": "normalized finite-relational implementation-witness units",
+        "dimensions": "two-mode constraint-preserving linear implementation witness",
+        "justification": "Inherited unchanged from frozen HU implementation witness solely to exercise the prebuilt linear_transfer engine on clock points admitted by I; not a physical branch selector, retune, or replacement for parent-driven HI execution."
+      },
+      {
+        "path": "model.initial_covariance",
+        "value": [
+          [
+            0.01,
+            0.0
+          ],
+          [
+            0.0,
+            0.01
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "93ec56f492002399f9e221a491d687f71b259e2c35db7d0abfa935783b0311e3",
+        "module": "HI",
+        "derivation_object": "HI190_FROZEN_DERIVATION_SPEC.numerical_witness",
+        "units": "normalized finite-relational implementation-witness units",
+        "dimensions": "two-mode constraint-preserving linear implementation witness",
+        "justification": "Inherited unchanged from frozen HU implementation witness solely to exercise the prebuilt linear_transfer engine on clock points admitted by I; not a physical branch selector, retune, or replacement for parent-driven HI execution."
+      },
+      {
+        "path": "model.tolerance",
+        "value": 1e-10,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "93ec56f492002399f9e221a491d687f71b259e2c35db7d0abfa935783b0311e3",
+        "module": "HI",
+        "derivation_object": "HI190_FROZEN_DERIVATION_SPEC.numerical_witness",
+        "units": "normalized finite-relational implementation-witness units",
+        "dimensions": "two-mode constraint-preserving linear implementation witness",
+        "justification": "Inherited unchanged from frozen HU implementation witness solely to exercise the prebuilt linear_transfer engine on clock points admitted by I; not a physical branch selector, retune, or replacement for parent-driven HI execution."
+      }
+    ]
+  }
+}
