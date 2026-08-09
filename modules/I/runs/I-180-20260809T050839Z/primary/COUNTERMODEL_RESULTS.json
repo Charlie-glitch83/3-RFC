@@ -1,0 +1,36 @@
+{
+  "classification": "I180_SEMANTIC_COUNTERMODELS",
+  "cases": [
+    {
+      "name": "negative_edge_activity",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    },
+    {
+      "name": "non_column_stochastic_incidence",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    },
+    {
+      "name": "extra_disconnected_zero_mode",
+      "expected": "REJECT_OR_BRANCH_SPLIT",
+      "observed": "REJECT_OR_BRANCH_SPLIT",
+      "pass": true
+    },
+    {
+      "name": "observed_Hz_target_injection",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    },
+    {
+      "name": "FRW_equation_inserted_without_correspondence",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

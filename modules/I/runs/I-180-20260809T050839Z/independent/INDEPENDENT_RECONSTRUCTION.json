@@ -1,0 +1,16 @@
+{
+  "classification": "I180_INDEPENDENT_RECONSTRUCTION",
+  "parent_hash_match": true,
+  "canonical_source_hashes_match": true,
+  "carrier_hash_match": true,
+  "transport_success": true,
+  "total_activity_invariant_pass": true,
+  "laplacian_symmetry_residual": 0.0,
+  "laplacian_row_sum_residual": 5.551115123125783e-17,
+  "laplacian_min_eigenvalue": -3.8163916471489756e-16,
+  "one_gauge_zero_mode": true,
+  "resistance_metric_pass": true,
+  "no_observed_expansion_target": true,
+  "public_inputs_used": false,
+  "pass": true
+}

@@ -2,55 +2,73 @@
   "schema_version": "1.0",
   "run_id": "I-180-20260809T050839Z",
   "module": "I",
-  "status": "DRAFT",
+  "status": "PASS",
   "required_outputs": [
     {
       "name": "metric/background state",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/I/frozen/H_I_to_HI.json",
+        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "expansion and clock histories",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/I/frozen/H_I_to_HI.json",
+        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "horizons and distances",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/I/frozen/H_I_to_HI.json",
+        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "constraint and conservation ledgers",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/I/frozen/H_I_to_HI.json",
+        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "covariance",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/I/frozen/H_I_to_HI.json",
+        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_I_to_HI",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/I/frozen/H_I_to_HI.json",
+        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     }
   ],
   "child_bindings": {},

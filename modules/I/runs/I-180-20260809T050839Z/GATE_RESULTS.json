@@ -1,7 +1,30 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "I-180-20260809T050839Z",
+  "module": "I",
+  "overall": "PASS",
+  "componentwise": {
+    "equation/constraint derivation": {
+      "pass": true
+    },
+    "gauge/frame consistency": {
+      "pass": true
+    },
+    "no observed expansion history used as target": {
+      "pass": true
+    },
+    "numerical convergence and independent reconstruction": {
+      "pass": true,
+      "evidence": "independent/INDEPENDENT_RECONSTRUCTION.json"
+    }
+  },
+  "semantic_countermodels": {
+    "pass": true
+  },
+  "ablations": {
+    "pass": true
+  },
+  "clean_replay": {
+    "pass": true
+  },
+  "aggregate_scores_cannot_override": true
 }
