@@ -1,19 +1,16 @@
 {
   "schema_version": "2.1",
-  "object_id": "F_POST_NUCLEAR_PLASMA_V2",
+  "object_id": "H_F_to_G_V2",
+  "from_module": "F",
+  "to_module": "G",
   "run_id": "F-155-20260808T165152Z",
-  "status": "PHYSICALLY_EXECUTED_FINITE_RELATIONAL_BRANCH_FAMILY",
+  "evidence_state": "FROZEN_PENDING_CONTROLLER_PROMOTION",
   "fidelity": "PRODUCTION",
   "generation_mode": "GENERATION_SEALED",
   "parent": {
     "path": "modules/E/frozen/H_E_to_F_v2.json",
     "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa",
     "bytes": 27546
-  },
-  "triadic_descent": {
-    "CIF": "open all lawful persistent-species/plasma/radiation/transport/atomic possibilities admitted by exact E parent",
-    "QV": "execute witnessed propagation, exchange, decay, transport, atomic activation, branch selection or obstruction",
-    "RFL": "stabilize composition, plasma/radiation state, atomic readiness, covariance, memory and G export"
   },
   "plasma_composition": {
     "object_id": "F_PLASMA_COMPOSITION_IONIZATION_V2",
@@ -1557,5 +1554,85 @@
     "unit_family": "t_phys=t_B tau_B, t_B>0",
     "recursive_depth_is_time": false
   },
-  "claim_boundary": "finite-relational, internal-unit, generated post-nuclear plasma state; no measured plasma/atomic coefficients, public recombination history, unique SI calibration, solved visibility/last-scattering history or empirical agreement"
+  "restart": {
+    "checkpoint_id": "F155-RECOMBINATION-ENTRY",
+    "state_path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+    "state_sha256": "ec406eea2438b14992ef4215f16014e9c57dd523906ec0ae770024da8ca03285",
+    "restart_test": "PASS",
+    "restart_linf": {
+      "reaction": 5.065392549852277e-15,
+      "transport": 3.164135620181696e-15
+    },
+    "contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it"
+  },
+  "ancestry": [
+    {
+      "path": "modules/E/frozen/H_E_to_F_v2.json",
+      "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa",
+      "bytes": 27546
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/POST_NUCLEAR_PLASMA.md",
+      "sha256": "6a27da6d5a1f5cf6bbff350c53f3f4099478ce86589672b135f2e9335f540c3d",
+      "bytes": 34617,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/POST_NUCLEAR_PERSISTENCE.md",
+      "sha256": "18386cb915ace3b3d0e6fe31b12e12ea2520a9811fbff53d14203c49c2a09092",
+      "bytes": 7830,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_COMPLETION.md",
+      "sha256": "feae1a57291f7d0e7bd2155d886cb7b3ef52c8b5e22f009dbb23f0d96d1136ec",
+      "bytes": 2437,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_DETAILED_SCIENTIFIC_REPAIR_PLAN.md",
+      "sha256": "7a8372f135b22f5341f68cfbf757fa33a9e5aee634621a3bb81590a5a3810da7",
+      "bytes": 31581,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_MANUSCRIPT_SOURCE_TRACEABILITY.md",
+      "sha256": "83da548b25e5cd6cae6c8689c3ad9d385adb62e01b9be4833fb803e2f5aa1429",
+      "bytes": 1209,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_TO_G_SCIENTIFIC_HANDOFF.md",
+      "sha256": "d8c52e582d0860648105f7f3102c27417a8ca4b767ce9f381d58c3b7d0748114",
+      "bytes": 18626,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_TRIAD_KERNEL_DERIVATION_LOCK.md",
+      "sha256": "d42bef1ddf60f965c3e5ed63532054dd8e29fec26f7998fba83058d093be3fca",
+      "bytes": 1089,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_WOLFRAM_INTEGRATION_REVISION.md",
+      "sha256": "d6f0bfa0e5267fda9818df160fd1f3d6231ba75603d5f6b72ef07b48153089ed",
+      "bytes": 1305,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_WOLFRAM_REVISION.md",
+      "sha256": "b812a8defe482522bea5724ad36dd50881de6cc75ae52d4c4d4fd7dcdf93ba83",
+      "bytes": 752,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_WOLFRAM_VERIFICATION.md",
+      "sha256": "9318798d747e1e211a5a6c0de6ab0e040eb7bf5a5e1b563f2ccbf8ff15089630",
+      "bytes": 4911,
+      "classification": "REPLAY_REQUIRED"
+    }
+  ],
+  "claim_boundary": "finite-relational, internal-unit, generated post-nuclear plasma state; no measured plasma/atomic coefficients, public recombination history, unique SI calibration, solved visibility/last-scattering history or empirical agreement",
+  "strongest_supported_claim": "F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.",
+  "strongest_unsupported_claim": "No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed."
 }

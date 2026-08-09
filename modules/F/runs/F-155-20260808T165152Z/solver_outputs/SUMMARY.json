@@ -11,7 +11,7 @@
       "success": true,
       "classification": "REACTION_NETWORK_EXECUTION",
       "manifest": "/home/runner/work/3-RFC/3-RFC/modules/F/runs/F-155-20260808T165152Z/solver_outputs/F_reaction_network/manifest.json",
-      "stdout": "{\n  \"solver\": \"reaction_network\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"c40abdf2cf0ad6a11402d0713f809db255939b5706763f3e780abc3e50d7b9a8\",\n  \"result_sha256\": \"a0d773d820534eeca4f04e49ae65c5b95435a26525752626b65a4657a4070b5a\",\n  \"environment_sha256\": \"dc00e673dcf6dc91467398818e1f32f167b4eca8f43967707c786d0713829a8f\",\n  \"success\": true,\n  \"classification\": \"REACTION_NETWORK_EXECUTION\"\n}",
+      "stdout": "{\n  \"solver\": \"reaction_network\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"c40abdf2cf0ad6a11402d0713f809db255939b5706763f3e780abc3e50d7b9a8\",\n  \"result_sha256\": \"17c10abffcd2d8f39f1c109b03dd227764d2d6a0d00c8fabb90219e2e07006ed\",\n  \"environment_sha256\": \"093b5551bc21f6196c822073c9235735282c00d1c287e0210b3735fc68951651\",\n  \"success\": true,\n  \"classification\": \"REACTION_NETWORK_EXECUTION\"\n}",
       "stderr": ""
     },
     {
@@ -21,7 +21,7 @@
       "success": true,
       "classification": "TRANSPORT_ODE_EXECUTION",
       "manifest": "/home/runner/work/3-RFC/3-RFC/modules/F/runs/F-155-20260808T165152Z/solver_outputs/F_transport/manifest.json",
-      "stdout": "{\n  \"solver\": \"transport\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"40eb55a7d2b7e050d2a1a23bb3100f7acbee863e2ef4a9b71dde7e5debdd6ad4\",\n  \"result_sha256\": \"9bbb36b836b8f3791826347ac2d742e164dec3921b3b948220ed23391b35dca9\",\n  \"environment_sha256\": \"9981d2a13885868337435ed1beabc7d58b4617090c317dfe4842390cdbcf8722\",\n  \"success\": true,\n  \"classification\": \"TRANSPORT_ODE_EXECUTION\"\n}",
+      "stdout": "{\n  \"solver\": \"transport\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"40eb55a7d2b7e050d2a1a23bb3100f7acbee863e2ef4a9b71dde7e5debdd6ad4\",\n  \"result_sha256\": \"9bbb36b836b8f3791826347ac2d742e164dec3921b3b948220ed23391b35dca9\",\n  \"environment_sha256\": \"c6e15e6ff0a24c2e494d701e8428c2d6c09ea278ae7166b9d24616a5b0a2888b\",\n  \"success\": true,\n  \"classification\": \"TRANSPORT_ODE_EXECUTION\"\n}",
       "stderr": ""
     }
   ],

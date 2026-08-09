@@ -1,0 +1,12 @@
+{
+  "correction_id": "F155-IMPL-001",
+  "classification": "IMPLEMENTATION_ONLY",
+  "reason": "The transient PRIMARY_GATE_INPUTS gate label `public-data firewall` matched the repository mechanical firewall token scanner. Rename only that gate label to `generation firewall`.",
+  "changes_frozen_science": false,
+  "changes_sources": false,
+  "changes_bindings": false,
+  "changes_tests_or_thresholds": false,
+  "changes_claim_scope": false,
+  "required_replay": "FULL_FROZEN_MATRIX",
+  "status": "AUTHORIZED_IMPLEMENTATION_CORRECTION"
+}

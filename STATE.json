@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "F-155",
   "current_module": "F",
-  "current_run": "F-155-20260808T165152Z",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -596,7 +596,7 @@
       "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "F": {
-      "evidence_state": "DESIGN",
+      "evidence_state": "FROZEN",
       "fidelity": "PRODUCTION",
       "active_run": null,
       "frozen_artifacts": [],
@@ -658,10 +658,53 @@
             "evidence_state": "FROZEN",
             "fidelity": "MINIMAL_SPINE"
           }
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-09T02:22:55.716410+00:00",
+          "work_unit": "F-155"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/F/runs/F-155-20260808T165152Z/solver_outputs/F_transport/result.json",
+          "timestamp_utc": "2026-08-09T02:22:55.763532+00:00",
+          "work_unit": "F-155"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/F/runs/F-155-20260808T165152Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-09T02:22:55.813501+00:00",
+          "work_unit": "F-155"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+          "timestamp_utc": "2026-08-09T02:22:55.859537+00:00",
+          "work_unit": "F-155"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/F/runs/F-155-20260808T165152Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-09T02:22:55.905476+00:00",
+          "work_unit": "F-155"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/F/frozen/H_F_to_G_v2.json",
+          "timestamp_utc": "2026-08-09T02:22:55.950088+00:00",
+          "work_unit": "F-155"
         }
       ],
       "completed_runs": [
-        "F-150-20260808T013006Z"
+        "F-150-20260808T013006Z",
+        "F-155-20260808T165152Z"
       ],
       "promotion_evidence": [
         "modules/F/runs/F-150-20260808T013006Z/FROZEN_DERIVATION_SPEC.json",
@@ -669,9 +712,15 @@
         "modules/F/runs/F-150-20260808T013006Z/GATE_RESULTS.json",
         "modules/F/runs/F-150-20260808T013006Z/primary/POST_NUCLEAR_PERSISTENCE_STATE.json",
         "modules/F/runs/F-150-20260808T013006Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/F/frozen/H_F_to_G.json"
+        "modules/F/frozen/H_F_to_G.json",
+        "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/F/runs/F-155-20260808T165152Z/solver_outputs/F_transport/result.json",
+        "modules/F/runs/F-155-20260808T165152Z/GATE_RESULTS.json",
+        "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+        "modules/F/runs/F-155-20260808T165152Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
       ],
-      "last_promoted_utc": "2026-08-08T02:10:34.969963+00:00",
+      "last_promoted_utc": "2026-08-09T02:22:55.950099+00:00",
       "reopened_from": {
         "evidence_state": "FROZEN",
         "fidelity": "MINIMAL_SPINE"
@@ -861,9 +910,9 @@
     }
   },
   "last_verified_commit": "ff72654b32d1d17dc37f462c5558603848a8dd9f",
-  "last_updated_utc": "2026-08-09T02:15:56.779166+00:00",
-  "strongest_supported_claim": "The unchanged physically executed B-110 Big-Implosion state now has a complete, nonduplicated, independently reconstructed and cleanly replayed four-sector genesis partition at PRODUCTION fidelity. H_B_to_C_v2 is frozen and child-ready, preserving exact first-physical-state ancestry while supplying ordinary, radiative, compression-relic and dissipative-tail preparticle seeds for the sole active C-125 microscopic replay.",
-  "strongest_unsupported_claim": "No superseding channel-complete microscopic constitution H_C_to_D_v2, full nonequilibrium thermal history H_D_to_E_v2, source-owned nucleosynthesis H_E_to_F_v2, child-ready post-nuclear plasma/opacity H_F_to_G_v2, physical recombination/visibility/last-scattering state, or empirical agreement is yet established by the repaired lineage.",
+  "last_updated_utc": "2026-08-09T02:22:55.950101+00:00",
+  "strongest_supported_claim": "F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.",
+  "strongest_unsupported_claim": "No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed.",
   "last_verified_branch": "agent/frontier-050-execution",
-  "repair_state": "BG_SUPERSEDING_REPLAY_AUTHORIZED_B_FIRST"
+  "repair_state": "F155_PRODUCTION_CLOSED_PENDING_VERIFIED_COMMIT_AND_CHILD_ADVANCE"
 }

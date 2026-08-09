@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-08T16:51:56.174016+00:00
+Generated: 2026-08-09T02:22:56.105242+00:00
 
 ## Project truth
 
@@ -12,11 +12,11 @@ Generated: 2026-08-08T16:51:56.174016+00:00
 
 ## Strongest supported claim
 
-The unchanged physically executed B-110 Big-Implosion state now has a complete, nonduplicated, independently reconstructed and cleanly replayed four-sector genesis partition at PRODUCTION fidelity. H_B_to_C_v2 is frozen and child-ready, preserving exact first-physical-state ancestry while supplying ordinary, radiative, compression-relic and dissipative-tail preparticle seeds for the sole active C-125 microscopic replay.
+F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.
 
 ## Strongest unsupported claim
 
-No superseding channel-complete microscopic constitution H_C_to_D_v2, full nonequilibrium thermal history H_D_to_E_v2, source-owned nucleosynthesis H_E_to_F_v2, child-ready post-nuclear plasma/opacity H_F_to_G_v2, physical recombination/visibility/last-scattering state, or empirical agreement is yet established by the repaired lineage.
+No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed.
 
 ## Immediate objective
 
@@ -47,7 +47,7 @@ Execute charge/plasma composition, photon/neutrino persistence, atomic candidate
 - C: `FROZEN` / `PRODUCTION`
 - D: `FROZEN` / `PRODUCTION`
 - E: `FROZEN` / `PRODUCTION`
-- F: `FROZEN` / `MINIMAL_SPINE`
+- F: `FROZEN` / `PRODUCTION`
 - G: `BLOCKED` / `UNSTARTED`
 - HU: `DESIGN` / `UNSTARTED`
 - I: `DESIGN` / `UNSTARTED`
@@ -65,7 +65,7 @@ Execute charge/plasma composition, photon/neutrino persistence, atomic candidate
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 21
+- frozen artifacts: 23
 - indexed runs: 20
 
 ## Recent runs
@@ -77,18 +77,18 @@ Execute charge/plasma composition, photon/neutrino persistence, atomic candidate
 - C-125-20260808T063500Z: PASS (C)
 - D-135-20260808T163243Z: PASS (D)
 - E-145-20260808T164410Z: PASS (E)
-- F-155-20260808T165152Z: CREATED (F)
+- F-155-20260808T165152Z: PASS (F)
 
 ## Recent decisions
 
-- REOPEN-E-20260808T164958Z: Reopened Module E from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
-- PROMOTE-E-FORMALIZED-20260808T165005Z: Promoted Module E from DESIGN to FORMALIZED at PRODUCTION
-- PROMOTE-E-IMPLEMENTED-20260808T165005Z: Promoted Module E from FORMALIZED to IMPLEMENTED at PRODUCTION
-- PROMOTE-E-VERIFIED-20260808T165005Z: Promoted Module E from IMPLEMENTED to VERIFIED at PRODUCTION
-- PROMOTE-E-PHYSICALLY_EXECUTED-20260808T165005Z: Promoted Module E from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
-- PROMOTE-E-INDEPENDENTLY_REPRODUCED-20260808T165005Z: Promoted Module E from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
-- PROMOTE-E-FROZEN-20260808T165005Z: Promoted Module E from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
 - ADVANCE-E-145-20260808T165005Z: Marked E-145 PASS and activated F-155
+- REOPEN-F-20260809T021556Z: Reopened Module F from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
+- PROMOTE-F-FORMALIZED-20260809T022255Z: Promoted Module F from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-F-IMPLEMENTED-20260809T022255Z: Promoted Module F from FORMALIZED to IMPLEMENTED at PRODUCTION
+- PROMOTE-F-VERIFIED-20260809T022255Z: Promoted Module F from IMPLEMENTED to VERIFIED at PRODUCTION
+- PROMOTE-F-PHYSICALLY_EXECUTED-20260809T022255Z: Promoted Module F from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
+- PROMOTE-F-INDEPENDENTLY_REPRODUCED-20260809T022255Z: Promoted Module F from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-F-FROZEN-20260809T022255Z: Promoted Module F from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
 
 ## Recent failures
 

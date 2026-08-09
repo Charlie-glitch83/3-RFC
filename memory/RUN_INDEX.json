@@ -214,9 +214,12 @@
       "run_id": "F-155-20260808T165152Z",
       "module": "F",
       "task_id": "F-155",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/F/runs/F-155-20260808T165152Z",
-      "created_utc": "2026-08-08T16:51:52.032458+00:00"
+      "created_utc": "2026-08-08T16:51:52.032458+00:00",
+      "closed_utc": "2026-08-09T02:22:55.664944+00:00",
+      "tree_sha256": "7a341c010df3a3edc35e1cbd086768ffc109667a663f11f0eef04d44845fb7f2",
+      "closeout": "modules/F/runs/F-155-20260808T165152Z/CLOSEOUT.md"
     }
   ]
 }

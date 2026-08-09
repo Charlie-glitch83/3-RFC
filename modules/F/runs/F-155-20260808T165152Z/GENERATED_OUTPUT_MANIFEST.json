@@ -1,12 +1,12 @@
 {
   "run_id": "F-155-20260808T165152Z",
   "status": "FINAL",
-  "finalized_utc": "2026-08-09T02:20:21.589948+00:00",
+  "finalized_utc": "2026-08-09T02:22:52.476168+00:00",
   "outputs": [
     {
       "path": "CHECKPOINT_RECORD.json",
-      "sha256": "a6f688617c099205265f1aef8e1a637113106e5905d03023a2e86dbd990ed09e",
-      "bytes": 761
+      "sha256": "265a05065b64463ca1c6e416874ed4b0d2c71bcad2ed967a23a69966974f164f",
+      "bytes": 759
     },
     {
       "path": "CLAIM_RECORD.json",
@@ -25,8 +25,8 @@
     },
     {
       "path": "FAILURES.jsonl",
-      "sha256": "541a3cd07d0c23df4b76724c21b37ae8e79c4191414c08ae1ab40d3d65bd3ac8",
-      "bytes": 711
+      "sha256": "7ae9358e9c78bd919851784ffd43c074ab458cca01eef6343e1e443f789e4706",
+      "bytes": 1090
     },
     {
       "path": "FROZEN_DERIVATION_SPEC.json",
@@ -40,8 +40,13 @@
     },
     {
       "path": "GATE_RESULTS.json",
-      "sha256": "31f5d4bd14381a503f56f88b78a7ae4fbf41d5e533386db2b9512ba75b791cc5",
-      "bytes": 1132
+      "sha256": "f6940eecfcc4f31f2c82182d91b16d99b7fb4f59232a206d1d5be92acc039f80",
+      "bytes": 1131
+    },
+    {
+      "path": "IMPLEMENTATION_CORRECTION_LEDGER.json",
+      "sha256": "122f417d2a2f129de400a936771e7175160e8b77d0183be74d0267aefb9ae33f",
+      "bytes": 536
     },
     {
       "path": "INDEPENDENT_VERIFICATION.md",
@@ -55,7 +60,7 @@
     },
     {
       "path": "OUTPUT_COMPLETENESS.json",
-      "sha256": "c95e9f66fe5ba7718be45ef8d0f1c55c9c08b163f55399671e5efb05cb03a63c",
+      "sha256": "4f74103a409cb987580adcd53d5e38f9e9c3d461dd3feaacf4ce1aa6a84552e3",
       "bytes": 3337
     },
     {
@@ -70,12 +75,12 @@
     },
     {
       "path": "PRIMARY_GATE_INPUTS.json",
-      "sha256": "1a3cfb6ca8db9bad4e237a66bbbb306e431989f14a8bad0fe2ca417bb6cfc5fa",
-      "bytes": 782
+      "sha256": "da6022c6d1ba5928aecfed1fa77a2a4bd217571c49a2d6ebc6105e028bb6534f",
+      "bytes": 781
     },
     {
       "path": "REPLAY_RECORD.json",
-      "sha256": "b8781a03add2bad5352d942c51f9f18e4a752118fcb3cd03a9e079740aef8097",
+      "sha256": "a364704cecfae76e7d93843d19e941f52c4323e544735d46d0c1bd640e2efc29",
       "bytes": 2780
     },
     {
@@ -130,7 +135,7 @@
     },
     {
       "path": "convergence/128/outputs/F_reaction_network/environment.json",
-      "sha256": "41d38c76fec93ece29dd66258bc957d306d5353b60d07217bab69873ade23781",
+      "sha256": "2b913d95ab69044b5613fd01c2262bbcf5eed0bc4e52e2265bb4b97fa51bf500",
       "bytes": 271
     },
     {
@@ -140,17 +145,17 @@
     },
     {
       "path": "convergence/128/outputs/F_reaction_network/manifest.json",
-      "sha256": "ee8b5cb8896b3a4869c20a6626e9e7309317eac8d17ca7f6f83572e4de051a59",
+      "sha256": "01511396979b1961edee4346f99f64b836951855fde2e210bc9eb48f222a3534",
       "bytes": 412
     },
     {
       "path": "convergence/128/outputs/F_reaction_network/result.json",
-      "sha256": "a0d773d820534eeca4f04e49ae65c5b95435a26525752626b65a4657a4070b5a",
-      "bytes": 17395
+      "sha256": "17c10abffcd2d8f39f1c109b03dd227764d2d6a0d00c8fabb90219e2e07006ed",
+      "bytes": 17360
     },
     {
       "path": "convergence/128/outputs/F_transport/environment.json",
-      "sha256": "60ef7b96a63f87b9f42b78476c22ab812d6ad278b2d9aab89632e3d6ec4cd58d",
+      "sha256": "6e6b12b1f17058d86d0aaa50f7a5071301b897aa48717dc62198aa43bef575dd",
       "bytes": 271
     },
     {
@@ -160,7 +165,7 @@
     },
     {
       "path": "convergence/128/outputs/F_transport/manifest.json",
-      "sha256": "b9afc72306b58f82ec943fa9dcdeee0dcb8547a95bbc1288c01652ad632d4bf8",
+      "sha256": "041dbe8cdfd713a08f73b4d5d3bafa1c54f6108def7948ff17a24917c2a5c307",
       "bytes": 402
     },
     {
@@ -180,7 +185,7 @@
     },
     {
       "path": "convergence/256/outputs/F_reaction_network/environment.json",
-      "sha256": "b105eb514951aa597a574c81b5c394d3b7a0ea51b460b1f08fb4c1fef377e2ad",
+      "sha256": "609a23505122320c94597f2051fb957a54eb07c33c1e44f1c27d06be75f1cdfa",
       "bytes": 271
     },
     {
@@ -190,17 +195,17 @@
     },
     {
       "path": "convergence/256/outputs/F_reaction_network/manifest.json",
-      "sha256": "42b3f2302bf8c9d207549b52a28e0f34590b701119cdfb8c2cb9a4339f7556a7",
+      "sha256": "85f75836c86c66cdc710135649bc68ce91a3f3a2dbe18741004ac13dfdef641f",
       "bytes": 412
     },
     {
       "path": "convergence/256/outputs/F_reaction_network/result.json",
-      "sha256": "2ebc9ba3fb4c863184b1d47b5e1cc24e88452b44938d09dd2b5f62c862929ea5",
-      "bytes": 30294
+      "sha256": "ca9bf77eaac924037742ec9fc798c1e7e48a01bd4a0101b3045c8f394b2479a7",
+      "bytes": 30267
     },
     {
       "path": "convergence/256/outputs/F_transport/environment.json",
-      "sha256": "4c4b5721dde58aeaee388985b689e43d37af681ce1530aca22e298431a278f51",
+      "sha256": "586d7ba75a3a283c1f5fe5971d072364f53a62ff0e5e9adbf21c3d5a6158e7da",
       "bytes": 271
     },
     {
@@ -210,7 +215,7 @@
     },
     {
       "path": "convergence/256/outputs/F_transport/manifest.json",
-      "sha256": "d4084c508593bf846d407be7cbcc608df2a34ea19572b7f664e40bab07d8794e",
+      "sha256": "7edcda39f710f4a373e8ddd84174954c46c23c4ce9666cc1ce4778f625e0b053",
       "bytes": 402
     },
     {
@@ -230,7 +235,7 @@
     },
     {
       "path": "convergence/512/outputs/F_reaction_network/environment.json",
-      "sha256": "b085bcf5f2b0c51bc5c05a757da899d27921f663cf74972ca9c5807f11559b3a",
+      "sha256": "8a540e8a13c01a639954361cb737913eafae442903f4f6357dd6a20c16aa64f3",
       "bytes": 271
     },
     {
@@ -240,17 +245,17 @@
     },
     {
       "path": "convergence/512/outputs/F_reaction_network/manifest.json",
-      "sha256": "dd555e57b225f6a21f9832d7651272737a4a84e7ea34067d024d3feb59d36d97",
+      "sha256": "50b8859a928857462ddfacf68f8fcaab00f53448ce6341f18116728e8e4df743",
       "bytes": 412
     },
     {
       "path": "convergence/512/outputs/F_reaction_network/result.json",
-      "sha256": "4b1d812a85ad1fd09f42cf4b3ebf1823c24593e2c215a331618096e018edfad2",
-      "bytes": 56316
+      "sha256": "a918b39cb39c2bedaba92dc1f9316bf5a0013d899215a07f61d6b356e5a60c93",
+      "bytes": 56320
     },
     {
       "path": "convergence/512/outputs/F_transport/environment.json",
-      "sha256": "f99be669bc167317e017b4a63e1420ec592961ca53a1bbf262d7f88c7e4900cf",
+      "sha256": "8e668302315a58003e2a30d7d12b56badb8e91f0a33ad7d4aaa4be10990013f1",
       "bytes": 271
     },
     {
@@ -260,13 +265,13 @@
     },
     {
       "path": "convergence/512/outputs/F_transport/manifest.json",
-      "sha256": "f8efb6d7305fc1b96d91370a64b42fdf40439a5da8796e9051ddf4445ec707e0",
+      "sha256": "271b49279ac9ce8b51d429710288852de8bac9c9c7837d9c21122dc62e0cddf2",
       "bytes": 402
     },
     {
       "path": "convergence/512/outputs/F_transport/result.json",
-      "sha256": "3de441f86374903eb45b1d8de59b277eb74afe1799c53b81d7fc33d24bf5b110",
-      "bytes": 40407
+      "sha256": "9345d889d4b95ed80f12ead7ae395a06375dae043665d88e63a39f9f32668ae4",
+      "bytes": 40390
     },
     {
       "path": "convergence/64/configs/F_reaction_network.json",
@@ -280,7 +285,7 @@
     },
     {
       "path": "convergence/64/outputs/F_reaction_network/environment.json",
-      "sha256": "7de680a6aa77e888015cb27d0ef537f0854663530c07e40dcba9f2e669376ad6",
+      "sha256": "a5713ea771221a78c68f087b699e934ccfa9d0fb9f579dd3c8b991431c67462b",
       "bytes": 271
     },
     {
@@ -290,17 +295,17 @@
     },
     {
       "path": "convergence/64/outputs/F_reaction_network/manifest.json",
-      "sha256": "509080a728053c21820fc5fc05296621f4874043af658d9e1ee9d14ccec200ac",
+      "sha256": "bad07fa6fb0f57ff1e4495ac7351b8b80798f19ae45c3c11288ad5c81fda700a",
       "bytes": 412
     },
     {
       "path": "convergence/64/outputs/F_reaction_network/result.json",
-      "sha256": "829006c75c3c2f960e37c9599182bd96a1f5067e9e81e2ec73b3898823ade344",
-      "bytes": 11596
+      "sha256": "d2d3a48f3c99407343814f0944693347c828e861aa7d6b07f75737e65db0bfca",
+      "bytes": 11586
     },
     {
       "path": "convergence/64/outputs/F_transport/environment.json",
-      "sha256": "f2d788c03fdb1d1f4b0e56ff72de5557e473769a82f4098084695a1fd34ae222",
+      "sha256": "3a8dd56357d78d644999b8e0fdb17628345f910b858964f9a53fe048efd10426",
       "bytes": 271
     },
     {
@@ -310,7 +315,7 @@
     },
     {
       "path": "convergence/64/outputs/F_transport/manifest.json",
-      "sha256": "89dfa8735d74f34df6fae973916dfee08ba4ffa41fadf10ab291e568b0cc5847",
+      "sha256": "910d954e6f01c5d426535289bbdee656500c54bc72ac6c30acce2f0f6c31147c",
       "bytes": 402
     },
     {
@@ -320,13 +325,13 @@
     },
     {
       "path": "convergence/CONVERGENCE.json",
-      "sha256": "71ea383bb07088ca0e5380db375aa21850e2e287d534624dbad526e75d684d0d",
+      "sha256": "e5d8a06e5c95481a58dd19b6004482adacd31917d9f708931aff82bd8a77abde",
       "bytes": 569
     },
     {
       "path": "independent/INDEPENDENT_RECONSTRUCTION.json",
-      "sha256": "6b08f1c38e05e1af11ffa7eb604aac74f563353fed2b2058fbf03fa1afd83e18",
-      "bytes": 729
+      "sha256": "1e61bf4ca8db15b1410150dd5bc2e131b523f16e029546e7cdda8a037d0b8424",
+      "bytes": 728
     },
     {
       "path": "primary/ABLATION_RESULTS.json",
@@ -350,8 +355,8 @@
     },
     {
       "path": "primary/POST_NUCLEAR_PLASMA_V2.json",
-      "sha256": "ffedd7db716316388ccf1b50620b127d0f13eab61fc33a105ced2709c5e3cfdf",
-      "bytes": 58573
+      "sha256": "ec406eea2438b14992ef4215f16014e9c57dd523906ec0ae770024da8ca03285",
+      "bytes": 58574
     },
     {
       "path": "primary/RADIATION_NEUTRINO_PERSISTENCE_V2.json",
@@ -370,8 +375,8 @@
     },
     {
       "path": "reference_checks.json",
-      "sha256": "73549256f9429e2575e3b7ff86bf4eea3e065b2f9a46e0ea4d8d9dee953a692d",
-      "bytes": 452
+      "sha256": "84b2bc31ed32478ec073fe919ade8a7df13fbe92083a5c6a853dca589fea9509",
+      "bytes": 453
     },
     {
       "path": "solver_configs/F_reaction_network.json",
@@ -385,7 +390,7 @@
     },
     {
       "path": "solver_outputs/F_reaction_network/environment.json",
-      "sha256": "dc00e673dcf6dc91467398818e1f32f167b4eca8f43967707c786d0713829a8f",
+      "sha256": "093b5551bc21f6196c822073c9235735282c00d1c287e0210b3735fc68951651",
       "bytes": 271
     },
     {
@@ -395,17 +400,17 @@
     },
     {
       "path": "solver_outputs/F_reaction_network/manifest.json",
-      "sha256": "2900b56cd3898749d59b6d6c2acbd0cc3377150c51b1dc5c8cf20f2ad94508ea",
+      "sha256": "79b4cb02eb078f31c40332b686b11b2f818c8ec162c68d8d8acb6e9bfafc2344",
       "bytes": 412
     },
     {
       "path": "solver_outputs/F_reaction_network/result.json",
-      "sha256": "a0d773d820534eeca4f04e49ae65c5b95435a26525752626b65a4657a4070b5a",
-      "bytes": 17395
+      "sha256": "17c10abffcd2d8f39f1c109b03dd227764d2d6a0d00c8fabb90219e2e07006ed",
+      "bytes": 17360
     },
     {
       "path": "solver_outputs/F_transport/environment.json",
-      "sha256": "9981d2a13885868337435ed1beabc7d58b4617090c317dfe4842390cdbcf8722",
+      "sha256": "c6e15e6ff0a24c2e494d701e8428c2d6c09ea278ae7166b9d24616a5b0a2888b",
       "bytes": 271
     },
     {
@@ -415,7 +420,7 @@
     },
     {
       "path": "solver_outputs/F_transport/manifest.json",
-      "sha256": "78f484a1be5ac5b7b33c88dcb556eb25ed60f07ba7a27c30522216576e10cf54",
+      "sha256": "08a09c17cb3920b24d10d32004190c47ba3e069ad2094550fcbbb288fcd856e3",
       "bytes": 402
     },
     {
@@ -425,7 +430,7 @@
     },
     {
       "path": "solver_outputs/SUMMARY.json",
-      "sha256": "d575e142d74ad30ef8ea82d5e8803a5f9d3382ca82c79866ed020556ae7effb5",
+      "sha256": "605ae718b3ce9f66a4c9cc210f10f1300b7170956a8d4ef368d6f6642b12c03d",
       "bytes": 1988
     },
     {
@@ -479,6 +484,6 @@
       "bytes": 603
     }
   ],
-  "tree_sha256": "b14b86147d56cdac2bfc554df32230f0671ec11401a5fa442e65311e983a9d25",
+  "tree_sha256": "08558f80bf88c4fa42bbbb0cadeeafd603f278f3897ebcd4d7de5cbb5ce1b95a",
   "note": "final after replay and child contract stopped changing"
 }

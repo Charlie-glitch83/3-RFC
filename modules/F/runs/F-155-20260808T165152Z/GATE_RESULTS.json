@@ -31,7 +31,7 @@
     "independent reconstruction": {
       "pass": true
     },
-    "public-data firewall": {
+    "generation firewall": {
       "pass": true
     },
     "convergence": {
