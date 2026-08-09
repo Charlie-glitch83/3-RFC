@@ -1,13 +1,105 @@
-name: Disabled temporary J-200 transport
+name: Record J-200 pre-execution hard stop
 
 on:
-  workflow_dispatch:
+  pull_request:
+    types: [synchronize]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  disabled:
+  record-j200-hard-stop:
+    if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Temporary J-200 PR synchronization transport disabled; continue only through explicit repository-directed execution."
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Record exact repository-directed J hard stop
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECT='5b6266bbe43b4a08a5ad5a628408889a5b04a501'
+          RUN='J-200-20260809T225756Z'
+          R="modules/J/runs/$RUN"
+          test "$(git rev-parse HEAD)" = "$EXPECT"
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          python - <<'PY'
+          import json, hashlib
+          from datetime import datetime, timezone
+          from pathlib import Path
+          R=Path('modules/J/runs/J-200-20260809T225756Z')
+          now=datetime.now(timezone.utc).isoformat()
+          parent_path='modules/HI/frozen/H_HI_to_J.json'
+          parent_sha='8c36424d687d3ffca43185e52d2ed785f051193439edcba80eabc1a70e8179f7'
+          p29_path='sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md'
+          p30_path='sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md'
+          src={
+            'run_id':'J-200-20260809T225756Z',
+            'exact_parents':[{'path':parent_path,'sha256':parent_sha,'role':'DIRECT_IMMUTABLE_PARENT'}],
+            'admitted_sources':[
+              {'path':p29_path,'sha256':'cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e','classification':'CANONICAL_AUTHORITY','use':'triadic modal/kernel ancestry and proof boundary'},
+              {'path':p30_path,'sha256':'4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6','classification':'CANONICAL_AUTHORITY','use':'universe dependency, J/initial-condition architecture, no-retune seed ledger scope'}
+            ],
+            'imports':[],
+            'files':[parent_path,p29_path,p30_path,'recipes/J/WORK_ORDER.md','recipes/J/recipe.json','recipes/J/gates.json'],
+            'urls':[],
+            'constants':[],
+            'public_data_declaration':'NONE'
+          }
+          (R/'SOURCE_REGISTER.json').write_text(json.dumps(src,indent=2)+'\n')
+          lock={
+            'run_id':'J-200-20260809T225756Z','status':'FROZEN','frozen_utc':now,
+            'authority_hashes':['cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e','4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6'],
+            'parent_hashes':[parent_sha],
+            'definition_hashes':['03cd906472b7ae6f25ce30936bfcf60f2f48ad85','81ab1149d96aa37041e0fa81eb08eba566b3f129','c2165bcc167e9c79a5d9fb90a14897d446b3dcec'],
+            'candidate_classes':[
+              'all parent-compatible PSD perturbation covariance operators on the exact HI branch-indexed HU physical tangent quotient',
+              'all no-observation-selected phase/seed realizations attached to exact branch identity',
+              'all finite-volume Hermitian-real field realizations generated only after a physical covariance/power law is bound'
+            ],
+            'equations_and_laws':[
+              'Sigma_delta,out = U_HU Sigma_delta,in U_HU^T',
+              'joint cross-covariance may be carried only when source-owned; unresolved cross-covariance is neither invented nor set to zero',
+              'HI_b=(I_b,U_HU[b]); branch identity remains attached',
+              'P29 recursive kernel supplies modal ancestry but does not complete perturbation spectra',
+              'P30 SU-06 permits deterministic initial-condition/seed ledger construction but old STEP-9 readiness markers are not physical spectra'
+            ],
+            'dimensions_units_frames_gauges_clocks':['HU quotient V_b=ker(C_b)/im(G_b)','Big Implosion clock origin t_phys=0+','recursive depth is not physical time','branch identity and I finite-relational gauge remain explicit'],
+            'methods':['exact parent/source trace','no public inputs','derive physical covariance before binding covariance/fourier engines','preserve lawful branch family or obstruction if exact premises do not select a numerical covariance'],
+            'tolerances':['covariance PSD numerical audit tolerance 1e-12 only after a lawful numerical covariance exists'],
+            'stopping_rules':['HARD STOP before Wolfram/local/primary execution if no exact parent/source/internal derivation supplies the numerical physical covariance or power law required by J bindings','never substitute J-WL-001 manufactured covariance, old P30 readiness markers, HI implementation witness, or public cosmological spectra'],
+            'expected_invariants':['PSD covariance','Hermitian/reality closure','no public initial-condition input','branch identity preserved','no retune of HI/HU/I'],
+            'tests':['source/parent hash verification','semantic distinction between uncertainty covariance and physical primordial covariance','binding-sheet no-placeholder requirement','independent reconstruction after lawful binding exists'],
+            'gates':['covariance PSD','reality/Hermitian conditions','resolution and volume tests','no public initial-condition file','independent field reconstruction'],
+            'falsifiers':['a physical covariance/power law cannot be derived from exact admitted premises without adding an unowned coefficient/normalization/branch choice','a representative/manufactured covariance is required to make execution proceed'],
+            'claim_boundary':'PRE_EXECUTION_OBSTRUCTION_ONLY: no J physical covariance, spectrum, field, or one-universe realization is claimed.',
+            'independent_verifier_design':'Independently inspect exact HI parent plus admitted P29/P30 and confirm that no numerical physical primordial covariance/power spectrum is present or lawfully selected; confirm all tempting substitutes are explicitly nonphysical/pending/manufactured.',
+            'allowed_implementation_only_corrections':['syntax/backend/path/recording corrections only; no scientific covariance, power, normalization, branch or seed-selection rule may be invented as an implementation repair']
+          }
+          (R/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          fail={
+            'failure_id':'J200-PREEXEC-PRIMORDIAL-COVARIANCE-NOT-DERIVED','timestamp_utc':now,'stage':'PRE_EXECUTION_BINDING','result':'HARD_STOP',
+            'category':'SCIENTIFIC_DERIVATION_GAP','earliest_affected_object':'J actual primordial covariance / power law',
+            'description':'Exact HI parent supplies the immutable transfer/background branch family and covariance pushforward law but explicitly states actual primordial covariance is NOT_REALIZED_IN_HI. Canonical P29 leaves perturbation spectra as a proof obligation; canonical P30 marks its old primordial/matter spectra as pending/readiness-only. Recovery admits no J physical covariance object. Therefore the provenance-bound J covariance/fourier binding sheets cannot be filled without inventing a physical covariance/power law or promoting a manufactured/proxy object.',
+            'changes_frozen_science':False,'required_replay_scope':'J-200 from pre-execution after a lawful source/parent-derived covariance law is established','disposition':'FAIL_REQUIRES_ANALYSIS; keep J active; do not run J-WL/local/primary matrix yet'
+          }
+          with (R/'FAILURES.jsonl').open('a') as f: f.write(json.dumps(fail)+'\n')
+          (R/'CLOSEOUT.md').write_text('''# J-200 Pre-Execution Hard Stop\n\n## Result\nFAIL_REQUIRES_ANALYSIS before primary execution.\n\n## Earliest affected object\nJ actual primordial covariance / power law.\n\n## Finding\nThe exact immutable HI parent is valid and child-ready at its own scope, but it explicitly does not realize J primordial covariance, phase seed, or finite-volume field. The admitted source chain does not provide a numerical physical primordial covariance/power law that can populate J covariance and Fourier binding sheets. P29 leaves perturbation spectra as a proof obligation; P30 old growth/primordial markers are readiness/proxy objects and cannot be promoted; recovered prior assets contain no admitted J physical parent.\n\nRunning the manufactured J-WL-001 covariance or generic covariance/fourier examples as physical inputs would violate the active recipe. No such substitution was made.\n\n## Strongest supported claim\nJ-200 has verified the exact HI parent and isolated the first unresolved J scientific object: the source-owned numerical primordial covariance/power law required before physical seed/field realization.\n\n## Strongest unsupported claim\nNo J physical covariance, primordial spectrum, linear field realization, finite-volume field, or K-ready handoff is claimed.\n\nJ remains active for scientific derivation/repair.\n''')
+          PY
+          python tools/rfc.py advance --task J-200 --result FAIL --evidence "$R/CLOSEOUT.md" --note 'Pre-execution hard stop: exact HI/P29/P30/recovery chain does not yet supply a lawful numerical physical primordial covariance/power law for the mandatory J bindings; no proxy or manufactured covariance was promoted.'
+          python tools/rfc.py doctor || true
+          python tools/director.py doctor || true
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json memory/CURRENT_CONTEXT.md memory/FAILURE_LOG.jsonl "$R/SOURCE_REGISTER.json" "$R/PRE_EXECUTION_LOCK.json" "$R/FAILURES.jsonl" "$R/CLOSEOUT.md"
+          git commit -m 'Record J-200 primordial covariance derivation hard stop'
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'J200_HARD_STOP_COMMIT=%s\n' "$(git rev-parse HEAD)"
