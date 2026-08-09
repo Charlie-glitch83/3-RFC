@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Retarget helpers and freeze corrected parent-compatible law
+      - name: Retarget locked executor and freeze corrected parent-compatible law
         shell: bash
         run: |
           set -euo pipefail
@@ -37,18 +37,34 @@ jobs:
           lock=json.load(open(r/'PRE_EXECUTION_LOCK.json'))
           assert lock['status']=='DRAFT',lock
           assert not (r/'primary').exists() or not any((r/'primary').iterdir()),'primary exists before corrected freeze'
-          for path in [Path('tools/hi190_freeze.py'),Path('tools/hi190_execute_locked.py')]:
-              txt=path.read_text()
-              assert OLD in txt,(path,'old run id absent')
-              path.write_text(txt.replace(OLD,NEW))
+          p=Path('tools/hi190_execute_locked.py'); txt=p.read_text()
+          if OLD in txt:
+              p.write_text(txt.replace(OLD,NEW))
+          else:
+              assert NEW in txt,(p,'executor not targeted to active run')
+          f=Path('tools/hi190_freeze.py').read_text()
+          assert "['current_run']" in f or NEW in f, 'freeze helper is not targeted to active versioned run'
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/hi190_freeze.py tools/hi190_execute_locked.py
-          git commit -m 'Retarget HI-190 governed helpers to superseding run'
-          git pull --rebase origin agent/frontier-050-execution
-          git push origin HEAD:agent/frontier-050-execution
+          git add tools/hi190_execute_locked.py tools/hi190_freeze.py
+          if ! git diff --cached --quiet; then
+            git commit -m 'Retarget HI-190 governed helpers to superseding run'
+            git pull --rebase origin agent/frontier-050-execution
+            git push origin HEAD:agent/frontier-050-execution
+          fi
           python tools/hi190_freeze.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.load(open('STATE.json')); r=Path('modules/HI/runs')/s['current_run']
+          lock=json.load(open(r/'PRE_EXECUTION_LOCK.json')); spec=json.load(open(r/'FROZEN_DERIVATION_SPEC.json'))
+          assert lock['status']=='FROZEN' and lock.get('frozen_before_primary_execution') is True
+          law=spec['laws']['instantiation']
+          assert 'typed fiber-product/association' in law and 'not multiplication by an invented background factor' in law
+          assert not (r/'primary').exists() or not any((r/'primary').iterdir())
+          print(json.dumps({'run':r.name,'status':'FROZEN_PARENT_EXACT'},indent=2))
+          PY
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
