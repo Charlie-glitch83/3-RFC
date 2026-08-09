@@ -1,7 +1,87 @@
 {
   "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "run_id": "F-155-20260808T165152Z",
+  "module": "F",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "plasma composition and ionization state",
+      "status": "PASS",
+      "semantic_check": "exact E-v2 plus recovered F theorem; independent reconstruction and clean replay PASS",
+      "evidence": [
+        {
+          "path": "modules/F/runs/F-155-20260808T165152Z/primary/PLASMA_COMPOSITION_IONIZATION_V2.json",
+          "sha256": "6dc573139d7d3728ddc7f43bbec5cde5b71b3f440dafa8f068baf9040994f22d"
+        },
+        {
+          "path": "modules/F/frozen/H_F_to_G_v2.json",
+          "sha256": "0ae8e549e269f1cddd40f62d34d95d0484167e06c344a2789fefa214cf876424"
+        }
+      ]
+    },
+    {
+      "requirement": "radiation/neutrino persistence",
+      "status": "PASS",
+      "semantic_check": "exact E-v2 plus recovered F theorem; independent reconstruction and clean replay PASS",
+      "evidence": [
+        {
+          "path": "modules/F/runs/F-155-20260808T165152Z/primary/RADIATION_NEUTRINO_PERSISTENCE_V2.json",
+          "sha256": "3581eaf3bde293d427b93704e991586d09cbf257af721f6b88a4c32d05ab179a"
+        },
+        {
+          "path": "modules/F/frozen/H_F_to_G_v2.json",
+          "sha256": "0ae8e549e269f1cddd40f62d34d95d0484167e06c344a2789fefa214cf876424"
+        }
+      ]
+    },
+    {
+      "requirement": "opacity and transport state",
+      "status": "PASS",
+      "semantic_check": "exact E-v2 plus recovered F theorem; independent reconstruction and clean replay PASS",
+      "evidence": [
+        {
+          "path": "modules/F/runs/F-155-20260808T165152Z/primary/OPACITY_TRANSPORT_V2.json",
+          "sha256": "7ac19052f65036f75e141d85cf3d7bc21cc18851a206de5899fa20faa81ecce1"
+        },
+        {
+          "path": "modules/F/runs/F-155-20260808T165152Z/primary/RECOMBINATION_ENTRY_STATE_V2.json",
+          "sha256": "e287f6bc766241ec6af62f3dbf86fae5b4f52b0a2ed8aade805e1525707dc5b7"
+        },
+        {
+          "path": "modules/F/frozen/H_F_to_G_v2.json",
+          "sha256": "0ae8e549e269f1cddd40f62d34d95d0484167e06c344a2789fefa214cf876424"
+        }
+      ]
+    },
+    {
+      "requirement": "source-transfer ownership",
+      "status": "PASS",
+      "semantic_check": "exact E-v2 plus recovered F theorem; independent reconstruction and clean replay PASS",
+      "evidence": [
+        {
+          "path": "modules/F/runs/F-155-20260808T165152Z/primary/SOURCE_TRANSFER_OWNERSHIP_V2.json",
+          "sha256": "53e348c2b13a67d5b7c16cf2609aea0bdb36b091b2385478756d162a61fead12"
+        },
+        {
+          "path": "modules/F/frozen/H_F_to_G_v2.json",
+          "sha256": "0ae8e549e269f1cddd40f62d34d95d0484167e06c344a2789fefa214cf876424"
+        }
+      ]
+    },
+    {
+      "requirement": "H_F_to_G",
+      "status": "PASS",
+      "semantic_check": "exact E-v2 plus recovered F theorem; independent reconstruction and clean replay PASS",
+      "evidence": [
+        {
+          "path": "modules/F/frozen/H_F_to_G_v2.json",
+          "sha256": "0ae8e549e269f1cddd40f62d34d95d0484167e06c344a2789fefa214cf876424"
+        },
+        {
+          "path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+          "sha256": "ffedd7db716316388ccf1b50620b127d0f13eab61fc33a105ced2709c5e3cfdf"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,14 @@
+{
+  "claim_id": "F-155-PRODUCTION-POST-NUCLEAR-PLASMA",
+  "text": "F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.",
+  "owner": "F",
+  "evidence_state": "FROZEN",
+  "fidelity": "PRODUCTION",
+  "supported": true,
+  "evidence": [
+    "modules/F/frozen/H_F_to_G_v2.json",
+    "modules/F/runs/F-155-20260808T165152Z/GATE_RESULTS.json",
+    "modules/F/runs/F-155-20260808T165152Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+  ],
+  "unsupported_boundary": "No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed."
+}

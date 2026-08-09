@@ -1,7 +1,19 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
+  "run_id": "F-155-20260808T165152Z",
+  "checkpoints": [
+    {
+      "checkpoint_id": "F155-RECOMBINATION-ENTRY",
+      "state_path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+      "state_sha256": "ffedd7db716316388ccf1b50620b127d0f13eab61fc33a105ced2709c5e3cfdf",
+      "restart_test": "PASS",
+      "restart_linf": {
+        "reaction": 5.1486592766991635e-15,
+        "transport": 3.0531133177191805e-15
+      },
+      "contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it"
+    }
+  ],
+  "restart_contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it",
+  "state_schema": "F_POST_NUCLEAR_PLASMA_V2",
   "hash_algorithm": "sha256"
 }

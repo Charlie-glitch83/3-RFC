@@ -1,0 +1,9 @@
+{
+  "solver": "reaction_network",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "c40abdf2cf0ad6a11402d0713f809db255939b5706763f3e780abc3e50d7b9a8",
+  "result_sha256": "a0d773d820534eeca4f04e49ae65c5b95435a26525752626b65a4657a4070b5a",
+  "environment_sha256": "41d38c76fec93ece29dd66258bc957d306d5353b60d07217bab69873ade23781",
+  "success": true,
+  "classification": "REACTION_NETWORK_EXECUTION"
+}

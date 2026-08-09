@@ -1,0 +1,26 @@
+{
+  "method": "DOP853_DIRECT_FROZEN_DERIVATION_RECONSTRUCTION",
+  "parent_hash_match": true,
+  "source_hashes_match": true,
+  "charge_residual": [
+    0.0,
+    0.0
+  ],
+  "charge_pass": true,
+  "covariance_eigenvalues": [
+    3.0343089875285705e-34,
+    3.099351208294675e-32,
+    1.2703875845537904e-19
+  ],
+  "covariance_psd_pass": true,
+  "reaction_endpoint_linf": 6.811343156165606e-12,
+  "reaction_restart_linf": 5.1486592766991635e-15,
+  "transport_endpoint_linf": 2.1933077576363758e-10,
+  "transport_restart_linf": 3.0531133177191805e-15,
+  "endpoint_tolerance": 1e-08,
+  "restart_tolerance": 1e-08,
+  "atomic_candidate_count": 25,
+  "expected_atomic_candidate_count": 25,
+  "public_inputs_used": false,
+  "pass": true
+}

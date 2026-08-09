@@ -1,50 +1,198 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.1",
   "run_id": "F-155-20260808T165152Z",
   "module": "F",
-  "status": "DRAFT",
+  "status": "PASS",
   "required_outputs": [
     {
       "name": "plasma composition and ionization state",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/PLASMA_COMPOSITION_IONIZATION_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "radiation/neutrino persistence",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/RADIATION_NEUTRINO_PERSISTENCE_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "opacity and transport state",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/OPACITY_TRANSPORT_V2.json",
+        "modules/F/runs/F-155-20260808T165152Z/primary/RECOMBINATION_ENTRY_STATE_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "source-transfer ownership",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/SOURCE_TRANSFER_OWNERSHIP_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_F_to_G",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/F/frozen/H_F_to_G_v2.json",
+        "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     }
   ],
-  "child_bindings": {},
-  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+  "child_bindings": {
+    "plasma_composition": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/PLASMA_COMPOSITION_IONIZATION_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "ionization_state": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/PLASMA_COMPOSITION_IONIZATION_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "radiation_state": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/RADIATION_NEUTRINO_PERSISTENCE_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "neutrino_state": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/RADIATION_NEUTRINO_PERSISTENCE_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "charge_or_interaction_operator": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "atomic_candidate_registry": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/PLASMA_COMPOSITION_IONIZATION_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "opacity_law": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/OPACITY_TRANSPORT_V2.json",
+        "modules/F/runs/F-155-20260808T165152Z/primary/RECOMBINATION_ENTRY_STATE_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "transport_state": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/OPACITY_TRANSPORT_V2.json",
+        "modules/F/runs/F-155-20260808T165152Z/primary/RECOMBINATION_ENTRY_STATE_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "recombination_entry_state": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/RECOMBINATION_ENTRY_STATE_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "source_transfer_ownership": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/SOURCE_TRANSFER_OWNERSHIP_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "covariance": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "clock": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "restart": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/F/runs/F-155-20260808T165152Z/CHECKPOINT_RECORD.json",
+        "modules/F/frozen/H_F_to_G_v2.json"
+      ],
+      "derived_absence": false
+    }
+  }
 }

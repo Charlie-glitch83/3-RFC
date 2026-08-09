@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "transport",
+  "model": {
+    "state_names": [
+      "sector_a",
+      "sector_b"
+    ],
+    "parameters": {
+      "k": 0.1499430216517723
+    },
+    "rhs_expressions": [
+      "-k*sector_a+k*sector_b",
+      "k*sector_a-k*sector_b"
+    ],
+    "initial_state": [
+      0.75,
+      0.25
+    ],
+    "t_span": [
+      0.0,
+      6.669200000000001
+    ],
+    "method": "BDF",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "max_step": 0.026051562500000004,
+    "linear_invariants": {
+      "total_exchange_state": [
+        1,
+        1
+      ]
+    },
+    "invariant_tolerance": 1e-09,
+    "positivity_required": true,
+    "positivity_tolerance": 1e-12
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/F/runs/F-155-20260808T165152Z/solver_templates/F_transport.template.json",
+    "template_sha256": "23392ac24c437688f0c6764b1dc8dd310e081bdfbfdb3ca2d4b6777a9d24c1df",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/F/runs/F-155-20260808T165152Z/binding_sheets/F_transport.bindings.json",
+    "binding_sheet_sha256": "97fbf7b8a8a64dd965bc530a0ff1f7186649197c646a59d3f8fb9c36b1eba092",
+    "bindings": [
+      {
+        "path": "model.state_names",
+        "value": [
+          "sector_a",
+          "sector_b"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.parameters",
+        "value": {
+          "k": 0.1499430216517723
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.rhs_expressions",
+        "value": [
+          "-k*sector_a+k*sector_b",
+          "k*sector_a-k*sector_b"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.initial_state",
+        "value": [
+          0.75,
+          0.25
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.t_span",
+        "value": [
+          0.0,
+          6.669200000000001
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.max_step",
+        "value": 0.05210312500000001,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.linear_invariants",
+        "value": {
+          "total_exchange_state": [
+            1,
+            1
+          ]
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.invariant_tolerance",
+        "value": 1e-09,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.positivity_tolerance",
+        "value": 1e-12,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "paired exchange audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "object_id": "F_OPACITY_TRANSPORT_V2",
+  "charge_plasma_operator": {
+    "charge": "L_Q=B_F^T C_F B_F; 1^T rho_Q=0; phi_Q=L_Q^+rho_Q is unique mean-zero solution on connected neutral branches; E_Q=-B_F phi_Q",
+    "plasma": "Pi^R_AB=<J_A,(i omega-L_F)^-1J_B>; epsilon_F=I-V_Q Pi^R; collective modes satisfy det epsilon_F=0; L_AB=<J_A,(-L_fast)^+J_B>"
+  },
+  "opacity_law": "kappa_F=(v_gamma V_F)^-1 sum_material Gamma_ext with Gamma_ext=gamma_r Tr(J_r^dagger J_r rho_F)>=0; redistribution comes from the same witnessed event family",
+  "transport_law": "Pi^R_AB=<J_A,(i omega-L_F)^-1J_B>; epsilon_F=I-V_Q Pi^R; collective modes satisfy det epsilon_F=0; L_AB=<J_A,(-L_fast)^+J_B>",
+  "public_tables_used": false
+}

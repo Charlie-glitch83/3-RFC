@@ -1,7 +1,4 @@
 {
-  "run_id": "F-155-20260808T165152Z",
-  "module": "F",
-  "overall": "PASS",
   "componentwise": {
     "charge neutrality where derived": {
       "pass": true
@@ -14,13 +11,11 @@
     },
     "replay from E": {
       "pass": true,
-      "clean_checkout": true,
-      "artifact_hashes_match": true
+      "provisional": "final clean replay required"
     },
     "required output completeness and G child-readiness": {
       "pass": true,
-      "required_outputs": 5,
-      "child_bindings": 13
+      "provisional": "final contract required"
     },
     "semantic countermodels": {
       "pass": true
@@ -37,15 +32,6 @@
     "convergence": {
       "pass": true,
       "evidence": "convergence/CONVERGENCE.json"
-    },
-    "wolfram F-WL-001": {
-      "pass": true,
-      "status": "PASS_WITH_MANUAL_INTERPRETATION"
-    },
-    "wolfram F-WL-002": {
-      "pass": true,
-      "status": "PASS_WITH_MANUAL_INTERPRETATION"
     }
-  },
-  "aggregate_scores_cannot_override": true
+  }
 }

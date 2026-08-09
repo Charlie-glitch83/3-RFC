@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "reaction_network",
+  "model": {
+    "species": [
+      "negative_carrier",
+      "positive_carrier",
+      "neutral_candidate"
+    ],
+    "stoichiometry": [
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "rate_expressions": [
+      "k*negative_carrier*positive_carrier",
+      "k*neutral_candidate"
+    ],
+    "parameters": {
+      "k": 0.1499430216517723
+    },
+    "invariants": {
+      "charge": [
+        -1,
+        1,
+        0
+      ],
+      "neg_plus_neutral": [
+        1,
+        0,
+        1
+      ],
+      "pos_plus_neutral": [
+        0,
+        1,
+        1
+      ]
+    }
+  },
+  "initial_state": [
+    0.5,
+    0.5,
+    0.0
+  ],
+  "t_span": [
+    0.0,
+    6.669200000000001
+  ],
+  "method": "BDF",
+  "rtol": 1e-09,
+  "atol": 1e-12,
+  "max_step": 0.026051562500000004,
+  "positivity_tolerance": 1e-12,
+  "invariant_tolerance": 1e-09,
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/F/runs/F-155-20260808T165152Z/solver_templates/F_reaction_network.template.json",
+    "template_sha256": "298854bad6d020ece576e3c33376b56380e93495e57cd8c380ef47fa0b531ba7",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/F/runs/F-155-20260808T165152Z/binding_sheets/F_reaction_network.bindings.json",
+    "binding_sheet_sha256": "24757c606bb46a4f92d52e46a68e223b951b39a1b30e8fe1ca5df2c9965d0fa4",
+    "bindings": [
+      {
+        "path": "model.species",
+        "value": [
+          "negative_carrier",
+          "positive_carrier",
+          "neutral_candidate"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.stoichiometry",
+        "value": [
+          [
+            -1,
+            1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.rate_expressions",
+        "value": [
+          "k*negative_carrier*positive_carrier",
+          "k*neutral_candidate"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.parameters",
+        "value": {
+          "k": 0.1499430216517723
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "model.invariants",
+        "value": {
+          "charge": [
+            -1,
+            1,
+            0
+          ],
+          "neg_plus_neutral": [
+            1,
+            0,
+            1
+          ],
+          "pos_plus_neutral": [
+            0,
+            1,
+            1
+          ]
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "initial_state",
+        "value": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "t_span",
+        "value": [
+          0.0,
+          6.669200000000001
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "max_step",
+        "value": 0.05210312500000001,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "positivity_tolerance",
+        "value": 1e-12,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      },
+      {
+        "path": "invariant_tolerance",
+        "value": 1e-09,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+        "module": "F",
+        "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.reaction",
+        "units": "internal dimensionless implementation-check units",
+        "dimensions": "finite reversible charge audit",
+        "justification": "implementation/invariant check only; not a physical coefficient selection"
+      }
+    ]
+  }
+}

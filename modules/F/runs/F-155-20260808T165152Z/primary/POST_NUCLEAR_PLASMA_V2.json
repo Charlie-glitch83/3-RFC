@@ -1,0 +1,1561 @@
+{
+  "schema_version": "2.1",
+  "object_id": "F_POST_NUCLEAR_PLASMA_V2",
+  "run_id": "F-155-20260808T165152Z",
+  "status": "PHYSICALLY_EXECUTED_FINITE_RELATIONAL_BRANCH_FAMILY",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/E/frozen/H_E_to_F_v2.json",
+    "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa",
+    "bytes": 27546
+  },
+  "triadic_descent": {
+    "CIF": "open all lawful persistent-species/plasma/radiation/transport/atomic possibilities admitted by exact E parent",
+    "QV": "execute witnessed propagation, exchange, decay, transport, atomic activation, branch selection or obstruction",
+    "RFL": "stabilize composition, plasma/radiation state, atomic readiness, covariance, memory and G export"
+  },
+  "plasma_composition": {
+    "object_id": "F_PLASMA_COMPOSITION_IONIZATION_V2",
+    "parent": {
+      "path": "modules/E/frozen/H_E_to_F_v2.json",
+      "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa",
+      "bytes": 27546
+    },
+    "isotope_registry": [
+      {
+        "id": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "D_role",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "T_role",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      },
+      {
+        "id": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+      }
+    ],
+    "abundance_state": {
+      "classification": "EXACT_SOURCE_OWNED_BRANCH_FAMILY",
+      "law": "dp_E/dt=Q_E(t)p_E; q_{eta+nu_r,eta}=lambda_r h_r>=0; diagonal columns close to zero; p_E=T exp[int Q_E] p_D->E",
+      "abundance_moment": "Y_a(t)=E[N_a]/B_total; dY/dt is the exact stoichiometric moment of Q_E(t)",
+      "initial_state": "exact H_D_to_E_v2 nuclear-ready branch",
+      "branch_parameters": [
+        "admissible frozen route matrices W_{j,[r]}",
+        "allowed finite projectors Phi_{j,[r]} where not fixed by exact parent bytes",
+        "N_1>0",
+        "N_2>0",
+        "N_3>0",
+        "source-owned W_j matrix elements",
+        "source-owned route phase nu/theta_f consistent with witnesses and ancestry",
+        "Lambda_M>0 from recursive-memory ancestry",
+        "source-owned C_nu",
+        "epsilon from source-owned CP invariant",
+        "I_top from witnessed topological event route"
+      ],
+      "normalization": "sum configuration probabilities=1; sum_a A_a Y_a=1 on baryon-normalized branch",
+      "status": "FORMALLY_EXECUTED_FOR_EVERY_ADMITTED_FINITE_BRANCH_BY_TIME_ORDERED_EXPONENTIAL"
+    },
+    "reaction_graph": {
+      "registry": [
+        {
+          "id": "n",
+          "Z": 0,
+          "N": 1,
+          "A": 1,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "p",
+          "Z": 1,
+          "N": 0,
+          "A": 1,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "D_role",
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "T_role",
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "He3_role",
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "He4_role",
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "Li6_role",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "Li7_role",
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        },
+        {
+          "id": "Be7_role",
+          "Z": 4,
+          "N": 3,
+          "A": 7,
+          "admission": "BOUND_PHYSICAL_BRANCH_IFF B_ZNlambda=E_sep-E_state>0 AND witness/branch/statistics/memory/no-loss close; n/p inherited C roles are parent states"
+        }
+      ],
+      "route_classes": [
+        "radiative capture",
+        "photodisintegration",
+        "strong exchange",
+        "charge exchange",
+        "weak conversion",
+        "beta decay",
+        "charged-lepton capture",
+        "neutrino-induced reaction",
+        "multibody formation",
+        "breakup",
+        "radioactive decay"
+      ],
+      "admission_rule": [
+        "reactant/product states admitted",
+        "projected event matrix element nonzero",
+        "baryon/charge/conditional-lepton ledgers close",
+        "kinematic domain nonempty",
+        "Module-A witness and event lift",
+        "protected signatures reopen",
+        "not a no-loss duplicate",
+        "inverse status explicit"
+      ],
+      "rate_law": "lambda_r(t)=S_r^-1 sum_kappa_in,kappa_out P_in(kappa,t)|A_r(kappa,t)|^2 Delta_sigma_r(E_f-E_i) B_r(kappa,t); A_r=sum_j delta^-j exp(-alpha j t) W_jr <f|Phi_jr|i>",
+      "reverse_law": "J_reverse=Theta_C J_r^dagger Theta_C^-1; on equilibrium subdomains gamma_reverse=gamma_forward*pi_in/pi_out",
+      "source_lineage": [
+        {
+          "path": "modules/D/frozen/H_D_to_E_v2.json",
+          "sha256": "66ff28571390b3bc30151a9833d32da70e72840e90b42dcd97fdfd18263bdc66",
+          "bytes": 38427
+        },
+        {
+          "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+          "sha256": "fd9f46d1d08e8ddfa082fc9e0e90f42daef1eceef39abb23826eaa8137d306d0",
+          "bytes": 31159
+        },
+        {
+          "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/PRIMORDIAL_NUCLEOSYNTHESIS.md",
+          "sha256": "520c081be3ad2d63037eefbbf2441fa17ea1a1e5578d8073819e1efec3c5e2b6",
+          "bytes": 5482
+        }
+      ],
+      "public_rate_table_used": false
+    },
+    "freezeout": {
+      "bottleneck_release": "first generated surface with nonzero D-role slow component, positive local derivative, positive integrated current over stabilization interval, and witnessed route to higher assembly",
+      "route_freezeout": "route-specific final downward restricted-Liouvillian-gap crossing against generated evolution rate; isotope persistent only after all material routes freeze or become residual/decay routes with bounded future tail",
+      "adaptive_completeness": "promote only witnessed nonduplicate states/routes closing material flux, reverse, decay, resonance, conservation, covariance or downstream-persistence gap; stop only at finite closure or certified omitted-flux bound",
+      "public_onset_temperature_used": false
+    },
+    "composition_law": "dY_a/dt=sum_res nu_ar F_r+sum_decay nu_ad F_d+F_inj+F_transport; stable closed isotope roles persist after every material touching route retires or is bounded",
+    "charge_ownership": "exact inherited C charge registry plus D lepton/photon carriers",
+    "charge_law": "L_Q=B_F^T C_F B_F; 1^T rho_Q=0; phi_Q=L_Q^+rho_Q is unique mean-zero solution on connected neutral branches; E_Q=-B_F phi_Q",
+    "ionization_state": {
+      "electron_state": "inherited charge/lepton carrier state; density generated by ionic/atomic ledger, never external ionization fraction",
+      "atomic_candidates": [
+        {
+          "id": "p::q1::Ne0",
+          "parent": "p",
+          "Z": 1,
+          "N": 0,
+          "A": 1,
+          "charge": 1,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "p::q0::Ne1",
+          "parent": "p",
+          "Z": 1,
+          "N": 0,
+          "A": 1,
+          "charge": 0,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "D_role::q1::Ne0",
+          "parent": "D_role",
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "charge": 1,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "D_role::q0::Ne1",
+          "parent": "D_role",
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "charge": 0,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "T_role::q1::Ne0",
+          "parent": "T_role",
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "charge": 1,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "T_role::q0::Ne1",
+          "parent": "T_role",
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "charge": 0,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "He3_role::q2::Ne0",
+          "parent": "He3_role",
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "charge": 2,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "He3_role::q1::Ne1",
+          "parent": "He3_role",
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "charge": 1,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "He3_role::q0::Ne2",
+          "parent": "He3_role",
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "charge": 0,
+          "electron_count": 2,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "He4_role::q2::Ne0",
+          "parent": "He4_role",
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "charge": 2,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "He4_role::q1::Ne1",
+          "parent": "He4_role",
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "charge": 1,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "He4_role::q0::Ne2",
+          "parent": "He4_role",
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "charge": 0,
+          "electron_count": 2,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li6_role::q3::Ne0",
+          "parent": "Li6_role",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "charge": 3,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li6_role::q2::Ne1",
+          "parent": "Li6_role",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "charge": 2,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li6_role::q1::Ne2",
+          "parent": "Li6_role",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "charge": 1,
+          "electron_count": 2,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li6_role::q0::Ne3",
+          "parent": "Li6_role",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "charge": 0,
+          "electron_count": 3,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li7_role::q3::Ne0",
+          "parent": "Li7_role",
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "charge": 3,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li7_role::q2::Ne1",
+          "parent": "Li7_role",
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "charge": 2,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li7_role::q1::Ne2",
+          "parent": "Li7_role",
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "charge": 1,
+          "electron_count": 2,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Li7_role::q0::Ne3",
+          "parent": "Li7_role",
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "charge": 0,
+          "electron_count": 3,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Be7_role::q4::Ne0",
+          "parent": "Be7_role",
+          "Z": 4,
+          "N": 3,
+          "A": 7,
+          "charge": 4,
+          "electron_count": 0,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Be7_role::q3::Ne1",
+          "parent": "Be7_role",
+          "Z": 4,
+          "N": 3,
+          "A": 7,
+          "charge": 3,
+          "electron_count": 1,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Be7_role::q2::Ne2",
+          "parent": "Be7_role",
+          "Z": 4,
+          "N": 3,
+          "A": 7,
+          "charge": 2,
+          "electron_count": 2,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Be7_role::q1::Ne3",
+          "parent": "Be7_role",
+          "Z": 4,
+          "N": 3,
+          "A": 7,
+          "charge": 1,
+          "electron_count": 3,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        },
+        {
+          "id": "Be7_role::q0::Ne4",
+          "parent": "Be7_role",
+          "Z": 4,
+          "N": 3,
+          "A": 7,
+          "charge": 0,
+          "electron_count": 4,
+          "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+          "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+          "public_atomic_data_used": false
+        }
+      ],
+      "atomic_law": "H_atom=P[H_A^E+sum h_e^C+1/2 Q^T G_Q^+Q+K_spin+K_rad+Sigma_plasma]P; U_atom is isometric on admitted capture subspace; no measured level is inserted",
+      "readiness": "first state where composition persists, residual events are scheduled/bounded, particle/radiation/plasma/perturbation state is restartable, ledgers close, atomic candidates become material, and G needs no imported physical parameter"
+    }
+  },
+  "ionization_state": {
+    "electron_state": "inherited charge/lepton carrier state; density generated by ionic/atomic ledger, never external ionization fraction",
+    "atomic_candidates": [
+      {
+        "id": "p::q1::Ne0",
+        "parent": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "charge": 1,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "p::q0::Ne1",
+        "parent": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "charge": 0,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "D_role::q1::Ne0",
+        "parent": "D_role",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "charge": 1,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "D_role::q0::Ne1",
+        "parent": "D_role",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "charge": 0,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "T_role::q1::Ne0",
+        "parent": "T_role",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "charge": 1,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "T_role::q0::Ne1",
+        "parent": "T_role",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "charge": 0,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He3_role::q2::Ne0",
+        "parent": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "charge": 2,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He3_role::q1::Ne1",
+        "parent": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "charge": 1,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He3_role::q0::Ne2",
+        "parent": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "charge": 0,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He4_role::q2::Ne0",
+        "parent": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "charge": 2,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He4_role::q1::Ne1",
+        "parent": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "charge": 1,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He4_role::q0::Ne2",
+        "parent": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "charge": 0,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q3::Ne0",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 3,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q2::Ne1",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 2,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q1::Ne2",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 1,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q0::Ne3",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 0,
+        "electron_count": 3,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q3::Ne0",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 3,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q2::Ne1",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 2,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q1::Ne2",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 1,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q0::Ne3",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 0,
+        "electron_count": 3,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q4::Ne0",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 4,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q3::Ne1",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 3,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q2::Ne2",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 2,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q1::Ne3",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 1,
+        "electron_count": 3,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q0::Ne4",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 0,
+        "electron_count": 4,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      }
+    ],
+    "atomic_law": "H_atom=P[H_A^E+sum h_e^C+1/2 Q^T G_Q^+Q+K_spin+K_rad+Sigma_plasma]P; U_atom is isometric on admitted capture subspace; no measured level is inserted",
+    "readiness": "first state where composition persists, residual events are scheduled/bounded, particle/radiation/plasma/perturbation state is restartable, ledgers close, atomic candidates become material, and G needs no imported physical parameter"
+  },
+  "radiation_state": {
+    "object_id": "F_RADIATION_NEUTRINO_PERSISTENCE_V2",
+    "parent": {
+      "photon": {
+        "role": {
+          "status": "EXACT_PROTECTED_NEUTRAL_ZERO_MODE_FOR_EVERY_POSITIVE_G1_G2_VC_BRANCH",
+          "mass_squared": "0",
+          "identity": "INTERNAL_PHOTON_ROLE_NOT_EMPIRICAL_CORRESPONDENCE"
+        },
+        "law": "Protected photon-role population is an exact L_D marginal with collision/entropy-transfer currents generated only from witnessed C vertices.",
+        "spectrum": "SOURCE_OWNED_BRANCH_FAMILY_NOT_PUBLIC_HISTORY"
+      },
+      "neutrino": {
+        "roles": {
+          "count": 3,
+          "law": {
+            "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+            "branch_variables": [
+              "Lambda_M>0 from recursive-memory ancestry",
+              "source-owned C_nu"
+            ],
+            "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+            "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+          },
+          "identity": "INTERNAL_NEUTRAL_COMPLETED_SHELL_ROLES"
+        },
+        "law": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+        "spectra": "SOURCE_OWNED_BRANCH_FAMILY_INCLUDING_LAWFUL_MASSLESS_BRANCH"
+      }
+    },
+    "photon_law": "dot rho_gamma=T_gamma[G_F]rho_gamma+C_gammae rho_F+C_gammai rho_F+E_ff rho_F+E_2gamma rho_F+I_decay rho_F+I_dark rho_F; nonzero terms require inherited vertices/witnesses",
+    "neutrino_law": "dot rho_nu=-i[H_nu^C+H_med,rho_nu]+T_nu[G_F]rho_nu+C_nu^res[rho_F]; retain flavor/coherence/anisotropic stress/covariance until no-loss reduction",
+    "reduction_rule": "retain full represented distributions until a no-loss reduction is proved"
+  },
+  "neutrino_state": {
+    "parent": {
+      "roles": {
+        "count": 3,
+        "law": {
+          "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+          "branch_variables": [
+            "Lambda_M>0 from recursive-memory ancestry",
+            "source-owned C_nu"
+          ],
+          "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+          "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+        },
+        "identity": "INTERNAL_NEUTRAL_COMPLETED_SHELL_ROLES"
+      },
+      "law": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+      "spectra": "SOURCE_OWNED_BRANCH_FAMILY_INCLUDING_LAWFUL_MASSLESS_BRANCH"
+    },
+    "law": "dot rho_nu=-i[H_nu^C+H_med,rho_nu]+T_nu[G_F]rho_nu+C_nu^res[rho_F]; retain flavor/coherence/anisotropic stress/covariance until no-loss reduction"
+  },
+  "charge_or_interaction_operator": {
+    "charge": "L_Q=B_F^T C_F B_F; 1^T rho_Q=0; phi_Q=L_Q^+rho_Q is unique mean-zero solution on connected neutral branches; E_Q=-B_F phi_Q",
+    "plasma": "Pi^R_AB=<J_A,(i omega-L_F)^-1J_B>; epsilon_F=I-V_Q Pi^R; collective modes satisfy det epsilon_F=0; L_AB=<J_A,(-L_fast)^+J_B>"
+  },
+  "atomic_candidate_registry": [
+    {
+      "id": "p::q1::Ne0",
+      "parent": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "charge": 1,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "p::q0::Ne1",
+      "parent": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "charge": 0,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "D_role::q1::Ne0",
+      "parent": "D_role",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "charge": 1,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "D_role::q0::Ne1",
+      "parent": "D_role",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "charge": 0,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "T_role::q1::Ne0",
+      "parent": "T_role",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "charge": 1,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "T_role::q0::Ne1",
+      "parent": "T_role",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "charge": 0,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "He3_role::q2::Ne0",
+      "parent": "He3_role",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "charge": 2,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "He3_role::q1::Ne1",
+      "parent": "He3_role",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "charge": 1,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "He3_role::q0::Ne2",
+      "parent": "He3_role",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "charge": 0,
+      "electron_count": 2,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "He4_role::q2::Ne0",
+      "parent": "He4_role",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "charge": 2,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "He4_role::q1::Ne1",
+      "parent": "He4_role",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "charge": 1,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "He4_role::q0::Ne2",
+      "parent": "He4_role",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "charge": 0,
+      "electron_count": 2,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li6_role::q3::Ne0",
+      "parent": "Li6_role",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "charge": 3,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li6_role::q2::Ne1",
+      "parent": "Li6_role",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "charge": 2,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li6_role::q1::Ne2",
+      "parent": "Li6_role",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "charge": 1,
+      "electron_count": 2,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li6_role::q0::Ne3",
+      "parent": "Li6_role",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "charge": 0,
+      "electron_count": 3,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li7_role::q3::Ne0",
+      "parent": "Li7_role",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "charge": 3,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li7_role::q2::Ne1",
+      "parent": "Li7_role",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "charge": 2,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li7_role::q1::Ne2",
+      "parent": "Li7_role",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "charge": 1,
+      "electron_count": 2,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Li7_role::q0::Ne3",
+      "parent": "Li7_role",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "charge": 0,
+      "electron_count": 3,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Be7_role::q4::Ne0",
+      "parent": "Be7_role",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "charge": 4,
+      "electron_count": 0,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Be7_role::q3::Ne1",
+      "parent": "Be7_role",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "charge": 3,
+      "electron_count": 1,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Be7_role::q2::Ne2",
+      "parent": "Be7_role",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "charge": 2,
+      "electron_count": 2,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Be7_role::q1::Ne3",
+      "parent": "Be7_role",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "charge": 1,
+      "electron_count": 3,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    },
+    {
+      "id": "Be7_role::q0::Ne4",
+      "parent": "Be7_role",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "charge": 0,
+      "electron_count": 4,
+      "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+      "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+      "public_atomic_data_used": false
+    }
+  ],
+  "opacity_law": "kappa_F=(v_gamma V_F)^-1 sum_material Gamma_ext with Gamma_ext=gamma_r Tr(J_r^dagger J_r rho_F)>=0; redistribution comes from the same witnessed event family",
+  "transport_state": {
+    "object_id": "F_OPACITY_TRANSPORT_V2",
+    "charge_plasma_operator": {
+      "charge": "L_Q=B_F^T C_F B_F; 1^T rho_Q=0; phi_Q=L_Q^+rho_Q is unique mean-zero solution on connected neutral branches; E_Q=-B_F phi_Q",
+      "plasma": "Pi^R_AB=<J_A,(i omega-L_F)^-1J_B>; epsilon_F=I-V_Q Pi^R; collective modes satisfy det epsilon_F=0; L_AB=<J_A,(-L_fast)^+J_B>"
+    },
+    "opacity_law": "kappa_F=(v_gamma V_F)^-1 sum_material Gamma_ext with Gamma_ext=gamma_r Tr(J_r^dagger J_r rho_F)>=0; redistribution comes from the same witnessed event family",
+    "transport_law": "Pi^R_AB=<J_A,(i omega-L_F)^-1J_B>; epsilon_F=I-V_Q Pi^R; collective modes satisfy det epsilon_F=0; L_AB=<J_A,(-L_fast)^+J_B>",
+    "public_tables_used": false
+  },
+  "recombination_entry_state": {
+    "object_id": "F_RECOMBINATION_ENTRY_STATE_V2",
+    "entry_rule": "first state where composition persists, residual events are scheduled/bounded, particle/radiation/plasma/perturbation state is restartable, ledgers close, atomic candidates become material, and G needs no imported physical parameter",
+    "atomic_candidates": [
+      {
+        "id": "p::q1::Ne0",
+        "parent": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "charge": 1,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "p::q0::Ne1",
+        "parent": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "charge": 0,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "D_role::q1::Ne0",
+        "parent": "D_role",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "charge": 1,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "D_role::q0::Ne1",
+        "parent": "D_role",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "charge": 0,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "T_role::q1::Ne0",
+        "parent": "T_role",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "charge": 1,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "T_role::q0::Ne1",
+        "parent": "T_role",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "charge": 0,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He3_role::q2::Ne0",
+        "parent": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "charge": 2,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He3_role::q1::Ne1",
+        "parent": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "charge": 1,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He3_role::q0::Ne2",
+        "parent": "He3_role",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "charge": 0,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He4_role::q2::Ne0",
+        "parent": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "charge": 2,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He4_role::q1::Ne1",
+        "parent": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "charge": 1,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "He4_role::q0::Ne2",
+        "parent": "He4_role",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "charge": 0,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q3::Ne0",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 3,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q2::Ne1",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 2,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q1::Ne2",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 1,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li6_role::q0::Ne3",
+        "parent": "Li6_role",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "charge": 0,
+        "electron_count": 3,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q3::Ne0",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 3,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q2::Ne1",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 2,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q1::Ne2",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 1,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Li7_role::q0::Ne3",
+        "parent": "Li7_role",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "charge": 0,
+        "electron_count": 3,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q4::Ne0",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 4,
+        "electron_count": 0,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q3::Ne1",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 3,
+        "electron_count": 1,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q2::Ne2",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 2,
+        "electron_count": 2,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q1::Ne3",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 1,
+        "electron_count": 3,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      },
+      {
+        "id": "Be7_role::q0::Ne4",
+        "parent": "Be7_role",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "charge": 0,
+        "electron_count": 4,
+        "status": "CONDITIONAL_UNTIL_INTERNAL_SPECTRAL_WITNESS",
+        "admission": "B_atom=E_ion_threshold-E_state>0 plus witness/statistics/charge/transition/memory/no-loss closure",
+        "public_atomic_data_used": false
+      }
+    ],
+    "coordinate_policy": "internally witnessed surface only; no assigned public recombination temperature/redshift",
+    "G_requires_no_imported_parameter": true
+  },
+  "source_transfer_ownership": {
+    "object_id": "F_SOURCE_TRANSFER_OWNERSHIP_V2",
+    "parent": {
+      "path": "modules/E/frozen/H_E_to_F_v2.json",
+      "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa",
+      "bytes": 27546
+    },
+    "ownership": {
+      "plasma_composition": "E isotope/abundance/reaction/freezeout + recovered F persistence law",
+      "ionization_state": "E charge/lepton carriers + recovered F Gauss/atomic law",
+      "radiation_state": "E photon carryover + recovered F photon law",
+      "neutrino_state": "E neutrino carryover + recovered F neutrino law",
+      "charge_or_interaction_operator": "recovered F L_Q/Pi^R/L_fast bound to E",
+      "atomic_candidate_registry": "E isotope roles + recovered F H_atom",
+      "opacity_law": "recovered witnessed-event extinction law",
+      "transport_state": "recovered response/pseudoinverse transport law",
+      "recombination_entry_state": "recovered atomic-materiality predicate",
+      "covariance": "E covariance + recovered F tangent law",
+      "clock": "E clock unchanged",
+      "restart": "F checkpoint"
+    }
+  },
+  "covariance": {
+    "law": "Sigma_F=J_F Sigma_E J_F^T+Sigma_residual+Sigma_transport+Sigma_radiation+Sigma_plasma+Sigma_atomic_seed+Sigma_representation+Sigma_spatial+Sigma_numeric+Sigma_branch",
+    "parent_eigenvalues": [
+      3.0343089875285705e-34,
+      3.099351208294675e-32,
+      1.2703875845537904e-19
+    ],
+    "psd": true
+  },
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "claim_boundary": "finite-relational, internal-unit, generated post-nuclear plasma state; no measured plasma/atomic coefficients, public recombination history, unique SI calibration, solved visibility/last-scattering history or empirical agreement"
+}

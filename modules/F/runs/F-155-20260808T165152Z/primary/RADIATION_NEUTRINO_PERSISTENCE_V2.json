@@ -1,0 +1,34 @@
+{
+  "object_id": "F_RADIATION_NEUTRINO_PERSISTENCE_V2",
+  "parent": {
+    "photon": {
+      "role": {
+        "status": "EXACT_PROTECTED_NEUTRAL_ZERO_MODE_FOR_EVERY_POSITIVE_G1_G2_VC_BRANCH",
+        "mass_squared": "0",
+        "identity": "INTERNAL_PHOTON_ROLE_NOT_EMPIRICAL_CORRESPONDENCE"
+      },
+      "law": "Protected photon-role population is an exact L_D marginal with collision/entropy-transfer currents generated only from witnessed C vertices.",
+      "spectrum": "SOURCE_OWNED_BRANCH_FAMILY_NOT_PUBLIC_HISTORY"
+    },
+    "neutrino": {
+      "roles": {
+        "count": 3,
+        "law": {
+          "minimal": "M_nu=(v_C^2/Lambda_M) C_nu; C_nu=Sym[P_L K_C M_B P_L^T]",
+          "branch_variables": [
+            "Lambda_M>0 from recursive-memory ancestry",
+            "source-owned C_nu"
+          ],
+          "massless_branch": "C_nu=0 is a lawful protected branch, not an inserted default",
+          "Dirac_alternative": "allowed only with a separately witnessed right-handed neutral route"
+        },
+        "identity": "INTERNAL_NEUTRAL_COMPLETED_SHELL_ROLES"
+      },
+      "law": "Positive trace-preserving neutral-role density-matrix block generated from C neutrino mixing branch and witnessed collision family; C_nu=0 massless branch remains lawful.",
+      "spectra": "SOURCE_OWNED_BRANCH_FAMILY_INCLUDING_LAWFUL_MASSLESS_BRANCH"
+    }
+  },
+  "photon_law": "dot rho_gamma=T_gamma[G_F]rho_gamma+C_gammae rho_F+C_gammai rho_F+E_ff rho_F+E_2gamma rho_F+I_decay rho_F+I_dark rho_F; nonzero terms require inherited vertices/witnesses",
+  "neutrino_law": "dot rho_nu=-i[H_nu^C+H_med,rho_nu]+T_nu[G_F]rho_nu+C_nu^res[rho_F]; retain flavor/coherence/anisotropic stress/covariance until no-loss reduction",
+  "reduction_rule": "retain full represented distributions until a no-loss reduction is proved"
+}

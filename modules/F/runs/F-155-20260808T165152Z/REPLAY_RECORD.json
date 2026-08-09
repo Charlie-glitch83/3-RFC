@@ -1,10 +1,59 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "F-155-20260808T165152Z",
+  "result": "PASS",
+  "clean_checkout": true,
+  "preexecution_commit": "6f2db0f38391008328e5d5b51c08a2eca9f7daa2",
+  "artifact_hashes_match": true,
+  "artifacts": {
+    "primary/PLASMA_COMPOSITION_IONIZATION_V2.json": {
+      "primary_sha256": "6dc573139d7d3728ddc7f43bbec5cde5b71b3f440dafa8f068baf9040994f22d",
+      "replay_sha256": "6dc573139d7d3728ddc7f43bbec5cde5b71b3f440dafa8f068baf9040994f22d",
+      "match": true
+    },
+    "primary/RADIATION_NEUTRINO_PERSISTENCE_V2.json": {
+      "primary_sha256": "3581eaf3bde293d427b93704e991586d09cbf257af721f6b88a4c32d05ab179a",
+      "replay_sha256": "3581eaf3bde293d427b93704e991586d09cbf257af721f6b88a4c32d05ab179a",
+      "match": true
+    },
+    "primary/OPACITY_TRANSPORT_V2.json": {
+      "primary_sha256": "7ac19052f65036f75e141d85cf3d7bc21cc18851a206de5899fa20faa81ecce1",
+      "replay_sha256": "7ac19052f65036f75e141d85cf3d7bc21cc18851a206de5899fa20faa81ecce1",
+      "match": true
+    },
+    "primary/RECOMBINATION_ENTRY_STATE_V2.json": {
+      "primary_sha256": "e287f6bc766241ec6af62f3dbf86fae5b4f52b0a2ed8aade805e1525707dc5b7",
+      "replay_sha256": "e287f6bc766241ec6af62f3dbf86fae5b4f52b0a2ed8aade805e1525707dc5b7",
+      "match": true
+    },
+    "primary/SOURCE_TRANSFER_OWNERSHIP_V2.json": {
+      "primary_sha256": "53e348c2b13a67d5b7c16cf2609aea0bdb36b091b2385478756d162a61fead12",
+      "replay_sha256": "53e348c2b13a67d5b7c16cf2609aea0bdb36b091b2385478756d162a61fead12",
+      "match": true
+    },
+    "primary/POST_NUCLEAR_PLASMA_V2.json": {
+      "primary_sha256": "ffedd7db716316388ccf1b50620b127d0f13eab61fc33a105ced2709c5e3cfdf",
+      "replay_sha256": "ffedd7db716316388ccf1b50620b127d0f13eab61fc33a105ced2709c5e3cfdf",
+      "match": true
+    },
+    "primary/COUNTERMODEL_RESULTS.json": {
+      "primary_sha256": "f62f1c69d4e83e630b41aaed84ef2110d804010cf3f25c9cc14b2589c0b7292e",
+      "replay_sha256": "f62f1c69d4e83e630b41aaed84ef2110d804010cf3f25c9cc14b2589c0b7292e",
+      "match": true
+    },
+    "primary/ABLATION_RESULTS.json": {
+      "primary_sha256": "e5d9f6a6816aa085273a647411b05061906fcf497edb0ec6495580ead89300fd",
+      "replay_sha256": "e5d9f6a6816aa085273a647411b05061906fcf497edb0ec6495580ead89300fd",
+      "match": true
+    },
+    "PRIMARY_GATE_INPUTS.json": {
+      "primary_sha256": "1a3cfb6ca8db9bad4e237a66bbbb306e431989f14a8bad0fe2ca417bb6cfc5fa",
+      "replay_sha256": "1a3cfb6ca8db9bad4e237a66bbbb306e431989f14a8bad0fe2ca417bb6cfc5fa",
+      "match": true
+    },
+    "independent/INDEPENDENT_RECONSTRUCTION.json": {
+      "primary_sha256": "6b08f1c38e05e1af11ffa7eb604aac74f563353fed2b2058fbf03fa1afd83e18",
+      "replay_sha256": "6b08f1c38e05e1af11ffa7eb604aac74f563353fed2b2058fbf03fa1afd83e18",
+      "match": true
+    }
+  }
 }

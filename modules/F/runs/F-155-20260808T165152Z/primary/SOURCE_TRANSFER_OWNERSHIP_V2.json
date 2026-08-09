@@ -1,0 +1,22 @@
+{
+  "object_id": "F_SOURCE_TRANSFER_OWNERSHIP_V2",
+  "parent": {
+    "path": "modules/E/frozen/H_E_to_F_v2.json",
+    "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa",
+    "bytes": 27546
+  },
+  "ownership": {
+    "plasma_composition": "E isotope/abundance/reaction/freezeout + recovered F persistence law",
+    "ionization_state": "E charge/lepton carriers + recovered F Gauss/atomic law",
+    "radiation_state": "E photon carryover + recovered F photon law",
+    "neutrino_state": "E neutrino carryover + recovered F neutrino law",
+    "charge_or_interaction_operator": "recovered F L_Q/Pi^R/L_fast bound to E",
+    "atomic_candidate_registry": "E isotope roles + recovered F H_atom",
+    "opacity_law": "recovered witnessed-event extinction law",
+    "transport_state": "recovered response/pseudoinverse transport law",
+    "recombination_entry_state": "recovered atomic-materiality predicate",
+    "covariance": "E covariance + recovered F tangent law",
+    "clock": "E clock unchanged",
+    "restart": "F checkpoint"
+  }
+}
