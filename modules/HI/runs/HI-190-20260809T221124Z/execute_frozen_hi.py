@@ -43,15 +43,15 @@ def witness_checks(s):
 
 def build_primary():
     h,i,s=verify_parents(); wc=witness_checks(s)
-    hu_law=h['operator_family']
+    hu_law=h['typed_operator']
     primary={
       'schema_version':'2.1','object_id':'HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE','run_id':RUN.name,'module':'HI','classification':'PARENT_DRIVEN_IMMUTABLE_HU_ON_I_INSTANTIATION','fidelity':'MINIMAL_SPINE','generation_mode':'GENERATION_SEALED','public_inputs_used':False,'no_retune':True,
       'parents':{'HU':{'path':str(HU.relative_to(ROOT)),'sha256':EXPECTED_HU},'I':{'path':str(IB.relative_to(ROOT)),'sha256':EXPECTED_I}},
       'compatibility_rule':s['compatibility_rule'],'branch_policy':s['laws']['branch_policy'],
-      'instantiated_transfer_system':{'law':s['laws']['immutable_composite'],'HU_operator_family':hu_law,'HU_domain':h['linearity_domain'],'I_background_context':{'classification':i['metric_background_state']['branch_family']['classification'],'selection_rule':i['metric_background_state']['branch_family']['selection_rule'],'nonuniqueness_policy':i['metric_background_state']['branch_family']['nonuniqueness_policy']},'no_retune':True},
-      'mode_eigenstructure':{'law':s['laws']['mode_eigenstructure'],'generator_family':h['operator_family']['generator'],'propagator_family':h['operator_family']['propagator']},
-      'gauge_frame_mapping':{'law':s['laws']['gauge_frame_mapping'],'HU_constraint_subspace':h['constraint_subspace'],'HU_clock':h['clock'],'I_clock':i['expansion_clock_histories']['clock']},
-      'error_covariance_propagation':{'law':s['laws']['covariance'],'HU_covariance':h['operator_covariance'],'I_covariance':i['covariance'],'unresolved_cross_covariance_policy':'retain only if source-owned; do not invent and do not set to zero by assumption'},
+      'instantiated_transfer_system':{'law':s['laws']['immutable_composite'],'HU_operator_family':hu_law,'HU_domain':h['typed_operator']['linearity_domain'],'I_background_context':{'classification':i['metric_background_state']['branch_family']['classification'],'selection_rule':i['metric_background_state']['branch_family']['selection_rule'],'nonuniqueness_policy':i['metric_background_state']['branch_family']['nonuniqueness_policy']},'no_retune':True},
+      'mode_eigenstructure':{'law':s['laws']['mode_eigenstructure'],'generator_family':h['typed_operator']['generator'],'propagator_family':h['typed_operator']['propagator']},
+      'gauge_frame_mapping':{'law':s['laws']['gauge_frame_mapping'],'HU_constraint_subspace':h['gauge_frame_contracts'],'HU_clock':h['clock'],'I_clock':i['expansion_clock_histories']['clock']},
+      'error_covariance_propagation':{'law':s['laws']['covariance'],'HU_covariance':h['operator_uncertainty'],'I_covariance':i['covariance'],'unresolved_cross_covariance_policy':'retain only if source-owned; do not invent and do not set to zero by assumption'},
       'implementation_witness':wc,
       'ancestry':{'HU_run':h['run_id'],'I_run':i['run_id'],'shared_parentage':'same frozen G branch/source-coordinate ancestry as required by FROZEN_DERIVATION_SPEC'},
       'restart_contract':'state at any inherited clock point plus exact parent hashes and branch identity is sufficient to resume immutable HU propagation on the same I background branch',
@@ -92,7 +92,7 @@ def run_convergence(out:Path):
 
 def run_independent(out:Path):
     h,i,s=verify_parents(); wc=witness_checks(s)
-    obj={'schema_version':'1.0','run_id':RUN.name,'classification':'HI190_INDEPENDENT_RECONSTRUCTION','HU_parent_hash_match':sha(HU)==EXPECTED_HU,'I_parent_hash_match':sha(IB)==EXPECTED_I,'shared_clock_contract':h['clock']['origin']==i['expansion_clock_histories']['clock']['origin'] and h['clock']['unit_family']==i['expansion_clock_histories']['clock']['unit_family'],'operator_domain_defined':bool(h['linearity_domain']),'branch_family_preserved':True,'no_retune':True,'covariance_symmetric':wc['covariance_symmetric'],'covariance_psd':wc['covariance_psd'],'constraint_sum_preserved':wc['constraint_sum_preserved'],'public_inputs_used':False,'pass':True}
+    obj={'schema_version':'1.0','run_id':RUN.name,'classification':'HI190_INDEPENDENT_RECONSTRUCTION','HU_parent_hash_match':sha(HU)==EXPECTED_HU,'I_parent_hash_match':sha(IB)==EXPECTED_I,'shared_clock_contract':h['clock']['origin']==i['expansion_clock_histories']['clock']['origin'] and h['clock']['unit_family']==i['expansion_clock_histories']['clock']['unit_family'],'operator_domain_defined':bool(h['typed_operator']['linearity_domain']),'branch_family_preserved':True,'no_retune':True,'covariance_symmetric':wc['covariance_symmetric'],'covariance_psd':wc['covariance_psd'],'constraint_sum_preserved':wc['constraint_sum_preserved'],'public_inputs_used':False,'pass':True}
     assert all([obj['HU_parent_hash_match'],obj['I_parent_hash_match'],obj['shared_clock_contract'],obj['operator_domain_defined'],obj['branch_family_preserved'],obj['no_retune'],obj['covariance_symmetric'],obj['covariance_psd'],obj['constraint_sum_preserved']])
     dump(out,obj)
 
