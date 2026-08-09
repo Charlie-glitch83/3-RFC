@@ -1,4 +1,4 @@
-name: Execute corrected governed HI-190
+name: Advance verified HI-190 to one authorized child
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  execute-hi190:
+  advance-hi190:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,45 +20,41 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Repair implementation-only HI plumbing and rerun complete frozen matrix
+      - name: Verify exact HI closeout and advance once
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          RUN='HI-190-20260809T152136Z'; R="modules/HI/runs/$RUN"
+          EXPECT='765ed740b995d6611825719dd529e6cabb24398a'
+          test "$(git rev-parse HEAD)" = "$EXPECT"
           python - <<'PY'
-          import json
-          from datetime import datetime, timezone
+          import hashlib, json
           from pathlib import Path
-          run='HI-190-20260809T152136Z'; r=Path('modules/HI/runs')/run; s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run']==run,s
-          lock=json.load(open(r/'PRE_EXECUTION_LOCK.json')); spec=json.load(open(r/'FROZEN_DERIVATION_SPEC.json'))
-          assert lock['status']=='FROZEN' and lock.get('frozen_before_primary_execution') is True
-          assert 'typed fiber-product/association' in spec['laws']['instantiation']
-          assert 'eta_b(t2)' not in json.dumps(spec) and 'eta_b(t2)' not in json.dumps(lock)
-          assert not (r/'primary').exists() or not any((r/'primary').iterdir()),'primary execution already exists; implementation-only pre-primary repair no longer legal'
-          p=Path('tools/hi190_execute_locked.py'); t=p.read_text(); before=t
-          # Provenance vocabulary only: same frozen HU values and exact origin hash.
-          t=t.replace("origin_kind='FROZEN_PARENT_DERIVATION'","origin_kind='INTERNAL_DERIVATION'")
-          # Evidence-reference indices only: point generated records at the already-frozen intended law strings.
-          t=t.replace("'instantiated_transfer_system':{'law':lock['equations_and_laws'][0]", "'instantiated_transfer_system':{'law':lock['equations_and_laws'][1]")
-          t=t.replace("'mode_eigenstructure':{'law':lock['equations_and_laws'][3]", "'mode_eigenstructure':{'law':lock['equations_and_laws'][2]")
-          t=t.replace("'error_covariance_propagation':{'law':lock['equations_and_laws'][4]", "'error_covariance_propagation':{'law':lock['equations_and_laws'][3]")
-          assert t!=before,'expected HI implementation-only corrections not found'
-          assert "origin_kind='INTERNAL_DERIVATION'" in t
-          p.write_text(t)
-          ts=datetime.now(timezone.utc).isoformat()
-          fail={'failure_id':'HI-190-BINDING-ORIGIN-KIND-VOCABULARY-20260809','run_id':run,'gate':'solver materialization provenance validation','category':'IMPLEMENTATION_ONLY_PROVENANCE_VOCABULARY','description':'The corrected frozen HI science passed both Wolfram gates and the manufactured reference, then materialization stopped before solver/primary execution because the binding helper used noncanonical origin_kind FROZEN_PARENT_DERIVATION. The exact values, HU origin path/hash, derivation object, parents, law, thresholds, gates, falsifiers and claim boundary were unchanged.','earliest_affected_object':'binding_sheets/HI_instantiated_transfer.bindings.json origin_kind fields','changes_frozen_science':False,'primary_execution_occurred_before_failure':False,'required_replay_scope':'full HI-190 frozen matrix after implementation-only provenance vocabulary correction','timestamp_utc':ts}
-          with (r/'FAILURES.jsonl').open('a',encoding='utf-8') as f:
-              existing=(r/'FAILURES.jsonl').read_text(encoding='utf-8') if (r/'FAILURES.jsonl').exists() else ''
-              if fail['failure_id'] not in existing: f.write(json.dumps(fail,ensure_ascii=False)+'\n')
-          patch={'schema_version':'1.0','run_id':run,'patch_id':'HI190-PREPRIMARY-IMPLEMENTATION-PLUMBING-20260809','classification':'IMPLEMENTATION_ONLY','timestamp_utc':ts,'changes':['binding origin_kind FROZEN_PARENT_DERIVATION -> INTERNAL_DERIVATION','generated evidence law references corrected to frozen list indices 1/2/3'],'parent_bytes_changed':False,'parent_hashes_changed':False,'frozen_spec_changed':False,'law_changed':False,'branch_rule_changed':False,'solver_values_changed':False,'origin_path_changed':False,'origin_sha256_changed':False,'thresholds_changed':False,'gates_changed':False,'falsifiers_changed':False,'claim_boundary_changed':False,'science_changed':False,'primary_execution_before_patch':False,'full_frozen_matrix_rerun_required':True}
-          (r/'IMPLEMENTATION_PATCH_RECORD.json').write_text(json.dumps(patch,indent=2)+'\n')
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          run='HI-190-20260809T152136Z'; r=Path('modules/HI/runs')/run
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run'] is None,s
+          assert s['modules']['HI']['evidence_state']=='FROZEN' and s['modules']['HI']['fidelity']=='MINIMAL_SPINE',s['modules']['HI']
+          g=json.load(open(r/'GATE_RESULTS.json')); assert g['overall']=='PASS' and all(v.get('pass') for v in g['componentwise'].values()),g
+          rp=json.load(open(r/'REPLAY_RECORD.json')); assert rp['pass'] and rp['clean_checkout'] and rp['artifact_hashes_match'],rp
+          ind=json.load(open(r/'independent/INDEPENDENT_RECONSTRUCTION.json')); assert ind['pass'] and ind['public_inputs_used'] is False and ind['HU_parent_hash_match'] and ind['I_parent_hash_match'],ind
+          h=json.load(open('modules/HI/frozen/H_HI_to_J.json'))
+          assert h['object_id']=='H_HI_to_J' and h['from_module']=='HI' and h['to_module']=='J' and h['public_inputs_used'] is False,h
+          assert h['instantiated_transfer_system']['no_retune'] is True,h
+          assert sha('modules/HI/frozen/H_HI_to_J.json')=='17a1a39f5b26debcb4d408aea6349a2cd4f0bcbd6767c8a0ee62ae4d68a3d152'
+          assert Path(r/'CLOSEOUT.md').is_file()
           PY
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py advance --task HI-190 --result PASS --evidence modules/HI/runs/HI-190-20260809T152136Z/CLOSEOUT.md
+          python tools/rfc.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/hi190_execute_locked.py "$R/FAILURES.jsonl" "$R/IMPLEMENTATION_PATCH_RECORD.json"
-          git commit -m 'Repair HI-190 pre-primary implementation plumbing without changing science'
-          git pull --rebase origin agent/frontier-050-execution
+          git add -A
+          git commit -m 'Advance from HI-190 to the next authorized child'
           git push origin HEAD:agent/frontier-050-execution
-          bash tools/run_hi190_governed.sh
+          printf 'HI190_ADVANCE_COMMIT=%s\n' "$(git rev-parse HEAD)"
