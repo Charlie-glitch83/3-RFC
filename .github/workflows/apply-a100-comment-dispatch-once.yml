@@ -1,4 +1,4 @@
-name: Start governed HI-190 from repository README
+name: Freeze governed HI-190 before primary execution
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  start-hi190:
+  freeze-hi190:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,30 +20,65 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute exact README startup for sole active HI-190
+      - name: Freeze exact parents, compatibility law, gates, and claim boundary
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
           python - <<'PY'
-          import json
+          import hashlib,json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          R=Path('modules/HI/runs/HI-190-20260809T151108Z')
           s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='HI-190',s
-          assert s['current_module']=='HI',s
-          assert s['current_run'] is None,s
-          assert s['modules']['I']['evidence_state']=='FROZEN',s['modules']['I']
-          assert s['modules']['HU']['evidence_state']=='FROZEN',s['modules']['HU']
+          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run']==R.name,s
+          lock=json.load(open(R/'PRE_EXECUTION_LOCK.json'))
+          assert lock['status']=='DRAFT',lock
+          assert not (R/'primary').exists() or not any((R/'primary').iterdir()),'primary output exists before freeze'
+          hu=Path('modules/HU/frozen/H_HU_to_HI.json'); ii=Path('modules/I/frozen/H_I_to_HI.json')
+          def rec(p,classification):
+              b=p.read_bytes(); return {'path':str(p),'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b),'classification':classification}
+          parents=[rec(hu,'DIRECT_PARENT_HU_OPERATOR'),rec(ii,'DIRECT_PARENT_I_BACKGROUND')]
+          runid=R.name
+          src={'schema_version':'2.1','run_id':runid,'status':'FROZEN_BEFORE_PRIMARY_EXECUTION','generation_mode':'GENERATION_SEALED','exact_parents':parents,'admitted_sources':[], 'imports':['numpy'],'files':[rec(Path('recipes/HI/WORK_ORDER.md'),'AUTHORITY'),rec(Path('recipes/HI/recipe.json'),'AUTHORITY'),rec(Path('recipes/HI/gates.json'),'AUTHORITY'),rec(Path('modules/HI/spec.json'),'AUTHORITY')],'urls':[],'constants':[],'public_data_declaration':'NONE','network_policy':'DISABLED_DURING_GENERATION'}
+          (R/'SOURCE_REGISTER.json').write_text(json.dumps(src,indent=2)+'\n')
+          now=datetime.now(timezone.utc).isoformat()
+          lock={
+            'run_id':runid,'status':'FROZEN','frozen_utc':now,'frozen_before_primary_execution':True,
+            'authority_hashes':src['files'],'parent_hashes':parents,
+            'definition_hashes':[{'object':'HU frozen propagator family','sha256':parents[0]['sha256']},{'object':'I frozen realized-background family','sha256':parents[1]['sha256']}],
+            'candidate_classes':['branch-preserving type-compatible instantiations pairing one admitted HU branch with the same inherited G/I branch identity','linear composite maps on the HU physical tangent quotient evaluated along the frozen I background clock/frame','covariance pushforwards retaining HU operator uncertainty plus I background/branch uncertainty without coefficient retuning'],
+            'equations_and_laws':[
+              'For every branch b admitted simultaneously by H_HU_to_HI and H_I_to_HI, instantiate U_HI[b;t2,t1]=U_HU[b;eta_b(t2),eta_b(t1)] with eta_b supplied only by the I background clock/frame map; no HU generator coefficient or I background law is altered.',
+              'The physical domain remains V_b=ker(C_b)/im(G_b); I supplies background evaluation data and branch/clock realization but does not enlarge, shrink, or retune the HU tangent quotient.',
+              'Composition is inherited exactly: U_HI[b;t3,t1]=U_HI[b;t3,t2] U_HI[b;t2,t1] whenever the frozen I clock map is ordered and all three times lie on the same admitted branch.',
+              'Mode/eigenstructure is computed from the instantiated finite linear map/generator on the same quotient; degeneracies and branch nonuniqueness are preserved rather than selected by familiar spectra.',
+              'Covariance propagation is Sigma_out=U_HI Sigma_in U_HI^T plus explicit PSD terms inherited from frozen HU operator uncertainty and frozen I background/branch/numeric covariance; no observed spectrum or post-hoc fit may select parameters.'
+            ],
+            'dimensions_units_frames_gauges_clocks':['branch identity must match across HU and I','HU physical tangent quotient and gauge projector are immutable','I finite relational background/clock is immutable','Big Implosion physical clock family t_phys=t_B tau_B only; recurrence depth is never time','no FRW/Friedmann/Einstein or observed-coordinate frame is imported'],
+            'methods':['exact parent SHA-256 verification','type/domain/codomain compatibility audit','exact Wolfram manufactured composition and covariance identities','provenance-bound linear_transfer solver witness','parent-driven finite branch instantiation','mode/eigenstructure audit','countermodels and CIF/QV/RFL ablations','step/refinement convergence where numerical integration is used','checkpoint/restart and clean replay','independent reconstruction from the two frozen parent handoffs without trusting gate summaries'],
+            'tolerances':['parent hashes exact','replay scientific artifact hashes exact','operator composition residual <= 1e-10','constraint/gauge leakage <= 1e-10','covariance symmetry residual <= 1e-10','PSD eigenvalue tolerance >= -1e-10','restart/reconstruction L_inf <= 1e-9'],
+            'stopping_rules':['stop on any parent-byte/hash mismatch','stop on branch identity mismatch','stop on domain/codomain incompatibility','stop if any HU or I law/coefficient/source/gate/threshold would need alteration','stop on any public-data/observed-spectrum target use','stop on failed independent reconstruction'],
+            'expected_invariants':['exact HU and I parent hashes','no retune of HU or I','physical tangent quotient preserved','same-branch composition/semigroup law preserved','gauge-equivalent inputs remain physically equivalent','covariance remains symmetric PSD within tolerance','branch family and unresolved coordinates remain explicit'],
+            'tests':['HI-WL-001 immutable operator-background composition','HI-WL-002 covariance propagation','manufactured HI reference check','linear_transfer provenance/materialization test','parent-driven composition/reconstruction test','mode/eigenstructure consistency','countermodels/ablations','convergence/restart/replay','independent instantiation'],
+            'gates':['exact parent hashes','no retune of HU or I','operator-domain compatibility','independent reconstruction'],
+            'falsifiers':['HU or I parent hash changes','mixing distinct branch identities during instantiation','domain/codomain mismatch','altering HU generator/projector or I metric/clock/background law','fitting coefficients after seeing spectra','gauge leakage beyond tolerance','covariance non-PSD beyond tolerance','independent reconstruction failure'],
+            'claim_boundary':'RFC linear transfer realization at the fidelity supported by exact frozen HU and I parents: a branch-indexed, type-compatible instantiated linear transfer system on the realized finite-relational background, with inherited gauge/frame/clock contracts, mode/eigenstructure, covariance propagation, restart/replay and H_HI_to_J. No empirical spectra agreement, unique observed transfer function, Boltzmann-table equivalence, continuum/FRW correspondence, or retuned coefficients are claimed.',
+            'independent_verifier_design':'Reconstruct HI solely from exact H_HU_to_HI and H_I_to_HI bytes plus the frozen derivation specification; independently match branch identity and quotient domain, instantiate the HU propagator on the I clock/background map, recompute composition, gauge preservation, mode/eigenstructure and covariance pushforward, and verify no parent/source retuning or public targets were used. Do not read primary gate summaries or closeout conclusions before reconstruction.',
+            'allowed_implementation_only_corrections':['syntax','path handling','serialization','solver plumbing','environment/dependency setup','equivalent backend compatibility changes that preserve inputs, laws, tests, thresholds, gates, falsifiers and claim boundary']
+          }
+          (R/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          spec={'schema_version':'1.0','run_id':runid,'classification':'FROZEN_PARENT_DRIVEN_HI_INSTANTIATION_SPEC','frozen_utc':now,'parents':parents,'law':lock['equations_and_laws'],'candidate_classes':lock['candidate_classes'],'gauge_frame_clock':lock['dimensions_units_frames_gauges_clocks'],'tolerances':lock['tolerances'],'gates':lock['gates'],'falsifiers':lock['falsifiers'],'claim_boundary':lock['claim_boundary']}
+          (R/'FROZEN_DERIVATION_SPEC.json').write_text(json.dumps(spec,indent=2)+'\n')
+          print(json.dumps({'run_id':runid,'HU_sha256':parents[0]['sha256'],'I_sha256':parents[1]['sha256'],'status':'FROZEN_BEFORE_PRIMARY'},indent=2))
           PY
-          bash bootstrap.sh
-          bash tools/start_work.sh
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
-          python tools/rfc.py context
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'Start governed HI-190 from repository README'
+          git add modules/HI/runs/HI-190-20260809T151108Z/PRE_EXECUTION_LOCK.json modules/HI/runs/HI-190-20260809T151108Z/SOURCE_REGISTER.json modules/HI/runs/HI-190-20260809T151108Z/FROZEN_DERIVATION_SPEC.json
+          git commit -m 'Freeze HI-190 parent-compatible instantiation before execution'
           git push origin HEAD:agent/frontier-050-execution
-          printf 'HI190_START_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'HI190_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
