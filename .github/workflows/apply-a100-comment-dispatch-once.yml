@@ -1,4 +1,4 @@
-name: Advance verified HI-190 to one authorized child
+name: Start governed J-200 from repository README
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  advance-hi190:
+  start-j200:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,41 +20,28 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Verify exact HI closeout and advance once
+      - name: Execute exact README startup for sole active J-200
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          EXPECT='765ed740b995d6611825719dd529e6cabb24398a'
-          test "$(git rev-parse HEAD)" = "$EXPECT"
           python - <<'PY'
-          import hashlib, json
-          from pathlib import Path
-          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
-          run='HI-190-20260809T152136Z'; r=Path('modules/HI/runs')/run
+          import json
           s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run'] is None,s
-          assert s['modules']['HI']['evidence_state']=='FROZEN' and s['modules']['HI']['fidelity']=='MINIMAL_SPINE',s['modules']['HI']
-          g=json.load(open(r/'GATE_RESULTS.json')); assert g['overall']=='PASS' and all(v.get('pass') for v in g['componentwise'].values()),g
-          rp=json.load(open(r/'REPLAY_RECORD.json')); assert rp['pass'] and rp['clean_checkout'] and rp['artifact_hashes_match'],rp
-          ind=json.load(open(r/'independent/INDEPENDENT_RECONSTRUCTION.json')); assert ind['pass'] and ind['public_inputs_used'] is False and ind['HU_parent_hash_match'] and ind['I_parent_hash_match'],ind
-          h=json.load(open('modules/HI/frozen/H_HI_to_J.json'))
-          assert h['object_id']=='H_HI_to_J' and h['from_module']=='HI' and h['to_module']=='J' and h['public_inputs_used'] is False,h
-          assert h['instantiated_transfer_system']['no_retune'] is True,h
-          assert sha('modules/HI/frozen/H_HI_to_J.json')=='17a1a39f5b26debcb4d408aea6349a2cd4f0bcbd6767c8a0ee62ae4d68a3d152'
-          assert Path(r/'CLOSEOUT.md').is_file()
+          assert s['active_work_unit']=='J-200' and s['current_module']=='J' and s['current_run'] is None,s
+          assert s['modules']['HI']['evidence_state']=='FROZEN',s['modules']['HI']
           PY
+          bash bootstrap.sh
+          bash tools/start_work.sh
           python tools/rfc.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
-          python tools/rfc.py advance --task HI-190 --result PASS --evidence modules/HI/runs/HI-190-20260809T152136Z/CLOSEOUT.md
-          python tools/rfc.py doctor
+          python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           python tools/rfc.py context
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Advance from HI-190 to the next authorized child'
+          git commit -m 'Start governed J-200 from repository README'
+          git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-          printf 'HI190_ADVANCE_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'J200_START_COMMIT=%s\n' "$(git rev-parse HEAD)"
