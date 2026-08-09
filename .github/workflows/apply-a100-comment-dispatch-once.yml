@@ -1,4 +1,4 @@
-name: Start G-160 from owner comment once
+name: Freeze G-160 from owner comment once
 
 on:
   issue_comment:
@@ -8,12 +8,12 @@ permissions:
   contents: write
 
 jobs:
-  start-g160:
+  freeze-g160:
     if: >-
       github.event.issue.number == 74 &&
       github.event.issue.pull_request &&
       github.event.comment.user.login == 'Charlie-glitch83' &&
-      github.event.comment.body == '/start-g160-governed-20260808'
+      github.event.comment.body == '/freeze-g160-preexecution-20260808'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,38 +24,6 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
-      - name: Execute exact repository startup protocol for G160
+      - name: Freeze exact G160 pre-execution state
         shell: bash
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          import json
-          s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='G-160' and s['current_module']=='G' and s['current_run'] is None,s
-          assert s['modules']['F']['evidence_state']=='FROZEN' and s['modules']['F']['fidelity']=='PRODUCTION',s['modules']['F']
-          PY
-          bash bootstrap.sh
-          bash tools/start_work.sh
-          python tools/director.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
-          python tools/rfc.py context
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          s=json.load(open('STATE.json')); rid=s['current_run']
-          assert s['active_work_unit']=='G-160' and s['current_module']=='G' and rid and rid.startswith('G-160-'),s
-          p=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text(); assert '# ACTIVE WORK PACKET — G-160' in p
-          print(rid)
-          PY
-      - name: Commit governed G160 startup
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add STATE.json memory/RUN_INDEX.json memory/CURRENT_CONTEXT.md work_packets/ACTIVE_WORK_PACKET.md modules/G
-          git commit -m 'Start G-160 governed recombination run'
-          git pull --rebase origin agent/frontier-050-execution
-          git push origin HEAD:agent/frontier-050-execution
+        run: bash tools/run_g160_prepare.sh
