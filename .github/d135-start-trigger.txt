@@ -1,3 +1,3 @@
 authorized_by_user=2026-08-08
-scope=freeze_HU170_preexecution_exactly
-synchronize=hu170-preexecution-freeze-20260808
+scope=execute_HU170_governed_packet_exactly
+synchronize=hu170-governed-execution-20260808
