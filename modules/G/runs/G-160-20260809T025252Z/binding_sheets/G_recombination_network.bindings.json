@@ -19,132 +19,178 @@
     {
       "path": "model.species",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "e_free",
+        "p_ion",
+        "p_bound"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "model.stoichiometry",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "model.rate_expressions",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "kf*e_free*p_ion",
+        "kr*p_bound"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "model.parameters",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "kf": 1.0,
+        "kr": 1.0
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "model.invariants",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "charge": [
+          -1,
+          1,
+          0
+        ],
+        "electron_ledger": [
+          1,
+          0,
+          1
+        ],
+        "proton_parent": [
+          0,
+          1,
+          1
+        ]
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "initial_state",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.5,
+        0.5,
+        0.0
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "t_span",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.0,
+        8.0
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "max_step",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 0.0625,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "positivity_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-12,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     },
     {
       "path": "invariant_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-09,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cc688538695a0f30cf4d54f198ec7ac82ef79a5fbc8977aaf2c2a3428ea6c0d",
       "module": "G",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "G160_FROZEN_DERIVATION_SPEC.numerical_witness.reaction",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "conservative three-state recombination implementation witness",
+      "justification": "solver implementation witness only; physical G result remains the exact parent-driven branch family"
     }
   ]
 }

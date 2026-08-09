@@ -4,7 +4,9 @@
   "task_id": "G-160",
   "status": "CREATED",
   "created_utc": "2026-08-09T02:52:52.611227+00:00",
-  "parent_hashes": [],
+  "parent_hashes": [
+    "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990"
+  ],
   "generation_mode": "GENERATION_SEALED",
   "workspace": "modules/G/runs/G-160-20260809T025252Z"
 }

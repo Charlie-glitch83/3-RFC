@@ -728,9 +728,9 @@
       "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "G": {
-      "evidence_state": "BLOCKED",
-      "fidelity": "UNSTARTED",
-      "active_run": "G-160-20260809T025252Z",
+      "evidence_state": "DESIGN",
+      "fidelity": "MINIMAL_SPINE",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -745,12 +745,28 @@
           "timestamp_utc": "2026-08-08T06:09:13.780590+00:00",
           "work_unit": "G-160",
           "reason": "G primary execution requires H_F_to_G_v2 after ordered B-C-D-E-F superseding replay."
+        },
+        {
+          "state": "DESIGN",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+          "timestamp_utc": "2026-08-09T03:04:15.000750+00:00",
+          "work_unit": "G-160",
+          "reopened_from": {
+            "evidence_state": "BLOCKED",
+            "fidelity": "UNSTARTED"
+          }
         }
       ],
       "completed_runs": [
         "G-160-20260808T021341Z",
         "G-160-20260808T051613Z"
-      ]
+      ],
+      "reopened_from": {
+        "evidence_state": "BLOCKED",
+        "fidelity": "UNSTARTED"
+      },
+      "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "HU": {
       "evidence_state": "DESIGN",
@@ -910,7 +926,7 @@
     }
   },
   "last_verified_commit": "9df3cdd1b262770c4be1e50f5d4a8bbc77adb1d6",
-  "last_updated_utc": "2026-08-09T02:52:52.611834+00:00",
+  "last_updated_utc": "2026-08-09T03:04:15.000761+00:00",
   "strongest_supported_claim": "F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.",
   "strongest_unsupported_claim": "No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed.",
   "last_verified_branch": "agent/frontier-050-execution",

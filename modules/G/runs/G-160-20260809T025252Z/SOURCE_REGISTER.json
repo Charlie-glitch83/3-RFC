@@ -1,10 +1,72 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "schema_version": "2.1",
+  "run_id": "G-160-20260809T025252Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/F/frozen/H_F_to_G_v2.json",
+      "sha256": "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990",
+      "bytes": 62595,
+      "classification": "DIRECT_PARENT"
+    }
+  ],
+  "replay_required_sources": [
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/science/NONEQUILIBRIUM_RECOMBINATION.md",
+      "sha256": "c10d3bdf4769297a1877890ec7cad51c2b775d553d337d244a07f3278da1352b",
+      "bytes": 38672,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/NONEQUILIBRIUM_RECOMBINATION.md",
+      "sha256": "86e12313ed475141d87ca9b45b17968735b590927f6d050778bb949620b5bc73",
+      "bytes": 10824,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_DETAILED_SCIENTIFIC_REPAIR_PLAN.md",
+      "sha256": "d7bd61a15dabddd0bb46c57beb2dc30f912a99d2ebe32e6665a2f37ece58ffa7",
+      "bytes": 36667,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_MANUSCRIPT_SOURCE_TRACEABILITY.md",
+      "sha256": "3e586b48b22a484bc390237b8b9b62e594f8b12af429eb4be305a6f81abe445e",
+      "bytes": 1161,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_TO_H_UNIT_SCIENTIFIC_HANDOFF.md",
+      "sha256": "40d3d6a18a9eb7fdfff7ac72b31972e4a30825990a7fb8da3e23cbdd67d086db",
+      "bytes": 15125,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_TRIAD_KERNEL_DERIVATION_LOCK.md",
+      "sha256": "9d42d0de4ab74d45cadfbe4988f61fb7057c017d3f09ad07cb4270e1df7b872a",
+      "bytes": 1089,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_WOLFRAM_INTEGRATION_REVISION.md",
+      "sha256": "d0957bfee044e59d1c3043dacf6c641ab38bc36ebd2474027b30c5b6d65ed518",
+      "bytes": 1289,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_WOLFRAM_REVISION.md",
+      "sha256": "242e6236e60fc29714178146f32e1d2f8e2de7bc28a0cb9166e3243ec3c9c0d8",
+      "bytes": 769,
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_WOLFRAM_VERIFICATION.md",
+      "sha256": "6fdbd7e4b980619d333461b7545acde7952789fb0983dc7313529989a3655574",
+      "bytes": 7593,
+      "classification": "REPLAY_REQUIRED"
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION"
 }
