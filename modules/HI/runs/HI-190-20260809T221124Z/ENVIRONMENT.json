@@ -1,13 +1,35 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
-  "network_policy": "DISABLED_DURING_GENERATION",
+  "schema_version": "2.1",
+  "run_id": "HI-190-20260809T221124Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "hardware": {
+    "runner": "GitHub-hosted ubuntu-24.04"
+  },
+  "software": [
+    "numpy==2.3.5",
+    "scipy==1.17.0",
+    "sympy==1.14.0",
+    "networkx==3.6.1",
+    "jsonschema==4.26.0"
+  ],
+  "python": "3.11.15",
+  "imports": [
+    "json",
+    "hashlib",
+    "pathlib",
+    "numpy",
+    "scipy"
+  ],
+  "commands": [
+    "HI-WL-001 then HI-WL-002",
+    "run_reference_checks --module HI",
+    "materialize HI_instantiated_transfer from frozen derivation witness",
+    "run_configured_solver linear_transfer",
+    "parent-driven HI composite execution",
+    "countermodels/ablations/convergence/restart/replay/independent reconstruction"
+  ],
+  "network_policy": "NO_PUBLIC_DATA_DURING_GENERATION; package installation only before scientific execution",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true
 }

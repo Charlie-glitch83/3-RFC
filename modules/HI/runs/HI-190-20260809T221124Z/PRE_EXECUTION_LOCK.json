@@ -1,21 +1,119 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "2.1",
+  "run_id": "HI-190-20260809T221124Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-09T22:18:54.505618+00:00",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    "a75977151e79de588728817b6e4871c962192481067c1364fd5d260485f28493",
+    "22d80795ec737313fc37fc30e42330208f88cd70b949fda58f9c3a74ab37ee8f",
+    "c820ec7370f8672b399bfacc90f2fb67136ed4cf1e67c70610bfb05d6adabc43",
+    "9533bf859961ec26cdc69e39fc6febc64ba1d184a6fe89b126aa2b00143bd21a",
+    "cc8fb19ce3ca697d90e9ab4e09f4cd9938cea0fb9f0296a3e48c43f65024a6fb",
+    "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+    "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d",
+    "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875",
+    "4e0be6b5a15f47cfe2982e398f174826f50b90b4cf32d5e112c6a30541becde2",
+    "b592fada9bad789059dfb7266bc74c24dda9f21be81ba482e9743828a40edeff",
+    "7e4b8e68e0ae93195c554a563d927f0237a33e5ca439301d339b3ae96c096cba"
+  ],
+  "parent_hashes": [
+    "159d1311b26e03572f8485b579e354d031e3cab1fd59416bfad76ddd93186204",
+    "d7245adc6699ff0c300b622340cdeb51cf00c87bcd17443cdba9b612ffdb12cd"
+  ],
+  "definition_hashes": [
+    "93ec56f492002399f9e221a491d687f71b259e2c35db7d0abfa935783b0311e3"
+  ],
+  "candidate_classes": [
+    "shared-branch immutable HU-on-I fiber-product composites"
+  ],
+  "equations_and_laws": [
+    "For each compatible branch b, HI_b := (I_b, U_HU[b;eta2,eta1]). Application to an admissible perturbation is deltaX_out = U_HU[b;eta2,eta1] deltaX_in while I_b is carried unchanged as realized background context. No background matrix, coefficient rescaling, or reparameterization is introduced unless already present in an exact parent.",
+    "The physical perturbation modes/eigenstructure are exactly those of the frozen HU generator/propagator on V_b, now indexed by the compatible frozen I branch. HI introduces no new eigenvalue or mode selection.",
+    "The HU quotient V_b=ker(C_b)/im(G_b), constraint projector and G clock contract remain unchanged. I contributes its realized finite-relational geometry and constant graph-gauge quotient as background context; HI does not identify or mix distinct gauge directions beyond exact shared ancestry.",
+    "For perturbation covariance Sigma_delta on V_b, Sigma_delta,out = U_HU Sigma_delta,in U_HU^T. I background covariance Sigma_I remains attached unchanged. For any source-owned joint cross-covariance C_deltaI, the exact immutable product map gives C_out=U_HU C_deltaI and joint covariance [[U Sigma_delta U^T, U C],[C^T U^T, Sigma_I]]; HI neither sets unresolved cross-covariance to zero nor invents one.",
+    "Retain every parent-compatible branch. If exact parents do not select a unique branch, HI remains the complete lawful branch family.",
+    "Both parents inherit origin Big Implosion t_phys=0+ and unit family t_phys=t_B tau_B, t_B>0; therefore no new HI clock map is admitted."
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "HU finite perturbation quotient V_b",
+    "I finite-relational background branch I_b",
+    "shared inherited Big-Implosion clock family t_phys=t_B tau_B",
+    "no new dimensional constant or frame",
+    "HU and I gauge contracts retained without mixing"
+  ],
+  "methods": [
+    "exact parent hash/type verification",
+    "branch/domain compatibility audit",
+    "HI-WL-001 exact manufactured composition gate",
+    "HI-WL-002 exact manufactured covariance gate",
+    "manufactured HI reference check",
+    "inherited HU linear-transfer implementation witness",
+    "actual parent-driven immutable composite construction",
+    "semantic countermodels/ablations",
+    "convergence/restart",
+    "independent reconstruction",
+    "clean checkout replay"
+  ],
+  "tolerances": [
+    "inherited HU implementation witness tolerance=1e-10",
+    "exact parent and replay hashes byte-identical",
+    "symbolic parent-law equality exact",
+    "PSD/symmetry numerical checks=1e-10 where numerical witness applies"
+  ],
+  "stopping_rules": [
+    "parent hash mismatch",
+    "branch/domain mismatch",
+    "clock contract mismatch",
+    "any HU or I mutation",
+    "retuning appears",
+    "unresolved __BIND token at materialization",
+    "public/observed target input",
+    "covariance gate failure",
+    "clean replay mismatch"
+  ],
+  "expected_invariants": [
+    "both parent hashes unchanged",
+    "HU operator law/domain/codomain unchanged",
+    "I geometry/clock law unchanged",
+    "branch identity preserved",
+    "HU constraint quotient preserved",
+    "Sigma_out=U Sigma_in U^T",
+    "PSD preserved for PSD input",
+    "no public inputs"
+  ],
+  "tests": [
+    "HI-WL-001",
+    "HI-WL-002",
+    "manufactured HI reference check",
+    "parent-hash check",
+    "composition/reconstruction test",
+    "independent instantiation",
+    "semantic countermodels",
+    "ablations",
+    "convergence/restart",
+    "clean replay"
+  ],
+  "gates": [
+    "exact parent hashes",
+    "no retune of HU or I",
+    "operator-domain compatibility",
+    "independent reconstruction"
+  ],
+  "falsifiers": [
+    "HU parent hash mismatch",
+    "I parent hash mismatch",
+    "branch/domain mismatch",
+    "HU operator or coefficient mutation",
+    "I background-law mutation",
+    "new background-dependent transfer coefficient",
+    "retuning or public/observed target use",
+    "covariance asymmetry or PSD failure for PSD input",
+    "clean replay mismatch"
+  ],
+  "claim_boundary": "MINIMAL_SPINE RFC linear transfer realization: exact immutable branch-compatible HU-on-I instantiation, inherited mode/gauge/clock contracts and covariance propagation. No unique branch, new transfer coefficient, realized primordial spectrum, finite-volume field, observational transfer table, or empirical agreement.",
+  "independent_verifier_design": "Without reading GATE_RESULTS or CLOSEOUT, re-hash H_HU_to_HI and H_I_to_HI, reconstruct the shared-branch compatibility rule and immutable composite from FROZEN_DERIVATION_SPEC, verify both parent laws/hashes are unchanged, verify inherited HU witness and covariance pushforward independently, reject any public input/retune, and compare final H_HI_to_J artifact hash/content.",
+  "allowed_implementation_only_corrections": [
+    "syntax/path/serialization/evaluator-backend/solver plumbing only; preserve failed attempt and rerun full frozen matrix; no parent, law, branch rule, coefficients, tests, thresholds, gates, falsifiers or claim-boundary changes"
+  ]
 }

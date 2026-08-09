@@ -1,10 +1,100 @@
 {
-  "run_id": "",
-  "exact_parents": [],
+  "schema_version": "2.1",
+  "run_id": "HI-190-20260809T221124Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/HU/frozen/H_HU_to_HI.json",
+      "sha256": "159d1311b26e03572f8485b579e354d031e3cab1fd59416bfad76ddd93186204",
+      "bytes": 8934,
+      "classification": "DIRECT_PARENT"
+    },
+    {
+      "path": "modules/I/frozen/H_I_to_HI.json",
+      "sha256": "d7245adc6699ff0c300b622340cdeb51cf00c87bcd17443cdba9b612ffdb12cd",
+      "bytes": 93977,
+      "classification": "DIRECT_PARENT"
+    }
+  ],
   "admitted_sources": [],
-  "imports": [],
-  "files": [],
+  "imports": [
+    "json",
+    "hashlib",
+    "pathlib",
+    "numpy",
+    "scipy"
+  ],
+  "files": [
+    {
+      "path": "recipes/HI/recipe.json",
+      "sha256": "a75977151e79de588728817b6e4871c962192481067c1364fd5d260485f28493",
+      "bytes": 3696,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "recipes/HI/WORK_ORDER.md",
+      "sha256": "22d80795ec737313fc37fc30e42330208f88cd70b949fda58f9c3a74ab37ee8f",
+      "bytes": 3079,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "recipes/HI/gates.json",
+      "sha256": "c820ec7370f8672b399bfacc90f2fb67136ed4cf1e67c70610bfb05d6adabc43",
+      "bytes": 408,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "modules/HI/spec.json",
+      "sha256": "9533bf859961ec26cdc69e39fc6febc64ba1d184a6fe89b126aa2b00143bd21a",
+      "bytes": 860,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "docs/08_EVIDENCE_AND_CLAIM_STATES.md",
+      "sha256": "cc8fb19ce3ca697d90e9ab4e09f4cd9938cea0fb9f0296a3e48c43f65024a6fb",
+      "bytes": 1076,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+      "bytes": 1101,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "docs/10_EXECUTION_PROTOCOL.md",
+      "sha256": "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d",
+      "bytes": 1091,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "theory/DERIVATION_ATLAS.md",
+      "sha256": "a5cdfb7e9d0c410a731f84b6465fcdb2005515e3475d2e875bd00f0894866875",
+      "bytes": 4280,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "config/WOLFRAM_EXPECTATIONS.json",
+      "sha256": "4e0be6b5a15f47cfe2982e398f174826f50b90b4cf32d5e112c6a30541becde2",
+      "bytes": 7842,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "config/required_output_contracts.json",
+      "sha256": "b592fada9bad789059dfb7266bc74c24dda9f21be81ba482e9743828a40edeff",
+      "bytes": 8076,
+      "classification": "AUTHORITY"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "sha256": "7e4b8e68e0ae93195c554a563d927f0237a33e5ca439301d339b3ae96c096cba",
+      "bytes": 76,
+      "classification": "AUTHORITY"
+    }
+  ],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION"
 }

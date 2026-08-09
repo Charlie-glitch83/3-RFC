@@ -1,0 +1,89 @@
+{
+  "schema_version": "2.1",
+  "run_id": "HI-190-20260809T221124Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "fidelity": "MINIMAL_SPINE",
+  "generation_mode": "GENERATION_SEALED",
+  "parents": {
+    "HU": {
+      "path": "modules/HU/frozen/H_HU_to_HI.json",
+      "sha256": "159d1311b26e03572f8485b579e354d031e3cab1fd59416bfad76ddd93186204",
+      "bytes": 8934,
+      "classification": "DIRECT_PARENT"
+    },
+    "I": {
+      "path": "modules/I/frozen/H_I_to_HI.json",
+      "sha256": "d7245adc6699ff0c300b622340cdeb51cf00c87bcd17443cdba9b612ffdb12cd",
+      "bytes": 93977,
+      "classification": "DIRECT_PARENT"
+    }
+  },
+  "triadic_descent": {
+    "CIF": "the exact frozen H_HU_to_HI operator family together with the exact frozen H_I_to_HI realized-background branch family",
+    "QV": "form only branch/domain-compatible immutable pairings; reject mismatched branches/domains and do not alter either parent",
+    "RFL": "freeze the branch-indexed HU-on-I composite, inherited modes/gauges/clocks, covariance pushforward law, ancestry and hashes for J"
+  },
+  "candidate_class": "shared-branch immutable HU-on-I fiber-product family over exact inherited G branch identity and clock contract",
+  "compatibility_rule": "A HI branch exists only when the same inherited G branch/source coordinates satisfy both frozen parent contracts, the HU perturbation lies in V_b=ker(C_b)/im(G_b), and the I background branch carries that same branch identity and inherited Big-Implosion clock family. No type coercion, branch shopping, or observed-data selection is allowed.",
+  "laws": {
+    "immutable_composite": "For each compatible branch b, HI_b := (I_b, U_HU[b;eta2,eta1]). Application to an admissible perturbation is deltaX_out = U_HU[b;eta2,eta1] deltaX_in while I_b is carried unchanged as realized background context. No background matrix, coefficient rescaling, or reparameterization is introduced unless already present in an exact parent.",
+    "mode_eigenstructure": "The physical perturbation modes/eigenstructure are exactly those of the frozen HU generator/propagator on V_b, now indexed by the compatible frozen I branch. HI introduces no new eigenvalue or mode selection.",
+    "gauge_frame_mapping": "The HU quotient V_b=ker(C_b)/im(G_b), constraint projector and G clock contract remain unchanged. I contributes its realized finite-relational geometry and constant graph-gauge quotient as background context; HI does not identify or mix distinct gauge directions beyond exact shared ancestry.",
+    "covariance": "For perturbation covariance Sigma_delta on V_b, Sigma_delta,out = U_HU Sigma_delta,in U_HU^T. I background covariance Sigma_I remains attached unchanged. For any source-owned joint cross-covariance C_deltaI, the exact immutable product map gives C_out=U_HU C_deltaI and joint covariance [[U Sigma_delta U^T, U C],[C^T U^T, Sigma_I]]; HI neither sets unresolved cross-covariance to zero nor invents one.",
+    "branch_policy": "Retain every parent-compatible branch. If exact parents do not select a unique branch, HI remains the complete lawful branch family.",
+    "clock": "Both parents inherit origin Big Implosion t_phys=0+ and unit family t_phys=t_B tau_B, t_B>0; therefore no new HI clock map is admitted."
+  },
+  "numerical_witness": {
+    "generator": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "times": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "initial_state": [
+      0.5,
+      0.5
+    ],
+    "initial_covariance": [
+      [
+        0.01,
+        0.0
+      ],
+      [
+        0.0,
+        0.01
+      ]
+    ],
+    "tolerance": 1e-10,
+    "scope": "IMPLEMENTATION_WITNESS_ONLY_INHERITED_UNCHANGED_FROM_HU_ON_CLOCK_POINTS_PRESENT_IN_FROZEN_I_WITNESS; NOT A PHYSICAL BRANCH SELECTOR OR RETUNED COEFFICIENT SET"
+  },
+  "required_outputs": [
+    "instantiated transfer system",
+    "mode/eigenstructure",
+    "gauge/frame mapping",
+    "error/covariance propagation",
+    "H_HI_to_J"
+  ],
+  "falsifiers": [
+    "HU parent hash mismatch",
+    "I parent hash mismatch",
+    "branch/domain mismatch",
+    "HU operator or coefficient mutation",
+    "I background-law mutation",
+    "new background-dependent transfer coefficient",
+    "retuning or public/observed target use",
+    "covariance asymmetry or PSD failure for PSD input",
+    "clean replay mismatch"
+  ],
+  "claim_boundary": "MINIMAL_SPINE RFC linear transfer realization: exact immutable branch-compatible HU-on-I instantiation, inherited mode/gauge/clock contracts and covariance propagation. No unique branch, new transfer coefficient, realized primordial spectrum, finite-volume field, observational transfer table, or empirical agreement."
+}
