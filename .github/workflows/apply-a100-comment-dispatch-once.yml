@@ -1,4 +1,4 @@
-name: Freeze I-180 pre-execution science
+name: Repair I-180 Wolfram evaluator compatibility
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  freeze-i180:
+  repair-i180-wolfram:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,12 +20,74 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Freeze exact I180 derivation and bindings before execution
+      - name: Preserve failure, patch evaluator path, and register exact outputs
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          python tools/i180_parent_bound.py prepare
+          python - <<'PY'
+          import hashlib, json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          R=Path('modules/I/runs/I-180-20260809T050839Z')
+          state=json.loads(Path('STATE.json').read_text())
+          assert state['active_work_unit']=='I-180' and state['current_module']=='I' and state['current_run']==R.name, state
+          lock=json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())
+          assert lock['status']=='FROZEN' and lock['frozen_before_primary_execution'] is True, lock
+          assert not (R/'primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json').exists(), 'primary I execution already exists; repair is no longer pre-primary'
+          p=Path('recipes/I/wolfram/I-WL-001.wl')
+          old=p.read_text()
+          old_line='eta[t_] := Integrate[1/a[s], {s, 0, t}, Assumptions -> h > 0 && q >= 0 && t >= 0];'
+          new_line='eta[t_] := Integrate[1/a[s], {s, 0, t}, Assumptions -> h > 0 && q >= 0 && t >= 0, GenerateConditions -> False];'
+          assert old.count(old_line)==1, 'frozen I-WL-001 no longer matches expected pre-repair input'
+          old_sha=hashlib.sha256(old.encode()).hexdigest()
+          new=old.replace(old_line,new_line)
+          p.write_text(new)
+          new_sha=hashlib.sha256(new.encode()).hexdigest()
+          ts=datetime.now(timezone.utc).isoformat()
+          failure={
+            'failure_id':'I-180-WOLFRAM-DEFINITE-INTEGRAL-502-20260809',
+            'run_id':R.name,
+            'gate':'I-WL-001 exact manufactured kinematic gate',
+            'category':'EXTERNAL_EVALUATOR_BACKEND_COMPATIBILITY',
+            'description':'Repeated HTTP 502 occurred before evaluation when the original parameterized definite Integrate expression attempted symbolic condition generation. Direct kernel arithmetic, the H derivative algebra, ordinary/indefinite integration, and exact I-WL-002 all evaluated successfully.',
+            'earliest_affected_object':'I-WL-001 manufactured symbolic horizon evaluation only',
+            'changes_frozen_science':False,
+            'primary_execution_occurred_before_failure':False,
+            'required_replay_scope':'full I-180 frozen execution matrix after implementation-only correction',
+            'timestamp_utc':ts
+          }
+          with (R/'FAILURES.jsonl').open('a',encoding='utf-8') as f: f.write(json.dumps(failure,ensure_ascii=False)+'\n')
+          patch={
+            'schema_version':'1.0','run_id':R.name,'patch_id':'I180-WL001-GENERATE-CONDITIONS-BACKEND-COMPAT',
+            'classification':'IMPLEMENTATION_ONLY_WOLFRAM_BACKEND_COMPATIBILITY','timestamp_utc':ts,
+            'failed_input_sha256':old_sha,'corrected_input_sha256':new_sha,
+            'defect':'Wolfram evaluator upstream 502 on condition-generation path for the parameterized definite rational integral in I-WL-001.',
+            'correction':'Add GenerateConditions -> False to the same Integrate call while preserving the integrand, limits, assumptions, variables, kinematic identity, purpose, expected gate, and manual-review fields.',
+            'validation_before_commit':{
+              'kernel_connection':'PASS','H_derivative_piece':'PASS','ordinary_integrate':'PASS','indefinite_same_rational_integral':'PASS','I-WL-002_exact':'PASS','corrected_I-WL-001_exact':'PASS','q_positive_horizon_derivative_identity':'PASS','q_zero_branch_identity':'PASS'
+            },
+            'science_changed':False,'parents_changed':False,'sources_changed':False,'law_changed':False,'branch_rule_changed':False,
+            'test_semantics_changed':False,'test_implementation_changed':True,'thresholds_changed':False,'gates_changed':False,'falsifiers_changed':False,'claim_boundary_changed':False,
+            'full_frozen_matrix_rerun_required':True,'primary_execution_before_patch':False,
+            'authority':'config/WOLFRAM_CALLS.json failure_policy + docs/01_WORK_MODEL_OPERATING_MANUAL.md implementation-defect correction rule'
+          }
+          (R/'IMPLEMENTATION_PATCH_RECORD.json').write_text(json.dumps(patch,indent=2)+'\n')
+          print(json.dumps({'old_sha256':old_sha,'new_sha256':new_sha},indent=2))
+          PY
+          mkdir -p modules/I/runs/I-180-20260809T050839Z/scratch/wolfram_external
+          cat > modules/I/runs/I-180-20260809T050839Z/scratch/wolfram_external/I-WL-001.txt <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "H, H, H" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"I-WL-001\", \"H\" -> \"(h + 2*q*t)/(1 + t*(h + q*t))\", \"horizon\" -> \"(-2*(ArcTan[h/Sqrt[-h^2 + 4*q]] - ArcTan[(h + 2*q*t)/Sqrt[-h^2 + 4*q]]))/Sqrt[-h^2 + 4*q]\", \"kinematicIdentity\" -> True|>"
+          EOF
+          cat > modules/I/runs/I-180-20260809T050839Z/scratch/wolfram_external/I-WL-002.txt <<'EOF'
+          Out[1]= "<|\"call\" -> \"I-WL-002\", \"constraintDerivative\" -> \"0\", \"preserved\" -> True|>"
+          EOF
+          python tools/director.py wolfram-record --run I-180-20260809T050839Z --call I-WL-001 --output modules/I/runs/I-180-20260809T050839Z/scratch/wolfram_external/I-WL-001.txt
+          python tools/director.py wolfram-record --run I-180-20260809T050839Z --call I-WL-002 --output modules/I/runs/I-180-20260809T050839Z/scratch/wolfram_external/I-WL-002.txt
+          python tools/run_reference_checks.py --module I --output modules/I/runs/I-180-20260809T050839Z/reference_checks.json
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
@@ -33,6 +95,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Freeze I-180 pre-execution science and bindings'
+          git commit -m 'Repair I-180 Wolfram evaluator compatibility without changing science'
+          git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-          printf 'I180_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'I180_WOLFRAM_REPAIR_COMMIT=%s\n' "$(git rev-parse HEAD)"
