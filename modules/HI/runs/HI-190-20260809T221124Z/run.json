@@ -1,0 +1,10 @@
+{
+  "run_id": "HI-190-20260809T221124Z",
+  "module": "HI",
+  "task_id": "HI-190",
+  "status": "CREATED",
+  "created_utc": "2026-08-09T22:11:24.114353+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "modules/HI/runs/HI-190-20260809T221124Z"
+}

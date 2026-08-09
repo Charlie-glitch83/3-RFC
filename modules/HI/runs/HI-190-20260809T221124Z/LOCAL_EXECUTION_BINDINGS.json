@@ -1,0 +1,15 @@
+{
+  "module": "HI",
+  "bindings": [
+    {
+      "solver": "linear_transfer",
+      "template": "configured_runs/templates/HI_instantiated_transfer.template.json",
+      "purpose": "Instantiate the frozen transfer operator on the exact realized background.",
+      "copy_command": "python tools/director.py solver-copy --module HI --solver linear_transfer --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/HI_instantiated_transfer.json --output-dir <RUN_DIR>/solver_outputs/linear_transfer",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/HI_instantiated_transfer.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/HI_instantiated_transfer.template.json --binding-sheet <RUN_DIR>/binding_sheets/HI_instantiated_transfer.bindings.json --output <RUN_DIR>/solver_configs/HI_instantiated_transfer.json"
+    }
+  ]
+}

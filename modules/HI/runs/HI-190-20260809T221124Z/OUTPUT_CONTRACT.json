@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "run_id": "HI-190-20260809T221124Z",
+  "module": "HI",
+  "status": "DRAFT",
+  "required_outputs": [
+    {
+      "name": "instantiated transfer system",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "mode/eigenstructure",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "gauge/frame mapping",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "error/covariance propagation",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "H_HI_to_J",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    }
+  ],
+  "child_bindings": {},
+  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+}

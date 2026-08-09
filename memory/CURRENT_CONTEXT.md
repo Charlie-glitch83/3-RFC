@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-09T14:50:12.280863+00:00
+Generated: 2026-08-09T22:11:28.341987+00:00
 
 ## Project truth
 
@@ -64,11 +64,10 @@ Instantiate the frozen universal transfer operator on the realized background wi
 
 - admitted sources: 85
 - frozen artifacts: 30
-- indexed runs: 23
+- indexed runs: 24
 
 ## Recent runs
 
-- C-125-20260808T063010Z: BLOCKED (C)
 - C-125-20260808T063500Z: PASS (C)
 - D-135-20260808T163243Z: PASS (D)
 - E-145-20260808T164410Z: PASS (E)
@@ -76,6 +75,7 @@ Instantiate the frozen universal transfer operator on the realized background wi
 - G-160-20260809T025252Z: PASS (G)
 - HU-170-20260809T045528Z: PASS (HU)
 - I-180-20260809T050839Z: PASS (I)
+- HI-190-20260809T221124Z: CREATED (HI)
 
 ## Recent decisions
 
