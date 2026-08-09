@@ -1,3 +1,3 @@
 authorized_by_user=2026-08-08
-scope=execute_close_D135_activate_E145
-synchronize=g160-verified-closeout-advance-rerun-20260808
+scope=start_HU170_from_root_README_exactly
+synchronize=hu170-readme-startup-20260808
