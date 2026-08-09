@@ -98,7 +98,7 @@ python tools/f155_parent_bound.py finalize --run "$R" --replay-run "/tmp/f155-cl
 python tools/scientific_completion_guard.py --run "$R"
 python tools/rfc.py doctor
 python tools/director.py doctor
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -v 2>&1 | tee "$R/UNITTEST_LOG.txt"
 python tools/rfc.py firewall-scan
 python tools/rfc.py close-run --run-id "$RUN_ID" --result PASS --closeout "$R/CLOSEOUT.md"
 python tools/rfc.py promote-module F --to FORMALIZED --fidelity PRODUCTION --evidence "$R/FROZEN_DERIVATION_SPEC.json"
