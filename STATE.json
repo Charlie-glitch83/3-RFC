@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "I-180",
   "current_module": "I",
-  "current_run": null,
+  "current_run": "I-180-20260809T050839Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -874,7 +874,7 @@
     "I": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "I-180-20260809T050839Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -1016,7 +1016,7 @@
     }
   },
   "last_verified_commit": "26c08a68607721e84da1c83bb8d6e098fdeb2304",
-  "last_updated_utc": "2026-08-09T05:07:10.061522+00:00",
+  "last_updated_utc": "2026-08-09T05:08:39.052751+00:00",
   "strongest_supported_claim": "HU-170 derives and freezes the branch-indexed, constraint-preserving universal linear tangent propagator of the exact G recombination/radiation-surface dynamics, with explicit domain/codomain, gauge/frame contract, covariance pushforward, ancestry and immutable H_HU_to_HI interface, without realized I geometry or public transfer data.",
   "strongest_unsupported_claim": "No realized geometry/expansion history, unique physical transfer coefficients, public Boltzmann-table equivalence, final spectra, observed CMB/LSS transfer function, or empirical agreement is claimed.",
   "last_verified_branch": "agent/frontier-050-execution",

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "run_id": "I-180-20260809T050839Z",
+  "module": "I",
+  "status": "DRAFT",
+  "required_outputs": [
+    {
+      "name": "metric/background state",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "expansion and clock histories",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "horizons and distances",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "constraint and conservation ledgers",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "covariance",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "H_I_to_HI",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    }
+  ],
+  "child_bindings": {},
+  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+}
