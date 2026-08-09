@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   repair-j200-wolfram:
-    if: github.event.pull_request.number == 74
+    if: github.event.pull_request.number == 76
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
