@@ -23,6 +23,10 @@ env=load(RUN/'ENVIRONMENT.json')
 env['status']='FINAL'
 env['hidden_defaults_audited']=True
 dump(RUN/'ENVIRONMENT.json',env)
+replay=load(RUN/'REPLAY_RECORD.json')
+if replay.get('pass') is True and replay.get('clean_checkout') is True and replay.get('artifact_hashes_match') is True:
+    replay['result']='PASS'
+dump(RUN/'REPLAY_RECORD.json',replay)
 outputs=[]
 for p in sorted(RUN.rglob('*')):
     if not p.is_file() or 'scratch' in p.parts or p.name=='GENERATED_OUTPUT_MANIFEST.json': continue
