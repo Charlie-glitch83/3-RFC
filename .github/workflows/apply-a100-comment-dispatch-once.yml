@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Correct frozen-law references and execute complete HI-190 matrix
+      - name: Repair implementation-only HI plumbing and rerun complete frozen matrix
         shell: bash
         run: |
           set -euo pipefail
@@ -28,6 +28,7 @@ jobs:
           RUN='HI-190-20260809T152136Z'; R="modules/HI/runs/$RUN"
           python - <<'PY'
           import json
+          from datetime import datetime, timezone
           from pathlib import Path
           run='HI-190-20260809T152136Z'; r=Path('modules/HI/runs')/run; s=json.load(open('STATE.json'))
           assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run']==run,s
@@ -35,19 +36,29 @@ jobs:
           assert lock['status']=='FROZEN' and lock.get('frozen_before_primary_execution') is True
           assert 'typed fiber-product/association' in spec['laws']['instantiation']
           assert 'eta_b(t2)' not in json.dumps(spec) and 'eta_b(t2)' not in json.dumps(lock)
-          assert not (r/'primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json').exists()
-          p=Path('tools/hi190_execute_locked.py'); t=p.read_text()
-          old=t
+          assert not (r/'primary').exists() or not any((r/'primary').iterdir()),'primary execution already exists; implementation-only pre-primary repair no longer legal'
+          p=Path('tools/hi190_execute_locked.py'); t=p.read_text(); before=t
+          # Provenance vocabulary only: same frozen HU values and exact origin hash.
+          t=t.replace("origin_kind='FROZEN_PARENT_DERIVATION'","origin_kind='INTERNAL_DERIVATION'")
+          # Evidence-reference indices only: point generated records at the already-frozen intended law strings.
           t=t.replace("'instantiated_transfer_system':{'law':lock['equations_and_laws'][0]", "'instantiated_transfer_system':{'law':lock['equations_and_laws'][1]")
           t=t.replace("'mode_eigenstructure':{'law':lock['equations_and_laws'][3]", "'mode_eigenstructure':{'law':lock['equations_and_laws'][2]")
           t=t.replace("'error_covariance_propagation':{'law':lock['equations_and_laws'][4]", "'error_covariance_propagation':{'law':lock['equations_and_laws'][3]")
-          assert t!=old,'expected pre-primary law-index corrections not found'
+          assert t!=before,'expected HI implementation-only corrections not found'
+          assert "origin_kind='INTERNAL_DERIVATION'" in t
           p.write_text(t)
+          ts=datetime.now(timezone.utc).isoformat()
+          fail={'failure_id':'HI-190-BINDING-ORIGIN-KIND-VOCABULARY-20260809','run_id':run,'gate':'solver materialization provenance validation','category':'IMPLEMENTATION_ONLY_PROVENANCE_VOCABULARY','description':'The corrected frozen HI science passed both Wolfram gates and the manufactured reference, then materialization stopped before solver/primary execution because the binding helper used noncanonical origin_kind FROZEN_PARENT_DERIVATION. The exact values, HU origin path/hash, derivation object, parents, law, thresholds, gates, falsifiers and claim boundary were unchanged.','earliest_affected_object':'binding_sheets/HI_instantiated_transfer.bindings.json origin_kind fields','changes_frozen_science':False,'primary_execution_occurred_before_failure':False,'required_replay_scope':'full HI-190 frozen matrix after implementation-only provenance vocabulary correction','timestamp_utc':ts}
+          with (r/'FAILURES.jsonl').open('a',encoding='utf-8') as f:
+              existing=(r/'FAILURES.jsonl').read_text(encoding='utf-8') if (r/'FAILURES.jsonl').exists() else ''
+              if fail['failure_id'] not in existing: f.write(json.dumps(fail,ensure_ascii=False)+'\n')
+          patch={'schema_version':'1.0','run_id':run,'patch_id':'HI190-PREPRIMARY-IMPLEMENTATION-PLUMBING-20260809','classification':'IMPLEMENTATION_ONLY','timestamp_utc':ts,'changes':['binding origin_kind FROZEN_PARENT_DERIVATION -> INTERNAL_DERIVATION','generated evidence law references corrected to frozen list indices 1/2/3'],'parent_bytes_changed':False,'parent_hashes_changed':False,'frozen_spec_changed':False,'law_changed':False,'branch_rule_changed':False,'solver_values_changed':False,'origin_path_changed':False,'origin_sha256_changed':False,'thresholds_changed':False,'gates_changed':False,'falsifiers_changed':False,'claim_boundary_changed':False,'science_changed':False,'primary_execution_before_patch':False,'full_frozen_matrix_rerun_required':True}
+          (r/'IMPLEMENTATION_PATCH_RECORD.json').write_text(json.dumps(patch,indent=2)+'\n')
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/hi190_execute_locked.py
-          git commit -m 'Correct HI-190 frozen-law evidence references before primary execution'
+          git add tools/hi190_execute_locked.py "$R/FAILURES.jsonl" "$R/IMPLEMENTATION_PATCH_RECORD.json"
+          git commit -m 'Repair HI-190 pre-primary implementation plumbing without changing science'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
           bash tools/run_hi190_governed.sh
