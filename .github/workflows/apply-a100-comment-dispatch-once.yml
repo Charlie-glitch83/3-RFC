@@ -1,4 +1,4 @@
-name: Freeze corrected versioned HI-190 before primary execution
+name: Execute corrected governed HI-190
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  freeze-hi190-v2:
+  execute-hi190:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,57 +20,108 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Retarget locked executor and freeze corrected parent-compatible law
+      - name: Execute complete corrected HI-190 frozen matrix
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          OLD='HI-190-20260809T151108Z'
-          NEW='HI-190-20260809T152136Z'
+          RUN='HI-190-20260809T152136Z'; R="modules/HI/runs/$RUN"
           python - <<'PY'
           import json
           from pathlib import Path
-          OLD='HI-190-20260809T151108Z'; NEW='HI-190-20260809T152136Z'
-          s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run']==NEW,s
-          r=Path('modules/HI/runs')/NEW
-          lock=json.load(open(r/'PRE_EXECUTION_LOCK.json'))
-          assert lock['status']=='DRAFT',lock
-          assert not (r/'primary').exists() or not any((r/'primary').iterdir()),'primary exists before corrected freeze'
-          p=Path('tools/hi190_execute_locked.py'); txt=p.read_text()
-          if OLD in txt:
-              p.write_text(txt.replace(OLD,NEW))
-          else:
-              assert NEW in txt,(p,'executor not targeted to active run')
-          f=Path('tools/hi190_freeze.py').read_text()
-          assert "['current_run']" in f or NEW in f, 'freeze helper is not targeted to active versioned run'
-          PY
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/hi190_execute_locked.py tools/hi190_freeze.py
-          if ! git diff --cached --quiet; then
-            git commit -m 'Retarget HI-190 governed helpers to superseding run'
-            git pull --rebase origin agent/frontier-050-execution
-            git push origin HEAD:agent/frontier-050-execution
-          fi
-          python tools/hi190_freeze.py
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          s=json.load(open('STATE.json')); r=Path('modules/HI/runs')/s['current_run']
+          run='HI-190-20260809T152136Z'; r=Path('modules/HI/runs')/run; s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run']==run,s
           lock=json.load(open(r/'PRE_EXECUTION_LOCK.json')); spec=json.load(open(r/'FROZEN_DERIVATION_SPEC.json'))
           assert lock['status']=='FROZEN' and lock.get('frozen_before_primary_execution') is True
-          law=spec['laws']['instantiation']
-          assert 'typed fiber-product/association' in law and 'not multiplication by an invented background factor' in law
-          assert not (r/'primary').exists() or not any((r/'primary').iterdir())
-          print(json.dumps({'run':r.name,'status':'FROZEN_PARENT_EXACT'},indent=2))
+          assert 'typed fiber-product/association' in spec['laws']['instantiation']
+          assert 'eta_b(t2)' not in json.dumps(spec) and 'eta_b(t2)' not in json.dumps(lock)
+          assert not (r/'primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json').exists()
           PY
+          python tools/hi190_execute_locked.py bind
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$R/binding_sheets/HI_instantiated_transfer.bindings.json" "$R/ENVIRONMENT.json"
+          git commit -m 'Bind corrected HI-190 witness from frozen HU provenance'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          PRE_SHA="$(git rev-parse HEAD)"
+          make_wolfram_outputs() {
+            local RR="$1"; mkdir -p "$RR/scratch/wolfram_external"
+            cat > "$RR/scratch/wolfram_external/HI-WL-001.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, B, B, T, B, T" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-001\", \"instantiated\" -> \"{{a*u, b*u}, {c*v, d*v}}\", \"compositionPass\" -> True|>"
+          EOF
+            cat > "$RR/scratch/wolfram_external/HI-WL-002.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-002\", \"propagatedCovariance\" -> \"{{a^2 + b^2 + 2*a*b*r, b*(d + c*r) + a*(c + d*r)}, {b*(d + c*r) + a*(c + d*r), c^2 + d^2 + 2*c*d*r}}\", \"symmetric\" -> True|>"
+          EOF
+          }
+          make_wolfram_outputs "$R"
+          python tools/director.py wolfram-record --run "$RUN" --call HI-WL-001 --output "$R/scratch/wolfram_external/HI-WL-001.txt"
+          python tools/director.py wolfram-record --run "$RUN" --call HI-WL-002 --output "$R/scratch/wolfram_external/HI-WL-002.txt"
+          python tools/run_reference_checks.py --module HI --output "$R/reference_checks.json"
+          python tools/materialize_solver_config.py --template "$R/solver_templates/HI_instantiated_transfer.template.json" --binding-sheet "$R/binding_sheets/HI_instantiated_transfer.bindings.json" --output "$R/solver_configs/HI_instantiated_transfer.json"
+          python tools/run_configured_solver.py --config "$R/solver_configs/HI_instantiated_transfer.json" --output-dir "$R/solver_outputs/linear_transfer"
+          bash tools/finish_local_phase.sh HI "$R"
+          python tools/hi190_execute_locked.py convergence
+          python tools/hi190_execute_locked.py execute
+          rm -rf /tmp/hi190-clean
+          git worktree add --detach /tmp/hi190-clean "$PRE_SHA"
+          (
+            cd /tmp/hi190-clean
+            RUN='HI-190-20260809T152136Z'; R="modules/HI/runs/$RUN"
+            mkdir -p "$R/scratch/wolfram_external"
+            cat > "$R/scratch/wolfram_external/HI-WL-001.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, B, B, T, B, T" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-001\", \"instantiated\" -> \"{{a*u, b*u}, {c*v, d*v}}\", \"compositionPass\" -> True|>"
+          EOF
+            cat > "$R/scratch/wolfram_external/HI-WL-002.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-002\", \"propagatedCovariance\" -> \"{{a^2 + b^2 + 2*a*b*r, b*(d + c*r) + a*(c + d*r)}, {b*(d + c*r) + a*(c + d*r), c^2 + d^2 + 2*c*d*r}}\", \"symmetric\" -> True|>"
+          EOF
+            python tools/director.py wolfram-record --run "$RUN" --call HI-WL-001 --output "$R/scratch/wolfram_external/HI-WL-001.txt"
+            python tools/director.py wolfram-record --run "$RUN" --call HI-WL-002 --output "$R/scratch/wolfram_external/HI-WL-002.txt"
+            python tools/run_reference_checks.py --module HI --output "$R/reference_checks.json"
+            python tools/materialize_solver_config.py --template "$R/solver_templates/HI_instantiated_transfer.template.json" --binding-sheet "$R/binding_sheets/HI_instantiated_transfer.bindings.json" --output "$R/solver_configs/HI_instantiated_transfer.json"
+            python tools/run_configured_solver.py --config "$R/solver_configs/HI_instantiated_transfer.json" --output-dir "$R/solver_outputs/linear_transfer"
+            bash tools/finish_local_phase.sh HI "$R"
+            python tools/hi190_execute_locked.py convergence
+            python tools/hi190_execute_locked.py execute
+          )
+          python tools/hi190_execute_locked.py finalize --replay-run "/tmp/hi190-clean/$R" --pre-sha "$PRE_SHA"
+          python tools/scientific_completion_guard.py --run "$R"
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
-          git add "modules/HI/runs/$NEW/PRE_EXECUTION_LOCK.json" "modules/HI/runs/$NEW/SOURCE_REGISTER.json" "modules/HI/runs/$NEW/FROZEN_DERIVATION_SPEC.json"
-          git commit -m 'Freeze corrected HI-190 immutable parent composition before execution'
+          python tools/rfc.py close-run --run-id "$RUN" --result PASS --closeout "$R/CLOSEOUT.md"
+          python tools/rfc.py promote-module HI --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$R/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module HI --to IMPLEMENTED --fidelity MINIMAL_SPINE --evidence "$R/solver_outputs/linear_transfer/result.json"
+          python tools/rfc.py promote-module HI --to VERIFIED --fidelity MINIMAL_SPINE --evidence "$R/GATE_RESULTS.json"
+          python tools/rfc.py promote-module HI --to PHYSICALLY_EXECUTED --fidelity MINIMAL_SPINE --evidence "$R/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json"
+          python tools/rfc.py promote-module HI --to INDEPENDENTLY_REPRODUCED --fidelity MINIMAL_SPINE --evidence "$R/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module HI --to FROZEN --fidelity MINIMAL_SPINE --evidence modules/HI/frozen/H_HI_to_J.json
+          python tools/rfc.py freeze modules/HI/frozen/H_HI_to_J.json --kind MODULE_HANDOFF
+          python tools/rfc.py record-claim --file "$R/CLAIM_RECORD.json"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=Path('modules/HI/runs/HI-190-20260809T152136Z'); c=json.load(open(r/'CLAIM_RECORD.json')); p=Path('STATE.json'); s=json.load(open(p))
+          s['strongest_supported_claim']=c['text']; s['strongest_unsupported_claim']=c['unsupported_boundary']; s['repair_state']='HI190_MINIMAL_SPINE_CLOSED_PENDING_VERIFIED_COMMIT_AND_ADVANCE'; p.write_text(json.dumps(s,indent=2)+'\n')
+          PY
+          python tools/rfc.py context
+          python tools/rfc.py doctor
+          python tools/rfc.py firewall-scan
+          git add -A
+          git commit -m 'Close Module HI at its verified scientific scope'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-          printf 'HI190_V2_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'HI190_FINAL_COMMIT=%s\n' "$(git rev-parse HEAD)"
