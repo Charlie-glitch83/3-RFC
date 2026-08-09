@@ -1,4 +1,4 @@
-name: Freeze G-160 from owner comment once
+name: Execute G-160 from owner comment once
 
 on:
   issue_comment:
@@ -8,12 +8,12 @@ permissions:
   contents: write
 
 jobs:
-  freeze-g160:
+  execute-g160:
     if: >-
       github.event.issue.number == 74 &&
       github.event.issue.pull_request &&
       github.event.comment.user.login == 'Charlie-glitch83' &&
-      github.event.comment.body == '/freeze-g160-preexecution-20260808'
+      github.event.comment.body == '/execute-g160-frozen-20260808'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,6 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Freeze exact G160 pre-execution state
+      - name: Execute exact frozen G160 packet
         shell: bash
-        run: bash tools/run_g160_prepare.sh
+        run: bash tools/run_g160_governed.sh
