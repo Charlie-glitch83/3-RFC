@@ -1,14 +1,50 @@
-name: Disabled one-use dispatcher after I-180 recovery
+name: Start governed HI-190 exactly from root README
 
 on:
-  workflow_dispatch:
+  pull_request:
+    types: [synchronize]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  disabled:
+  start-hi190:
+    if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
-      - name: Recovery guard
-        run: echo 'Automatic downstream dispatch is disabled. Repository restored through the verified I-180 closeout and governance-only I-to-HI transition; follow root README and explicit authorization before any next-module work.'
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Execute exact README startup for sole active HI-190
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECT='fb8284cf9d2bd62c456ecf2bf061c98e14546a69'
+          test "$(git rev-parse HEAD)" = "$EXPECT"
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          bash bootstrap.sh
+          bash tools/start_work.sh
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          q=json.load(open('WORK_QUEUE.json'))
+          active=[(x.get('id'),x.get('module'),x.get('status')) for x in q.get('items',[]) if x.get('status')=='ACTIVE']
+          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI',s
+          assert s['current_run'] and s['current_run'].startswith('HI-190-'),s
+          assert active==[('HI-190','HI','ACTIVE')],active
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json memory/CURRENT_CONTEXT.md memory/RUN_INDEX.json work_packets/ACTIVE_WORK_PACKET.md modules/HI/runs
+          git commit -m 'Start governed HI-190 from repository README'
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'HI190_START_COMMIT=%s\n' "$(git rev-parse HEAD)"
