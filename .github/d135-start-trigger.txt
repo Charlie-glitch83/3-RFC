@@ -1,3 +1,3 @@
 authorized_by_user=2026-08-08
-scope=start_I180_from_root_README_exactly
-synchronize=i180-readme-startup-20260808
+scope=freeze_I180_preexecution_exactly
+synchronize=i180-preexecution-freeze-20260808
