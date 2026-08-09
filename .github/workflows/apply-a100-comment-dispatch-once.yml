@@ -1,4 +1,4 @@
-name: Start governed J-200 exactly from root README
+name: Freeze governed J-200 pre-execution state
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  start-j200:
+  freeze-j200:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,29 +20,77 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Run exact repository startup
+      - name: Freeze exact J parent, authority and execution rules
         shell: bash
         run: |
           set -euo pipefail
-          EXPECT='c4dbf5231f558744dc11e6bc6410400beeca157a'
+          EXPECT='5b6266bbe43b4a08a5ad5a628408889a5b04a501'
           test "$(git rev-parse HEAD)" = "$EXPECT"
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          bash bootstrap.sh
-          bash tools/start_work.sh
           python - <<'PY'
-          import json
-          s=json.load(open('STATE.json'))
-          q=json.load(open('WORK_QUEUE.json'))
-          active=[x for x in q['items'] if x.get('status')=='ACTIVE']
-          assert s['active_work_unit']=='J-200',s
-          assert s['current_module']=='J',s
-          assert s['current_run'] and s['current_run'].startswith('J-200-'),s
-          assert len(active)==1 and active[0]['id']=='J-200',active
-          print('RUN_ID='+s['current_run'])
+          import hashlib,json,platform,sys
+          from pathlib import Path
+          from datetime import datetime,timezone
+          ROOT=Path('.'); RUN='J-200-20260809T225756Z'; R=ROOT/'modules/J/runs'/RUN
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          def rec(path,classification):
+              p=ROOT/path
+              return {'path':path,'sha256':sha(p),'bytes':p.stat().st_size,'classification':classification}
+          parent_path='modules/HI/frozen/H_HI_to_J.json'
+          parent_sha=sha(parent_path)
+          hi_contract=json.load(open('modules/HI/runs/HI-190-20260809T221124Z/OUTPUT_CONTRACT.json'))
+          assert hi_contract['child_bindings']['J_parent']['sha256']==parent_sha,(hi_contract['child_bindings']['J_parent']['sha256'],parent_sha)
+          authority_paths=[
+            'recipes/J/recipe.json','recipes/J/WORK_ORDER.md','recipes/J/gates.json','recipes/J/MODEL_PROMPT.md','modules/J/spec.json',
+            'docs/08_EVIDENCE_AND_CLAIM_STATES.md','docs/09_DERIVATION_PROTOCOL.md','docs/10_EXECUTION_PROTOCOL.md','theory/DERIVATION_ATLAS.md',
+            'config/WOLFRAM_EXPECTATIONS.json','config/required_output_contracts.json','requirements-lock.txt']
+          files=[rec(p,'AUTHORITY') for p in authority_paths]
+          source={
+            'schema_version':'2.1','run_id':RUN,'status':'FROZEN_BEFORE_PRIMARY_EXECUTION','generation_mode':'GENERATION_SEALED',
+            'exact_parents':[rec(parent_path,'DIRECT_PARENT')], 'admitted_sources':[],
+            'imports':['json','hashlib','pathlib','numpy','scipy'], 'files':files,'urls':[],'constants':[],
+            'public_data_declaration':'NONE','network_policy':'DISABLED_DURING_GENERATION'}
+          (R/'SOURCE_REGISTER.json').write_text(json.dumps(source,indent=2)+'\n')
+          parent=json.load(open(parent_path))
+          seed_material=(parent_sha+'|'+RUN+'|J-fourier-field-v1').encode()
+          frozen_seed=int(hashlib.sha256(seed_material).hexdigest()[:16],16) % (2**32)
+          laws=[
+            parent['error_covariance_propagation']['law'],
+            'Any realized J covariance must be an exact source-owned PSD member of the HI branch-indexed covariance/uncertainty family on the inherited physical quotient; a manufactured representative matrix may test machinery but may not become the physical parent.',
+            'For an admitted realized covariance Sigma_J, factorization/sample generation must satisfy Sigma_J=L L^dagger and delta=L xi with the frozen target-blind seed; covariance PSD and reconstruction are componentwise gates.',
+            'Finite-volume Fourier realization must satisfy delta(-k)=Conjugate[delta(k)] with self-conjugate modes real, preserving the single frozen seed and branch identity.',
+            'Linear spectra/growth are derived from the admitted HI transfer/background branch and realized Sigma_J without fitted observational targets or coefficient retuning.'
+          ]
+          lock={
+            'schema_version':'2.1','run_id':RUN,'status':'FROZEN','frozen_utc':datetime.now(timezone.utc).isoformat(),'frozen_before_primary_execution':True,
+            'authority_hashes':[x['sha256'] for x in files], 'parent_hashes':[parent_sha], 'definition_hashes':[sha('recipes/J/recipe.json'),sha(parent_path)],
+            'candidate_classes':['exact HI-parent-owned PSD covariance realizations with branch identity attached','target-blind finite-volume phase/field realizations conditioned only on an admitted J covariance and the frozen internal seed'],
+            'equations_and_laws':laws,
+            'dimensions_units_frames_gauges_clocks':['inherit HI physical quotient/domain, branch labels, gauge contracts and Big-Implosion clock family unchanged','no new observed frame, dimensional constant or public initial-condition scale'],
+            'methods':['exact parent hash/type verification','J-WL-001 exact manufactured PSD/Cholesky gate','J-WL-002 exact manufactured Hermitian-reality gate','manufactured J reference check','provenance-bound covariance solver','provenance-bound Fourier-field solver','parent-driven covariance/spectrum derivation','volume/resolution ensemble','countermodels and ablations','restart/replay','independent field reconstruction','clean checkout replay'],
+            'tolerances':['exact parent/replay hashes byte-identical','symbolic identities exact','PSD/Hermitian numerical residual <=1e-10 unless a stricter copied solver contract applies','all normalized diagnostics >=0.95'],
+            'stopping_rules':['parent hash mismatch','public initial-condition file or observational target enters','representative/manufactured covariance is promoted as physical','no exact parent-owned covariance realization can be derived','covariance non-PSD','unresolved __BIND token','Hermitian/reality failure','volume/resolution diagnostic below 0.95','independent reconstruction or clean replay mismatch'],
+            'expected_invariants':['HI parent hash unchanged','branch identity preserved','no HU/I/HI retune','realized covariance PSD','Cholesky reconstruction where positive definite','Hermitian Fourier reality','frozen seed unchanged across replay','no public inputs'],
+            'tests':['J-WL-001','J-WL-002','manufactured J reference check','parent-hash audit','covariance PSD/reconstruction','Hermitian reality','volume/resolution ensemble','seed provenance audit','semantic countermodels','ablations','restart','independent field reconstruction','clean replay'],
+            'gates':['covariance PSD','reality/Hermitian conditions','resolution and volume tests','no public initial-condition file','independent field reconstruction'],
+            'falsifiers':['HI parent hash mismatch','synthetic representative covariance used as physical parent','target/observational seed selection','non-PSD covariance','Hermitian/reality violation','branch identity loss','volume/resolution instability','independent or replay mismatch'],
+            'claim_boundary':'One realized RFC linear universe and its uncertainty state; no empirical agreement, observationally selected seed, imported standard primordial spectrum, or nonlinear-gravity result is claimed.',
+            'independent_verifier_design':'Without reading GATE_RESULTS or CLOSEOUT, re-hash H_HI_to_J, reconstruct the admitted covariance and seed provenance from frozen parent/lock records, independently verify PSD/factorization and Hermitian field reality, rebuild the finite-volume field, compare spectra/growth and artifact hashes, and reject any public input or representative covariance promotion.',
+            'frozen_seed':frozen_seed,'seed_derivation':'uint32(SHA256(parent_sha256 | run_id | J-fourier-field-v1)[0:16]) mod 2^32; target-blind computational realization only',
+            'allowed_implementation_only_corrections':['syntax/path/serialization/evaluator-backend/solver plumbing only; preserve failed attempt and rerun full frozen matrix; no parent, scientific law, candidate class, seed rule, tests, thresholds, gates, falsifiers or claim-boundary changes']}
+          (R/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          with (R/'FAILURES.jsonl').open('a') as f:
+              f.write(json.dumps({'failure_id':'J200-PREMATURE-WL001-PROTECTED-C','timestamp_utc':datetime.now(timezone.utc).isoformat(),'stage':'PRE_LOCK_MANUFACTURED_WOLFRAM','call':'J-WL-001','result':'FAIL','cause':'Operator invoked manufactured J-WL-001 before PRE_EXECUTION_LOCK; evaluator also rejected protected symbol C. No J physical artifact was created.','disposition':'PRESERVED_NONAUTHORITATIVE_ATTEMPT; freeze lock, then restart prescribed sequence from Step 4','science_changed':False})+'\n')
+          env=json.load(open(R/'ENVIRONMENT.json')); env.update({'run_id':RUN,'status':'PRE_EXECUTION_FROZEN','operating_system':platform.platform(),'python':sys.version.split()[0],'network_policy':'DISABLED_DURING_GENERATION','hidden_defaults_audited':True,'random_seeds':[frozen_seed]}); (R/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
+          print('PARENT_SHA256='+parent_sha); print('FROZEN_SEED='+str(frozen_seed))
           PY
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add STATE.json memory/CURRENT_CONTEXT.md memory/RUN_INDEX.json work_packets/ACTIVE_WORK_PACKET.md modules/J/runs
-          git commit -m 'Start governed J-200 from repository README'
+          git add modules/J/runs/J-200-20260809T225756Z/SOURCE_REGISTER.json modules/J/runs/J-200-20260809T225756Z/PRE_EXECUTION_LOCK.json modules/J/runs/J-200-20260809T225756Z/ENVIRONMENT.json modules/J/runs/J-200-20260809T225756Z/FAILURES.jsonl
+          git commit -m 'Freeze J-200 before primary execution'
           git push origin HEAD:agent/frontier-050-execution
-          printf 'J200_START_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'J200_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
