@@ -1,0 +1,32 @@
+{
+  "countermodels": [
+    {
+      "expected": "REJECT",
+      "name": "HU_parent_hash_mismatch",
+      "observed": "REJECT"
+    },
+    {
+      "expected": "REJECT",
+      "name": "I_parent_hash_mismatch",
+      "observed": "REJECT"
+    },
+    {
+      "expected": "REJECT",
+      "name": "clock_contract_mismatch",
+      "observed": "REJECT"
+    },
+    {
+      "expected": "REJECT",
+      "name": "invented_background_transfer_rescaling",
+      "observed": "REJECT"
+    },
+    {
+      "expected": "REJECT",
+      "name": "observed_data_branch_selection",
+      "observed": "REJECT"
+    }
+  ],
+  "overall": "PASS",
+  "run_id": "HI-190-20260809T221124Z",
+  "schema_version": "1.0"
+}

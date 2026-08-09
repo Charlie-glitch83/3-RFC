@@ -1,0 +1,186 @@
+{
+  "ancestry": {
+    "HU_run": "HU-170-20260809T045528Z",
+    "I_run": "I-180-20260809T050839Z",
+    "shared_parentage": "same frozen G branch/source-coordinate ancestry as required by FROZEN_DERIVATION_SPEC"
+  },
+  "branch_policy": "Retain every parent-compatible branch. If exact parents do not select a unique branch, HI remains the complete lawful branch family.",
+  "claim_boundary": "MINIMAL_SPINE RFC linear transfer realization: exact immutable branch-compatible HU-on-I instantiation, inherited mode/gauge/clock contracts and covariance propagation. No unique branch, new transfer coefficient, realized primordial spectrum, finite-volume field, observational transfer table, or empirical agreement.",
+  "classification": "PARENT_DRIVEN_IMMUTABLE_HU_ON_I_INSTANTIATION",
+  "compatibility_rule": "A HI branch exists only when the same inherited G branch/source coordinates satisfy both frozen parent contracts, the HU perturbation lies in V_b=ker(C_b)/im(G_b), and the I background branch carries that same branch identity and inherited Big-Implosion clock family. No type coercion, branch shopping, or observed-data selection is allowed.",
+  "error_covariance_propagation": {
+    "HU_covariance": {
+      "branch_family_retained": true,
+      "law": "For a fixed symbolic branch/operator realization, Sigma_out=U Sigma_in U^T. Operator uncertainty is retained as the branch-indexed family induced by inherited G covariance plus representation, numerical and unresolved-branch uncertainty; HU does not collapse that family by fitting a realized background.",
+      "parent_covariance": {
+        "law": "Sigma_G=J_G Sigma_F J_G^T + Sigma_process + Sigma_representation + Sigma_numeric + Sigma_branch with every added covariance term PSD",
+        "parent": {
+          "law": "Sigma_F=J_F Sigma_E J_F^T+Sigma_residual+Sigma_transport+Sigma_radiation+Sigma_plasma+Sigma_atomic_seed+Sigma_representation+Sigma_spatial+Sigma_numeric+Sigma_branch",
+          "parent_eigenvalues": [
+            3.0343089878133187e-34,
+            3.0993512082975226e-32,
+            1.2703875845537904e-19
+          ],
+          "psd": true
+        },
+        "status": "PARENT_PLUS_PSD_PROCESS_REPRESENTATION_NUMERIC_BRANCH_TERMS"
+      }
+    },
+    "I_covariance": {
+      "law": "Sigma_I=J_I Sigma_G J_I^T + Sigma_incidence + Sigma_metric + Sigma_numeric + Sigma_branch, with every added term PSD. Unresolved incidence maps, G route amplitudes/spectral gaps/resolution widths and clock scale remain explicit branch coordinates.",
+      "parent": {
+        "law": "Sigma_G=J_G Sigma_F J_G^T + Sigma_process + Sigma_representation + Sigma_numeric + Sigma_branch with every added covariance term PSD",
+        "parent": {
+          "law": "Sigma_F=J_F Sigma_E J_F^T+Sigma_residual+Sigma_transport+Sigma_radiation+Sigma_plasma+Sigma_atomic_seed+Sigma_representation+Sigma_spatial+Sigma_numeric+Sigma_branch",
+          "parent_eigenvalues": [
+            3.0343089878133187e-34,
+            3.0993512082975226e-32,
+            1.2703875845537904e-19
+          ],
+          "psd": true
+        },
+        "status": "PARENT_PLUS_PSD_PROCESS_REPRESENTATION_NUMERIC_BRANCH_TERMS"
+      },
+      "status": "PARENT_PLUS_PSD_INCIDENCE_METRIC_NUMERIC_BRANCH_TERMS"
+    },
+    "law": "For perturbation covariance Sigma_delta on V_b, Sigma_delta,out = U_HU Sigma_delta,in U_HU^T. I background covariance Sigma_I remains attached unchanged. For any source-owned joint cross-covariance C_deltaI, the exact immutable product map gives C_out=U_HU C_deltaI and joint covariance [[U Sigma_delta U^T, U C],[C^T U^T, Sigma_I]]; HI neither sets unresolved cross-covariance to zero nor invents one.",
+    "unresolved_cross_covariance_policy": "retain only if source-owned; do not invent and do not set to zero by assumption"
+  },
+  "fidelity": "MINIMAL_SPINE",
+  "gauge_frame_mapping": {
+    "HU_clock": {
+      "origin": "Big Implosion t_phys=0+",
+      "recursive_depth_is_time": false,
+      "unit_family": "t_phys=t_B tau_B, t_B>0"
+    },
+    "HU_constraint_subspace": {
+      "constraint": "P_b^2=P_b and range(P_b) subset ker(C_b); therefore K_HU=P_b K_HU P_b maps the physical tangent subspace to itself. Gauge/representation-equivalent inputs are identified in the quotient and cannot become distinct physical outputs.",
+      "frame_clock": "HU inherits only the G clock family and branch labels from H_G_to_HU. Realized I geometry, scale factor, horizon, distance, metric, observed expansion history, or any background-specific numerical value is forbidden input.",
+      "realized_background_inputs_used": false
+    },
+    "I_clock": {
+      "origin": "Big Implosion t_phys=0+",
+      "recursive_depth_is_time": false,
+      "unit_family": "t_phys=t_B tau_B, t_B>0"
+    },
+    "law": "The HU quotient V_b=ker(C_b)/im(G_b), constraint projector and G clock contract remain unchanged. I contributes its realized finite-relational geometry and constant graph-gauge quotient as background context; HI does not identify or mix distinct gauge directions beyond exact shared ancestry."
+  },
+  "generation_mode": "GENERATION_SEALED",
+  "implementation_witness": {
+    "constraint_sum_preserved": true,
+    "covariance_psd": true,
+    "covariance_symmetric": true,
+    "covariances": [
+      [
+        [
+          0.01,
+          0.0
+        ],
+        [
+          0.0,
+          0.01
+        ]
+      ],
+      [
+        [
+          0.006839397205857213,
+          0.003160602794142789
+        ],
+        [
+          0.0031606027941427886,
+          0.006839397205857212
+        ]
+      ],
+      [
+        [
+          0.005676676416183064,
+          0.004323323583816936
+        ],
+        [
+          0.004323323583816936,
+          0.005676676416183064
+        ]
+      ],
+      [
+        [
+          0.005091578194443671,
+          0.00490842180555633
+        ],
+        [
+          0.004908421805556329,
+          0.0050915781944436715
+        ]
+      ]
+    ],
+    "final_covariance_eigenvalues": [
+      0.00018315638888734232,
+      0.009999999999999998
+    ],
+    "states": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "times": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ]
+  },
+  "instantiated_transfer_system": {
+    "HU_domain": "first-order tangent perturbations within each finite G branch for which the first variation exists, restricted to the exact constraint-preserving non-gauge quotient",
+    "HU_operator_family": {
+      "codomain": "same branch-indexed physical tangent quotient at the output G clock coordinate",
+      "domain": "For each admitted G branch b, let X_G^b be the finite relational G state and T_b X_G its tangent space. Let C_b deltaX=0 denote the linearized exact G conservation/constraint ledger and let G_b denote pure representation/gauge directions. The physical linear domain is V_b=ker(C_b)/im(G_b); HU is the disjoint branch-indexed family V_HU=union_b {b}xV_b. No I geometry or realized expansion coordinate is part of V_HU.",
+      "generator": "K_HU[b,eta] = P_b D L_G[rho_G^b(eta)] P_b, where L_G is the exact parent G generator/master-law, D is its first variation, and P_b is the exact finite projector/quotient representative onto the constraint-preserving non-gauge tangent space. Unresolved G branch coordinates remain symbolic arguments.",
+      "linearity_domain": "first-order tangent perturbations within each finite G branch for which the first variation exists, restricted to the exact constraint-preserving non-gauge quotient",
+      "propagator": "U_HU[b;eta2,eta1] is the unique finite time-ordered solution dU/deta=K_HU[b,eta] U with U(eta1,eta1)=I on each admitted finite branch; composition U(eta3,eta1)=U(eta3,eta2)U(eta2,eta1) and superposition follow on the declared linear domain.",
+      "type": "branch-indexed constraint-preserving linear propagator family"
+    },
+    "I_background_context": {
+      "classification": "EXACT_PARENT_DRIVEN_FINITE_RELATIONAL_GEOMETRY_BRANCH_FAMILY",
+      "nonuniqueness_policy": "I freezes the complete lawful geometry branch family when exact ancestry does not uniquely select the process-to-edge incidence map; branch identity remains attached into HI/J",
+      "selection_rule": "retain every nonobstructed mapping/route/clock branch satisfying the frozen constraint ledger; no observed expansion history, LambdaCDM parameter, standard distance ladder, or old P30 readiness proxy may select among them"
+    },
+    "law": "For each compatible branch b, HI_b := (I_b, U_HU[b;eta2,eta1]). Application to an admissible perturbation is deltaX_out = U_HU[b;eta2,eta1] deltaX_in while I_b is carried unchanged as realized background context. No background matrix, coefficient rescaling, or reparameterization is introduced unless already present in an exact parent.",
+    "no_retune": true
+  },
+  "mode_eigenstructure": {
+    "generator_family": "K_HU[b,eta] = P_b D L_G[rho_G^b(eta)] P_b, where L_G is the exact parent G generator/master-law, D is its first variation, and P_b is the exact finite projector/quotient representative onto the constraint-preserving non-gauge tangent space. Unresolved G branch coordinates remain symbolic arguments.",
+    "law": "The physical perturbation modes/eigenstructure are exactly those of the frozen HU generator/propagator on V_b, now indexed by the compatible frozen I branch. HI introduces no new eigenvalue or mode selection.",
+    "propagator_family": "U_HU[b;eta2,eta1] is the unique finite time-ordered solution dU/deta=K_HU[b,eta] U with U(eta1,eta1)=I on each admitted finite branch; composition U(eta3,eta1)=U(eta3,eta2)U(eta2,eta1) and superposition follow on the declared linear domain."
+  },
+  "module": "HI",
+  "no_retune": true,
+  "object_id": "HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE",
+  "parents": {
+    "HU": {
+      "path": "modules/HU/frozen/H_HU_to_HI.json",
+      "sha256": "159d1311b26e03572f8485b579e354d031e3cab1fd59416bfad76ddd93186204"
+    },
+    "I": {
+      "path": "modules/I/frozen/H_I_to_HI.json",
+      "sha256": "d7245adc6699ff0c300b622340cdeb51cf00c87bcd17443cdba9b612ffdb12cd"
+    }
+  },
+  "public_inputs_used": false,
+  "restart_contract": "state at any inherited clock point plus exact parent hashes and branch identity is sufficient to resume immutable HU propagation on the same I background branch",
+  "run_id": "HI-190-20260809T221124Z",
+  "schema_version": "2.1",
+  "strongest_supported_claim": "HI-190 instantiates the frozen HU branch-indexed constraint-preserving transfer family on every exact parent-compatible frozen I background branch without retuning either parent, while preserving modes, gauges, clocks, covariance pushforward, ancestry, and unresolved branch identity.",
+  "strongest_unsupported_claim": "No unique branch, new transfer coefficient, realized primordial covariance/spectrum, finite-volume field, observational transfer table, continuum/FRW identification, or empirical agreement is claimed."
+}

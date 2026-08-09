@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "run_id": "HI-190-20260809T221124Z",
-  "status": "FROZEN_PRE_EXECUTION",
+  "status": "FINAL",
   "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {
     "runner": "GitHub-hosted ubuntu-24.04"
@@ -31,5 +31,7 @@
   ],
   "network_policy": "NO_PUBLIC_DATA_DURING_GENERATION; package installation only before scientific execution",
   "random_seeds": [],
-  "hidden_defaults_audited": true
+  "hidden_defaults_audited": true,
+  "finalized_utc": "2026-08-09T22:35:26.259641+00:00",
+  "public_inputs_used": false
 }

@@ -233,6 +233,14 @@
       "kind": "MODULE_HANDOFF",
       "created_utc": "2026-08-09T14:46:51.185635+00:00",
       "work_unit": "I-180"
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260809T221124Z",
+      "sha256": "779963d6f9199d43765fefb108bf4272cdd22701f6b98ae4dffc628a0dd3a625",
+      "kind": "RUN_BUNDLE",
+      "created_utc": "2026-08-09T22:35:30.940219+00:00",
+      "work_unit": "HI-190",
+      "run_id": "HI-190-20260809T221124Z"
     }
   ]
 }

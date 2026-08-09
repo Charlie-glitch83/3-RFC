@@ -1,0 +1,27 @@
+{
+  "ablations": [
+    {
+      "effect": "transfer operator undefined",
+      "passes_expected_failure": true,
+      "removed": "HU parent"
+    },
+    {
+      "effect": "realized-background instantiation undefined",
+      "passes_expected_failure": true,
+      "removed": "I parent"
+    },
+    {
+      "effect": "compatibility cannot be established",
+      "passes_expected_failure": true,
+      "removed": "shared branch identity"
+    },
+    {
+      "effect": "forbidden coefficient freedom appears",
+      "passes_expected_failure": true,
+      "removed": "no-retune lock"
+    }
+  ],
+  "overall": "PASS",
+  "run_id": "HI-190-20260809T221124Z",
+  "schema_version": "1.0"
+}

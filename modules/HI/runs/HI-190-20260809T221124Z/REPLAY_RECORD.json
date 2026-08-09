@@ -1,10 +1,16 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "artifact_hashes_match": true,
+  "classification": "CLEAN_REPLAY_RECORD",
+  "clean_checkout": true,
+  "matched_artifacts": {
+    "convergence/HI_CONVERGENCE_RESTART.json": "3e5ceaf876cff30747b8f5caef28d7bbd7e6dd79a6873baa823fa481d640f1af",
+    "independent/INDEPENDENT_RECONSTRUCTION.json": "3fdc0e422adc079710b178bd0135a316e8f58bc936b8de366078415af444cf58",
+    "primary/ABLATION_RESULTS.json": "412527962c75dda8bb86f90e00768cf56d4aceac58d17918b908c91ac42dc7f2",
+    "primary/COUNTERMODEL_RESULTS.json": "cfcd7fabbd21fb651aebc4d8a8fb0e975eeaf3bf974168e6a1b7ced948e8cad2",
+    "primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json": "7c4f0ef20b7ad151da85059cc076c87481d279ec2142642c15b0699ad4d6648c"
+  },
+  "pass": true,
+  "pre_execution_commit": "2f1a42e3fe6a1bea56ce7b8658b3cbf066f868da",
+  "result": "PASS",
+  "run_id": "HI-190-20260809T221124Z"
 }

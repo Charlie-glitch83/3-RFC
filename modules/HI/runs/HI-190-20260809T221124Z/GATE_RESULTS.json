@@ -1,7 +1,36 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "HI-190-20260809T221124Z",
+  "module": "HI",
+  "overall": "PASS",
+  "componentwise": {
+    "exact parent hashes": {
+      "pass": true,
+      "evidence": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json"
+    },
+    "no retune of HU or I": {
+      "pass": true,
+      "evidence": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json"
+    },
+    "operator-domain compatibility": {
+      "pass": true,
+      "evidence": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json"
+    },
+    "independent reconstruction": {
+      "pass": true,
+      "evidence": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+    }
+  },
+  "semantic_countermodels": {
+    "pass": true
+  },
+  "ablations": {
+    "pass": true
+  },
+  "convergence_restart": {
+    "pass": true
+  },
+  "clean_replay": {
+    "pass": true
+  },
+  "aggregate_scores_cannot_override": true
 }

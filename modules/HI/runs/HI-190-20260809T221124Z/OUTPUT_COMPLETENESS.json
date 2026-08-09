@@ -1,7 +1,143 @@
 {
   "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "run_id": "HI-190-20260809T221124Z",
+  "module": "HI",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "instantiated transfer system",
+      "status": "PASS",
+      "semantic_check": "Exact frozen HU propagator is paired only with exact branch-compatible frozen I background context; neither parent is modified.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
+          "sha256": "7c4f0ef20b7ad151da85059cc076c87481d279ec2142642c15b0699ad4d6648c"
+        },
+        {
+          "path": "modules/HI/frozen/H_HI_to_J.json",
+          "sha256": "8c36424d687d3ffca43185e52d2ed785f051193439edcba80eabc1a70e8179f7"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "3fdc0e422adc079710b178bd0135a316e8f58bc936b8de366078415af444cf58"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/REPLAY_RECORD.json",
+          "sha256": "37ece33ad5625d3a17f52b431849a804b96795db7f2fbd06dc17679435dde9bc"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/convergence/HI_CONVERGENCE_RESTART.json",
+          "sha256": "3e5ceaf876cff30747b8f5caef28d7bbd7e6dd79a6873baa823fa481d640f1af"
+        }
+      ]
+    },
+    {
+      "requirement": "mode/eigenstructure",
+      "status": "PASS",
+      "semantic_check": "HI inherits the frozen HU physical quotient modes and generator/propagator eigenstructure without adding a new mode-selection rule.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
+          "sha256": "7c4f0ef20b7ad151da85059cc076c87481d279ec2142642c15b0699ad4d6648c"
+        },
+        {
+          "path": "modules/HI/frozen/H_HI_to_J.json",
+          "sha256": "8c36424d687d3ffca43185e52d2ed785f051193439edcba80eabc1a70e8179f7"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "3fdc0e422adc079710b178bd0135a316e8f58bc936b8de366078415af444cf58"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/REPLAY_RECORD.json",
+          "sha256": "37ece33ad5625d3a17f52b431849a804b96795db7f2fbd06dc17679435dde9bc"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/convergence/HI_CONVERGENCE_RESTART.json",
+          "sha256": "3e5ceaf876cff30747b8f5caef28d7bbd7e6dd79a6873baa823fa481d640f1af"
+        }
+      ]
+    },
+    {
+      "requirement": "gauge/frame mapping",
+      "status": "PASS",
+      "semantic_check": "HU constraint/gauge quotient and I finite-relational background gauge/clock contracts remain explicit and unmixed except through shared exact ancestry.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
+          "sha256": "7c4f0ef20b7ad151da85059cc076c87481d279ec2142642c15b0699ad4d6648c"
+        },
+        {
+          "path": "modules/HI/frozen/H_HI_to_J.json",
+          "sha256": "8c36424d687d3ffca43185e52d2ed785f051193439edcba80eabc1a70e8179f7"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "3fdc0e422adc079710b178bd0135a316e8f58bc936b8de366078415af444cf58"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/REPLAY_RECORD.json",
+          "sha256": "37ece33ad5625d3a17f52b431849a804b96795db7f2fbd06dc17679435dde9bc"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/convergence/HI_CONVERGENCE_RESTART.json",
+          "sha256": "3e5ceaf876cff30747b8f5caef28d7bbd7e6dd79a6873baa823fa481d640f1af"
+        }
+      ]
+    },
+    {
+      "requirement": "error/covariance propagation",
+      "status": "PASS",
+      "semantic_check": "Perturbation covariance is propagated by U Sigma U^T, PSD is independently checked, I covariance remains attached, and unresolved cross-covariance is not invented.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
+          "sha256": "7c4f0ef20b7ad151da85059cc076c87481d279ec2142642c15b0699ad4d6648c"
+        },
+        {
+          "path": "modules/HI/frozen/H_HI_to_J.json",
+          "sha256": "8c36424d687d3ffca43185e52d2ed785f051193439edcba80eabc1a70e8179f7"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "3fdc0e422adc079710b178bd0135a316e8f58bc936b8de366078415af444cf58"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/REPLAY_RECORD.json",
+          "sha256": "37ece33ad5625d3a17f52b431849a804b96795db7f2fbd06dc17679435dde9bc"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/convergence/HI_CONVERGENCE_RESTART.json",
+          "sha256": "3e5ceaf876cff30747b8f5caef28d7bbd7e6dd79a6873baa823fa481d640f1af"
+        }
+      ]
+    },
+    {
+      "requirement": "H_HI_to_J",
+      "status": "PASS",
+      "semantic_check": "Frozen child handoff carries exact HU/I hashes, immutable transfer/background branch family, covariance law, restart/ancestry, and explicitly prevents the implementation witness from becoming J physical covariance.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
+          "sha256": "7c4f0ef20b7ad151da85059cc076c87481d279ec2142642c15b0699ad4d6648c"
+        },
+        {
+          "path": "modules/HI/frozen/H_HI_to_J.json",
+          "sha256": "8c36424d687d3ffca43185e52d2ed785f051193439edcba80eabc1a70e8179f7"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "3fdc0e422adc079710b178bd0135a316e8f58bc936b8de366078415af444cf58"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/REPLAY_RECORD.json",
+          "sha256": "37ece33ad5625d3a17f52b431849a804b96795db7f2fbd06dc17679435dde9bc"
+        },
+        {
+          "path": "modules/HI/runs/HI-190-20260809T221124Z/convergence/HI_CONVERGENCE_RESTART.json",
+          "sha256": "3e5ceaf876cff30747b8f5caef28d7bbd7e6dd79a6873baa823fa481d640f1af"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "run_id": "HI-190-20260809T221124Z",
+  "evidence_state": "INDEPENDENTLY_REPRODUCED",
+  "strongest_supported_claim": "HI-190 instantiates the frozen HU branch-indexed constraint-preserving transfer family on every exact parent-compatible frozen I background branch without retuning either parent, preserving modes, gauges, clocks, covariance propagation, ancestry, restart, and unresolved branch identity.",
+  "strongest_unsupported_claim": "No unique branch, new transfer coefficient, realized primordial covariance or spectrum, finite-volume field, observational transfer table, continuum/FRW identification, or empirical agreement is claimed.",
+  "public_inputs_used": false
+}

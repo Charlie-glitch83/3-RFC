@@ -258,9 +258,12 @@
       "run_id": "HI-190-20260809T221124Z",
       "module": "HI",
       "task_id": "HI-190",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/HI/runs/HI-190-20260809T221124Z",
-      "created_utc": "2026-08-09T22:11:24.114703+00:00"
+      "created_utc": "2026-08-09T22:11:24.114703+00:00",
+      "closed_utc": "2026-08-09T22:35:30.936422+00:00",
+      "tree_sha256": "779963d6f9199d43765fefb108bf4272cdd22701f6b98ae4dffc628a0dd3a625",
+      "closeout": "modules/HI/runs/HI-190-20260809T221124Z/CLOSEOUT.md"
     }
   ]
 }
