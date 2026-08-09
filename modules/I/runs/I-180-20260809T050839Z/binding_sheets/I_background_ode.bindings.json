@@ -18,119 +18,142 @@
     {
       "path": "model.state_names",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "w01",
+        "w02",
+        "w12"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.parameters",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "k": 1.0
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.rhs_expressions",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "k*(w12-w01)",
+        "k*(w01-w02)",
+        "k*(w02-w12)"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.initial_state",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.5,
+        0.3,
+        0.2
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.t_span",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.0,
+        4.0
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.max_step",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 0.03125,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.linear_invariants",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "total_edge_activity": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.invariant_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-09,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     },
     {
       "path": "model.positivity_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-12,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "07125c5607cca29e4c90cabcd421b2682317f4226588763d37ebb5aa38493fdf",
       "module": "I",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "I180_FROZEN_DERIVATION_SPEC.numerical_witness",
+      "units": "normalized finite-relational witness units",
+      "dimensions": "three-edge conservative activity witness on exact inherited K3 support",
+      "justification": "implementation witness only; physical I output is the exact branch-indexed event-pullback relational geometry family"
     }
   ]
 }
