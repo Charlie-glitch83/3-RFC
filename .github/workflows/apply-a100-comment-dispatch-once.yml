@@ -19,10 +19,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
       - name: Verify exact closeout and advance once
         shell: bash
         run: |
           set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
           EXPECT='f8d4bc9549d052c9e4ac33d53fe88e71505c6481'
           test "$(git rev-parse HEAD)" = "$EXPECT"
           python - <<'PY'
