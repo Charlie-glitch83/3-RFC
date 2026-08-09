@@ -1,14 +1,51 @@
-name: Disabled one-use dispatcher after I-180 recovery
+name: Audit corrected HI-190 boot path
 
 on:
-  workflow_dispatch:
+  pull_request:
+    types: [synchronize]
 
 permissions:
   contents: read
 
 jobs:
-  disabled:
+  audit-hi190-boot:
+    if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
-      - name: Recovery guard
-        run: echo 'Automatic downstream dispatch is disabled. Repository restored to verified I-180 closeout; follow root README and explicit authorization before any next-module work.'
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Run exact repository boot path without publishing mutations
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECT='fb8284cf9d2bd62c456ecf2bf061c98e14546a69'
+          test "$(git rev-parse HEAD)" = "$EXPECT"
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          bash bootstrap.sh
+          bash tools/start_work.sh
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py context
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          q=json.load(open('WORK_QUEUE.json'))
+          active=[(x.get('id'),x.get('module'),x.get('status')) for x in q.get('items',[]) if x.get('status')=='ACTIVE']
+          print('active_work_unit=', s.get('active_work_unit'))
+          print('current_module=', s.get('current_module'))
+          print('current_run=', s.get('current_run'))
+          print('queue_active=', active)
+          assert s.get('active_work_unit')=='HI-190'
+          assert s.get('current_module')=='HI'
+          assert active==[('HI-190','HI','ACTIVE')]
+          PY
+          cat work_packets/ACTIVE_WORK_PACKET.md
+          git status --short
+          git diff --stat
