@@ -1,47 +1,14 @@
-name: Start governed J-200 from repository README
+name: Disabled one-use dispatcher after I-180 recovery
 
 on:
-  pull_request:
-    types: [synchronize]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  start-j200:
-    if: github.event.pull_request.number == 74
+  disabled:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: agent/frontier-050-execution
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: pip
-      - name: Execute exact README startup for sole active J-200
-        shell: bash
-        run: |
-          set -euo pipefail
-          python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          python - <<'PY'
-          import json
-          s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='J-200' and s['current_module']=='J' and s['current_run'] is None,s
-          assert s['modules']['HI']['evidence_state']=='FROZEN',s['modules']['HI']
-          PY
-          bash bootstrap.sh
-          bash tools/start_work.sh
-          python tools/rfc.py doctor
-          python tools/director.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
-          python tools/rfc.py context
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'Start governed J-200 from repository README'
-          git pull --rebase origin agent/frontier-050-execution
-          git push origin HEAD:agent/frontier-050-execution
-          printf 'J200_START_COMMIT=%s\n' "$(git rev-parse HEAD)"
+      - name: Recovery guard
+        run: echo 'Automatic downstream dispatch is disabled. Repository restored to verified I-180 closeout; follow root README and explicit authorization before any next-module work.'
