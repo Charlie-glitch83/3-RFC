@@ -1,4 +1,4 @@
-name: Execute F-155 from owner comment once
+name: Resume F-155 from owner comment once
 
 on:
   issue_comment:
@@ -8,12 +8,12 @@ permissions:
   contents: write
 
 jobs:
-  execute-f155:
+  resume-f155:
     if: >-
       github.event.issue.number == 74 &&
       github.event.issue.pull_request &&
       github.event.comment.user.login == 'Charlie-glitch83' &&
-      github.event.comment.body == '/execute-f155-superseding-replay-20260808'
+      github.event.comment.body == '/resume-f155-frozen-replay-20260808'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,6 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute exact governed F155 sequence
+      - name: Resume exact governed F155 sequence from frozen checkpoint
         shell: bash
-        run: bash tools/run_f155_governed.sh
+        run: bash tools/resume_f155_governed.sh
