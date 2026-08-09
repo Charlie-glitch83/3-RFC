@@ -1,0 +1,22 @@
+{
+  "module": "HU",
+  "componentwise": [
+    {
+      "gate": "no realized-background values smuggled into universal operator",
+      "required": "PASS"
+    },
+    {
+      "gate": "linearity-domain proof",
+      "required": "PASS"
+    },
+    {
+      "gate": "symbolic identity verification",
+      "required": "PASS"
+    },
+    {
+      "gate": "hash freeze",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

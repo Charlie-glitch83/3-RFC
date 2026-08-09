@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "HU-170",
   "current_module": "HU",
-  "current_run": null,
+  "current_run": "HU-170-20260809T045528Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -823,7 +823,7 @@
     "HU": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "HU-170-20260809T045528Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -978,7 +978,7 @@
     }
   },
   "last_verified_commit": "1f4b5b511c0436511c7e20d4e2684df4ded1356e",
-  "last_updated_utc": "2026-08-09T04:29:38.256471+00:00",
+  "last_updated_utc": "2026-08-09T04:55:28.458647+00:00",
   "strongest_supported_claim": "G-160 generates a finite-relational MINIMAL_SPINE nonequilibrium recombination, process-opacity, optical-depth, normalized visibility and radiation-surface branch family from exact H_F_to_G_v2, preserving branch identity, charge/accounting, covariance, restart, memory and ancestry and supplying child-ready H_G_to_HU and H_G_to_I interfaces without external target values.",
   "strongest_unsupported_claim": "No unique measured atomic coefficients, unique SI calibration, unique observed last-scattering coordinate, public recombination-code equivalence, final CMB spectra, late reionization history, or empirical agreement is claimed.",
   "last_verified_branch": "agent/frontier-050-execution",

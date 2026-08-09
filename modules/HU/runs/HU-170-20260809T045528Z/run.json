@@ -1,0 +1,10 @@
+{
+  "run_id": "HU-170-20260809T045528Z",
+  "module": "HU",
+  "task_id": "HU-170",
+  "status": "CREATED",
+  "created_utc": "2026-08-09T04:55:28.457497+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "modules/HU/runs/HU-170-20260809T045528Z"
+}
