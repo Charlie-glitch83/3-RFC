@@ -1,4 +1,4 @@
-name: Start I-180 from root README exactly
+name: Freeze I-180 pre-execution science
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  start-i180:
+  freeze-i180:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,23 +20,19 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute root README startup exactly
+      - name: Freeze exact I180 derivation and bindings before execution
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          bash bootstrap.sh
-          bash tools/start_work.sh
-          python - <<'PY'
-          import json
-          s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='I-180', s['active_work_unit']
-          assert s['current_module']=='I', s['current_module']
-          assert s['current_run'], s
-          PY
+          python tools/i180_parent_bound.py prepare
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Start I-180 governed work packet'
+          git commit -m 'Freeze I-180 pre-execution science and bindings'
           git push origin HEAD:agent/frontier-050-execution
-          printf 'I180_START_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'I180_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
