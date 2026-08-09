@@ -23,7 +23,7 @@ jobs:
       - name: Execute governed full frozen matrix
         shell: bash
         env:
-          EXPECTED_PRE: 72f24e691992340bf31b93edb3f5d0b5d097c041
+          EXPECTED_PRE: 2f1a42e3fe6a1bea56ce7b8658b3cbf066f868da
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$EXPECTED_PRE"
