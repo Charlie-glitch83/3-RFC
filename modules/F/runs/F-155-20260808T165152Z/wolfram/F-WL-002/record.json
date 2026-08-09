@@ -1,0 +1,14 @@
+{
+  "call_id": "F-WL-002",
+  "module": "F",
+  "purpose": "Covariance propagation and PSD check",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-09T02:15:57.806234+00:00",
+  "input_sha256": "7c8fe7610ba83d4454d9da0a65ad9376baf812d74530e02f468e214292b9fead",
+  "output_sha256": "4f19029ed475e5d52b87c59543be1ca376b7d277a580e360a0d82e26084b7c53",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/F/runs/F-155-20260808T165152Z/wolfram/F-WL-002/gate.json"
+}

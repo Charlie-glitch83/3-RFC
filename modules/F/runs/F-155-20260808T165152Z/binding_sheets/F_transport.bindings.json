@@ -18,119 +18,138 @@
     {
       "path": "model.state_names",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "sector_a",
+        "sector_b"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.parameters",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "k": 0.1499430216517723
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.rhs_expressions",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        "-k*sector_a+k*sector_b",
+        "k*sector_a-k*sector_b"
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.initial_state",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.75,
+        0.25
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.t_span",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.0,
+        6.669200000000001
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.max_step",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 0.05210312500000001,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.linear_invariants",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": {
+        "total_exchange_state": [
+          1,
+          1
+        ]
+      },
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.invariant_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-09,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     },
     {
       "path": "model.positivity_tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-12,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/F/runs/F-155-20260808T165152Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
       "module": "F",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "F155_FROZEN_DERIVATION_SPEC.implementation_checks.transport",
+      "units": "internal dimensionless implementation-check units",
+      "dimensions": "paired exchange audit",
+      "justification": "implementation/invariant check only; not a physical coefficient selection"
     }
   ]
 }

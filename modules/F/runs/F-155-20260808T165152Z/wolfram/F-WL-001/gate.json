@@ -1,0 +1,11 @@
+{
+  "call_id": "F-WL-001",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "chargeResidual"
+  ],
+  "decision_rule": "Require exact charge-neutral transfer.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

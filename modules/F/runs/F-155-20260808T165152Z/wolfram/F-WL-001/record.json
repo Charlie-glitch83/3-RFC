@@ -1,0 +1,14 @@
+{
+  "call_id": "F-WL-001",
+  "module": "F",
+  "purpose": "Charge-neutral reaction-transfer audit",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-09T02:15:57.726402+00:00",
+  "input_sha256": "a0515c449609d8ccc1b4c3632e3e995fa4190ee368470e1bc349eef25fb9d6f0",
+  "output_sha256": "ca24936b315959b77ce518552b691820d1d6a99816a541794584be11b0b4edf2",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/F/runs/F-155-20260808T165152Z/wolfram/F-WL-001/gate.json"
+}

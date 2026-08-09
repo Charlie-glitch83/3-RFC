@@ -596,9 +596,9 @@
       "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "F": {
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
-      "active_run": "F-155-20260808T165152Z",
+      "evidence_state": "DESIGN",
+      "fidelity": "PRODUCTION",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -647,6 +647,17 @@
           "evidence": "modules/F/frozen/H_F_to_G.json",
           "timestamp_utc": "2026-08-08T02:10:34.969954+00:00",
           "work_unit": "F-150"
+        },
+        {
+          "state": "DESIGN",
+          "fidelity": "PRODUCTION",
+          "evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+          "timestamp_utc": "2026-08-09T02:15:56.779155+00:00",
+          "work_unit": "F-155",
+          "reopened_from": {
+            "evidence_state": "FROZEN",
+            "fidelity": "MINIMAL_SPINE"
+          }
         }
       ],
       "completed_runs": [
@@ -660,7 +671,12 @@
         "modules/F/runs/F-150-20260808T013006Z/independent/INDEPENDENT_RECONSTRUCTION.json",
         "modules/F/frozen/H_F_to_G.json"
       ],
-      "last_promoted_utc": "2026-08-08T02:10:34.969963+00:00"
+      "last_promoted_utc": "2026-08-08T02:10:34.969963+00:00",
+      "reopened_from": {
+        "evidence_state": "FROZEN",
+        "fidelity": "MINIMAL_SPINE"
+      },
+      "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "G": {
       "evidence_state": "BLOCKED",
@@ -845,7 +861,7 @@
     }
   },
   "last_verified_commit": "ff72654b32d1d17dc37f462c5558603848a8dd9f",
-  "last_updated_utc": "2026-08-08T16:51:52.032897+00:00",
+  "last_updated_utc": "2026-08-09T02:15:56.779166+00:00",
   "strongest_supported_claim": "The unchanged physically executed B-110 Big-Implosion state now has a complete, nonduplicated, independently reconstructed and cleanly replayed four-sector genesis partition at PRODUCTION fidelity. H_B_to_C_v2 is frozen and child-ready, preserving exact first-physical-state ancestry while supplying ordinary, radiative, compression-relic and dissipative-tail preparticle seeds for the sole active C-125 microscopic replay.",
   "strongest_unsupported_claim": "No superseding channel-complete microscopic constitution H_C_to_D_v2, full nonequilibrium thermal history H_D_to_E_v2, source-owned nucleosynthesis H_E_to_F_v2, child-ready post-nuclear plasma/opacity H_F_to_G_v2, physical recombination/visibility/last-scattering state, or empirical agreement is yet established by the repaired lineage.",
   "last_verified_branch": "agent/frontier-050-execution",

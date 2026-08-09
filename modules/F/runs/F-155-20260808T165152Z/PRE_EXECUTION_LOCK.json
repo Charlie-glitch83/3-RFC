@@ -1,21 +1,121 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "2.1",
+  "run_id": "F-155-20260808T165152Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-09T02:15:57.549996+00:00",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    "e8496690210a959bfc8d4ef21a51e9c2d5e4ab0bb257076fa104ff14eb4896f2",
+    "60423b781e4184e0b15f334c0305913678e9ae2c9d5dce10b9f565674c95f3bd",
+    "01634fc6109506ce11b8af2eae059d835a22c8a6431e94907f06c74ba9da6d7d",
+    "9108762324e581e48493e81d8cbaf7efb115f3d78b3756ebe3b4270f01292a8d",
+    "4559b515e39fb4abe1ff8f4e1eef096655e84a90d0b184e85d8bf06cfcb5a486"
+  ],
+  "parent_hashes": [
+    "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+  ],
+  "definition_hashes": [
+    "3cbe8e14cfc1b908ba6b51785aa7b70390f014a445ba6721ded776fc80069672",
+    "6a27da6d5a1f5cf6bbff350c53f3f4099478ce86589672b135f2e9335f540c3d",
+    "18386cb915ace3b3d0e6fe31b12e12ea2520a9811fbff53d14203c49c2a09092",
+    "feae1a57291f7d0e7bd2155d886cb7b3ef52c8b5e22f009dbb23f0d96d1136ec",
+    "7a8372f135b22f5341f68cfbf757fa33a9e5aee634621a3bb81590a5a3810da7",
+    "83da548b25e5cd6cae6c8689c3ad9d385adb62e01b9be4833fb803e2f5aa1429",
+    "d8c52e582d0860648105f7f3102c27417a8ca4b767ce9f381d58c3b7d0748114",
+    "d42bef1ddf60f965c3e5ed63532054dd8e29fec26f7998fba83058d093be3fca",
+    "d6f0bfa0e5267fda9818df160fd1f3d6231ba75603d5f6b72ef07b48153089ed",
+    "b812a8defe482522bea5724ad36dd50881de6cc75ae52d4c4d4fd7dcdf93ba83",
+    "9318798d747e1e211a5a6c0de6ab0e040eb7bf5a5e1b563f2ccbf8ff15089630"
+  ],
+  "candidate_classes": [
+    "E-v2 post-nuclear continuation",
+    "relational charge/plasma operators",
+    "conditional atomic candidates",
+    "state-derived opacity/transport",
+    "internally generated recombination-entry state"
+  ],
+  "equations_and_laws": [
+    "d rho_F/dt=-i[H_F,rho_F]+sum_s T_s[G_F][rho_F]+sum_r gamma_r(J_r rho_F J_r^dagger-1/2{J_r^dagger J_r,rho_F})",
+    "dY_a/dt=sum_res nu_ar F_r+sum_decay nu_ad F_d+F_inj+F_transport; stable closed isotope roles persist after every material touching route retires or is bounded",
+    "L_Q=B_F^T C_F B_F; 1^T rho_Q=0; phi_Q=L_Q^+rho_Q is unique mean-zero solution on connected neutral branches; E_Q=-B_F phi_Q",
+    "Pi^R_AB=<J_A,(i omega-L_F)^-1J_B>; epsilon_F=I-V_Q Pi^R; collective modes satisfy det epsilon_F=0; L_AB=<J_A,(-L_fast)^+J_B>",
+    "dot rho_gamma=T_gamma[G_F]rho_gamma+C_gammae rho_F+C_gammai rho_F+E_ff rho_F+E_2gamma rho_F+I_decay rho_F+I_dark rho_F; nonzero terms require inherited vertices/witnesses",
+    "dot rho_nu=-i[H_nu^C+H_med,rho_nu]+T_nu[G_F]rho_nu+C_nu^res[rho_F]; retain flavor/coherence/anisotropic stress/covariance until no-loss reduction",
+    "kappa_F=(v_gamma V_F)^-1 sum_material Gamma_ext with Gamma_ext=gamma_r Tr(J_r^dagger J_r rho_F)>=0; redistribution comes from the same witnessed event family",
+    "H_atom=P[H_A^E+sum h_e^C+1/2 Q^T G_Q^+Q+K_spin+K_rad+Sigma_plasma]P; U_atom is isometric on admitted capture subspace; no measured level is inserted",
+    "first state where composition persists, residual events are scheduled/bounded, particle/radiation/plasma/perturbation state is restartable, ledgers close, atomic candidates become material, and G needs no imported physical parameter",
+    "Sigma_F=J_F Sigma_E J_F^T+Sigma_residual+Sigma_transport+Sigma_radiation+Sigma_plasma+Sigma_atomic_seed+Sigma_representation+Sigma_spatial+Sigma_numeric+Sigma_branch"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "exact inherited E clock",
+    "finite relational internal units",
+    "mean-zero charge gauge on connected neutral branches",
+    "no external recombination coordinate"
+  ],
+  "methods": [
+    "recovered F theorem replay",
+    "exact F Wolfram calls",
+    "provenance-bound BDF local engines",
+    "64/128/256/512 convergence",
+    "DOP853 independent reconstruction",
+    "split/restart",
+    "clean checkout replay"
+  ],
+  "tolerances": [
+    "rtol=1e-9",
+    "atol=1e-12",
+    "positivity=1e-12",
+    "invariant=1e-9",
+    "covariance PSD floor=-1e-18",
+    "endpoint/restart=1e-8"
+  ],
+  "stopping_rules": [
+    "parent/replay hash mismatch",
+    "composition lineage loss",
+    "charge/energy ledger failure",
+    "covariance below frozen PSD floor",
+    "unwitnessed atomic/opacity promotion",
+    "missing G child binding",
+    "clean replay mismatch"
+  ],
+  "expected_invariants": [
+    "charge where derived",
+    "particle/carrier accounting",
+    "energy exchange reciprocity",
+    "PSD covariance",
+    "no-loss ancestry"
+  ],
+  "tests": [
+    "F-WL-001",
+    "F-WL-002",
+    "reference checks",
+    "bound local solvers",
+    "countermodels",
+    "ablations",
+    "convergence",
+    "restart",
+    "independent reconstruction",
+    "clean replay"
+  ],
+  "gates": [
+    "charge neutrality where derived",
+    "energy and particle accounting",
+    "covariance positive semidefinite",
+    "replay from E",
+    "required output completeness and G child-readiness"
+  ],
+  "falsifiers": [
+    "parent/replay hash mismatch",
+    "composition lineage loss",
+    "charge/energy ledger failure",
+    "covariance below frozen PSD floor",
+    "unwitnessed atomic/opacity promotion",
+    "missing G child binding",
+    "clean replay mismatch"
+  ],
+  "claim_boundary": "finite-relational, internal-unit, generated post-nuclear plasma state; no measured plasma/atomic coefficients, public recombination history, unique SI calibration, solved visibility/last-scattering history or empirical agreement",
+  "independent_verifier_design": "reconstruct charge/transfer checks with DOP853, recompute parent/source hashes, covariance eigenvalues, atomic registry coverage, convergence, restart and child-binding coverage without trusting primary gate summaries",
+  "allowed_implementation_only_corrections": [
+    "syntax/path/serialization only; no frozen science/test/threshold/claim changes"
+  ]
 }

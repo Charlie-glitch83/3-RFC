@@ -4,7 +4,9 @@
   "task_id": "F-155",
   "status": "CREATED",
   "created_utc": "2026-08-08T16:51:52.032092+00:00",
-  "parent_hashes": [],
+  "parent_hashes": [
+    "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa"
+  ],
   "generation_mode": "GENERATION_SEALED",
   "workspace": "modules/F/runs/F-155-20260808T165152Z"
 }
