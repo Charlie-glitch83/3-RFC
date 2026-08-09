@@ -4,7 +4,9 @@
   "task_id": "HU-170",
   "status": "CREATED",
   "created_utc": "2026-08-09T04:55:28.457497+00:00",
-  "parent_hashes": [],
+  "parent_hashes": [
+    "12049b73463790e05c50d1399fdc567e21012c993e5d033449eadf583e7066fe"
+  ],
   "generation_mode": "GENERATION_SEALED",
   "workspace": "modules/HU/runs/HU-170-20260809T045528Z"
 }

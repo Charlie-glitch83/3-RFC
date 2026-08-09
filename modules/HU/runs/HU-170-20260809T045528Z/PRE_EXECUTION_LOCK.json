@@ -1,21 +1,109 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "2.1",
+  "run_id": "HU-170-20260809T045528Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-09T04:59:56.683546+00:00",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    "f603d753ed1c396af6e0fec65d36fda56c2574b63ac3833ede030f8ecd574955",
+    "676069cb51d56aa2cbacfa1c38109c53010ed8bb6dbbf6739c64784df9402e77",
+    "01d1de77736d942c7f2185cb3447cddea8535720690603ddf9bcc24de58fbfc2",
+    "ca2547a8d219db6b1c3992097fa84db29cc7085860f66a233a0fab8d2826c8da",
+    "cc8fb19ce3ca697d90e9ab4e09f4cd9938cea0fb9f0296a3e48c43f65024a6fb",
+    "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+    "545d536a364180390426d11dd241df45c423533bc8fb94431d4c2cb2c67bca2d"
+  ],
+  "parent_hashes": [
+    "12049b73463790e05c50d1399fdc567e21012c993e5d033449eadf583e7066fe"
+  ],
+  "definition_hashes": [
+    "ab61be368cd0947ca44873bfe41c372e4bfa5f4c7fbbdb2e8b81cf3a08c1382a"
+  ],
+  "candidate_classes": [
+    "constraint-preserving tangent propagator on every exact G branch",
+    "gauge/representation quotient operator family",
+    "branch-indexed covariance/uncertainty pushforward"
+  ],
+  "equations_and_laws": [
+    "For each admitted G branch b, let X_G^b be the finite relational G state and T_b X_G its tangent space. Let C_b deltaX=0 denote the linearized exact G conservation/constraint ledger and let G_b denote pure representation/gauge directions. The physical linear domain is V_b=ker(C_b)/im(G_b); HU is the disjoint branch-indexed family V_HU=union_b {b}xV_b. No I geometry or realized expansion coordinate is part of V_HU.",
+    "K_HU[b,eta] = P_b D L_G[rho_G^b(eta)] P_b, where L_G is the exact parent G generator/master-law, D is its first variation, and P_b is the exact finite projector/quotient representative onto the constraint-preserving non-gauge tangent space. Unresolved G branch coordinates remain symbolic arguments.",
+    "U_HU[b;eta2,eta1] is the unique finite time-ordered solution dU/deta=K_HU[b,eta] U with U(eta1,eta1)=I on each admitted finite branch; composition U(eta3,eta1)=U(eta3,eta2)U(eta2,eta1) and superposition follow on the declared linear domain.",
+    "P_b^2=P_b and range(P_b) subset ker(C_b); therefore K_HU=P_b K_HU P_b maps the physical tangent subspace to itself. Gauge/representation-equivalent inputs are identified in the quotient and cannot become distinct physical outputs.",
+    "HU inherits only the G clock family and branch labels from H_G_to_HU. Realized I geometry, scale factor, horizon, distance, metric, observed expansion history, or any background-specific numerical value is forbidden input.",
+    "For a fixed symbolic branch/operator realization, Sigma_out=U Sigma_in U^T. Operator uncertainty is retained as the branch-indexed family induced by inherited G covariance plus representation, numerical and unresolved-branch uncertainty; HU does not collapse that family by fitting a realized background.",
+    "H_HU_to_HI carries the operator family K_HU/U_HU, domain/codomain type, constraint/gauge/frame contracts, uncertainty law, exact G parent hash, branch identity, clock contract, memory/ancestry and restart instructions. HI may instantiate it only after I is independently frozen and may not retune HU."
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "finite-relational G state units inherited symbolically",
+    "G clock family only",
+    "constraint quotient ker(C_b)/im(G_b)",
+    "no realized I frame/metric/scale/horizon/distance"
+  ],
+  "methods": [
+    "exact parent-bound first-variation construction",
+    "HU-WL-001 exact manufactured semigroup/superposition gate",
+    "HU-WL-002 exact manufactured invariant-subspace gate",
+    "prebuilt linear_transfer implementation witness",
+    "resolution/tolerance replay",
+    "independent reconstruction from frozen derivation spec",
+    "clean checkout replay"
+  ],
+  "tolerances": [
+    "linear_transfer tolerance=1e-10",
+    "PSD floor=-1e-10",
+    "replay scientific artifact hashes exact"
+  ],
+  "stopping_rules": [
+    "H_G_to_HU hash mismatch",
+    "realized I/background value appears in HU source or operator",
+    "linearity domain undefined",
+    "constraint/gauge quotient not invariant",
+    "semigroup or superposition failure on frozen witness",
+    "covariance ceases to be PSD",
+    "clean replay hash mismatch",
+    "operator mutates after freeze"
+  ],
+  "expected_invariants": [
+    "operator linearity on declared domain",
+    "identity at equal endpoints",
+    "semigroup composition",
+    "constraint-subspace invariance",
+    "gauge-equivalent inputs remain equivalent",
+    "covariance symmetry/PSD",
+    "no realized-background dependency",
+    "branch/memory/ancestry no-loss"
+  ],
+  "tests": [
+    "HU-WL-001",
+    "HU-WL-002",
+    "manufactured HU reference check",
+    "parent-bound linear_transfer witness",
+    "semantic countermodels",
+    "ablations",
+    "tolerance matrix",
+    "restart",
+    "independent reconstruction",
+    "clean replay"
+  ],
+  "gates": [
+    "no realized-background values smuggled into universal operator",
+    "linearity-domain proof",
+    "symbolic identity verification",
+    "hash freeze"
+  ],
+  "falsifiers": [
+    "H_G_to_HU hash mismatch",
+    "realized I/background value appears in HU source or operator",
+    "linearity domain undefined",
+    "constraint/gauge quotient not invariant",
+    "semigroup or superposition failure on frozen witness",
+    "covariance ceases to be PSD",
+    "clean replay hash mismatch",
+    "operator mutates after freeze"
+  ],
+  "claim_boundary": "Universal RFC transfer law at declared linear scope only; no realized geometry, expansion history, physical Boltzmann table, final spectrum, unique observational transfer function, or empirical agreement.",
+  "independent_verifier_design": "Reconstruct the typed branch-indexed tangent operator solely from FROZEN_DERIVATION_SPEC and exact H_G_to_HU; verify parent hash, absence of I/background values, projector/quotient invariance, semigroup/superposition witness, covariance PSD, exact child-interface completeness and clean-replay hashes without trusting GATE_RESULTS or CLOSEOUT.",
+  "allowed_implementation_only_corrections": [
+    "syntax/path/serialization/solver plumbing only; no source, parent, operator definition, branch rule, tests, thresholds, gates or claim boundary changes"
+  ]
 }
