@@ -1,4 +1,4 @@
-name: Execute repaired I-180 governed full rerun
+name: Repair I-180 source taxonomy and rerun full matrix
 
 on:
   pull_request:
@@ -20,8 +20,52 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute complete repaired I180 frozen matrix and closeout
+      - name: Correct taxonomy-only drift, preserve failure, and rerun complete I180 matrix
         shell: bash
         run: |
           set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          R=Path('modules/I/runs/I-180-20260809T050839Z')
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='I-180' and s['current_module']=='I' and s['current_run']==R.name,s
+          assert not (R/'primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json').exists(),'committed primary output unexpectedly exists before taxonomy repair'
+          srcp=R/'SOURCE_REGISTER.json'; src=json.load(open(srcp))
+          expected={
+            '4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6':'CANONICAL_AUTHORITY',
+            '0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28':'CANONICAL_AUTHORITY'
+          }
+          changed=[]
+          for row in src['admitted_sources']:
+              if row.get('sha256') in expected:
+                  before=row.get('classification'); after=expected[row['sha256']]
+                  assert before in {'CANONICAL_AUTHORITY_BOUNDARY_SOURCE','CANONICAL_AUTHORITY_RELATIONAL_GRAMMAR','CANONICAL_AUTHORITY'},(row,before)
+                  row['classification']=after
+                  changed.append({'sha256':row['sha256'],'before':before,'after':after})
+          assert len(changed)==2,changed
+          srcp.write_text(json.dumps(src,indent=2)+'\n')
+          tool=Path('tools/i180_parent_bound.py'); txt=tool.read_text()
+          txt2=txt.replace("rec(P30,'CANONICAL_AUTHORITY_BOUNDARY_SOURCE')","rec(P30,'CANONICAL_AUTHORITY')").replace("rec(NBODY,'CANONICAL_AUTHORITY_RELATIONAL_GRAMMAR')","rec(NBODY,'CANONICAL_AUTHORITY')")
+          assert txt2!=txt,'expected source-label strings not found in i180_parent_bound.py'
+          tool.write_text(txt2)
+          ts=datetime.now(timezone.utc).isoformat()
+          failure={'failure_id':'I-180-SOURCE-TAXONOMY-DRIFT-20260809','run_id':R.name,'gate':'scientific_completion_guard','category':'RUN_LOCAL_SOURCE_CLASSIFICATION_DRIFT','description':'Full I matrix reached finalized physical/replay/independent evidence but the completion guard rejected two run-local descriptive source labels because the globally locked source class is CANONICAL_AUTHORITY. Source bytes, hashes, roles in the derivation, laws, gates, thresholds, branch family, and claim boundary were unaffected.','earliest_affected_object':'SOURCE_REGISTER classification labels only','changes_frozen_science':False,'required_replay_scope':'full I-180 frozen matrix','timestamp_utc':ts}
+          with (R/'FAILURES.jsonl').open('a',encoding='utf-8') as f: f.write(json.dumps(failure,ensure_ascii=False)+'\n')
+          patch={'schema_version':'1.0','run_id':R.name,'patch_id':'I180-SOURCE-TAXONOMY-GLOBAL-CLASS-ALIGNMENT','classification':'IMPLEMENTATION_GOVERNANCE_ONLY_SOURCE_TAXONOMY_ALIGNMENT','timestamp_utc':ts,'changes':changed,'source_bytes_changed':False,'source_hashes_changed':False,'source_roles_changed':False,'parents_changed':False,'laws_changed':False,'branch_rule_changed':False,'thresholds_changed':False,'gates_changed':False,'falsifiers_changed':False,'claim_boundary_changed':False,'science_changed':False,'full_frozen_matrix_rerun_required':True}
+          (R/'SOURCE_TAXONOMY_PATCH_RECORD.json').write_text(json.dumps(patch,indent=2)+'\n')
+          PY
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add modules/I/runs/I-180-20260809T050839Z/SOURCE_REGISTER.json modules/I/runs/I-180-20260809T050839Z/FAILURES.jsonl modules/I/runs/I-180-20260809T050839Z/SOURCE_TAXONOMY_PATCH_RECORD.json tools/i180_parent_bound.py
+          git commit -m 'Align I-180 source taxonomy with locked registry classes'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'I180_TAXONOMY_REPAIR_COMMIT=%s\n' "$(git rev-parse HEAD)"
           bash tools/run_i180_governed.sh
