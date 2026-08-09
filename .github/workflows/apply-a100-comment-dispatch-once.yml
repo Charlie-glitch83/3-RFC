@@ -1,4 +1,4 @@
-name: Resume F-155 from owner comment once
+name: Correct and rerun F-155 from owner comment once
 
 on:
   issue_comment:
@@ -8,12 +8,12 @@ permissions:
   contents: write
 
 jobs:
-  resume-f155:
+  rerun-f155:
     if: >-
       github.event.issue.number == 74 &&
       github.event.issue.pull_request &&
       github.event.comment.user.login == 'Charlie-glitch83' &&
-      github.event.comment.body == '/resume-f155-frozen-replay-20260808'
+      github.event.comment.body == '/rerun-f155-firewall-label-20260808'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,6 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Resume exact governed F155 sequence from frozen checkpoint
+      - name: Rerun complete frozen F155 matrix after implementation-only correction
         shell: bash
-        run: bash tools/resume_f155_governed.sh
+        run: bash tools/rerun_f155_after_firewall_label_fix.sh
