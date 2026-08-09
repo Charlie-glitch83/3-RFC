@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "G-160",
   "current_module": "G",
-  "current_run": null,
+  "current_run": "G-160-20260809T025252Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -730,7 +730,7 @@
     "G": {
       "evidence_state": "BLOCKED",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "G-160-20260809T025252Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -910,7 +910,7 @@
     }
   },
   "last_verified_commit": "9df3cdd1b262770c4be1e50f5d4a8bbc77adb1d6",
-  "last_updated_utc": "2026-08-09T02:24:28.219426+00:00",
+  "last_updated_utc": "2026-08-09T02:52:52.611834+00:00",
   "strongest_supported_claim": "F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.",
   "strongest_unsupported_claim": "No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed.",
   "last_verified_branch": "agent/frontier-050-execution",

@@ -1,0 +1,26 @@
+{
+  "module": "G",
+  "componentwise": [
+    {
+      "gate": "rate and opacity lineage",
+      "required": "PASS"
+    },
+    {
+      "gate": "normalization and positivity",
+      "required": "PASS"
+    },
+    {
+      "gate": "stiff convergence",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent reconstruction",
+      "required": "PASS"
+    },
+    {
+      "gate": "required output completeness and HU/I child-readiness",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

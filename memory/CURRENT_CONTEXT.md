@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-09T02:24:28.282952+00:00
+Generated: 2026-08-09T02:52:55.748081+00:00
 
 ## Project truth
 
@@ -64,11 +64,10 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 
 - admitted sources: 85
 - frozen artifacts: 23
-- indexed runs: 20
+- indexed runs: 21
 
 ## Recent runs
 
-- G-160-20260808T051613Z: BLOCKED (G)
 - B-115-20260808T060000Z: PASS (B)
 - C-125-20260808T061947Z: BLOCKED (C)
 - C-125-20260808T063010Z: BLOCKED (C)
@@ -76,6 +75,7 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 - D-135-20260808T163243Z: PASS (D)
 - E-145-20260808T164410Z: PASS (E)
 - F-155-20260808T165152Z: PASS (F)
+- G-160-20260809T025252Z: CREATED (G)
 
 ## Recent decisions
 
