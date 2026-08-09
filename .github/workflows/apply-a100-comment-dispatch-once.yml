@@ -1,4 +1,4 @@
-name: Freeze HU-170 pre-execution lock
+name: Execute HU-170 governed packet
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  freeze-hu170:
+  execute-hu170:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,19 +20,6 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Freeze exact HU170 derivation and bindings before execution
+      - name: Execute exact frozen HU170 packet
         shell: bash
-        run: |
-          set -euo pipefail
-          python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          python tools/hu170_parent_bound.py prepare
-          python tools/rfc.py doctor
-          python tools/director.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'Freeze HU-170 pre-execution science and bindings'
-          git push origin HEAD:agent/frontier-050-execution
-          printf 'HU170_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
+        run: bash tools/run_hu170_governed.sh
