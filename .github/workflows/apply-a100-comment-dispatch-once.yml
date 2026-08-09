@@ -1,54 +1,13 @@
-name: Run J-200 packet steps 4 through solver-copy
+name: Disabled temporary J transport after recovery
 
 on:
-  pull_request:
-    types: [synchronize]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  j200-packet-local-prebind:
+  disabled:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: agent/frontier-050-execution
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: pip
-      - name: Record exact Wolfram outputs and copy prescribed J engines
-        shell: bash
-        run: |
-          set -euo pipefail
-          EXPECT='a2f0a7658e02ddd156d20cac85a255f024584539'
-          RUN='J-200-20260809T225756Z'
-          R="modules/J/runs/$RUN"
-          test "$(git rev-parse HEAD)" = "$EXPECT"
-          python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          cat > /tmp/J-WL-001.output.txt <<'EOF'
-Symbol::undefined2: Warning: Global symbols "L, L, L" are undefined.
-General::messages: Messages were generated which may indicate errors.
-
-Out[1]= "<|\"call\" -> \"J-WL-001\", \"eigenvalues\" -> {\"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 3, 0]\", \"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 2, 0]\", \"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 1, 0]\"}, \"positiveDefinite\" -> True, \"reconstructionPass\" -> True|>"
-EOF
-          cat > /tmp/J-WL-002.output.txt <<'EOF'
-Out[1]= "<|\"call\" -> \"J-WL-002\", \"rule\" -> \"{Re[z[1]], Conjugate[z[8]], Conjugate[z[7]], Conjugate[z[6]], Re[z[5]], Conjugate[z[4]], Conjugate[z[3]], Conjugate[z[2]]}\", \"note\" -> \"Actual finite-volume implementation must enforce conjugate pairing and preserve the frozen seed.\"|>"
-EOF
-          python tools/director.py wolfram-record --run "$RUN" --call J-WL-001 --output /tmp/J-WL-001.output.txt
-          python tools/director.py wolfram-record --run "$RUN" --call J-WL-002 --output /tmp/J-WL-002.output.txt
-          python tools/run_reference_checks.py --module J --output "$R/reference_checks.json"
-          python tools/director.py solver-copy --module J --solver covariance --destination "$R"
-          python tools/director.py solver-copy --module J --solver fourier_field --destination "$R"
-          python tools/rfc.py doctor
-          python tools/director.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "$R"
-          git commit -m 'Run J-200 prescribed symbolic and prebinding steps'
-          git push origin HEAD:agent/frontier-050-execution
-          printf 'J200_PREBIND_COMMIT=%s\n' "$(git rev-parse HEAD)"
+      - run: echo "Temporary J transport disabled after restoring clean repository-created J-200 startup. Follow ACTIVE_WORK_PACKET only; no fabricated Wolfram captures or prebinding execution."
