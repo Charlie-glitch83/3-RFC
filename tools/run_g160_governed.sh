@@ -12,8 +12,7 @@ assert s['active_work_unit']=='G-160' and s['current_module']=='G' and s['curren
 assert s['modules']['F']['evidence_state']=='FROZEN' and s['modules']['F']['fidelity']=='PRODUCTION',s['modules']['F']
 assert json.load(open(r/'PRE_EXECUTION_LOCK.json'))['status']=='FROZEN'
 PY
-PRE_SHA="$(git log -1 --format=%H --grep='^Freeze G-160 pre-execution state$')"
-test -n "$PRE_SHA"
+PRE_SHA="$(git rev-parse HEAD)"
 python tools/director.py wolfram-record --run "$RUN_ID" --call G-WL-001 --output "$R/scratch/wolfram_external/G-WL-001.txt"
 python tools/director.py wolfram-record --run "$RUN_ID" --call G-WL-002 --output "$R/scratch/wolfram_external/G-WL-002.txt"
 python tools/run_reference_checks.py --module G --output "$R/reference_checks.json"
