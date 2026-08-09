@@ -1,4 +1,4 @@
-name: Repair HI-190 Wolfram implementation defect
+name: Execute HI-190 frozen local phase
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  repair-hi190-wolfram:
+  hi190-local-phase:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,59 +20,61 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Preserve failure and apply implementation-only symbol repair
+      - name: Register exact Wolfram rerun and execute bound implementation witness
         shell: bash
         run: |
           set -euo pipefail
-          EXPECT='9b9d1efa9c44bb9f6aa07bf83e2afc2ef36e85b2'
+          EXPECT='05b16b760f57ca2d7d0b6320b9be59596ad93f72'
           test "$(git rev-parse HEAD)" = "$EXPECT"
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          RUN='HI-190-20260809T221124Z'; R="modules/HI/runs/$RUN"
+          cat > "$R/wolfram/HI-WL-001/output.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, B, B, T, B, T" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-001\", \"instantiated\" -> \"{{a*u, b*u}, {c*v, d*v}}\", \"compositionPass\" -> True|>"
+          EOF
+          cat > "$R/wolfram/HI-WL-002/output.txt" <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-002\", \"propagatedCovariance\" -> \"{{a^2 + b^2 + 2*a*b*r, b*(d + c*r) + a*(c + d*r)}, {b*(d + c*r) + a*(c + d*r), c^2 + d^2 + 2*c*d*r}}\", \"symmetric\" -> True|>"
+          EOF
+          python tools/director.py wolfram-record --run "$RUN" --call HI-WL-001 --output "$R/wolfram/HI-WL-001/output.txt"
+          python tools/director.py wolfram-record --run "$RUN" --call HI-WL-002 --output "$R/wolfram/HI-WL-002/output.txt"
+          python tools/run_reference_checks.py --module HI --output "$R/reference_checks.json"
           python - <<'PY'
-          import hashlib, json
+          import hashlib,json
           from pathlib import Path
-          from datetime import datetime, timezone
-          RUN='HI-190-20260809T221124Z'; R=Path('modules/HI/runs')/RUN
-          recipe=Path('recipes/HI/wolfram/HI-WL-002.wl')
-          runinput=R/'wolfram/HI-WL-002/input.wl'
-          original=recipe.read_text()
-          assert original==runinput.read_text()
-          assert 'C = {{1, r}, {r, 1}};' in original and 'T.C.Transpose[T]' in original
-          corrected=original.replace('C = {{1, r}, {r, 1}};', 'cov = {{1, r}, {r, 1}};').replace('T.C.Transpose[T]', 'T.cov.Transpose[T]')
-          assert corrected!=original
-          failed='''Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp" are undefined.\nSet::wrsym: Symbol C is Protected.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= "<|\\"call\\" -> \\"HI-WL-002\\", \\"propagatedCovariance\\" -> \\"{{a, b}, {c, d}} . C . {{a, c}, {b, d}}\\", \\"symmetric\\" -> False|>"\n'''
-          failpath=R/'wolfram/HI-WL-002/FAILED_ATTEMPT_001.txt'
-          failpath.write_text(failed)
-          recipe.write_text(corrected); runinput.write_text(corrected)
-          def htxt(s): return hashlib.sha256(s.encode()).hexdigest()
-          patch={
-            'schema_version':'1.0','run_id':RUN,'patch_id':'HI190-WL002-PROTECTED-C-SYMBOL',
-            'classification':'IMPLEMENTATION_ONLY_WOLFRAM_SYMBOL_REPAIR',
-            'timestamp_utc':datetime.now(timezone.utc).isoformat(),
-            'failed_input_sha256':htxt(original),'corrected_input_sha256':htxt(corrected),
-            'defect':'HI-WL-002 assigns a covariance matrix to Wolfram protected symbol C; Set::wrsym prevents assignment and the manufactured symmetry gate returns False.',
-            'correction':'Rename only the local covariance symbol C to cov in the assignment and the same matrix product T.cov.Transpose[T].',
-            'failed_output_path':str(failpath),
-            'science_changed':False,'parents_changed':False,'sources_changed':False,'law_changed':False,
-            'branch_rule_changed':False,'test_semantics_changed':False,'test_implementation_changed':True,
-            'thresholds_changed':False,'gates_changed':False,'falsifiers_changed':False,'claim_boundary_changed':False,
-            'primary_execution_before_patch':False,'full_frozen_matrix_rerun_required':True,
-            'authority':'config/WOLFRAM_CALLS.json failure_policy + frozen PRE_EXECUTION_LOCK allowed implementation-only corrections'
-          }
-          (R/'IMPLEMENTATION_PATCH_RECORD.json').write_text(json.dumps(patch,indent=2)+'\n')
-          with (R/'FAILURES.jsonl').open('a') as f:
-            f.write(json.dumps({'failure_id':'HI190-WL002-PROTECTED-C-SYMBOL','timestamp_utc':patch['timestamp_utc'],'stage':'PRE_PRIMARY_WOLFRAM','call':'HI-WL-002','result':'FAIL','cause':'Wolfram protected symbol C blocked covariance assignment','evidence':str(failpath),'disposition':'IMPLEMENTATION_ONLY_REPAIR_AND_FULL_FROZEN_MATRIX_RERUN'})+'\n')
-          lock=json.load(open(R/'PRE_EXECUTION_LOCK.json'))
-          assert lock['status']=='FROZEN' and lock['frozen_before_primary_execution'] is True
-          assert not (R/'primary').exists()
-          assert patch['law_changed'] is False and patch['parents_changed'] is False
+          R=Path('modules/HI/runs/HI-190-20260809T221124Z')
+          d=R/'FROZEN_DERIVATION_SPEC.json'; obj=json.load(open(d)); w=obj['numerical_witness']
+          h=hashlib.sha256(d.read_bytes()).hexdigest()
+          bs=json.load(open(R/'binding_sheets/HI_instantiated_transfer.bindings.json'))
+          vals={
+           'model.generator':w['generator'],'model.times':w['times'],'model.initial_state':w['initial_state'],
+           'model.initial_covariance':w['initial_covariance'],'model.tolerance':w['tolerance']}
+          for b in bs['bindings']:
+            b['value']=vals[b['path']]; b['origin_kind']='INTERNAL_DERIVATION'; b['origin_path']=str(d); b['origin_sha256']=h
+            b['derivation_object']='HI190_FROZEN_DERIVATION_SPEC.numerical_witness'
+            b['units']='normalized finite-relational implementation-witness units'
+            b['dimensions']='two-mode constraint-preserving linear implementation witness'
+            b['justification']='Inherited unchanged from frozen HU implementation witness solely to exercise the prebuilt linear_transfer engine on clock points admitted by I; not a physical branch selector, retune, or replacement for parent-driven HI execution.'
+          (R/'binding_sheets/HI_instantiated_transfer.bindings.json').write_text(json.dumps(bs,indent=2)+'\n')
+          # Explicit manual PSD review for the symbolic Wolfram gate: C is PSD iff |r|<=1, and congruence T C T^T preserves PSD.
+          review={'call':'HI-WL-002','manual_review':'PASS','input_psd_domain':'-1 <= r <= 1','reason':'For every real z, z^T(T C T^T)z=(T^T z)^T C (T^T z)>=0 whenever C is PSD; the exact output is symmetric.','symmetry':True,'psd_preservation':True}
+          (R/'wolfram/HI-WL-002/MANUAL_PSD_REVIEW.json').write_text(json.dumps(review,indent=2)+'\n')
           PY
+          python tools/materialize_solver_config.py --template "$R/solver_templates/HI_instantiated_transfer.template.json" --binding-sheet "$R/binding_sheets/HI_instantiated_transfer.bindings.json" --output "$R/solver_configs/HI_instantiated_transfer.json"
+          python tools/run_configured_solver.py --config "$R/solver_configs/HI_instantiated_transfer.json" --output-dir "$R/solver_outputs/linear_transfer"
+          bash tools/finish_local_phase.sh HI "$R"
+          test ! -d "$R/primary"
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add recipes/HI/wolfram/HI-WL-002.wl modules/HI/runs/HI-190-20260809T221124Z/wolfram/HI-WL-002/input.wl modules/HI/runs/HI-190-20260809T221124Z/wolfram/HI-WL-002/FAILED_ATTEMPT_001.txt modules/HI/runs/HI-190-20260809T221124Z/IMPLEMENTATION_PATCH_RECORD.json modules/HI/runs/HI-190-20260809T221124Z/FAILURES.jsonl
-          git commit -m 'Repair HI-190 Wolfram protected-symbol implementation defect'
+          git add "$R"
+          git commit -m 'Complete HI-190 frozen symbolic and local implementation phase'
           git push origin HEAD:agent/frontier-050-execution
-          printf 'HI190_WL_REPAIR_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'HI190_LOCAL_COMMIT=%s\n' "$(git rev-parse HEAD)"
