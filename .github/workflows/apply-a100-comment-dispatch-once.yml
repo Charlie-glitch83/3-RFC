@@ -1,4 +1,4 @@
-name: Advance HU-170 after verified closeout
+name: Start I-180 from root README exactly
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  advance-hu170:
+  start-i180:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,33 +20,23 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Record verified HU closeout and advance exactly one child
+      - name: Execute root README startup exactly
         shell: bash
         run: |
           set -euo pipefail
-          EXPECTED='26c08a68607721e84da1c83bb8d6e098fdeb2304'
-          test "$(git rev-parse HEAD)" = "$EXPECTED"
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          bash bootstrap.sh
+          bash tools/start_work.sh
           python - <<'PY'
           import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-          expected='26c08a68607721e84da1c83bb8d6e098fdeb2304'
-          p=Path('STATE.json'); s=json.loads(p.read_text())
-          s['last_verified_commit']=expected
-          s['last_verified_branch']='agent/frontier-050-execution'
-          s['last_updated_utc']=datetime.now(timezone.utc).isoformat()
-          p.write_text(json.dumps(s,indent=2)+'\n')
-          d={'decision_id':'COMMIT-26c08a686077','timestamp_utc':datetime.now(timezone.utc).isoformat(),'work_unit':'HU-170','decision':'Externally fetched and verified exact HU-170 closeout SHA and diff; component gates, clean replay, independent reconstruction, frozen H_HU_to_HI and claim boundary verified before child activation.','basis':[expected,'modules/HU/runs/HU-170-20260809T045528Z/GATE_RESULTS.json','modules/HU/runs/HU-170-20260809T045528Z/REPLAY_RECORD.json','modules/HU/runs/HU-170-20260809T045528Z/independent/INDEPENDENT_RECONSTRUCTION.json','modules/HU/frozen/H_HU_to_HI.json'],'alternatives_rejected':['advance before exact closeout verification','activate more than one child'],'changes_science':False,'required_replay':'none','commit_sha':expected}
-          with Path('memory/DECISION_LOG.jsonl').open('a',encoding='utf-8') as f: f.write(json.dumps(d,ensure_ascii=False)+'\n')
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='I-180', s['active_work_unit']
+          assert s['current_module']=='I', s['current_module']
+          assert s['current_run'], s
           PY
-          python tools/rfc.py advance --task HU-170 --result PASS --evidence modules/HU/runs/HU-170-20260809T045528Z/CLOSEOUT.md
-          python tools/rfc.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add STATE.json WORK_QUEUE.json memory/CURRENT_CONTEXT.md memory/DECISION_LOG.jsonl
-          git commit -m 'Advance from HU-170 to the next authorized child'
+          git add -A
+          git commit -m 'Start I-180 governed work packet'
           git push origin HEAD:agent/frontier-050-execution
-          printf 'HU170_ADVANCE_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'I180_START_COMMIT=%s\n' "$(git rev-parse HEAD)"
