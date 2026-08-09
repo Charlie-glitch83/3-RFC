@@ -1,26 +1,17 @@
-name: Execute G-160 from owner comment once
+name: Execute G-160 from observable PR synchronization
 
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    types: [synchronize]
 
 permissions:
   contents: write
-  issues: write
 
 jobs:
   execute-g160:
-    if: >-
-      github.event.issue.number == 74 &&
-      github.event.issue.pull_request &&
-      github.event.comment.user.login == 'Charlie-glitch83' &&
-      github.event.comment.body == '/execute-g160-frozen-20260808'
+    if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
-      - name: Publish Actions run ID
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh issue comment 74 --repo "$GITHUB_REPOSITORY" --body "/g160-actions-run-${GITHUB_RUN_ID}"
       - uses: actions/checkout@v4
         with:
           ref: agent/frontier-050-execution
