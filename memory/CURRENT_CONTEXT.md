@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-09T14:46:51.277767+00:00
+Generated: 2026-08-09T14:50:12.280863+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `I-180` — Close Module I: Realized Background Geometry and Expansion
-- Current module: `I`
+- Active work unit: `HI-190` — Close Module HI: Transfer Operator Instantiation
+- Current module: `HI`
 - Last verified commit: `26c08a68607721e84da1c83bb8d6e098fdeb2304`
 
 ## Strongest supported claim
@@ -20,23 +20,23 @@ No unique process-to-edge incidence branch, unique SI spacetime metric, FRW/Frie
 
 ## Immediate objective
 
-Generate the universe's realized geometry, expansion, clocks, horizons, and distance structure from the accumulated physical state.
+Instantiate the frozen universal transfer operator on the realized background without changing either parent's law.
 
 ## Required deliverables
 
-- modules/I/runs/<RUN_ID>/RUN_PLAN.md
-- modules/I/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/I/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/I/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/I/runs/<RUN_ID>/CLOSEOUT.md
+- modules/HI/runs/<RUN_ID>/RUN_PLAN.md
+- modules/HI/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/HI/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/HI/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/HI/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- equation/constraint derivation
-- gauge/frame consistency
-- no observed expansion history used as target
-- numerical convergence and independent reconstruction
+- exact parent hashes
+- no retune of HU or I
+- operator-domain compatibility
+- independent reconstruction
 
 ## Module states
 
@@ -79,7 +79,6 @@ Generate the universe's realized geometry, expansion, clocks, horizons, and dist
 
 ## Recent decisions
 
-- COMMIT-26c08a686077: Externally fetched and verified exact HU-170 closeout SHA and diff; component gates, clean replay, independent reconstruction, frozen H_HU_to_HI and claim boundary verified before child activation.
 - ADVANCE-HU-170-20260809T050710Z: Marked HU-170 PASS and activated I-180
 - PROMOTE-I-FORMALIZED-20260809T144650Z: Promoted Module I from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-I-IMPLEMENTED-20260809T144650Z: Promoted Module I from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
@@ -87,6 +86,7 @@ Generate the universe's realized geometry, expansion, clocks, horizons, and dist
 - PROMOTE-I-PHYSICALLY_EXECUTED-20260809T144651Z: Promoted Module I from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
 - PROMOTE-I-INDEPENDENTLY_REPRODUCED-20260809T144651Z: Promoted Module I from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
 - PROMOTE-I-FROZEN-20260809T144651Z: Promoted Module I from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- ADVANCE-I-180-20260809T145008Z: Marked I-180 PASS and activated HI-190
 
 ## Recent failures
 

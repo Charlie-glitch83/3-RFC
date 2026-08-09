@@ -672,7 +672,7 @@
       "id": "I-180",
       "title": "Close Module I: Realized Background Geometry and Expansion",
       "module": "I",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "G-160"
       ],
@@ -709,7 +709,7 @@
       "id": "HI-190",
       "title": "Close Module HI: Transfer Operator Instantiation",
       "module": "HI",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "HU-170",
         "I-180"
