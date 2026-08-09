@@ -1,0 +1,67 @@
+name: J-200 explicit governed operator step
+
+on:
+  pull_request:
+    types: [synchronize]
+
+permissions:
+  contents: write
+
+jobs:
+  repair-j200-wolfram-symbol:
+    if: github.event.pull_request.head.ref == 'ops/j200-explicit-1'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Apply only the frozen-lock-authorized J-WL-001 symbol repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECT='43260530fc96b37ea5ac9dc7494b7290d642431f'
+          RUN='J-200-20260809T225756Z'
+          R="modules/J/runs/$RUN"
+          test "$(git rev-parse HEAD)" = "$EXPECT"
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['status'])")" = FROZEN
+          mkdir -p "$R/wolfram/J-WL-001"
+          cat > "$R/wolfram/J-WL-001/FAILED_ATTEMPT_001.txt" <<'EOF'
+Symbol::undefined2: Warning: Global symbols "L, L, L" are undefined.
+Set::wrsym: Symbol C is Protected.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"J-WL-001\", \"eigenvalues\" -> Eigenvalues[\"C\"], \"positiveDefinite\" -> False, \"reconstructionPass\" -> False|>"
+EOF
+          cp recipes/J/wolfram/J-WL-001.wl "$R/wolfram/J-WL-001/ORIGINAL_FROZEN_PROGRAM.wl"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import datetime,timezone
+          p=Path('recipes/J/wolfram/J-WL-001.wl')
+          s=p.read_text()
+          old='''ClearAll["Global`*"];\nC = {{1, 7/20, 1/10}, {7/20, 4/5, 1/5}, {1/10, 1/5, 1/2}};\ne = Eigenvalues[C]; L = CholeskyDecomposition[C];\nresult = <|"call" -> "J-WL-001", "eigenvalues" -> (ToString[#, InputForm] & /@ e),\n "positiveDefinite" -> TrueQ[And @@ Thread[e > 0]],\n "reconstructionPass" -> TrueQ[FullSimplify[L.ConjugateTranspose[L] == C]]|>;\nToString[result, InputForm]\n'''
+          new='''ClearAll["Global`*"];\ncovMat = {{1, 7/20, 1/10}, {7/20, 4/5, 1/5}, {1/10, 1/5, 1/2}};\ne = Eigenvalues[covMat]; L = CholeskyDecomposition[covMat];\nresult = <|"call" -> "J-WL-001", "eigenvalues" -> (ToString[#, InputForm] & /@ e),\n "positiveDefinite" -> TrueQ[And @@ Thread[e > 0]],\n "reconstructionPass" -> TrueQ[FullSimplify[L.ConjugateTranspose[L] == covMat]]|>;\nToString[result, InputForm]\n'''
+          assert s==old
+          p.write_text(new)
+          R=Path('modules/J/runs/J-200-20260809T225756Z')
+          now=datetime.now(timezone.utc).isoformat()
+          rec={'patch_id':'J200-WL001-PROTECTED-C-SYMBOL','timestamp_utc':now,'classification':'IMPLEMENTATION_ONLY_WOLFRAM_SYNTAX_COMPATIBILITY','run_id':R.name,'defect':'Wolfram protected symbol C prevents assignment before the manufactured PSD/Cholesky gate evaluates.','correction':'Rename only local matrix symbol C to covMat; matrix entries, operations, expected booleans, thresholds, parent, laws, seed rule, gates and claim boundary unchanged.','failed_attempt':'wolfram/J-WL-001/FAILED_ATTEMPT_001.txt','science_changed':False,'parents_changed':False,'sources_changed':False,'law_changed':False,'candidate_classes_changed':False,'seed_rule_changed':False,'test_semantics_changed':False,'thresholds_changed':False,'gates_changed':False,'claim_boundary_changed':False,'test_implementation_changed':True,'required_action':'Rerun J-WL-001 and J-WL-002 in order, then rerun the full frozen J matrix.'}
+          (R/'IMPLEMENTATION_PATCH_RECORD.json').write_text(json.dumps(rec,indent=2)+'\n')
+          with (R/'FAILURES.jsonl').open('a') as f: f.write(json.dumps({'failure_id':'J200-WL001-PROTECTED-C-SYMBOL','timestamp_utc':now,'stage':'POST_LOCK_MANUFACTURED_WOLFRAM','call':'J-WL-001','result':'FAIL','cause':'Protected Wolfram symbol C blocked manufactured covariance assignment.','evidence':str(R/'wolfram/J-WL-001/FAILED_ATTEMPT_001.txt'),'disposition':'IMPLEMENTATION_ONLY_SYMBOL_RENAME_AND_FULL_FROZEN_MATRIX_RERUN','science_changed':False})+'\n')
+          PY
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add recipes/J/wolfram/J-WL-001.wl "$R/IMPLEMENTATION_PATCH_RECORD.json" "$R/FAILURES.jsonl" "$R/wolfram/J-WL-001"
+          git commit -m 'Repair J-200 Wolfram protected symbol only'
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'J200_WL_REPAIR_COMMIT=%s\n' "$(git rev-parse HEAD)"
