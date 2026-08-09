@@ -560,7 +560,7 @@
       "id": "F-155",
       "title": "Supersede Module F: Child-Ready Post-Nuclear Plasma",
       "module": "F",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "E-145"
       ],
@@ -598,7 +598,7 @@
       "id": "G-160",
       "title": "Close Module G: Nonequilibrium Recombination and Last-Scattering State",
       "module": "G",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "F-155"
       ],

@@ -1,14 +1,14 @@
 # Current Context
 
-Generated: 2026-08-09T02:22:56.105242+00:00
+Generated: 2026-08-09T02:24:28.282952+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `F-155` — Supersede Module F: Child-Ready Post-Nuclear Plasma
-- Current module: `F`
-- Last verified commit: `ff72654b32d1d17dc37f462c5558603848a8dd9f`
+- Active work unit: `G-160` — Close Module G: Nonequilibrium Recombination and Last-Scattering State
+- Current module: `G`
+- Last verified commit: `9df3cdd1b262770c4be1e50f5d4a8bbc77adb1d6`
 
 ## Strongest supported claim
 
@@ -20,25 +20,23 @@ No measured plasma/atomic coefficients, unique SI calibration, public recombinat
 
 ## Immediate objective
 
-Execute charge/plasma composition, photon/neutrino persistence, atomic candidates, opacity/transport and recombination-entry state from H_E_to_F_v2.
+Generate recombination, visibility, opacity, and radiation-surface histories from the physical plasma state.
 
 ## Required deliverables
 
-- modules/F/runs/<RUN_ID>/OUTPUT_CONTRACT.json
-- modules/F/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/F/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/F/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/F/runs/<RUN_ID>/CLOSEOUT.md
-- versioned superseding H_F_to_G_v2 handoff and manifest
+- modules/G/runs/<RUN_ID>/RUN_PLAN.md
+- modules/G/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/G/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/G/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/G/runs/<RUN_ID>/CLOSEOUT.md
+- frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- all module-spec required outputs SATISFIED
-- all configured child bindings SATISFIED
-- exact source/parent lineage
-- no public-data generation leakage
-- semantic countermodels
-- convergence, covariance, restart/replay and independent reconstruction
+- rate and opacity lineage
+- normalization and positivity
+- stiff convergence
+- independent reconstruction
 
 ## Module states
 
@@ -81,14 +79,14 @@ Execute charge/plasma composition, photon/neutrino persistence, atomic candidate
 
 ## Recent decisions
 
-- ADVANCE-E-145-20260808T165005Z: Marked E-145 PASS and activated F-155
-- REOPEN-F-20260809T021556Z: Reopened Module F from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
 - PROMOTE-F-FORMALIZED-20260809T022255Z: Promoted Module F from DESIGN to FORMALIZED at PRODUCTION
 - PROMOTE-F-IMPLEMENTED-20260809T022255Z: Promoted Module F from FORMALIZED to IMPLEMENTED at PRODUCTION
 - PROMOTE-F-VERIFIED-20260809T022255Z: Promoted Module F from IMPLEMENTED to VERIFIED at PRODUCTION
 - PROMOTE-F-PHYSICALLY_EXECUTED-20260809T022255Z: Promoted Module F from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
 - PROMOTE-F-INDEPENDENTLY_REPRODUCED-20260809T022255Z: Promoted Module F from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
 - PROMOTE-F-FROZEN-20260809T022255Z: Promoted Module F from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- COMMIT-9df3cdd1b262: Externally fetched and verified exact F-155 closeout SHA and diff; output contract, clean replay, independent reconstruction, gates and H_F_to_G_v2 manifest verified before child activation.
+- ADVANCE-F-155-20260809T022428Z: Marked F-155 PASS and activated G-160
 
 ## Recent failures
 
