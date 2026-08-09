@@ -635,7 +635,7 @@
       "id": "HU-170",
       "title": "Close Module HU: Frozen Universal Linear Transfer Operator",
       "module": "HU",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "G-160"
       ],
@@ -672,7 +672,7 @@
       "id": "I-180",
       "title": "Close Module I: Realized Background Geometry and Expansion",
       "module": "I",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "G-160"
       ],
