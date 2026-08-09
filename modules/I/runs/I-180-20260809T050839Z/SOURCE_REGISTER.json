@@ -22,13 +22,13 @@
       "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
       "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
       "bytes": 951976,
-      "classification": "CANONICAL_AUTHORITY_BOUNDARY_SOURCE"
+      "classification": "CANONICAL_AUTHORITY"
     },
     {
       "path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
       "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
       "bytes": 356706,
-      "classification": "CANONICAL_AUTHORITY_RELATIONAL_GRAMMAR"
+      "classification": "CANONICAL_AUTHORITY"
     },
     {
       "path": "modules/B/frozen/H_B_to_C_v2.json",
