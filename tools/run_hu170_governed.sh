@@ -35,6 +35,7 @@ git worktree add --detach /tmp/hu170-clean "$PRE_SHA"
  python tools/hu170_parent_bound.py execute
 )
 python tools/hu170_parent_bound.py finalize --replay-run "/tmp/hu170-clean/$R" --pre-sha "$PRE_SHA"
+python tools/hu170_contract_fix.py
 python tools/scientific_completion_guard.py --run "$R"
 python tools/rfc.py doctor
 python tools/director.py doctor
