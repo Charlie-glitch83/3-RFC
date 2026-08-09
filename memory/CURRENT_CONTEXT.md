@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-09T04:55:28.301630+00:00
+Generated: 2026-08-09T05:05:19.543346+00:00
 
 ## Project truth
 
@@ -12,11 +12,11 @@ Generated: 2026-08-09T04:55:28.301630+00:00
 
 ## Strongest supported claim
 
-G-160 generates a finite-relational MINIMAL_SPINE nonequilibrium recombination, process-opacity, optical-depth, normalized visibility and radiation-surface branch family from exact H_F_to_G_v2, preserving branch identity, charge/accounting, covariance, restart, memory and ancestry and supplying child-ready H_G_to_HU and H_G_to_I interfaces without external target values.
+HU-170 derives and freezes the branch-indexed, constraint-preserving universal linear tangent propagator of the exact G recombination/radiation-surface dynamics, with explicit domain/codomain, gauge/frame contract, covariance pushforward, ancestry and immutable H_HU_to_HI interface, without realized I geometry or public transfer data.
 
 ## Strongest unsupported claim
 
-No unique measured atomic coefficients, unique SI calibration, unique observed last-scattering coordinate, public recombination-code equivalence, final CMB spectra, late reionization history, or empirical agreement is claimed.
+No realized geometry/expansion history, unique physical transfer coefficients, public Boltzmann-table equivalence, final spectra, observed CMB/LSS transfer function, or empirical agreement is claimed.
 
 ## Immediate objective
 
@@ -47,7 +47,7 @@ Derive and freeze the background-independent portion of the linear transfer mach
 - E: `FROZEN` / `PRODUCTION`
 - F: `FROZEN` / `PRODUCTION`
 - G: `FROZEN` / `MINIMAL_SPINE`
-- HU: `DESIGN` / `UNSTARTED`
+- HU: `FROZEN` / `MINIMAL_SPINE`
 - I: `DESIGN` / `UNSTARTED`
 - HI: `DESIGN` / `UNSTARTED`
 - J: `DESIGN` / `UNSTARTED`
@@ -63,12 +63,11 @@ Derive and freeze the background-independent portion of the linear transfer mach
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 26
-- indexed runs: 21
+- frozen artifacts: 28
+- indexed runs: 22
 
 ## Recent runs
 
-- B-115-20260808T060000Z: PASS (B)
 - C-125-20260808T061947Z: BLOCKED (C)
 - C-125-20260808T063010Z: BLOCKED (C)
 - C-125-20260808T063500Z: PASS (C)
@@ -76,17 +75,18 @@ Derive and freeze the background-independent portion of the linear transfer mach
 - E-145-20260808T164410Z: PASS (E)
 - F-155-20260808T165152Z: PASS (F)
 - G-160-20260809T025252Z: PASS (G)
+- HU-170-20260809T045528Z: PASS (HU)
 
 ## Recent decisions
 
-- PROMOTE-G-FORMALIZED-20260809T042549Z: Promoted Module G from DESIGN to FORMALIZED at MINIMAL_SPINE
-- PROMOTE-G-IMPLEMENTED-20260809T042549Z: Promoted Module G from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
-- PROMOTE-G-VERIFIED-20260809T042550Z: Promoted Module G from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
-- PROMOTE-G-PHYSICALLY_EXECUTED-20260809T042550Z: Promoted Module G from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
 - PROMOTE-G-INDEPENDENTLY_REPRODUCED-20260809T042550Z: Promoted Module G from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
 - PROMOTE-G-FROZEN-20260809T042550Z: Promoted Module G from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 - COMMIT-1f4b5b511c04: Externally fetched and verified exact G-160 closeout SHA and diff; component gates, clean replay, independent reconstruction, frozen HU/I handoffs, and claim boundary verified before child activation.
 - ADVANCE-G-160-20260809T042938Z: Marked G-160 PASS and activated HU-170
+- PROMOTE-HU-FORMALIZED-20260809T050519Z: Promoted Module HU from DESIGN to FORMALIZED at MINIMAL_SPINE
+- PROMOTE-HU-VERIFIED-20260809T050519Z: Promoted Module HU from FORMALIZED to VERIFIED at MINIMAL_SPINE
+- PROMOTE-HU-INDEPENDENTLY_REPRODUCED-20260809T050519Z: Promoted Module HU from VERIFIED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
+- PROMOTE-HU-FROZEN-20260809T050519Z: Promoted Module HU from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 
 ## Recent failures
 

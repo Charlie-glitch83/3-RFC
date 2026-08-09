@@ -1,0 +1,30 @@
+{
+  "classification": "HU170_SEMANTIC_COUNTERMODELS",
+  "cases": [
+    {
+      "name": "realized_background_injection",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    },
+    {
+      "name": "undefined_linearity_domain",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    },
+    {
+      "name": "constraint_leaking_generator",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    },
+    {
+      "name": "gauge_split_as_physical",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

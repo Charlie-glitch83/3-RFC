@@ -236,9 +236,12 @@
       "run_id": "HU-170-20260809T045528Z",
       "module": "HU",
       "task_id": "HU-170",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/HU/runs/HU-170-20260809T045528Z",
-      "created_utc": "2026-08-09T04:55:28.458065+00:00"
+      "created_utc": "2026-08-09T04:55:28.458065+00:00",
+      "closed_utc": "2026-08-09T05:05:19.079834+00:00",
+      "tree_sha256": "da894f8798408bd1b754bccebc4d09d933f6d1981fd97d5d37eed46a511428bc",
+      "closeout": "modules/HU/runs/HU-170-20260809T045528Z/CLOSEOUT.md"
     }
   ]
 }

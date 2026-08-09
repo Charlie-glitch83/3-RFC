@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "HU-170",
   "current_module": "HU",
-  "current_run": "HU-170-20260809T045528Z",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -821,17 +821,55 @@
       "last_promoted_utc": "2026-08-09T04:25:50.212429+00:00"
     },
     "HU": {
-      "evidence_state": "DESIGN",
-      "fidelity": "UNSTARTED",
-      "active_run": "HU-170-20260809T045528Z",
+      "evidence_state": "FROZEN",
+      "fidelity": "MINIMAL_SPINE",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
           "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
           "evidence": "repository bootstrap"
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/HU/runs/HU-170-20260809T045528Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-09T05:05:19.151183+00:00",
+          "work_unit": "HU-170"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/HU/runs/HU-170-20260809T045528Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-09T05:05:19.212458+00:00",
+          "work_unit": "HU-170"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/HU/runs/HU-170-20260809T045528Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-09T05:05:19.273685+00:00",
+          "work_unit": "HU-170"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/HU/frozen/H_HU_to_HI.json",
+          "timestamp_utc": "2026-08-09T05:05:19.334943+00:00",
+          "work_unit": "HU-170"
         }
-      ]
+      ],
+      "completed_runs": [
+        "HU-170-20260809T045528Z"
+      ],
+      "promotion_evidence": [
+        "modules/HU/runs/HU-170-20260809T045528Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/HU/runs/HU-170-20260809T045528Z/GATE_RESULTS.json",
+        "modules/HU/runs/HU-170-20260809T045528Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/HU/frozen/H_HU_to_HI.json"
+      ],
+      "last_promoted_utc": "2026-08-09T05:05:19.334953+00:00"
     },
     "I": {
       "evidence_state": "DESIGN",
@@ -978,9 +1016,9 @@
     }
   },
   "last_verified_commit": "1f4b5b511c0436511c7e20d4e2684df4ded1356e",
-  "last_updated_utc": "2026-08-09T04:55:28.458647+00:00",
-  "strongest_supported_claim": "G-160 generates a finite-relational MINIMAL_SPINE nonequilibrium recombination, process-opacity, optical-depth, normalized visibility and radiation-surface branch family from exact H_F_to_G_v2, preserving branch identity, charge/accounting, covariance, restart, memory and ancestry and supplying child-ready H_G_to_HU and H_G_to_I interfaces without external target values.",
-  "strongest_unsupported_claim": "No unique measured atomic coefficients, unique SI calibration, unique observed last-scattering coordinate, public recombination-code equivalence, final CMB spectra, late reionization history, or empirical agreement is claimed.",
+  "last_updated_utc": "2026-08-09T05:05:19.334955+00:00",
+  "strongest_supported_claim": "HU-170 derives and freezes the branch-indexed, constraint-preserving universal linear tangent propagator of the exact G recombination/radiation-surface dynamics, with explicit domain/codomain, gauge/frame contract, covariance pushforward, ancestry and immutable H_HU_to_HI interface, without realized I geometry or public transfer data.",
+  "strongest_unsupported_claim": "No realized geometry/expansion history, unique physical transfer coefficients, public Boltzmann-table equivalence, final spectra, observed CMB/LSS transfer function, or empirical agreement is claimed.",
   "last_verified_branch": "agent/frontier-050-execution",
-  "repair_state": "G160_MINIMAL_SPINE_CLOSED_PENDING_VERIFIED_COMMIT_AND_ADVANCE"
+  "repair_state": "HU170_MINIMAL_SPINE_CLOSED_PENDING_VERIFIED_COMMIT_AND_ADVANCE"
 }

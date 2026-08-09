@@ -1,0 +1,38 @@
+{
+  "classification": "HU170_CONVERGENCE_RESTART_MATRIX",
+  "rows": {
+    "1": {
+      "operator_linf_vs_direct": 0.0,
+      "state_linf_vs_direct": 0.0,
+      "covariance_min_eigenvalue": 0.00018315638888734232,
+      "pass": true
+    },
+    "2": {
+      "operator_linf_vs_direct": 1.1102230246251565e-16,
+      "state_linf_vs_direct": 5.551115123125783e-17,
+      "covariance_min_eigenvalue": 0.00018315638888734102,
+      "pass": true
+    },
+    "4": {
+      "operator_linf_vs_direct": 1.1102230246251565e-16,
+      "state_linf_vs_direct": 5.551115123125783e-17,
+      "covariance_min_eigenvalue": 0.00018315638888734146,
+      "pass": true
+    },
+    "8": {
+      "operator_linf_vs_direct": 3.3306690738754696e-16,
+      "state_linf_vs_direct": 2.220446049250313e-16,
+      "covariance_min_eigenvalue": 0.0001831563888873419,
+      "pass": true
+    },
+    "16": {
+      "operator_linf_vs_direct": 3.3306690738754696e-16,
+      "state_linf_vs_direct": 2.220446049250313e-16,
+      "covariance_min_eigenvalue": 0.0001831563888873419,
+      "pass": true
+    }
+  },
+  "restart_linf": 0.0,
+  "restart_pass": true,
+  "pass": true
+}

@@ -1,0 +1,12 @@
+{
+  "classification": "HU170_INDEPENDENT_RECONSTRUCTION",
+  "parent_hash_match": true,
+  "no_realized_background_inputs": true,
+  "linearity_domain_defined": true,
+  "constraint_residual": 0.0,
+  "constraint_invariant": true,
+  "semigroup_pass": true,
+  "covariance_psd_pass": true,
+  "public_inputs_used": false,
+  "pass": true
+}

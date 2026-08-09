@@ -1,28 +1,17 @@
-# Closeout
+# HU-170 Closeout
 
-- Run ID:
-- Work unit:
-- Module:
-- Result:
-- Evidence state reached:
-- Fidelity reached:
-- Frozen artifact hashes:
-- Verified GitHub commit SHA:
+## Result
 
-## Scientific objects produced
-
-## Componentwise gate results
-
-## Failures preserved and corrections made
-
-## Independent reconstruction
-
-## Replay/restart/convergence evidence
+**PASS at MINIMAL_SPINE universal linear-operator scope.**
 
 ## Strongest supported claim
 
+HU-170 derives and freezes the branch-indexed, constraint-preserving universal linear tangent propagator of the exact G recombination/radiation-surface dynamics, with explicit domain/codomain, gauge/frame contract, covariance pushforward, ancestry and immutable H_HU_to_HI interface, without realized I geometry or public transfer data.
+
 ## Strongest unsupported claim
 
-## Remaining gaps
+No realized geometry/expansion history, unique physical transfer coefficients, public Boltzmann-table equivalence, final spectra, observed CMB/LSS transfer function, or empirical agreement is claimed.
 
-## Exact next child
+## Child boundary
+
+HI may consume only the frozen H_HU_to_HI packet after this closeout commit is fetched and verified, and only after I is independently frozen.

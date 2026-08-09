@@ -1,7 +1,33 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "HU-170-20260809T045528Z",
+  "module": "HU",
+  "overall": "PASS",
+  "componentwise": {
+    "no realized-background values smuggled into universal operator": {
+      "pass": true
+    },
+    "linearity-domain proof": {
+      "pass": true
+    },
+    "symbolic identity verification": {
+      "pass": true
+    },
+    "hash freeze": {
+      "pass": true,
+      "artifact": "modules/HU/frozen/H_HU_to_HI.json"
+    }
+  },
+  "semantic_countermodels": {
+    "pass": true
+  },
+  "ablations": {
+    "pass": true
+  },
+  "independent_reconstruction": {
+    "pass": true
+  },
+  "clean_replay": {
+    "pass": true
+  },
+  "aggregate_scores_cannot_override": true
 }

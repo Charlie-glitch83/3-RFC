@@ -1,0 +1,19 @@
+{
+  "classification": "MODULE_LOCAL_EXECUTION_PIPELINE",
+  "run": "/home/runner/work/3-RFC/3-RFC/modules/HU/runs/HU-170-20260809T045528Z",
+  "configuration_count": 1,
+  "overall": "PASS",
+  "results": [
+    {
+      "config": "HU_linear_transfer.json",
+      "solver": "linear_transfer",
+      "returncode": 0,
+      "success": true,
+      "classification": "LINEAR_TRANSFER_EXECUTION",
+      "manifest": "/home/runner/work/3-RFC/3-RFC/modules/HU/runs/HU-170-20260809T045528Z/solver_outputs/HU_linear_transfer/manifest.json",
+      "stdout": "{\n  \"solver\": \"linear_transfer\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"0695fe9a55e15785e1d2ba76f49f9c0f24bced6d44709d9c16e6f841d7972392\",\n  \"result_sha256\": \"7d50585f4ce6830105e6f3248ef161eb989723672dcd7c1e3c4dee1a1e7cd61d\",\n  \"environment_sha256\": \"ad9a6869d3b2173192ade63abfb9c9c626af18e8f7a0073cb7eeda9f16a0f6f7\",\n  \"success\": true,\n  \"classification\": \"LINEAR_TRANSFER_EXECUTION\"\n}",
+      "stderr": ""
+    }
+  ],
+  "warning": "Local solver success is necessary but does not replace source admission, Wolfram gates, convergence matrices, restart/replay, independent reconstruction, or module closeout."
+}

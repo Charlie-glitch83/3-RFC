@@ -1,0 +1,9 @@
+{
+  "solver": "linear_transfer",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "0695fe9a55e15785e1d2ba76f49f9c0f24bced6d44709d9c16e6f841d7972392",
+  "result_sha256": "7d50585f4ce6830105e6f3248ef161eb989723672dcd7c1e3c4dee1a1e7cd61d",
+  "environment_sha256": "42139a66dff7c9828565f5a13387e48768324c8dd9976dddf48e4c9c88e7a949",
+  "success": true,
+  "classification": "LINEAR_TRANSFER_EXECUTION"
+}

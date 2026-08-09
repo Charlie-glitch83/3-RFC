@@ -1,0 +1,21 @@
+{
+  "classification": "HU170_TRIAD_OPERATOR_ABLATIONS",
+  "cases": [
+    {
+      "removed": "CIF admissible tangent domain",
+      "effect": "operator domain undefined",
+      "pass": true
+    },
+    {
+      "removed": "QV propagation action",
+      "effect": "no transfer map",
+      "pass": true
+    },
+    {
+      "removed": "RFL freeze/memory",
+      "effect": "no immutable child interface",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

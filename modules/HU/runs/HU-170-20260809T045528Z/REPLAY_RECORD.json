@@ -1,10 +1,9 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "classification": "CLEAN_REPLAY_RECORD",
+  "pre_execution_commit": "5f17ef9f3fb4b982907c5324045747b7ea59aa5d",
+  "artifact_hashes_match": true,
+  "clean_checkout": true,
+  "run_id": "HU-170-20260809T045528Z",
+  "pass": true,
+  "result": "PASS"
 }
