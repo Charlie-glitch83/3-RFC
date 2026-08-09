@@ -1,63 +1,13 @@
-name: Replace invalid J-200 pre-execution freeze
+name: Disabled temporary J-200 transport
 
 on:
-  pull_request:
-    types: [synchronize]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  replace-j200-run:
-    if: github.event.pull_request.number == 74 && github.event.pull_request.head.ref == 'ops/d135-start-20260808'
+  disabled:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: agent/frontier-050-execution
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: pip
-      - name: Close invalid pre-execution run and regenerate J packet
-        shell: bash
-        run: |
-          set -euo pipefail
-          python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          OLD='J-200-20260809T225756Z'
-          R="modules/J/runs/$OLD"
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='J-200' and s['current_module']=='J',s
-          assert s['current_run']=='J-200-20260809T225756Z',s
-          r=Path('modules/J/runs/J-200-20260809T225756Z')
-          src=json.load(open(r/'SOURCE_REGISTER.json'))
-          lock=json.load(open(r/'PRE_EXECUTION_LOCK.json'))
-          assert src.get('admitted_sources',[])==[],src
-          assert lock.get('status')=='FROZEN',lock
-          assert not (r/'primary').exists(), 'primary execution already exists; refusing replacement'
-          (r/'CLOSEOUT.md').write_text('''# J-200 Invalid Pre-Execution Freeze Closeout\n\n## Result\nFAIL before primary execution.\n\n## Finding\nThis run froze its J source register with no admitted canonical P29/P30 source objects. That is too narrow for J: the active recipe requires derivation of the missing primordial covariance/spectrum from the triad and exact parent, while canonical P29 explicitly leaves perturbation spectra as a proof obligation and canonical P30 explicitly leaves the physical primordial spectrum and its amplitude/shape quantities pending rather than supplying them as parents. Freezing J against HI alone prematurely converted a required enhancement derivation into an artificial obstruction.\n\nNo primary J covariance, spectrum, seed realization, finite-volume field, or K handoff was produced. The Wolfram compatibility failures are preserved only as implementation evidence and do not alter science.\n\n## Strongest supported claim\nThe exact HI parent remains valid and frozen; this J run is invalid only because its pre-execution source scope omitted canonical sources required to derive J's new scientific object.\n\n## Strongest unsupported claim\nNo J physical covariance, primordial spectrum, phase realization, finite-volume field, or K-ready handoff is claimed from this run.\n\nRequired action: close this run FAIL, keep J-200 active, regenerate a new governed J run, admit exact P29/P30 plus HI before freezing, and derive the missing J law there.\n''')
-          PY
-          python tools/rfc.py close-run --run-id "$OLD" --result FAIL --closeout "$R/CLOSEOUT.md"
-          bash tools/start_work.sh
-          python tools/rfc.py doctor
-          python tools/director.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
-          python tools/rfc.py context
-          python - <<'PY'
-          import json
-          s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='J-200' and s['current_module']=='J',s
-          assert s['current_run'] and s['current_run']!='J-200-20260809T225756Z' and s['current_run'].startswith('J-200-'),s
-          print('NEW_J_RUN='+s['current_run'])
-          PY
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add STATE.json memory/CURRENT_CONTEXT.md memory/RUN_INDEX.json memory/ARTIFACT_REGISTRY.json work_packets/ACTIVE_WORK_PACKET.md modules/J/runs
-          git commit -m 'Replace invalid J-200 pre-execution freeze'
-          git push origin HEAD:agent/frontier-050-execution
-          printf 'J200_REPLACEMENT_COMMIT=%s\n' "$(git rev-parse HEAD)"
+      - run: echo "Temporary J-200 synchronization transport disabled; continue only through explicit repository-directed execution."
