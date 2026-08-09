@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          EXPECT='a2f0a7658e02ddd156d20cac85a255f024584539'
+          EXPECT='29a3b8f7a01a09f4c560c62a8007dd639f67f294'
           RUN='J-200-20260809T225756Z'
           R="modules/J/runs/$RUN"
           test "$(git rev-parse HEAD)" = "$EXPECT"
