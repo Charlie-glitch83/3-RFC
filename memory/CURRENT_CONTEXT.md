@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-09T02:52:55.748081+00:00
+Generated: 2026-08-09T04:25:50.479488+00:00
 
 ## Project truth
 
@@ -12,11 +12,11 @@ Generated: 2026-08-09T02:52:55.748081+00:00
 
 ## Strongest supported claim
 
-F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.
+G-160 generates a finite-relational MINIMAL_SPINE nonequilibrium recombination, process-opacity, optical-depth, normalized visibility and radiation-surface branch family from exact H_F_to_G_v2, preserving branch identity, charge/accounting, covariance, restart, memory and ancestry and supplying child-ready H_G_to_HU and H_G_to_I interfaces without external target values.
 
 ## Strongest unsupported claim
 
-No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed.
+No unique measured atomic coefficients, unique SI calibration, unique observed last-scattering coordinate, public recombination-code equivalence, final CMB spectra, late reionization history, or empirical agreement is claimed.
 
 ## Immediate objective
 
@@ -46,7 +46,7 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 - D: `FROZEN` / `PRODUCTION`
 - E: `FROZEN` / `PRODUCTION`
 - F: `FROZEN` / `PRODUCTION`
-- G: `BLOCKED` / `UNSTARTED`
+- G: `FROZEN` / `MINIMAL_SPINE`
 - HU: `DESIGN` / `UNSTARTED`
 - I: `DESIGN` / `UNSTARTED`
 - HI: `DESIGN` / `UNSTARTED`
@@ -63,7 +63,7 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 23
+- frozen artifacts: 26
 - indexed runs: 21
 
 ## Recent runs
@@ -75,18 +75,18 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 - D-135-20260808T163243Z: PASS (D)
 - E-145-20260808T164410Z: PASS (E)
 - F-155-20260808T165152Z: PASS (F)
-- G-160-20260809T025252Z: CREATED (G)
+- G-160-20260809T025252Z: PASS (G)
 
 ## Recent decisions
 
-- PROMOTE-F-FORMALIZED-20260809T022255Z: Promoted Module F from DESIGN to FORMALIZED at PRODUCTION
-- PROMOTE-F-IMPLEMENTED-20260809T022255Z: Promoted Module F from FORMALIZED to IMPLEMENTED at PRODUCTION
-- PROMOTE-F-VERIFIED-20260809T022255Z: Promoted Module F from IMPLEMENTED to VERIFIED at PRODUCTION
-- PROMOTE-F-PHYSICALLY_EXECUTED-20260809T022255Z: Promoted Module F from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
-- PROMOTE-F-INDEPENDENTLY_REPRODUCED-20260809T022255Z: Promoted Module F from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
-- PROMOTE-F-FROZEN-20260809T022255Z: Promoted Module F from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
-- COMMIT-9df3cdd1b262: Externally fetched and verified exact F-155 closeout SHA and diff; output contract, clean replay, independent reconstruction, gates and H_F_to_G_v2 manifest verified before child activation.
 - ADVANCE-F-155-20260809T022428Z: Marked F-155 PASS and activated G-160
+- REOPEN-G-20260809T030415Z: Reopened Module G from BLOCKED/UNSTARTED at target fidelity MINIMAL_SPINE for the authorized superseding lineage.
+- PROMOTE-G-FORMALIZED-20260809T042549Z: Promoted Module G from DESIGN to FORMALIZED at MINIMAL_SPINE
+- PROMOTE-G-IMPLEMENTED-20260809T042549Z: Promoted Module G from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
+- PROMOTE-G-VERIFIED-20260809T042550Z: Promoted Module G from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
+- PROMOTE-G-PHYSICALLY_EXECUTED-20260809T042550Z: Promoted Module G from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
+- PROMOTE-G-INDEPENDENTLY_REPRODUCED-20260809T042550Z: Promoted Module G from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
+- PROMOTE-G-FROZEN-20260809T042550Z: Promoted Module G from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
 
 ## Recent failures
 

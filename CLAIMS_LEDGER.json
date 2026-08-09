@@ -105,6 +105,23 @@
       "unsupported_boundary": "No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed.",
       "recorded_utc": "2026-08-09T02:22:56.042057+00:00",
       "work_unit": "F-155"
+    },
+    {
+      "claim_id": "G-160-MINIMAL-SPINE-RECOMBINATION-SURFACE",
+      "text": "G-160 generates a finite-relational MINIMAL_SPINE nonequilibrium recombination, process-opacity, optical-depth, normalized visibility and radiation-surface branch family from exact H_F_to_G_v2, preserving branch identity, charge/accounting, covariance, restart, memory and ancestry and supplying child-ready H_G_to_HU and H_G_to_I interfaces without external target values.",
+      "owner": "G",
+      "evidence_state": "FROZEN",
+      "fidelity": "MINIMAL_SPINE",
+      "supported": true,
+      "evidence": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json",
+        "modules/G/runs/G-160-20260809T025252Z/GATE_RESULTS.json",
+        "modules/G/runs/G-160-20260809T025252Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+      ],
+      "unsupported_boundary": "No unique measured atomic coefficients, unique SI calibration, unique observed last-scattering coordinate, public recombination-code equivalence, final CMB spectra, late reionization history, or empirical agreement is claimed.",
+      "recorded_utc": "2026-08-09T04:25:50.393799+00:00",
+      "work_unit": "G-160"
     }
   ]
 }

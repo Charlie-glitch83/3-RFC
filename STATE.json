@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "G-160",
   "current_module": "G",
-  "current_run": "G-160-20260809T025252Z",
+  "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -728,7 +728,7 @@
       "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "G": {
-      "evidence_state": "DESIGN",
+      "evidence_state": "FROZEN",
       "fidelity": "MINIMAL_SPINE",
       "active_run": null,
       "frozen_artifacts": [],
@@ -756,17 +756,69 @@
             "evidence_state": "BLOCKED",
             "fidelity": "UNSTARTED"
           }
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-09T04:25:49.903627+00:00",
+          "work_unit": "G-160"
+        },
+        {
+          "state": "IMPLEMENTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/G/runs/G-160-20260809T025252Z/solver_outputs/reaction_network/result.json",
+          "timestamp_utc": "2026-08-09T04:25:49.964706+00:00",
+          "work_unit": "G-160"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/G/runs/G-160-20260809T025252Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-09T04:25:50.026303+00:00",
+          "work_unit": "G-160"
+        },
+        {
+          "state": "PHYSICALLY_EXECUTED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/G/runs/G-160-20260809T025252Z/primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+          "timestamp_utc": "2026-08-09T04:25:50.087371+00:00",
+          "work_unit": "G-160"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/G/runs/G-160-20260809T025252Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-09T04:25:50.148868+00:00",
+          "work_unit": "G-160"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/G/frozen/H_G_to_HU.json",
+          "timestamp_utc": "2026-08-09T04:25:50.212418+00:00",
+          "work_unit": "G-160"
         }
       ],
       "completed_runs": [
         "G-160-20260808T021341Z",
-        "G-160-20260808T051613Z"
+        "G-160-20260808T051613Z",
+        "G-160-20260809T025252Z"
       ],
       "reopened_from": {
         "evidence_state": "BLOCKED",
         "fidelity": "UNSTARTED"
       },
-      "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
+      "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+      "promotion_evidence": [
+        "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
+        "modules/G/runs/G-160-20260809T025252Z/solver_outputs/reaction_network/result.json",
+        "modules/G/runs/G-160-20260809T025252Z/GATE_RESULTS.json",
+        "modules/G/runs/G-160-20260809T025252Z/primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+        "modules/G/runs/G-160-20260809T025252Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/G/frozen/H_G_to_HU.json"
+      ],
+      "last_promoted_utc": "2026-08-09T04:25:50.212429+00:00"
     },
     "HU": {
       "evidence_state": "DESIGN",
@@ -926,9 +978,9 @@
     }
   },
   "last_verified_commit": "9df3cdd1b262770c4be1e50f5d4a8bbc77adb1d6",
-  "last_updated_utc": "2026-08-09T03:04:15.000761+00:00",
-  "strongest_supported_claim": "F-155 replays the recovered finite-relational Module F construction against exact H_E_to_F_v2 at PRODUCTION fidelity: isotope-resolved post-nuclear persistence, relational charge/Gauss closure, generated plasma response and transport operators, photon/neutrino persistence, witnessed-event opacity seeds, conditional atomic candidates and no-loss promotion, intrinsic recombination-entry state, source-transfer ownership, covariance, restart and complete G child bindings, with no public post-BBN or recombination target used in generation.",
-  "strongest_unsupported_claim": "No measured plasma/atomic coefficients, unique SI calibration, public recombination coordinate, solved nonequilibrium recombination/free-electron/optical-depth/visibility/last-scattering history, or empirical agreement is claimed.",
+  "last_updated_utc": "2026-08-09T04:25:50.212432+00:00",
+  "strongest_supported_claim": "G-160 generates a finite-relational MINIMAL_SPINE nonequilibrium recombination, process-opacity, optical-depth, normalized visibility and radiation-surface branch family from exact H_F_to_G_v2, preserving branch identity, charge/accounting, covariance, restart, memory and ancestry and supplying child-ready H_G_to_HU and H_G_to_I interfaces without external target values.",
+  "strongest_unsupported_claim": "No unique measured atomic coefficients, unique SI calibration, unique observed last-scattering coordinate, public recombination-code equivalence, final CMB spectra, late reionization history, or empirical agreement is claimed.",
   "last_verified_branch": "agent/frontier-050-execution",
-  "repair_state": "F155_PRODUCTION_CLOSED_PENDING_VERIFIED_COMMIT_AND_CHILD_ADVANCE"
+  "repair_state": "G160_MINIMAL_SPINE_CLOSED_PENDING_VERIFIED_COMMIT_AND_ADVANCE"
 }

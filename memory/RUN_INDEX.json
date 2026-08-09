@@ -225,9 +225,12 @@
       "run_id": "G-160-20260809T025252Z",
       "module": "G",
       "task_id": "G-160",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/G/runs/G-160-20260809T025252Z",
-      "created_utc": "2026-08-09T02:52:52.611486+00:00"
+      "created_utc": "2026-08-09T02:52:52.611486+00:00",
+      "closed_utc": "2026-08-09T04:25:49.834220+00:00",
+      "tree_sha256": "4a8bc31115146964a194181e8bc77f6c0ef06c047bd88647c986ba021d261fa1",
+      "closeout": "modules/G/runs/G-160-20260809T025252Z/CLOSEOUT.md"
     }
   ]
 }

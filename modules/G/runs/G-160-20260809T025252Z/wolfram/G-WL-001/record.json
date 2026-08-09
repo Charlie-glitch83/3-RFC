@@ -1,0 +1,14 @@
+{
+  "call_id": "G-WL-001",
+  "module": "G",
+  "purpose": "Visibility normalization identity for a positive opacity model",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-09T04:25:15.256496+00:00",
+  "input_sha256": "e883fd6ef2fcd8d772c8e818a8dfcd6af67bfa3a363a8f065be01c407d836735",
+  "output_sha256": "376f2c61e0cf19faaf5388b884d7792d632585c3baa00541ea22839c633c8823",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/G/runs/G-160-20260809T025252Z/wolfram/G-WL-001/gate.json"
+}

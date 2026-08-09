@@ -1,0 +1,16 @@
+{
+  "module": "G",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "ionization_fraction_bounded": true,
+    "optical_depth_monotone": true,
+    "visibility_positive": true,
+    "visibility_normalized": true
+  },
+  "metrics": {
+    "visibility_peak_z": 8.9,
+    "normalization": 1.0
+  },
+  "note": "Manufactured recombination/visibility profile; actual histories must come from Module F parents."
+}

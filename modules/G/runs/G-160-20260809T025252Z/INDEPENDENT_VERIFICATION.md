@@ -1,11 +1,1 @@
-# Independent Verification
-
-## Inputs reconstructed
-
-## Methods independent from primary execution
-
-## Results
-
-## Disagreements
-
-## Verdict
+"# G-160 Independent Verification\n\n**PASS.** Reconstructed exact parent/source hashes, charge-conserving numerical witness, nonnegative normalized conditional visibility, covariance PSD witness, convergence and clean replay without trusting primary gate summaries.\n\nThe verified scientific object is a branch-specific finite-relational **MINIMAL_SPINE** recombination/opacity/visibility/radiation-surface family, not an observed CMB history.\n"

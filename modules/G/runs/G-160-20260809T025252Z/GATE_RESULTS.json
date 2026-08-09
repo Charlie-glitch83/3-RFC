@@ -1,7 +1,38 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "G-160-20260809T025252Z",
+  "module": "G",
+  "overall": "PASS",
+  "componentwise": {
+    "rate and opacity lineage": {
+      "pass": true
+    },
+    "normalization and positivity": {
+      "pass": true
+    },
+    "stiff convergence": {
+      "pass": true,
+      "evidence": "convergence/CONVERGENCE.json"
+    },
+    "independent reconstruction": {
+      "pass": true
+    },
+    "required output completeness and HU/I child-readiness": {
+      "pass": true,
+      "required_outputs": 6,
+      "child_bindings": 8
+    },
+    "generation firewall": {
+      "pass": true
+    },
+    "semantic countermodels": {
+      "pass": true
+    },
+    "ablations": {
+      "pass": true
+    },
+    "clean replay": {
+      "pass": true
+    }
+  },
+  "aggregate_scores_cannot_override": true
 }

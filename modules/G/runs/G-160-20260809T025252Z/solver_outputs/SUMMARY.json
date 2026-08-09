@@ -1,0 +1,29 @@
+{
+  "classification": "MODULE_LOCAL_EXECUTION_PIPELINE",
+  "run": "/home/runner/work/3-RFC/3-RFC/modules/G/runs/G-160-20260809T025252Z",
+  "configuration_count": 2,
+  "overall": "PASS",
+  "results": [
+    {
+      "config": "G_recombination_network.json",
+      "solver": "reaction_network",
+      "returncode": 0,
+      "success": true,
+      "classification": "REACTION_NETWORK_EXECUTION",
+      "manifest": "/home/runner/work/3-RFC/3-RFC/modules/G/runs/G-160-20260809T025252Z/solver_outputs/G_recombination_network/manifest.json",
+      "stdout": "{\n  \"solver\": \"reaction_network\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"e873f7bd258b9be1fef7c75b3fe75c2c0d2afb245a6cc85042ad7798bdab8154\",\n  \"result_sha256\": \"41e519cdf748f313317e5708164be959ea1b8edb2982f86a7da5d65a236165b3\",\n  \"environment_sha256\": \"3040544cb670ad65d720b7f07d2f436bc659afc2987ea6c2ef0c1a4e0e6465b8\",\n  \"success\": true,\n  \"classification\": \"REACTION_NETWORK_EXECUTION\"\n}",
+      "stderr": ""
+    },
+    {
+      "config": "G_visibility.json",
+      "solver": "visibility",
+      "returncode": 0,
+      "success": true,
+      "classification": "VISIBILITY_KERNEL_EXECUTION",
+      "manifest": "/home/runner/work/3-RFC/3-RFC/modules/G/runs/G-160-20260809T025252Z/solver_outputs/G_visibility/manifest.json",
+      "stdout": "{\n  \"solver\": \"visibility\",\n  \"generation_mode\": \"GENERATION_SEALED\",\n  \"config_sha256\": \"3a3b488df4fc5e06258c49407a73e455fde57fe9d0d85ea9df7f3eb853b0ef52\",\n  \"result_sha256\": \"df190feb151574fcd8d60fd519ad1a1851947d2d2feecf900eb562695ee3565b\",\n  \"environment_sha256\": \"0484bfece5c7ee0c3b4d392ef407017aad1e32fd9e178b115827d7d2d29fbcf3\",\n  \"success\": true,\n  \"classification\": \"VISIBILITY_KERNEL_EXECUTION\"\n}",
+      "stderr": ""
+    }
+  ],
+  "warning": "Local solver success is necessary but does not replace source admission, Wolfram gates, convergence matrices, restart/replay, independent reconstruction, or module closeout."
+}

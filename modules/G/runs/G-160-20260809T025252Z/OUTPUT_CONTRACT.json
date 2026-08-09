@@ -2,57 +2,151 @@
   "schema_version": "1.0",
   "run_id": "G-160-20260809T025252Z",
   "module": "G",
-  "status": "DRAFT",
+  "status": "PASS",
   "required_outputs": [
     {
       "name": "ionization/recombination histories",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-160-20260809T025252Z/primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "visibility and optical-depth functions",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-160-20260809T025252Z/primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+        "modules/G/runs/G-160-20260809T025252Z/solver_outputs/visibility/result.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "radiation surface",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-160-20260809T025252Z/primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "covariance and restart",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-160-20260809T025252Z/primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+        "modules/G/runs/G-160-20260809T025252Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_G_to_HU",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_G_to_I",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     }
   ],
-  "child_bindings": {},
-  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+  "child_bindings": {
+    "recombination_history": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    },
+    "opacity_history": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    },
+    "optical_depth": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    },
+    "visibility_function": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    },
+    "radiation_surface": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    },
+    "covariance": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    },
+    "clock": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    },
+    "restart": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU.json",
+        "modules/G/frozen/H_G_to_I.json"
+      ],
+      "derived_absence": false
+    }
+  }
 }

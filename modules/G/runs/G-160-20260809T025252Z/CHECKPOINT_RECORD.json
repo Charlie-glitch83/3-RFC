@@ -1,7 +1,8 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
-  "hash_algorithm": "sha256"
+  "run_id": "G-160-20260809T025252Z",
+  "status": "FINAL",
+  "pre_execution_commit": "da328f881b2a7bbd73e90dfaf897ef1bfedf61dc",
+  "restartable": true,
+  "restart_artifact": "primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+  "parent_hash": "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990"
 }

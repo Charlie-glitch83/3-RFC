@@ -1,0 +1,22 @@
+{
+  "classification": "G160_INDEPENDENT_RECONSTRUCTION",
+  "parent_hash_match": true,
+  "source_hashes_match": true,
+  "charge_residual": [
+    0.0,
+    0.0
+  ],
+  "charge_pass": true,
+  "reaction_success": true,
+  "visibility_success": true,
+  "visibility_nonnegative": true,
+  "visibility_normalized": true,
+  "covariance_witness_eigenvalues": [
+    1.0,
+    1.0
+  ],
+  "covariance_psd_pass": true,
+  "convergence_pass": true,
+  "public_inputs_used": false,
+  "pass": true
+}

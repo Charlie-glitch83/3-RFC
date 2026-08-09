@@ -1,7 +1,57 @@
 {
-  "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "run_id": "G-160-20260809T025252Z",
+  "module": "G",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "ionization/recombination histories",
+      "status": "PASS",
+      "semantic_check": "artifact is generated from exact F-v2 parent under frozen G branch-family law and independently reconstructed at minimal-spine scope",
+      "evidence": [
+        "primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json"
+      ]
+    },
+    {
+      "requirement": "visibility and optical-depth functions",
+      "status": "PASS",
+      "semantic_check": "artifact is generated from exact F-v2 parent under frozen G branch-family law and independently reconstructed at minimal-spine scope",
+      "evidence": [
+        "primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+        "solver_outputs/visibility/result.json"
+      ]
+    },
+    {
+      "requirement": "radiation surface",
+      "status": "PASS",
+      "semantic_check": "artifact is generated from exact F-v2 parent under frozen G branch-family law and independently reconstructed at minimal-spine scope",
+      "evidence": [
+        "primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json"
+      ]
+    },
+    {
+      "requirement": "covariance and restart",
+      "status": "PASS",
+      "semantic_check": "artifact is generated from exact F-v2 parent under frozen G branch-family law and independently reconstructed at minimal-spine scope",
+      "evidence": [
+        "primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+        "independent/INDEPENDENT_RECONSTRUCTION.json"
+      ]
+    },
+    {
+      "requirement": "H_G_to_HU",
+      "status": "PASS",
+      "semantic_check": "artifact is generated from exact F-v2 parent under frozen G branch-family law and independently reconstructed at minimal-spine scope",
+      "evidence": [
+        "modules/G/frozen/H_G_to_HU.json"
+      ]
+    },
+    {
+      "requirement": "H_G_to_I",
+      "status": "PASS",
+      "semantic_check": "artifact is generated from exact F-v2 parent under frozen G branch-family law and independently reconstructed at minimal-spine scope",
+      "evidence": [
+        "modules/G/frozen/H_G_to_I.json"
+      ]
+    }
+  ]
 }

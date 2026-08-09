@@ -1,0 +1,46 @@
+{
+  "classification": "G160_FROZEN_CONVERGENCE_MATRIX",
+  "divisors": [
+    64,
+    128,
+    256,
+    512
+  ],
+  "endpoint_tolerance": 1e-08,
+  "visibility_normalization_tolerance": 1e-09,
+  "rows": {
+    "64": {
+      "reaction_success": true,
+      "visibility_success": true,
+      "visibility_normalized": true,
+      "visibility_nonnegative": true,
+      "reaction_endpoint_linf_vs_512": 4.286193622249357e-11,
+      "endpoint_pass": true
+    },
+    "128": {
+      "reaction_success": true,
+      "visibility_success": true,
+      "visibility_normalized": true,
+      "visibility_nonnegative": true,
+      "reaction_endpoint_linf_vs_512": 2.7937097080155127e-12,
+      "endpoint_pass": true
+    },
+    "256": {
+      "reaction_success": true,
+      "visibility_success": true,
+      "visibility_normalized": true,
+      "visibility_nonnegative": true,
+      "reaction_endpoint_linf_vs_512": 1.1973755320582313e-13,
+      "endpoint_pass": true
+    },
+    "512": {
+      "reaction_success": true,
+      "visibility_success": true,
+      "visibility_normalized": true,
+      "visibility_nonnegative": true,
+      "reaction_endpoint_linf_vs_512": 0.0,
+      "endpoint_pass": true
+    }
+  },
+  "pass": true
+}

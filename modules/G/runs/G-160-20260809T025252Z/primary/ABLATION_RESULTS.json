@@ -1,0 +1,21 @@
+{
+  "run_id": "G-160-20260809T025252Z",
+  "overall": "PASS",
+  "tests": [
+    {
+      "ablation": "remove charge/free-electron ledger",
+      "expected_failure": "recombination history loses closure",
+      "pass": true
+    },
+    {
+      "ablation": "remove opacity integration",
+      "expected_failure": "visibility/radiation surface undefined",
+      "pass": true
+    },
+    {
+      "ablation": "remove branch/memory ancestry",
+      "expected_failure": "no-loss child handoff fails",
+      "pass": true
+    }
+  ]
+}

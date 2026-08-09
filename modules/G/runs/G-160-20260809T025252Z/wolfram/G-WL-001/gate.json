@@ -1,0 +1,13 @@
+{
+  "call_id": "G-WL-001",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "tau",
+    "visibility",
+    "normalization"
+  ],
+  "decision_rule": "Require positive opacity and visibility normalization at the declared boundary.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

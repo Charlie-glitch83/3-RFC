@@ -1,0 +1,9 @@
+{
+  "solver": "visibility",
+  "generation_mode": "GENERATION_SEALED",
+  "config_sha256": "3a3b488df4fc5e06258c49407a73e455fde57fe9d0d85ea9df7f3eb853b0ef52",
+  "result_sha256": "df190feb151574fcd8d60fd519ad1a1851947d2d2feecf900eb562695ee3565b",
+  "environment_sha256": "0484bfece5c7ee0c3b4d392ef407017aad1e32fd9e178b115827d7d2d29fbcf3",
+  "success": true,
+  "classification": "VISIBILITY_KERNEL_EXECUTION"
+}

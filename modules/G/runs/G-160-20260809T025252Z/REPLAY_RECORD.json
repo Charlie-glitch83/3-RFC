@@ -1,10 +1,9 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "classification": "CLEAN_REPLAY_RECORD",
+  "pre_execution_commit": "da328f881b2a7bbd73e90dfaf897ef1bfedf61dc",
+  "artifact_hashes_match": true,
+  "clean_checkout": true,
+  "run_id": "G-160-20260809T025252Z",
+  "pass": true,
+  "result": "PASS"
 }

@@ -1,0 +1,22 @@
+{
+  "run_id": "G-160-20260809T025252Z",
+  "overall": "PASS",
+  "tests": [
+    {
+      "name": "external ionization history substitution",
+      "rejected": true
+    },
+    {
+      "name": "readiness score substituted for surface",
+      "rejected": true
+    },
+    {
+      "name": "negative opacity branch",
+      "rejected": true
+    },
+    {
+      "name": "last-scattering equals drag without theorem",
+      "rejected": true
+    }
+  ]
+}
