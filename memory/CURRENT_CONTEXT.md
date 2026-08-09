@@ -1,14 +1,14 @@
 # Current Context
 
-Generated: 2026-08-09T04:25:50.479488+00:00
+Generated: 2026-08-09T04:29:38.260281+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `G-160` — Close Module G: Nonequilibrium Recombination and Last-Scattering State
-- Current module: `G`
-- Last verified commit: `9df3cdd1b262770c4be1e50f5d4a8bbc77adb1d6`
+- Active work unit: `HU-170` — Close Module HU: Frozen Universal Linear Transfer Operator
+- Current module: `HU`
+- Last verified commit: `1f4b5b511c0436511c7e20d4e2684df4ded1356e`
 
 ## Strongest supported claim
 
@@ -20,23 +20,23 @@ No unique measured atomic coefficients, unique SI calibration, unique observed l
 
 ## Immediate objective
 
-Generate recombination, visibility, opacity, and radiation-surface histories from the physical plasma state.
+Derive and freeze the background-independent portion of the linear transfer machinery before instantiation on a realized geometry.
 
 ## Required deliverables
 
-- modules/G/runs/<RUN_ID>/RUN_PLAN.md
-- modules/G/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/G/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/G/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/G/runs/<RUN_ID>/CLOSEOUT.md
+- modules/HU/runs/<RUN_ID>/RUN_PLAN.md
+- modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/HU/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/HU/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- rate and opacity lineage
-- normalization and positivity
-- stiff convergence
-- independent reconstruction
+- no realized-background values smuggled into universal operator
+- linearity-domain proof
+- symbolic identity verification
+- hash freeze
 
 ## Module states
 
@@ -79,14 +79,14 @@ Generate recombination, visibility, opacity, and radiation-surface histories fro
 
 ## Recent decisions
 
-- ADVANCE-F-155-20260809T022428Z: Marked F-155 PASS and activated G-160
-- REOPEN-G-20260809T030415Z: Reopened Module G from BLOCKED/UNSTARTED at target fidelity MINIMAL_SPINE for the authorized superseding lineage.
 - PROMOTE-G-FORMALIZED-20260809T042549Z: Promoted Module G from DESIGN to FORMALIZED at MINIMAL_SPINE
 - PROMOTE-G-IMPLEMENTED-20260809T042549Z: Promoted Module G from FORMALIZED to IMPLEMENTED at MINIMAL_SPINE
 - PROMOTE-G-VERIFIED-20260809T042550Z: Promoted Module G from IMPLEMENTED to VERIFIED at MINIMAL_SPINE
 - PROMOTE-G-PHYSICALLY_EXECUTED-20260809T042550Z: Promoted Module G from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
 - PROMOTE-G-INDEPENDENTLY_REPRODUCED-20260809T042550Z: Promoted Module G from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
 - PROMOTE-G-FROZEN-20260809T042550Z: Promoted Module G from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
+- COMMIT-1f4b5b511c04: Externally fetched and verified exact G-160 closeout SHA and diff; component gates, clean replay, independent reconstruction, frozen HU/I handoffs, and claim boundary verified before child activation.
+- ADVANCE-G-160-20260809T042938Z: Marked G-160 PASS and activated HU-170
 
 ## Recent failures
 

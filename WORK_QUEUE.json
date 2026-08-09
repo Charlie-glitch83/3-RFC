@@ -598,7 +598,7 @@
       "id": "G-160",
       "title": "Close Module G: Nonequilibrium Recombination and Last-Scattering State",
       "module": "G",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "F-155"
       ],
@@ -635,7 +635,7 @@
       "id": "HU-170",
       "title": "Close Module HU: Frozen Universal Linear Transfer Operator",
       "module": "HU",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "G-160"
       ],
