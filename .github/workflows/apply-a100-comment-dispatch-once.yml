@@ -1,4 +1,4 @@
-name: Execute and close frozen HI-190
+name: Advance verified HI-190 exactly once
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  execute-close-hi190:
+  advance-hi190:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,18 +20,37 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute governed full frozen matrix
+      - name: Advance exact verified HI-190 closeout
         shell: bash
-        env:
-          EXPECTED_PRE: 2f1a42e3fe6a1bea56ce7b8658b3cbf066f868da
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = "$EXPECTED_PRE"
+          EXPECT='7e627218c5a8bdbbe3c416552aabc465f1a36f38'
+          test "$(git rev-parse HEAD)" = "$EXPECT"
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          bash modules/HI/runs/HI-190-20260809T221124Z/RUN_FULL_FROZEN_MATRIX.sh
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python tools/rfc.py advance --task HI-190 --result PASS --evidence modules/HI/runs/HI-190-20260809T221124Z/CLOSEOUT.md
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          q=json.load(open('WORK_QUEUE.json'))
+          active=[x for x in q['items'] if x.get('status')=='ACTIVE']
+          assert s['current_module']=='J',s
+          assert s['current_run'] is None,s
+          assert len(active)==1 and active[0]['module']=='J',active
+          assert next(x for x in q['items'] if x['id']=='HI-190')['status']=='PASS'
+          print('AUTHORIZED_CHILD='+active[0]['id'])
+          PY
+          python tools/rfc.py context
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'Close Module HI at its verified scientific scope'
+          git add STATE.json WORK_QUEUE.json memory/CURRENT_CONTEXT.md memory/DECISION_LOG.jsonl
+          git commit -m 'Advance verified HI-190 to its sole child'
           git push origin HEAD:agent/frontier-050-execution
-          printf 'HI190_CLOSEOUT_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'HI190_ADVANCE_COMMIT=%s\n' "$(git rev-parse HEAD)"
