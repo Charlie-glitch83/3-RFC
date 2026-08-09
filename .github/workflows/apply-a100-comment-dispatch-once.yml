@@ -26,6 +26,7 @@ jobs:
           set -euo pipefail
           EXPECTED='1f4b5b511c0436511c7e20d4e2684df4ded1356e'
           test "$(git rev-parse HEAD)" = "$EXPECTED"
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
           python - <<'PY'
           import json
           from datetime import datetime, timezone
