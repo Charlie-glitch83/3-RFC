@@ -1,4 +1,4 @@
-name: Supersede unsupported HI-190 pre-primary lock
+name: Freeze corrected versioned HI-190 before primary execution
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  supersede-hi190:
+  freeze-hi190-v2:
     if: github.event.pull_request.number == 74
     runs-on: ubuntu-latest
     steps:
@@ -20,60 +20,41 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Preserve frozen-spec defect and create new versioned HI run
+      - name: Retarget helpers and freeze corrected parent-compatible law
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
           OLD='HI-190-20260809T151108Z'
-          R="modules/HI/runs/$OLD"
+          NEW='HI-190-20260809T152136Z'
           python - <<'PY'
           import json
-          from datetime import datetime, timezone
           from pathlib import Path
-          R=Path('modules/HI/runs/HI-190-20260809T151108Z')
+          OLD='HI-190-20260809T151108Z'; NEW='HI-190-20260809T152136Z'
           s=json.load(open('STATE.json'))
-          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run']==R.name,s
-          lock=json.load(open(R/'PRE_EXECUTION_LOCK.json'))
-          assert lock['status']=='FROZEN' and lock.get('frozen_before_primary_execution') is True,lock
-          assert not (R/'primary').exists() or not any((R/'primary').iterdir()),'primary HI execution already exists; supersession is no longer pre-primary'
-          bad='eta_b(t2),eta_b(t1)'
-          assert any(bad in x for x in lock['equations_and_laws']), 'expected unsupported eta bridge is not in the frozen lock'
-          ts=datetime.now(timezone.utc).isoformat()
-          failure={
-            'failure_id':'HI-190-UNSUPPORTED-ETA-BRIDGE-PREPRIMARY-20260809',
-            'run_id':R.name,
-            'gate':'pre-primary exact parent type compatibility',
-            'category':'FROZEN_SCIENTIFIC_SPECIFICATION_DEFECT',
-            'description':'The frozen HI pre-execution law introduced eta_b(t) as a mapping from the I background clock/frame into the HU propagator coordinate. Exact H_HU_to_HI and H_I_to_HI do not supply or derive that mapping. Executing it would invent a bridge between the independently frozen parents, violating exact-parent instantiation and no-retune discipline.',
-            'earliest_affected_object':'PRE_EXECUTION_LOCK.json equations_and_laws[0]',
-            'changes_frozen_science':True,
-            'primary_execution_occurred_before_failure':False,
-            'required_replay_scope':'new versioned HI-190 scientific run from exact frozen HU and I parents',
-            'strongest_claim_remaining':'HU and I remain independently frozen; HI transfer instantiation is not yet scientifically established.',
-            'timestamp_utc':ts
-          }
-          with (R/'FAILURES.jsonl').open('a',encoding='utf-8') as f: f.write(json.dumps(failure,ensure_ascii=False)+'\n')
-          (R/'CLOSEOUT.md').write_text('''# HI-190 Pre-Primary Superseded Run\n\nResult: FAIL — scientific specification defect found before primary execution.\n\nThe frozen lock introduced an `eta_b(t)` mapping between the I physical background clock/frame and the HU propagator coordinate, but neither exact frozen parent derives that bridge. Executing the run would therefore add an unowned scientific law during instantiation.\n\nNo HI primary execution occurred. HU and I parent bytes, hashes, laws, coefficients, thresholds, gates, and claim boundaries remain unchanged. The correct repository action is to preserve this run and create a new versioned HI-190 run with the parent-compatible composition frozen before execution.\n\nStrongest supported claim: the independently frozen HU operator and I background remain valid exact parents.\n\nStrongest unsupported claim: no HI instantiated transfer law is established by this failed run.\n''',encoding='utf-8')
-          print(json.dumps(failure,indent=2))
+          assert s['active_work_unit']=='HI-190' and s['current_module']=='HI' and s['current_run']==NEW,s
+          r=Path('modules/HI/runs')/NEW
+          lock=json.load(open(r/'PRE_EXECUTION_LOCK.json'))
+          assert lock['status']=='DRAFT',lock
+          assert not (r/'primary').exists() or not any((r/'primary').iterdir()),'primary exists before corrected freeze'
+          for path in [Path('tools/hi190_freeze.py'),Path('tools/hi190_execute_locked.py')]:
+              txt=path.read_text()
+              assert OLD in txt,(path,'old run id absent')
+              path.write_text(txt.replace(OLD,NEW))
           PY
-          python tools/rfc.py close-run --run-id "$OLD" --result FAIL --closeout "$R/CLOSEOUT.md"
-          python tools/rfc.py new-run HI
-          python tools/director.py prepare-active
-          python tools/rfc.py context
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/hi190_freeze.py tools/hi190_execute_locked.py
+          git commit -m 'Retarget HI-190 governed helpers to superseding run'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          python tools/hi190_freeze.py
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'Supersede unsupported HI-190 pre-primary specification'
+          git add "modules/HI/runs/$NEW/PRE_EXECUTION_LOCK.json" "modules/HI/runs/$NEW/SOURCE_REGISTER.json" "modules/HI/runs/$NEW/FROZEN_DERIVATION_SPEC.json"
+          git commit -m 'Freeze corrected HI-190 immutable parent composition before execution'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-          printf 'HI190_SUPERSESSION_COMMIT=%s\n' "$(git rev-parse HEAD)"
-          python - <<'PY'
-          import json
-          s=json.load(open('STATE.json'))
-          print('NEW_HI_RUN='+str(s['current_run']))
-          PY
+          printf 'HI190_V2_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
