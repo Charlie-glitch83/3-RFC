@@ -2,7 +2,7 @@
   "schema_version": "2.1",
   "run_id": "G-160-20260809T025252Z",
   "status": "FROZEN",
-  "frozen_utc": "2026-08-09T03:04:15.071377+00:00",
+  "frozen_utc": "2026-08-09T03:08:49.502397+00:00",
   "frozen_before_primary_execution": true,
   "authority_hashes": [
     "c76836f97576ccef8d1b04fc10a7312e6ff4564cd6a94b1b2f942e7a60bef3e8",
@@ -130,5 +130,40 @@
   "independent_verifier_design": "reconstruct the finite numerical witness from FROZEN_DERIVATION_SPEC without reading primary gate summaries; independently verify exact parent/source hashes, stoichiometric ledgers, opacity nonnegativity, optical-depth identity, conditional visibility normalization, covariance PSD, convergence/restart, and complete HU/I child bindings",
   "allowed_implementation_only_corrections": [
     "syntax/path/serialization/solver plumbing only; no frozen source, law, branch rule, tests, thresholds, gates, or claim changes"
-  ]
+  ],
+  "implementation_hashes": [
+    {
+      "path": "tools/g160_parent_bound.py",
+      "sha256": "c3c6bd2e298497a7af56d81605b2070b63529865d557c53421989fa7fdb74af9"
+    },
+    {
+      "path": "tools/g160_convergence.py",
+      "sha256": "88618577df2109956c88d1b8e6e06e3c5e2ea996880c5ed0a9ecd0a79310bd7a"
+    },
+    {
+      "path": "tools/g160_contract_fix.py",
+      "sha256": "01e941f84321cff3839af54d0de4595b072213ad03207e9705f6f7a7a7e504e7"
+    },
+    {
+      "path": "tools/run_g160_governed.sh",
+      "sha256": "c404adb20f47697b2396096456a8703c9e01420ee58bf9b7226729390c4c0ffe"
+    },
+    {
+      "path": "tools/materialize_solver_config.py",
+      "sha256": "df51b784a21d3affe244df3ee1303a2f21fbaf71cfa1e47cde1b979cb3d273f5"
+    },
+    {
+      "path": "tools/run_configured_solver.py",
+      "sha256": "0939e59a63c7164fd4e4c867a7a560719d342f03029bca5b961355d689e7371e"
+    },
+    {
+      "path": "tools/run_module_pipeline.py",
+      "sha256": "2843ebbe1e4d5f33abff05fb858dd779e6c4fc5c36bdfbcd3f025ceaf5405f75"
+    },
+    {
+      "path": "tools/finish_local_phase.sh",
+      "sha256": "12cb6bae7bc6b714436d6854d93ad4c4b4938c65eb72465de9b466880b10a6cf"
+    }
+  ],
+  "implementation_frozen_before_primary_execution": true
 }
