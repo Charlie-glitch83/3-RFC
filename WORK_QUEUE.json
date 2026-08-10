@@ -154,7 +154,7 @@
       "depends_on": [
         "REC-040"
       ],
-      "objective": "Audit A–J and choose the earliest exact break between formal law and one physically executed parent chain.",
+      "objective": "Audit A\u2013J and choose the earliest exact break between formal law and one physically executed parent chain.",
       "steps": [
         "For each boundary, record source, law, representative test, physical parent, solver, output, restart, covariance, independent reconstruction, and evidence state.",
         "Select the earliest missing object.",
@@ -672,7 +672,7 @@
       "id": "I-180",
       "title": "Close Module I: Realized Background Geometry and Expansion",
       "module": "I",
-      "status": "PASS",
+      "status": "ACTIVE",
       "depends_on": [
         "G-160"
       ],
@@ -703,13 +703,14 @@
       ],
       "commit_message": "Close Module I at its verified scientific scope",
       "required_evidence_state": "FROZEN",
-      "required_fidelity": "MINIMAL_SPINE"
+      "required_fidelity": "MINIMAL_SPINE",
+      "scientific_reset": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json"
     },
     {
       "id": "HI-190",
       "title": "Close Module HI: Transfer Operator Instantiation",
       "module": "HI",
-      "status": "PASS",
+      "status": "BLOCKED",
       "depends_on": [
         "HU-170",
         "I-180"
@@ -747,7 +748,7 @@
       "id": "J-200",
       "title": "Close Module J: Primordial Covariance, Linear Spectra, and Finite-Volume Fields",
       "module": "J",
-      "status": "ACTIVE",
+      "status": "BLOCKED",
       "depends_on": [
         "HI-190"
       ],
@@ -899,7 +900,7 @@
     },
     {
       "id": "KLM-240",
-      "title": "Close Module KLM: Causal K–L–M Recurrence and Classification",
+      "title": "Close Module KLM: Causal K\u2013L\u2013M Recurrence and Classification",
       "module": "KLM",
       "status": "BLOCKED",
       "depends_on": [

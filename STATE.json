@@ -5,8 +5,8 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "J-200",
-  "current_module": "J",
+  "active_work_unit": "I-180",
+  "current_module": "I",
   "current_run": null,
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
@@ -872,138 +872,52 @@
       "last_promoted_utc": "2026-08-09T05:05:19.334953+00:00"
     },
     "I": {
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
       "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
-          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
-          "evidence": "repository bootstrap"
-        },
-        {
-          "state": "FORMALIZED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
-          "timestamp_utc": "2026-08-09T14:46:50.951157+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "IMPLEMENTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/solver_outputs/transport/result.json",
-          "timestamp_utc": "2026-08-09T14:46:50.989656+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "VERIFIED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/GATE_RESULTS.json",
-          "timestamp_utc": "2026-08-09T14:46:51.030784+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "PHYSICALLY_EXECUTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json",
-          "timestamp_utc": "2026-08-09T14:46:51.069999+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "INDEPENDENTLY_REPRODUCED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-          "timestamp_utc": "2026-08-09T14:46:51.108703+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "FROZEN",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/frozen/H_I_to_HI.json",
-          "timestamp_utc": "2026-08-09T14:46:51.147160+00:00",
-          "work_unit": "I-180"
+          "fidelity": "UNSTARTED",
+          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+          "work_unit": "I-180",
+          "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
         }
       ],
-      "completed_runs": [
-        "I-180-20260809T050839Z"
-      ],
-      "promotion_evidence": [
-        "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
-        "modules/I/runs/I-180-20260809T050839Z/solver_outputs/transport/result.json",
-        "modules/I/runs/I-180-20260809T050839Z/GATE_RESULTS.json",
-        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json",
-        "modules/I/runs/I-180-20260809T050839Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/I/frozen/H_I_to_HI.json"
-      ],
-      "last_promoted_utc": "2026-08-09T14:46:51.147170+00:00"
+      "completed_runs": [],
+      "promotion_evidence": [],
+      "last_promoted_utc": "2026-08-09T14:46:51.147170+00:00",
+      "scientific_supersession": {
+        "status": "SUPERSEDED_AS_CURRENT_AUTHORITY",
+        "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+        "historical_evidence_preserved_in_git": true
+      }
     },
     "HI": {
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
       "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
-          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
-          "evidence": "repository bootstrap"
-        },
-        {
-          "state": "FORMALIZED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
-          "timestamp_utc": "2026-08-09T22:35:31.002618+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "IMPLEMENTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-          "timestamp_utc": "2026-08-09T22:35:31.064095+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "VERIFIED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/GATE_RESULTS.json",
-          "timestamp_utc": "2026-08-09T22:35:31.125205+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "PHYSICALLY_EXECUTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-          "timestamp_utc": "2026-08-09T22:35:31.186778+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "INDEPENDENTLY_REPRODUCED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-          "timestamp_utc": "2026-08-09T22:35:31.248197+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "FROZEN",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/frozen/H_HI_to_J.json",
-          "timestamp_utc": "2026-08-09T22:35:31.308941+00:00",
-          "work_unit": "HI-190"
+          "fidelity": "UNSTARTED",
+          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+          "work_unit": "I-180",
+          "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
         }
       ],
-      "completed_runs": [
-        "HI-190-20260809T221124Z"
-      ],
-      "promotion_evidence": [
-        "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/GATE_RESULTS.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/HI/frozen/H_HI_to_J.json"
-      ],
-      "last_promoted_utc": "2026-08-09T22:35:31.308950+00:00"
+      "completed_runs": [],
+      "promotion_evidence": [],
+      "last_promoted_utc": "2026-08-09T22:35:31.308950+00:00",
+      "scientific_supersession": {
+        "status": "SUPERSEDED_AS_CURRENT_AUTHORITY",
+        "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+        "historical_evidence_preserved_in_git": true
+      }
     },
     "J": {
       "evidence_state": "DESIGN",
@@ -1013,10 +927,20 @@
       "evidence_history": [
         {
           "state": "DESIGN",
-          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
-          "evidence": "repository bootstrap"
+          "fidelity": "UNSTARTED",
+          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+          "work_unit": "I-180",
+          "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
         }
-      ]
+      ],
+      "completed_runs": [],
+      "promotion_evidence": [],
+      "scientific_supersession": {
+        "status": "SUPERSEDED_AS_CURRENT_AUTHORITY",
+        "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+        "historical_evidence_preserved_in_git": true
+      }
     },
     "K": {
       "evidence_state": "DESIGN",
@@ -1124,9 +1048,9 @@
     }
   },
   "last_verified_commit": "26c08a68607721e84da1c83bb8d6e098fdeb2304",
-  "last_updated_utc": "2026-08-09T22:47:51.692878+00:00",
-  "strongest_supported_claim": "I-180 derives and physically executes at MINIMAL_SPINE a finite-relational realized-background branch family from exact G event/clock state and inherited B no-loss relational support: nonnegative event activity induces a weighted Laplacian, its pseudoinverse induces a gauge-invariant resistance metric, its positive spectrum defines a relative scale/expansion history, and inherited radiative propagation defines a causal-reach functional, with constraints, covariance, restart and H_I_to_HI preserved without observed expansion targets.",
-  "strongest_unsupported_claim": "No unique process-to-edge incidence branch, unique SI spacetime metric, FRW/Friedmann/Einstein correspondence, measured H(z) or H0, LambdaCDM parameters, BAO/SN distance ladder, public sound horizon, continuum geometry limit, or empirical agreement is claimed.",
+  "last_updated_utc": "2026-08-10T12:52:42.393383+00:00",
+  "strongest_supported_claim": "A through HU remain at their verified frozen scopes. Module I is the sole active scientific frontier; no realized physical background geometry is currently frozen.",
+  "strongest_unsupported_claim": "No unique or branch-complete Module-I metric/expansion law, physical I branch execution, HI instantiation on repaired I, or J covariance/spectrum state is currently established.",
   "last_verified_branch": "agent/frontier-050-execution",
   "repair_state": "I180_MINIMAL_SPINE_CLOSED_PENDING_VERIFIED_COMMIT_AND_ADVANCE"
 }
