@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   record-i180-wolfram:
-    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-record2-20260810'
+    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-record3-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -47,12 +47,11 @@ jobs:
           from datetime import datetime, timezone
           from pathlib import Path
           R=Path('modules/I/runs/I-180-20260810T134326Z')
-          fid='I180-WOLFRAM-RECORD-SAMEFILE'
           p=R/'FAILURES.jsonl'
           old=p.read_text() if p.exists() else ''
-          if fid not in old:
-              rec={
-                  'failure_id':fid,
+          failures=[
+              {
+                  'failure_id':'I180-WOLFRAM-RECORD-SAMEFILE',
                   'timestamp_utc':datetime.now(timezone.utc).isoformat(),
                   'stage':'POST_LOCK_WOLFRAM_RECORDING',
                   'result':'FAIL',
@@ -68,9 +67,30 @@ jobs:
                   'tests_changed':False,
                   'gates_changed':False,
                   'claim_boundary_changed':False
+              },
+              {
+                  'failure_id':'I180-WOLFRAM-CARRIER-GATE-SCHEMA',
+                  'timestamp_utc':datetime.now(timezone.utc).isoformat(),
+                  'stage':'POST_LOCK_WOLFRAM_RECORDING_VALIDATION',
+                  'result':'FAIL',
+                  'cause':'Carrier expected gate.result=PASS although the repository gate schema reports status=PASS_WITH_MANUAL_INTERPRETATION; both manufactured gate commands returned code 0 with empty failure lists.',
+                  'evidence':'GitHub Actions run 31397057383 job 93482448784',
+                  'disposition':'IMPLEMENTATION_ONLY_ASSERTION_SCHEMA_CORRECTION_AND_FULL_REPOSITORY_VALIDATION_RERUN',
+                  'science_changed':False,
+                  'parents_changed':False,
+                  'sources_changed':False,
+                  'law_changed':False,
+                  'wolfram_input_changed':False,
+                  'wolfram_output_changed':False,
+                  'tests_changed':False,
+                  'gates_changed':False,
+                  'claim_boundary_changed':False
               }
-              with p.open('a') as f:
-                  f.write(json.dumps(rec)+'\n')
+          ]
+          with p.open('a') as f:
+              for rec in failures:
+                  if rec['failure_id'] not in old:
+                      f.write(json.dumps(rec)+'\n')
           PY
           python tools/director.py wolfram-record --run "$RUN" --call I-WL-001 --output /tmp/I-WL-001.output.txt
           python tools/director.py wolfram-record --run "$RUN" --call I-WL-002 --output /tmp/I-WL-002.output.txt
@@ -81,7 +101,8 @@ jobs:
           R=Path('modules/I/runs/I-180-20260810T134326Z')
           for cid in ('I-WL-001','I-WL-002'):
               gate=json.loads((R/'wolfram'/cid/'gate.json').read_text())
-              assert gate.get('result')=='PASS', (cid,gate)
+              assert gate.get('status')=='PASS_WITH_MANUAL_INTERPRETATION', (cid,gate)
+              assert gate.get('failures')==[], (cid,gate)
               rec=json.loads((R/'wolfram'/cid/'record.json').read_text())
               assert rec['manufactured_gate_returncode']==0, (cid,rec)
               assert rec['public_knowledge_used'] is False, rec
@@ -89,7 +110,7 @@ jobs:
           assert ref.get('overall')=='PASS', ref
           lock=json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())
           assert lock['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
-          print('WOLFRAM_MANUFACTURED_GATES=PASS')
+          print('WOLFRAM_MANUFACTURED_GATES=PASS_WITH_MANUAL_INTERPRETATION')
           print('PHYSICAL_EXECUTION_GATE='+lock['physical_execution_gate']['status'])
           PY
           python tools/rfc.py doctor
