@@ -1,0 +1,29 @@
+{
+  "schema_version": "3.0",
+  "object_id": "HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT",
+  "run_id": "HU-175-20260810T153330Z",
+  "parent": {
+    "path": "modules/G/frozen/H_G_to_HU_v2.json",
+    "sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f"
+  },
+  "projector_identities": [
+    "P_b^2=P_b",
+    "range(P_b) subset ker(C_b)",
+    "K_HU=P_b K_HU P_b"
+  ],
+  "gauge_policy": "representation/gauge-equivalent tangent inputs are identified in quotient",
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "forbidden_inputs": [
+    "I metric",
+    "I scale factor",
+    "I expansion history",
+    "I horizons/distances",
+    "J spectrum/covariance outputs",
+    "public transfer tables"
+  ],
+  "constraint_preservation": "if C_b deltaX=0 initially and C_b K_HU P_b=0, then C_b U_HU deltaX=0 for all admitted propagation times"
+}

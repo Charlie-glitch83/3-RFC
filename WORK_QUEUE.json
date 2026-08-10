@@ -708,7 +708,7 @@
       "id": "HU-175",
       "title": "Replay Module HU Against the Superseding G State",
       "module": "HU",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "G-165"
       ],
@@ -743,7 +743,7 @@
       "id": "I-180",
       "title": "Close Module I: Realized Background Geometry and Expansion",
       "module": "I",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "G-165",
         "HU-175"

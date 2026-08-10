@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "HU-175",
-  "current_module": "HU",
-  "current_run": "HU-175-20260810T153330Z",
+  "active_work_unit": "I-180",
+  "current_module": "I",
+  "current_run": "I-180-20260810T154430Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -882,8 +882,8 @@
     },
     "HU": {
       "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
-      "active_run": "HU-175-20260810T153330Z",
+      "fidelity": "PRODUCTION",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -918,23 +918,72 @@
           "evidence": "modules/HU/frozen/H_HU_to_HI.json",
           "timestamp_utc": "2026-08-09T05:05:19.334943+00:00",
           "work_unit": "HU-170"
+        },
+        {
+          "state": "DESIGN",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/G/frozen/H_G_to_HU_v2.json",
+          "timestamp_utc": "2026-08-10T15:44:26.769595+00:00",
+          "work_unit": "HU-175",
+          "reopened_from": {
+            "evidence_state": "FROZEN",
+            "fidelity": "MINIMAL_SPINE"
+          }
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/HU/runs/HU-175-20260810T153330Z/HU175_FROZEN_DERIVATION_SPEC.json",
+          "timestamp_utc": "2026-08-10T15:44:28.373326+00:00",
+          "work_unit": "HU-175"
+        },
+        {
+          "state": "VERIFIED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/HU/runs/HU-175-20260810T153330Z/GATE_RESULTS.json",
+          "timestamp_utc": "2026-08-10T15:44:28.442343+00:00",
+          "work_unit": "HU-175"
+        },
+        {
+          "state": "INDEPENDENTLY_REPRODUCED",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/HU/runs/HU-175-20260810T153330Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "timestamp_utc": "2026-08-10T15:44:28.509642+00:00",
+          "work_unit": "HU-175"
+        },
+        {
+          "state": "FROZEN",
+          "fidelity": "PRODUCTION",
+          "evidence": "modules/HU/frozen/H_HU_to_HI_v2.json",
+          "timestamp_utc": "2026-08-10T15:44:28.574577+00:00",
+          "work_unit": "HU-175"
         }
       ],
       "completed_runs": [
-        "HU-170-20260809T045528Z"
+        "HU-170-20260809T045528Z",
+        "HU-175-20260810T153330Z"
       ],
       "promotion_evidence": [
         "modules/HU/runs/HU-170-20260809T045528Z/FROZEN_DERIVATION_SPEC.json",
         "modules/HU/runs/HU-170-20260809T045528Z/GATE_RESULTS.json",
         "modules/HU/runs/HU-170-20260809T045528Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/HU/frozen/H_HU_to_HI.json"
+        "modules/HU/frozen/H_HU_to_HI.json",
+        "modules/HU/runs/HU-175-20260810T153330Z/HU175_FROZEN_DERIVATION_SPEC.json",
+        "modules/HU/runs/HU-175-20260810T153330Z/GATE_RESULTS.json",
+        "modules/HU/runs/HU-175-20260810T153330Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/HU/frozen/H_HU_to_HI_v2.json"
       ],
-      "last_promoted_utc": "2026-08-09T05:05:19.334953+00:00"
+      "last_promoted_utc": "2026-08-10T15:44:28.574591+00:00",
+      "reopened_from": {
+        "evidence_state": "FROZEN",
+        "fidelity": "MINIMAL_SPINE"
+      },
+      "reopen_evidence": "modules/G/frozen/H_G_to_HU_v2.json"
     },
     "I": {
       "evidence_state": "FORMALIZED",
       "fidelity": "MINIMAL_SPINE",
-      "active_run": null,
+      "active_run": "I-180-20260810T154430Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -1119,7 +1168,7 @@
     }
   },
   "last_verified_commit": "26c08a68607721e84da1c83bb8d6e098fdeb2304",
-  "last_updated_utc": "2026-08-10T15:33:30.034370+00:00",
+  "last_updated_utc": "2026-08-10T15:44:30.103678+00:00",
   "strongest_supported_claim": "The corrected I law is FORMALIZED, and an exact audit has located the first direct blocking repository defect at historical G-160: its implementation-only recombination witness was promoted to physical execution and its G→I packet was marked child-ready without route-resolved process activity and geometry-child ancestry.",
   "strongest_unsupported_claim": "No superseding G physical route realization, replayed HU transfer, repaired I physical geometry, repaired HI state or J state is established yet.",
   "last_verified_branch": "agent/frontier-050-execution",

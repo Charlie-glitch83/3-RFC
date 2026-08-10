@@ -1,0 +1,14 @@
+{
+  "call_id": "HU-WL-001",
+  "module": "HU",
+  "purpose": "Linear transfer semigroup and superposition",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-10T15:44:26.872565+00:00",
+  "input_sha256": "b3301818a314729fb79d515b74b0d62577ef9989120a02c181cb17359fdd0a5b",
+  "output_sha256": "49ec375b98166d2de8b2a30ec20e32823adf63cd02d7d1f61ad85aac8d42e0da",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/HU/runs/HU-175-20260810T153330Z/wolfram/HU-WL-001/gate.json"
+}

@@ -1,7 +1,22 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "HU-175-20260810T153330Z",
+  "module": "HU",
+  "overall": "PASS",
+  "componentwise": {
+    "exact superseding G parent hash": {
+      "pass": true
+    },
+    "tangent/transfer reconstruction from repaired G without trusting historical HU summaries": {
+      "pass": true
+    },
+    "covariance, restart and clean replay": {
+      "pass": true,
+      "clean_replay": true,
+      "artifact_hashes_match": true,
+      "evidence": "modules/HU/runs/HU-175-20260810T153330Z/REPLAY_RECORD.json"
+    },
+    "no downstream I/J object imported into HU": {
+      "pass": true
+    }
+  }
 }

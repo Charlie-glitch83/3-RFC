@@ -1,28 +1,28 @@
-# ACTIVE WORK PACKET — HU-175
+# ACTIVE WORK PACKET — I-180
 
 **This is the only authorized work. Execute it in order.**
 
-- Module: `HU`
-- Objective: Reconstruct and freeze the universal linear tangent/transfer object against the superseding G route-resolved state so HI cannot consume a stale G-era HU parent.
-- Run workspace: `modules/HU/runs/HU-175-20260810T153330Z`
+- Module: `I`
+- Objective: Generate the universe's realized geometry, expansion, clocks, horizons, and distance structure from the accumulated physical state.
+- Run workspace: `modules/I/runs/I-180-20260810T154430Z`
 
 ## Exact sequence
 
-1. Read `recipes/HU/WORK_ORDER.md` and `recipes/HU/recipe.json`.
+1. Read `recipes/I/WORK_ORDER.md` and `recipes/I/recipe.json`.
 2. Verify all exact parent hashes and fill the run source register.
 3. Freeze the pre-execution lock before primary execution.
 4. Run these Wolfram calls exactly and record their complete outputs:
 
-   - `python tools/director.py wolfram-show --call HU-WL-001`
-   - `python tools/director.py wolfram-show --call HU-WL-002`
+   - `python tools/director.py wolfram-show --call I-WL-001`
+   - `python tools/director.py wolfram-show --call I-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module HU --output modules/HU/runs/HU-175-20260810T153330Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module I --output modules/I/runs/I-180-20260810T154430Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module HU --solver linear_transfer --destination modules/HU/runs/HU-175-20260810T153330Z`
-   - fill `configured_runs/binding_sheets/HU_linear_transfer.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/HU/runs/HU-175-20260810T153330Z/solver_templates/HU_linear_transfer.template.json --binding-sheet modules/HU/runs/HU-175-20260810T153330Z/binding_sheets/HU_linear_transfer.bindings.json --output modules/HU/runs/HU-175-20260810T153330Z/solver_configs/HU_linear_transfer.json`
-   - `python tools/run_configured_solver.py --config modules/HU/runs/HU-175-20260810T153330Z/solver_configs/HU_linear_transfer.json --output-dir modules/HU/runs/HU-175-20260810T153330Z/solver_outputs/linear_transfer`
+   - `python tools/director.py solver-copy --module I --solver transport --destination modules/I/runs/I-180-20260810T154430Z`
+   - fill `configured_runs/binding_sheets/I_background_ode.bindings.json` after it is copied into the run; every value requires an origin SHA-256
+   - `python tools/materialize_solver_config.py --template modules/I/runs/I-180-20260810T154430Z/solver_templates/I_background_ode.template.json --binding-sheet modules/I/runs/I-180-20260810T154430Z/binding_sheets/I_background_ode.bindings.json --output modules/I/runs/I-180-20260810T154430Z/solver_configs/I_background_ode.json`
+   - `python tools/run_configured_solver.py --config modules/I/runs/I-180-20260810T154430Z/solver_configs/I_background_ode.json --output-dir modules/I/runs/I-180-20260810T154430Z/solver_outputs/transport`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.
@@ -31,20 +31,20 @@
 
 ## Required deliverables
 
-- modules/HU/runs/<RUN_ID>/RUN_PLAN.md
-- modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/HU/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/HU/runs/<RUN_ID>/CLOSEOUT.md
-- versioned frozen child interface and artifact registry entries
+- modules/I/runs/<RUN_ID>/RUN_PLAN.md
+- modules/I/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/I/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/I/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/I/runs/<RUN_ID>/CLOSEOUT.md
+- frozen output packet and artifact registry entries
 
 ## Componentwise gates
 
-- exact superseding G parent hash
-- tangent/transfer reconstruction from repaired G without trusting historical HU summaries
-- covariance, restart and clean replay
-- no downstream I/J object imported into HU
+- equation/constraint derivation
+- gauge/frame consistency
+- no observed expansion history used as target
+- numerical convergence and independent reconstruction
 
 ## Commit message
 
-`Replay HU against repaired G state`
+`Close Module I at its verified scientific scope`

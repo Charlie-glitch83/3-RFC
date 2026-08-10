@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-10T15:33:29.870279+00:00
+Generated: 2026-08-10T15:44:29.940283+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `HU-175` — Replay Module HU Against the Superseding G State
-- Current module: `HU`
+- Active work unit: `I-180` — Close Module I: Realized Background Geometry and Expansion
+- Current module: `I`
 - Last verified commit: `26c08a68607721e84da1c83bb8d6e098fdeb2304`
 
 ## Strongest supported claim
@@ -20,23 +20,23 @@ No superseding G physical route realization, replayed HU transfer, repaired I ph
 
 ## Immediate objective
 
-Reconstruct and freeze the universal linear tangent/transfer object against the superseding G route-resolved state so HI cannot consume a stale G-era HU parent.
+Generate the universe's realized geometry, expansion, clocks, horizons, and distance structure from the accumulated physical state.
 
 ## Required deliverables
 
-- modules/HU/runs/<RUN_ID>/RUN_PLAN.md
-- modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/HU/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/HU/runs/<RUN_ID>/CLOSEOUT.md
-- versioned frozen child interface and artifact registry entries
+- modules/I/runs/<RUN_ID>/RUN_PLAN.md
+- modules/I/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/I/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/I/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/I/runs/<RUN_ID>/CLOSEOUT.md
+- frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- exact superseding G parent hash
-- tangent/transfer reconstruction from repaired G without trusting historical HU summaries
-- covariance, restart and clean replay
-- no downstream I/J object imported into HU
+- equation/constraint derivation
+- gauge/frame consistency
+- no observed expansion history used as target
+- numerical convergence and independent reconstruction
 
 ## Module states
 
@@ -47,7 +47,7 @@ Reconstruct and freeze the universal linear tangent/transfer object against the 
 - E: `FROZEN` / `PRODUCTION`
 - F: `FROZEN` / `PRODUCTION`
 - G: `FROZEN` / `PRODUCTION`
-- HU: `FROZEN` / `MINIMAL_SPINE`
+- HU: `FROZEN` / `PRODUCTION`
 - I: `FORMALIZED` / `MINIMAL_SPINE`
 - HI: `DESIGN` / `UNSTARTED`
 - J: `DESIGN` / `UNSTARTED`
@@ -63,12 +63,11 @@ Reconstruct and freeze the universal linear tangent/transfer object against the 
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 33
-- indexed runs: 26
+- frozen artifacts: 34
+- indexed runs: 27
 
 ## Recent runs
 
-- E-145-20260808T164410Z: PASS (E)
 - F-155-20260808T165152Z: PASS (F)
 - G-160-20260809T025252Z: PASS (G)
 - HU-170-20260809T045528Z: PASS (HU)
@@ -76,17 +75,18 @@ Reconstruct and freeze the universal linear tangent/transfer object against the 
 - HI-190-20260809T221124Z: PASS (HI)
 - I-180-20260810T134326Z: BLOCKED (I)
 - G-165-20260810T144936Z: PASS (G)
+- HU-175-20260810T153330Z: PASS (HU)
 
 ## Recent decisions
 
-- REOPEN-G-20260810T144935Z: Reopened Module G from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
-- PROMOTE-G-FORMALIZED-20260810T153328Z: Promoted Module G from DESIGN to FORMALIZED at PRODUCTION
-- PROMOTE-G-IMPLEMENTED-20260810T153328Z: Promoted Module G from FORMALIZED to IMPLEMENTED at PRODUCTION
-- PROMOTE-G-VERIFIED-20260810T153328Z: Promoted Module G from IMPLEMENTED to VERIFIED at PRODUCTION
-- PROMOTE-G-PHYSICALLY_EXECUTED-20260810T153328Z: Promoted Module G from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
-- PROMOTE-G-INDEPENDENTLY_REPRODUCED-20260810T153328Z: Promoted Module G from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
 - PROMOTE-G-FROZEN-20260810T153328Z: Promoted Module G from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
 - ADVANCE-G-165-20260810T153328Z: Marked G-165 PASS and activated HU-175
+- REOPEN-HU-20260810T154426Z: Reopened Module HU from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
+- PROMOTE-HU-FORMALIZED-20260810T154428Z: Promoted Module HU from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-HU-VERIFIED-20260810T154428Z: Promoted Module HU from FORMALIZED to VERIFIED at PRODUCTION
+- PROMOTE-HU-INDEPENDENTLY_REPRODUCED-20260810T154428Z: Promoted Module HU from VERIFIED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-HU-FROZEN-20260810T154428Z: Promoted Module HU from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- ADVANCE-HU-175-20260810T154428Z: Marked HU-175 PASS and activated I-180
 
 ## Recent failures
 

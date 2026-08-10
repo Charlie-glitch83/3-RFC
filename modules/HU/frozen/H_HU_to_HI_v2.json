@@ -1,0 +1,47 @@
+{
+  "schema_version": "3.0",
+  "object_id": "H_HU_to_HI_V2",
+  "from_module": "HU",
+  "to_module": "HI",
+  "run_id": "HU-175-20260810T153330Z",
+  "evidence_state": "FROZEN",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "G_parent": {
+    "path": "modules/G/frozen/H_G_to_HU_v2.json",
+    "sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f"
+  },
+  "typed_operator": {
+    "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_TYPED_OPERATOR.json",
+    "sha256": "aba6a931511c686a1ec87e46192628edeb5e05a55f64b24a53ac45ed099bbd97"
+  },
+  "constraint_gauge_frame_contract": {
+    "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT.json",
+    "sha256": "a3ddd95c6c190f6fd699bc24174d83175696bee18a60f0635d3c49c8d44f16d9"
+  },
+  "operator_uncertainty": {
+    "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_OPERATOR_UNCERTAINTY.json",
+    "sha256": "5c9202cce21785155d9abce5fda828cdb0c0d8e26e5bfc2844477fe1c59ecfa6"
+  },
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "restart": {
+    "checkpoint_id": "F155-RECOMBINATION-ENTRY",
+    "state_path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+    "state_sha256": "ec406eea2438b14992ef4215f16014e9c57dd523906ec0ae770024da8ca03285",
+    "restart_test": "PASS",
+    "restart_linf": {
+      "reaction": 5.065392549852277e-15,
+      "transport": 3.164135620181696e-15
+    },
+    "contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it"
+  },
+  "instantiation_rule": "HI may instantiate only after repaired I is frozen; HU operator family may not be retuned using I or J",
+  "independent_reconstruction": {
+    "path": "modules/HU/runs/HU-175-20260810T153330Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+    "sha256": "2e3297a5a66a640ad0871e212ee14ff94e5c315a29cea402cea1a215f3650768"
+  }
+}

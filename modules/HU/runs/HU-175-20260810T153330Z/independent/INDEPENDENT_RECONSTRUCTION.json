@@ -1,0 +1,15 @@
+{
+  "schema_version": "3.0",
+  "run_id": "HU-175-20260810T153330Z",
+  "result": "PASS",
+  "method": "RECONSTRUCT_FROM_EXACT_G165_PARENT_AND_LIVE_HU_RECIPE_WITHOUT_TRUSTING_HU170_SUMMARIES",
+  "parent_sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f",
+  "checks": {
+    "exact_superseding_G_parent": true,
+    "typed_domain_codomain": true,
+    "constraint_projector_contract": true,
+    "no_realized_background_inputs": true,
+    "child_artifact_hashes_match": true
+  },
+  "errors": []
+}

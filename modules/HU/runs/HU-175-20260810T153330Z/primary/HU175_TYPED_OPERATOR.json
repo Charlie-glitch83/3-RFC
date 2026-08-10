@@ -1,0 +1,24 @@
+{
+  "schema_version": "3.0",
+  "object_id": "HU175_UNIVERSAL_LINEAR_TRANSFER_OPERATOR",
+  "run_id": "HU-175-20260810T153330Z",
+  "status": "FORMALIZED_EXACT_PARENT_DRIVEN_OPERATOR_FAMILY",
+  "parent": {
+    "path": "modules/G/frozen/H_G_to_HU_v2.json",
+    "sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f"
+  },
+  "branch_index": "same repaired G-165 branch identity",
+  "domain": "V_b=ker(C_b)/im(Gauge_b) for each admitted repaired-G branch b",
+  "codomain": "same branch-indexed physical tangent quotient V_b",
+  "generator": "K_HU[b,t]=P_b D F_G[X_G^b(t)] P_b where F_G is the exact G-165 parent evolution/route law",
+  "propagator": "U_HU[b;t2,t1]=Texp(Integral K_HU[b,s] ds), U(t,t)=I",
+  "superposition": "U(a deltaX+b deltaY)=a U deltaX+b U deltaY on V_b",
+  "semigroup": "U(t3,t1)=U(t3,t2)U(t2,t1)",
+  "linearity_domain": "first-order tangent perturbations for which D F_G exists, restricted to exact conserved/non-gauge quotient",
+  "G_route_activity_source": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+    "sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83",
+    "Gamma_family": "{Gamma_r^b(t)}; Gamma_r>=0"
+  },
+  "no_realized_background_inputs": true
+}

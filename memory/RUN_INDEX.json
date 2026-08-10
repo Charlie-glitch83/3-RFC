@@ -291,9 +291,20 @@
       "run_id": "HU-175-20260810T153330Z",
       "module": "HU",
       "task_id": "HU-175",
-      "status": "CREATED",
+      "status": "PASS",
       "path": "modules/HU/runs/HU-175-20260810T153330Z",
-      "created_utc": "2026-08-10T15:33:30.033784+00:00"
+      "created_utc": "2026-08-10T15:33:30.033784+00:00",
+      "closed_utc": "2026-08-10T15:44:28.678337+00:00",
+      "tree_sha256": "e0f4c7c75631cd63690bd972a996a39aed37fd7f17eecbe10aad1bcd390c2e3c",
+      "closeout": "modules/HU/runs/HU-175-20260810T153330Z/CLOSEOUT.md"
+    },
+    {
+      "run_id": "I-180-20260810T154430Z",
+      "module": "I",
+      "task_id": "I-180",
+      "status": "CREATED",
+      "path": "modules/I/runs/I-180-20260810T154430Z",
+      "created_utc": "2026-08-10T15:44:30.103019+00:00"
     }
   ]
 }

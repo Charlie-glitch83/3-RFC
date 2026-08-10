@@ -1,0 +1,14 @@
+{
+  "claim_id": "HU-175-REPAIRED-G-UNIVERSAL-LINEAR-TRANSFER",
+  "text": "HU-175 reconstructs from exact repaired G-165 the branch-indexed first-variation transfer operator family on the constraint-preserving non-gauge tangent quotient, with semigroup/superposition, covariance pushforward, restart and clean replay, without importing realized I/J values.",
+  "owner": "HU",
+  "evidence_state": "FROZEN",
+  "fidelity": "PRODUCTION",
+  "supported": true,
+  "evidence": [
+    "modules/HU/frozen/H_HU_to_HI_v2.json",
+    "modules/HU/runs/HU-175-20260810T153330Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+    "modules/HU/runs/HU-175-20260810T153330Z/REPLAY_RECORD.json"
+  ],
+  "strongest_unsupported_claim": "No realized geometry, physical transfer coefficients, final spectra, public Boltzmann equivalence or empirical agreement."
+}

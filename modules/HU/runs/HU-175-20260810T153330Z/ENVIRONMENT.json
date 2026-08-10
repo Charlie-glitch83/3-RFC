@@ -1,13 +1,20 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
+  "run_id": "HU-175-20260810T153330Z",
+  "status": "FINAL",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {},
   "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
+  "imports": [
+    "json",
+    "hashlib"
+  ],
+  "commands": [
+    "hu175_replay.py freeze/execute/verify/finish",
+    "HU Wolfram manufactured invariant checks",
+    "clean replay"
+  ],
   "network_policy": "DISABLED_DURING_GENERATION",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true
 }

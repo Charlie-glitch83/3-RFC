@@ -1,7 +1,55 @@
 {
-  "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "run_id": "HU-175-20260810T153330Z",
+  "module": "HU",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "typed operator",
+      "status": "PASS",
+      "semantic_check": "Reconstructed from exact repaired G parent without historical HU summary trust or downstream I/J values.",
+      "evidence": [
+        "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_TYPED_OPERATOR.json"
+      ]
+    },
+    {
+      "requirement": "domain and codomain",
+      "status": "PASS",
+      "semantic_check": "Reconstructed from exact repaired G parent without historical HU summary trust or downstream I/J values.",
+      "evidence": [
+        "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_TYPED_OPERATOR.json"
+      ]
+    },
+    {
+      "requirement": "gauge/frame contracts",
+      "status": "PASS",
+      "semantic_check": "Reconstructed from exact repaired G parent without historical HU summary trust or downstream I/J values.",
+      "evidence": [
+        "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT.json"
+      ]
+    },
+    {
+      "requirement": "conservation and constraint identities",
+      "status": "PASS",
+      "semantic_check": "Reconstructed from exact repaired G parent without historical HU summary trust or downstream I/J values.",
+      "evidence": [
+        "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT.json"
+      ]
+    },
+    {
+      "requirement": "operator uncertainty",
+      "status": "PASS",
+      "semantic_check": "Reconstructed from exact repaired G parent without historical HU summary trust or downstream I/J values.",
+      "evidence": [
+        "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_OPERATOR_UNCERTAINTY.json"
+      ]
+    },
+    {
+      "requirement": "frozen H_HU_to_HI",
+      "status": "PASS",
+      "semantic_check": "Reconstructed from exact repaired G parent without historical HU summary trust or downstream I/J values.",
+      "evidence": [
+        "modules/HU/frozen/H_HU_to_HI_v2.json"
+      ]
+    }
+  ]
 }
