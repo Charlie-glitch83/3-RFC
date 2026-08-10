@@ -1,16 +1,15 @@
 name: Boot 3-RFC exactly from root README
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [synchronize]
 
 permissions:
   contents: write
 
 jobs:
   boot-repository:
-    if: github.event.head_commit.message == 'Boot 3-RFC exactly from root README'
+    if: github.event.pull_request.number == 74 && github.event.pull_request.head.ref == 'ops/d135-start-20260808'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,8 +34,7 @@ jobs:
           python - <<'PY'
           import json
           s=json.load(open('STATE.json'))
-          active=s['active_work_unit']
-          assert active=='J-200',s
+          assert s['active_work_unit']=='J-200',s
           assert s['current_module']=='J',s
           assert s['current_run'],s
           print('CURRENT_RUN='+s['current_run'])
