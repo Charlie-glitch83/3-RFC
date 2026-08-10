@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "status": "CURRENT_SCIENTIFIC_FRONTIER",
+  "timestamp_utc": "2026-08-10T13:00:37.561840+00:00",
+  "active_work_unit": "I-180",
+  "current_module": "I",
+  "current_run": null,
+  "active_queue_items": [
+    "I-180"
+  ],
+  "last_valid_frozen_parent_chain": "A through HU at their existing verified/frozen scopes",
+  "frontier_reason": "Module I requires corrected branch-complete geometry/expansion derivation and exact-parent physical binding before HI/J can resume.",
+  "supersession_audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+  "corrected_derivation": "modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json",
+  "semantic_verification": "modules/I/repair/REPAIR_VERIFICATION.json",
+  "downstream_status": {
+    "HI": "BLOCKED_PENDING_REPAIRED_I",
+    "J": "BLOCKED_PENDING_REPAIRED_I_AND_HI_REPLAY"
+  }
+}

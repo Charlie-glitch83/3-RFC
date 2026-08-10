@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "event": "I180_SCIENTIFIC_FRONTIER_RESET_AND_SUPERSESSION",
-  "timestamp_utc": "2026-08-10T12:53:05.831886+00:00",
+  "timestamp_utc": "2026-08-10T13:00:37.489723+00:00",
   "reason": [
     "I-180 froze effective-resistance distance and pseudo-determinant scalar scale without proving universal uniqueness or metric/scale branch completeness.",
     "I-180 primary numerical background was explicitly classified as an implementation witness, yet controller evidence was promoted through PHYSICALLY_EXECUTED.",
@@ -24,7 +24,7 @@
         {
           "state": "DESIGN",
           "fidelity": "UNSTARTED",
-          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "timestamp_utc": "2026-08-10T12:53:05.875890+00:00",
           "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
           "work_unit": "I-180",
           "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
@@ -48,7 +48,7 @@
         {
           "state": "DESIGN",
           "fidelity": "UNSTARTED",
-          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "timestamp_utc": "2026-08-10T12:53:05.875890+00:00",
           "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
           "work_unit": "I-180",
           "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
@@ -72,7 +72,7 @@
         {
           "state": "DESIGN",
           "fidelity": "UNSTARTED",
-          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "timestamp_utc": "2026-08-10T12:53:05.875890+00:00",
           "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
           "work_unit": "I-180",
           "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
