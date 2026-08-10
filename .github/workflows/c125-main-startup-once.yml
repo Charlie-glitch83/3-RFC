@@ -1,4 +1,4 @@
-name: Main-dispatched C125 README startup once
+name: J-200 indexed source-scope repair once
 
 on:
   pull_request:
@@ -8,12 +8,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: c125-main-startup-once
+  group: j200-source-repair-once
   cancel-in-progress: false
 
 jobs:
-  start-c125:
-    if: github.event.pull_request.head.ref == 'ops/c125-main-startup-20260808'
+  repair-j200:
+    if: github.event.pull_request.head.ref == 'ops/j200-indexed-repair-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,6 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute exact repository README startup for C125
+      - name: Execute repository-governed J source repair
         shell: bash
-        run: bash tools/run_c125_startup_dispatch.sh
+        run: bash tools/run_j200_source_repair_dispatch.sh
