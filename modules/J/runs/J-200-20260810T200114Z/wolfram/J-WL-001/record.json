@@ -1,0 +1,15 @@
+{
+  "call_id": "J-WL-001",
+  "module": "J",
+  "purpose": "Positive-definite covariance and Cholesky reconstruction",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-10T21:00:00Z",
+  "input_sha256": "45b42bc73419c6588beb1a53372f1a9434dbc92b098e84324a8da8aee563e4d6",
+  "output_sha256": "6440f1dc7dd77d85a8a82f442c2316b40a3a3cc763450927e3768d78687f2791",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/J/runs/J-200-20260810T200114Z/wolfram/J-WL-001/gate.json",
+  "implementation_correction": "modules/J/runs/J-200-20260810T200114Z/wolfram/J-WL-001/IMPLEMENTATION_CORRECTION.json"
+}
