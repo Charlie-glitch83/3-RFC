@@ -1,15 +1,15 @@
-name: Boot 3-RFC exactly from root README
+name: J-200 governed packet operator
 
 on:
   pull_request:
-    types: [synchronize]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
 
 jobs:
-  boot-repository:
-    if: github.event.pull_request.number == 74 && github.event.pull_request.head.ref == 'ops/d135-start-20260808'
+  j200-preexecution-freeze:
+    if: github.event.pull_request.head.ref == 'ops/j200-governed-20260809'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,32 +20,104 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute root README boot exactly
+      - name: Execute repository packet steps 1-3
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
           bash bootstrap.sh
           bash tools/start_work.sh
-          echo '=== ACTIVE ==='
-          python tools/director.py active
-          echo '=== ACTIVE PACKET ==='
-          cat work_packets/ACTIVE_WORK_PACKET.md
-          python - <<'PY'
+          RUN="$(python - <<'PY'
           import json
           s=json.load(open('STATE.json'))
           assert s['active_work_unit']=='J-200',s
           assert s['current_module']=='J',s
           assert s['current_run'],s
-          print('CURRENT_RUN='+s['current_run'])
+          print(s['current_run'])
           PY
+          )"
+          R="modules/J/runs/$RUN"
+          python - "$RUN" <<'PY'
+          import hashlib,json,sys
+          from datetime import datetime,timezone
+          from pathlib import Path
+          run=sys.argv[1]; R=Path('modules/J/runs')/run
+          def sha(p):
+              return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          def row(p,classification):
+              q=Path(p); return {'path':str(q),'sha256':sha(q),'bytes':q.stat().st_size,'classification':classification}
+          parent='modules/HI/frozen/H_HI_to_J.json'
+          authority=[
+            'recipes/J/recipe.json','recipes/J/WORK_ORDER.md','recipes/J/gates.json','modules/J/spec.json',
+            'docs/08_EVIDENCE_AND_CLAIM_STATES.md','docs/09_DERIVATION_PROTOCOL.md','docs/10_EXECUTION_PROTOCOL.md',
+            'theory/DERIVATION_ATLAS.md','config/WOLFRAM_EXPECTATIONS.json','config/required_output_contracts.json',
+            'MODEL_OPERATOR_PROMPT.md','requirements-lock.txt'
+          ]
+          admitted=[
+            'sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md',
+            'sources/frozen/c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226/2RFC_Immediate_Execution_Queue_20260805.md',
+            'sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md'
+          ]
+          src={
+            'schema_version':'2.1','run_id':run,'status':'FROZEN_BEFORE_PRIMARY_EXECUTION','generation_mode':'GENERATION_SEALED',
+            'exact_parents':[row(parent,'DIRECT_PARENT')],
+            'admitted_sources':[row(p,'ADMITTED_SOURCE') for p in admitted],
+            'imports':['json','hashlib','pathlib','numpy','scipy'],
+            'files':[row(p,'AUTHORITY') for p in authority],
+            'urls':[],'constants':[],'public_data_declaration':'NONE','network_policy':'DISABLED_DURING_GENERATION'
+          }
+          (R/'SOURCE_REGISTER.json').write_text(json.dumps(src,indent=2)+'\n')
+          parent_obj=json.loads(Path(parent).read_text())
+          deriv={
+            'schema_version':'2.1','run_id':run,'status':'FROZEN_PRE_EXECUTION','module':'J','fidelity':'MINIMAL_SPINE','generation_mode':'GENERATION_SEALED',
+            'parent':row(parent,'DIRECT_PARENT'),
+            'triadic_descent':{'CIF':'covariance and mode possibilities inherited from exact HI branch/mode/source carriers','QV':'PSD selection, target-blind phase/seed realization, and finite-volume promotion','RFL':'actual linear fields, covariance memory, branch identity, and restart state'},
+            'state_space':{'parent_type':'branch-indexed constraint-preserving HU-on-I transfer/background family','physical_domain':parent_obj['instantiated_transfer_system']['HU_domain'],'branch_policy':parent_obj['branch_policy'],'mode_law':parent_obj['mode_eigenstructure']['law']},
+            'covariance_construction_law':'J must construct an endogenous PSD second-moment operator on the inherited physical perturbation quotient from generated source/route/memory carriers and exact HI ancestry. No manufactured covariance, public primordial spectrum, remembered amplitude, or unowned zero cross-covariance may become the physical parent. If exact ancestry leaves multiple lawful PSD covariances, retain the complete covariance branch family; if a material covariance value is not selected by exact sources/parent/derived law, record BLOCKED_UNDERDETERMINED rather than import a familiar answer.',
+            'propagation_law':parent_obj['error_covariance_propagation']['law'],
+            'mode_eigenstructure':parent_obj['mode_eigenstructure'],
+            'target_blind_realization_rule':'Any stochastic seed used after a covariance is lawfully derived is deterministically generated from SHA-256(parent_sha256 || run_id || purpose_label); it may not be searched, retuned, or selected by observational agreement.',
+            'higher_moment_status':'Gaussian realization is permitted only as the declared finite-volume implementation class unless exact admitted sources derive non-Gaussian higher moments; absence of a higher-moment law is preserved, not silently fitted.',
+            'numerical_refinement_policy':'Use a frozen dyadic implementation refinement family and convergence/reconstruction gates; numerical resolution is an implementation coordinate, not a physical fitted parameter.',
+            'required_outputs':['positive-semidefinite covariance','linear spectra and growth','finite-volume fields','phase/seed provenance','promotion witnesses','restartable P_J_to_K'],
+            'hard_stops':['public initial-condition file or target phase enters','manufactured representative covariance promoted as physical parent','covariance non-PSD','unresolved __BIND token','seed or branch shopping','material covariance value absent from exact source/parent/hashed derivation','clean replay mismatch'],
+            'claim_boundary':'One realized RFC linear universe and its uncertainty state only if exact ancestry lawfully selects/constructs the covariance and field realization; otherwise preserve the lawful covariance branch family or BLOCKED_UNDERDETERMINED at the exact missing material object.'
+          }
+          (R/'FROZEN_DERIVATION_SPEC.json').write_text(json.dumps(deriv,indent=2)+'\n')
+          dh=sha(R/'FROZEN_DERIVATION_SPEC.json')
+          lock={
+            'schema_version':'2.1','run_id':run,'status':'FROZEN','frozen_utc':datetime.now(timezone.utc).isoformat(),'frozen_before_primary_execution':True,
+            'authority_hashes':[sha(p) for p in authority],
+            'parent_hashes':[sha(parent)],
+            'definition_hashes':[dh]+[sha(p) for p in admitted],
+            'candidate_classes':['exact-HI-parent endogenous PSD covariance operators on the inherited physical perturbation quotient','lawful covariance branch family when exact ancestry remains nonunique','target-blind finite-volume Gaussian realization only after covariance ownership is established'],
+            'equations_and_laws':[deriv['covariance_construction_law'],deriv['propagation_law'],deriv['target_blind_realization_rule'],parent_obj['instantiated_transfer_system']['law'],parent_obj['mode_eigenstructure']['law']],
+            'dimensions_units_frames_gauges_clocks':['inherit exact HI branch identity','inherit HU quotient V_b=ker(C_b)/im(G_b)','inherit I finite-relational background and Big-Implosion clock family','no imported FRW/k-grid/SI normalization','finite-volume grid is an implementation coordinate unless a physical scale is source-owned'],
+            'methods':['exact parent/source hashing','J-WL-001 then J-WL-002 exact manufactured gates','J manufactured reference check','provenance-bound covariance engine','provenance-bound Fourier field engine','resolution/volume matrix','countermodels and ablations','restart/replay','independent field reconstruction','clean checkout replay'],
+            'tolerances':['covariance symmetry/PSD engine tolerance=1e-12','Fourier reconstruction tolerance=1e-10','sample covariance tolerance must be frozen from an internal numerical-precision rule before execution','convergence thresholds frozen before the corresponding execution matrix'],
+            'stopping_rules':deriv['hard_stops'],
+            'expected_invariants':['covariance symmetric PSD','Hermitian conjugate pairing yields a real field','exact parent hash unchanged','branch identity retained','seed provenance target-blind','no public initial-condition input','clean replay artifact match'],
+            'tests':['J-WL-001','J-WL-002','manufactured J reference check','covariance PSD/sample reconstruction','Fourier reality/reconstruction','resolution and volume tests','semantic countermodels','ablations','restart','independent reconstruction','clean replay'],
+            'gates':['covariance PSD','reality/Hermitian conditions','resolution and volume tests','no public initial-condition file','independent field reconstruction'],
+            'falsifiers':deriv['hard_stops'],
+            'claim_boundary':deriv['claim_boundary'],
+            'independent_verifier_design':'Without trusting GATE_RESULTS or CLOSEOUT, re-hash exact H_HI_to_J and admitted J sources, reconstruct the covariance ownership/branch rule from FROZEN_DERIVATION_SPEC, verify no manufactured/public covariance entered generation, independently audit PSD, reproduce target-blind seed derivation and Hermitian finite-volume field, rerun resolution/volume checks, and compare final P_J_to_K content and hashes.',
+            'allowed_implementation_only_corrections':['syntax/path/serialization/evaluator-backend/solver plumbing only; preserve failed attempt and rerun full frozen matrix; no parent, source, covariance law, seed rule, tests, thresholds, gates, falsifiers, or claim-boundary changes']
+          }
+          (R/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          env={'schema_version':'2.1','run_id':run,'status':'CAPTURED_PRE_EXECUTION','generation_mode':'GENERATION_SEALED','network_policy':'DISABLED_DURING_GENERATION','software':['python 3.11','numpy','scipy'],'imports':src['imports'],'hidden_defaults_audited':True,'public_inputs_used':False}
+          (R/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
+          print('RUN='+run)
+          print('PARENT_SHA256='+sha(parent))
+          print('DERIVATION_SHA256='+dh)
+          PY
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add STATE.json memory/CURRENT_CONTEXT.md memory/RUN_INDEX.json work_packets/ACTIVE_WORK_PACKET.md modules/J/runs
-          if ! git diff --cached --quiet; then
-            git commit -m 'Run repository-prescribed boot for active J-200'
-            git push origin HEAD:agent/frontier-050-execution
-            printf 'BOOT_COMMIT=%s\n' "$(git rev-parse HEAD)"
-          else
-            printf 'BOOT_NO_CHANGES_HEAD=%s\n' "$(git rev-parse HEAD)"
-          fi
+          git add "$R/SOURCE_REGISTER.json" "$R/FROZEN_DERIVATION_SPEC.json" "$R/PRE_EXECUTION_LOCK.json" "$R/ENVIRONMENT.json" STATE.json memory/CURRENT_CONTEXT.md memory/RUN_INDEX.json work_packets/ACTIVE_WORK_PACKET.md
+          git commit -m 'Freeze J-200 pre-execution state'
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'J200_FREEZE_COMMIT=%s\n' "$(git rev-parse HEAD)"
