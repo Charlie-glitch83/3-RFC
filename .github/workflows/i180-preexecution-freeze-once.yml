@@ -83,7 +83,7 @@ jobs:
           assert by['HU-175']['status']=='BLOCKED' and by['HU-175']['depends_on']==['G-165']
           assert by['I-180']['status']=='BLOCKED' and set(by['I-180']['depends_on'])=={'G-165','HU-175'}
           if 'HI-190' in by:
-              assert 'HU-175' in by['HI-190']['depends_on'] and 'HU-170' not in by['HI-190']['depends_on']
+              assert set(by['HI-190']['depends_on'])=={'HU-170','I-180'}
           packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
           assert 'G-165' in packet and 'Module G' in packet
           run=Path('modules/G/runs')/state['current_run']
