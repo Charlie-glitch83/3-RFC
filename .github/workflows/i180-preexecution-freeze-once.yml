@@ -1,4 +1,4 @@
-name: I-180 governed Wolfram recording once
+name: G-160 to I interface superseding repair once
 
 on:
   pull_request:
@@ -6,18 +6,18 @@ on:
       - agent/frontier-050-execution
     types: [opened, synchronize, reopened]
     paths:
-      - 'ops/I180_WOLFRAM_TRIGGER.txt'
+      - 'ops/G160_I_INTERFACE_REPAIR_TRIGGER.txt'
 
 permissions:
   contents: write
 
 concurrency:
-  group: i180-governed-wolfram-recording-once
+  group: g160-i-interface-superseding-repair-once
   cancel-in-progress: false
 
 jobs:
-  record-i180-wolfram:
-    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-record3-20260810'
+  repair-g160-i-interface:
+    if: github.event.pull_request.head.ref == 'ops/g160-i-interface-repair-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,103 +28,83 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Record exact connected Wolfram outputs in frozen order
+      - name: Diagnose and route the upstream interface defect
         shell: bash
-        env:
-          I1_B64: U3ltYm9sOjp1bmRlZmluZWQyOiBXYXJuaW5nOiBHbG9iYWwgc3ltYm9scyAiSCwgSCwgSCIgYXJlIHVuZGVmaW5lZC4KRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsOiBBIGZyb250IGVuZCBpcyBub3QgYXZhaWxhYmxlOyBjZXJ0YWluIG9wZXJhdGlvbnMgcmVxdWlyZSBhIGZyb250IGVuZC4KRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsOiBBIGZyb250IGVuZCBpcyBub3QgYXZhaWxhYmxlOyBjZXJ0YWluIG9wZXJhdGlvbnMgcmVxdWlyZSBhIGZyb250IGVuZC4KRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsOiBBIGZyb250IGVuZCBpcyBub3QgYXZhaWxhYmxlOyBjZXJ0YWluIG9wZXJhdGlvbnMgcmVxdWlyZSBhIGZyb250IGVuZC4KR2VuZXJhbDo6c3RvcDogRnVydGhlciBvdXRwdXQgb2YgRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsIHdpbGwgYmUgc3VwcHJlc3NlZCBkdXJpbmcgdGhpcyBjYWxjdWxhdGlvbi4KR2VuZXJhbDo6bWVzc2FnZXM6IE1lc3NhZ2VzIHdlcmUgZ2VuZXJhdGVkIHdoaWNoIG1heSBpbmRpY2F0ZSBlcnJvcnMuCgpPdXRbMV09ICI8fFwiY2FsbFwiIC0+IFwiSS1XTC0wMDFcIiwgXCJIXCIgLT4gXCIoaCArIDIqcSp0KS8oMSArIHQqKGggKyBxKnQpKVwiLCBcImhvcml6b25cIiAtPiBcIigtMiooQXJjVGFuW2gvU3FydFstaF4yICsgNCpxXV0gLSBBcmNUYW5bKGggKyAyKnEqdCkvU3FydFstaF4yICsgNCpxXV0pKS9TcXJ0Wy1oXjIgKyA0KnFdXCIsIFwia2luZW1hdGljSWRlbnRpdHlcIiAtPiBUcnVlfD4iCg==
-          I2_B64: T3V0WzFdPSAiPHxcImNhbGxcIiAtPiBcIkktV0wtMDAyXCIsIFwiY29uc3RyYWludERlcml2YXRpdmVcIiAtPiBcIjBcIiwgXCJwcmVzZXJ2ZWRcIiAtPiBUcnVlfD4iCg==
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
           RUN='I-180-20260810T134326Z'
           R="modules/I/runs/$RUN"
-          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['status'])")" = FROZEN
-          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['physical_execution_gate']['status'])")" = BLOCKED_PENDING_EXACT_PARENT_BINDING
-          printf '%s' "$I1_B64" | base64 -d > /tmp/I-WL-001.output.txt
-          printf '%s' "$I2_B64" | base64 -d > /tmp/I-WL-002.output.txt
-          python - <<'PY'
-          import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-          R=Path('modules/I/runs/I-180-20260810T134326Z')
-          p=R/'FAILURES.jsonl'
-          old=p.read_text() if p.exists() else ''
-          failures=[
-              {
-                  'failure_id':'I180-WOLFRAM-RECORD-SAMEFILE',
-                  'timestamp_utc':datetime.now(timezone.utc).isoformat(),
-                  'stage':'POST_LOCK_WOLFRAM_RECORDING',
-                  'result':'FAIL',
-                  'cause':'Repository wolfram-record was initially given the run destination output.txt as both source and destination, producing shutil.SameFileError before gate evaluation.',
-                  'evidence':'GitHub Actions run 31396842914 job 93481716452',
-                  'disposition':'IMPLEMENTATION_ONLY_TEMP_OUTPUT_PATH_AND_FULL_FROZEN_WOLFRAM_MATRIX_RERUN',
-                  'science_changed':False,
-                  'parents_changed':False,
-                  'sources_changed':False,
-                  'law_changed':False,
-                  'wolfram_input_changed':False,
-                  'wolfram_output_changed':False,
-                  'tests_changed':False,
-                  'gates_changed':False,
-                  'claim_boundary_changed':False
-              },
-              {
-                  'failure_id':'I180-WOLFRAM-CARRIER-GATE-SCHEMA',
-                  'timestamp_utc':datetime.now(timezone.utc).isoformat(),
-                  'stage':'POST_LOCK_WOLFRAM_RECORDING_VALIDATION',
-                  'result':'FAIL',
-                  'cause':'Carrier expected gate.result=PASS although the repository gate schema reports status=PASS_WITH_MANUAL_INTERPRETATION; both manufactured gate commands returned code 0 with empty failure lists.',
-                  'evidence':'GitHub Actions run 31397057383 job 93482448784',
-                  'disposition':'IMPLEMENTATION_ONLY_ASSERTION_SCHEMA_CORRECTION_AND_FULL_REPOSITORY_VALIDATION_RERUN',
-                  'science_changed':False,
-                  'parents_changed':False,
-                  'sources_changed':False,
-                  'law_changed':False,
-                  'wolfram_input_changed':False,
-                  'wolfram_output_changed':False,
-                  'tests_changed':False,
-                  'gates_changed':False,
-                  'claim_boundary_changed':False
-              }
-          ]
-          with p.open('a') as f:
-              for rec in failures:
-                  if rec['failure_id'] not in old:
-                      f.write(json.dumps(rec)+'\n')
-          PY
-          python tools/director.py wolfram-record --run "$RUN" --call I-WL-001 --output /tmp/I-WL-001.output.txt
-          python tools/director.py wolfram-record --run "$RUN" --call I-WL-002 --output /tmp/I-WL-002.output.txt
-          python tools/run_reference_checks.py --module I --output "$R/reference_checks.json"
+
+          # Phase 1: preserve the I science and harden the live G contract.
+          python tools/repair_g160_i_interface.py prepare
           python - <<'PY'
           import json
           from pathlib import Path
-          R=Path('modules/I/runs/I-180-20260810T134326Z')
-          for cid in ('I-WL-001','I-WL-002'):
-              gate=json.loads((R/'wolfram'/cid/'gate.json').read_text())
-              assert gate.get('status')=='PASS_WITH_MANUAL_INTERPRETATION', (cid,gate)
-              assert gate.get('failures')==[], (cid,gate)
-              rec=json.loads((R/'wolfram'/cid/'record.json').read_text())
-              assert rec['manufactured_gate_returncode']==0, (cid,rec)
-              assert rec['public_knowledge_used'] is False, rec
-          ref=json.loads((R/'reference_checks.json').read_text())
-          assert ref.get('overall')=='PASS', ref
-          lock=json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())
-          assert lock['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
-          print('WOLFRAM_MANUFACTURED_GATES=PASS_WITH_MANUAL_INTERPRETATION')
-          print('PHYSICAL_EXECUTION_GATE='+lock['physical_execution_gate']['status'])
+          audit=json.loads(Path('audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json').read_text())
+          assert audit['result']=='REPAIR_REQUIRED_AT_G_BEFORE_I_CAN_PHYSICALLY_EXECUTE', audit
+          assert audit['diagnosis']['triad_falsified'] is False
+          assert audit['diagnosis']['I_law_falsified'] is False
+          assert audit['diagnosis']['F_parent_replay_required_now'] is False
+          assert audit['diagnosis']['G_superseding_replay_required'] is True
+          assert audit['diagnosis']['HU_replay_required_after_G'] is True
+          cfg=json.loads(Path('config/required_output_contracts.json').read_text())
+          names={x['name'] for x in cfg['modules']['G']['required_child_bindings']}
+          required={'i_route_registry','i_route_resolved_process_activity','i_route_to_relational_ancestry','i_aggregate_no_loss_reconstruction','i_geometry_child_packet'}
+          assert required <= names, (required-names)
+          global_bind=json.loads(Path('configured_runs/binding_sheets/G_recombination_network.bindings.json').read_text())
+          assert all(x.get('value') is None for x in global_bind['bindings'])
           PY
+
+          # The corrected I law reached FORMALIZED, but physical execution never began.
+          python tools/rfc.py promote-module I --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$R/PRE_EXECUTION_LOCK.json"
+          python tools/rfc.py close-run --run-id "$RUN" --result BLOCKED --closeout "$R/CLOSEOUT.md"
+
+          # Phase 2: move the sole active frontier upstream to G and preserve replay order G -> HU -> I.
+          python tools/repair_g160_i_interface.py route
+          python tools/rfc.py reopen-module G --fidelity PRODUCTION --evidence audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json
+
+          # Repository-controlled startup creates the new G run and active packet.
+          bash tools/start_work.sh
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('STATE.json').read_text())
+          queue=json.loads(Path('WORK_QUEUE.json').read_text())['items']
+          by={x['id']:x for x in queue}
+          assert state['active_work_unit']=='G-165', state
+          assert state['current_module']=='G', state
+          assert state['current_run'] and state['current_run'].startswith('G-165-'), state
+          assert state['modules']['G']['evidence_state']=='DESIGN', state['modules']['G']
+          assert state['modules']['G']['fidelity']=='PRODUCTION', state['modules']['G']
+          assert state['modules']['I']['evidence_state']=='FORMALIZED', state['modules']['I']
+          assert by['G-165']['status']=='ACTIVE'
+          assert by['HU-175']['status']=='BLOCKED' and by['HU-175']['depends_on']==['G-165']
+          assert by['I-180']['status']=='BLOCKED' and set(by['I-180']['depends_on'])=={'G-165','HU-175'}
+          if 'HI-190' in by:
+              assert 'HU-175' in by['HI-190']['depends_on'] and 'HU-170' not in by['HI-190']['depends_on']
+          packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
+          assert 'G-165' in packet and 'Module G' in packet
+          run=Path('modules/G/runs')/state['current_run']
+          bind=json.loads((run/'binding_sheets/G_recombination_network.bindings.json').read_text())
+          assert all(x.get('value') is None for x in bind['bindings'])
+          print('ACTIVE_REPAIR_RUN='+state['current_run'])
+          PY
+
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
-      - name: Commit exact Wolfram records and manufactured reference check
+
+      - name: Commit governed repair routing and repository-generated G run
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add modules/I/runs/I-180-20260810T134326Z/wolfram modules/I/runs/I-180-20260810T134326Z/reference_checks.json modules/I/runs/I-180-20260810T134326Z/FAILURES.jsonl
-          git commit -m 'Record exact I-180 Wolfram manufactured gates'
+          git add -A
+          git commit -m 'Reroute repaired I lineage through route-resolved G replay'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-          printf 'I180_WOLFRAM_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'G165_REPAIR_ROUTE_COMMIT=%s\n' "$(git rev-parse HEAD)"
