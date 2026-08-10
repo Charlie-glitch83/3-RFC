@@ -112,7 +112,7 @@
       "owner": "G",
       "evidence_state": "FROZEN",
       "fidelity": "MINIMAL_SPINE",
-      "supported": true,
+      "supported": false,
       "evidence": [
         "modules/G/frozen/H_G_to_HU.json",
         "modules/G/frozen/H_G_to_I.json",
@@ -121,7 +121,14 @@
       ],
       "unsupported_boundary": "No unique measured atomic coefficients, unique SI calibration, unique observed last-scattering coordinate, public recombination-code equivalence, final CMB spectra, late reionization history, or empirical agreement is claimed.",
       "recorded_utc": "2026-08-09T04:25:50.393799+00:00",
-      "work_unit": "G-160"
+      "work_unit": "G-160",
+      "current_authority": false,
+      "supersession": {
+        "reason": "The historical G run used implementation-only fixed-rate bindings while its closure contract marked H_G_to_I child-ready without route-resolved activity or geometry-child ancestry.",
+        "audit": "audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json",
+        "replacement_claim_id": "G-165-ROUTE-RESOLVED-I-CHILD-REPAIR-FRONTIER",
+        "historical_evidence_preserved": true
+      }
     },
     {
       "claim_id": "HU-170-UNIVERSAL-LINEAR-TRANSFER",
@@ -178,6 +185,23 @@
       "recorded_utc": "2026-08-10T13:00:37.560209+00:00",
       "work_unit": "I-180",
       "authority_scope": "CORRECTED_PRE_EXECUTION_DERIVATION_ONLY"
+    },
+    {
+      "claim_id": "G-165-ROUTE-RESOLVED-I-CHILD-REPAIR-FRONTIER",
+      "text": "The current G repair frontier preserves the frozen F parent and requires a superseding G execution that derives route-resolved process activity and an ancestry-complete geometry-child interface before I can resume physical execution.",
+      "owner": "G",
+      "evidence_state": "DESIGN",
+      "fidelity": "PRODUCTION",
+      "supported": true,
+      "current_authority": true,
+      "evidence": [
+        "audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json",
+        "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+        "configured_runs/binding_sheets/G_recombination_network.bindings.json"
+      ],
+      "strongest_unsupported_claim": "No repaired G physical route realization, superseding HU transfer, or repaired I physical geometry is established yet.",
+      "recorded_utc": "2026-08-10T14:49:34.896299+00:00",
+      "work_unit": "G-165"
     }
   ]
 }

@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "timestamp_utc": "2026-08-10T14:49:34.893891+00:00",
+  "classification": "UPSTREAM_INTERFACE_AND_EVIDENCE_STATE_DEFECT",
+  "result": "REPAIR_REQUIRED_AT_G_BEFORE_I_CAN_PHYSICALLY_EXECUTE",
+  "generation_mode": "GENERATION_SEALED",
+  "earliest_direct_defect": "G-160-20260809T025252Z",
+  "preserved_valid_upstream_scope": "B through F remain frozen at their currently stated scopes; F supplies the route/extinction law and G owns its route-resolved execution.",
+  "evidence": [
+    {
+      "path": "modules/G/runs/G-160-20260809T025252Z/OUTPUT_CONTRACT.json",
+      "sha256": "d9a765a8ccbdb8ca607224f519a351961e775dd2b69ddf36d8f1be4ac3f09249",
+      "finding": "H_G_to_I was marked SATISFIED and child_ready without I-specific route-level bindings."
+    },
+    {
+      "path": "modules/G/runs/G-160-20260809T025252Z/binding_sheets/G_recombination_network.bindings.json",
+      "sha256": "4cf3b0cb7dd32aa7a4f3eafa31f0fcc13b8e88b5e294cc8a31832d2110d4e310",
+      "finding": "The executed numerical witness used kf=kr=1.0 and labels those values implementation witness only."
+    },
+    {
+      "path": "modules/G/runs/G-160-20260809T025252Z/primary/G_RECOMBINATION_LAST_SCATTERING_MINIMAL_SPINE.json",
+      "sha256": "2fd97f13deab52a2081a2034af55da24bda01f6ba565f84d09ced966cf697fda",
+      "finding": "The historical primary promoted the unresolved lawful branch family to PHYSICALLY_EXECUTED."
+    },
+    {
+      "path": "configured_runs/binding_sheets/G_recombination_network.bindings.json",
+      "sha256": "164614c10ecda90a1dbd6fd7845ae4b8d539d0da29b208729642b76bb88ffd37",
+      "finding": "The canonical global binding sheet remains fully unbound, so the historical fixed witness is not inherited by a new run."
+    },
+    {
+      "path": "modules/G/runs/G-160-20260808T021341Z/CLOSEOUT.md",
+      "sha256": "9263271396fec0b9db7775dd5178bdc1acfa9082c453ad8cde3400d7597c8783",
+      "finding": "The preserved earlier blocker explicitly rejected treating missing child-critical science as a failure of G."
+    },
+    {
+      "path": "modules/G/runs/G-160-20260808T051613Z/CLOSEOUT.md",
+      "sha256": "adcef711f36fad1f977d45ff556389cc7a3c4aa0416d4d73111042e0abf6e08d",
+      "finding": "The preserved replay blocker required the ordered superseding B through F parent reconstruction before G execution."
+    },
+    {
+      "path": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+      "sha256": "8bbd4286497c0bc7634f08fe4383a6927b48e0abedda6ec4f55ccc8c7d70771e",
+      "finding": "A missing child-critical field is defined as an upstream/interface defect; G may not invent it."
+    }
+  ],
+  "diagnosis": {
+    "triad_falsified": false,
+    "I_law_falsified": false,
+    "F_parent_replay_required_now": false,
+    "G_superseding_replay_required": true,
+    "HU_replay_required_after_G": true,
+    "reason": "The current I blocker is caused by a historical G closure contract that accepted aggregate manufactured evidence as sufficient for the geometry child. The first direct repair point is G, not I and not the triad."
+  },
+  "required_G_to_I_contract": {
+    "route_registry": "stable branch-specific material route identifiers with exact source ancestry",
+    "route_resolved_process_activity": "Gamma_r^b(t) or an exact branch-indexed replacement derived from the frozen parent rather than a manufactured constant-rate witness",
+    "route_to_relational_ancestry": "exact process-to-B relational ancestry witness or a complete constrained branch family with no arbitrary tie-break",
+    "aggregate_no_loss_reconstruction": "route-resolved activities reconstruct the parent aggregate interaction/opacity source within frozen tolerance",
+    "geometry_child_packet": "artifact-backed child interface carrying clock, branch identity, covariance/restart, route activity and relational ancestry together"
+  },
+  "claim_boundary": "This audit diagnoses repository/evidence-state damage. It does not itself derive the missing G route realization or physically execute I."
+}

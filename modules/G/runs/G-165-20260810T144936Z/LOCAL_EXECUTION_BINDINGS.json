@@ -1,0 +1,25 @@
+{
+  "module": "G",
+  "bindings": [
+    {
+      "solver": "reaction_network",
+      "template": "configured_runs/templates/G_recombination_network.template.json",
+      "purpose": "Execute nonequilibrium recombination chemistry.",
+      "copy_command": "python tools/director.py solver-copy --module G --solver reaction_network --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/G_recombination_network.json --output-dir <RUN_DIR>/solver_outputs/reaction_network",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/G_recombination_network.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/G_recombination_network.template.json --binding-sheet <RUN_DIR>/binding_sheets/G_recombination_network.bindings.json --output <RUN_DIR>/solver_configs/G_recombination_network.json"
+    },
+    {
+      "solver": "visibility",
+      "template": "configured_runs/templates/G_visibility.template.json",
+      "purpose": "Construct the physical visibility kernel from the executed opacity history.",
+      "copy_command": "python tools/director.py solver-copy --module G --solver visibility --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/G_visibility.json --output-dir <RUN_DIR>/solver_outputs/visibility",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/G_visibility.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/G_visibility.template.json --binding-sheet <RUN_DIR>/binding_sheets/G_visibility.bindings.json --output <RUN_DIR>/solver_configs/G_visibility.json"
+    }
+  ]
+}

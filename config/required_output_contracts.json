@@ -301,6 +301,26 @@
         {
           "name": "restart",
           "allow_derived_absence": false
+        },
+        {
+          "name": "i_route_registry",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "i_route_resolved_process_activity",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "i_route_to_relational_ancestry",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "i_aggregate_no_loss_reconstruction",
+          "allow_derived_absence": false
+        },
+        {
+          "name": "i_geometry_child_packet",
+          "allow_derived_absence": false
         }
       ]
     }

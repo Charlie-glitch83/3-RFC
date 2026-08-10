@@ -5,9 +5,9 @@
   "project_status": "ACTIVE",
   "generation_mode": "GENERATION_SEALED",
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
-  "active_work_unit": "I-180",
-  "current_module": "I",
-  "current_run": "I-180-20260810T134326Z",
+  "active_work_unit": "G-165",
+  "current_module": "G",
+  "current_run": "G-165-20260810T144936Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -728,9 +728,9 @@
       "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md"
     },
     "G": {
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
-      "active_run": null,
+      "evidence_state": "DESIGN",
+      "fidelity": "PRODUCTION",
+      "active_run": "G-165-20260810T144936Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -798,6 +798,17 @@
           "evidence": "modules/G/frozen/H_G_to_HU.json",
           "timestamp_utc": "2026-08-09T04:25:50.212418+00:00",
           "work_unit": "G-160"
+        },
+        {
+          "state": "DESIGN",
+          "fidelity": "PRODUCTION",
+          "evidence": "audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json",
+          "timestamp_utc": "2026-08-10T14:49:35.162269+00:00",
+          "work_unit": "G-165",
+          "reopened_from": {
+            "evidence_state": "FROZEN",
+            "fidelity": "MINIMAL_SPINE"
+          }
         }
       ],
       "completed_runs": [
@@ -806,10 +817,10 @@
         "G-160-20260809T025252Z"
       ],
       "reopened_from": {
-        "evidence_state": "BLOCKED",
-        "fidelity": "UNSTARTED"
+        "evidence_state": "FROZEN",
+        "fidelity": "MINIMAL_SPINE"
       },
-      "reopen_evidence": "recovery/BG_SUPERSEDING_LINEAGE_PACKET.md",
+      "reopen_evidence": "audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json",
       "promotion_evidence": [
         "modules/G/runs/G-160-20260809T025252Z/FROZEN_DERIVATION_SPEC.json",
         "modules/G/runs/G-160-20260809T025252Z/solver_outputs/reaction_network/result.json",
@@ -872,9 +883,9 @@
       "last_promoted_utc": "2026-08-09T05:05:19.334953+00:00"
     },
     "I": {
-      "evidence_state": "DESIGN",
-      "fidelity": "UNSTARTED",
-      "active_run": "I-180-20260810T134326Z",
+      "evidence_state": "FORMALIZED",
+      "fidelity": "MINIMAL_SPINE",
+      "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -884,11 +895,22 @@
           "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
           "work_unit": "I-180",
           "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
+        },
+        {
+          "state": "FORMALIZED",
+          "fidelity": "MINIMAL_SPINE",
+          "evidence": "modules/I/runs/I-180-20260810T134326Z/PRE_EXECUTION_LOCK.json",
+          "timestamp_utc": "2026-08-10T14:49:34.991003+00:00",
+          "work_unit": "I-180"
         }
       ],
-      "completed_runs": [],
-      "promotion_evidence": [],
-      "last_promoted_utc": "2026-08-09T14:46:51.147170+00:00",
+      "completed_runs": [
+        "I-180-20260810T134326Z"
+      ],
+      "promotion_evidence": [
+        "modules/I/runs/I-180-20260810T134326Z/PRE_EXECUTION_LOCK.json"
+      ],
+      "last_promoted_utc": "2026-08-10T14:49:34.991017+00:00",
       "scientific_supersession": {
         "status": "SUPERSEDED_AS_CURRENT_AUTHORITY",
         "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
@@ -1048,9 +1070,9 @@
     }
   },
   "last_verified_commit": "26c08a68607721e84da1c83bb8d6e098fdeb2304",
-  "last_updated_utc": "2026-08-10T13:43:26.224736+00:00",
-  "strongest_supported_claim": "A through HU remain at their verified frozen scopes. Module I is the sole active scientific frontier; no realized physical background geometry is currently frozen.",
-  "strongest_unsupported_claim": "No unique or branch-complete Module-I metric/expansion law, physical I branch execution, HI instantiation on repaired I, or J covariance/spectrum state is currently established.",
+  "last_updated_utc": "2026-08-10T14:49:36.590066+00:00",
+  "strongest_supported_claim": "The corrected I law is FORMALIZED, and an exact audit has located the first direct blocking repository defect at historical G-160: its implementation-only recombination witness was promoted to physical execution and its G→I packet was marked child-ready without route-resolved process activity and geometry-child ancestry.",
+  "strongest_unsupported_claim": "No superseding G physical route realization, replayed HU transfer, repaired I physical geometry, repaired HI state or J state is established yet.",
   "last_verified_branch": "agent/frontier-050-execution",
   "repair_state": "I180_MINIMAL_SPINE_CLOSED_PENDING_VERIFIED_COMMIT_AND_ADVANCE"
 }

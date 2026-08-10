@@ -16,18 +16,25 @@
     "radiation surface",
     "covariance and restart",
     "H_G_to_HU",
-    "H_G_to_I"
+    "H_G_to_I",
+    "route-resolved G process activity and I geometry-ready ancestry packet"
   ],
   "gates": [
     "rate and opacity lineage",
     "normalization and positivity",
     "stiff convergence",
-    "independent reconstruction"
+    "independent reconstruction",
+    "I route registry completeness",
+    "route-resolved process activity provenance",
+    "process-to-B-edge ancestry completeness or certified complete branch family",
+    "aggregate opacity no-loss reconstruction",
+    "manufactured witnesses cannot promote physical execution"
   ],
   "forbidden_shortcuts": [
     "using public CMB targets to choose recombination parameters",
-    "declaring a readiness score a CMB surface"
+    "declaring a readiness score a CMB surface",
+    "using a manufactured or implementation-only rate witness as physical route activity"
   ],
-  "claim_boundary": "Generated RFC last-scattering state, not observed CMB agreement.",
+  "claim_boundary": "Generated RFC recombination/visibility plus route-resolved geometry-child state; no external comparison or unresolved branch is promoted as a unique physical realization.",
   "evidence_target": "See active work unit and docs/08_EVIDENCE_AND_CLAIM_STATES.md"
 }

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "run_id": "I-180-20260810T134326Z",
+  "classification": "UPSTREAM_INTERFACE_DEFECT",
+  "result": "BLOCKED_UPSTREAM_G_REPAIR_REQUIRED",
+  "audit": "audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json",
+  "I_science_changed": false,
+  "I_frozen_preexecution_law_preserved": true,
+  "physical_execution_performed": false,
+  "required_replay": "G-165 then HU superseding replay then resume I-180 from a fresh exact G parent"
+}

@@ -154,7 +154,7 @@
       "depends_on": [
         "REC-040"
       ],
-      "objective": "Audit A\u2013J and choose the earliest exact break between formal law and one physically executed parent chain.",
+      "objective": "Audit A–J and choose the earliest exact break between formal law and one physically executed parent chain.",
       "steps": [
         "For each boundary, record source, law, representative test, physical parent, solver, output, restart, covariance, independent reconstruction, and evidence state.",
         "Select the earliest missing object.",
@@ -669,12 +669,84 @@
       "required_fidelity": "MINIMAL_SPINE"
     },
     {
-      "id": "I-180",
-      "title": "Close Module I: Realized Background Geometry and Expansion",
-      "module": "I",
+      "id": "G-165",
+      "title": "Repair Module G: Route-Resolved Recombination State and Geometry-Child Interface",
+      "module": "G",
       "status": "ACTIVE",
       "depends_on": [
         "G-160"
+      ],
+      "objective": "Supersede the historical G MINIMAL_SPINE physical-execution overclaim by deriving/executing a parent-bound route-resolved recombination state and a no-loss, ancestry-complete G→I interface from exact H_F_to_G_v2.",
+      "steps": [
+        "Read the live module spec, recipe, work order, exact parents, derivation protocol, execution protocol, and the supersession audit named by this work unit.",
+        "Create the governed run through repository tooling; do not reuse a historical run directory as current authority.",
+        "Freeze exact sources, parents, branch variables, candidate classes, methods, tolerances, gates, falsifiers and claim boundary before primary execution.",
+        "Derive missing science from admitted parents and triadic laws. Preserve complete branch families or obstruction; do not promote manufactured/reference values.",
+        "Execute only parent-bound physical objects and run component gates, convergence, restart, replay, countermodels, ablations, covariance and independent reconstruction.",
+        "Finalize manifests after outputs stop changing, close with evidence-matched claims, commit, verify and allow only the next direct repair child."
+      ],
+      "deliverables": [
+        "modules/G/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/G/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/G/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/G/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/G/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned frozen child interface and artifact registry entries"
+      ],
+      "gates": [
+        "I route registry completeness",
+        "route-resolved process activity provenance",
+        "process-to-B-edge ancestry completeness or certified complete branch family",
+        "aggregate opacity no-loss reconstruction",
+        "manufactured witnesses cannot promote physical execution"
+      ],
+      "commit_message": "Repair G route-resolved state and geometry child interface",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
+      "id": "HU-175",
+      "title": "Replay Module HU Against the Superseding G State",
+      "module": "HU",
+      "status": "BLOCKED",
+      "depends_on": [
+        "G-165"
+      ],
+      "objective": "Reconstruct and freeze the universal linear tangent/transfer object against the superseding G route-resolved state so HI cannot consume a stale G-era HU parent.",
+      "steps": [
+        "Read the live module spec, recipe, work order, exact parents, derivation protocol, execution protocol, and the supersession audit named by this work unit.",
+        "Create the governed run through repository tooling; do not reuse a historical run directory as current authority.",
+        "Freeze exact sources, parents, branch variables, candidate classes, methods, tolerances, gates, falsifiers and claim boundary before primary execution.",
+        "Derive missing science from admitted parents and triadic laws. Preserve complete branch families or obstruction; do not promote manufactured/reference values.",
+        "Execute only parent-bound physical objects and run component gates, convergence, restart, replay, countermodels, ablations, covariance and independent reconstruction.",
+        "Finalize manifests after outputs stop changing, close with evidence-matched claims, commit, verify and allow only the next direct repair child."
+      ],
+      "deliverables": [
+        "modules/HU/runs/<RUN_ID>/RUN_PLAN.md",
+        "modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/HU/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/HU/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned frozen child interface and artifact registry entries"
+      ],
+      "gates": [
+        "exact superseding G parent hash",
+        "tangent/transfer reconstruction from repaired G without trusting historical HU summaries",
+        "covariance, restart and clean replay",
+        "no downstream I/J object imported into HU"
+      ],
+      "commit_message": "Replay HU against repaired G state",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "PRODUCTION"
+    },
+    {
+      "id": "I-180",
+      "title": "Close Module I: Realized Background Geometry and Expansion",
+      "module": "I",
+      "status": "BLOCKED",
+      "depends_on": [
+        "G-165",
+        "HU-175"
       ],
       "objective": "Generate the universe's realized geometry, expansion, clocks, horizons, and distance structure from the accumulated physical state.",
       "steps": [
@@ -703,7 +775,7 @@
       ],
       "commit_message": "Close Module I at its verified scientific scope",
       "required_evidence_state": "FROZEN",
-      "required_fidelity": "MINIMAL_SPINE",
+      "required_fidelity": "PRODUCTION",
       "scientific_reset": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json"
     },
     {
@@ -900,7 +972,7 @@
     },
     {
       "id": "KLM-240",
-      "title": "Close Module KLM: Causal K\u2013L\u2013M Recurrence and Classification",
+      "title": "Close Module KLM: Causal K–L–M Recurrence and Classification",
       "module": "KLM",
       "status": "BLOCKED",
       "depends_on": [
