@@ -1,2 +1,2 @@
 Trigger exact I-180 Wolfram recording and manufactured reference gates once.
-Synchronize after one-use workflow registration refresh.
+Synchronize against the registered I carrier workflow.
