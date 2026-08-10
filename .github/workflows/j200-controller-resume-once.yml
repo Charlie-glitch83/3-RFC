@@ -1,0 +1,71 @@
+name: J-200 repository-controller resume once
+on:
+  pull_request:
+    branches: [agent/frontier-050-execution]
+    types: [opened, synchronize, reopened]
+    paths: ['ops/J200_CONTROLLER_RESUME.txt']
+permissions:
+  contents: write
+concurrency:
+  group: j200-controller-resume-once
+  cancel-in-progress: false
+jobs:
+  resume-j200:
+    if: github.event.pull_request.head.ref == 'ops/j200-controller-resume-20260810'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Resume exactly the repository-authorized J-200 work
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='J-200',s
+          assert s['current_module']=='J',s
+          assert s['generation_mode']=='GENERATION_SEALED',s
+          print('PRE_CURRENT_RUN='+str(s.get('current_run')))
+          PY
+          bash tools/start_work.sh
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='J-200',s
+          assert s['current_module']=='J',s
+          assert s['current_run'] and s['current_run'].startswith('J-200-'),s
+          rid=s['current_run']
+          packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
+          assert rid in packet,(rid,packet[:500])
+          assert Path('modules/J/runs',rid).is_dir(),rid
+          print('FRESH_J_RUN='+rid)
+          PY
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit controller-generated J startup state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No controller startup changes to commit'
+          else
+            git commit -m 'Resume J-200 through repository controller'
+            git pull --rebase origin agent/frontier-050-execution
+            git push origin HEAD:agent/frontier-050-execution
+          fi
