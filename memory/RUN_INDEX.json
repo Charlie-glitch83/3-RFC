@@ -324,9 +324,12 @@
       "run_id": "J-200-20260810T170347Z",
       "module": "J",
       "task_id": "J-200",
-      "status": "CREATED",
+      "status": "FAIL",
       "path": "modules/J/runs/J-200-20260810T170347Z",
-      "created_utc": "2026-08-10T17:03:47.204376+00:00"
+      "created_utc": "2026-08-10T17:03:47.204376+00:00",
+      "closed_utc": "2026-08-10T17:13:56.147306+00:00",
+      "tree_sha256": "eefe72f50950c735bad1f71e3da820399931acd24c83614b269d863718667e87",
+      "closeout": "modules/J/runs/J-200-20260810T170347Z/CLOSEOUT.md"
     }
   ]
 }

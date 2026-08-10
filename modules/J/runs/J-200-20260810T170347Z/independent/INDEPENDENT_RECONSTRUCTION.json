@@ -1,0 +1,19 @@
+{
+  "schema_version": "4.0",
+  "object_id": "J200_INDEPENDENT_SOURCE_ONLY_OBSTRUCTION_RECONSTRUCTION",
+  "run_id": "J-200-20260810T170347Z",
+  "result": "PASS",
+  "classification": "INDEPENDENT_RECONSTRUCTION_OF_UNDERDETERMINATION",
+  "trusted_primary_audit": false,
+  "checks": {
+    "exact_HI_parent_hash": true,
+    "P29_normalized_weight_law": true,
+    "P30_A_s_pending": true,
+    "P30_PR_pending": true,
+    "HI_covariance_not_realized": true,
+    "HI_seed_not_realized": true,
+    "HI_field_not_realized": true,
+    "HI_mode_selection_none": true
+  },
+  "conclusion": "Exact sources independently reproduce the J material-covariance obstruction; physical covariance/field materialization would require an unowned basis mapping or amplitude and is therefore forbidden."
+}

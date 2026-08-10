@@ -1,0 +1,1 @@
+Out[1]= "<|\"call\" -> \"J-WL-002\", \"rule\" -> \"{Re[z[1]], Conjugate[z[8]], Conjugate[z[7]], Conjugate[z[6]], Re[z[5]], Conjugate[z[4]], Conjugate[z[3]], Conjugate[z[2]]}\", \"note\" -> \"Actual finite-volume implementation must enforce conjugate pairing and preserve the frozen seed.\"|>"

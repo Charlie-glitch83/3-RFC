@@ -1,0 +1,1 @@
+{"failure_id":"J200-WL001-PROTECTED-C-SYMBOL-CURRENT","stage":"POST_LOCK_MANUFACTURED_WOLFRAM","call":"J-WL-001","result":"FAIL","cause":"Exact stored Wolfram program assigns to protected symbol C.","disposition":"IMPLEMENTATION_ONLY_SYMBOL_RENAME_AND_CHOLESKY_CONVENTION_CORRECTION","science_changed":false}

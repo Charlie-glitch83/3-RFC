@@ -1,63 +1,133 @@
 {
+  "schema_version": "4.0",
   "run_id": "J-200-20260810T170347Z",
-  "status": "BLOCKED_UNDERDETERMINED_PRE_PRIMARY",
-  "frozen_utc": "2026-08-10T17:30:00Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-10T17:13:50.259861+00:00",
   "frozen_before_primary_execution": true,
   "authority_hashes": [
-    {"path": "recipes/J/WORK_ORDER.md", "sha256": "856f62070c1f6fcc8b9e4185be55336aadc16ac2"},
-    {"path": "recipes/J/gates.json", "sha256": "c2165bcc167e9c79a5d9fb90a14897d446b3dcec"}
+    {
+      "path": "recipes/J/recipe.json",
+      "sha256": "fc0d0a507c7ad2617c32105aa31230235bc77e5ffa250002e29db38623d2284b",
+      "bytes": 5295
+    },
+    {
+      "path": "recipes/J/WORK_ORDER.md",
+      "sha256": "191b0864183b3b73087c7d9405d062cbe6be0985fc4ccac9ed8fb6d541fedce4",
+      "bytes": 4117
+    },
+    {
+      "path": "recipes/J/gates.json",
+      "sha256": "cdd11a55e53f60a25e8ce242985a0ff459dc495ab5643983a387a44504b6c5ed",
+      "bytes": 502
+    },
+    {
+      "path": "modules/J/spec.json",
+      "sha256": "7c3198e07239f5fbec7fd452ee086492233bd014607edcc162011daac5d814ab",
+      "bytes": 1064
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+      "bytes": 1101
+    }
   ],
   "parent_hashes": [
-    {"path": "modules/HI/frozen/H_HI_to_J_v2.json", "sha256": "23301906ad1a40d39f7409c9c30e5c6c2e7d03e1"},
-    {"path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md", "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1"}
+    {
+      "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+      "sha256": "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e",
+      "bytes": 3697
+    }
   ],
   "definition_hashes": [
-    {"path": "modules/J/runs/J-200-20260810T170347Z/J200_PRIMORDIAL_SOURCE_OBSTRUCTION.json", "sha256": "39ab63dc4f7cab5bd116ceaed01f8fee8c770b72"}
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "05c8701a0b0310b83574512210a3c61f22f7a7f07ecd9bbe844d1d502a2f2d22",
+      "bytes": 2810
+    },
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "bytes": 86724
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "bytes": 951976
+    },
+    {
+      "path": "sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
+      "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+      "bytes": 42775
+    },
+    {
+      "path": "sources/frozen/c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226/2RFC_Immediate_Execution_Queue_20260805.md",
+      "sha256": "c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226",
+      "bytes": 7795
+    }
   ],
   "candidate_classes": [
-    "lawful primordial state/branch family inherited from exact genesis ancestry",
-    "quadratic-action-derived canonical perturbation state",
-    "mathematically equivalent RFC stochastic-generation state family"
+    "endogenous PSD covariance family on exact HI modes",
+    "target-blind phase/seed realization only after covariance materialization",
+    "finite-volume Hermitian field only after exact covariance and geometry bindings"
   ],
   "equations_and_laws": [
-    "Big Implosion deterministic branch action S_imp,beta[y]=1/2||y-x^-_beta||^2 + ell_delta/2 y^T L_beta y",
-    "HI covariance propagation Sigma_delta,out=U Sigma_delta,in U^T, with primordial Sigma_delta,in explicitly unresolved",
-    "J requires an actual physical covariance before covariance/Fourier engines may execute"
+    "K_f(t)=sum_{j=1}^N delta^(-j) f_j(t) exp(-alpha j t)",
+    "p_j(t;n)=delta^(-j) exp(-alpha j t)/sum_{k=1}^n delta^(-k) exp(-alpha k t), positive and normalized",
+    "physical P_R(k), n_s, A_s, alpha_s, r, physical T(k), and matter power are pending/not generated and cannot be imported as solved parents",
+    "Sigma_delta,out=U Sigma_delta,in U^T; Sigma_I remains attached; source-owned cross covariance C maps to U C; unresolved cross covariance is retained, never invented or zeroed.",
+    "For any exact finite ordered physical HI basis {f_bj} with a source-owned P29 recursion-index mapping and normalization, Sigma_b=sum_j p_j |f_bj><f_bj| is PSD and may be pushed forward only by the exact HI law. Retain all lawful branch/basis mappings if not uniquely selected.",
+    "Only after material covariance is fixed, a seed may be deterministically derived from SHA256(parent_sha256 || run_id || purpose_label); never search or retune seed."
   ],
   "dimensions_units_frames_gauges_clocks": [
-    "shared physical clock t_phys=t_B tau_B inherited through HI",
-    "HU physical tangent quotient V_b=ker(C_b)/im(Gauge_b)",
-    "I constant response-graph mode remains background gauge",
-    "primordial stochastic normalization/dimensions NOT YET DERIVED"
+    "inherit HI branch identity and Big-Implosion clock",
+    "HU physical quotient V_b retained",
+    "I background quotient remains distinct",
+    "recursive depth j is not physical time or automatically an HI mode label",
+    "no imported k-grid/SI normalization"
   ],
   "methods": [
-    "exact-parent source-lineage audit",
-    "genesis variational-law audit",
-    "source-diagnostic classification audit",
-    "N-body branch-policy audit",
-    "pre-primary obstruction rather than manufactured covariance execution"
+    "exact source/hash audit",
+    "J-WL-001/J-WL-002 manufactured checks",
+    "typed material-derivability audit",
+    "independent source-only reconstruction"
   ],
-  "tolerances": [],
+  "tolerances": [
+    {
+      "name": "material_binding",
+      "value": "EXACT_SOURCE_OWNERSHIP_REQUIRED"
+    },
+    {
+      "name": "manufactured_covariance",
+      "value": 1e-12
+    },
+    {
+      "name": "Hermitian_reality",
+      "value": 1e-10
+    }
+  ],
   "stopping_rules": [
-    "Do not execute J covariance solver until a source-owned physical covariance law is derived.",
-    "Do not execute J Fourier-field solver until a source-owned phase/seed realization law is derived.",
-    "Do not identify inverse Big-Implosion Hessian with covariance without a derived probability/quantization theorem.",
-    "Do not promote readiness, sigma, seed, growth or coherence diagnostics to primordial power/covariance.",
-    "Do not use public data or observed spectra to choose branch, seed, normalization or phases."
+    "any material covariance ingredient absent",
+    "any public/remembered initial-condition value enters",
+    "manufactured covariance promoted",
+    "arbitrary mode dimension/order/amplitude",
+    "unresolved __BIND token",
+    "cross-gauge/mode identification without parent-owned map"
   ],
   "expected_invariants": [
-    "all repaired parent hashes remain exact",
-    "branch identity remains attached",
-    "no upstream retune",
-    "no public generation target",
-    "no manufactured value promoted as physical"
+    "exact HI hash unchanged",
+    "P29/P30 hashes unchanged",
+    "P29 weights positive and normalized",
+    "P30 pending physical spectra remain pending",
+    "branch identity retained",
+    "no public initial condition",
+    "no numeric physical solver before complete bindings"
   ],
   "tests": [
-    "source theory existence",
-    "state-admission/probability law existence",
-    "physical normalization and dimensions existence",
-    "covariance Hermitian/PSD only after source law exists",
-    "phase/seed provenance only after source law exists"
+    "exact source audit",
+    "J-WL-001 preserved failure plus implementation-only corrected rerun",
+    "J-WL-002",
+    "manufactured reference check",
+    "independent material-derivability reconstruction"
   ],
   "gates": [
     "covariance PSD",
@@ -67,16 +137,18 @@
     "independent field reconstruction"
   ],
   "falsifiers": [
-    "generic Gaussian covariance inserted by convention",
-    "scale-invariant or familiar primordial spectrum inserted by convention",
-    "HU/B uncertainty covariance relabeled primordial covariance",
-    "random seed or phase law chosen without source ancestry",
-    "public CMB/LSS/matter-power information influences generation"
+    "manufactured covariance to physical parent",
+    "P30 pending/proxy values to physical spectrum",
+    "I response-geometry eigenmodes to HU perturbation modes without a parent-owned intertwiner",
+    "arbitrary dimension/order/amplitude",
+    "unowned zero cross covariance"
   ],
-  "claim_boundary": "J-200 is blocked before primary execution. Repaired RFC presently supports the exact background/transfer branch family and deterministic genesis action, but not yet the physical primordial stochastic covariance/phase law required to emit a realized linear universe.",
-  "independent_verifier_design": "A future verifier must reconstruct the primordial source theorem from exact genesis and repaired HI parents without trusting J covariance outputs; until such theorem exists, independent physical field reconstruction is not executable.",
+  "claim_boundary": {
+    "strongest_supported": "J can formalize an endogenous PSD covariance branch family on any future exact finite ordered HI physical mode basis using P29 normalized recursive weights, while preserving HI covariance pushforward, branch identity, no-retune, and target-blind seed discipline.",
+    "strongest_unsupported": "The current exact HI+P29+P30 source set does not yet establish one material primordial covariance, physical linear spectrum, phase realization, or finite-volume field because the required physical basis/mapping/normalization is not source-owned."
+  },
+  "independent_verifier_design": "Read only exact HI parent and P29/P30/blueprint sources. Determine whether basis, dimension, normalization/amplitude, j-to-mode map, material covariance, finite-volume geometry and phase prerequisites are actually supplied. Refuse physical materialization if any are absent.",
   "allowed_implementation_only_corrections": [
-    "path, serialization, schema and evidence-plumbing corrections that do not add a scientific probability, covariance, normalization, spectrum, phase or seed law"
-  ],
-  "obstruction_artifact": "modules/J/runs/J-200-20260810T170347Z/J200_PRIMORDIAL_SOURCE_OBSTRUCTION.json"
+    "Wolfram protected-symbol rename and Cholesky product convention; syntax/path/serialization/evidence plumbing only; no source/law/gate/claim changes"
+  ]
 }

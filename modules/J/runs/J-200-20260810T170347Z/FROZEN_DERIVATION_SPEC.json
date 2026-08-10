@@ -1,0 +1,41 @@
+{
+  "schema_version": "4.0",
+  "run_id": "J-200-20260810T170347Z",
+  "status": "FROZEN_PRE_EXECUTION_DERIVABILITY_AUDIT",
+  "module": "J",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+    "sha256": "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e",
+    "bytes": 3697
+  },
+  "source_laws": {
+    "P29_recursive_kernel": "K_f(t)=sum_{j=1}^N delta^(-j) f_j(t) exp(-alpha j t)",
+    "P29_normalized_depth_weights": "p_j(t;n)=delta^(-j) exp(-alpha j t)/sum_{k=1}^n delta^(-k) exp(-alpha k t), positive and normalized",
+    "P30_negative_boundary": "physical P_R(k), n_s, A_s, alpha_s, r, physical T(k), and matter power are pending/not generated and cannot be imported as solved parents",
+    "HI_covariance_pushforward": "Sigma_delta,out=U Sigma_delta,in U^T; Sigma_I remains attached; source-owned cross covariance C maps to U C; unresolved cross covariance is retained, never invented or zeroed."
+  },
+  "lawful_candidate": "For any exact finite ordered physical HI basis {f_bj} with a source-owned P29 recursion-index mapping and normalization, Sigma_b=sum_j p_j |f_bj><f_bj| is PSD and may be pushed forward only by the exact HI law. Retain all lawful branch/basis mappings if not uniquely selected.",
+  "materialization_requirements": [
+    "finite ordered physical HI perturbation basis",
+    "basis dimension/mode count",
+    "basis normalization/physical amplitude",
+    "source-owned mapping j -> HI physical basis mode",
+    "material covariance values on that basis",
+    "finite-volume geometry/boundaries for field realization",
+    "target-blind seed only after covariance is materially fixed"
+  ],
+  "seed_rule": "Only after material covariance is fixed, a seed may be deterministically derived from SHA256(parent_sha256 || run_id || purpose_label); never search or retune seed.",
+  "forbidden_promotions": [
+    "manufactured covariance to physical parent",
+    "P30 pending/proxy values to physical spectrum",
+    "I response-geometry eigenmodes to HU perturbation modes without a parent-owned intertwiner",
+    "arbitrary dimension/order/amplitude",
+    "unowned zero cross covariance"
+  ],
+  "claim_boundary": {
+    "strongest_supported": "J can formalize an endogenous PSD covariance branch family on any future exact finite ordered HI physical mode basis using P29 normalized recursive weights, while preserving HI covariance pushforward, branch identity, no-retune, and target-blind seed discipline.",
+    "strongest_unsupported": "The current exact HI+P29+P30 source set does not yet establish one material primordial covariance, physical linear spectrum, phase realization, or finite-volume field because the required physical basis/mapping/normalization is not source-owned."
+  }
+}

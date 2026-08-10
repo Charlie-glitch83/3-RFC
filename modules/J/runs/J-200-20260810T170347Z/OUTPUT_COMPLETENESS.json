@@ -1,7 +1,104 @@
 {
-  "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "schema_version": "4.0",
+  "run_id": "J-200-20260810T170347Z",
+  "module": "J",
+  "overall": "BLOCKED_UNDERDETERMINED",
+  "required_outputs": [
+    {
+      "requirement": "positive-semidefinite covariance",
+      "status": "BLOCKED_MATERIAL_BINDINGS_ABSENT",
+      "evidence": [
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+          "sha256": "153b34edc40471f3d875ede20ea5bb1bdaa8641eaf3967998b42c0e0f7d2fd19",
+          "bytes": 2496
+        },
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "1a20fa1ad48bd047d0a92954fc4fd630a39c136d1ec65d5b3eec3e8cdc75a63f",
+          "bytes": 779
+        }
+      ]
+    },
+    {
+      "requirement": "linear spectra and growth",
+      "status": "BLOCKED_MATERIAL_BINDINGS_ABSENT",
+      "evidence": [
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+          "sha256": "153b34edc40471f3d875ede20ea5bb1bdaa8641eaf3967998b42c0e0f7d2fd19",
+          "bytes": 2496
+        },
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "1a20fa1ad48bd047d0a92954fc4fd630a39c136d1ec65d5b3eec3e8cdc75a63f",
+          "bytes": 779
+        }
+      ]
+    },
+    {
+      "requirement": "finite-volume fields",
+      "status": "BLOCKED_MATERIAL_BINDINGS_ABSENT",
+      "evidence": [
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+          "sha256": "153b34edc40471f3d875ede20ea5bb1bdaa8641eaf3967998b42c0e0f7d2fd19",
+          "bytes": 2496
+        },
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "1a20fa1ad48bd047d0a92954fc4fd630a39c136d1ec65d5b3eec3e8cdc75a63f",
+          "bytes": 779
+        }
+      ]
+    },
+    {
+      "requirement": "phase/seed provenance",
+      "status": "BLOCKED_MATERIAL_BINDINGS_ABSENT",
+      "evidence": [
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+          "sha256": "153b34edc40471f3d875ede20ea5bb1bdaa8641eaf3967998b42c0e0f7d2fd19",
+          "bytes": 2496
+        },
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "1a20fa1ad48bd047d0a92954fc4fd630a39c136d1ec65d5b3eec3e8cdc75a63f",
+          "bytes": 779
+        }
+      ]
+    },
+    {
+      "requirement": "promotion witnesses",
+      "status": "BLOCKED_MATERIAL_BINDINGS_ABSENT",
+      "evidence": [
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+          "sha256": "153b34edc40471f3d875ede20ea5bb1bdaa8641eaf3967998b42c0e0f7d2fd19",
+          "bytes": 2496
+        },
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "1a20fa1ad48bd047d0a92954fc4fd630a39c136d1ec65d5b3eec3e8cdc75a63f",
+          "bytes": 779
+        }
+      ]
+    },
+    {
+      "requirement": "restartable P_J_to_K",
+      "status": "BLOCKED_MATERIAL_BINDINGS_ABSENT",
+      "evidence": [
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+          "sha256": "153b34edc40471f3d875ede20ea5bb1bdaa8641eaf3967998b42c0e0f7d2fd19",
+          "bytes": 2496
+        },
+        {
+          "path": "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "1a20fa1ad48bd047d0a92954fc4fd630a39c136d1ec65d5b3eec3e8cdc75a63f",
+          "bytes": 779
+        }
+      ]
+    }
+  ]
 }

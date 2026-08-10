@@ -1,10 +1,87 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
+  "schema_version": "4.0",
+  "run_id": "J-200-20260810T170347Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+      "sha256": "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e",
+      "bytes": 3697,
+      "role": "DIRECT_PARENT"
+    }
+  ],
+  "admitted_sources": [
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "bytes": 86724,
+      "role": "CANONICAL_P29_KERNEL_AUTHORITY"
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "bytes": 951976,
+      "role": "CANONICAL_P30_NEGATIVE_BOUNDARY_AUTHORITY"
+    },
+    {
+      "path": "sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md",
+      "sha256": "2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e",
+      "bytes": 42775,
+      "role": "REALIZATION_BLUEPRINT"
+    },
+    {
+      "path": "sources/frozen/c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226/2RFC_Immediate_Execution_Queue_20260805.md",
+      "sha256": "c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226",
+      "bytes": 7795,
+      "role": "EXECUTION_QUEUE"
+    }
+  ],
+  "procedure_only_sources": [
+    {
+      "path": "recipes/J/recipe.json",
+      "sha256": "fc0d0a507c7ad2617c32105aa31230235bc77e5ffa250002e29db38623d2284b",
+      "bytes": 5295
+    },
+    {
+      "path": "recipes/J/WORK_ORDER.md",
+      "sha256": "191b0864183b3b73087c7d9405d062cbe6be0985fc4ccac9ed8fb6d541fedce4",
+      "bytes": 4117
+    },
+    {
+      "path": "recipes/J/gates.json",
+      "sha256": "cdd11a55e53f60a25e8ce242985a0ff459dc495ab5643983a387a44504b6c5ed",
+      "bytes": 502
+    },
+    {
+      "path": "modules/J/spec.json",
+      "sha256": "7c3198e07239f5fbec7fd452ee086492233bd014607edcc162011daac5d814ab",
+      "bytes": 1064
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+      "bytes": 1101
+    }
+  ],
+  "imports": [
+    "json",
+    "hashlib",
+    "pathlib"
+  ],
   "files": [],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION",
+  "forbidden_generation_inputs": [
+    "public initial-condition files",
+    "observed target phases",
+    "A_s",
+    "n_s",
+    "physical P_R(k)",
+    "physical T(k)",
+    "matter power spectrum",
+    "remembered LambdaCDM defaults"
+  ]
 }

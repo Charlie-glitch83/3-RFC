@@ -1,0 +1,11 @@
+{
+  "call_id": "J-WL-001",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "eigenvalues"
+  ],
+  "decision_rule": "Require positive-definite covariance and exact Cholesky reconstruction.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

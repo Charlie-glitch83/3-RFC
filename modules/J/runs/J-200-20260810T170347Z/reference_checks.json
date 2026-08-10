@@ -1,0 +1,22 @@
+{
+  "module": "J",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "covariance_symmetric": true,
+    "covariance_psd": true,
+    "cholesky_reconstruction": true,
+    "ensemble_self_consistency": true,
+    "finite_field_reality": true
+  },
+  "metrics": {
+    "covariance_eigenvalues": [
+      0.38758997516450705,
+      0.5983517187300039,
+      1.3140583061054891
+    ],
+    "sample_cov_max_error": 0.009723487771890249,
+    "seed": 20260805
+  },
+  "note": "Manufactured covariance and finite-volume field case; seed is provenance, never selected for observational agreement."
+}

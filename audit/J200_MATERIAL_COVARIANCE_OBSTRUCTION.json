@@ -1,0 +1,24 @@
+{
+  "schema_version": "4.0",
+  "run_id": "J-200-20260810T170347Z",
+  "classification": "PRE_PRIMARY_SCIENTIFIC_OBSTRUCTION",
+  "result": "BLOCKED_UNDERDETERMINED",
+  "supported": true,
+  "evidence": [
+    "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+    "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+  ],
+  "missing_bindings": [
+    "finite ordered physical HI perturbation basis",
+    "basis dimension/mode count",
+    "source-owned j -> HI mode map",
+    "physical covariance normalization/amplitude",
+    "material primordial covariance",
+    "finite-volume physical geometry/boundaries tied to the covariance basis"
+  ],
+  "triad_analysis": {
+    "CIF": "Current CIF correctly retains the full lawful mode/basis possibility family rather than silently choosing one.",
+    "QV": "Current QV selection rule is incomplete at J: no source-owned operation maps recursive-depth labels to a finite ordered physical HI perturbation basis with amplitude/normalization. This is the precise missing triadic link.",
+    "RFL": "RFL cannot stabilize a unique covariance/field until that QV mapping exists; promoting a representative covariance would manufacture the missing selection rather than derive it."
+  }
+}

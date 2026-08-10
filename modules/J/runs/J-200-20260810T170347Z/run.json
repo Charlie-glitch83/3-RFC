@@ -2,9 +2,13 @@
   "run_id": "J-200-20260810T170347Z",
   "module": "J",
   "task_id": "J-200",
-  "status": "CREATED",
+  "status": "FAIL",
   "created_utc": "2026-08-10T17:03:47.203986+00:00",
-  "parent_hashes": [],
+  "parent_hashes": [
+    "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e"
+  ],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/J/runs/J-200-20260810T170347Z"
+  "workspace": "modules/J/runs/J-200-20260810T170347Z",
+  "closed_utc": "2026-08-10T17:13:56.147306+00:00",
+  "closeout": "modules/J/runs/J-200-20260810T170347Z/CLOSEOUT.md"
 }

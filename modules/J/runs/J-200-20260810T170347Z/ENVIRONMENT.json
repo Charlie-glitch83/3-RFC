@@ -1,13 +1,17 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
+  "schema_version": "4.0",
+  "run_id": "J-200-20260810T170347Z",
+  "status": "FINAL_PRE_PRIMARY_OBSTRUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
   "network_policy": "DISABLED_DURING_GENERATION",
-  "random_seeds": [],
-  "hidden_defaults_audited": false
+  "imports": [
+    "json",
+    "hashlib",
+    "pathlib"
+  ],
+  "hidden_defaults_audited": true,
+  "public_inputs_used": false,
+  "physical_solver_materialized": false
 }

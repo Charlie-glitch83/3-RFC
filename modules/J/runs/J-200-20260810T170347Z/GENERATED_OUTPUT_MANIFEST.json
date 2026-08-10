@@ -1,8 +1,77 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "J-200-20260810T170347Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-10T17:13:51.251789+00:00",
+  "outputs": [
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/SOURCE_REGISTER.json",
+      "sha256": "f419e87cf3bb164d3ae6901577e6c4d7b690923883e39cbceb315cd4062790be",
+      "bytes": 2869
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/PRE_EXECUTION_LOCK.json",
+      "sha256": "5c56a2fbed8d53e96df6b27fb33e7e95ae3c1948095f845f512f95796ae692a8",
+      "bytes": 6909
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "05c8701a0b0310b83574512210a3c61f22f7a7f07ecd9bbe844d1d502a2f2d22",
+      "bytes": 2810
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/ENVIRONMENT.json",
+      "sha256": "19035e1872469602a96ea65e431b6f50fb028dbb4146af6d7916647eb10581f7",
+      "bytes": 510
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/GATE_RESULTS.json",
+      "sha256": "3fd56d9c558c1ee47dab6f1717eeed3e65b2067c9facd876b1e76a82dc4fe945",
+      "bytes": 968
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "3396e7a6b256cfc50d56f1f4faaae90c163ec914dee7613db80817e613659f03",
+      "bytes": 619
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/CLOSEOUT.md",
+      "sha256": "a670f59b5e8b1a86be3a48c19ad04dfd89023bfac31d93af600fd297543399b7",
+      "bytes": 1490
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/OUTPUT_COMPLETENESS.json",
+      "sha256": "31065c801cc42e65c5373a1c7d0f267226b890548a6f2bd34c70a0194dcf046f",
+      "bytes": 3896
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/OUTPUT_CONTRACT.json",
+      "sha256": "2bf0b9c9081fa17da5e1ba1430b6eb616ac979519db7944eef7c3780b6ad3a5f",
+      "bytes": 200
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/CHECKPOINT_RECORD.json",
+      "sha256": "742ed0bb651276d7a18c392218f7f0c8b5047e3ac979d25a87564e1d391e411c",
+      "bytes": 1002
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/primary/J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT.json",
+      "sha256": "153b34edc40471f3d875ede20ea5bb1bdaa8641eaf3967998b42c0e0f7d2fd19",
+      "bytes": 2496
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "1a20fa1ad48bd047d0a92954fc4fd630a39c136d1ec65d5b3eec3e8cdc75a63f",
+      "bytes": 779
+    },
+    {
+      "path": "audit/J200_MATERIAL_COVARIANCE_OBSTRUCTION.json",
+      "sha256": "fd5f61ba3a4732882fdce343c24e951714005e284718694aef097c094dce186f",
+      "bytes": 1296
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/reference_checks.json",
+      "sha256": "541621c33d694a81380b522340a00ad85a37f00745228c742ae879c1db959a4e",
+      "bytes": 621
+    }
+  ]
 }

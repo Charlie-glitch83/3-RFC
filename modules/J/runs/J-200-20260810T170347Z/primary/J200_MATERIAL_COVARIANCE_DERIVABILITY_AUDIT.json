@@ -1,0 +1,37 @@
+{
+  "schema_version": "4.0",
+  "object_id": "J200_MATERIAL_COVARIANCE_DERIVABILITY_AUDIT",
+  "run_id": "J-200-20260810T170347Z",
+  "result": "BLOCKED_UNDERDETERMINED",
+  "physical_primary_execution_started": false,
+  "checks": {
+    "HI_actual_primordial_covariance_absent": true,
+    "HI_phase_seed_absent": true,
+    "HI_finite_volume_field_absent": true,
+    "HI_mode_selection_absent": true,
+    "HI_cross_gauge_map_absent": true,
+    "P29_kernel_present": true,
+    "P29_weights_present": true,
+    "P30_physical_spectrum_pending": true,
+    "no_explicit_finite_ordered_HI_basis": true,
+    "no_source_owned_j_to_HI_map": true,
+    "no_physical_covariance_amplitude": true
+  },
+  "missing_material_bindings": [
+    "finite ordered physical HI perturbation basis",
+    "basis dimension/mode count",
+    "source-owned j -> HI mode map",
+    "physical covariance normalization/amplitude",
+    "material primordial covariance",
+    "finite-volume physical geometry/boundaries tied to the covariance basis"
+  ],
+  "lawful_symbolic_family": "Sigma_b=sum_j p_j |f_bj><f_bj| on any future exact finite ordered source-owned HI basis; all unresolved basis/mapping branches remain explicit",
+  "solver_policy": "DO_NOT_MATERIALIZE covariance or fourier_field configs while any material binding is absent; manufactured J checks are not physical bindings",
+  "triad_analysis": {
+    "CIF": "Current CIF correctly retains the full lawful mode/basis possibility family rather than silently choosing one.",
+    "QV": "Current QV selection rule is incomplete at J: no source-owned operation maps recursive-depth labels to a finite ordered physical HI perturbation basis with amplitude/normalization. This is the precise missing triadic link.",
+    "RFL": "RFL cannot stabilize a unique covariance/field until that QV mapping exists; promoting a representative covariance would manufacture the missing selection rather than derive it."
+  },
+  "strongest_supported": "J can formalize an endogenous PSD covariance branch family on any future exact finite ordered HI physical mode basis using P29 normalized recursive weights, while preserving HI covariance pushforward, branch identity, no-retune, and target-blind seed discipline.",
+  "strongest_unsupported": "The current exact HI+P29+P30 source set does not yet establish one material primordial covariance, physical linear spectrum, phase realization, or finite-volume field because the required physical basis/mapping/normalization is not source-owned."
+}
