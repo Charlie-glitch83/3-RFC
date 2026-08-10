@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   record-i180-wolfram:
-    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-live-20260810'
+    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-final-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,6 +30,9 @@ jobs:
           cache: pip
       - name: Record exact connected Wolfram outputs in frozen order
         shell: bash
+        env:
+          I1_B64: U3ltYm9sOjp1bmRlZmluZWQyOiBXYXJuaW5nOiBHbG9iYWwgc3ltYm9scyAiSCwgSCwgSCIgYXJlIHVuZGVmaW5lZC4KRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsOiBBIGZyb250IGVuZCBpcyBub3QgYXZhaWxhYmxlOyBjZXJ0YWluIG9wZXJhdGlvbnMgcmVxdWlyZSBhIGZyb250IGVuZC4KRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsOiBBIGZyb250IGVuZCBpcyBub3QgYXZhaWxhYmxlOyBjZXJ0YWluIG9wZXJhdGlvbnMgcmVxdWlyZSBhIGZyb250IGVuZC4KRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsOiBBIGZyb250IGVuZCBpcyBub3QgYXZhaWxhYmxlOyBjZXJ0YWluIG9wZXJhdGlvbnMgcmVxdWlyZSBhIGZyb250IGVuZC4KR2VuZXJhbDo6c3RvcDogRnVydGhlciBvdXRwdXQgb2YgRnJvbnRFbmRPYmplY3Q6Om5vdGF2YWlsIHdpbGwgYmUgc3VwcHJlc3NlZCBkdXJpbmcgdGhpcyBjYWxjdWxhdGlvbi4KR2VuZXJhbDo6bWVzc2FnZXM6IE1lc3NhZ2VzIHdlcmUgZ2VuZXJhdGVkIHdoaWNoIG1heSBpbmRpY2F0ZSBlcnJvcnMuCgpPdXRbMV09ICI8fFwiY2FsbFwiIC0+IFwiSS1XTC0wMDFcIiwgXCJIXCIgLT4gXCIoaCArIDIqcSp0KS8oMSArIHQqKGggKyBxKnQpKVwiLCBcImhvcml6b25cIiAtPiBcIigtMiooQXJjVGFuW2gvU3FydFstaF4yICsgNCpxXV0gLSBBcmNUYW5bKGggKyAyKnEqdCkvU3FydFstaF4yICsgNCpxXV0pKS9TcXJ0Wy1oXjIgKyA0KnFdXCIsIFwia2luZW1hdGljSWRlbnRpdHlcIiAtPiBUcnVlfD4iCg==
+          I2_B64: T3V0WzFdPSAiPHxcImNhbGxcIiAtPiBcIkktV0wtMDAyXCIsIFwiY29uc3RyYWludERlcml2YXRpdmVcIiAtPiBcIjBcIiwgXCJwcmVzZXJ2ZWRcIiAtPiBUcnVlfD4iCg==
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
@@ -37,26 +40,11 @@ jobs:
           R="modules/I/runs/$RUN"
           test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['status'])")" = FROZEN
           test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['physical_execution_gate']['status'])")" = BLOCKED_PENDING_EXACT_PARENT_BINDING
-
-          cat > "$R/wolfram/I-WL-001/output.txt" <<'EOF'
-Symbol::undefined2: Warning: Global symbols "H, H, H" are undefined.
-FrontEndObject::notavail: A front end is not available; certain operations require a front end.
-FrontEndObject::notavail: A front end is not available; certain operations require a front end.
-FrontEndObject::notavail: A front end is not available; certain operations require a front end.
-General::stop: Further output of FrontEndObject::notavail will be suppressed during this calculation.
-General::messages: Messages were generated which may indicate errors.
-
-Out[1]= "<|\"call\" -> \"I-WL-001\", \"H\" -> \"(h + 2*q*t)/(1 + t*(h + q*t))\", \"horizon\" -> \"(-2*(ArcTan[h/Sqrt[-h^2 + 4*q]] - ArcTan[(h + 2*q*t)/Sqrt[-h^2 + 4*q]]))/Sqrt[-h^2 + 4*q]\", \"kinematicIdentity\" -> True|>"
-EOF
-
-          cat > "$R/wolfram/I-WL-002/output.txt" <<'EOF'
-Out[1]= "<|\"call\" -> \"I-WL-002\", \"constraintDerivative\" -> \"0\", \"preserved\" -> True|>"
-EOF
-
+          printf '%s' "$I1_B64" | base64 -d > "$R/wolfram/I-WL-001/output.txt"
+          printf '%s' "$I2_B64" | base64 -d > "$R/wolfram/I-WL-002/output.txt"
           python tools/director.py wolfram-record --run "$RUN" --call I-WL-001 --output "$R/wolfram/I-WL-001/output.txt"
           python tools/director.py wolfram-record --run "$RUN" --call I-WL-002 --output "$R/wolfram/I-WL-002/output.txt"
           python tools/run_reference_checks.py --module I --output "$R/reference_checks.json"
-
           python - <<'PY'
           import json
           from pathlib import Path
@@ -68,13 +56,12 @@ EOF
               assert rec['manufactured_gate_returncode']==0, (cid,rec)
               assert rec['public_knowledge_used'] is False, rec
           ref=json.loads((R/'reference_checks.json').read_text())
-          assert ref.get('result')=='PASS' or ref.get('overall')=='PASS' or ref.get('pass') is True, ref
+          assert ref.get('overall')=='PASS', ref
           lock=json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())
           assert lock['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
           print('WOLFRAM_MANUFACTURED_GATES=PASS')
           print('PHYSICAL_EXECUTION_GATE='+lock['physical_execution_gate']['status'])
           PY
-
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
