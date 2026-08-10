@@ -1,10 +1,141 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
+  "schema_version": "4.0",
+  "run_id": "J-200-20260810T200114Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+      "sha256": "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e",
+      "role": "DIRECT_PARENT"
+    }
+  ],
+  "upstream_lineage": [
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "role": "TRIAD_QV_KERNEL_MEMORY_ANCESTRY"
+    },
+    {
+      "path": "modules/B/frozen/H_B_to_C_v2.json",
+      "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "role": "BIG_IMPLOSION_COMMON_ANCESTRY"
+    },
+    {
+      "path": "modules/C/frozen/H_C_to_D_v2.json",
+      "sha256": "3a1d1db86d039bcc0a2ee1040a74f466e2a1729aacdb0f3185393cae554f0614",
+      "role": "MICROPHYSICAL_MODE_ANCESTRY"
+    },
+    {
+      "path": "modules/D/frozen/H_D_to_E_v2.json",
+      "sha256": "66ff28571390b3bc30151a9833d32da70e72840e90b42dcd97fdfd18263bdc66",
+      "role": "THERMAL_PHASE_DEFECT_ANCESTRY"
+    },
+    {
+      "path": "modules/E/frozen/H_E_to_F_v2.json",
+      "sha256": "bb3db5da8aec2d2985a8c6b472629ac16a13e9624d44040798cc9a541b42d4aa",
+      "role": "PRIMORDIAL_NUCLEAR_ANCESTRY"
+    },
+    {
+      "path": "modules/F/frozen/H_F_to_G_v2.json",
+      "sha256": "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990",
+      "role": "PLASMA_PERTURBATION_ANCESTRY"
+    },
+    {
+      "path": "modules/G/frozen/H_G_to_HU_v2.json",
+      "sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f",
+      "role": "REPAIRED_G_TO_HU_ANCESTRY"
+    },
+    {
+      "path": "modules/G/frozen/H_G_to_I_v2.json",
+      "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+      "role": "REPAIRED_G_TO_I_ANCESTRY"
+    },
+    {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "role": "FROZEN_TRANSFER_OPERATOR_INTERFACE"
+    },
+    {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "role": "FROZEN_REALIZED_BACKGROUND_INTERFACE"
+    }
+  ],
+  "admitted_sources": [
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "role": "CANONICAL_TRIAD_KERNEL_AUTHORITY"
+    },
+    {
+      "path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "role": "CANONICAL_RELATIONAL_ROUTE_NO_LOSS_AUTHORITY"
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "role": "CANONICAL_UNIVERSE_ARCHITECTURE_AUTHORITY"
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T200114Z/Module_J_Source_Asset_Register.md",
+      "sha256": "12e6508d200269ee2df59e228bd39a4ebc2fe2037ae5ff8295f73fd3519213ac",
+      "role": "CANONICAL_J_SOURCE_ASSET_REGISTER"
+    }
+  ],
+  "procedure_only_sources": [
+    {
+      "path": "recipes/J/recipe.json",
+      "sha256": "fc0d0a507c7ad2617c32105aa31230235bc77e5ffa250002e29db38623d2284b",
+      "role": "MODULE_RECIPE"
+    },
+    {
+      "path": "recipes/J/WORK_ORDER.md",
+      "sha256": "191b0864183b3b73087c7d9405d062cbe6be0985fc4ccac9ed8fb6d541fedce4",
+      "role": "WORK_ORDER"
+    },
+    {
+      "path": "recipes/J/gates.json",
+      "sha256": "cdd11a55e53f60a25e8ce242985a0ff459dc495ab5643983a387a44504b6c5ed",
+      "role": "MANDATORY_GATES"
+    },
+    {
+      "path": "modules/J/spec.json",
+      "sha256": "7c3198e07239f5fbec7fd452ee086492233bd014607edcc162011daac5d814ab",
+      "role": "MODULE_SPEC"
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+      "role": "DERIVATION_PROTOCOL"
+    }
+  ],
+  "imports": [
+    "json",
+    "hashlib",
+    "pathlib",
+    "numpy"
+  ],
   "files": [],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION",
+  "excluded_historical_runs": [
+    "modules/J/runs/J-200-20260810T170347Z/**"
+  ],
+  "forbidden_generation_inputs": [
+    "public initial-condition files",
+    "observed target phases",
+    "A_s",
+    "n_s",
+    "public primordial P_R(k)",
+    "public transfer function T(k)",
+    "public matter power normalization",
+    "remembered LambdaCDM defaults",
+    "observation-selected seeds",
+    "observation-selected box or grid",
+    "post-hoc nonlinear cutoff"
+  ]
 }
