@@ -290,12 +290,13 @@ def route() -> None:
     )
     items[i_idx:i_idx] = [g_item, hu_item]
 
+    # Keep the controller-protected direct HI dependency unchanged. HU-175 is a
+    # transitive prerequisite through I-180, because I-180 itself now depends on
+    # G-165 and HU-175. This preserves the protected dependency vocabulary while
+    # still making repaired HU mandatory before HI can become reachable.
     hi = next((x for x in items if x.get("id") == "HI-190"), None)
     if hi:
-        deps = [d for d in hi.get("depends_on", []) if d != "HU-170"]
-        if "HU-175" not in deps:
-            deps.insert(0, "HU-175")
-        hi["depends_on"] = deps
+        ensure(set(hi.get("depends_on", [])) == {"HU-170", "I-180"}, "unexpected protected HI dependency before superseding replay")
 
     save("WORK_QUEUE.json", q)
 
@@ -323,7 +324,7 @@ def route() -> None:
         "downstream_status": {
             "HU": "BLOCKED_PENDING_SUPERSEDING_G_REPLAY",
             "I": "FORMALIZED_BLOCKED_PENDING_G_AND_HU_REPAIR",
-            "HI": "BLOCKED_PENDING_REPAIRED_G_HU_I",
+            "HI": "BLOCKED_TRANSITIVELY_PENDING_HU175_AND_I180",
             "J": "BLOCKED_PENDING_REPAIRED_HI",
         },
     })
