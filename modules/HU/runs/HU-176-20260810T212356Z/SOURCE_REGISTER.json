@@ -1,9 +1,82 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
+  "schema_version": "4.0",
+  "run_id": "HU-176-20260810T212356Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/G/frozen/H_G_to_HU_v2.json",
+      "sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f",
+      "classification": "FROZEN_DIRECT_PARENT"
+    }
+  ],
+  "immutable_ancestry": [
+    {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "classification": "VERIFIED_HU175_OPERATOR_ANCESTRY_NO_RETUNE"
+    },
+    {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/PRE_EXECUTION_LOCK.json",
+      "classification": "VERIFIED_HU175_FROZEN_LAW"
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T200114Z/J200_J1_MODE_BASIS_PARENT_INTERFACE_AUDIT.json",
+      "sha256": "98356420d252747de726b7500b8eeaa429f1010831cd0d609b09681b5d6bbe5a",
+      "classification": "AUTHORIZED_SUPERSEDING_INTERFACE_REPAIR_BASIS"
+    }
+  ],
+  "admitted_parent_artifacts": [
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_RECOMBINATION_VISIBILITY_STATE.json",
+      "sha256": "addf5317cc62ac2c6d4c7ab500038a50a49cb6604933f59454c30a5b171c42a0",
+      "classification": "PARENT_ARTIFACT"
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+      "sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83",
+      "classification": "PARENT_ARTIFACT"
+    }
+  ],
+  "canonical_plan_requirements": {
+    "authority": "Canonical Module H Individual Enhancement Plan already incorporated by the authorized HU-176 work unit and active packet",
+    "required_scope": [
+      "complete perturbation-state definition",
+      "species sector spin helicity and mode registries",
+      "scalar vector and tensor operator blocks",
+      "regular independent complete initial-mode basis",
+      "mode normalization grammar",
+      "basis-response Green-function schema",
+      "source route species mode and event ancestry",
+      "J restart sufficiency"
+    ],
+    "J_boundary": "Module J assigns the realized primordial covariance; HU must export basis-normalized response objects without selecting amplitudes, phases or seeds."
+  },
+  "procedure_only_sources": [
+    {
+      "path": "recipes/HU/recipe.json",
+      "sha256": "f603d753ed1c396af6e0fec65d36fda56c2574b63ac3833ede030f8ecd574955",
+      "classification": "PROCEDURE_ONLY"
+    },
+    {
+      "path": "recipes/HU/WORK_ORDER.md",
+      "classification": "PROCEDURE_ONLY"
+    }
+  ],
+  "imports": [
+    "json",
+    "hashlib"
+  ],
+  "files": [
+    "modules/G/frozen/H_G_to_HU_v2.json",
+    "modules/HU/frozen/H_HU_to_HI_v2.json",
+    "modules/HU/runs/HU-175-20260810T153330Z/PRE_EXECUTION_LOCK.json",
+    "modules/J/runs/J-200-20260810T200114Z/J200_J1_MODE_BASIS_PARENT_INTERFACE_AUDIT.json",
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_RECOMBINATION_VISIBILITY_STATE.json",
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+    "recipes/HU/recipe.json",
+    "recipes/HU/WORK_ORDER.md"
+  ],
   "urls": [],
   "constants": [],
   "public_data_declaration": "NONE"
