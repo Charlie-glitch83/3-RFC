@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "I-180",
   "current_module": "I",
-  "current_run": null,
+  "current_run": "I-180-20260810T134326Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -874,7 +874,7 @@
     "I": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "I-180-20260810T134326Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -1048,7 +1048,7 @@
     }
   },
   "last_verified_commit": "26c08a68607721e84da1c83bb8d6e098fdeb2304",
-  "last_updated_utc": "2026-08-10T13:00:37.490121+00:00",
+  "last_updated_utc": "2026-08-10T13:43:26.224736+00:00",
   "strongest_supported_claim": "A through HU remain at their verified frozen scopes. Module I is the sole active scientific frontier; no realized physical background geometry is currently frozen.",
   "strongest_unsupported_claim": "No unique or branch-complete Module-I metric/expansion law, physical I branch execution, HI instantiation on repaired I, or J covariance/spectrum state is currently established.",
   "last_verified_branch": "agent/frontier-050-execution",
