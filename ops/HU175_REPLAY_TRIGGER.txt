@@ -1,1 +1,1 @@
-Trigger only. Do not merge. Reconstruct HU-175 from the repaired G-165 parent, require clean replay and exact output contract, then resume only I-180.
+Trigger only. Do not merge. Retry HU-175 after correcting the stale historical FROZEN state by explicitly reopening HU at PRODUCTION before the superseding replay.
