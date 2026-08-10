@@ -6,12 +6,16 @@ on:
       - agent/i185-geometry-branch-repair
     paths:
       - '.github/workflows/i180-scientific-frontier-repair.yml'
+  pull_request:
+    branches:
+      - agent/i185-geometry-branch-repair
 
 permissions:
   contents: write
 
 jobs:
   repair-i180-frontier:
+    if: github.event_name == 'push' || github.event.pull_request.head.ref == 'agent/i185-repair-trigger'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
