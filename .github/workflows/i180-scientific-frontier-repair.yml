@@ -51,9 +51,9 @@ jobs:
           spec=json.load(open('modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json'))
           assert spec['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
           old=next(x for x in c['claims'] if x.get('claim_id')=='I-180-FINITE-RELATIONAL-BACKGROUND')
-          assert old['supported'] is False and old['evidence_state']=='SUPERSEDED', old
+          assert old['supported'] is False and old.get('current_authority') is False and 'supersession' in old, old
           new=next(x for x in c['claims'] if x.get('claim_id')=='I-180-CORRECTED-RESPONSE-GEOMETRY-FRONTIER')
-          assert new['supported'] is True and new['authority_scope']=='CORRECTED_PRE_EXECUTION_DERIVATION_ONLY', new
+          assert new['supported'] is True and new.get('current_authority') is True and new['authority_scope']=='CORRECTED_PRE_EXECUTION_DERIVATION_ONLY', new
           ctx=open('memory/CURRENT_CONTEXT.md').read()
           assert 'Active work unit: `I-180`' in ctx and 'Current module: `I`' in ctx
           PY
