@@ -1,0 +1,1 @@
+One-use trigger for repaired HI-190 immutable HU-on-I parent composition. No merge; advance only on complete governed PASS.
