@@ -4,7 +4,7 @@
 
 - Module: `J`
 - Objective: Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.
-- Run workspace: `modules/J/runs/J-200-20260810T170347Z`
+- Run workspace: `modules/J/runs/J-200-20260810T200114Z`
 
 ## Exact sequence
 
@@ -16,17 +16,17 @@
    - `python tools/director.py wolfram-show --call J-WL-001`
    - `python tools/director.py wolfram-show --call J-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module J --output modules/J/runs/J-200-20260810T170347Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module J --output modules/J/runs/J-200-20260810T200114Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module J --solver covariance --destination modules/J/runs/J-200-20260810T170347Z`
+   - `python tools/director.py solver-copy --module J --solver covariance --destination modules/J/runs/J-200-20260810T200114Z`
    - fill `configured_runs/binding_sheets/J_covariance.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/J/runs/J-200-20260810T170347Z/solver_templates/J_covariance.template.json --binding-sheet modules/J/runs/J-200-20260810T170347Z/binding_sheets/J_covariance.bindings.json --output modules/J/runs/J-200-20260810T170347Z/solver_configs/J_covariance.json`
-   - `python tools/run_configured_solver.py --config modules/J/runs/J-200-20260810T170347Z/solver_configs/J_covariance.json --output-dir modules/J/runs/J-200-20260810T170347Z/solver_outputs/covariance`
-   - `python tools/director.py solver-copy --module J --solver fourier_field --destination modules/J/runs/J-200-20260810T170347Z`
+   - `python tools/materialize_solver_config.py --template modules/J/runs/J-200-20260810T200114Z/solver_templates/J_covariance.template.json --binding-sheet modules/J/runs/J-200-20260810T200114Z/binding_sheets/J_covariance.bindings.json --output modules/J/runs/J-200-20260810T200114Z/solver_configs/J_covariance.json`
+   - `python tools/run_configured_solver.py --config modules/J/runs/J-200-20260810T200114Z/solver_configs/J_covariance.json --output-dir modules/J/runs/J-200-20260810T200114Z/solver_outputs/covariance`
+   - `python tools/director.py solver-copy --module J --solver fourier_field --destination modules/J/runs/J-200-20260810T200114Z`
    - fill `configured_runs/binding_sheets/J_fourier_field.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/J/runs/J-200-20260810T170347Z/solver_templates/J_fourier_field.template.json --binding-sheet modules/J/runs/J-200-20260810T170347Z/binding_sheets/J_fourier_field.bindings.json --output modules/J/runs/J-200-20260810T170347Z/solver_configs/J_fourier_field.json`
-   - `python tools/run_configured_solver.py --config modules/J/runs/J-200-20260810T170347Z/solver_configs/J_fourier_field.json --output-dir modules/J/runs/J-200-20260810T170347Z/solver_outputs/fourier_field`
+   - `python tools/materialize_solver_config.py --template modules/J/runs/J-200-20260810T200114Z/solver_templates/J_fourier_field.template.json --binding-sheet modules/J/runs/J-200-20260810T200114Z/binding_sheets/J_fourier_field.bindings.json --output modules/J/runs/J-200-20260810T200114Z/solver_configs/J_fourier_field.json`
+   - `python tools/run_configured_solver.py --config modules/J/runs/J-200-20260810T200114Z/solver_configs/J_fourier_field.json --output-dir modules/J/runs/J-200-20260810T200114Z/solver_outputs/fourier_field`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.

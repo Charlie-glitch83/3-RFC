@@ -7,7 +7,7 @@
   "authorization_mode": "AUTO_SINGLE_CHILD_AFTER_PASS",
   "active_work_unit": "J-200",
   "current_module": "J",
-  "current_run": null,
+  "current_run": "J-200-20260810T200114Z",
   "source_state": "SOURCE_CORPUS_ADMITTED_AND_INDEPENDENTLY_RECONSTRUCTED",
   "canonical_source_manifest": "sources/SOURCE_MANIFEST.json",
   "frozen_universe_hash": null,
@@ -1142,7 +1142,7 @@
     "J": {
       "evidence_state": "DESIGN",
       "fidelity": "UNSTARTED",
-      "active_run": null,
+      "active_run": "J-200-20260810T200114Z",
       "frozen_artifacts": [],
       "evidence_history": [
         {
@@ -1270,7 +1270,7 @@
     }
   },
   "last_verified_commit": "26c08a68607721e84da1c83bb8d6e098fdeb2304",
-  "last_updated_utc": "2026-08-10T17:13:56.151208+00:00",
+  "last_updated_utc": "2026-08-10T20:01:14.316836+00:00",
   "strongest_supported_claim": "The corrected I law is FORMALIZED, and an exact audit has located the first direct blocking repository defect at historical G-160: its implementation-only recombination witness was promoted to physical execution and its G→I packet was marked child-ready without route-resolved process activity and geometry-child ancestry.",
   "strongest_unsupported_claim": "No superseding G physical route realization, replayed HU transfer, repaired I physical geometry, repaired HI state or J state is established yet.",
   "last_verified_branch": "agent/frontier-050-execution",

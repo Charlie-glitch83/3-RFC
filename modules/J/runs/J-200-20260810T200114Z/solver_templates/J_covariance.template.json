@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "classification": "UNBOUND_EXECUTION_TEMPLATE",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "covariance",
+  "model": {
+    "covariance": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "seed": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "sample_count": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
+    "tolerance": 1e-12,
+    "sample_covariance_tolerance": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__"
+  }
+}

@@ -1,6 +1,6 @@
 # Current Context
 
-Generated: 2026-08-10T17:03:47.074749+00:00
+Generated: 2026-08-10T20:01:14.148773+00:00
 
 ## Project truth
 
@@ -64,12 +64,11 @@ Generate the actual covariance, linear spectra, phases/seeds, and finite-volume 
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 36
-- indexed runs: 29
+- frozen artifacts: 37
+- indexed runs: 30
 
 ## Recent runs
 
-- HU-170-20260809T045528Z: PASS (HU)
 - I-180-20260809T050839Z: PASS (I)
 - HI-190-20260809T221124Z: PASS (HI)
 - I-180-20260810T134326Z: BLOCKED (I)
@@ -77,6 +76,7 @@ Generate the actual covariance, linear spectra, phases/seeds, and finite-volume 
 - HU-175-20260810T153330Z: PASS (HU)
 - I-180-20260810T154430Z: PASS (I)
 - HI-190-20260810T165541Z: PASS (HI)
+- J-200-20260810T170347Z: FAIL (J)
 
 ## Recent decisions
 

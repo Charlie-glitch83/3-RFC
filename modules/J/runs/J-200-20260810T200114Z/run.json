@@ -1,0 +1,10 @@
+{
+  "run_id": "J-200-20260810T200114Z",
+  "module": "J",
+  "task_id": "J-200",
+  "status": "CREATED",
+  "created_utc": "2026-08-10T20:01:14.315548+00:00",
+  "parent_hashes": [],
+  "generation_mode": "GENERATION_SEALED",
+  "workspace": "modules/J/runs/J-200-20260810T200114Z"
+}
