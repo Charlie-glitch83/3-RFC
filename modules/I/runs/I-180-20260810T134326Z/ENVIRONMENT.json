@@ -2,7 +2,7 @@
   "schema_version": "3.0",
   "run_id": "I-180-20260810T134326Z",
   "status": "CAPTURED_PRE_EXECUTION",
-  "captured_utc": "2026-08-10T13:53:07.429139+00:00",
+  "captured_utc": "2026-08-10T13:53:40.231260+00:00",
   "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {
     "machine": "x86_64",
