@@ -1,4 +1,4 @@
-name: J-200 governed packet operator
+name: J-200 governed source-scope repair
 
 on:
   pull_request:
@@ -8,8 +8,8 @@ permissions:
   contents: write
 
 jobs:
-  j200-wolfram-record-prebind:
-    if: github.event.pull_request.head.ref == 'ops/j200-governed-20260809'
+  j200-source-repair:
+    if: github.event.pull_request.head.ref == 'ops/j200-source-repair-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,51 +20,92 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute repository packet steps 4-6
+      - name: Close invalid freeze and create correctly sourced J run
         shell: bash
         run: |
           set -euo pipefail
-          EXPECT='46c1fa43668bf9da20f02a442913461480d6111f'
-          RUN='J-200-20260809T225756Z'
-          R="modules/J/runs/$RUN"
+          EXPECT='34c69b08165bf738d460053dc08d833932b8c370'
+          OLD='J-200-20260809T225756Z'
           test "$(git rev-parse HEAD)" = "$EXPECT"
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['status'])")" = FROZEN
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          from datetime import datetime,timezone
-          R=Path('modules/J/runs/J-200-20260809T225756Z')
-          now=datetime.now(timezone.utc).isoformat()
-          failures=[
-            {'failure_id':'J200-WL001-PROTECTED-C-SYMBOL','timestamp_utc':now,'stage':'POST_LOCK_MANUFACTURED_WOLFRAM','call':'J-WL-001','result':'FAIL','cause':'Protected Wolfram symbol C blocked covariance assignment.','evidence':'wolfram/J-WL-001/FAILED_ATTEMPT_001.txt','disposition':'IMPLEMENTATION_ONLY_SYMBOL_RENAME_AND_FULL_FROZEN_MATRIX_RERUN','science_changed':False},
-            {'failure_id':'J200-WL001-CHOLESKY-CONVENTION','timestamp_utc':now,'stage':'POST_LOCK_MANUFACTURED_WOLFRAM_RERUN','call':'J-WL-001','result':'FAIL','cause':'Wolfram CholeskyDecomposition satisfies ConjugateTranspose[L].L == covMat; the frozen manufactured test used the opposite product order.','evidence':'wolfram/J-WL-001/FAILED_ATTEMPT_002.txt','disposition':'IMPLEMENTATION_ONLY_CHOLESKY_PRODUCT_ORDER_AND_FULL_FROZEN_MATRIX_RERUN','science_changed':False}
-          ]
-          (R/'FAILURES.jsonl').write_text(''.join(json.dumps(f)+'\n' for f in failures))
-          rec={'patch_id':'J200-WL001-IMPLEMENTATION-COMPATIBILITY','timestamp_utc':now,'classification':'IMPLEMENTATION_ONLY_WOLFRAM_COMPATIBILITY','run_id':R.name,'repairs':[{'defect':'protected local symbol C','correction':'rename C to covMat'},{'defect':'Wolfram Cholesky product convention','correction':'use ConjugateTranspose[L].L == covMat'}],'science_changed':False,'parents_changed':False,'sources_changed':False,'law_changed':False,'candidate_classes_changed':False,'seed_rule_changed':False,'test_semantics_changed':False,'thresholds_changed':False,'gates_changed':False,'claim_boundary_changed':False,'required_action':'Rerun J-WL-001 and J-WL-002 in order and then the full frozen J matrix.'}
-          (R/'IMPLEMENTATION_PATCH_RECORD.json').write_text(json.dumps(rec,indent=2)+'\n')
-          PY
-          cat > /tmp/J-WL-001.output.txt <<'EOF'
-Symbol::undefined2: Warning: Global symbols "L, L, L" are undefined.
-General::messages: Messages were generated which may indicate errors.
+          OLD_R="modules/J/runs/$OLD"
+          cat > "$OLD_R/CLOSEOUT.md" <<'EOF'
+# J-200 Superseded Pre-Execution Freeze Closeout
 
-Out[1]= "<|\"call\" -> \"J-WL-001\", \"eigenvalues\" -> {\"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 3, 0]\", \"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 2, 0]\", \"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 1, 0]\"}, \"positiveDefinite\" -> True, \"reconstructionPass\" -> True|>"
+## Result
+FAIL before primary physical execution.
+
+## Finding
+The frozen source scope admitted HI and P29 but omitted canonical P30 even though repository recovery evidence requires exact HI + P29 + P30 before J freezes its derivation surface. P30 explicitly keeps the physical primordial spectrum, amplitude, index, transfer function, and matter power spectrum pending, so it must be admitted as a negative authority boundary rather than silently omitted.
+
+The two J-WL-001 failures were implementation-only Wolfram compatibility defects. They are preserved and do not change J science. No physical covariance, physical spectrum, phase-selected field, or K-ready handoff was produced by this superseded run.
+
+## Strongest supported claim
+The exact HI parent and the repository's manufactured J checks remain valid inputs to a new correctly sourced J run.
+
+## Strongest unsupported claim
+No realized physical primordial covariance, physical primordial spectrum, finite-volume field, or J-to-K handoff is claimed from this run.
+
+## Required action
+Close this run FAIL, keep J-200 active, generate a new governed run, admit exact HI + canonical P29 + canonical P30 before freezing, and derive J only from those admitted sources and repository-authorized internal derivations.
 EOF
-          cat > /tmp/J-WL-002.output.txt <<'EOF'
-Out[1]= "<|\"call\" -> \"J-WL-002\", \"rule\" -> \"{Re[z[1]], Conjugate[z[8]], Conjugate[z[7]], Conjugate[z[6]], Re[z[5]], Conjugate[z[4]], Conjugate[z[3]], Conjugate[z[2]]}\", \"note\" -> \"Actual finite-volume implementation must enforce conjugate pairing and preserve the frozen seed.\"|>"
-EOF
-          python tools/director.py wolfram-record --run "$RUN" --call J-WL-001 --output /tmp/J-WL-001.output.txt
-          python tools/director.py wolfram-record --run "$RUN" --call J-WL-002 --output /tmp/J-WL-002.output.txt
-          python tools/run_reference_checks.py --module J --output "$R/reference_checks.json"
-          python tools/director.py solver-copy --module J --solver covariance --destination "$R"
-          python tools/director.py solver-copy --module J --solver fourier_field --destination "$R"
+          python tools/rfc.py close-run --run-id "$OLD" --result FAIL --closeout "$OLD_R/CLOSEOUT.md"
+          rm -f .github/workflows/j200-live-runner.yml
+          bash tools/start_work.sh
+          RUN="$(python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          assert s['active_work_unit']=='J-200',s
+          assert s['current_module']=='J',s
+          assert s['current_run'] and s['current_run']!='J-200-20260809T225756Z',s
+          print(s['current_run'])
+          PY
+          )"
+          R="modules/J/runs/$RUN"
+          python - "$RUN" <<'PY'
+          import hashlib,json,sys
+          from datetime import datetime,timezone
+          from pathlib import Path
+          run=sys.argv[1]; R=Path('modules/J/runs')/run
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          def row(p,classification):
+              q=Path(p); return {'path':str(q),'sha256':sha(q),'bytes':q.stat().st_size,'classification':classification}
+          parent='modules/HI/frozen/H_HI_to_J.json'
+          p29='sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md'
+          p30='sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md'
+          blueprint='sources/frozen/2f3539d6493f87a407765a9f24d6cd61e825a36fe9217d2adfa075c070d27b6e/2RFC_Deep_Soak_and_Realization_Blueprint_20260805.md'
+          queue='sources/frozen/c3b22b3f6973cef75409162c406ac224b2d66aa8bb938a6f035d386384fab226/2RFC_Immediate_Execution_Queue_20260805.md'
+          authority=['recipes/J/recipe.json','recipes/J/WORK_ORDER.md','recipes/J/gates.json','modules/J/spec.json','docs/08_EVIDENCE_AND_CLAIM_STATES.md','docs/09_DERIVATION_PROTOCOL.md','docs/10_EXECUTION_PROTOCOL.md','theory/DERIVATION_ATLAS.md','config/WOLFRAM_EXPECTATIONS.json','config/required_output_contracts.json','MODEL_OPERATOR_PROMPT.md','requirements-lock.txt']
+          src={'schema_version':'2.1','run_id':run,'status':'FROZEN_BEFORE_PRIMARY_EXECUTION','generation_mode':'GENERATION_SEALED','exact_parents':[row(parent,'DIRECT_PARENT')],'admitted_sources':[row(p29,'CANONICAL_AUTHORITY'),row(p30,'CANONICAL_AUTHORITY'),row(blueprint,'ADMITTED_SOURCE'),row(queue,'ADMITTED_SOURCE')],'imports':['json','hashlib','pathlib','numpy','scipy'],'files':[row(p,'AUTHORITY') for p in authority],'urls':[],'constants':[],'public_data_declaration':'NONE','network_policy':'DISABLED_DURING_GENERATION'}
+          (R/'SOURCE_REGISTER.json').write_text(json.dumps(src,indent=2)+'\n')
+          par=json.loads(Path(parent).read_text())
+          deriv={'schema_version':'2.1','run_id':run,'status':'FROZEN_PRE_EXECUTION','module':'J','fidelity':'MINIMAL_SPINE','generation_mode':'GENERATION_SEALED','parent':row(parent,'DIRECT_PARENT'),
+            'source_laws':{
+              'P29_recursive_kernel':'K_f(t)=sum_{j=1}^N delta^{-j} f_j(t) exp(-alpha j t); a domain lane changes only the modal basis while preserving the frozen source packet.',
+              'P29_normalized_depth_weights':'p_j(t;n)=delta^{-j} exp(-alpha j t)/sum_{k=1}^n delta^{-k} exp(-alpha k t), positive and normalized.',
+              'P30_boundary':'physical primordial scalar spectrum P_R(k), n_s, A_s, alpha_s, r, physical T(k), and matter power spectrum are explicitly pending/not generated and may not be imported as solved parents.'},
+            'exact_HI_mode_law':par['mode_eigenstructure']['law'],'exact_HI_covariance_pushforward':par['error_covariance_propagation']['law'],
+            'derivation_rule':'Construct J only on the exact branch-indexed HI physical quotient. P29 recursive weights may weight an exact inherited J modal basis only when the exact branch supplies a finite ordered physical basis and a source-owned mapping of the P29 recursion coordinate to that basis. The resulting branch covariance family is the PSD spectral operator sum_j p_j |f_bj><f_bj|, propagated only by the exact HI pushforward law. This rule does not manufacture a basis, dimension, physical amplitude, cross-covariance, clock identification, or branch selection. If any material ingredient is absent from exact ancestry or admitted sources, preserve the family symbolically and stop BLOCKED_UNDERDETERMINED before numeric physical realization.',
+            'target_blind_seed_rule':'After and only after a material covariance is lawfully fixed, derive stochastic seed deterministically from SHA256(parent_sha256 || run_id || purpose_label); never search or retune it.',
+            'candidate_classes':['branch-indexed endogenous PSD covariance spectral operators on exact HI modes','complete lawful covariance branch family when ancestry remains nonunique','target-blind finite-volume realization only after material covariance is fixed'],
+            'forbidden_promotions':['manufactured J covariance to physical parent','P30 readiness markers/sigma8/proxy scores to physical spectrum','public or remembered primordial amplitudes','unowned zero cross-covariance','arbitrary finite basis dimension or mode ordering'],
+            'claim_boundary':'One realized RFC linear universe only if exact admitted ancestry supplies every material covariance and realization ingredient; otherwise close at the exact underdetermination obstruction.'}
+          (R/'FROZEN_DERIVATION_SPEC.json').write_text(json.dumps(deriv,indent=2)+'\n')
+          dh=sha(R/'FROZEN_DERIVATION_SPEC.json')
+          lock={'schema_version':'2.1','run_id':run,'status':'FROZEN','frozen_utc':datetime.now(timezone.utc).isoformat(),'frozen_before_primary_execution':True,'authority_hashes':[sha(p) for p in authority],'parent_hashes':[sha(parent)],'definition_hashes':[dh,sha(p29),sha(p30),sha(blueprint),sha(queue)],'candidate_classes':deriv['candidate_classes'],'equations_and_laws':[deriv['source_laws']['P29_recursive_kernel'],deriv['source_laws']['P29_normalized_depth_weights'],deriv['derivation_rule'],deriv['exact_HI_covariance_pushforward'],deriv['target_blind_seed_rule']],'dimensions_units_frames_gauges_clocks':['inherit exact HI branch identity','inherit HU quotient V_b=ker(C_b)/im(G_b)','inherit Big-Implosion clock family without identifying recursive depth as physical time','no imported FRW/k-grid/SI normalization','finite-volume grid remains implementation coordinate unless source-owned'],'methods':['exact source/parent hashing','J-WL-001 then J-WL-002 manufactured checks','J manufactured reference check','typed derivation audit against exact HI+P29+P30','provenance-bound covariance/fourier engines only if material bindings exist','countermodels/ablations/restart/replay/independent reconstruction if physical execution is reached'],'tolerances':['covariance symmetry/PSD engine tolerance=1e-12','Fourier reconstruction tolerance=1e-10','no sample tolerance or convergence threshold may be invented before a lawful physical covariance is materialized'],'stopping_rules':['public initial-condition or target phase enters','manufactured covariance promoted','P30 pending proxy promoted','covariance non-PSD','unresolved __BIND token at attempted materialization','arbitrary mode dimension/basis/order','material covariance value absent from exact source/parent/hashed derivation','clean replay mismatch'],'expected_invariants':['exact parent hash unchanged','P29/P30 hashes unchanged','branch identity retained','no public input','manufactured checks remain implementation-only'],'tests':['J-WL-001','J-WL-002','manufactured J reference check','typed material-covariance derivability audit'],'gates':['covariance PSD','reality/Hermitian conditions','resolution and volume tests','no public initial-condition file','independent field reconstruction'],'falsifiers':['manufactured or public covariance enters physical generation','seed/branch shopping','invented mode dimension/order/amplitude'],'claim_boundary':deriv['claim_boundary'],'independent_verifier_design':'Re-hash exact HI, P29, and P30; independently verify whether a finite ordered physical mode basis, mode count, normalization/amplitude and recursion-to-mode mapping are actually supplied. Refuse physical materialization if any are absent.','allowed_implementation_only_corrections':['syntax/path/serialization/evaluator-backend/solver plumbing only; preserve failure and rerun full frozen matrix; source set and derivation law are frozen science']}
+          (R/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
+          env={'schema_version':'2.1','run_id':run,'status':'CAPTURED_PRE_EXECUTION','generation_mode':'GENERATION_SEALED','network_policy':'DISABLED_DURING_GENERATION','software':['python 3.11','numpy','scipy'],'imports':src['imports'],'hidden_defaults_audited':True,'public_inputs_used':False}
+          (R/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
+          print('NEW_RUN='+run)
+          print('PARENT_SHA256='+sha(parent)); print('P29_SHA256='+sha(p29)); print('P30_SHA256='+sha(p30)); print('DERIVATION_SHA256='+dh)
+          PY
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "$R"
-          git commit -m 'Run J-200 prescribed symbolic and prebinding steps'
+          git add "$OLD_R" "$R" STATE.json WORK_QUEUE.json memory work_packets/ACTIVE_WORK_PACKET.md .github/workflows/j200-live-runner.yml || true
+          git commit -m 'Replace J-200 invalid freeze with correctly sourced run'
           git push origin HEAD:agent/frontier-050-execution
-          printf 'J200_PREBIND_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'J200_SOURCE_REPAIR_COMMIT=%s\n' "$(git rev-parse HEAD)"
