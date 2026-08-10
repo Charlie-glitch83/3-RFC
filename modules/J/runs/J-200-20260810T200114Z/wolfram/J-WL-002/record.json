@@ -1,0 +1,14 @@
+{
+  "call_id": "J-WL-002",
+  "module": "J",
+  "purpose": "Hermitian Fourier reality condition",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-10T21:00:00Z",
+  "input_sha256": "12920c07dde75fb72eb155b898861270eaef13781bb144c8526470e373cca4ad",
+  "output_sha256": "2f1b037f3c7ff770e7f0db5af93717b94e0d656ab9f89a251c2586487c8c50d9",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/J/runs/J-200-20260810T200114Z/wolfram/J-WL-002/gate.json"
+}
