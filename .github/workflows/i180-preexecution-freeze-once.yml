@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   record-i180-wolfram:
-    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-20260810'
+    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-live-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
