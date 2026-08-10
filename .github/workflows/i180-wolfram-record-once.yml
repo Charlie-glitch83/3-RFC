@@ -1,3 +1,4 @@
+# One-use transport; exact Wolfram outputs are externally evaluated and repository-gated.
 name: I-180 exact Wolfram recording once
 
 on:
