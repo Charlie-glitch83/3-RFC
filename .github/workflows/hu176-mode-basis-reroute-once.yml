@@ -27,6 +27,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install locked repository dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
       - name: Close J hard stop and install superseding replay path
         shell: bash
         run: |
@@ -56,7 +61,6 @@ jobs:
           items=q['items']; by={x['id']:x for x in items}
           assert by['J-200']['status']=='ACTIVE', by['J-200']
           assert s['current_run'] is None, s
-          # Preserve the blocked J task and insert only governance replay units compelled by the J.1 parent-interface audit.
           by['J-200']['status']='BLOCKED'
           by['J-200']['depends_on']=['HI-191']
           hu={
@@ -126,9 +130,7 @@ jobs:
             'required_evidence_state':'FROZEN',
             'required_fidelity':'HYPER_REALISTIC'
           }
-          # Insert immediately before J if not already present; reruns are idempotent.
           if 'HU-176' not in by or 'HI-191' not in by:
-              jidx=next(i for i,x in enumerate(items) if x['id']=='J-200')
               new=[]
               for x in items:
                   if x['id'] in {'HU-176','HI-191'}: continue
