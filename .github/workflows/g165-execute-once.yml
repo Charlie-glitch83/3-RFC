@@ -56,6 +56,7 @@ jobs:
           python tools/g165_independent_verify.py
           python tools/g165_execute_branch_family.py finalize
           python tools/g165_finalize_environment.py
+          python tools/g165_clean_replay.py
           python tools/g165_finalize_manifest.py
           python tools/scientific_completion_guard.py --run "$R"
 
