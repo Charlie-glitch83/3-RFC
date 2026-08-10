@@ -1,0 +1,92 @@
+name: I-180 exact Wolfram recording once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'ops/I180_WOLFRAM_TRIGGER.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: i180-exact-wolfram-recording-once
+  cancel-in-progress: false
+
+jobs:
+  record-i180-wolfram:
+    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-20260810'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Record exact connected Wolfram outputs in frozen order
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          RUN='I-180-20260810T134326Z'
+          R="modules/I/runs/$RUN"
+          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['status'])")" = FROZEN
+          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['physical_execution_gate']['status'])")" = BLOCKED_PENDING_EXACT_PARENT_BINDING
+
+          cat > "$R/wolfram/I-WL-001/output.txt" <<'EOF'
+Symbol::undefined2: Warning: Global symbols "H, H, H" are undefined.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+General::stop: Further output of FrontEndObject::notavail will be suppressed during this calculation.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"I-WL-001\", \"H\" -> \"(h + 2*q*t)/(1 + t*(h + q*t))\", \"horizon\" -> \"(-2*(ArcTan[h/Sqrt[-h^2 + 4*q]] - ArcTan[(h + 2*q*t)/Sqrt[-h^2 + 4*q]]))/Sqrt[-h^2 + 4*q]\", \"kinematicIdentity\" -> True|>"
+EOF
+
+          cat > "$R/wolfram/I-WL-002/output.txt" <<'EOF'
+Out[1]= "<|\"call\" -> \"I-WL-002\", \"constraintDerivative\" -> \"0\", \"preserved\" -> True|>"
+EOF
+
+          python tools/director.py wolfram-record --run "$RUN" --call I-WL-001 --output "$R/wolfram/I-WL-001/output.txt"
+          python tools/director.py wolfram-record --run "$RUN" --call I-WL-002 --output "$R/wolfram/I-WL-002/output.txt"
+          python tools/run_reference_checks.py --module I --output "$R/reference_checks.json"
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          R=Path('modules/I/runs/I-180-20260810T134326Z')
+          for cid in ('I-WL-001','I-WL-002'):
+              gate=json.loads((R/'wolfram'/cid/'gate.json').read_text())
+              assert gate.get('result')=='PASS', (cid,gate)
+              rec=json.loads((R/'wolfram'/cid/'record.json').read_text())
+              assert rec['manufactured_gate_returncode']==0, (cid,rec)
+              assert rec['public_knowledge_used'] is False, rec
+          ref=json.loads((R/'reference_checks.json').read_text())
+          assert ref.get('result')=='PASS' or ref.get('overall')=='PASS' or ref.get('pass') is True, ref
+          lock=json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())
+          assert lock['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
+          print('WOLFRAM_MANUFACTURED_GATES=PASS')
+          print('PHYSICAL_EXECUTION_GATE='+lock['physical_execution_gate']['status'])
+          PY
+
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+      - name: Commit exact Wolfram records and manufactured reference check
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add modules/I/runs/I-180-20260810T134326Z/wolfram modules/I/runs/I-180-20260810T134326Z/reference_checks.json
+          git commit -m 'Record exact I-180 Wolfram manufactured gates'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'I180_WOLFRAM_COMMIT=%s\n' "$(git rev-parse HEAD)"
