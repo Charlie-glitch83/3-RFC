@@ -1,0 +1,11 @@
+{
+  "call_id": "I-WL-002",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "constraintDerivative"
+  ],
+  "decision_rule": "Require the background constraint derivative to vanish on the frozen equations.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}
