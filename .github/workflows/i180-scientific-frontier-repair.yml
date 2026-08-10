@@ -1,0 +1,55 @@
+name: Run governed I-180 scientific frontier repair
+
+on:
+  push:
+    branches:
+      - agent/i185-geometry-branch-repair
+    paths:
+      - '.github/workflows/i180-scientific-frontier-repair.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repair-i180-frontier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/i185-geometry-branch-repair
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Reset frontier and install corrected I derivation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          python tools/i180_scientific_repair.py all
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          q=json.load(open('WORK_QUEUE.json'))
+          assert s['active_work_unit']=='I-180' and s['current_module']=='I' and s['current_run'] is None, s
+          active=[x['id'] for x in q['items'] if x.get('status')=='ACTIVE']
+          assert active==['I-180'], active
+          v=json.load(open('modules/I/repair/REPAIR_VERIFICATION.json'))
+          assert v['pass'] is True, v
+          spec=json.load(open('modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json'))
+          assert spec['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
+          PY
+      - name: Commit repaired scientific frontier
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATE.json WORK_QUEUE.json audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json modules/I/repair/REPAIR_VERIFICATION.json
+          git commit -m 'Reset scientific frontier to corrected Module I derivation'
+          git push origin HEAD:agent/i185-geometry-branch-repair
