@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   record-i180-wolfram:
-    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-final-20260810'
+    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-record2-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,10 +40,40 @@ jobs:
           R="modules/I/runs/$RUN"
           test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['status'])")" = FROZEN
           test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['physical_execution_gate']['status'])")" = BLOCKED_PENDING_EXACT_PARENT_BINDING
-          printf '%s' "$I1_B64" | base64 -d > "$R/wolfram/I-WL-001/output.txt"
-          printf '%s' "$I2_B64" | base64 -d > "$R/wolfram/I-WL-002/output.txt"
-          python tools/director.py wolfram-record --run "$RUN" --call I-WL-001 --output "$R/wolfram/I-WL-001/output.txt"
-          python tools/director.py wolfram-record --run "$RUN" --call I-WL-002 --output "$R/wolfram/I-WL-002/output.txt"
+          printf '%s' "$I1_B64" | base64 -d > /tmp/I-WL-001.output.txt
+          printf '%s' "$I2_B64" | base64 -d > /tmp/I-WL-002.output.txt
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          R=Path('modules/I/runs/I-180-20260810T134326Z')
+          fid='I180-WOLFRAM-RECORD-SAMEFILE'
+          p=R/'FAILURES.jsonl'
+          old=p.read_text() if p.exists() else ''
+          if fid not in old:
+              rec={
+                  'failure_id':fid,
+                  'timestamp_utc':datetime.now(timezone.utc).isoformat(),
+                  'stage':'POST_LOCK_WOLFRAM_RECORDING',
+                  'result':'FAIL',
+                  'cause':'Repository wolfram-record was initially given the run destination output.txt as both source and destination, producing shutil.SameFileError before gate evaluation.',
+                  'evidence':'GitHub Actions run 31396842914 job 93481716452',
+                  'disposition':'IMPLEMENTATION_ONLY_TEMP_OUTPUT_PATH_AND_FULL_FROZEN_WOLFRAM_MATRIX_RERUN',
+                  'science_changed':False,
+                  'parents_changed':False,
+                  'sources_changed':False,
+                  'law_changed':False,
+                  'wolfram_input_changed':False,
+                  'wolfram_output_changed':False,
+                  'tests_changed':False,
+                  'gates_changed':False,
+                  'claim_boundary_changed':False
+              }
+              with p.open('a') as f:
+                  f.write(json.dumps(rec)+'\n')
+          PY
+          python tools/director.py wolfram-record --run "$RUN" --call I-WL-001 --output /tmp/I-WL-001.output.txt
+          python tools/director.py wolfram-record --run "$RUN" --call I-WL-002 --output /tmp/I-WL-002.output.txt
           python tools/run_reference_checks.py --module I --output "$R/reference_checks.json"
           python - <<'PY'
           import json
@@ -72,7 +102,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add modules/I/runs/I-180-20260810T134326Z/wolfram modules/I/runs/I-180-20260810T134326Z/reference_checks.json
+          git add modules/I/runs/I-180-20260810T134326Z/wolfram modules/I/runs/I-180-20260810T134326Z/reference_checks.json modules/I/runs/I-180-20260810T134326Z/FAILURES.jsonl
           git commit -m 'Record exact I-180 Wolfram manufactured gates'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
