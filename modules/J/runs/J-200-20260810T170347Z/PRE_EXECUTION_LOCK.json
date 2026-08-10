@@ -1,21 +1,97 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
+  "run_id": "J-200-20260810T170347Z",
+  "status": "BLOCKED_UNDERDETERMINED_PRE_PRIMARY",
+  "frozen_utc": "2026-08-10T17:30:00Z",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    {
+      "path": "recipes/J/WORK_ORDER.md",
+      "sha256": "856f62070c1f6fcc8b9e4185be55336aadc16ac2"
+    },
+    {
+      "path": "recipes/J/gates.json",
+      "sha256": "c2165bcc167e9c79a5d9fb90a14897d446b3dcec"
+    }
+  ],
+  "parent_hashes": [
+    {
+      "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+      "sha256": "23301906ad1a40d39f7409c9c30e5c6c2e7d03e1"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md",
+      "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1"
+    }
+  ],
+  "definition_hashes": [
+    {
+      "path": "modules/J/runs/J-200-20260810T170347Z/J200_PRIMORDIAL_SOURCE_OBSTRUCTION.json",
+      "sha256": "PENDING_REPOSITORY_CONTENT_HASH"
+    }
+  ],
+  "candidate_classes": [
+    "lawful primordial state/branch family inherited from exact genesis ancestry",
+    "quadratic-action-derived canonical perturbation state",
+    "mathematically equivalent RFC stochastic-generation state family"
+  ],
+  "equations_and_laws": [
+    "Big Implosion deterministic branch action S_imp,beta[y]=1/2||y-x^-_beta||^2 + ell_delta/2 y^T L_beta y",
+    "HI covariance propagation Sigma_delta,out=U Sigma_delta,in U^T, with primordial Sigma_delta,in explicitly unresolved",
+    "J requires an actual physical covariance before covariance/Fourier engines may execute"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "shared physical clock t_phys=t_B tau_B inherited through HI",
+    "HU physical tangent quotient V_b=ker(C_b)/im(Gauge_b)",
+    "I constant response-graph mode remains background gauge",
+    "primordial stochastic normalization/dimensions NOT YET DERIVED"
+  ],
+  "methods": [
+    "exact-parent source-lineage audit",
+    "genesis variational-law audit",
+    "source-diagnostic classification audit",
+    "N-body branch-policy audit",
+    "pre-primary obstruction rather than manufactured covariance execution"
+  ],
   "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "stopping_rules": [
+    "Do not execute J covariance solver until a source-owned physical covariance law is derived.",
+    "Do not execute J Fourier-field solver until a source-owned phase/seed realization law is derived.",
+    "Do not identify inverse Big-Implosion Hessian with covariance without a derived probability/quantization theorem.",
+    "Do not promote readiness, sigma, seed, growth or coherence diagnostics to primordial power/covariance.",
+    "Do not use public data or observed spectra to choose branch, seed, normalization or phases."
+  ],
+  "expected_invariants": [
+    "all repaired parent hashes remain exact",
+    "branch identity remains attached",
+    "no upstream retune",
+    "no public generation target",
+    "no manufactured value promoted as physical"
+  ],
+  "tests": [
+    "source theory existence",
+    "state-admission/probability law existence",
+    "physical normalization and dimensions existence",
+    "covariance Hermitian/PSD only after source law exists",
+    "phase/seed provenance only after source law exists"
+  ],
+  "gates": [
+    "covariance PSD",
+    "reality/Hermitian conditions",
+    "resolution and volume tests",
+    "no public initial-condition file",
+    "independent field reconstruction"
+  ],
+  "falsifiers": [
+    "generic Gaussian covariance inserted by convention",
+    "scale-invariant or familiar primordial spectrum inserted by convention",
+    "HU/B uncertainty covariance relabeled primordial covariance",
+    "random seed or phase law chosen without source ancestry",
+    "public CMB/LSS/matter-power information influences generation"
+  ],
+  "claim_boundary": "J-200 is blocked before primary execution. Repaired RFC presently supports the exact background/transfer branch family and deterministic genesis action, but not yet the physical primordial stochastic covariance/phase law required to emit a realized linear universe.",
+  "independent_verifier_design": "A future verifier must reconstruct the primordial source theorem from exact genesis and repaired HI parents without trusting J covariance outputs; until such theorem exists, independent physical field reconstruction is not executable.",
+  "allowed_implementation_only_corrections": [
+    "path, serialization, schema and evidence-plumbing corrections that do not add a scientific probability, covariance, normalization, spectrum, phase or seed law"
+  ],
+  "obstruction_artifact": "modules/J/runs/J-200-20260810T170347Z/J200_PRIMORDIAL_SOURCE_OBSTRUCTION.json"
 }
