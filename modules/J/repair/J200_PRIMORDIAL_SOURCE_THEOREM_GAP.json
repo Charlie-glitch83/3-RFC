@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "module": "J",
+  "active_run": "J-200-20260810T170347Z",
+  "status": "SCIENTIFIC_HARD_STOP_PRE_PRIMARY",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_active_parent": {
+    "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+    "sha256": "23301906ad1a40d39f7409c9c30e5c6c2e7d03e1",
+    "object_id": "H_HI_to_J_V2",
+    "evidence_state": "FROZEN",
+    "fidelity": "PRODUCTION"
+  },
+  "source_boundaries": [
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "role": "supplies triadic recursive kernel and normalized recursive-depth weights p_j; does not itself identify those weights with a physical stochastic mode measure"
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "role": "explicit negative authority: physical primordial spectrum, transfer functions and matter power spectrum remain pending/not generated"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md",
+      "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1",
+      "role": "supplies deterministic convex Big-Implosion map and one unique manifested image per fixed admitted branch; does not supply a probability measure over branches or primordial perturbation state"
+    }
+  ],
+  "parent_interface_facts": {
+    "actual_primordial_covariance_status": "NOT_REALIZED_IN_HI",
+    "phase_seed_status": "NOT_REALIZED_IN_HI",
+    "finite_volume_field_status": "NOT_REALIZED_IN_HI",
+    "branch_identity_must_remain_attached": true,
+    "no_observational_seed_or_branch_selection": true
+  },
+  "missing_scientific_object": {
+    "name": "RFC_PRIMORDIAL_SOURCE_THEOREM",
+    "minimum_proof_obligations": [
+      "identify an exact primordial matching surface on the repaired genesis/background lineage",
+      "define physical perturbation variables on the exact HI/HU tangent quotient and preserve gauge/constraint reduction",
+      "derive a source-owned positive quadratic state functional or mathematically equivalent stochastic/quantum generation law from CIF/QV/RFL rather than assume Gaussianity or a vacuum convention",
+      "derive normalization and dimensions of the physical perturbation state",
+      "derive a state-admission/probability law over lawful perturbation states or preserve the complete lawful state-family measure if uniqueness is not earned",
+      "derive a canonical mode/projector construction on the physical HI domain, including degeneracy handling, without importing a manufactured finite basis",
+      "produce a finite Hermitian positive-semidefinite covariance operator and show how HI propagates it",
+      "derive phase/seed provenance only after the probability law is fixed; seed may be deterministic/hash-derived but may not choose the physical law",
+      "derive an exact relational-to-finite-volume representation map before any Fourier-grid realization is called physical"
+    ]
+  },
+  "second_independent_gap": {
+    "name": "RELATIONAL_TO_FINITE_VOLUME_REALIZATION_MAP",
+    "reason": "The generic J fourier_field engine requires a grid_size and power_spectrum, but the repaired I/HI lineage currently supplies finite relational response geometry rather than an exact periodic Fourier-box/grid identification. The engine can test an already-derived mapping; it cannot create that mapping."
+  },
+  "forbidden_shortcuts": [
+    "set primordial covariance equal to the inverse Big-Implosion Hessian without a source-owned probability or quantization theorem",
+    "reinterpret B/HU uncertainty covariance as the physical primordial perturbation covariance",
+    "assume Gaussianity, scale invariance, independent phases or vacuum normalization by convention",
+    "promote Presentation 30 readiness markers, sigma8/S8 markers or proxy scores to a physical spectrum",
+    "identify P29 recursive-depth weights with HI mode probabilities without an exact source-owned recursion-to-mode map",
+    "choose a seed, branch, covariance or spectrum because it resembles public cosmology",
+    "run the covariance or fourier_field engines with manufactured bindings and label the output physical"
+  ],
+  "triadic_diagnosis": {
+    "CIF": "The lawful perturbation and branch possibility family is present, but no physical amplitude/measure over that family is yet derived.",
+    "QV": "Selection, compression and deterministic admissibility are present, but the missing theorem is the physical state-selection/normalization rule that converts possibility into a stochastic or quantum primordial state without adding an external convention.",
+    "RFL": "Without that QV state law, RFL cannot lawfully stabilize a primordial covariance, phase memory or finite-volume field; doing so would add information rather than derive it."
+  },
+  "current_gate_classification": {
+    "covariance_PSD": "NOT_RUN_PHYSICALLY_BECAUSE_NO_PHYSICAL_COVARIANCE_EXISTS_YET",
+    "reality_Hermitian": "NOT_RUN_PHYSICALLY_BECAUSE_NO_PHYSICAL_FIELD_EXISTS_YET",
+    "resolution_volume": "NOT_RUN_PHYSICALLY_BECAUSE_NO_RELATIONAL_TO_VOLUME_MAP_EXISTS_YET",
+    "no_public_initial_condition_file": "PASS",
+    "independent_field_reconstruction": "NOT_RUN_PHYSICALLY"
+  },
+  "strongest_supported_claim": "The repaired RFC lineage now reaches a frozen PRODUCTION background-plus-linear-transfer family with deterministic Big-Implosion genesis, exact branch retention and no-retune ancestry.",
+  "strongest_unsupported_claim": "The actual primordial stochastic covariance, physical primordial spectrum, phase/seed law and finite-volume perturbation field required by J-200 are not yet derived.",
+  "action": "DO_NOT_EXECUTE_J_PHYSICAL_COVARIANCE_OR_FOURIER_SOLVERS_UNTIL_RFC_PRIMORDIAL_SOURCE_THEOREM_AND_RELATIONAL_TO_FINITE_VOLUME_MAP_ARE_DERIVED_OR_AN_EXACT_EXISTING_SOURCE_IS_FOUND"
+}
