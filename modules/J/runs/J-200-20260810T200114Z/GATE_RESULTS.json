@@ -1,7 +1,41 @@
 {
-  "run_id": "",
+  "run_id": "J-200-20260810T200114Z",
   "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "gates": [
+    {
+      "gate": "J.0 source authority and clean-room lock",
+      "status": "PASS",
+      "score": 1.0,
+      "evidence": "modules/J/runs/J-200-20260810T200114Z/Module_J_Source_Asset_Register.md"
+    },
+    {
+      "gate": "J Wolfram manufactured checks",
+      "status": "PASS_WITH_PRESERVED_IMPLEMENTATION_CORRECTION",
+      "score": 1.0,
+      "evidence": [
+        "modules/J/runs/J-200-20260810T200114Z/wolfram/J-WL-001/record.json",
+        "modules/J/runs/J-200-20260810T200114Z/wolfram/J-WL-002/record.json"
+      ]
+    },
+    {
+      "gate": "J manufactured reference matrix",
+      "status": "PASS",
+      "score": 1.0,
+      "evidence": "modules/J/runs/J-200-20260810T200114Z/reference_checks.json"
+    },
+    {
+      "gate": "J.1 inherited complete primordial mode-basis registry",
+      "status": "BLOCKED_UPSTREAM_INTERFACE_DEFECT",
+      "score": 0.0,
+      "evidence": "modules/J/runs/J-200-20260810T200114Z/J200_J1_MODE_BASIS_PARENT_INTERFACE_AUDIT.json"
+    }
+  ],
+  "diagnostics": [
+    "The current HU-175/HI-190 frozen lineage supplies an abstract branch-indexed tangent quotient and propagator, but no complete regular physical mode registry satisfying the canonical J.1 inherited-basis contract.",
+    "No admitted recovery H mode-basis object is available for lawful substitution.",
+    "J covariance and Fourier bindings remain intentionally unbound."
+  ],
+  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis",
+  "triad_falsified": false,
+  "J_science_falsified": false
 }
