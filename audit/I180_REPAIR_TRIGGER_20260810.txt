@@ -1,2 +1,3 @@
 I-180 governed scientific repair trigger. No scientific content is carried by this file.
 Retry after evidence-history normalization.
+Retry after claims/context authority reconciliation.
