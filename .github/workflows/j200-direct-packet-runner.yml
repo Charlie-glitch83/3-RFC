@@ -1,4 +1,4 @@
-name: J-200 direct packet runner
+name: Boot 3-RFC exactly from root README
 
 on:
   push:
@@ -9,8 +9,8 @@ permissions:
   contents: write
 
 jobs:
-  run-j200-prebind:
-    if: github.event.head_commit.message == 'Install J-200 direct packet runner'
+  boot-repository:
+    if: github.event.head_commit.message == 'Boot 3-RFC exactly from root README'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,36 +21,33 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Execute active packet through solver-copy
+      - name: Execute root README boot exactly
         shell: bash
         run: |
           set -euo pipefail
-          EXPECT='29a3b8f7a01a09f4c560c62a8007dd639f67f294'
-          RUN='J-200-20260809T225756Z'
-          R="modules/J/runs/$RUN"
-          test "$(git rev-parse HEAD)" = "$EXPECT"
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          cat > /tmp/J-WL-001.output.txt <<'EOF'
-Symbol::undefined2: Warning: Global symbols "L, L, L" are undefined.
-General::messages: Messages were generated which may indicate errors.
-
-Out[1]= "<|\"call\" -> \"J-WL-001\", \"eigenvalues\" -> {\"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 3, 0]\", \"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 2, 0]\", \"Root[-1219 + 6110*#1 - 9200*#1^2 + 4000*#1^3 & , 1, 0]\"}, \"positiveDefinite\" -> True, \"reconstructionPass\" -> True|>"
-EOF
-          cat > /tmp/J-WL-002.output.txt <<'EOF'
-Out[1]= "<|\"call\" -> \"J-WL-002\", \"rule\" -> \"{Re[z[1]], Conjugate[z[8]], Conjugate[z[7]], Conjugate[z[6]], Re[z[5]], Conjugate[z[4]], Conjugate[z[3]], Conjugate[z[2]]}\", \"note\" -> \"Actual finite-volume implementation must enforce conjugate pairing and preserve the frozen seed.\"|>"
-EOF
-          python tools/director.py wolfram-record --run "$RUN" --call J-WL-001 --output /tmp/J-WL-001.output.txt
-          python tools/director.py wolfram-record --run "$RUN" --call J-WL-002 --output /tmp/J-WL-002.output.txt
-          python tools/run_reference_checks.py --module J --output "$R/reference_checks.json"
-          python tools/director.py solver-copy --module J --solver covariance --destination "$R"
-          python tools/director.py solver-copy --module J --solver fourier_field --destination "$R"
-          python tools/rfc.py doctor
-          python tools/director.py doctor
-          python -m unittest discover -s tests -v
-          python tools/rfc.py firewall-scan
+          bash bootstrap.sh
+          bash tools/start_work.sh
+          echo '=== ACTIVE ==='
+          python tools/director.py active
+          echo '=== ACTIVE PACKET ==='
+          cat work_packets/ACTIVE_WORK_PACKET.md
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json'))
+          active=s['active_work_unit']
+          assert active=='J-200',s
+          assert s['current_module']=='J',s
+          assert s['current_run'],s
+          print('CURRENT_RUN='+s['current_run'])
+          PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "$R"
-          git commit -m 'Run J-200 prescribed symbolic and prebinding steps'
-          git push origin HEAD:agent/frontier-050-execution
-          printf 'J200_PREBIND_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          git add STATE.json memory/CURRENT_CONTEXT.md memory/RUN_INDEX.json work_packets/ACTIVE_WORK_PACKET.md modules/J/runs
+          if ! git diff --cached --quiet; then
+            git commit -m 'Run repository-prescribed boot for active J-200'
+            git push origin HEAD:agent/frontier-050-execution
+            printf 'BOOT_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          else
+            printf 'BOOT_NO_CHANGES_HEAD=%s\n' "$(git rev-parse HEAD)"
+          fi
