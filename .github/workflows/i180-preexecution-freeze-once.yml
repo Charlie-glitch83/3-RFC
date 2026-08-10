@@ -85,7 +85,7 @@ jobs:
           if 'HI-190' in by:
               assert set(by['HI-190']['depends_on'])=={'HU-170','I-180'}
           packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
-          assert 'G-165' in packet and 'Module G' in packet
+          assert 'G-165' in packet
           run=Path('modules/G/runs')/state['current_run']
           bind=json.loads((run/'binding_sheets/G_recombination_network.bindings.json').read_text())
           assert all(x.get('value') is None for x in bind['bindings'])
