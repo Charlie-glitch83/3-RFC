@@ -25,8 +25,10 @@ def reconcile_claims():
     data = json.loads(p.read_text())
     for c in data.get("claims", []):
         if c.get("claim_id") == "I-180-FINITE-RELATIONAL-BACKGROUND":
+            # Preserve the evidence state that the historical run actually reached;
+            # supersession changes present authority, not the historical evidence record.
             c["supported"] = False
-            c["evidence_state"] = "SUPERSEDED"
+            c["current_authority"] = False
             c["supersession"] = {
                 "reason": "Pre-execution uniqueness/branch-completeness was not established and numerical physical-background evidence was implementation-only.",
                 "audit": AUDIT,
@@ -39,6 +41,7 @@ def reconcile_claims():
         "evidence_state": "DESIGN",
         "fidelity": "UNSTARTED",
         "supported": True,
+        "current_authority": True,
         "evidence": [SPEC, VERIFY, AUDIT],
         "strongest_unsupported_claim": "No unique process-to-edge realization, unique continuum/SI spacetime metric, unique scalar expansion history on nonhomothetic branches, physical H(z), empirical cosmology, or physically executed I branch is established until exact parent bindings and branch witnesses close the remaining I frontier.",
         "recorded_utc": now(),
