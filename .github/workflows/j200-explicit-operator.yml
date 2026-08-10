@@ -1,15 +1,15 @@
-name: J-200 explicit governed operator step
+name: J-200 governed Wolfram symbol repair
 
 on:
   pull_request:
-    types: [synchronize]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
 
 jobs:
   repair-j200-wolfram-symbol:
-    if: github.event.pull_request.head.ref == 'ops/j200-explicit-1'
+    if: github.event.pull_request.head.ref == 'ops/j200-wl-symbol-repair-20260809'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,11 +20,11 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Apply only the frozen-lock-authorized J-WL-001 symbol repair
+      - name: Apply only frozen-lock-authorized J-WL-001 symbol repair
         shell: bash
         run: |
           set -euo pipefail
-          EXPECT='43260530fc96b37ea5ac9dc7494b7290d642431f'
+          EXPECT='33a83c15820cebec4bccdc5a2e8c3e35bbe1322b'
           RUN='J-200-20260809T225756Z'
           R="modules/J/runs/$RUN"
           test "$(git rev-parse HEAD)" = "$EXPECT"
