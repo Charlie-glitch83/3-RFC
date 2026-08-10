@@ -1,13 +1,36 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
-  "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
+  "schema_version": "3.0",
+  "run_id": "I-180-20260810T134326Z",
+  "status": "CAPTURED_PRE_EXECUTION",
+  "captured_utc": "2026-08-10T13:53:07.429139+00:00",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "hardware": {
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "software": [
+    "python",
+    "numpy",
+    "scipy"
+  ],
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
+  "imports": [
+    "hashlib",
+    "json",
+    "pathlib",
+    "numpy",
+    "scipy"
+  ],
+  "commands": [
+    "bash bootstrap.sh",
+    "bash tools/start_work.sh",
+    "python tools/rfc.py doctor",
+    "python tools/director.py doctor",
+    "python -m unittest discover -s tests -v",
+    "python tools/rfc.py firewall-scan"
+  ],
   "network_policy": "DISABLED_DURING_GENERATION",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true,
+  "public_inputs_used": false
 }
