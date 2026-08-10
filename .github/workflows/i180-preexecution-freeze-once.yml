@@ -1,12 +1,12 @@
 name: I-180 governed Wolfram recording once
 
 on:
-  pull_request:
+  push:
     branches:
-      - agent/frontier-050-execution
-    types: [opened, synchronize, reopened]
+      - ops/i180-wolfram-live-20260810
     paths:
       - 'ops/I180_WOLFRAM_TRIGGER.txt'
+      - '.github/workflows/i180-preexecution-freeze-once.yml'
 
 permissions:
   contents: write
@@ -17,7 +17,6 @@ concurrency:
 
 jobs:
   record-i180-wolfram:
-    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-live-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
