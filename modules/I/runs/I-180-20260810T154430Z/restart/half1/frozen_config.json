@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "transport",
+  "model": {
+    "state_names": [
+      "a",
+      "b",
+      "c"
+    ],
+    "parameters": {
+      "k": 1.0
+    },
+    "rhs_expressions": [
+      "k*(b + c - 2*a)",
+      "k*(a + c - 2*b)",
+      "k*(a + b - 2*c)"
+    ],
+    "initial_state": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "t_span": [
+      0.0,
+      2.0
+    ],
+    "method": "DOP853",
+    "rtol": 1e-10,
+    "atol": 1e-12,
+    "max_step": 0.03125,
+    "linear_invariants": {
+      "total_edge_activity": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "invariant_tolerance": 1e-09,
+    "positivity_required": true,
+    "positivity_tolerance": 1e-12
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/I/runs/I-180-20260810T154430Z/solver_templates/I_background_ode.template.json",
+    "template_sha256": "92435e1fb6035e10a3dd2ad400f247b7fe0e49d6255db008d0e803fb45cbceb5",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/I/runs/I-180-20260810T154430Z/binding_sheets/I_background_ode.bindings.json",
+    "binding_sheet_sha256": "3547b2cd87b4898e42248558a444cb205a504e23c745bae08a5780d9ec3a7515",
+    "bindings": [
+      {
+        "path": "model.state_names",
+        "value": [
+          "a",
+          "b",
+          "c"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.parameters",
+        "value": {
+          "k": 1.0
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.rhs_expressions",
+        "value": [
+          "k*(b + c - 2*a)",
+          "k*(a + c - 2*b)",
+          "k*(a + b - 2*c)"
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.initial_state",
+        "value": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.t_span",
+        "value": [
+          0.0,
+          4.0
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.max_step",
+        "value": 0.03125,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.linear_invariants",
+        "value": {
+          "total_edge_activity": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.invariant_tolerance",
+        "value": 1e-09,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      },
+      {
+        "path": "model.positivity_tolerance",
+        "value": 1e-12,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+        "module": "I",
+        "derivation_object": "FROZEN_DERIVATION_SPEC.implementation_witness",
+        "units": "dimensionless manufactured implementation units",
+        "dimensions": "three positive K3 edge-activity coordinates; implementation test only",
+        "justification": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+      }
+    ]
+  }
+}

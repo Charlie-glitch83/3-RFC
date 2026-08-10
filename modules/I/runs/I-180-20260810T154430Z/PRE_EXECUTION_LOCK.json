@@ -1,21 +1,207 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "3.0",
+  "run_id": "I-180-20260810T154430Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-10T16:55:25.690808+00:00",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    {
+      "path": "recipes/I/recipe.json",
+      "sha256": "61c3048ceb4ad6167dfb9b6d8a60d51c5b607b4c2c6ad7e7b4bd13b022a56a34",
+      "bytes": 3854
+    },
+    {
+      "path": "recipes/I/WORK_ORDER.md",
+      "sha256": "a947862f6466f26c446cd53c24b47465e6d5c7a46e421519197a0fcd92ae7baa",
+      "bytes": 3222
+    },
+    {
+      "path": "recipes/I/gates.json",
+      "sha256": "f95d44818dfcf4519f00bc026fdd916bbc8e4bcb9e24f4fdbfdd586920d21f5d",
+      "bytes": 462
+    },
+    {
+      "path": "modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json",
+      "sha256": "27dbf6d4e54c6926e5c3b3940c19caf8e5f9cf59545fa03003b41e03f1abc06b",
+      "bytes": 7988
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+      "bytes": 1101
+    }
+  ],
+  "parent_hashes": [
+    {
+      "path": "modules/G/frozen/H_G_to_I_v2.json",
+      "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+      "bytes": 3143
+    },
+    {
+      "path": "modules/B/frozen/H_B_to_C_v2.json",
+      "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "bytes": 9707
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_REGISTRY.json",
+      "sha256": "6f1f7a13893a409e9b3952f5abe443ab129d50c46e3de3494e199f13b54b5422",
+      "bytes": 24774
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+      "sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83",
+      "bytes": 10298
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json",
+      "sha256": "7f65ac7c7c0877d09c4fd51d897d3e68fcae80dcf8b5fd5e267e4a6432e99c78",
+      "bytes": 6920
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json",
+      "sha256": "b7d5723ed06e8a7118db390f80af4d79449ab06f400eb5a4668e4f9aa200dd0d",
+      "bytes": 761
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_PARAMETRIC_RECOMBINATION_HISTORY.json",
+      "sha256": "54364eafaec590b11d1a365d9bf4475e86f02a6abe7c112541d179acd1e3d9d3",
+      "bytes": 2439
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json",
+      "sha256": "604dac044f631d720876fd1456ec33cba2800d6e488c8d507578a07e2f027367",
+      "bytes": 767
+    },
+    {
+      "path": "modules/G/runs/G-165-20260810T144936Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "3d699103e20abd822f0883bd3ca05f27af73e046289908db9a25a213f34e236b",
+      "bytes": 1774
+    }
+  ],
+  "definition_hashes": [
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+      "bytes": 8635
+    }
+  ],
+  "candidate_classes": [
+    "complete nonnegative process-to-B-edge simplex family",
+    "connected positive weighted-K3 response operators",
+    "complete Green/resistance readout family",
+    "two-mode anisotropic response-length/expansion family",
+    "homothetic scalar-collapse subfamily",
+    "typed noninstantiated geometric causal-reach interface"
+  ],
+  "equations_and_laws": [
+    "w_e=sum_r M_e_r Gamma_r",
+    "L=B_R^T diag(w) B_R",
+    "G=L^+",
+    "R_ij=(e_i-e_j)^T L^+ (e_i-e_j)",
+    "pdet=3(ab+ac+bc)",
+    "a_vol=[D_in/D]^(1/4)",
+    "H_vol=-(1/4)d ln D/dt_phys"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "finite relational response units inherited from edge activity",
+    "constant graph mode quotiented as gauge",
+    "physical clock t_phys=t_B tau_B, t_B>0",
+    "recurrence depth is not time",
+    "no imported FRW frame"
+  ],
+  "methods": [
+    "exact-parent symbolic family execution",
+    "weighted-K3 algebra",
+    "semantic countermodels",
+    "manufactured implementation solver only",
+    "analytic convergence comparison",
+    "restart test",
+    "parent-only independent reconstruction",
+    "clean-checkout scientific hash replay"
+  ],
+  "tolerances": [
+    {
+      "name": "symbolic_identity",
+      "value": 0.0
+    },
+    {
+      "name": "laplacian_numeric_witness",
+      "value": 1e-10
+    },
+    {
+      "name": "solver_invariant",
+      "value": 1e-09
+    },
+    {
+      "name": "solver_positivity",
+      "value": 1e-12
+    },
+    {
+      "name": "solver_exact_linf",
+      "value": 1e-08
+    },
+    {
+      "name": "restart_linf",
+      "value": 1e-09
+    },
+    {
+      "name": "replay_scientific_hash",
+      "value": "EXACT"
+    }
+  ],
+  "stopping_rules": [
+    "any parent hash drift",
+    "any unresolved __BIND token",
+    "negative/nonconservative incidence",
+    "extra zero mode treated as connected universe",
+    "observed target injection",
+    "clock/frame ambiguity",
+    "solver implementation invariant failure",
+    "independent reconstruction failure",
+    "clean replay mismatch"
+  ],
+  "expected_invariants": [
+    "M column simplex closure",
+    "sum_e w_e=sum_r Gamma_r",
+    "L symmetric PSD",
+    "L 1=0",
+    "one zero mode on connected branch",
+    "lossless resistance reconstruction",
+    "full anisotropy retained",
+    "no public target used"
+  ],
+  "tests": [
+    "I-WL-001",
+    "I-WL-002",
+    "module I manufactured reference check",
+    "weighted-K3 symbolic identities",
+    "six semantic countermodels",
+    "solver convergence",
+    "restart",
+    "independent reconstruction",
+    "clean replay",
+    "doctor/tests/firewall"
+  ],
+  "gates": [
+    "equation/constraint derivation",
+    "gauge/frame consistency",
+    "no observed expansion history used as target",
+    "numerical convergence and independent reconstruction"
+  ],
+  "falsifiers": [
+    "shortest-path promoted to primary geometry",
+    "unproved scalar collapse",
+    "negative incidence accepted",
+    "disconnected branch inverted as connected",
+    "observed cosmology used to select branch",
+    "unique horizon invented without propagation binding"
+  ],
+  "claim_boundary": {
+    "strongest_supported": "The exact repaired G branch family induces a PRODUCTION finite-relational response-geometry branch family on the exact B carrier: full gauge-reduced weighted Dirichlet operator, lossless Green/resistance readout, principal response-length spectrum, and volumetric expansion functional with inherited physical clock, covariance and restart.",
+    "strongest_unsupported": "No unique M realization, unique numerical expansion history, unique continuum/SI spacetime metric, unique geometric causal horizon, FRW/Friedmann/Einstein correspondence, observed H(z)/H0, BAO/SN distance ladder, or empirical cosmology is established in I."
+  },
+  "independent_verifier_design": "Rebuild I solely from H_G_to_I_v2, its exact G activity/ancestry children, H_B_to_C_v2 and corrected I authority; do not read primary I gate summaries or closeout.",
+  "allowed_implementation_only_corrections": [
+    "path/syntax/serialization/schema/evidence-plumbing only; never alter parents, response law, branch policy, tests, thresholds, gates, falsifiers or claim boundary"
+  ]
 }

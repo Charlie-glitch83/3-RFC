@@ -1,7 +1,260 @@
 {
-  "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "schema_version": "4.0",
+  "run_id": "I-180-20260810T154430Z",
+  "module": "I",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "metric/background state",
+      "status": "PASS",
+      "semantic_check": "Full weighted Dirichlet response operator on the constant-mode quotient is artifact-backed; scalar distance is only a lossless Green readout.",
+      "evidence": [
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+          "sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+          "bytes": 2603
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+          "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+          "bytes": 4265
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json",
+          "sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+          "bytes": 1279
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json",
+          "sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+          "bytes": 1467
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+          "sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+          "bytes": 1721
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+          "sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+          "bytes": 1739
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+          "bytes": 1987
+        },
+        {
+          "path": "modules/I/frozen/H_I_to_HI_v2.json",
+          "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+          "bytes": 3470
+        }
+      ]
+    },
+    {
+      "requirement": "expansion and clock histories",
+      "status": "PASS",
+      "semantic_check": "Both principal response-length/rate modes and the volumetric geometric-mean summary are retained on the inherited physical clock family.",
+      "evidence": [
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+          "sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+          "bytes": 2603
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+          "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+          "bytes": 4265
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json",
+          "sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+          "bytes": 1279
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json",
+          "sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+          "bytes": 1467
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+          "sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+          "bytes": 1721
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+          "sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+          "bytes": 1739
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+          "bytes": 1987
+        },
+        {
+          "path": "modules/I/frozen/H_I_to_HI_v2.json",
+          "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+          "bytes": 3470
+        }
+      ]
+    },
+    {
+      "requirement": "horizons and distances",
+      "status": "PASS",
+      "semantic_check": "Finite response distances are exact; geometric horizon remains a typed branch functional because propagation-to-response-distance binding is not parent-fixed.",
+      "evidence": [
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+          "sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+          "bytes": 2603
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+          "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+          "bytes": 4265
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json",
+          "sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+          "bytes": 1279
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json",
+          "sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+          "bytes": 1467
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+          "sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+          "bytes": 1721
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+          "sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+          "bytes": 1739
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+          "bytes": 1987
+        },
+        {
+          "path": "modules/I/frozen/H_I_to_HI_v2.json",
+          "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+          "bytes": 3470
+        }
+      ]
+    },
+    {
+      "requirement": "constraint and conservation ledgers",
+      "status": "PASS",
+      "semantic_check": "Simplex closure, event no-loss, Laplacian PSD/symmetry/zero-mode, connected-rank rule, resistance reconstruction and firewall pass.",
+      "evidence": [
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+          "sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+          "bytes": 2603
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+          "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+          "bytes": 4265
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json",
+          "sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+          "bytes": 1279
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json",
+          "sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+          "bytes": 1467
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+          "sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+          "bytes": 1721
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+          "sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+          "bytes": 1739
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+          "bytes": 1987
+        },
+        {
+          "path": "modules/I/frozen/H_I_to_HI_v2.json",
+          "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+          "bytes": 3470
+        }
+      ]
+    },
+    {
+      "requirement": "covariance",
+      "status": "PASS",
+      "semantic_check": "Parent covariance is propagated by typed Jacobian plus explicit PSD incidence/response/numeric/branch terms with unresolved coordinates retained.",
+      "evidence": [
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+          "sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+          "bytes": 2603
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+          "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+          "bytes": 4265
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json",
+          "sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+          "bytes": 1279
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json",
+          "sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+          "bytes": 1467
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+          "sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+          "bytes": 1721
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+          "sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+          "bytes": 1739
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+          "bytes": 1987
+        },
+        {
+          "path": "modules/I/frozen/H_I_to_HI_v2.json",
+          "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+          "bytes": 3470
+        }
+      ]
+    },
+    {
+      "requirement": "H_I_to_HI",
+      "status": "PASS",
+      "semantic_check": "Frozen production handoff binds repaired G/B lineage, response geometry, expansion spectrum, covariance/restart and unresolved branch contract for HI.",
+      "evidence": [
+        {
+          "path": "modules/I/frozen/H_I_to_HI_v2.json",
+          "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+          "bytes": 3470
+        },
+        {
+          "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+          "sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+          "bytes": 1987
+        }
+      ]
+    }
+  ]
 }

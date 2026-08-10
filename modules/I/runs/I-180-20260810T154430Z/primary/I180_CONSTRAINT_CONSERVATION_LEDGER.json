@@ -1,0 +1,66 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_CONSTRAINT_CONSERVATION_LEDGER",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "component_scores": {
+    "incidence_nonnegative": 1.0,
+    "incidence_column_closure": 1.0,
+    "activity_no_loss": 1.0,
+    "laplacian_symmetry": 1.0,
+    "laplacian_psd": 1.0,
+    "gauge_zero_mode": 1.0,
+    "connected_rank": 1.0,
+    "resistance_no_loss": 1.0,
+    "target_firewall": 1.0
+  },
+  "identities": [
+    {
+      "name": "incidence_nonnegative",
+      "identity": "M_e_r>=0",
+      "status": "PASS"
+    },
+    {
+      "name": "incidence_column_closure",
+      "identity": "sum_e M_e_r=1",
+      "status": "PASS"
+    },
+    {
+      "name": "activity_no_loss",
+      "identity": "a+b+c=sum_r Gamma_r",
+      "status": "PASS"
+    },
+    {
+      "name": "laplacian_symmetry",
+      "identity": "L=L^T",
+      "status": "PASS"
+    },
+    {
+      "name": "laplacian_psd",
+      "identity": "x^T L x=sum_e w_e (Delta_e x)^2>=0",
+      "status": "PASS"
+    },
+    {
+      "name": "gauge_zero_mode",
+      "identity": "L 1=0",
+      "status": "PASS"
+    },
+    {
+      "name": "connected_rank",
+      "identity": "D=a*b+a*c+b*c>0 implies rank(L)=2 for nonnegative K3 weights",
+      "status": "PASS"
+    },
+    {
+      "name": "resistance_no_loss",
+      "identity": "L^+=-1/2 H R H",
+      "status": "PASS"
+    },
+    {
+      "name": "target_firewall",
+      "identity": "no observed expansion/cosmology target in generation inputs",
+      "status": "PASS"
+    }
+  ],
+  "parent_conservation": "G route activity, opacity reconstruction, covariance and restart inherited unchanged",
+  "clock_frame": "t_phys=t_B tau_B; constant graph mode is gauge; no imported FRW frame"
+}

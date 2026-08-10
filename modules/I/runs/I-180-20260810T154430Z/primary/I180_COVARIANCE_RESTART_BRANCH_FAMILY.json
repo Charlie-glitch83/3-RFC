@@ -1,0 +1,38 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_COVARIANCE_RESTART_BRANCH_FAMILY",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "parent_covariance": {
+    "law": "Sigma_F=J_F Sigma_E J_F^T+Sigma_residual+Sigma_transport+Sigma_radiation+Sigma_plasma+Sigma_atomic_seed+Sigma_representation+Sigma_spatial+Sigma_numeric+Sigma_branch",
+    "parent_eigenvalues": [
+      3.0343089878133187e-34,
+      3.0993512082975226e-32,
+      1.2703875845537904e-19
+    ],
+    "psd": true
+  },
+  "law": "Sigma_I=J_I Sigma_G J_I^T + Sigma_M + Sigma_response + Sigma_numeric + Sigma_branch; every added term PSD.",
+  "branch_coordinates": [
+    "G unresolved route/microphysics coordinates",
+    "M_b(e|r) simplex coordinates",
+    "positive clock scale t_B",
+    "future propagation-to-response-distance representative"
+  ],
+  "restart": {
+    "parent_restart": {
+      "checkpoint_id": "F155-RECOMBINATION-ENTRY",
+      "state_path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+      "state_sha256": "ec406eea2438b14992ef4215f16014e9c57dd523906ec0ae770024da8ca03285",
+      "restart_test": "PASS",
+      "restart_linf": {
+        "reaction": 5.065392549852277e-15,
+        "transport": 3.164135620181696e-15
+      },
+      "contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it"
+    },
+    "I_restart_state": "exact H_G_to_I_v2 hash + exact B hash + Gamma family identity + M coordinate + t_B + response law",
+    "restart_rule": "reconstruct all response objects from parents and branch coordinates; never serialize a fabricated unique cosmology"
+  },
+  "psd_contract": "parent covariance PSD=true; all I-added covariance terms are typed PSD by construction"
+}

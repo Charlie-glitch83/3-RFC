@@ -233,6 +233,21 @@
       "strongest_unsupported_claim": "No realized geometry, physical transfer coefficients, final spectra, public Boltzmann equivalence or empirical agreement.",
       "recorded_utc": "2026-08-10T15:44:28.748043+00:00",
       "work_unit": "HU-175"
+    },
+    {
+      "claim_id": "I-180-REPAIRED-RESPONSE-GEOMETRY-FAMILY",
+      "text": "The exact repaired G branch family induces a PRODUCTION finite-relational response-geometry branch family on the exact B carrier: full gauge-reduced weighted Dirichlet operator, lossless Green/resistance readout, principal response-length spectrum, and volumetric expansion functional with inherited physical clock, covariance and restart.",
+      "owner": "I",
+      "evidence_state": "FROZEN",
+      "fidelity": "PRODUCTION",
+      "supported": true,
+      "evidence": [
+        "modules/I/frozen/H_I_to_HI_v2.json",
+        "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+        "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+      ],
+      "recorded_utc": "2026-08-10T16:55:40.525270+00:00",
+      "work_unit": "I-180"
     }
   ]
 }

@@ -1,0 +1,8 @@
+Symbol::undefined2: Warning: Global symbols "H, H, H" are undefined.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+General::stop: Further output of FrontEndObject::notavail will be suppressed during this calculation.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"I-WL-001\", \"H\" -> \"(h + 2*q*t)/(1 + t*(h + q*t))\", \"horizon\" -> \"(-2*(ArcTan[h/Sqrt[-h^2 + 4*q]] - ArcTan[(h + 2*q*t)/Sqrt[-h^2 + 4*q]]))/Sqrt[-h^2 + 4*q]\", \"kinematicIdentity\" -> True|>"

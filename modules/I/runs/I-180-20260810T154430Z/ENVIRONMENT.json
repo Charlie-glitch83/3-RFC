@@ -1,13 +1,36 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "operating_system": "",
+  "run_id": "I-180-20260810T154430Z",
+  "status": "FINAL",
+  "operating_system": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
   "hardware": {},
-  "software": [],
-  "python": "",
-  "imports": [],
-  "commands": [],
+  "software": [
+    "Python 3.11.15",
+    "NumPy 2.3.5"
+  ],
+  "python": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]",
+  "imports": [
+    "json",
+    "hashlib",
+    "math",
+    "numpy",
+    "subprocess",
+    "platform"
+  ],
+  "commands": [
+    "freeze",
+    "wolfram-record I-WL-001",
+    "wolfram-record I-WL-002",
+    "run_reference_checks",
+    "materialize_solver_config",
+    "run_configured_solver",
+    "execute",
+    "convergence",
+    "independent",
+    "clean replay",
+    "finalize"
+  ],
   "network_policy": "DISABLED_DURING_GENERATION",
   "random_seeds": [],
-  "hidden_defaults_audited": false
+  "hidden_defaults_audited": true,
+  "hidden_defaults_note": "No empirical/default cosmology values admitted; only frozen implementation-witness solver tolerances and branch-family formulas used."
 }

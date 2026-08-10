@@ -1,0 +1,41 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_IMPLEMENTATION_CONVERGENCE_RESTART",
+  "run_id": "I-180-20260810T154430Z",
+  "classification": "MANUFACTURED_IMPLEMENTATION_GATE_NOT_PHYSICAL_EVIDENCE",
+  "primary": {
+    "terminal_linf_vs_analytic": 1.1102230246251565e-16,
+    "invariant_residual": 4.440892098500626e-16,
+    "minimum": 0.2,
+    "pass": true
+  },
+  "resolution_rows": {
+    "0.125": {
+      "terminal_linf_vs_analytic": 4.440892098500626e-16,
+      "invariant_residual": 4.440892098500626e-16,
+      "minimum": 0.2,
+      "pass": true
+    },
+    "0.0625": {
+      "terminal_linf_vs_analytic": 5.551115123125783e-17,
+      "invariant_residual": 2.220446049250313e-16,
+      "minimum": 0.2,
+      "pass": true
+    },
+    "0.03125": {
+      "terminal_linf_vs_analytic": 1.1102230246251565e-16,
+      "invariant_residual": 4.440892098500626e-16,
+      "minimum": 0.2,
+      "pass": true
+    },
+    "0.015625": {
+      "terminal_linf_vs_analytic": 1.1102230246251565e-16,
+      "invariant_residual": 2.220446049250313e-16,
+      "minimum": 0.2,
+      "pass": true
+    }
+  },
+  "restart_linf_vs_analytic": 2.220446049250313e-16,
+  "restart_pass": true,
+  "result": "PASS"
+}

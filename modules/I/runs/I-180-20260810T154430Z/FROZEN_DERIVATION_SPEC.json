@@ -1,0 +1,192 @@
+{
+  "schema_version": "4.0",
+  "run_id": "I-180-20260810T154430Z",
+  "work_unit": "I-180",
+  "status": "FROZEN_PRE_EXECUTION",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "objective": "Execute the corrected I response-geometry law on the exact G-165 branch-indexed process family and exact B relational carrier without selecting an unearned unique cosmology.",
+  "exact_inputs": [
+    {
+      "path": "modules/G/frozen/H_G_to_I_v2.json",
+      "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+      "bytes": 3143,
+      "role": "DIRECT_PARENT"
+    },
+    {
+      "path": "modules/B/frozen/H_B_to_C_v2.json",
+      "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "bytes": 9707,
+      "role": "PHYSICAL_CARRIER_ANCESTRY"
+    },
+    {
+      "path": "modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json",
+      "sha256": "27dbf6d4e54c6926e5c3b3940c19caf8e5f9cf59545fa03003b41e03f1abc06b",
+      "bytes": 7988,
+      "role": "CORRECTED_DERIVATION_AUTHORITY"
+    }
+  ],
+  "supersession": {
+    "historical_parent_path": "modules/G/frozen/H_G_to_I.json",
+    "status": "SUPERSEDED_DO_NOT_CONSUME",
+    "active_parent_path": "modules/G/frozen/H_G_to_I_v2.json",
+    "active_parent_sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf"
+  },
+  "triadic_descent": {
+    "CIF": "retain the complete G-opened route activity and ancestry-compatible process-to-edge realization family",
+    "QV": "enforce nonnegative simplex incidence, connected positive response support, gauge quotient, conservation and no target injection",
+    "RFL": "stabilize the complete response operator, Green readout, anisotropic expansion spectrum, branch memory, covariance and restart without scalar information loss"
+  },
+  "parent_family": {
+    "concrete_route_count": 34,
+    "parametric_route_family_count": 5,
+    "route_ids": [
+      "CAP::Be7_role::q4::Ne0=>Be7_role::q3::Ne1",
+      "ION::Be7_role::q3::Ne1=>Be7_role::q4::Ne0",
+      "CAP::Be7_role::q3::Ne1=>Be7_role::q2::Ne2",
+      "ION::Be7_role::q2::Ne2=>Be7_role::q3::Ne1",
+      "CAP::Be7_role::q2::Ne2=>Be7_role::q1::Ne3",
+      "ION::Be7_role::q1::Ne3=>Be7_role::q2::Ne2",
+      "CAP::Be7_role::q1::Ne3=>Be7_role::q0::Ne4",
+      "ION::Be7_role::q0::Ne4=>Be7_role::q1::Ne3",
+      "CAP::D_role::q1::Ne0=>D_role::q0::Ne1",
+      "ION::D_role::q0::Ne1=>D_role::q1::Ne0",
+      "CAP::He3_role::q2::Ne0=>He3_role::q1::Ne1",
+      "ION::He3_role::q1::Ne1=>He3_role::q2::Ne0",
+      "CAP::He3_role::q1::Ne1=>He3_role::q0::Ne2",
+      "ION::He3_role::q0::Ne2=>He3_role::q1::Ne1",
+      "CAP::He4_role::q2::Ne0=>He4_role::q1::Ne1",
+      "ION::He4_role::q1::Ne1=>He4_role::q2::Ne0",
+      "CAP::He4_role::q1::Ne1=>He4_role::q0::Ne2",
+      "ION::He4_role::q0::Ne2=>He4_role::q1::Ne1",
+      "CAP::Li6_role::q3::Ne0=>Li6_role::q2::Ne1",
+      "ION::Li6_role::q2::Ne1=>Li6_role::q3::Ne0",
+      "CAP::Li6_role::q2::Ne1=>Li6_role::q1::Ne2",
+      "ION::Li6_role::q1::Ne2=>Li6_role::q2::Ne1",
+      "CAP::Li6_role::q1::Ne2=>Li6_role::q0::Ne3",
+      "ION::Li6_role::q0::Ne3=>Li6_role::q1::Ne2",
+      "CAP::Li7_role::q3::Ne0=>Li7_role::q2::Ne1",
+      "ION::Li7_role::q2::Ne1=>Li7_role::q3::Ne0",
+      "CAP::Li7_role::q2::Ne1=>Li7_role::q1::Ne2",
+      "ION::Li7_role::q1::Ne2=>Li7_role::q2::Ne1",
+      "CAP::Li7_role::q1::Ne2=>Li7_role::q0::Ne3",
+      "ION::Li7_role::q0::Ne3=>Li7_role::q1::Ne2",
+      "CAP::T_role::q1::Ne0=>T_role::q0::Ne1",
+      "ION::T_role::q0::Ne1=>T_role::q1::Ne0",
+      "CAP::p::q1::Ne0=>p::q0::Ne1",
+      "ION::p::q0::Ne1=>p::q1::Ne0"
+    ],
+    "parametric_family_ids": [
+      "BOUND_BOUND_AND_CASCADE_FIBER",
+      "SCATTERING_AND_REDISTRIBUTION_FIBER",
+      "FREE_FREE_AND_CONTINUUM_FIBER",
+      "FORBIDDEN_TWO_PHOTON_METASTABLE_FIBER",
+      "RESIDUAL_DECAY_AND_CONDITIONAL_COUPLING_FIBER"
+    ],
+    "Gamma": "Gamma_r^b(t)>=0 from exact G parent",
+    "M": "M_b(e|r)>=0; sum_e M_b(e|r)=1 on exact B edge support",
+    "unique_M_selected": false
+  },
+  "geometry_law": {
+    "edge_weights": "a=w_01=sum_r M(e01|r)Gamma_r; b=w_02=sum_r M(e02|r)Gamma_r; c=w_12=sum_r M(e12|r)Gamma_r",
+    "laplacian": "L=[[a+b,-a,-b],[-a,a+c,-c],[-b,-c,b+c]]",
+    "gauge_quotient": "Q=1^perp; constant mode is gauge",
+    "green": "G=L^+ on Q",
+    "positive_eigenvalues": "lambda_pm=(a+b+c) +/- sqrt(a^2+b^2+c^2-a*b-a*c-b*c)",
+    "pseudodeterminant": "pdet_+(L)=3*(a*b+a*c+b*c)",
+    "connected_positive_branch": "a*b+a*c+b*c>0; otherwise extra zero mode => reject or explicit component branch",
+    "effective_resistances": {
+      "R01": "(b+c)/(a*b+a*c+b*c)",
+      "R02": "(a+c)/(a*b+a*c+b*c)",
+      "R12": "(a+b)/(a*b+a*c+b*c)"
+    },
+    "response_distances": "d_ij=sqrt(R_ij)",
+    "lossless_reconstruction": "L^+=-1/2 H R H, H=I-11^T/3"
+  },
+  "expansion_law": {
+    "principal_lengths": "ell_pm=lambda_pm^(-1/2)",
+    "principal_rates": "H_pm=d ln ell_pm / dt_phys",
+    "volumetric_scale": "a_vol(t)=[D(t_in)/D(t)]^(1/4), D=a*b+a*c+b*c",
+    "volumetric_rate": "H_vol=-(1/4) d ln D / dt_phys=(H_+ + H_-)/2",
+    "homothety_criterion": "a:b:c time-independent, equivalently L(t)=q(t)L(t_in); only then all degree -1/2 relative scalar scales collapse to q(t)^(-1/2)",
+    "anisotropy_policy": "retain both positive eigenmodes and both principal rates unless homothety is internally witnessed"
+  },
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "causal_reach": {
+    "status": "TYPED_BRANCH_FUNCTIONAL_PENDING_PROPAGATION_TO_RESPONSE_DISTANCE_BINDING",
+    "parent_radiation_surface": {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json",
+      "sha256": "604dac044f631d720876fd1456ec33cba2800d6e488c8d507578a07e2f027367"
+    },
+    "rule": "carry exact G optical memory and finite response distances; do not invent a unique geometric horizon or FRW integral without a response-distance propagation representative",
+    "unique_horizon_claimed": false
+  },
+  "physical_execution_gate": {
+    "status": "SATISFIED_FOR_EXACT_PARENT_BOUND_SYMBOLIC_BRANCH_FAMILY",
+    "basis": "G165 supplies exact branch-indexed Gamma replacement and complete ancestry-compatible M simplex family; execute the entire family without selecting a fake unique numeric branch.",
+    "unique_numeric_branch_required": false,
+    "manufactured_solver_is_physical": false
+  },
+  "semantic_countermodels": [
+    "same shortest-path metric / different response operator",
+    "nonhomothetic spectra / scalar summaries disagree",
+    "homothetic spectra / degree -1/2 scales agree",
+    "negative/nonconservative incidence rejected",
+    "disconnected extra-zero-mode branch rejected",
+    "observed target injection rejected"
+  ],
+  "implementation_witness": {
+    "classification": "MANUFACTURED_IMPLEMENTATION_WITNESS_ONLY_NOT_PHYSICAL_I_BRANCH",
+    "state_names": [
+      "a",
+      "b",
+      "c"
+    ],
+    "parameters": {
+      "k": 1.0
+    },
+    "rhs_expressions": [
+      "k*(b + c - 2*a)",
+      "k*(a + c - 2*b)",
+      "k*(a + b - 2*c)"
+    ],
+    "initial_state": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "t_span": [
+      0.0,
+      4.0
+    ],
+    "max_step": 0.03125,
+    "linear_invariants": {
+      "total_edge_activity": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "invariant_tolerance": 1e-09,
+    "positivity_tolerance": 1e-12,
+    "analytic_solution": "w_i(t)=1/3 + exp(-3 k t)*(w_i(0)-1/3)",
+    "purpose": "exercise weighted-K3 response-geometry implementation and convergence only; never select or numerically instantiate the physical G branch family"
+  },
+  "tolerances": {
+    "symbolic_identity": 0.0,
+    "laplacian_numeric_witness": 1e-10,
+    "solver_invariant": 1e-09,
+    "solver_positivity": 1e-12,
+    "solver_exact_linf": 1e-08,
+    "restart_linf": 1e-09,
+    "replay_scientific_hash": "EXACT"
+  },
+  "claim_boundary": {
+    "strongest_supported": "The exact repaired G branch family induces a PRODUCTION finite-relational response-geometry branch family on the exact B carrier: full gauge-reduced weighted Dirichlet operator, lossless Green/resistance readout, principal response-length spectrum, and volumetric expansion functional with inherited physical clock, covariance and restart.",
+    "strongest_unsupported": "No unique M realization, unique numerical expansion history, unique continuum/SI spacetime metric, unique geometric causal horizon, FRW/Friedmann/Einstein correspondence, observed H(z)/H0, BAO/SN distance ladder, or empirical cosmology is established in I."
+  }
+}

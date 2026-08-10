@@ -1,0 +1,30 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "distances": {
+    "R01": "(b+c)/(a*b+a*c+b*c)",
+    "R02": "(a+c)/(a*b+a*c+b*c)",
+    "R12": "(a+b)/(a*b+a*c+b*c)",
+    "dij": "sqrt(Rij)",
+    "lossless_reconstruction": "L^+=-1/2 H R H with H=I-11^T/3"
+  },
+  "G_radiation_surface": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json",
+    "sha256": "604dac044f631d720876fd1456ec33cba2800d6e488c8d507578a07e2f027367"
+  },
+  "G_aggregate_no_loss": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json",
+    "sha256": "b7d5723ed06e8a7118db390f80af4d79449ab06f400eb5a4668e4f9aa200dd0d"
+  },
+  "optical_reach": "G optical depth, survival and visibility are carried unchanged.",
+  "geometric_horizon": {
+    "status": "NOT_UNIQUELY_INSTANTIATED",
+    "reason": "G does not supply an exact map from radiative propagation to newly derived response-distance units.",
+    "typed_branch_functional": "instantiate only if a future/admitted branch supplies nu_resp^b(t)>=0 in response-distance units; otherwise preserve the coordinate",
+    "FRW_horizon_imported": false
+  },
+  "strongest_supported": "finite response distances plus exact inherited optical survival/reach memory",
+  "strongest_unsupported": "a unique geometric causal horizon in response-distance units"
+}

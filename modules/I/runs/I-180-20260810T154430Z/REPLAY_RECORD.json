@@ -1,10 +1,65 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "schema_version": "4.0",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "clean_checkout": true,
+  "preexecution_commit": "aedee1095b38c20b5c012f166dfe3b9f9c91ef58",
+  "artifact_hashes_match": true,
+  "compared_artifacts": [
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/FROZEN_DERIVATION_SPEC.json",
+      "primary_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+      "replay_sha256": "b3b6d5f49096133901dbd9e1592698447709f2e9262c81c36031768edf64321f",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+      "primary_sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+      "replay_sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json",
+      "primary_sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+      "replay_sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json",
+      "primary_sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+      "replay_sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+      "primary_sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+      "replay_sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+      "primary_sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+      "replay_sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+      "primary_sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+      "replay_sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/countermodels/I180_SEMANTIC_COUNTERMODELS.json",
+      "primary_sha256": "d162f2b723077bc400a35ee62c00cfba90d30f1f4251985df5121f8ffc96cec5",
+      "replay_sha256": "d162f2b723077bc400a35ee62c00cfba90d30f1f4251985df5121f8ffc96cec5",
+      "match": true
+    },
+    {
+      "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "primary_sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+      "replay_sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+      "match": true
+    }
+  ],
+  "replay_scope": "fresh git archive of exact pre-execution repository state; reran freeze, exact stored Wolfram outputs, reference check, solver implementation witness, physical symbolic family execution, convergence and independent reconstruction"
 }

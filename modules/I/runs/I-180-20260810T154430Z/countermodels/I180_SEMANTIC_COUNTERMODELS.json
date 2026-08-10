@@ -1,0 +1,114 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_SEMANTIC_COUNTERMODELS",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "tests": [
+    {
+      "id": "CM1",
+      "name": "shortest_path_not_no_loss",
+      "graph_A_weights": [
+        1,
+        1,
+        0.4
+      ],
+      "graph_B_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "common_shortest_path_distances": [
+        1,
+        1,
+        2
+      ],
+      "response_R_A": [
+        0.7777777777777778,
+        0.7777777777777778,
+        1.1111111111111112
+      ],
+      "response_R_B": [
+        0.9166666666666666,
+        0.9166666666666666,
+        1.6666666666666665
+      ],
+      "pass": true
+    },
+    {
+      "id": "CM2",
+      "name": "nonhomothetic_scalar_disagreement",
+      "principal_relative_lengths": [
+        0.5,
+        1.0
+      ],
+      "volumetric_geometric_mean": 0.7071067811865476,
+      "rms_scale": 0.7905694150420949,
+      "pass": true
+    },
+    {
+      "id": "CM3",
+      "name": "homothetic_scale_agreement",
+      "initial_spectrum": [
+        2,
+        6
+      ],
+      "final_spectrum": [
+        8,
+        24
+      ],
+      "q": 4,
+      "relative_lengths": [
+        0.5,
+        0.5
+      ],
+      "all_degree_minus_half_scales": "0.5",
+      "pass": true
+    },
+    {
+      "id": "CM4",
+      "name": "negative_or_nonconservative_incidence_rejected",
+      "examples": [
+        [
+          -0.1,
+          0.6,
+          0.5
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CM5",
+      "name": "disconnected_extra_zero_mode_rejected",
+      "weights": [
+        1,
+        0,
+        0
+      ],
+      "spectrum": [
+        0,
+        0,
+        2
+      ],
+      "pass": true
+    },
+    {
+      "id": "CM6",
+      "name": "observed_target_injection_rejected",
+      "forbidden": [
+        "H0",
+        "observed H(z)",
+        "BAO",
+        "SN",
+        "sound horizon",
+        "LambdaCDM fit"
+      ],
+      "public_data_declaration": "NONE",
+      "pass": true
+    }
+  ]
+}

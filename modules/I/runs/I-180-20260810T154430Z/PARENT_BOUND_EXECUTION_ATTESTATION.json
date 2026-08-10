@@ -1,0 +1,42 @@
+{
+  "schema_version": "4.0",
+  "run_id": "I-180-20260810T154430Z",
+  "physical_execution_performed": true,
+  "physical_execution_classification": "EXACT_PARENT_BOUND_SYMBOLIC_BRANCH_FAMILY",
+  "manufactured_values_used_as_physical": false,
+  "generation_mode": "GENERATION_SEALED",
+  "unique_numeric_branch_selected": false,
+  "exact_parent": {
+    "path": "modules/G/frozen/H_G_to_I_v2.json",
+    "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+    "bytes": 3143
+  },
+  "carrier": {
+    "path": "modules/B/frozen/H_B_to_C_v2.json",
+    "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+    "bytes": 9707
+  },
+  "artifacts": {
+    "physical_state": {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json",
+      "sha256": "dd098651e1ef02e1d961802fcded450a917bd50566cc16c54acdc0b1dd2f7bb6",
+      "bytes": 2603
+    },
+    "geometry": {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+      "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+      "bytes": 4265
+    },
+    "independent_reconstruction": {
+      "path": "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "86d165b8e195b8b31da357c1ca913c4446d405b5a635e3fe16f936f74d90396d",
+      "bytes": 1987
+    },
+    "child_packet": {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "bytes": 3470
+    }
+  },
+  "causal_horizon_unique": false
+}

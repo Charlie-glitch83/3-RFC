@@ -1,0 +1,22 @@
+{
+  "module": "HI",
+  "componentwise": [
+    {
+      "gate": "exact parent hashes",
+      "required": "PASS"
+    },
+    {
+      "gate": "no retune of HU or I",
+      "required": "PASS"
+    },
+    {
+      "gate": "operator-domain compatibility",
+      "required": "PASS"
+    },
+    {
+      "gate": "independent reconstruction",
+      "required": "PASS"
+    }
+  ],
+  "aggregate_scores_cannot_override": true
+}

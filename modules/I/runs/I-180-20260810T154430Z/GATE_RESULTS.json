@@ -1,7 +1,48 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "schema_version": "4.0",
+  "run_id": "I-180-20260810T154430Z",
+  "overall": "PASS",
+  "componentwise": [
+    {
+      "gate": "equation/constraint derivation",
+      "status": "PASS",
+      "score": 1.0,
+      "evidence": [
+        "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+        "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+        "modules/I/runs/I-180-20260810T154430Z/countermodels/I180_SEMANTIC_COUNTERMODELS.json"
+      ]
+    },
+    {
+      "gate": "gauge/frame consistency",
+      "status": "PASS",
+      "score": 1.0,
+      "evidence": [
+        "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+        "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json"
+      ]
+    },
+    {
+      "gate": "no observed expansion history used as target",
+      "status": "PASS",
+      "score": 1.0,
+      "evidence": [
+        "modules/I/runs/I-180-20260810T154430Z/SOURCE_REGISTER.json",
+        "modules/I/runs/I-180-20260810T154430Z/countermodels/I180_SEMANTIC_COUNTERMODELS.json"
+      ]
+    },
+    {
+      "gate": "numerical convergence and independent reconstruction",
+      "status": "PASS",
+      "score": 1.0,
+      "evidence": [
+        "modules/I/runs/I-180-20260810T154430Z/convergence/I180_IMPLEMENTATION_CONVERGENCE_RESTART.json",
+        "modules/I/runs/I-180-20260810T154430Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+        "modules/I/runs/I-180-20260810T154430Z/REPLAY_RECORD.json"
+      ]
+    }
+  ],
+  "aggregate_scores_cannot_override": true,
+  "minimum_component_score": 1.0,
+  "note": "Numerical solver is implementation-only; physical evidence is exact parent-bound symbolic branch-family response law."
 }

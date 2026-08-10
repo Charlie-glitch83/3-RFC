@@ -1,0 +1,48 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_REALIZED_RESPONSE_GEOMETRY_STATE",
+  "run_id": "I-180-20260810T154430Z",
+  "status": "PHYSICALLY_EXECUTED_EXACT_PARENT_BOUND_BRANCH_FAMILY",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/G/frozen/H_G_to_I_v2.json",
+    "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+    "bytes": 3143
+  },
+  "geometry": {
+    "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+    "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+    "bytes": 4265
+  },
+  "expansion_clock": {
+    "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json",
+    "sha256": "bab924125efb87a2ca9de2cf82a0bfa88745f87d8dfe27d05db707e3a75978bd",
+    "bytes": 1279
+  },
+  "distances_horizon": {
+    "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json",
+    "sha256": "91692e838fe550d17cfe2396fdde2f08d3ae83f0f72b115ba4d014bc531272f3",
+    "bytes": 1467
+  },
+  "constraint_ledger": {
+    "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json",
+    "sha256": "de182c0e4e91f56ec8f07f6c9baed2b5613e9880c14db9ae508b04ba10c2135e",
+    "bytes": 1721
+  },
+  "covariance_restart": {
+    "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+    "sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+    "bytes": 1739
+  },
+  "countermodels": {
+    "path": "modules/I/runs/I-180-20260810T154430Z/countermodels/I180_SEMANTIC_COUNTERMODELS.json",
+    "sha256": "d162f2b723077bc400a35ee62c00cfba90d30f1f4251985df5121f8ffc96cec5",
+    "bytes": 2091
+  },
+  "physical_execution_performed": true,
+  "manufactured_values_used_as_physical": false,
+  "unique_numeric_branch_selected": false,
+  "strongest_supported": "The exact repaired G branch family induces a PRODUCTION finite-relational response-geometry branch family on the exact B carrier: full gauge-reduced weighted Dirichlet operator, lossless Green/resistance readout, principal response-length spectrum, and volumetric expansion functional with inherited physical clock, covariance and restart.",
+  "strongest_unsupported": "No unique M realization, unique numerical expansion history, unique continuum/SI spacetime metric, unique geometric causal horizon, FRW/Friedmann/Einstein correspondence, observed H(z)/H0, BAO/SN distance ladder, or empirical cosmology is established in I."
+}

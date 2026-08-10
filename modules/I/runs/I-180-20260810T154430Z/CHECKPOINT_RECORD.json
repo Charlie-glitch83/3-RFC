@@ -1,7 +1,8 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
-  "hash_algorithm": "sha256"
+  "run_id": "I-180-20260810T154430Z",
+  "status": "FINAL",
+  "checkpoint_id": "I180-REPAIRED-RESPONSE-FAMILY",
+  "restart_artifact": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+  "restart_test": "PASS",
+  "parent_restart_preserved": true
 }

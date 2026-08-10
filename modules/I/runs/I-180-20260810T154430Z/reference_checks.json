@@ -1,0 +1,17 @@
+{
+  "module": "I",
+  "classification": "MANUFACTURED_REFERENCE_ONLY",
+  "overall": "PASS",
+  "checks": {
+    "scale_positive": true,
+    "clock_monotone": true,
+    "expansion_finite": true,
+    "horizon_monotone": true,
+    "kinematic_identity": true
+  },
+  "metrics": {
+    "final_scale": 3.0,
+    "final_horizon": 6.045998019669624
+  },
+  "note": "Manufactured background-geometry kinematic case; it does not choose the RFC dynamical law."
+}

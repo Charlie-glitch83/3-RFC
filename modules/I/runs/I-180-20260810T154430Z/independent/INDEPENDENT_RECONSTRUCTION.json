@@ -1,0 +1,55 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_INDEPENDENT_PARENT_ONLY_RECONSTRUCTION",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "method": "PARENT_ONLY_K3_RESPONSE_RECONSTRUCTION_NO_I_PRIMARY_OR_GATE_SUMMARY_READ",
+  "inputs": {
+    "H_G_to_I_v2_sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+    "H_B_to_C_v2_sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+    "corrected_I_spec_sha256": "27dbf6d4e54c6926e5c3b3940c19caf8e5f9cf59545fa03003b41e03f1abc06b",
+    "G_activity_sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83",
+    "G_ancestry_sha256": "7f65ac7c7c0877d09c4fd51d897d3e68fcae80dcf8b5fd5e267e4a6432e99c78"
+  },
+  "reconstructed": {
+    "source_index_count": 39,
+    "edge_ids": [
+      "e01",
+      "e02",
+      "e12"
+    ],
+    "L": "[[a+b,-a,-b],[-a,a+c,-c],[-b,-c,b+c]]",
+    "pdet": "3(ab+ac+bc)",
+    "R01": "(b+c)/(ab+ac+bc)",
+    "R02": "(a+c)/(ab+ac+bc)",
+    "R12": "(a+b)/(ab+ac+bc)",
+    "Lplus_from_R": "-1/2 H R H",
+    "a_vol": "[D_in/D]^(1/4)",
+    "homothety": "constant a:b:c ratios"
+  },
+  "numeric_residuals": {
+    "max_row_sum": 5.551115123125783e-17,
+    "max_spectrum_pdet": 1.7763568394002505e-15,
+    "max_green_reconstruction": 5.551115123125783e-16,
+    "max_R_symmetry": 0.0,
+    "max_R_negativity": 0.0
+  },
+  "checks": {
+    "parent_frozen_production": true,
+    "gamma_exact_branch_replacement": true,
+    "ancestry_complete": true,
+    "activity_family_nonempty": true,
+    "M_support_complete": true,
+    "K3_laplacian_spectrum_pdet": true,
+    "green_resistance_lossless_reconstruction": true,
+    "shortest_path_countermodel": true,
+    "nonhomothetic_scalar_countermodel": true,
+    "homothetic_theorem_witness": true,
+    "disconnected_rejection": true,
+    "clock_preserved": true,
+    "generation_sealed": true,
+    "unique_horizon_not_parent_fixed": true
+  },
+  "trusted_I_primary_files": false,
+  "trusted_gate_summary": false
+}

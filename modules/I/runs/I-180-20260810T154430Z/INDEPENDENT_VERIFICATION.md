@@ -1,11 +1,1 @@
-# Independent Verification
-
-## Inputs reconstructed
-
-## Methods independent from primary execution
-
-## Results
-
-## Disagreements
-
-## Verdict
+"# I-180 Independent Verification\n\nResult: **PASS**.\n\nThe verifier reconstructed the response-geometry family from exact G/B parents and corrected I authority without reading I primary gate summaries or closeout conclusions, including Green/resistance no-loss reconstruction and branch policy.\n"

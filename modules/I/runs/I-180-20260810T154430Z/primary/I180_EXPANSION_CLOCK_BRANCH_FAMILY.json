@@ -1,0 +1,37 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_EXPANSION_CLOCK_BRANCH_FAMILY",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "parent": {
+    "path": "modules/G/frozen/H_G_to_I_v2.json",
+    "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+    "bytes": 3143
+  },
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "unique_numeric_expansion_selected": false,
+  "principal_response_lengths": {
+    "ell_minus": "lambda_minus^(-1/2)",
+    "ell_plus": "lambda_plus^(-1/2)"
+  },
+  "principal_rates": {
+    "H_minus": "d ln(ell_minus)/dt_phys",
+    "H_plus": "d ln(ell_plus)/dt_phys"
+  },
+  "volumetric_summary": {
+    "D": "a*b+a*c+b*c",
+    "a_vol": "[D(t_in)/D(t)]^(1/4)",
+    "H_vol": "-(1/4) d ln D/dt_phys",
+    "identity": "H_vol=(H_minus+H_plus)/2"
+  },
+  "homothety": {
+    "criterion": "a:b:c time-independent, equivalently L(t)=q(t)L(t_in)",
+    "consequence": "ell_k(t)/ell_k(t_in)=q(t)^(-1/2); all positive symmetric homogeneous degree -1/2 relative scale functionals agree",
+    "scalar_collapse_allowed_only_here": true
+  },
+  "anisotropy_policy": "retain (ell_minus,ell_plus,H_minus,H_plus) unless homothety is parent-witnessed"
+}

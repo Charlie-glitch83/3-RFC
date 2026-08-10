@@ -1,0 +1,104 @@
+{
+  "schema_version": "4.0",
+  "object_id": "I180_RESPONSE_GEOMETRY_BRANCH_FAMILY",
+  "run_id": "I-180-20260810T154430Z",
+  "result": "PASS",
+  "status": "PHYSICALLY_EXECUTED_EXACT_PARENT_BOUND_SYMBOLIC_BRANCH_FAMILY",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/G/frozen/H_G_to_I_v2.json",
+    "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+    "bytes": 3143
+  },
+  "carrier": {
+    "path": "modules/B/frozen/H_B_to_C_v2.json",
+    "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+    "bytes": 9707
+  },
+  "source_indices": [
+    "CAP::Be7_role::q4::Ne0=>Be7_role::q3::Ne1",
+    "ION::Be7_role::q3::Ne1=>Be7_role::q4::Ne0",
+    "CAP::Be7_role::q3::Ne1=>Be7_role::q2::Ne2",
+    "ION::Be7_role::q2::Ne2=>Be7_role::q3::Ne1",
+    "CAP::Be7_role::q2::Ne2=>Be7_role::q1::Ne3",
+    "ION::Be7_role::q1::Ne3=>Be7_role::q2::Ne2",
+    "CAP::Be7_role::q1::Ne3=>Be7_role::q0::Ne4",
+    "ION::Be7_role::q0::Ne4=>Be7_role::q1::Ne3",
+    "CAP::D_role::q1::Ne0=>D_role::q0::Ne1",
+    "ION::D_role::q0::Ne1=>D_role::q1::Ne0",
+    "CAP::He3_role::q2::Ne0=>He3_role::q1::Ne1",
+    "ION::He3_role::q1::Ne1=>He3_role::q2::Ne0",
+    "CAP::He3_role::q1::Ne1=>He3_role::q0::Ne2",
+    "ION::He3_role::q0::Ne2=>He3_role::q1::Ne1",
+    "CAP::He4_role::q2::Ne0=>He4_role::q1::Ne1",
+    "ION::He4_role::q1::Ne1=>He4_role::q2::Ne0",
+    "CAP::He4_role::q1::Ne1=>He4_role::q0::Ne2",
+    "ION::He4_role::q0::Ne2=>He4_role::q1::Ne1",
+    "CAP::Li6_role::q3::Ne0=>Li6_role::q2::Ne1",
+    "ION::Li6_role::q2::Ne1=>Li6_role::q3::Ne0",
+    "CAP::Li6_role::q2::Ne1=>Li6_role::q1::Ne2",
+    "ION::Li6_role::q1::Ne2=>Li6_role::q2::Ne1",
+    "CAP::Li6_role::q1::Ne2=>Li6_role::q0::Ne3",
+    "ION::Li6_role::q0::Ne3=>Li6_role::q1::Ne2",
+    "CAP::Li7_role::q3::Ne0=>Li7_role::q2::Ne1",
+    "ION::Li7_role::q2::Ne1=>Li7_role::q3::Ne0",
+    "CAP::Li7_role::q2::Ne1=>Li7_role::q1::Ne2",
+    "ION::Li7_role::q1::Ne2=>Li7_role::q2::Ne1",
+    "CAP::Li7_role::q1::Ne2=>Li7_role::q0::Ne3",
+    "ION::Li7_role::q0::Ne3=>Li7_role::q1::Ne2",
+    "CAP::T_role::q1::Ne0=>T_role::q0::Ne1",
+    "ION::T_role::q0::Ne1=>T_role::q1::Ne0",
+    "CAP::p::q1::Ne0=>p::q0::Ne1",
+    "ION::p::q0::Ne1=>p::q1::Ne0",
+    "BOUND_BOUND_AND_CASCADE_FIBER",
+    "SCATTERING_AND_REDISTRIBUTION_FIBER",
+    "FREE_FREE_AND_CONTINUUM_FIBER",
+    "FORBIDDEN_TWO_PHOTON_METASTABLE_FIBER",
+    "RESIDUAL_DECAY_AND_CONDITIONAL_COUPLING_FIBER"
+  ],
+  "source_index_count": 39,
+  "unique_numeric_branch_selected": false,
+  "M_family": {
+    "formula": "M_e_r>=0; M_01_r+M_02_r+M_12_r=1 for each parent route/fiber index r",
+    "support_edges": [
+      "e01",
+      "e02",
+      "e12"
+    ],
+    "top_level_simplex_dimension_per_source": 2,
+    "selection": "NO_TIE_BREAK"
+  },
+  "edge_activity_pullback": {
+    "a": "sum_r M_01_r Gamma_r(t)",
+    "b": "sum_r M_02_r Gamma_r(t)",
+    "c": "sum_r M_12_r Gamma_r(t)",
+    "no_loss": "a+b+c=sum_r Gamma_r(t)"
+  },
+  "response_operator": {
+    "L": "[[a+b,-a,-b],[-a,a+c,-c],[-b,-c,b+c]]",
+    "quotient": "Q=1^perp",
+    "green": "L^+",
+    "quadratic_form": "x^T L x = a(x0-x1)^2+b(x0-x2)^2+c(x1-x2)^2 >=0"
+  },
+  "spectrum": {
+    "Delta": "a^2+b^2+c^2-a*b-a*c-b*c",
+    "lambda_minus": "a+b+c-sqrt(Delta)",
+    "lambda_plus": "a+b+c+sqrt(Delta)",
+    "pdet_positive": "3*(a*b+a*c+b*c)",
+    "connected_condition": "a*b+a*c+b*c>0"
+  },
+  "distance_readout": {
+    "R01": "(b+c)/(a*b+a*c+b*c)",
+    "R02": "(a+c)/(a*b+a*c+b*c)",
+    "R12": "(a+b)/(a*b+a*c+b*c)",
+    "dij": "sqrt(Rij)",
+    "lossless_reconstruction": "L^+=-1/2 H R H with H=I-11^T/3"
+  },
+  "disconnected_policy": "If a*b+a*c+b*c=0, reject as a connected-universe branch or preserve explicit disconnected components; never invert across components.",
+  "triadic_descent": {
+    "CIF": "retain the complete G-opened route activity and ancestry-compatible process-to-edge realization family",
+    "QV": "enforce nonnegative simplex incidence, connected positive response support, gauge quotient, conservation and no target injection",
+    "RFL": "stabilize the complete response operator, Green readout, anisotropic expansion spectrum, branch memory, covariance and restart without scalar information loss"
+  }
+}
