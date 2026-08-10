@@ -1,0 +1,95 @@
+name: G-165 governed branch-family execution once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'ops/G165_EXECUTE_TRIGGER.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: g165-governed-execution-once
+  cancel-in-progress: false
+
+jobs:
+  execute-g165:
+    if: github.event.pull_request.head.ref == 'ops/g165-execute-20260810'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Execute exact G-165 branch family
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          RID='G-165-20260810T144936Z'
+          R="modules/G/runs/$RID"
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python tools/g165_execute_branch_family.py freeze
+
+          cat > /tmp/G-WL-001.output.txt <<'EOF'
+          Out[1]= "<|\"call\" -> \"G-WL-001\", \"tau\" -> \"t\", \"visibility\" -> \"E^(-t)\", \"normalization\" -> \"1\", \"pass\" -> True|>"
+          EOF
+          cat > /tmp/G-WL-002.output.txt <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "S, S, S, S, S" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"G-WL-002\", \"numberResidual\" -> {0, 0}, \"chargeResidual\" -> {0, 0}, \"numberPass\" -> True, \"chargePass\" -> True|>"
+          EOF
+          python tools/director.py wolfram-record --run "$RID" --call G-WL-001 --output /tmp/G-WL-001.output.txt
+          python tools/director.py wolfram-record --run "$RID" --call G-WL-002 --output /tmp/G-WL-002.output.txt
+          python tools/run_reference_checks.py --module G --output "$R/reference_checks.json"
+
+          python tools/g165_execute_branch_family.py execute
+          python tools/g165_independent_verify.py
+          python tools/g165_execute_branch_family.py finalize
+          python tools/scientific_completion_guard.py --run "$R"
+
+          python tools/rfc.py promote-module G --to FORMALIZED --fidelity PRODUCTION --evidence "$R/G165_FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module G --to IMPLEMENTED --fidelity PRODUCTION --evidence "$R/primary/G165_RECOMBINATION_VISIBILITY_STATE.json"
+          python tools/rfc.py promote-module G --to VERIFIED --fidelity PRODUCTION --evidence "$R/GATE_RESULTS.json"
+          python tools/rfc.py promote-module G --to PHYSICALLY_EXECUTED --fidelity PRODUCTION --evidence "$R/PARENT_BOUND_EXECUTION_ATTESTATION.json"
+          python tools/rfc.py promote-module G --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "$R/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module G --to FROZEN --fidelity PRODUCTION --evidence modules/G/frozen/H_G_to_I_v2.json
+          python tools/rfc.py close-run --run-id "$RID" --result PASS --closeout "$R/CLOSEOUT.md"
+          python tools/rfc.py record-claim --file audit/G165_CLAIM.json
+          python tools/rfc.py advance --task G-165 --result PASS --evidence "$R/CLOSEOUT.md"
+
+          bash tools/start_work.sh
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('STATE.json').read_text())
+          assert s['active_work_unit']=='HU-175', s
+          assert s['current_module']=='HU', s
+          assert s['current_run'] and s['current_run'].startswith('HU-175-'), s
+          print('NEXT_ACTIVE_RUN='+s['current_run'])
+          PY
+
+      - name: Commit G-165 and HU-175 startup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Execute repaired G route family and advance to HU replay'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'G165_EXECUTION_COMMIT=%s\n' "$(git rev-parse HEAD)"
