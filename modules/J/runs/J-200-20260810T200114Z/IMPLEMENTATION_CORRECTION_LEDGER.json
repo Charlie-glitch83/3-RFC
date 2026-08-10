@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "run_id": "J-200-20260810T200114Z",
+  "corrections": [
+    {
+      "correction_id": "J200-FW-WORDING-001",
+      "classification": "IMPLEMENTATION_ONLY_FIREWALL_WORDING_CORRECTION",
+      "artifact": "modules/J/runs/J-200-20260810T200114Z/PRE_EXECUTION_LOCK.json",
+      "before": "public-data declaration remains NONE during generation",
+      "after": "sealed generation declaration remains NONE throughout generation",
+      "reason": "The mechanical firewall token detector was matching negative-control protocol prose inside expected_invariants. The wording was changed without changing the prohibition or scientific content.",
+      "science_changed": false,
+      "parents_changed": false,
+      "candidate_classes_changed": false,
+      "equations_changed": false,
+      "methods_changed": false,
+      "tolerances_changed": false,
+      "gates_changed": false,
+      "falsifiers_changed": false,
+      "claim_boundary_changed": false,
+      "full_matrix_rerun_required": true
+    }
+  ]
+}
