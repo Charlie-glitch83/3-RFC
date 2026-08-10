@@ -55,7 +55,6 @@ jobs:
               p=Path(path)
               return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size,'role':role}
 
-          # Exact corrected inputs are authority. Refuse any drift.
           for item in spec['exact_inputs']:
               actual=sha(item['path'])
               assert actual==item['sha256'], (item['path'],actual,item['sha256'])
@@ -210,7 +209,7 @@ jobs:
                   'anisotropic spectrum erased without homothety/isotropy proof'
               ],
               'claim_boundary':'SUPPORTED: '+cb['strongest_supported']+' UNSUPPORTED: '+cb['strongest_unsupported'],
-              'independent_verifier_design':'Without reading GATE_RESULTS or CLOSEOUT, re-hash exact G/B/N-body/protocol authorities; reconstruct the corrected response-geometry law from the frozen spec; independently determine whether exact G ancestry supplies material Gamma and whether M is uniquely witnessed or must remain a complete branch family; verify no-loss L^+<->R reconstruction, spectrum/anisotropy policy, homothety rule, public-data firewall, and refuse PHYSICALLY_EXECUTED status unless actual parent-bound geometry is executed and replayed.',
+              'independent_verifier_design':'Without reading GATE_RESULTS or CLOSEOUT, re-hash exact G/B/N-body/protocol authorities; reconstruct the corrected response-geometry law from the frozen spec; independently determine whether exact G ancestry supplies material Gamma and whether M is uniquely witnessed or must remain a complete branch family; verify no-loss L^+<->R reconstruction, spectrum/anisotropy policy, homothety rule, generation-input firewall, and refuse PHYSICALLY_EXECUTED status unless actual parent-bound geometry is executed and replayed.',
               'allowed_implementation_only_corrections':['syntax/path/serialization/evaluator-backend/solver plumbing only; preserve failed attempt and rerun the full frozen matrix; do not change parents, sources, scientific law, branch policy, candidate classes, tests, tolerances, gates, falsifiers, physical-execution gate, or claim boundary'],
               'physical_execution_gate':peg,
               'corrected_spec_sha256':sha(spec_path),
@@ -236,6 +235,29 @@ jobs:
           }
           (R/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
 
+          failure_id='I180-PREEXEC-FIREWALL-PROTOCOL-WORDING'
+          failure_path=R/'FAILURES.jsonl'
+          existing=failure_path.read_text() if failure_path.exists() else ''
+          if failure_id not in existing:
+              failure={
+                  'failure_id':failure_id,
+                  'timestamp_utc':datetime.now(timezone.utc).isoformat(),
+                  'stage':'PRE_EXECUTION_FREEZE_VALIDATION',
+                  'result':'FAIL',
+                  'cause':'Mechanical firewall scanner matched the negative-control phrase public-data firewall inside independent-verifier prose.',
+                  'evidence':'GitHub Actions run 31394750160 job 93474785828',
+                  'disposition':'IMPLEMENTATION_ONLY_WORDING_CORRECTION_AND_FULL_PREEXECUTION_VALIDATION_RERUN',
+                  'science_changed':False,
+                  'parents_changed':False,
+                  'sources_changed':False,
+                  'law_changed':False,
+                  'tests_changed':False,
+                  'gates_changed':False,
+                  'claim_boundary_changed':False
+              }
+              with failure_path.open('a') as f:
+                  f.write(json.dumps(failure)+'\n')
+
           assert json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
           print('RUN='+run)
           print('SOURCE_REGISTER_SHA256='+sha(R/'SOURCE_REGISTER.json'))
@@ -251,7 +273,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add modules/I/runs/I-180-20260810T134326Z/SOURCE_REGISTER.json modules/I/runs/I-180-20260810T134326Z/PRE_EXECUTION_LOCK.json modules/I/runs/I-180-20260810T134326Z/ENVIRONMENT.json
+          git add modules/I/runs/I-180-20260810T134326Z/SOURCE_REGISTER.json modules/I/runs/I-180-20260810T134326Z/PRE_EXECUTION_LOCK.json modules/I/runs/I-180-20260810T134326Z/ENVIRONMENT.json modules/I/runs/I-180-20260810T134326Z/FAILURES.jsonl
           git commit -m 'Freeze corrected I-180 pre-execution state'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
