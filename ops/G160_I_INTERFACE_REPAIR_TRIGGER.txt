@@ -1,1 +1,1 @@
-Trigger only. Do not merge. Retry the registered one-use G-to-I superseding repair against agent/frontier-050-execution after preserving the protected HI dependency and enforcing HU-175 transitively through I-180.
+Trigger only. Do not merge. Retry the registered one-use G-to-I superseding repair after removing a transport-only packet formatting assertion. Scientific scope and repair target are unchanged.
