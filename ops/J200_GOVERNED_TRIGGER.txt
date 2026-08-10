@@ -1,1 +1,2 @@
 Trigger the repository-governed J-200 operator workflow only.
+Phase: symbolic recording and prebinding.
