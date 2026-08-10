@@ -1,21 +1,178 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "4.0",
+  "run_id": "J-200-20260810T200114Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-10T21:00:00Z",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    {
+      "path": "modules/J/runs/J-200-20260810T200114Z/Module_J_Source_Asset_Register.md",
+      "sha256": "12e6508d200269ee2df59e228bd39a4ebc2fe2037ae5ff8295f73fd3519213ac"
+    },
+    {
+      "path": "modules/J/runs/J-200-20260810T200114Z/SOURCE_REGISTER.json",
+      "sha256": "8e1c89b928dab87d1f08675050803707fb401d7b61c202ab0a10cc88bcbfb2e3"
+    },
+    {
+      "path": "recipes/J/recipe.json",
+      "sha256": "fc0d0a507c7ad2617c32105aa31230235bc77e5ffa250002e29db38623d2284b"
+    },
+    {
+      "path": "recipes/J/WORK_ORDER.md",
+      "sha256": "191b0864183b3b73087c7d9405d062cbe6be0985fc4ccac9ed8fb6d541fedce4"
+    },
+    {
+      "path": "recipes/J/gates.json",
+      "sha256": "cdd11a55e53f60a25e8ce242985a0ff459dc495ab5643983a387a44504b6c5ed"
+    },
+    {
+      "path": "modules/J/spec.json",
+      "sha256": "7c3198e07239f5fbec7fd452ee086492233bd014607edcc162011daac5d814ab"
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d"
+    }
+  ],
+  "parent_hashes": [
+    {
+      "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+      "sha256": "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e",
+      "role": "DIRECT_PARENT"
+    },
+    {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "role": "TRANSFER_OPERATOR_ANCESTRY"
+    },
+    {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "role": "BACKGROUND_ANCESTRY"
+    },
+    {
+      "path": "modules/A/frozen/H_A_to_B.json",
+      "sha256": "728caf8c049d0114caef6f7b36af00065a32b4dc5f4faad02c6b9bcb16c933e7",
+      "role": "TRIAD_QV_KERNEL_MEMORY_ANCESTRY"
+    }
+  ],
+  "definition_hashes": [
+    {
+      "path": "sources/frozen/cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e/Presentation 29 revised  raw LaTeX.md",
+      "sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e"
+    },
+    {
+      "path": "sources/frozen/0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28/A_Triadic_Solution_to_the_General_N_Body_Problem_Revised.pdf",
+      "sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28"
+    },
+    {
+      "path": "sources/frozen/4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6/Presentation 30 raw LaTex.md",
+      "sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6"
+    }
+  ],
+  "candidate_classes": [
+    "complete parent-admitted primordial mode and route basis inherited through HI/HU with A-I ancestry",
+    "J-local primordial random-variable and phase laws distinguished from deterministic branch variables and numerical sampling noise",
+    "triadic covariance-generator family with CIF admission, QV weighting/qualification/PSD selection, and RFL stabilization",
+    "scalar, vector, tensor, entropy, relative-sector, dark-sector, route-memory and allowed cross-mode covariance blocks",
+    "finite-volume realization families with frozen seed provenance and Hermitian reality",
+    "linearity/nonlinear-promotion surfaces witnessed from generated fields and transfer/direct-evolution residuals"
+  ],
+  "equations_and_laws": [
+    "P_AB(k,k')=<q_A(k) q_B*(k')>; homogeneous delta-diagonal reduction only if statistical homogeneity is derived",
+    "P_AB=P_BA* and v^dagger P v>=0 for every admitted complex vector v",
+    "C_J:(H_A,...,H_I,M_mode)->P_AB with CIF admission, QV weighting/qualification, RFL stabilization and full source/route/memory ancestry",
+    "C_l^{XY}=4 pi Integral d ln k Sum_AB P_AB(k) Delta^X_{lA}(k) Delta^{Y*}_{lB}(k) only after the covariance is frozen",
+    "P_ab(k,t)=Sum_AB T_aA(k,t) P_AB(k) T_bB*(k,t)",
+    "finite-volume realizations must reproduce the frozen covariance while enforcing conjugate-pair reality and preserving the frozen seed/phase ledger"
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "mode amplitudes, covariance blocks, transfer responses and spectra require explicit J-local dimensional typing before binding",
+    "HU perturbation quotient and I background graph-gauge quotient remain distinct and immutable",
+    "physical clock lineage remains Big-Implosion t_phys=t_B tau_B with recursive depth not identified as physical time",
+    "homogeneity, isotropy, Gaussianity, parity, helicity and scale invariance are derived/bounded statuses, not defaults"
+  ],
+  "methods": [
+    "canonical source-asset harvest and exact hash lock",
+    "complete mode-basis constitution and independence/quotient audit",
+    "J-local triadic covariance derivation from frozen A-HI ancestry",
+    "Hermiticity/PSD/rank/condition/null-mode algebra and Wolfram checks",
+    "frozen transfer-covariance contraction plus independent direct ensemble evolution",
+    "finite-volume realization with frozen seed/phase registry and reality constraints",
+    "resolution/volume/convergence/restart/replay and independent reconstruction",
+    "triad/route/covariance/physics ablations and pre-comparison signature freeze"
+  ],
+  "tolerances": [
+    {
+      "name": "covariance_solver_psd_tolerance",
+      "value": 1e-12,
+      "source": "J_covariance.template.json"
+    },
+    {
+      "name": "sample_covariance_tolerance",
+      "value": "UNBOUND_UNTIL_J_LOCAL_DERIVATION"
+    },
+    {
+      "name": "resolution_volume_tolerances",
+      "value": "UNBOUND_UNTIL_J_LOCAL_DERIVATION"
+    }
+  ],
+  "stopping_rules": [
+    "stop on any exact parent or authority hash drift",
+    "stop before materialization if any __BIND token lacks an exact origin SHA-256",
+    "stop if a representative/manufactured covariance or spectrum is promoted to the physical parent",
+    "stop if public initial conditions, target phases, fitted amplitudes/shapes or remembered cosmology defaults enter generation",
+    "stop if an undeclared or observation-selected seed/box/grid is used",
+    "stop if covariance is non-Hermitian or non-PSD on any admitted branch",
+    "stop if a quotient erases an independent mode/route/phase/memory distinction",
+    "stop if HU/I/HI are retuned or mutated",
+    "stop if finite-volume fields fail covariance/reality/restart or independent-reconstruction tests"
+  ],
+  "expected_invariants": [
+    "exact parent hashes and repaired A-HI ancestry remain immutable",
+    "no-loss preservation of independent mode, route, branch, phase and memory identities",
+    "covariance Hermiticity and positive semidefiniteness",
+    "reality/conjugate-pair conditions for physical finite-volume fields",
+    "frozen transfer operator and background are not retuned",
+    "seed/phase provenance is frozen before realization and is not selected for observational agreement",
+    "public-data declaration remains NONE during generation"
+  ],
+  "tests": [
+    "J-WL-001 exact stored Wolfram call",
+    "J-WL-002 exact stored Wolfram call",
+    "repository manufactured reference checks for J",
+    "covariance PSD and factorization/rank checks",
+    "reality/Hermitian field conditions",
+    "resolution and volume ensembles",
+    "direct evolution versus transfer contraction",
+    "countermodels and triad/route/covariance ablations",
+    "restart and clean replay",
+    "independent field/covariance reconstruction",
+    "repository doctor/director/tests/firewall"
+  ],
+  "gates": [
+    "covariance PSD",
+    "reality/Hermitian conditions",
+    "resolution and volume tests",
+    "no public initial-condition file",
+    "independent field reconstruction"
+  ],
+  "falsifiers": [
+    "covariance requires post-hoc clipping or public-data tuning to become physical",
+    "mode amplitude, phase, seed or branch is selected because it matches an observed curve",
+    "direct ensemble evolution and transfer contraction disagree beyond frozen tolerance",
+    "gauge/conservation/constraint closure fails",
+    "finite-volume fields fail to reproduce the frozen target covariance",
+    "Module K restart requires omitted J physics",
+    "independent reproduction fails"
+  ],
+  "claim_boundary": "One realized RFC linear universe and its uncertainty state.",
+  "independent_verifier_design": "Independently rebuild the admitted mode registry, triadic covariance, transfer contraction, finite-volume statistics and J->K restart from the exact frozen HI parent plus the exact A-I ancestry/source register. The verifier must not trust primary J gate summaries, chosen seeds, closeout conclusions, or historical failed J outputs.",
+  "allowed_implementation_only_corrections": [
+    "path and relocation handling",
+    "serialization/schema-compatible metadata",
+    "deterministic ordering",
+    "Wolfram local-symbol compatibility or output-capture formatting that leaves equations/tests/expected outcomes unchanged",
+    "solver plumbing that does not change parents, candidate classes, scientific definitions, seeds, thresholds, gates, falsifiers or claim scope"
+  ]
 }
