@@ -135,7 +135,7 @@
     "reality/conjugate-pair conditions for physical finite-volume fields",
     "frozen transfer operator and background are not retuned",
     "seed/phase provenance is frozen before realization and is not selected for observational agreement",
-    "public-data declaration remains NONE during generation"
+    "sealed generation declaration remains NONE throughout generation"
   ],
   "tests": [
     "J-WL-001 exact stored Wolfram call",
