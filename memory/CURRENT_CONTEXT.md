@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-10T20:01:14.148773+00:00
+Generated: 2026-08-10T21:23:55.973917+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `J-200` — Close Module J: Primordial Covariance, Linear Spectra, and Finite-Volume Fields
-- Current module: `J`
+- Active work unit: `HU-176` — Supersede HU: Complete Regular Primordial Mode Basis for J
+- Current module: `HU`
 - Last verified commit: `26c08a68607721e84da1c83bb8d6e098fdeb2304`
 
 ## Strongest supported claim
@@ -20,24 +20,25 @@ No superseding G physical route realization, replayed HU transfer, repaired I ph
 
 ## Immediate objective
 
-Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.
+Execute the already-planned H/HU regular primordial mode-basis constitution omitted from HU-175, while preserving the repaired G transfer law and producing a J-sufficient immutable mode registry.
 
 ## Required deliverables
 
-- modules/J/runs/<RUN_ID>/RUN_PLAN.md
-- modules/J/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/J/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/J/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/J/runs/<RUN_ID>/CLOSEOUT.md
-- frozen output packet and artifact registry entries
+- modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/HU/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/HU/runs/<RUN_ID>/CLOSEOUT.md
+- complete regular primordial mode-basis registry
+- versioned superseding H_HU_to_HI handoff
 
 ## Mandatory gates
 
-- covariance PSD
-- reality/Hermitian conditions
-- resolution and volume tests
-- no public initial-condition file
-- independent field reconstruction
+- exact repaired G parent and HU-175 ancestry
+- complete physical mode-basis registry satisfies canonical H/J contract
+- mode normalization, independence/equivalence, gauge, regularity, sector/type and ancestry complete
+- no public primordial parameters or downstream J amplitudes imported
+- transfer law no-retune unless parent-derived correction is explicitly evidenced
+- clean replay and independent reconstruction
 
 ## Module states
 
@@ -48,7 +49,7 @@ Generate the actual covariance, linear spectra, phases/seeds, and finite-volume 
 - E: `FROZEN` / `PRODUCTION`
 - F: `FROZEN` / `PRODUCTION`
 - G: `FROZEN` / `PRODUCTION`
-- HU: `FROZEN` / `PRODUCTION`
+- HU: `DESIGN` / `HYPER_REALISTIC`
 - I: `FROZEN` / `PRODUCTION`
 - HI: `FROZEN` / `PRODUCTION`
 - J: `DESIGN` / `UNSTARTED`
@@ -64,12 +65,11 @@ Generate the actual covariance, linear spectra, phases/seeds, and finite-volume 
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 37
-- indexed runs: 30
+- frozen artifacts: 38
+- indexed runs: 31
 
 ## Recent runs
 
-- I-180-20260809T050839Z: PASS (I)
 - HI-190-20260809T221124Z: PASS (HI)
 - I-180-20260810T134326Z: BLOCKED (I)
 - G-165-20260810T144936Z: PASS (G)
@@ -77,10 +77,10 @@ Generate the actual covariance, linear spectra, phases/seeds, and finite-volume 
 - I-180-20260810T154430Z: PASS (I)
 - HI-190-20260810T165541Z: PASS (HI)
 - J-200-20260810T170347Z: FAIL (J)
+- J-200-20260810T200114Z: BLOCKED (J)
 
 ## Recent decisions
 
-- ADVANCE-I-180-20260810T165540Z: Marked I-180 PASS and activated HI-190
 - PROMOTE-HI-FORMALIZED-20260810T170345Z: Promoted Module HI from DESIGN to FORMALIZED at PRODUCTION
 - PROMOTE-HI-IMPLEMENTED-20260810T170345Z: Promoted Module HI from FORMALIZED to IMPLEMENTED at PRODUCTION
 - PROMOTE-HI-VERIFIED-20260810T170345Z: Promoted Module HI from IMPLEMENTED to VERIFIED at PRODUCTION
@@ -88,6 +88,7 @@ Generate the actual covariance, linear spectra, phases/seeds, and finite-volume 
 - PROMOTE-HI-INDEPENDENTLY_REPRODUCED-20260810T170346Z: Promoted Module HI from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
 - PROMOTE-HI-FROZEN-20260810T170346Z: Promoted Module HI from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
 - ADVANCE-HI-190-20260810T170346Z: Marked HI-190 PASS and activated J-200
+- REOPEN-HU-20260810T212354Z: Reopened Module HU from FROZEN/PRODUCTION at target fidelity HYPER_REALISTIC for the authorized superseding lineage.
 
 ## Recent failures
 

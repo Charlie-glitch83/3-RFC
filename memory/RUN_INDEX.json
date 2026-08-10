@@ -335,9 +335,20 @@
       "run_id": "J-200-20260810T200114Z",
       "module": "J",
       "task_id": "J-200",
-      "status": "CREATED",
+      "status": "BLOCKED",
       "path": "modules/J/runs/J-200-20260810T200114Z",
-      "created_utc": "2026-08-10T20:01:14.316124+00:00"
+      "created_utc": "2026-08-10T20:01:14.316124+00:00",
+      "closed_utc": "2026-08-10T21:23:54.527418+00:00",
+      "tree_sha256": "1cb1d8b99c722209cd1480833b548894dea004c5d6204f48a8a2e13d2b559ace",
+      "closeout": "modules/J/runs/J-200-20260810T200114Z/CLOSEOUT.md"
+    },
+    {
+      "run_id": "HU-176-20260810T212356Z",
+      "module": "HU",
+      "task_id": "HU-176",
+      "status": "CREATED",
+      "path": "modules/HU/runs/HU-176-20260810T212356Z",
+      "created_utc": "2026-08-10T21:23:56.133835+00:00"
     }
   ]
 }

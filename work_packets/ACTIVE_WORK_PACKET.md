@@ -1,32 +1,28 @@
-# ACTIVE WORK PACKET — J-200
+# ACTIVE WORK PACKET — HU-176
 
 **This is the only authorized work. Execute it in order.**
 
-- Module: `J`
-- Objective: Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.
-- Run workspace: `modules/J/runs/J-200-20260810T200114Z`
+- Module: `HU`
+- Objective: Execute the already-planned H/HU regular primordial mode-basis constitution omitted from HU-175, while preserving the repaired G transfer law and producing a J-sufficient immutable mode registry.
+- Run workspace: `modules/HU/runs/HU-176-20260810T212356Z`
 
 ## Exact sequence
 
-1. Read `recipes/J/WORK_ORDER.md` and `recipes/J/recipe.json`.
+1. Read `recipes/HU/WORK_ORDER.md` and `recipes/HU/recipe.json`.
 2. Verify all exact parent hashes and fill the run source register.
 3. Freeze the pre-execution lock before primary execution.
 4. Run these Wolfram calls exactly and record their complete outputs:
 
-   - `python tools/director.py wolfram-show --call J-WL-001`
-   - `python tools/director.py wolfram-show --call J-WL-002`
+   - `python tools/director.py wolfram-show --call HU-WL-001`
+   - `python tools/director.py wolfram-show --call HU-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module J --output modules/J/runs/J-200-20260810T200114Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module HU --output modules/HU/runs/HU-176-20260810T212356Z/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module J --solver covariance --destination modules/J/runs/J-200-20260810T200114Z`
-   - fill `configured_runs/binding_sheets/J_covariance.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/J/runs/J-200-20260810T200114Z/solver_templates/J_covariance.template.json --binding-sheet modules/J/runs/J-200-20260810T200114Z/binding_sheets/J_covariance.bindings.json --output modules/J/runs/J-200-20260810T200114Z/solver_configs/J_covariance.json`
-   - `python tools/run_configured_solver.py --config modules/J/runs/J-200-20260810T200114Z/solver_configs/J_covariance.json --output-dir modules/J/runs/J-200-20260810T200114Z/solver_outputs/covariance`
-   - `python tools/director.py solver-copy --module J --solver fourier_field --destination modules/J/runs/J-200-20260810T200114Z`
-   - fill `configured_runs/binding_sheets/J_fourier_field.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/J/runs/J-200-20260810T200114Z/solver_templates/J_fourier_field.template.json --binding-sheet modules/J/runs/J-200-20260810T200114Z/binding_sheets/J_fourier_field.bindings.json --output modules/J/runs/J-200-20260810T200114Z/solver_configs/J_fourier_field.json`
-   - `python tools/run_configured_solver.py --config modules/J/runs/J-200-20260810T200114Z/solver_configs/J_fourier_field.json --output-dir modules/J/runs/J-200-20260810T200114Z/solver_outputs/fourier_field`
+   - `python tools/director.py solver-copy --module HU --solver linear_transfer --destination modules/HU/runs/HU-176-20260810T212356Z`
+   - fill `configured_runs/binding_sheets/HU_linear_transfer.bindings.json` after it is copied into the run; every value requires an origin SHA-256
+   - `python tools/materialize_solver_config.py --template modules/HU/runs/HU-176-20260810T212356Z/solver_templates/HU_linear_transfer.template.json --binding-sheet modules/HU/runs/HU-176-20260810T212356Z/binding_sheets/HU_linear_transfer.bindings.json --output modules/HU/runs/HU-176-20260810T212356Z/solver_configs/HU_linear_transfer.json`
+   - `python tools/run_configured_solver.py --config modules/HU/runs/HU-176-20260810T212356Z/solver_configs/HU_linear_transfer.json --output-dir modules/HU/runs/HU-176-20260810T212356Z/solver_outputs/linear_transfer`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.
@@ -35,21 +31,22 @@
 
 ## Required deliverables
 
-- modules/J/runs/<RUN_ID>/RUN_PLAN.md
-- modules/J/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/J/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/J/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/J/runs/<RUN_ID>/CLOSEOUT.md
-- frozen output packet and artifact registry entries
+- modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/HU/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/HU/runs/<RUN_ID>/CLOSEOUT.md
+- complete regular primordial mode-basis registry
+- versioned superseding H_HU_to_HI handoff
 
 ## Componentwise gates
 
-- covariance PSD
-- reality/Hermitian conditions
-- resolution and volume tests
-- no public initial-condition file
-- independent field reconstruction
+- exact repaired G parent and HU-175 ancestry
+- complete physical mode-basis registry satisfies canonical H/J contract
+- mode normalization, independence/equivalence, gauge, regularity, sector/type and ancestry complete
+- no public primordial parameters or downstream J amplitudes imported
+- transfer law no-retune unless parent-derived correction is explicitly evidenced
+- clean replay and independent reconstruction
 
 ## Commit message
 
-`Close Module J at its verified scientific scope`
+`Complete HU regular mode basis for J child sufficiency`

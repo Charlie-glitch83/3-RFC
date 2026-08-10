@@ -817,12 +817,84 @@
       "required_fidelity": "MINIMAL_SPINE"
     },
     {
+      "id": "HU-176",
+      "title": "Supersede HU: Complete Regular Primordial Mode Basis for J",
+      "module": "HU",
+      "status": "ACTIVE",
+      "depends_on": [
+        "G-165"
+      ],
+      "objective": "Execute the already-planned H/HU regular primordial mode-basis constitution omitted from HU-175, while preserving the repaired G transfer law and producing a J-sufficient immutable mode registry.",
+      "steps": [
+        "Read the canonical Module H and Module J plans plus the J200 J.1 parent-interface audit before execution.",
+        "Use the exact repaired G-165 parent and frozen HU-175 operator as ancestry; do not alter the already-verified transfer law unless a parent-derived inconsistency requires it.",
+        "Execute the existing canonical H obligation to construct the complete regular physical mode basis: identifiers, sector/type, parity/helicity where applicable, gauge behavior, regularity, normalization, source/route ancestry, independence/equivalence witnesses, and allowed cross-correlations.",
+        "Freeze exact sources, definitions, candidate classes, laws, dimensions, expected outcomes, tolerances, gates, falsifiers, and J child contract before primary execution.",
+        "Run repository-prescribed Wolfram/reference checks, semantic countermodels, covariance/restart, clean replay, and independent reconstruction.",
+        "Freeze a versioned H_HU_to_HI superseding handoff only if the operator and complete mode-basis registry are both child-ready for HI/J."
+      ],
+      "deliverables": [
+        "modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/HU/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/HU/runs/<RUN_ID>/CLOSEOUT.md",
+        "complete regular primordial mode-basis registry",
+        "versioned superseding H_HU_to_HI handoff"
+      ],
+      "gates": [
+        "exact repaired G parent and HU-175 ancestry",
+        "complete physical mode-basis registry satisfies canonical H/J contract",
+        "mode normalization, independence/equivalence, gauge, regularity, sector/type and ancestry complete",
+        "no public primordial parameters or downstream J amplitudes imported",
+        "transfer law no-retune unless parent-derived correction is explicitly evidenced",
+        "clean replay and independent reconstruction"
+      ],
+      "commit_message": "Complete HU regular mode basis for J child sufficiency",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "HYPER_REALISTIC"
+    },
+    {
+      "id": "HI-191",
+      "title": "Replay HI Against Mode-Complete HU",
+      "module": "HI",
+      "status": "BLOCKED",
+      "depends_on": [
+        "HU-176",
+        "I-180"
+      ],
+      "objective": "Replay immutable HU-on-I instantiation using the superseding mode-complete HU handoff so J receives the full regular mode registry without retuning HU or I.",
+      "steps": [
+        "Use only the superseding HU-176 handoff and frozen repaired I-180 background as direct parents.",
+        "Preserve the complete HU mode registry through instantiation; do not select amplitudes, phases, seeds, or J covariance.",
+        "Freeze parent hashes, compatibility/domain rules, gauge/frame mapping, covariance/restart, tolerances, gates, falsifiers and J child contract before execution.",
+        "Execute immutable composition, independent reconstruction and clean replay.",
+        "Freeze a versioned H_HI_to_J handoff only when the complete mode registry and transfer/background ancestry are child-ready."
+      ],
+      "deliverables": [
+        "modules/HI/runs/<RUN_ID>/SOURCE_REGISTER.json",
+        "modules/HI/runs/<RUN_ID>/GATE_RESULTS.json",
+        "modules/HI/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
+        "modules/HI/runs/<RUN_ID>/CLOSEOUT.md",
+        "versioned superseding H_HI_to_J handoff carrying complete mode registry"
+      ],
+      "gates": [
+        "exact superseding HU and repaired I parent hashes",
+        "complete HU mode registry preserved losslessly into J interface",
+        "no retune of HU or I",
+        "operator-domain and gauge/frame compatibility",
+        "clean replay and independent reconstruction"
+      ],
+      "commit_message": "Replay HI with mode-complete HU parent",
+      "required_evidence_state": "FROZEN",
+      "required_fidelity": "HYPER_REALISTIC"
+    },
+    {
       "id": "J-200",
       "title": "Close Module J: Primordial Covariance, Linear Spectra, and Finite-Volume Fields",
       "module": "J",
-      "status": "ACTIVE",
+      "status": "BLOCKED",
       "depends_on": [
-        "HI-190"
+        "HI-191"
       ],
       "objective": "Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.",
       "steps": [
