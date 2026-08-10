@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "event": "I180_SCIENTIFIC_FRONTIER_RESET_AND_SUPERSESSION",
-  "timestamp_utc": "2026-08-10T12:52:42.392979+00:00",
+  "timestamp_utc": "2026-08-10T12:53:05.831886+00:00",
   "reason": [
     "I-180 froze effective-resistance distance and pseudo-determinant scalar scale without proving universal uniqueness or metric/scale branch completeness.",
     "I-180 primary numerical background was explicitly classified as an implementation witness, yet controller evidence was promoted through PHYSICALLY_EXECUTED.",
@@ -9,145 +9,59 @@
   ],
   "preservation_policy": "No historical run is deleted. Prior I-180/HI-190/J evidence remains in repository history and is superseded only as current scientific authority.",
   "previous_frontier": {
-    "active_work_unit": "J-200",
-    "current_module": "J",
+    "active_work_unit": "I-180",
+    "current_module": "I",
     "current_run": null,
     "active_queue_items": [
-      "J-200"
+      "I-180"
     ],
     "I_state": {
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
       "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
-          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
-          "evidence": "repository bootstrap"
-        },
-        {
-          "state": "FORMALIZED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
-          "timestamp_utc": "2026-08-09T14:46:50.951157+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "IMPLEMENTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/solver_outputs/transport/result.json",
-          "timestamp_utc": "2026-08-09T14:46:50.989656+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "VERIFIED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/GATE_RESULTS.json",
-          "timestamp_utc": "2026-08-09T14:46:51.030784+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "PHYSICALLY_EXECUTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json",
-          "timestamp_utc": "2026-08-09T14:46:51.069999+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "INDEPENDENTLY_REPRODUCED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/runs/I-180-20260809T050839Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-          "timestamp_utc": "2026-08-09T14:46:51.108703+00:00",
-          "work_unit": "I-180"
-        },
-        {
-          "state": "FROZEN",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/I/frozen/H_I_to_HI.json",
-          "timestamp_utc": "2026-08-09T14:46:51.147160+00:00",
-          "work_unit": "I-180"
+          "fidelity": "UNSTARTED",
+          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+          "work_unit": "I-180",
+          "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
         }
       ],
-      "completed_runs": [
-        "I-180-20260809T050839Z"
-      ],
-      "promotion_evidence": [
-        "modules/I/runs/I-180-20260809T050839Z/FROZEN_DERIVATION_SPEC.json",
-        "modules/I/runs/I-180-20260809T050839Z/solver_outputs/transport/result.json",
-        "modules/I/runs/I-180-20260809T050839Z/GATE_RESULTS.json",
-        "modules/I/runs/I-180-20260809T050839Z/primary/I_FINITE_RELATIONAL_BACKGROUND_MINIMAL_SPINE.json",
-        "modules/I/runs/I-180-20260809T050839Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/I/frozen/H_I_to_HI.json"
-      ],
-      "last_promoted_utc": "2026-08-09T14:46:51.147170+00:00"
+      "completed_runs": [],
+      "promotion_evidence": [],
+      "last_promoted_utc": "2026-08-09T14:46:51.147170+00:00",
+      "scientific_supersession": {
+        "status": "SUPERSEDED_AS_CURRENT_AUTHORITY",
+        "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+        "historical_evidence_preserved_in_git": true
+      }
     },
     "HI_state": {
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
+      "evidence_state": "DESIGN",
+      "fidelity": "UNSTARTED",
       "active_run": null,
       "frozen_artifacts": [],
       "evidence_history": [
         {
           "state": "DESIGN",
-          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
-          "evidence": "repository bootstrap"
-        },
-        {
-          "state": "FORMALIZED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
-          "timestamp_utc": "2026-08-09T22:35:31.002618+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "IMPLEMENTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-          "timestamp_utc": "2026-08-09T22:35:31.064095+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "VERIFIED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/GATE_RESULTS.json",
-          "timestamp_utc": "2026-08-09T22:35:31.125205+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "PHYSICALLY_EXECUTED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-          "timestamp_utc": "2026-08-09T22:35:31.186778+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "INDEPENDENTLY_REPRODUCED",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-          "timestamp_utc": "2026-08-09T22:35:31.248197+00:00",
-          "work_unit": "HI-190"
-        },
-        {
-          "state": "FROZEN",
-          "fidelity": "MINIMAL_SPINE",
-          "evidence": "modules/HI/frozen/H_HI_to_J.json",
-          "timestamp_utc": "2026-08-09T22:35:31.308941+00:00",
-          "work_unit": "HI-190"
+          "fidelity": "UNSTARTED",
+          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+          "work_unit": "I-180",
+          "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
         }
       ],
-      "completed_runs": [
-        "HI-190-20260809T221124Z"
-      ],
-      "promotion_evidence": [
-        "modules/HI/runs/HI-190-20260809T221124Z/FROZEN_DERIVATION_SPEC.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/GATE_RESULTS.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/primary/HI_INSTANTIATED_TRANSFER_MINIMAL_SPINE.json",
-        "modules/HI/runs/HI-190-20260809T221124Z/independent/INDEPENDENT_RECONSTRUCTION.json",
-        "modules/HI/frozen/H_HI_to_J.json"
-      ],
-      "last_promoted_utc": "2026-08-09T22:35:31.308950+00:00"
+      "completed_runs": [],
+      "promotion_evidence": [],
+      "last_promoted_utc": "2026-08-09T22:35:31.308950+00:00",
+      "scientific_supersession": {
+        "status": "SUPERSEDED_AS_CURRENT_AUTHORITY",
+        "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+        "historical_evidence_preserved_in_git": true
+      }
     },
     "J_state": {
       "evidence_state": "DESIGN",
@@ -157,10 +71,20 @@
       "evidence_history": [
         {
           "state": "DESIGN",
-          "timestamp_utc": "2026-08-06T00:48:09.414909+00:00",
-          "evidence": "repository bootstrap"
+          "fidelity": "UNSTARTED",
+          "timestamp_utc": "2026-08-10T12:52:42.432112+00:00",
+          "evidence": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+          "work_unit": "I-180",
+          "note": "Current-authority history reset after scientific supersession; historical evidence remains preserved in git and the supersession audit."
         }
-      ]
+      ],
+      "completed_runs": [],
+      "promotion_evidence": [],
+      "scientific_supersession": {
+        "status": "SUPERSEDED_AS_CURRENT_AUTHORITY",
+        "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
+        "historical_evidence_preserved_in_git": true
+      }
     }
   },
   "new_frontier": {
