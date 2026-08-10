@@ -1,0 +1,20 @@
+{
+  "call_id": "J-WL-001",
+  "classification": "IMPLEMENTATION_ONLY_WOLFRAM_COMPATIBILITY_CORRECTION",
+  "failed_original_input_sha256": "151748b2f6b71fc558ed03ffa3202eda5fed69eb2c9183c03d2b6e3da1caf061",
+  "failed_output_sha256": "7c5af42712e12f3d0193e585566521591421e2f8fc9d37bbf4cad7bf0c376b67",
+  "corrected_input_sha256": "45b42bc73419c6588beb1a53372f1a9434dbc92b098e84324a8da8aee563e4d6",
+  "changes": [
+    "rename protected Wolfram symbol C to local symbol covMat",
+    "rename local Cholesky factor L to chol",
+    "use Wolfram Cholesky convention ConjugateTranspose[chol].chol == covMat for the same exact reconstruction test"
+  ],
+  "science_changed": false,
+  "covariance_matrix_changed": false,
+  "expected_gate_changed": false,
+  "parent_or_source_changed": false,
+  "tolerance_changed": false,
+  "claim_boundary_changed": false,
+  "rerun_required": true,
+  "rerun_result": "PASS"
+}
