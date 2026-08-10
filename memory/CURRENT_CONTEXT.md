@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-10T14:49:36.426326+00:00
+Generated: 2026-08-10T15:33:29.870279+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `G-165` — Repair Module G: Route-Resolved Recombination State and Geometry-Child Interface
-- Current module: `G`
+- Active work unit: `HU-175` — Replay Module HU Against the Superseding G State
+- Current module: `HU`
 - Last verified commit: `26c08a68607721e84da1c83bb8d6e098fdeb2304`
 
 ## Strongest supported claim
@@ -20,24 +20,23 @@ No superseding G physical route realization, replayed HU transfer, repaired I ph
 
 ## Immediate objective
 
-Supersede the historical G MINIMAL_SPINE physical-execution overclaim by deriving/executing a parent-bound route-resolved recombination state and a no-loss, ancestry-complete G→I interface from exact H_F_to_G_v2.
+Reconstruct and freeze the universal linear tangent/transfer object against the superseding G route-resolved state so HI cannot consume a stale G-era HU parent.
 
 ## Required deliverables
 
-- modules/G/runs/<RUN_ID>/RUN_PLAN.md
-- modules/G/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/G/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/G/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/G/runs/<RUN_ID>/CLOSEOUT.md
+- modules/HU/runs/<RUN_ID>/RUN_PLAN.md
+- modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/HU/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/HU/runs/<RUN_ID>/CLOSEOUT.md
 - versioned frozen child interface and artifact registry entries
 
 ## Mandatory gates
 
-- I route registry completeness
-- route-resolved process activity provenance
-- process-to-B-edge ancestry completeness or certified complete branch family
-- aggregate opacity no-loss reconstruction
-- manufactured witnesses cannot promote physical execution
+- exact superseding G parent hash
+- tangent/transfer reconstruction from repaired G without trusting historical HU summaries
+- covariance, restart and clean replay
+- no downstream I/J object imported into HU
 
 ## Module states
 
@@ -47,7 +46,7 @@ Supersede the historical G MINIMAL_SPINE physical-execution overclaim by derivin
 - D: `FROZEN` / `PRODUCTION`
 - E: `FROZEN` / `PRODUCTION`
 - F: `FROZEN` / `PRODUCTION`
-- G: `DESIGN` / `PRODUCTION`
+- G: `FROZEN` / `PRODUCTION`
 - HU: `FROZEN` / `MINIMAL_SPINE`
 - I: `FORMALIZED` / `MINIMAL_SPINE`
 - HI: `DESIGN` / `UNSTARTED`
@@ -64,12 +63,11 @@ Supersede the historical G MINIMAL_SPINE physical-execution overclaim by derivin
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 32
-- indexed runs: 25
+- frozen artifacts: 33
+- indexed runs: 26
 
 ## Recent runs
 
-- D-135-20260808T163243Z: PASS (D)
 - E-145-20260808T164410Z: PASS (E)
 - F-155-20260808T165152Z: PASS (F)
 - G-160-20260809T025252Z: PASS (G)
@@ -77,17 +75,18 @@ Supersede the historical G MINIMAL_SPINE physical-execution overclaim by derivin
 - I-180-20260809T050839Z: PASS (I)
 - HI-190-20260809T221124Z: PASS (HI)
 - I-180-20260810T134326Z: BLOCKED (I)
+- G-165-20260810T144936Z: PASS (G)
 
 ## Recent decisions
 
-- PROMOTE-HI-PHYSICALLY_EXECUTED-20260809T223531Z: Promoted Module HI from VERIFIED to PHYSICALLY_EXECUTED at MINIMAL_SPINE
-- PROMOTE-HI-INDEPENDENTLY_REPRODUCED-20260809T223531Z: Promoted Module HI from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at MINIMAL_SPINE
-- PROMOTE-HI-FROZEN-20260809T223531Z: Promoted Module HI from INDEPENDENTLY_REPRODUCED to FROZEN at MINIMAL_SPINE
-- ADVANCE-HI-190-20260809T224751Z: Marked HI-190 PASS and activated J-200
-- RESET-I-180-SCIENTIFIC-FRONTIER-20260810: Supersede I-180/HI-190/J current authority and restore I-180 as the sole active frontier while preserving historical evidence in git.
-- PROMOTE-I-FORMALIZED-20260810T144934Z: Promoted Module I from DESIGN to FORMALIZED at MINIMAL_SPINE
-- REROUTE-I180-TO-G165-20260810: Preserved the corrected I run at FORMALIZED scope and rerouted the active frontier to a superseding G replay, followed by HU replay, because the historical G→I child contract and physical-execution promotion were defective.
 - REOPEN-G-20260810T144935Z: Reopened Module G from FROZEN/MINIMAL_SPINE at target fidelity PRODUCTION for the authorized superseding lineage.
+- PROMOTE-G-FORMALIZED-20260810T153328Z: Promoted Module G from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-G-IMPLEMENTED-20260810T153328Z: Promoted Module G from FORMALIZED to IMPLEMENTED at PRODUCTION
+- PROMOTE-G-VERIFIED-20260810T153328Z: Promoted Module G from IMPLEMENTED to VERIFIED at PRODUCTION
+- PROMOTE-G-PHYSICALLY_EXECUTED-20260810T153328Z: Promoted Module G from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
+- PROMOTE-G-INDEPENDENTLY_REPRODUCED-20260810T153328Z: Promoted Module G from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-G-FROZEN-20260810T153328Z: Promoted Module G from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- ADVANCE-G-165-20260810T153328Z: Marked G-165 PASS and activated HU-175
 
 ## Recent failures
 

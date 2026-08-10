@@ -1,0 +1,64 @@
+{
+  "schema_version": "3.0",
+  "object_id": "G165_PARAMETRIC_RECOMBINATION_HISTORY",
+  "run_id": "G-165-20260810T144936Z",
+  "execution_classification": "EXACT_PARENT_BOUND_PARAMETRIC_BRANCH_FAMILY_EXECUTION",
+  "physical_family_executed": true,
+  "unique_numeric_branch_executed": false,
+  "parent": {
+    "path": "modules/F/frozen/H_F_to_G_v2.json",
+    "sha256": "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990"
+  },
+  "state_space": {
+    "atomic_candidates": [
+      "p::q1::Ne0",
+      "p::q0::Ne1",
+      "D_role::q1::Ne0",
+      "D_role::q0::Ne1",
+      "T_role::q1::Ne0",
+      "T_role::q0::Ne1",
+      "He3_role::q2::Ne0",
+      "He3_role::q1::Ne1",
+      "He3_role::q0::Ne2",
+      "He4_role::q2::Ne0",
+      "He4_role::q1::Ne1",
+      "He4_role::q0::Ne2",
+      "Li6_role::q3::Ne0",
+      "Li6_role::q2::Ne1",
+      "Li6_role::q1::Ne2",
+      "Li6_role::q0::Ne3",
+      "Li7_role::q3::Ne0",
+      "Li7_role::q2::Ne1",
+      "Li7_role::q1::Ne2",
+      "Li7_role::q0::Ne3",
+      "Be7_role::q4::Ne0",
+      "Be7_role::q3::Ne1",
+      "Be7_role::q2::Ne2",
+      "Be7_role::q1::Ne3",
+      "Be7_role::q0::Ne4"
+    ]
+  },
+  "initial_state": "p_s^b(t_in)>=0 with isotope sums and free-electron ledger fixed by F branch",
+  "generator": "Q_b(t) from complete route family; offdiagonals gamma_r^b(t)>=0 and each column closes",
+  "exact_history": "p_b(t)=T exp[Integral Q_b(s) ds] p_b(t_in)",
+  "route_activity": "Gamma_r^b=gamma_r^b p_src^b or gamma_r Tr[J_r^dagger J_r rho_G]",
+  "positivity_proof": "Metzler/Markov generator preserves positive simplex",
+  "conservation_proof": "capture/ionization preserve nuclear parent and balance ionic charge with free-electron ledger",
+  "branch_policy": "all unresolved source-owned rates/levels/phases/scales remain explicit",
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "restart_parent": {
+    "checkpoint_id": "F155-RECOMBINATION-ENTRY",
+    "state_path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+    "state_sha256": "ec406eea2438b14992ef4215f16014e9c57dd523906ec0ae770024da8ca03285",
+    "restart_test": "PASS",
+    "restart_linf": {
+      "reaction": 5.065392549852277e-15,
+      "transport": 3.164135620181696e-15
+    },
+    "contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it"
+  }
+}

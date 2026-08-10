@@ -1,10 +1,54 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
+  "run_id": "G-165-20260810T144936Z",
+  "exact_parents": [
+    {
+      "path": "modules/F/frozen/H_F_to_G_v2.json",
+      "sha256": "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990",
+      "classification": "FROZEN_PARENT"
+    }
+  ],
+  "admitted_sources": [
+    {
+      "path": "modules/B/frozen/H_B_to_C_v2.json",
+      "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77",
+      "classification": "FROZEN_ANCESTRY"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_DETAILED_SCIENTIFIC_REPAIR_PLAN.md",
+      "sha256": "d7bd61a15dabddd0bb46c57beb2dc30f912a99d2ebe32e6665a2f37ece58ffa7",
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_TO_G_SCIENTIFIC_HANDOFF.md",
+      "sha256": "d8c52e582d0860648105f7f3102c27417a8ca4b767ce9f381d58c3b7d0748114",
+      "classification": "REPLAY_REQUIRED"
+    },
+    {
+      "path": "docs/09_DERIVATION_PROTOCOL.md",
+      "sha256": "bb3249e55f649b0d9dd40c8eb0bbac0649eee9ff36fb707c8a8d0f0885047d4d",
+      "classification": "PROCEDURE_ONLY"
+    },
+    {
+      "path": "modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json",
+      "sha256": "27dbf6d4e54c6926e5c3b3940c19caf8e5f9cf59545fa03003b41e03f1abc06b",
+      "classification": "INTERNAL_DERIVATION"
+    }
+  ],
+  "imports": [
+    "json",
+    "hashlib",
+    "re"
+  ],
+  "files": [
+    "modules/F/frozen/H_F_to_G_v2.json",
+    "modules/B/frozen/H_B_to_C_v2.json",
+    "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/G/MODULE_G_DETAILED_SCIENTIFIC_REPAIR_PLAN.md",
+    "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/modules/F/MODULE_F_TO_G_SCIENTIFIC_HANDOFF.md",
+    "docs/09_DERIVATION_PROTOCOL.md",
+    "modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json"
+  ],
   "urls": [],
   "constants": [],
-  "public_data_declaration": "NONE"
+  "public_data_declaration": "NONE",
+  "generation_mode": "GENERATION_SEALED"
 }

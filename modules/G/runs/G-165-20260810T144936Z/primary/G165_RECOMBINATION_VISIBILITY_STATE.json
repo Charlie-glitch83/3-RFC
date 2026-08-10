@@ -1,0 +1,43 @@
+{
+  "schema_version": "3.0",
+  "object_id": "G165_RECOMBINATION_VISIBILITY_STATE",
+  "run_id": "G-165-20260810T144936Z",
+  "status": "PHYSICALLY_EXECUTED_EXACT_PARAMETRIC_BRANCH_FAMILY",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/F/frozen/H_F_to_G_v2.json",
+    "sha256": "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990"
+  },
+  "route_registry": "primary/G165_ROUTE_REGISTRY.json",
+  "activity": "primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+  "recombination_history": "primary/G165_PARAMETRIC_RECOMBINATION_HISTORY.json",
+  "radiation_surface": "primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json",
+  "ancestry_family": "primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json",
+  "aggregate_reconstruction": "primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json",
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "covariance": {
+    "law": "Sigma_F=J_F Sigma_E J_F^T+Sigma_residual+Sigma_transport+Sigma_radiation+Sigma_plasma+Sigma_atomic_seed+Sigma_representation+Sigma_spatial+Sigma_numeric+Sigma_branch",
+    "parent_eigenvalues": [
+      3.0343089878133187e-34,
+      3.0993512082975226e-32,
+      1.2703875845537904e-19
+    ],
+    "psd": true
+  },
+  "restart": {
+    "checkpoint_id": "F155-RECOMBINATION-ENTRY",
+    "state_path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+    "state_sha256": "ec406eea2438b14992ef4215f16014e9c57dd523906ec0ae770024da8ca03285",
+    "restart_test": "PASS",
+    "restart_linf": {
+      "reaction": 5.065392549852277e-15,
+      "transport": 3.164135620181696e-15
+    },
+    "contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it"
+  }
+}

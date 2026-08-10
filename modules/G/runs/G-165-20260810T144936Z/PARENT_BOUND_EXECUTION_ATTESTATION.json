@@ -1,0 +1,39 @@
+{
+  "schema_version": "3.0",
+  "run_id": "G-165-20260810T144936Z",
+  "physical_execution_performed": true,
+  "execution_mode": "EXACT_PARENT_BOUND_PARAMETRIC_BRANCH_FAMILY",
+  "unique_numeric_branch_selected": false,
+  "manufactured_values_used_as_physical": false,
+  "generation_mode": "GENERATION_SEALED",
+  "artifacts": {
+    "route_registry": {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_REGISTRY.json",
+      "sha256": "6f1f7a13893a409e9b3952f5abe443ab129d50c46e3de3494e199f13b54b5422"
+    },
+    "route_resolved_process_activity": {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+      "sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83"
+    },
+    "route_to_relational_ancestry": {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json",
+      "sha256": "7f65ac7c7c0877d09c4fd51d897d3e68fcae80dcf8b5fd5e267e4a6432e99c78"
+    },
+    "aggregate_no_loss_reconstruction": {
+      "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json",
+      "sha256": "b7d5723ed06e8a7118db390f80af4d79449ab06f400eb5a4668e4f9aa200dd0d"
+    },
+    "independent_reconstruction": {
+      "path": "modules/G/runs/G-165-20260810T144936Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "3d699103e20abd822f0883bd3ca05f27af73e046289908db9a25a213f34e236b"
+    },
+    "geometry_child_packet": {
+      "path": "modules/G/frozen/H_G_to_I_v2.json",
+      "sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf"
+    }
+  },
+  "route_registry_count": 39,
+  "aggregate_reconstruction_within_tolerance": true,
+  "ancestry_complete_for_I": true,
+  "scope_note": "exact parent is itself a branch family; complete conservative propagator executed without selecting unresolved coordinates"
+}

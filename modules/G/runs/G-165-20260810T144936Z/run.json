@@ -2,9 +2,11 @@
   "run_id": "G-165-20260810T144936Z",
   "module": "G",
   "task_id": "G-165",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-10T14:49:36.588991+00:00",
   "parent_hashes": [],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/G/runs/G-165-20260810T144936Z"
+  "workspace": "modules/G/runs/G-165-20260810T144936Z",
+  "closed_utc": "2026-08-10T15:33:28.676833+00:00",
+  "closeout": "modules/G/runs/G-165-20260810T144936Z/CLOSEOUT.md"
 }

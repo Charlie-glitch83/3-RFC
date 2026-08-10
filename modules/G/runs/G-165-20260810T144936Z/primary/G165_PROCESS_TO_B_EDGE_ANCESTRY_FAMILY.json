@@ -1,0 +1,353 @@
+{
+  "schema_version": "3.0",
+  "object_id": "G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY",
+  "run_id": "G-165-20260810T144936Z",
+  "result": "PASS",
+  "B_parent": {
+    "path": "modules/B/frozen/H_B_to_C_v2.json",
+    "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77"
+  },
+  "B_edges": [
+    {
+      "edge_id": "e01",
+      "i": 0,
+      "j": 1,
+      "parent_weight": 1.0
+    },
+    {
+      "edge_id": "e02",
+      "i": 0,
+      "j": 2,
+      "parent_weight": 1.0
+    },
+    {
+      "edge_id": "e12",
+      "i": 1,
+      "j": 2,
+      "parent_weight": 1.0
+    }
+  ],
+  "policy": "exact ancestry does not distinguish a unique B edge per G route; preserve complete nonnegative column-simplex family",
+  "M_family": {
+    "formula": "M_b(e|r)>=0; sum_e M_b(e|r)=1",
+    "support": "all exact B carrier edges unless route-specific ancestry narrows support",
+    "dimension_per_unresolved_route": 2
+  },
+  "route_supports": [
+    {
+      "route_id": "CAP::Be7_role::q4::Ne0=>Be7_role::q3::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Be7_role::q3::Ne1=>Be7_role::q4::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Be7_role::q3::Ne1=>Be7_role::q2::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Be7_role::q2::Ne2=>Be7_role::q3::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Be7_role::q2::Ne2=>Be7_role::q1::Ne3",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Be7_role::q1::Ne3=>Be7_role::q2::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Be7_role::q1::Ne3=>Be7_role::q0::Ne4",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Be7_role::q0::Ne4=>Be7_role::q1::Ne3",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::D_role::q1::Ne0=>D_role::q0::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::D_role::q0::Ne1=>D_role::q1::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::He3_role::q2::Ne0=>He3_role::q1::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::He3_role::q1::Ne1=>He3_role::q2::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::He3_role::q1::Ne1=>He3_role::q0::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::He3_role::q0::Ne2=>He3_role::q1::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::He4_role::q2::Ne0=>He4_role::q1::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::He4_role::q1::Ne1=>He4_role::q2::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::He4_role::q1::Ne1=>He4_role::q0::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::He4_role::q0::Ne2=>He4_role::q1::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Li6_role::q3::Ne0=>Li6_role::q2::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Li6_role::q2::Ne1=>Li6_role::q3::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Li6_role::q2::Ne1=>Li6_role::q1::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Li6_role::q1::Ne2=>Li6_role::q2::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Li6_role::q1::Ne2=>Li6_role::q0::Ne3",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Li6_role::q0::Ne3=>Li6_role::q1::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Li7_role::q3::Ne0=>Li7_role::q2::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Li7_role::q2::Ne1=>Li7_role::q3::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Li7_role::q2::Ne1=>Li7_role::q1::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Li7_role::q1::Ne2=>Li7_role::q2::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::Li7_role::q1::Ne2=>Li7_role::q0::Ne3",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::Li7_role::q0::Ne3=>Li7_role::q1::Ne2",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::T_role::q1::Ne0=>T_role::q0::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::T_role::q0::Ne1=>T_role::q1::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "CAP::p::q1::Ne0=>p::q0::Ne1",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "route_id": "ION::p::q0::Ne1=>p::q1::Ne0",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    }
+  ],
+  "parametric_family_supports": [
+    {
+      "family_id": "BOUND_BOUND_AND_CASCADE_FIBER",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "family_id": "SCATTERING_AND_REDISTRIBUTION_FIBER",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "family_id": "FREE_FREE_AND_CONTINUUM_FIBER",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "family_id": "FORBIDDEN_TWO_PHOTON_METASTABLE_FIBER",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    },
+    {
+      "family_id": "RESIDUAL_DECAY_AND_CONDITIONAL_COUPLING_FIBER",
+      "support_edges": [
+        "e01",
+        "e02",
+        "e12"
+      ]
+    }
+  ],
+  "ancestry_complete_for_I": true
+}

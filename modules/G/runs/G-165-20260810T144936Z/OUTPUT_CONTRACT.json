@@ -1,66 +1,198 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "3.0",
   "run_id": "G-165-20260810T144936Z",
   "module": "G",
-  "status": "DRAFT",
+  "status": "PASS",
   "required_outputs": [
     {
       "name": "ionization/recombination histories",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_PARAMETRIC_RECOMBINATION_HISTORY.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "visibility and optical-depth functions",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "radiation surface",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "covariance and restart",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RECOMBINATION_VISIBILITY_STATE.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_G_to_HU",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_HU_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "H_G_to_I",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_I_v2.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     },
     {
       "name": "route-resolved G process activity and I geometry-ready ancestry packet",
-      "status": "UNSATISFIED",
-      "artifact_paths": [],
-      "semantic_gate": "PENDING",
-      "independent_verification": "PENDING",
-      "child_ready": false
+      "status": "SATISFIED",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json"
+      ],
+      "semantic_gate": "PASS",
+      "independent_verification": "PASS",
+      "child_ready": true
     }
   ],
-  "child_bindings": {},
-  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+  "child_bindings": {
+    "recombination_history": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_PARAMETRIC_RECOMBINATION_HISTORY.json"
+      ],
+      "derived_absence": false
+    },
+    "opacity_history": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json"
+      ],
+      "derived_absence": false
+    },
+    "optical_depth": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json"
+      ],
+      "derived_absence": false
+    },
+    "visibility_function": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json"
+      ],
+      "derived_absence": false
+    },
+    "radiation_surface": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json"
+      ],
+      "derived_absence": false
+    },
+    "covariance": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_RECOMBINATION_VISIBILITY_STATE.json"
+      ],
+      "derived_absence": false
+    },
+    "clock": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_I_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "restart": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_I_v2.json"
+      ],
+      "derived_absence": false
+    },
+    "i_route_registry": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_REGISTRY.json"
+      ],
+      "derived_absence": false
+    },
+    "i_route_resolved_process_activity": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json"
+      ],
+      "derived_absence": false
+    },
+    "i_route_to_relational_ancestry": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json"
+      ],
+      "derived_absence": false
+    },
+    "i_aggregate_no_loss_reconstruction": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/runs/G-165-20260810T144936Z/primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json"
+      ],
+      "derived_absence": false
+    },
+    "i_geometry_child_packet": {
+      "status": "SATISFIED",
+      "source_lineage": "PASS",
+      "independent_verification": "PASS",
+      "artifact_paths": [
+        "modules/G/frozen/H_G_to_I_v2.json"
+      ],
+      "derived_absence": false
+    }
+  }
 }

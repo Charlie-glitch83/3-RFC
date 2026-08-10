@@ -1,7 +1,40 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "run_id": "G-165-20260810T144936Z",
+  "module": "G",
+  "overall": "PASS",
+  "componentwise": {
+    "rate and opacity lineage": {
+      "pass": true
+    },
+    "normalization and positivity": {
+      "pass": true
+    },
+    "stiff convergence": {
+      "pass": true,
+      "mode": "EXACT_TIME_ORDERED_PROPAGATOR_AT_BRANCH_FAMILY_SCOPE"
+    },
+    "independent reconstruction": {
+      "pass": true
+    },
+    "required output completeness and HU/I child-readiness": {
+      "pass": true
+    },
+    "I route registry completeness": {
+      "pass": true
+    },
+    "route-resolved process activity provenance": {
+      "pass": true
+    },
+    "process-to-B-edge ancestry completeness or certified complete branch family": {
+      "pass": true
+    },
+    "aggregate opacity no-loss reconstruction": {
+      "pass": true
+    },
+    "manufactured witnesses cannot promote physical execution": {
+      "pass": true,
+      "manufactured_values_used_as_physical": false
+    }
+  },
+  "aggregate_scores_cannot_override": true
 }

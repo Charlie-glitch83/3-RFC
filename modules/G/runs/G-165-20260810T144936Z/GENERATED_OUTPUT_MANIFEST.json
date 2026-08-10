@@ -1,8 +1,217 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "G-165-20260810T144936Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-10T15:33:28.143042+00:00",
+  "outputs": [
+    {
+      "path": "CHECKPOINT_RECORD.json",
+      "sha256": "b14dec464f77200ae28051b9e4e7069ac8d2972a5beb0dee154e77bdce96739f",
+      "bytes": 118
+    },
+    {
+      "path": "CLOSEOUT.md",
+      "sha256": "ba3201cb2b32c84e6a38ecf991559934ad0536343574652c6cfe6fe5adf5ae0f",
+      "bytes": 727
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "sha256": "65b1a0e72b0e8f241e47f6ae3cc25baf44b583443f945a6aebf7e1c4748504ba",
+      "bytes": 1094
+    },
+    {
+      "path": "FAILURES.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "FROZEN_RECIPE.json",
+      "sha256": "53ddce4c909bbb137a51f8df9551eafe7d929524edfb1d7213fcf7a96f2df9d2",
+      "bytes": 6926
+    },
+    {
+      "path": "G165_FROZEN_DERIVATION_SPEC.json",
+      "sha256": "bdb5eb3c88ff014c031aeb829233fbab333d0ea50c27e48245308f58def25baa",
+      "bytes": 5165
+    },
+    {
+      "path": "GATE_RESULTS.json",
+      "sha256": "82509c2822f4fe4652859155c83f632ac126aa15cfc1158e96c65533158af191",
+      "bytes": 1021
+    },
+    {
+      "path": "INDEPENDENT_VERIFICATION.md",
+      "sha256": "34b879dc7100a8b41b6389007fb7e92032edb030be712cb5708541bddb0f5c46",
+      "bytes": 159
+    },
+    {
+      "path": "LOCAL_EXECUTION_BINDINGS.json",
+      "sha256": "6017225a1b45242de1b79cf6bf200e1f3a1c39026620f7547f8c796b5936038c",
+      "bytes": 1880
+    },
+    {
+      "path": "OUTPUT_COMPLETENESS.json",
+      "sha256": "3c4ce70d3856e301390a1f61e5612841de88e65ce4eda053ab31d42059550d84",
+      "bytes": 2413
+    },
+    {
+      "path": "OUTPUT_CONTRACT.json",
+      "sha256": "b41ab65d9a518d8e9e5e21f309f6cc71283f24ad6b919d31fd677b54e9a26de6",
+      "bytes": 6154
+    },
+    {
+      "path": "PARENT_BOUND_EXECUTION_ATTESTATION.json",
+      "sha256": "bc91f67897863fbb9dd6361f099840da859e524d920d385b4ee81a3ba4bd6bdf",
+      "bytes": 1898
+    },
+    {
+      "path": "PRE_EXECUTION_LOCK.json",
+      "sha256": "dbca389951c1244891d88ab2d3785101e759fd40e638640d851519990157254f",
+      "bytes": 4901
+    },
+    {
+      "path": "REPLAY_RECORD.json",
+      "sha256": "af12eb4aa265b969e0369d8d876e4c08f63f333e3ea9f83402bd896b4824d786",
+      "bytes": 3285
+    },
+    {
+      "path": "REQUIRED_GATES.json",
+      "sha256": "5112e79e64e275bad1149e880d10da8cf3c3ea7877025ea6cd9045fbcb5837f4",
+      "bytes": 1039
+    },
+    {
+      "path": "RUN_LOCAL_PHASE.sh",
+      "sha256": "a58816ba4d0e09d30106372361b6be3ad138534f91c35665df1eb41e24bba9d8",
+      "bytes": 821
+    },
+    {
+      "path": "RUN_PLAN.md",
+      "sha256": "0ede86004f8a00517c97862dedc903d0ea4417d0ff5b51f05b6bff7fa3440f62",
+      "bytes": 514
+    },
+    {
+      "path": "SOURCE_REGISTER.json",
+      "sha256": "3ce6d81f942cd56c02243fc9c8bcc482ed444b56eaead83ff22e9c89c0c8d5c7",
+      "bytes": 2022
+    },
+    {
+      "path": "WOLFRAM_SEQUENCE.md",
+      "sha256": "020d06ec062a82f65956f8f49963121a18662889b2c713c6a55355305684d5a9",
+      "bytes": 775
+    },
+    {
+      "path": "WORK_ORDER.md",
+      "sha256": "23451bc002b56415a4d8219386fae9d3d2fe23a9760a0f6d588d8b6801d21eea",
+      "bytes": 4964
+    },
+    {
+      "path": "binding_sheets/G_recombination_network.bindings.json",
+      "sha256": "164614c10ecda90a1dbd6fd7845ae4b8d539d0da29b208729642b76bb88ffd37",
+      "bytes": 4182
+    },
+    {
+      "path": "binding_sheets/G_visibility.bindings.json",
+      "sha256": "3281473d832663eadaaee7fc5b1c2a175d06d67c265cb7dc74a065329ad67d65",
+      "bytes": 1580
+    },
+    {
+      "path": "independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "3d699103e20abd822f0883bd3ca05f27af73e046289908db9a25a213f34e236b",
+      "bytes": 1774
+    },
+    {
+      "path": "primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json",
+      "sha256": "b7d5723ed06e8a7118db390f80af4d79449ab06f400eb5a4668e4f9aa200dd0d",
+      "bytes": 761
+    },
+    {
+      "path": "primary/G165_PARAMETRIC_RECOMBINATION_HISTORY.json",
+      "sha256": "54364eafaec590b11d1a365d9bf4475e86f02a6abe7c112541d179acd1e3d9d3",
+      "bytes": 2439
+    },
+    {
+      "path": "primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json",
+      "sha256": "7f65ac7c7c0877d09c4fd51d897d3e68fcae80dcf8b5fd5e267e4a6432e99c78",
+      "bytes": 6920
+    },
+    {
+      "path": "primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json",
+      "sha256": "604dac044f631d720876fd1456ec33cba2800d6e488c8d507578a07e2f027367",
+      "bytes": 767
+    },
+    {
+      "path": "primary/G165_RECOMBINATION_VISIBILITY_STATE.json",
+      "sha256": "addf5317cc62ac2c6d4c7ab500038a50a49cb6604933f59454c30a5b171c42a0",
+      "bytes": 1828
+    },
+    {
+      "path": "primary/G165_ROUTE_REGISTRY.json",
+      "sha256": "6f1f7a13893a409e9b3952f5abe443ab129d50c46e3de3494e199f13b54b5422",
+      "bytes": 24774
+    },
+    {
+      "path": "primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+      "sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83",
+      "bytes": 10298
+    },
+    {
+      "path": "reference_checks.json",
+      "sha256": "7468d7ec1200c0716acaf697b14e834d7d23dcacc1aa575143ad0cebc5f1e326",
+      "bytes": 440
+    },
+    {
+      "path": "run.json",
+      "sha256": "e9527cc93e4b05290402b42166b9621c0807650bf1a5ab1f6ec0f91d7e97ea52",
+      "bytes": 277
+    },
+    {
+      "path": "solver_templates/G_recombination_network.template.json",
+      "sha256": "298854bad6d020ece576e3c33376b56380e93495e57cd8c380ef47fa0b531ba7",
+      "bytes": 1037
+    },
+    {
+      "path": "solver_templates/G_visibility.template.json",
+      "sha256": "f0aeaccc8e6593fe2a026f3ffc40a7f29ddbb0559684a47df716332bc6918e4f",
+      "bytes": 534
+    },
+    {
+      "path": "wolfram/G-WL-001/gate.json",
+      "sha256": "fd8d352bc85f2994fadfbd7b7e0a551d4a05644fe55fac8b88cac3e51242fd3c",
+      "bytes": 481
+    },
+    {
+      "path": "wolfram/G-WL-001/input.wl",
+      "sha256": "e883fd6ef2fcd8d772c8e818a8dfcd6af67bfa3a363a8f065be01c407d836735",
+      "bytes": 375
+    },
+    {
+      "path": "wolfram/G-WL-001/output.txt",
+      "sha256": "376f2c61e0cf19faaf5388b884d7792d632585c3baa00541ea22839c633c8823",
+      "bytes": 133
+    },
+    {
+      "path": "wolfram/G-WL-001/record.json",
+      "sha256": "a11a38fae9cda39c80653383da1de623b457042f5f2412adc2e4fccdf6c40b78",
+      "bytes": 629
+    },
+    {
+      "path": "wolfram/G-WL-002/gate.json",
+      "sha256": "227a5bc69da572f908aa2781a1debf7c1a517118a7da4fc0535e129c89ee1614",
+      "bytes": 488
+    },
+    {
+      "path": "wolfram/G-WL-002/input.wl",
+      "sha256": "93ea411a631de605bc9349e6269d47b5353c67fd6ba3fe51669a1b3f9351bbca",
+      "bytes": 307
+    },
+    {
+      "path": "wolfram/G-WL-002/output.txt",
+      "sha256": "5dda1fe689fc47f6c8373c036af5e87126dde9adc727b26ba17bf81481a4cabe",
+      "bytes": 293
+    },
+    {
+      "path": "wolfram/G-WL-002/record.json",
+      "sha256": "bcdb44fe5e8e63a45abfb527dd41dfcff0deabe4f3f8511489fcd848386eb619",
+      "bytes": 622
+    }
+  ]
 }

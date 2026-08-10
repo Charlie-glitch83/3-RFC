@@ -1,10 +1,60 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "run_id": "G-165-20260810T144936Z",
+  "result": "PASS",
+  "clean_checkout": true,
+  "preexecution_commit": "e7e64ce9bf63fddc1f76271db232dbd9df3c4957",
+  "artifact_hashes_match": true,
+  "replay_method": "fresh git archive of authority commit; deterministic parent-bound G freeze/execute/independent/finalize rerun",
+  "artifacts": {
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_REGISTRY.json": {
+      "primary_sha256": "6f1f7a13893a409e9b3952f5abe443ab129d50c46e3de3494e199f13b54b5422",
+      "replay_sha256": "6f1f7a13893a409e9b3952f5abe443ab129d50c46e3de3494e199f13b54b5422",
+      "match": true
+    },
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_PARAMETRIC_RECOMBINATION_HISTORY.json": {
+      "primary_sha256": "54364eafaec590b11d1a365d9bf4475e86f02a6abe7c112541d179acd1e3d9d3",
+      "replay_sha256": "54364eafaec590b11d1a365d9bf4475e86f02a6abe7c112541d179acd1e3d9d3",
+      "match": true
+    },
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json": {
+      "primary_sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83",
+      "replay_sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83",
+      "match": true
+    },
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json": {
+      "primary_sha256": "7f65ac7c7c0877d09c4fd51d897d3e68fcae80dcf8b5fd5e267e4a6432e99c78",
+      "replay_sha256": "7f65ac7c7c0877d09c4fd51d897d3e68fcae80dcf8b5fd5e267e4a6432e99c78",
+      "match": true
+    },
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json": {
+      "primary_sha256": "b7d5723ed06e8a7118db390f80af4d79449ab06f400eb5a4668e4f9aa200dd0d",
+      "replay_sha256": "b7d5723ed06e8a7118db390f80af4d79449ab06f400eb5a4668e4f9aa200dd0d",
+      "match": true
+    },
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json": {
+      "primary_sha256": "604dac044f631d720876fd1456ec33cba2800d6e488c8d507578a07e2f027367",
+      "replay_sha256": "604dac044f631d720876fd1456ec33cba2800d6e488c8d507578a07e2f027367",
+      "match": true
+    },
+    "modules/G/runs/G-165-20260810T144936Z/primary/G165_RECOMBINATION_VISIBILITY_STATE.json": {
+      "primary_sha256": "addf5317cc62ac2c6d4c7ab500038a50a49cb6604933f59454c30a5b171c42a0",
+      "replay_sha256": "addf5317cc62ac2c6d4c7ab500038a50a49cb6604933f59454c30a5b171c42a0",
+      "match": true
+    },
+    "modules/G/runs/G-165-20260810T144936Z/independent/INDEPENDENT_RECONSTRUCTION.json": {
+      "primary_sha256": "3d699103e20abd822f0883bd3ca05f27af73e046289908db9a25a213f34e236b",
+      "replay_sha256": "3d699103e20abd822f0883bd3ca05f27af73e046289908db9a25a213f34e236b",
+      "match": true
+    },
+    "modules/G/frozen/H_G_to_I_v2.json": {
+      "primary_sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+      "replay_sha256": "6cb4cf6f93abf0462dbf9750872187f20596eb4eaf70ac5ba7198b38ed113adf",
+      "match": true
+    },
+    "modules/G/frozen/H_G_to_HU_v2.json": {
+      "primary_sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f",
+      "replay_sha256": "c903e2e9853f945d87ced029ce79a791ab52398559041a448ab8e01dd585f49f",
+      "match": true
+    }
+  }
 }

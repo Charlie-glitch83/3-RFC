@@ -1,0 +1,12 @@
+{
+  "schema_version": "3.0",
+  "object_id": "G165_AGGREGATE_NO_LOSS_RECONSTRUCTION",
+  "run_id": "G-165-20260810T144936Z",
+  "result": "PASS",
+  "parent_opacity_law": "kappa_F=(v_gamma V_F)^-1 sum_material Gamma_ext with Gamma_ext=gamma_r Tr(J_r^dagger J_r rho_F)>=0; redistribution comes from the same witnessed event family",
+  "route_partition": "R_ext^b is disjoint union of concrete charge-adjacency routes plus explicitly retained witnessed micro-route fibers",
+  "reconstruction": "kappa_reconstructed^b=(v_gamma^b V_F^b)^-1 Sum_{r in R_ext^b} Gamma_r^b",
+  "algebraic_residual": "0 identically by the exact event-family partition; no route contribution is replaced by a proxy.",
+  "aggregate_reconstruction_within_tolerance": true,
+  "tolerance": 0.0
+}

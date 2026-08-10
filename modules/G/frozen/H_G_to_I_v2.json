@@ -1,0 +1,72 @@
+{
+  "schema_version": "3.0",
+  "object_id": "H_G_to_I_V2",
+  "from_module": "G",
+  "to_module": "I",
+  "run_id": "G-165-20260810T144936Z",
+  "evidence_state": "FROZEN",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parent": {
+    "path": "modules/F/frozen/H_F_to_G_v2.json",
+    "sha256": "13b811243b684ed74b29fddc145e940a3de0aa867d03bc5823faf75a38cfd990"
+  },
+  "B_carrier_ancestry": {
+    "path": "modules/B/frozen/H_B_to_C_v2.json",
+    "sha256": "d1446a474a967b27f9eacbe0645823ec63a103ceae187db8969cf6041b5e2b77"
+  },
+  "route_registry": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_REGISTRY.json",
+    "sha256": "6f1f7a13893a409e9b3952f5abe443ab129d50c46e3de3494e199f13b54b5422"
+  },
+  "route_resolved_process_activity": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_ROUTE_RESOLVED_PROCESS_ACTIVITY.json",
+    "sha256": "333047655cbd22c3a5377ffb178ce1ccf7f9fa49d87c8ea2ef0bf9160146bb83"
+  },
+  "route_to_relational_ancestry": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_PROCESS_TO_B_EDGE_ANCESTRY_FAMILY.json",
+    "sha256": "7f65ac7c7c0877d09c4fd51d897d3e68fcae80dcf8b5fd5e267e4a6432e99c78"
+  },
+  "aggregate_no_loss_reconstruction": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_AGGREGATE_NO_LOSS_RECONSTRUCTION.json",
+    "sha256": "b7d5723ed06e8a7118db390f80af4d79449ab06f400eb5a4668e4f9aa200dd0d"
+  },
+  "recombination_history": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_PARAMETRIC_RECOMBINATION_HISTORY.json",
+    "sha256": "54364eafaec590b11d1a365d9bf4475e86f02a6abe7c112541d179acd1e3d9d3"
+  },
+  "radiation_surface": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/primary/G165_RADIATION_SURFACE_BRANCH_FAMILY.json",
+    "sha256": "604dac044f631d720876fd1456ec33cba2800d6e488c8d507578a07e2f027367"
+  },
+  "Gamma_binding_classification": "EXACT_PARENT_BOUND_BRANCH_INDEXED_REPLACEMENT",
+  "clock": {
+    "origin": "Big Implosion t_phys=0+",
+    "unit_family": "t_phys=t_B tau_B, t_B>0",
+    "recursive_depth_is_time": false
+  },
+  "covariance": {
+    "law": "Sigma_F=J_F Sigma_E J_F^T+Sigma_residual+Sigma_transport+Sigma_radiation+Sigma_plasma+Sigma_atomic_seed+Sigma_representation+Sigma_spatial+Sigma_numeric+Sigma_branch",
+    "parent_eigenvalues": [
+      3.0343089878133187e-34,
+      3.0993512082975226e-32,
+      1.2703875845537904e-19
+    ],
+    "psd": true
+  },
+  "restart": {
+    "checkpoint_id": "F155-RECOMBINATION-ENTRY",
+    "state_path": "modules/F/runs/F-155-20260808T165152Z/primary/POST_NUCLEAR_PLASMA_V2.json",
+    "state_sha256": "ec406eea2438b14992ef4215f16014e9c57dd523906ec0ae770024da8ca03285",
+    "restart_test": "PASS",
+    "restart_linf": {
+      "reaction": 5.065392549852277e-15,
+      "transport": 3.164135620181696e-15
+    },
+    "contract": "G consumes H_F_to_G_v2; no conventional recombination initial condition may replace it"
+  },
+  "independent_reconstruction": {
+    "path": "modules/G/runs/G-165-20260810T144936Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+    "sha256": "3d699103e20abd822f0883bd3ca05f27af73e046289908db9a25a213f34e236b"
+  }
+}

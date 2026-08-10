@@ -1,0 +1,15 @@
+{
+  "module": "HU",
+  "bindings": [
+    {
+      "solver": "linear_transfer",
+      "template": "configured_runs/templates/HU_linear_transfer.template.json",
+      "purpose": "Execute and freeze the universal linear transfer operator.",
+      "copy_command": "python tools/director.py solver-copy --module HU --solver linear_transfer --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/HU_linear_transfer.json --output-dir <RUN_DIR>/solver_outputs/linear_transfer",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/HU_linear_transfer.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/HU_linear_transfer.template.json --binding-sheet <RUN_DIR>/binding_sheets/HU_linear_transfer.bindings.json --output <RUN_DIR>/solver_configs/HU_linear_transfer.json"
+    }
+  ]
+}

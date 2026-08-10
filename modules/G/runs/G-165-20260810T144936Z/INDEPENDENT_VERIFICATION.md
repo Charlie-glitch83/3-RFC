@@ -1,11 +1,3 @@
-# Independent Verification
+# G-165 Independent Verification
 
-## Inputs reconstructed
-
-## Methods independent from primary execution
-
-## Results
-
-## Disagreements
-
-## Verdict
+**PASS.** Parent-only reconstruction rebuilt routes and B-edge support and checked charge, ancestry, and no-loss identities.

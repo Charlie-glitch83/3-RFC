@@ -1,28 +1,17 @@
-# Closeout
+# G-165 Closeout
 
-- Run ID:
-- Work unit:
-- Module:
-- Result:
-- Evidence state reached:
-- Fidelity reached:
-- Frozen artifact hashes:
-- Verified GitHub commit SHA:
+## Result
 
-## Scientific objects produced
-
-## Componentwise gate results
-
-## Failures preserved and corrections made
-
-## Independent reconstruction
-
-## Replay/restart/convergence evidence
+**PASS at PRODUCTION exact parent-bound finite-relational branch-family scope.**
 
 ## Strongest supported claim
 
+G-165 executes the complete F-parent-bound parametric recombination route family without selecting unresolved source-owned coordinates, exports route-resolved nonnegative process activity, exact aggregate opacity reconstruction, a no-loss visibility surface measure, and a complete process-to-B-edge incidence family in `H_G_to_I_v2`.
+
 ## Strongest unsupported claim
 
-## Remaining gaps
+No unique numerical atomic-rate branch, calibrated recombination coordinate, continuum spacetime history, external comparison, or unique observed last-scattering surface is claimed.
 
-## Exact next child
+## Next child
+
+HU-175, then I-180.

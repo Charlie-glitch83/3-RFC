@@ -1,4 +1,5 @@
 {
+  "schema_version": "3.0",
   "run_id": "G-165-20260810T144936Z",
   "status": "FROZEN",
   "frozen_utc": "2026-08-10T15:33:26.826099+00:00",
@@ -147,5 +148,10 @@
   "physical_execution_scope": {
     "mode": "EXACT_PARENT_BOUND_PARAMETRIC_BRANCH_FAMILY",
     "unique_numeric_branch_selected": false
+  },
+  "triadic_descent": {
+    "CIF": "retain all F-opened atomic/radiative possibilities",
+    "QV": "execute conservative route-generator family",
+    "RFL": "stabilize recombination/opacity/visibility/ancestry/restart branch family"
   }
 }

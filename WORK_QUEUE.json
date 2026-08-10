@@ -672,7 +672,7 @@
       "id": "G-165",
       "title": "Repair Module G: Route-Resolved Recombination State and Geometry-Child Interface",
       "module": "G",
-      "status": "ACTIVE",
+      "status": "PASS",
       "depends_on": [
         "G-160"
       ],
@@ -708,7 +708,7 @@
       "id": "HU-175",
       "title": "Replay Module HU Against the Superseding G State",
       "module": "HU",
-      "status": "BLOCKED",
+      "status": "ACTIVE",
       "depends_on": [
         "G-165"
       ],

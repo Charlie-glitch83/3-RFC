@@ -1,0 +1,13 @@
+{
+  "claim_id": "G-165-EXACT-PARAMETRIC-ROUTE-FAMILY",
+  "text": "G-165 executes the exact F-parent-bound finite-relational recombination route family at PRODUCTION branch-family scope, preserving unresolved source-owned coordinates while exporting route-resolved activity, no-loss opacity/visibility, and complete lawful B-edge ancestry for I.",
+  "owner": "G",
+  "evidence_state": "FROZEN",
+  "fidelity": "PRODUCTION",
+  "supported": true,
+  "evidence": [
+    "modules/G/frozen/H_G_to_I_v2.json",
+    "modules/G/runs/G-165-20260810T144936Z/PARENT_BOUND_EXECUTION_ATTESTATION.json",
+    "modules/G/runs/G-165-20260810T144936Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+  ]
+}

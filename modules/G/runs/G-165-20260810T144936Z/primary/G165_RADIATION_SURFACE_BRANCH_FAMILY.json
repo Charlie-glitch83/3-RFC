@@ -1,0 +1,15 @@
+{
+  "schema_version": "3.0",
+  "object_id": "G165_RADIATION_SURFACE_BRANCH_FAMILY",
+  "run_id": "G-165-20260810T144936Z",
+  "result": "PASS",
+  "opacity": "kappa_b=(v_gamma V_F)^-1 Sum_r Gamma_r^b>=0",
+  "optical_depth": "tau_b(t)=Integral_t^t_out kappa_b(s)ds",
+  "survival": "S_b=Exp[-tau_b]",
+  "visibility_density": "g_b=kappa_b Exp[-tau_b]",
+  "finite_interval_no_loss": "Integral g_b dt = 1-Exp[-tau_b(t_in)]; complementary survival mass retained",
+  "normalized_conditional_surface": "g_cond=g_b/(1-Exp[-tau_in]) when interaction mass nonzero",
+  "infinite_depth_limit": "tau_in->Infinity gives unit visibility mass, matching G-WL-001",
+  "radiation_surface": "continuous last-interaction density plus retained survival mass",
+  "unique_peak_claimed": false
+}

@@ -1,0 +1,14 @@
+{
+  "call_id": "G-WL-002",
+  "module": "G",
+  "purpose": "Three-state recombination-network conservation template",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-10T15:33:26.966255+00:00",
+  "input_sha256": "93ea411a631de605bc9349e6269d47b5353c67fd6ba3fe51669a1b3f9351bbca",
+  "output_sha256": "5dda1fe689fc47f6c8373c036af5e87126dde9adc727b26ba17bf81481a4cabe",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/G/runs/G-165-20260810T144936Z/wolfram/G-WL-002/gate.json"
+}
