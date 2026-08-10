@@ -37,6 +37,7 @@ jobs:
           R="modules/HU/runs/$RID"
           python tools/rfc.py doctor
           python tools/director.py doctor
+          python tools/rfc.py reopen-module HU --fidelity PRODUCTION --evidence modules/G/frozen/H_G_to_HU_v2.json
           python tools/hu175_replay.py freeze
 
           cat > /tmp/HU-WL-001.output.txt <<'EOF'
