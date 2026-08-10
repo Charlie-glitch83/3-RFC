@@ -1,0 +1,27 @@
+{
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "overall": "PASS",
+  "ablations": [
+    {
+      "removed": "HU parent",
+      "effect": "transfer undefined",
+      "passes_expected_failure": true
+    },
+    {
+      "removed": "I parent",
+      "effect": "realized-background instantiation undefined",
+      "passes_expected_failure": true
+    },
+    {
+      "removed": "shared branch identity",
+      "effect": "compatibility undefined",
+      "passes_expected_failure": true
+    },
+    {
+      "removed": "no-retune lock",
+      "effect": "forbidden freedom appears",
+      "passes_expected_failure": true
+    }
+  ]
+}

@@ -1,7 +1,68 @@
 {
-  "schema_version": "1.0",
-  "run_id": "",
-  "module": "",
-  "overall": "DRAFT",
-  "required_outputs": []
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "module": "HI",
+  "overall": "PASS",
+  "required_outputs": [
+    {
+      "requirement": "instantiated transfer system",
+      "status": "PASS",
+      "semantic_check": "Exact parent-bound artifact with immutable HU/I composition, no-retune and independent reconstruction.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json",
+          "sha256": "d1c54f410b5f074d59d1788b720b4f04c9cd3daa93e6bcfd0875d044b85d93fb",
+          "bytes": 4096
+        }
+      ]
+    },
+    {
+      "requirement": "mode/eigenstructure",
+      "status": "PASS",
+      "semantic_check": "Exact parent-bound artifact with immutable HU/I composition, no-retune and independent reconstruction.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json",
+          "sha256": "d1c54f410b5f074d59d1788b720b4f04c9cd3daa93e6bcfd0875d044b85d93fb",
+          "bytes": 4096
+        }
+      ]
+    },
+    {
+      "requirement": "gauge/frame mapping",
+      "status": "PASS",
+      "semantic_check": "Exact parent-bound artifact with immutable HU/I composition, no-retune and independent reconstruction.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json",
+          "sha256": "d1c54f410b5f074d59d1788b720b4f04c9cd3daa93e6bcfd0875d044b85d93fb",
+          "bytes": 4096
+        }
+      ]
+    },
+    {
+      "requirement": "error/covariance propagation",
+      "status": "PASS",
+      "semantic_check": "Exact parent-bound artifact with immutable HU/I composition, no-retune and independent reconstruction.",
+      "evidence": [
+        {
+          "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json",
+          "sha256": "d1c54f410b5f074d59d1788b720b4f04c9cd3daa93e6bcfd0875d044b85d93fb",
+          "bytes": 4096
+        }
+      ]
+    },
+    {
+      "requirement": "H_HI_to_J",
+      "status": "PASS",
+      "semantic_check": "Exact parent-bound artifact with immutable HU/I composition, no-retune and independent reconstruction.",
+      "evidence": [
+        {
+          "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+          "sha256": "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e",
+          "bytes": 3697
+        }
+      ]
+    }
+  ]
 }

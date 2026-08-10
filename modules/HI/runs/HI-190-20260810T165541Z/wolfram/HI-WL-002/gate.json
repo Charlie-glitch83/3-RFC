@@ -1,0 +1,11 @@
+{
+  "call_id": "HI-WL-002",
+  "classification": "WOLFRAM_MANUFACTURED_GATE",
+  "status": "PASS_WITH_MANUAL_INTERPRETATION",
+  "failures": [],
+  "manual_review_fields": [
+    "propagatedCovariance"
+  ],
+  "decision_rule": "Require symmetric PSD propagated covariance; symmetry alone is not sufficient.",
+  "warning": "A manufactured symbolic gate never promotes a module to PHYSICALLY_EXECUTED. Parent-bound substitutions and module gates remain mandatory."
+}

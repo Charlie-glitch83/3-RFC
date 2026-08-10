@@ -1,0 +1,91 @@
+{
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "status": "FROZEN_PRE_EXECUTION",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parents": {
+    "HU": {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "bytes": 2021
+    },
+    "I": {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "bytes": 3470
+    }
+  },
+  "triadic_descent": {
+    "CIF": "retain complete repaired-G branch identity carried through HU tangent dynamics and I realized response geometry",
+    "QV": "admit only exact same-branch/domain-compatible pairings and forbid mutation, branch shopping or background-driven retuning",
+    "RFL": "freeze immutable branch-indexed HU-on-I composite, mode/gauge/clock/covariance pushforward and restart ancestry for J"
+  },
+  "compatibility_rule": "HI exists iff HU and I carry the same repaired-G branch/source coordinates, HU perturbations lie in V_b=ker(C_b)/im(Gauge_b), and I carries the same Big-Implosion clock. No coercion or branch selection.",
+  "laws": {
+    "immutable_composite": "HI_b=(I_b,U_HU[b;t2,t1]); deltaX_out=U_HU deltaX_in while I_b is unchanged context.",
+    "mode_eigenstructure": "exactly HU generator/propagator eigenstructure on V_b, indexed by I branch; no new mode selection.",
+    "gauge_frame": "HU tangent quotient/projector unchanged; I constant response-graph mode remains background gauge; no distinct gauge directions are mixed.",
+    "covariance": "Sigma_delta,out=U Sigma_delta,in U^T; Sigma_I remains attached; source-owned cross covariance C maps to U C; unresolved cross covariance is retained, never invented or zeroed.",
+    "branch_policy": "retain every exact parent-compatible branch; no tie-break.",
+    "clock": "shared t_phys=t_B tau_B, t_B>0; no new clock."
+  },
+  "domain_mapping": {
+    "HU_domain": "V_b=ker(C_b)/im(Gauge_b) for each admitted repaired-G branch b",
+    "HU_codomain": "same branch-indexed physical tangent quotient V_b",
+    "I_context": {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+      "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+      "bytes": 4265
+    },
+    "compatibility": "background branch index only; no response-operator multiplication into HU generator unless an exact parent law defines it"
+  },
+  "implementation_witness": {
+    "classification": "MANUFACTURED_LINEAR_TRANSFER_IMPLEMENTATION_ONLY",
+    "generator": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "times": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "initial_state": [
+      0.5,
+      0.5
+    ],
+    "initial_covariance": [
+      [
+        0.01,
+        0.0
+      ],
+      [
+        0.0,
+        0.01
+      ]
+    ],
+    "tolerance": 1e-10
+  },
+  "falsifiers": [
+    "HU/I hash mismatch",
+    "branch/domain mismatch",
+    "HU operator mutation",
+    "I background mutation",
+    "new background-dependent transfer coefficient",
+    "observed-data branch selection",
+    "covariance PSD/symmetry failure",
+    "clean replay mismatch"
+  ],
+  "claim_boundary": {
+    "strongest_supported": "HI-190 instantiates the frozen PRODUCTION HU branch-indexed constraint-preserving transfer family on every exact compatible frozen I response-geometry branch without retuning either parent, preserving mode/gauge/clock contracts, covariance pushforward, ancestry, restart and unresolved branch identity.",
+    "strongest_unsupported": "No unique branch, new transfer coefficient, realized primordial covariance/spectrum, finite-volume field, observational transfer table, continuum/FRW identification or empirical agreement is established by HI."
+  }
+}

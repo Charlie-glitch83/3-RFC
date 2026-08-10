@@ -1,21 +1,146 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "frozen_utc": null,
-  "authority_hashes": [],
-  "parent_hashes": [],
-  "definition_hashes": [],
-  "candidate_classes": [],
-  "equations_and_laws": [],
-  "dimensions_units_frames_gauges_clocks": [],
-  "methods": [],
-  "tolerances": [],
-  "stopping_rules": [],
-  "expected_invariants": [],
-  "tests": [],
-  "gates": [],
-  "falsifiers": [],
-  "claim_boundary": "",
-  "independent_verifier_design": "",
-  "allowed_implementation_only_corrections": []
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-10T17:03:40.595997+00:00",
+  "frozen_before_primary_execution": true,
+  "authority_hashes": [
+    {
+      "path": "recipes/HI/recipe.json",
+      "sha256": "a75977151e79de588728817b6e4871c962192481067c1364fd5d260485f28493",
+      "bytes": 3696
+    },
+    {
+      "path": "recipes/HI/WORK_ORDER.md",
+      "sha256": "22d80795ec737313fc37fc30e42330208f88cd70b949fda58f9c3a74ab37ee8f",
+      "bytes": 3079
+    },
+    {
+      "path": "recipes/HI/gates.json",
+      "sha256": "c820ec7370f8672b399bfacc90f2fb67136ed4cf1e67c70610bfb05d6adabc43",
+      "bytes": 408
+    }
+  ],
+  "parent_hashes": [
+    {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "bytes": 2021
+    },
+    {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "bytes": 3470
+    },
+    {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_TYPED_OPERATOR.json",
+      "sha256": "aba6a931511c686a1ec87e46192628edeb5e05a55f64b24a53ac45ed099bbd97",
+      "bytes": 1280
+    },
+    {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT.json",
+      "sha256": "a3ddd95c6c190f6fd699bc24174d83175696bee18a60f0635d3c49c8d44f16d9",
+      "bytes": 944
+    },
+    {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_OPERATOR_UNCERTAINTY.json",
+      "sha256": "5c9202cce21785155d9abce5fda828cdb0c0d8e26e5bfc2844477fe1c59ecfa6",
+      "bytes": 748
+    }
+  ],
+  "definition_hashes": [
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+      "bytes": 3894
+    }
+  ],
+  "candidate_classes": [
+    "same-branch immutable HU-on-I fiber-product family"
+  ],
+  "equations_and_laws": [
+    "HI_b=(I_b,U_HU[b;t2,t1]); deltaX_out=U_HU deltaX_in while I_b is unchanged context.",
+    "exactly HU generator/propagator eigenstructure on V_b, indexed by I branch; no new mode selection.",
+    "HU tangent quotient/projector unchanged; I constant response-graph mode remains background gauge; no distinct gauge directions are mixed.",
+    "Sigma_delta,out=U Sigma_delta,in U^T; Sigma_I remains attached; source-owned cross covariance C maps to U C; unresolved cross covariance is retained, never invented or zeroed.",
+    "retain every exact parent-compatible branch; no tie-break.",
+    "shared t_phys=t_B tau_B, t_B>0; no new clock."
+  ],
+  "dimensions_units_frames_gauges_clocks": [
+    "HU tangent quotient V_b",
+    "I finite response-geometry quotient",
+    "shared Big-Implosion clock t_B tau_B",
+    "no imported FRW frame"
+  ],
+  "methods": [
+    "exact-parent symbolic composition",
+    "semantic countermodels",
+    "manufactured linear-transfer solver only",
+    "semigroup convergence/restart",
+    "parent-only independent reconstruction",
+    "clean replay"
+  ],
+  "tolerances": [
+    {
+      "name": "implementation_witness",
+      "value": 1e-10
+    },
+    {
+      "name": "replay_hash",
+      "value": "EXACT"
+    }
+  ],
+  "stopping_rules": [
+    "HU/I hash mismatch",
+    "branch/domain mismatch",
+    "HU operator mutation",
+    "I background mutation",
+    "new background-dependent transfer coefficient",
+    "observed-data branch selection",
+    "covariance PSD/symmetry failure",
+    "clean replay mismatch"
+  ],
+  "expected_invariants": [
+    "exact parent hashes",
+    "no retune",
+    "same branch identity",
+    "HU constraint preservation",
+    "I background unchanged",
+    "covariance symmetry/PSD",
+    "no public target"
+  ],
+  "tests": [
+    "HI-WL-001",
+    "HI-WL-002",
+    "reference checks",
+    "countermodels",
+    "ablations",
+    "convergence/restart",
+    "independent reconstruction",
+    "clean replay"
+  ],
+  "gates": [
+    "exact parent hashes",
+    "no retune of HU or I",
+    "operator-domain compatibility",
+    "independent reconstruction"
+  ],
+  "falsifiers": [
+    "HU/I hash mismatch",
+    "branch/domain mismatch",
+    "HU operator mutation",
+    "I background mutation",
+    "new background-dependent transfer coefficient",
+    "observed-data branch selection",
+    "covariance PSD/symmetry failure",
+    "clean replay mismatch"
+  ],
+  "claim_boundary": {
+    "strongest_supported": "HI-190 instantiates the frozen PRODUCTION HU branch-indexed constraint-preserving transfer family on every exact compatible frozen I response-geometry branch without retuning either parent, preserving mode/gauge/clock contracts, covariance pushforward, ancestry, restart and unresolved branch identity.",
+    "strongest_unsupported": "No unique branch, new transfer coefficient, realized primordial covariance/spectrum, finite-volume field, observational transfer table, continuum/FRW identification or empirical agreement is established by HI."
+  },
+  "independent_verifier_design": "reconstruct exact compatibility and immutable composition from HU/I parents without reading HI primary/gates/closeout",
+  "allowed_implementation_only_corrections": [
+    "path/syntax/serialization/schema/evidence plumbing only"
+  ]
 }

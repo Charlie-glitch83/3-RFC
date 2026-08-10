@@ -1,10 +1,46 @@
 {
-  "run_id": "",
-  "status": "NOT_RUN",
-  "clean_checkout": false,
-  "restart_check": false,
-  "earliest_change_replay": false,
-  "commands": [],
-  "result": "BLOCKED",
-  "artifact_hashes_match": false
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "result": "PASS",
+  "clean_checkout": true,
+  "artifact_hashes_match": true,
+  "preexecution_commit": "c3955d58472e8b131463079ab16329091bb872e9",
+  "compared_artifacts": [
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "primary_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+      "replay_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+      "match": true
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json",
+      "primary_sha256": "d1c54f410b5f074d59d1788b720b4f04c9cd3daa93e6bcfd0875d044b85d93fb",
+      "replay_sha256": "d1c54f410b5f074d59d1788b720b4f04c9cd3daa93e6bcfd0875d044b85d93fb",
+      "match": true
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/COUNTERMODEL_RESULTS.json",
+      "primary_sha256": "5a6621079cbb080b594201df2dc6c77e2c96446b1ae478b22204bce576c3431e",
+      "replay_sha256": "5a6621079cbb080b594201df2dc6c77e2c96446b1ae478b22204bce576c3431e",
+      "match": true
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/ABLATION_RESULTS.json",
+      "primary_sha256": "c2500eafe93ad6388dfb1fa02f40bccce203a0ecd27ed79d3b61814ccdcdfb07",
+      "replay_sha256": "c2500eafe93ad6388dfb1fa02f40bccce203a0ecd27ed79d3b61814ccdcdfb07",
+      "match": true
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/convergence/HI190_CONVERGENCE_RESTART.json",
+      "primary_sha256": "d918779ee48807e289645420276e386d60fbbec8c20e7860ddd2f65fc635d334",
+      "replay_sha256": "d918779ee48807e289645420276e386d60fbbec8c20e7860ddd2f65fc635d334",
+      "match": true
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "primary_sha256": "cd559ca0c680fa4bd515fc4b8b9d22f10caadec4f3055da07e411305e9d8b660",
+      "replay_sha256": "cd559ca0c680fa4bd515fc4b8b9d22f10caadec4f3055da07e411305e9d8b660",
+      "match": true
+    }
+  ]
 }

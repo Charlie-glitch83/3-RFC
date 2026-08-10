@@ -1,0 +1,14 @@
+{
+  "call_id": "HI-WL-002",
+  "module": "HI",
+  "purpose": "Covariance propagation through instantiated operator",
+  "tool": "WolframLanguageEvaluator",
+  "timestamp_utc": "2026-08-10T17:03:40.734040+00:00",
+  "input_sha256": "233e23ee6bf330b48bf0f584f9b192c271cdf4ce03af077e41fdddd4addeff75",
+  "output_sha256": "8560631ac69d9abcdaeca776510b1fa6e3b5ca46ee2c4a95c6c2083e235bccd6",
+  "public_knowledge_allowed": false,
+  "public_knowledge_used": false,
+  "interpretation_required": true,
+  "manufactured_gate_returncode": 0,
+  "manufactured_gate_path": "modules/HI/runs/HI-190-20260810T165541Z/wolfram/HI-WL-002/gate.json"
+}

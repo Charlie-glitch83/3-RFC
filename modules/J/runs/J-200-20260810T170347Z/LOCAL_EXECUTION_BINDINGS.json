@@ -1,0 +1,25 @@
+{
+  "module": "J",
+  "bindings": [
+    {
+      "solver": "covariance",
+      "template": "configured_runs/templates/J_covariance.template.json",
+      "purpose": "Audit and sample the internally derived primordial covariance.",
+      "copy_command": "python tools/director.py solver-copy --module J --solver covariance --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_covariance.json --output-dir <RUN_DIR>/solver_outputs/covariance",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/J_covariance.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_covariance.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_covariance.bindings.json --output <RUN_DIR>/solver_configs/J_covariance.json"
+    },
+    {
+      "solver": "fourier_field",
+      "template": "configured_runs/templates/J_fourier_field.template.json",
+      "purpose": "Generate finite-volume fields with a frozen seed and Hermitian reality.",
+      "copy_command": "python tools/director.py solver-copy --module J --solver fourier_field --destination <RUN_DIR>",
+      "run_command": "python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/J_fourier_field.json --output-dir <RUN_DIR>/solver_outputs/fourier_field",
+      "status": "UNBOUND_UNTIL_EXACT_PARENT_DERIVATION",
+      "binding_sheet": "configured_runs/binding_sheets/J_fourier_field.bindings.json",
+      "materialize_command": "python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/J_fourier_field.template.json --binding-sheet <RUN_DIR>/binding_sheets/J_fourier_field.bindings.json --output <RUN_DIR>/solver_configs/J_fourier_field.json"
+    }
+  ]
+}

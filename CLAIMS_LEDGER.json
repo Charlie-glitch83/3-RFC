@@ -248,6 +248,20 @@
       ],
       "recorded_utc": "2026-08-10T16:55:40.525270+00:00",
       "work_unit": "I-180"
+    },
+    {
+      "claim_id": "HI-190-REPAIRED-IMMUTABLE-COMPOSITE",
+      "text": "HI-190 instantiates the frozen PRODUCTION HU branch-indexed constraint-preserving transfer family on every exact compatible frozen I response-geometry branch without retuning either parent, preserving mode/gauge/clock contracts, covariance pushforward, ancestry, restart and unresolved branch identity.",
+      "owner": "HI",
+      "evidence_state": "FROZEN",
+      "fidelity": "PRODUCTION",
+      "supported": true,
+      "evidence": [
+        "modules/HI/frozen/H_HI_to_J_v2.json",
+        "modules/HI/runs/HI-190-20260810T165541Z/independent/INDEPENDENT_RECONSTRUCTION.json"
+      ],
+      "recorded_utc": "2026-08-10T17:03:46.190516+00:00",
+      "work_unit": "HI-190"
     }
   ]
 }

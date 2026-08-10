@@ -1,0 +1,76 @@
+{
+  "schema_version": "4.0",
+  "object_id": "HI190_IMMUTABLE_TRANSFER_ON_RESPONSE_GEOMETRY_FAMILY",
+  "run_id": "HI-190-20260810T165541Z",
+  "result": "PASS",
+  "status": "PHYSICALLY_EXECUTED_EXACT_PARENT_BOUND_COMPOSITE_FAMILY",
+  "fidelity": "PRODUCTION",
+  "generation_mode": "GENERATION_SEALED",
+  "parents": {
+    "HU": {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "bytes": 2021
+    },
+    "I": {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "bytes": 3470
+    }
+  },
+  "compatibility_rule": "HI exists iff HU and I carry the same repaired-G branch/source coordinates, HU perturbations lie in V_b=ker(C_b)/im(Gauge_b), and I carries the same Big-Implosion clock. No coercion or branch selection.",
+  "instantiated_transfer_system": {
+    "branch_family": "all exact same repaired-G parent-compatible branches",
+    "background_context": {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json",
+      "sha256": "78c62ee3e7e7c9f154baea74d4d445fee8b9267a08689cf370a886ca32423a87",
+      "bytes": 4265
+    },
+    "operator_family": {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_TYPED_OPERATOR.json",
+      "sha256": "aba6a931511c686a1ec87e46192628edeb5e05a55f64b24a53ac45ed099bbd97"
+    },
+    "law": "HI_b=(I_b,U_HU[b;t2,t1]); deltaX_out=U_HU deltaX_in while I_b is unchanged context.",
+    "no_retune": true,
+    "I_background_mutated": false
+  },
+  "mode_eigenstructure": {
+    "generator": "K_HU[b,t]=P_b D F_G[X_G^b(t)] P_b where F_G is the exact G-165 parent evolution/route law",
+    "propagator": "U_HU[b;t2,t1]=Texp(Integral K_HU[b,s] ds), U(t,t)=I",
+    "domain": "V_b=ker(C_b)/im(Gauge_b) for each admitted repaired-G branch b",
+    "codomain": "same branch-indexed physical tangent quotient V_b",
+    "selection": "NONE"
+  },
+  "gauge_frame_mapping": {
+    "HU_constraint_contract": {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT.json",
+      "sha256": "a3ddd95c6c190f6fd699bc24174d83175696bee18a60f0635d3c49c8d44f16d9"
+    },
+    "I_gauge": "constant response-graph mode quotient retained from I",
+    "clock": {
+      "origin": "Big Implosion t_phys=0+",
+      "unit_family": "t_phys=t_B tau_B, t_B>0",
+      "recursive_depth_is_time": false
+    },
+    "cross_gauge_identification": "NONE_UNLESS_PARENT_DEFINED"
+  },
+  "error_covariance_propagation": {
+    "HU_operator_uncertainty": {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_OPERATOR_UNCERTAINTY.json",
+      "sha256": "5c9202cce21785155d9abce5fda828cdb0c0d8e26e5bfc2844477fe1c59ecfa6"
+    },
+    "I_background_covariance": {
+      "path": "modules/I/runs/I-180-20260810T154430Z/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json",
+      "sha256": "9085a2a4dd6670daa36e3b03ce161d633c14e53d1ca1201745e875a9a6820afe",
+      "bytes": 1739
+    },
+    "law": "Sigma_delta,out=U Sigma_delta,in U^T; Sigma_I remains attached; source-owned cross covariance C maps to U C; unresolved cross covariance is retained, never invented or zeroed.",
+    "unresolved_cross_covariance_policy": "retain unresolved; never invent/zero by assumption"
+  },
+  "branch_policy": "retain every exact parent-compatible branch; no tie-break.",
+  "no_retune": true,
+  "public_inputs_used": false,
+  "unique_branch_selected": false,
+  "strongest_supported": "HI-190 instantiates the frozen PRODUCTION HU branch-indexed constraint-preserving transfer family on every exact compatible frozen I response-geometry branch without retuning either parent, preserving mode/gauge/clock contracts, covariance pushforward, ancestry, restart and unresolved branch identity.",
+  "strongest_unsupported": "No unique branch, new transfer coefficient, realized primordial covariance/spectrum, finite-volume field, observational transfer table, continuum/FRW identification or empirical agreement is established by HI."
+}

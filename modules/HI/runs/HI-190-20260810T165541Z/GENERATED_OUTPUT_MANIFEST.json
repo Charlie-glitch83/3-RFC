@@ -1,8 +1,102 @@
 {
-  "run_id": "",
-  "status": "DRAFT",
-  "finalized_utc": null,
-  "outputs": [],
-  "tree_sha256": null,
-  "note": "Finalize only after all generated files stop changing. Do not include this manifest in its own tree hash."
+  "run_id": "HI-190-20260810T165541Z",
+  "status": "FINAL",
+  "finalized_utc": "2026-08-10T17:03:45.676248+00:00",
+  "outputs": [
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/SOURCE_REGISTER.json",
+      "sha256": "e2575c9ca8e509fed11b0dc1f1e4bc9e6b911d7d4d3dd461916af3743b8a3c0e",
+      "bytes": 2077
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/PRE_EXECUTION_LOCK.json",
+      "sha256": "78cb7dbe0e0f2195ab6b4638937b6e1784959b0e80cb4e6116af07217b2b4287",
+      "bytes": 5305
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+      "bytes": 3894
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/ENVIRONMENT.json",
+      "sha256": "fd2909db2f43e97e39046322bb9d5a15f179f4e9866e530325ffa971f8446832",
+      "bytes": 594
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/GATE_RESULTS.json",
+      "sha256": "1e74d4c1e7ae6cd5e0344af637516925796809a48b5a5b9efe3ac39d332ca92e",
+      "bytes": 583
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/INDEPENDENT_VERIFICATION.md",
+      "sha256": "e5d72e26a88adfeba4c5e2fe9abcfa0f5bed02206ac3c679640dd41de745ca70",
+      "bytes": 272
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/CLOSEOUT.md",
+      "sha256": "86efa4e7c38e02397fc7e704da8e52e628a14d2f00794c1348a90ddc714efa65",
+      "bytes": 700
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/OUTPUT_COMPLETENESS.json",
+      "sha256": "c04391ed019a2374dccd4f4b310d2707a1cf19a037c3b90c2f8604276f0e5309",
+      "bytes": 2492
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/OUTPUT_CONTRACT.json",
+      "sha256": "e36fe8099821f11c8f1861bdebeb431a2b5aed0e843737960ec983c050abe89a",
+      "bytes": 1670
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/CHECKPOINT_RECORD.json",
+      "sha256": "ec2c219b03d1181753fa5dd806cb62df2a8df7a52550048d4b6c421865fbb4d7",
+      "bytes": 198
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/PARENT_BOUND_EXECUTION_ATTESTATION.json",
+      "sha256": "41f5219c2c47485e9a1bac07557f44c94f1747b46f4b426a95be587d748a6af4",
+      "bytes": 631
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/REPLAY_RECORD.json",
+      "sha256": "da100464a614e250b82c6a93631d8c7038794489e64ad3b3a0c6e6f624b24ed0",
+      "bytes": 2112
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/reference_checks.json",
+      "sha256": "dd30ae29ee78f935a938bbd59364ce142f6a703670e4662870be316d1e559194",
+      "bytes": 475
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json",
+      "sha256": "d1c54f410b5f074d59d1788b720b4f04c9cd3daa93e6bcfd0875d044b85d93fb",
+      "bytes": 4096
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/COUNTERMODEL_RESULTS.json",
+      "sha256": "5a6621079cbb080b594201df2dc6c77e2c96446b1ae478b22204bce576c3431e",
+      "bytes": 757
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/primary/ABLATION_RESULTS.json",
+      "sha256": "c2500eafe93ad6388dfb1fa02f40bccce203a0ecd27ed79d3b61814ccdcdfb07",
+      "bytes": 641
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/convergence/HI190_CONVERGENCE_RESTART.json",
+      "sha256": "d918779ee48807e289645420276e386d60fbbec8c20e7860ddd2f65fc635d334",
+      "bytes": 1336
+    },
+    {
+      "path": "modules/HI/runs/HI-190-20260810T165541Z/independent/INDEPENDENT_RECONSTRUCTION.json",
+      "sha256": "cd559ca0c680fa4bd515fc4b8b9d22f10caadec4f3055da07e411305e9d8b660",
+      "bytes": 2017
+    },
+    {
+      "path": "modules/HI/frozen/H_HI_to_J_v2.json",
+      "sha256": "6bb05470f49b7bb00b94b2dd19f306f864a05e9db4e03c58175ee2664c5abb7e",
+      "bytes": 3697
+    }
+  ]
 }

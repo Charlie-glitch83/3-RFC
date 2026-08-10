@@ -2,9 +2,14 @@
   "run_id": "HI-190-20260810T165541Z",
   "module": "HI",
   "task_id": "HI-190",
-  "status": "CREATED",
+  "status": "PASS",
   "created_utc": "2026-08-10T16:55:41.881142+00:00",
-  "parent_hashes": [],
+  "parent_hashes": [
+    "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+    "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83"
+  ],
   "generation_mode": "GENERATION_SEALED",
-  "workspace": "modules/HI/runs/HI-190-20260810T165541Z"
+  "workspace": "modules/HI/runs/HI-190-20260810T165541Z",
+  "closed_utc": "2026-08-10T17:03:46.136217+00:00",
+  "closeout": "modules/HI/runs/HI-190-20260810T165541Z/CLOSEOUT.md"
 }

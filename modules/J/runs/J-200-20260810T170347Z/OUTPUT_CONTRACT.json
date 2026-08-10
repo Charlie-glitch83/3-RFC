@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "run_id": "J-200-20260810T170347Z",
+  "module": "J",
+  "status": "DRAFT",
+  "required_outputs": [
+    {
+      "name": "positive-semidefinite covariance",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "linear spectra and growth",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "finite-volume fields",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "phase/seed provenance",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "promotion witnesses",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    },
+    {
+      "name": "restartable P_J_to_K",
+      "status": "UNSATISFIED",
+      "artifact_paths": [],
+      "semantic_gate": "PENDING",
+      "independent_verification": "PENDING",
+      "child_ready": false
+    }
+  ],
+  "child_bindings": {},
+  "note": "PASS requires every live module-spec output and configured child binding to be artifact-backed, semantically verified, independently verified, and child-ready."
+}

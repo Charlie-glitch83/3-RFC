@@ -1,0 +1,4 @@
+Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp" are undefined.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"HI-WL-002\", \"propagatedCovariance\" -> \"{{a^2 + b^2 + 2*a*b*r, b*(d + c*r) + a*(c + d*r)}, {b*(d + c*r) + a*(c + d*r), c^2 + d^2 + 2*c*d*r}}\", \"symmetric\" -> True|>"

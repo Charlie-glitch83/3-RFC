@@ -1,13 +1,13 @@
 # Current Context
 
-Generated: 2026-08-10T16:55:41.718970+00:00
+Generated: 2026-08-10T17:03:47.074749+00:00
 
 ## Project truth
 
 - Status: `ACTIVE`
 - Generation mode: `GENERATION_SEALED`
-- Active work unit: `HI-190` — Close Module HI: Transfer Operator Instantiation
-- Current module: `HI`
+- Active work unit: `J-200` — Close Module J: Primordial Covariance, Linear Spectra, and Finite-Volume Fields
+- Current module: `J`
 - Last verified commit: `26c08a68607721e84da1c83bb8d6e098fdeb2304`
 
 ## Strongest supported claim
@@ -20,23 +20,24 @@ No superseding G physical route realization, replayed HU transfer, repaired I ph
 
 ## Immediate objective
 
-Instantiate the frozen universal transfer operator on the realized background without changing either parent's law.
+Generate the actual covariance, linear spectra, phases/seeds, and finite-volume field realization consumed by nonlinear gravity.
 
 ## Required deliverables
 
-- modules/HI/runs/<RUN_ID>/RUN_PLAN.md
-- modules/HI/runs/<RUN_ID>/SOURCE_REGISTER.json
-- modules/HI/runs/<RUN_ID>/GATE_RESULTS.json
-- modules/HI/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
-- modules/HI/runs/<RUN_ID>/CLOSEOUT.md
+- modules/J/runs/<RUN_ID>/RUN_PLAN.md
+- modules/J/runs/<RUN_ID>/SOURCE_REGISTER.json
+- modules/J/runs/<RUN_ID>/GATE_RESULTS.json
+- modules/J/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
+- modules/J/runs/<RUN_ID>/CLOSEOUT.md
 - frozen output packet and artifact registry entries
 
 ## Mandatory gates
 
-- exact parent hashes
-- no retune of HU or I
-- operator-domain compatibility
-- independent reconstruction
+- covariance PSD
+- reality/Hermitian conditions
+- resolution and volume tests
+- no public initial-condition file
+- independent field reconstruction
 
 ## Module states
 
@@ -49,7 +50,7 @@ Instantiate the frozen universal transfer operator on the realized background wi
 - G: `FROZEN` / `PRODUCTION`
 - HU: `FROZEN` / `PRODUCTION`
 - I: `FROZEN` / `PRODUCTION`
-- HI: `DESIGN` / `UNSTARTED`
+- HI: `FROZEN` / `PRODUCTION`
 - J: `DESIGN` / `UNSTARTED`
 - K: `DESIGN` / `UNSTARTED`
 - L: `DESIGN` / `UNSTARTED`
@@ -63,12 +64,11 @@ Instantiate the frozen universal transfer operator on the realized background wi
 ## Memory counts
 
 - admitted sources: 85
-- frozen artifacts: 35
-- indexed runs: 28
+- frozen artifacts: 36
+- indexed runs: 29
 
 ## Recent runs
 
-- G-160-20260809T025252Z: PASS (G)
 - HU-170-20260809T045528Z: PASS (HU)
 - I-180-20260809T050839Z: PASS (I)
 - HI-190-20260809T221124Z: PASS (HI)
@@ -76,17 +76,18 @@ Instantiate the frozen universal transfer operator on the realized background wi
 - G-165-20260810T144936Z: PASS (G)
 - HU-175-20260810T153330Z: PASS (HU)
 - I-180-20260810T154430Z: PASS (I)
+- HI-190-20260810T165541Z: PASS (HI)
 
 ## Recent decisions
 
-- ADVANCE-HU-175-20260810T154428Z: Marked HU-175 PASS and activated I-180
-- PROMOTE-I-FORMALIZED-20260810T165540Z: Promoted Module I from FORMALIZED to FORMALIZED at PRODUCTION
-- PROMOTE-I-IMPLEMENTED-20260810T165540Z: Promoted Module I from FORMALIZED to IMPLEMENTED at PRODUCTION
-- PROMOTE-I-VERIFIED-20260810T165540Z: Promoted Module I from IMPLEMENTED to VERIFIED at PRODUCTION
-- PROMOTE-I-PHYSICALLY_EXECUTED-20260810T165540Z: Promoted Module I from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
-- PROMOTE-I-INDEPENDENTLY_REPRODUCED-20260810T165540Z: Promoted Module I from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
-- PROMOTE-I-FROZEN-20260810T165540Z: Promoted Module I from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
 - ADVANCE-I-180-20260810T165540Z: Marked I-180 PASS and activated HI-190
+- PROMOTE-HI-FORMALIZED-20260810T170345Z: Promoted Module HI from DESIGN to FORMALIZED at PRODUCTION
+- PROMOTE-HI-IMPLEMENTED-20260810T170345Z: Promoted Module HI from FORMALIZED to IMPLEMENTED at PRODUCTION
+- PROMOTE-HI-VERIFIED-20260810T170345Z: Promoted Module HI from IMPLEMENTED to VERIFIED at PRODUCTION
+- PROMOTE-HI-PHYSICALLY_EXECUTED-20260810T170345Z: Promoted Module HI from VERIFIED to PHYSICALLY_EXECUTED at PRODUCTION
+- PROMOTE-HI-INDEPENDENTLY_REPRODUCED-20260810T170346Z: Promoted Module HI from PHYSICALLY_EXECUTED to INDEPENDENTLY_REPRODUCED at PRODUCTION
+- PROMOTE-HI-FROZEN-20260810T170346Z: Promoted Module HI from INDEPENDENTLY_REPRODUCED to FROZEN at PRODUCTION
+- ADVANCE-HI-190-20260810T170346Z: Marked HI-190 PASS and activated J-200
 
 ## Recent failures
 

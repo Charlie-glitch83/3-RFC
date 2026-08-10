@@ -1,0 +1,46 @@
+{
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "classification": "MANUFACTURED_IMPLEMENTATION_GATE_NOT_PHYSICAL_EVIDENCE",
+  "overall": "PASS",
+  "refinement": [
+    {
+      "steps": 1,
+      "operator_error_inf": 0.0,
+      "state_error_inf": 0.0,
+      "covariance_min_eigenvalue": 0.00018315638888734146
+    },
+    {
+      "steps": 2,
+      "operator_error_inf": 1.1102230246251565e-16,
+      "state_error_inf": 5.551115123125783e-17,
+      "covariance_min_eigenvalue": 0.00018315638888734102
+    },
+    {
+      "steps": 4,
+      "operator_error_inf": 1.1102230246251565e-16,
+      "state_error_inf": 5.551115123125783e-17,
+      "covariance_min_eigenvalue": 0.0001831563888873419
+    },
+    {
+      "steps": 8,
+      "operator_error_inf": 3.3306690738754696e-16,
+      "state_error_inf": 2.220446049250313e-16,
+      "covariance_min_eigenvalue": 0.0001831563888873419
+    },
+    {
+      "steps": 16,
+      "operator_error_inf": 2.7755575615628914e-16,
+      "state_error_inf": 2.220446049250313e-16,
+      "covariance_min_eigenvalue": 0.0001831563888873419
+    },
+    {
+      "steps": 32,
+      "operator_error_inf": 2.220446049250313e-16,
+      "state_error_inf": 2.220446049250313e-16,
+      "covariance_min_eigenvalue": 0.0001831563888873419
+    }
+  ],
+  "restart_error_inf": 0.0,
+  "restart_pass": true
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "classification": "PROVENANCE_BOUND_EXECUTION_CONFIG",
+  "binding_rule": "Replace every __BIND token only from exact admitted sources, exact parent outputs, or preregistered Module P sources; record hashes before execution.",
+  "generation_mode": "GENERATION_SEALED",
+  "solver": "linear_transfer",
+  "model": {
+    "generator": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "times": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "initial_state": [
+      0.5,
+      0.5
+    ],
+    "initial_covariance": [
+      [
+        0.01,
+        0.0
+      ],
+      [
+        0.0,
+        0.01
+      ]
+    ],
+    "tolerance": 1e-10
+  },
+  "binding_manifest": {
+    "template_path": "/home/runner/work/3-RFC/3-RFC/modules/HI/runs/HI-190-20260810T165541Z/solver_templates/HI_instantiated_transfer.template.json",
+    "template_sha256": "6f7f5ce798ce5b90af1b5c9354461a2d017d7c441c1fe68c69652448543cc77d",
+    "binding_sheet_path": "/home/runner/work/3-RFC/3-RFC/modules/HI/runs/HI-190-20260810T165541Z/binding_sheets/HI_instantiated_transfer.bindings.json",
+    "binding_sheet_sha256": "08eb85bb58f8b28ced55258ea0118f4115c8f622097b100cd00070e7de7870c3",
+    "bindings": [
+      {
+        "path": "model.generator",
+        "value": [
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            1.0,
+            -1.0
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+        "module": "HI",
+        "derivation_object": "implementation_witness",
+        "units": "manufactured normalized units",
+        "dimensions": "two-mode implementation witness",
+        "justification": "solver gate only; not physical transfer coefficients or branch selector"
+      },
+      {
+        "path": "model.times",
+        "value": [
+          0.0,
+          0.25,
+          0.5,
+          1.0
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+        "module": "HI",
+        "derivation_object": "implementation_witness",
+        "units": "manufactured normalized units",
+        "dimensions": "two-mode implementation witness",
+        "justification": "solver gate only; not physical transfer coefficients or branch selector"
+      },
+      {
+        "path": "model.initial_state",
+        "value": [
+          0.5,
+          0.5
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+        "module": "HI",
+        "derivation_object": "implementation_witness",
+        "units": "manufactured normalized units",
+        "dimensions": "two-mode implementation witness",
+        "justification": "solver gate only; not physical transfer coefficients or branch selector"
+      },
+      {
+        "path": "model.initial_covariance",
+        "value": [
+          [
+            0.01,
+            0.0
+          ],
+          [
+            0.0,
+            0.01
+          ]
+        ],
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+        "module": "HI",
+        "derivation_object": "implementation_witness",
+        "units": "manufactured normalized units",
+        "dimensions": "two-mode implementation witness",
+        "justification": "solver gate only; not physical transfer coefficients or branch selector"
+      },
+      {
+        "path": "model.tolerance",
+        "value": 1e-10,
+        "origin_kind": "INTERNAL_DERIVATION",
+        "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+        "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
+        "module": "HI",
+        "derivation_object": "implementation_witness",
+        "units": "manufactured normalized units",
+        "dimensions": "two-mode implementation witness",
+        "justification": "solver gate only; not physical transfer coefficients or branch selector"
+      }
+    ]
+  }
+}

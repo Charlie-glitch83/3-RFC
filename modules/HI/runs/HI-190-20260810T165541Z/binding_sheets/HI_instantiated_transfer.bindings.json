@@ -14,67 +14,93 @@
     {
       "path": "model.generator",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          1.0,
+          -1.0
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
       "module": "HI",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "implementation_witness",
+      "units": "manufactured normalized units",
+      "dimensions": "two-mode implementation witness",
+      "justification": "solver gate only; not physical transfer coefficients or branch selector"
     },
     {
       "path": "model.times",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.0,
+        0.25,
+        0.5,
+        1.0
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
       "module": "HI",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "implementation_witness",
+      "units": "manufactured normalized units",
+      "dimensions": "two-mode implementation witness",
+      "justification": "solver gate only; not physical transfer coefficients or branch selector"
     },
     {
       "path": "model.initial_state",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        0.5,
+        0.5
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
       "module": "HI",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "implementation_witness",
+      "units": "manufactured normalized units",
+      "dimensions": "two-mode implementation witness",
+      "justification": "solver gate only; not physical transfer coefficients or branch selector"
     },
     {
       "path": "model.initial_covariance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": [
+        [
+          0.01,
+          0.0
+        ],
+        [
+          0.0,
+          0.01
+        ]
+      ],
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
       "module": "HI",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "implementation_witness",
+      "units": "manufactured normalized units",
+      "dimensions": "two-mode implementation witness",
+      "justification": "solver gate only; not physical transfer coefficients or branch selector"
     },
     {
       "path": "model.tolerance",
       "placeholder": "__BIND_FROM_FROZEN_PARENT_OR_DERIVATION__",
-      "value": null,
+      "value": 1e-10,
       "origin_kind": "INTERNAL_DERIVATION",
-      "origin_path": "",
-      "origin_sha256": "",
+      "origin_path": "modules/HI/runs/HI-190-20260810T165541Z/FROZEN_DERIVATION_SPEC.json",
+      "origin_sha256": "85fdb22ce89dd0a0f8477db8b71db009327af840474c5223e8bfab324799078b",
       "module": "HI",
-      "derivation_object": "",
-      "units": "",
-      "dimensions": "",
-      "justification": ""
+      "derivation_object": "implementation_witness",
+      "units": "manufactured normalized units",
+      "dimensions": "two-mode implementation witness",
+      "justification": "solver gate only; not physical transfer coefficients or branch selector"
     }
   ]
 }

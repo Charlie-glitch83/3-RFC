@@ -1,0 +1,4 @@
+Symbol::undefined2: Warning: Global symbols "T, B, B, T, B, T" are undefined.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"HI-WL-001\", \"instantiated\" -> \"{{a*u, b*u}, {c*v, d*v}}\", \"compositionPass\" -> True|>"

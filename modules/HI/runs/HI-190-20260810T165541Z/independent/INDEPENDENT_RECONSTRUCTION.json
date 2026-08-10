@@ -1,0 +1,56 @@
+{
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "result": "PASS",
+  "method": "PARENT_ONLY_COMPATIBILITY_AND_IMMUTABLE_COMPOSITION_RECONSTRUCTION_NO_HI_PRIMARY_READ",
+  "inputs": {
+    "HU": {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "bytes": 2021
+    },
+    "I": {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "bytes": 3470
+    },
+    "HU_operator": {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_TYPED_OPERATOR.json",
+      "sha256": "aba6a931511c686a1ec87e46192628edeb5e05a55f64b24a53ac45ed099bbd97",
+      "bytes": 1280
+    },
+    "HU_gauge": {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT.json",
+      "sha256": "a3ddd95c6c190f6fd699bc24174d83175696bee18a60f0635d3c49c8d44f16d9",
+      "bytes": 944
+    },
+    "HU_uncertainty": {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_OPERATOR_UNCERTAINTY.json",
+      "sha256": "5c9202cce21785155d9abce5fda828cdb0c0d8e26e5bfc2844477fe1c59ecfa6",
+      "bytes": 748
+    }
+  },
+  "reconstructed": {
+    "composite": "HI_b=(I_b,U_HU[b;t2,t1])",
+    "mode_law": "K_HU[b,t]=P_b D F_G[X_G^b(t)] P_b where F_G is the exact G-165 parent evolution/route law",
+    "covariance": "U Sigma U^T with I covariance attached unchanged",
+    "clock": {
+      "origin": "Big Implosion t_phys=0+",
+      "unit_family": "t_phys=t_B tau_B, t_B>0",
+      "recursive_depth_is_time": false
+    }
+  },
+  "checks": {
+    "HU_hash": true,
+    "I_hash": true,
+    "shared_clock": true,
+    "operator_domain_defined": true,
+    "I_branch_family_preserved": true,
+    "no_retune_rule": true,
+    "generation_sealed": true,
+    "unique_branch_not_selected": true,
+    "cross_covariance_not_invented": true
+  },
+  "trusted_HI_primary": false,
+  "trusted_gate_summary": false
+}

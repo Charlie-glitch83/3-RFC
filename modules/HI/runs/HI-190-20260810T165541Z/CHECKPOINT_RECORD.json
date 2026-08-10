@@ -1,7 +1,7 @@
 {
-  "run_id": "",
-  "checkpoints": [],
-  "restart_contract": "",
-  "state_schema": "",
-  "hash_algorithm": "sha256"
+  "run_id": "HI-190-20260810T165541Z",
+  "status": "FINAL",
+  "checkpoint_id": "HI190-IMMUTABLE-COMPOSITE",
+  "restart_test": "PASS",
+  "restart_artifact": "modules/HI/frozen/H_HI_to_J_v2.json"
 }

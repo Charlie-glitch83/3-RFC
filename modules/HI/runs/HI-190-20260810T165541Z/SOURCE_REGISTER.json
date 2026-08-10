@@ -1,10 +1,70 @@
 {
-  "run_id": "",
-  "exact_parents": [],
-  "admitted_sources": [],
-  "imports": [],
-  "files": [],
-  "urls": [],
-  "constants": [],
-  "public_data_declaration": "NONE"
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "generation_mode": "GENERATION_SEALED",
+  "exact_parents": [
+    {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "bytes": 2021,
+      "role": "DIRECT_HU_PARENT"
+    },
+    {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "bytes": 3470,
+      "role": "DIRECT_I_PARENT"
+    }
+  ],
+  "parent_children": [
+    {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_TYPED_OPERATOR.json",
+      "sha256": "aba6a931511c686a1ec87e46192628edeb5e05a55f64b24a53ac45ed099bbd97",
+      "bytes": 1280
+    },
+    {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_CONSTRAINT_GAUGE_FRAME_CONTRACT.json",
+      "sha256": "a3ddd95c6c190f6fd699bc24174d83175696bee18a60f0635d3c49c8d44f16d9",
+      "bytes": 944
+    },
+    {
+      "path": "modules/HU/runs/HU-175-20260810T153330Z/primary/HU175_OPERATOR_UNCERTAINTY.json",
+      "sha256": "5c9202cce21785155d9abce5fda828cdb0c0d8e26e5bfc2844477fe1c59ecfa6",
+      "bytes": 748
+    }
+  ],
+  "procedure_only_sources": [
+    {
+      "path": "recipes/HI/recipe.json",
+      "sha256": "a75977151e79de588728817b6e4871c962192481067c1364fd5d260485f28493",
+      "bytes": 3696
+    },
+    {
+      "path": "recipes/HI/WORK_ORDER.md",
+      "sha256": "22d80795ec737313fc37fc30e42330208f88cd70b949fda58f9c3a74ab37ee8f",
+      "bytes": 3079
+    },
+    {
+      "path": "recipes/HI/gates.json",
+      "sha256": "c820ec7370f8672b399bfacc90f2fb67136ed4cf1e67c70610bfb05d6adabc43",
+      "bytes": 408
+    }
+  ],
+  "public_data_declaration": "NONE",
+  "network_policy": "DISABLED_DURING_GENERATION",
+  "forbidden_generation_inputs": [
+    "observed spectra",
+    "transfer tables",
+    "CMB",
+    "BAO",
+    "SN",
+    "LambdaCDM fit"
+  ],
+  "imports": [
+    "json",
+    "hashlib",
+    "numpy",
+    "scipy.linalg.expm"
+  ]
 }

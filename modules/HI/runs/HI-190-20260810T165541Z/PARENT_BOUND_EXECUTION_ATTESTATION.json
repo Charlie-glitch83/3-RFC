@@ -1,0 +1,19 @@
+{
+  "run_id": "HI-190-20260810T165541Z",
+  "physical_execution_performed": true,
+  "physical_execution_classification": "EXACT_PARENT_BOUND_IMMUTABLE_COMPOSITE_BRANCH_FAMILY",
+  "manufactured_values_used_as_physical": false,
+  "unique_branch_selected": false,
+  "parents": {
+    "HU": {
+      "path": "modules/HU/frozen/H_HU_to_HI_v2.json",
+      "sha256": "195c7073970f7c644d84a75b5dfbbe1a6c69cd1473d5a4a91d16d264d998f1a3",
+      "bytes": 2021
+    },
+    "I": {
+      "path": "modules/I/frozen/H_I_to_HI_v2.json",
+      "sha256": "bc7da013636775acacc2319b521347bf7a1253c6a6fdab68076d20fb8202aa83",
+      "bytes": 3470
+    }
+  }
+}

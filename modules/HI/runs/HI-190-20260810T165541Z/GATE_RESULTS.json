@@ -1,7 +1,29 @@
 {
-  "run_id": "",
-  "overall": "BLOCKED",
-  "gates": [],
-  "diagnostics": [],
-  "score_rule": "mandatory gates componentwise; below 0.95 triggers analysis"
+  "schema_version": "4.0",
+  "run_id": "HI-190-20260810T165541Z",
+  "overall": "PASS",
+  "componentwise": [
+    {
+      "gate": "exact parent hashes",
+      "status": "PASS",
+      "score": 1.0
+    },
+    {
+      "gate": "no retune of HU or I",
+      "status": "PASS",
+      "score": 1.0
+    },
+    {
+      "gate": "operator-domain compatibility",
+      "status": "PASS",
+      "score": 1.0
+    },
+    {
+      "gate": "independent reconstruction",
+      "status": "PASS",
+      "score": 1.0
+    }
+  ],
+  "minimum_component_score": 1.0,
+  "aggregate_scores_cannot_override": true
 }
