@@ -4,30 +4,15 @@
   "frozen_utc": "2026-08-10T17:30:00Z",
   "frozen_before_primary_execution": true,
   "authority_hashes": [
-    {
-      "path": "recipes/J/WORK_ORDER.md",
-      "sha256": "856f62070c1f6fcc8b9e4185be55336aadc16ac2"
-    },
-    {
-      "path": "recipes/J/gates.json",
-      "sha256": "c2165bcc167e9c79a5d9fb90a14897d446b3dcec"
-    }
+    {"path": "recipes/J/WORK_ORDER.md", "sha256": "856f62070c1f6fcc8b9e4185be55336aadc16ac2"},
+    {"path": "recipes/J/gates.json", "sha256": "c2165bcc167e9c79a5d9fb90a14897d446b3dcec"}
   ],
   "parent_hashes": [
-    {
-      "path": "modules/HI/frozen/H_HI_to_J_v2.json",
-      "sha256": "23301906ad1a40d39f7409c9c30e5c6c2e7d03e1"
-    },
-    {
-      "path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md",
-      "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1"
-    }
+    {"path": "modules/HI/frozen/H_HI_to_J_v2.json", "sha256": "23301906ad1a40d39f7409c9c30e5c6c2e7d03e1"},
+    {"path": "recovery/admitted/2-RFC/b0f21d023f64ce9c70fd4755dfdbb7357b9f7a10/proofs/GENESIS_REALIZATION.md", "sha256": "87be1a802ac8be28e0ae543f19df7c4c08b79b9e6be5406c907c9529ea910a1"}
   ],
   "definition_hashes": [
-    {
-      "path": "modules/J/runs/J-200-20260810T170347Z/J200_PRIMORDIAL_SOURCE_OBSTRUCTION.json",
-      "sha256": "PENDING_REPOSITORY_CONTENT_HASH"
-    }
+    {"path": "modules/J/runs/J-200-20260810T170347Z/J200_PRIMORDIAL_SOURCE_OBSTRUCTION.json", "sha256": "39ab63dc4f7cab5bd116ceaed01f8fee8c770b72"}
   ],
   "candidate_classes": [
     "lawful primordial state/branch family inherited from exact genesis ancestry",
