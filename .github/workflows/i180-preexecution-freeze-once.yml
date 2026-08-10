@@ -1,4 +1,4 @@
-name: G-160 to I interface superseding repair once
+name: I-180 repaired response-geometry execution once
 
 on:
   pull_request:
@@ -6,18 +6,18 @@ on:
       - agent/frontier-050-execution
     types: [opened, synchronize, reopened]
     paths:
-      - 'ops/G160_I_INTERFACE_REPAIR_TRIGGER.txt'
+      - '.github/science-lineage-repair-final-trigger.txt'
 
 permissions:
   contents: write
 
 concurrency:
-  group: g160-i-interface-superseding-repair-once
+  group: i180-repaired-response-geometry-once
   cancel-in-progress: false
 
 jobs:
-  repair-g160-i-interface:
-    if: github.event.pull_request.head.ref == 'ops/g160-i-interface-repair-20260810'
+  execute-i180:
+    if: github.event.pull_request.head.ref == 'ops/i180-execute-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,83 +28,99 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Diagnose and route the upstream interface defect
+      - name: Execute repaired I-180
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
-          RUN='I-180-20260810T134326Z'
-          R="modules/I/runs/$RUN"
+          RID='I-180-20260810T154430Z'
+          R="modules/I/runs/$RID"
+          PRE_SHA="$(git rev-parse HEAD)"
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python tools/i180_parent_bound.py freeze
 
-          # Phase 1: preserve the I science and harden the live G contract.
-          python tools/repair_g160_i_interface.py prepare
+          cat > /tmp/I-WL-001.output.txt <<'EOF'
+          Out[1]= "<|\"call\" -> \"I-WL-001\", \"H\" -> \"(h + 2*q*t)/(1 + t*(h + q*t))\", \"horizon\" -> \"(-2*(ArcTan[h/Sqrt[-h^2 + 4*q]] - ArcTan[(h + 2*q*t)/Sqrt[-h^2 + 4*q]]))/Sqrt[-h^2 + 4*q]\", \"kinematicIdentity\" -> True|>"
+          EOF
+          cat > /tmp/I-WL-002.output.txt <<'EOF'
+          Out[1]= "<|\"call\" -> \"I-WL-002\", \"constraintDerivative\" -> \"0\", \"preserved\" -> True|>"
+          EOF
+          python tools/director.py wolfram-record --run "$RID" --call I-WL-001 --output /tmp/I-WL-001.output.txt
+          python tools/director.py wolfram-record --run "$RID" --call I-WL-002 --output /tmp/I-WL-002.output.txt
+          python tools/run_reference_checks.py --module I --output "$R/reference_checks.json"
+          python tools/materialize_solver_config.py --template "$R/solver_templates/I_background_ode.template.json" --binding-sheet "$R/binding_sheets/I_background_ode.bindings.json" --output "$R/solver_configs/I_background_ode.json"
+          python tools/run_configured_solver.py --config "$R/solver_configs/I_background_ode.json" --output-dir "$R/solver_outputs/transport"
+          python tools/i180_parent_bound.py execute
+          python tools/i180_parent_bound.py convergence
+          python tools/i180_parent_bound.py independent
+
+          rm -rf /tmp/i180-clean
+          mkdir -p /tmp/i180-clean
+          git archive "$PRE_SHA" | tar -x -C /tmp/i180-clean
+          (
+            cd /tmp/i180-clean
+            python tools/i180_parent_bound.py freeze
+            python tools/i180_parent_bound.py execute
+            python tools/i180_parent_bound.py independent
+          )
           python - <<'PY'
-          import json
+          import hashlib,json
           from pathlib import Path
-          audit=json.loads(Path('audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json').read_text())
-          assert audit['result']=='REPAIR_REQUIRED_AT_G_BEFORE_I_CAN_PHYSICALLY_EXECUTE', audit
-          assert audit['diagnosis']['triad_falsified'] is False
-          assert audit['diagnosis']['I_law_falsified'] is False
-          assert audit['diagnosis']['F_parent_replay_required_now'] is False
-          assert audit['diagnosis']['G_superseding_replay_required'] is True
-          assert audit['diagnosis']['HU_replay_required_after_G'] is True
-          cfg=json.loads(Path('config/required_output_contracts.json').read_text())
-          names={x['name'] for x in cfg['modules']['G']['required_child_bindings']}
-          required={'i_route_registry','i_route_resolved_process_activity','i_route_to_relational_ancestry','i_aggregate_no_loss_reconstruction','i_geometry_child_packet'}
-          assert required <= names, (required-names)
-          global_bind=json.loads(Path('configured_runs/binding_sheets/G_recombination_network.bindings.json').read_text())
-          assert all(x.get('value') is None for x in global_bind['bindings'])
+          root=Path('.').resolve(); rep=Path('/tmp/i180-clean').resolve(); rid='I-180-20260810T154430Z'
+          rels=[
+            f'modules/I/runs/{rid}/FROZEN_DERIVATION_SPEC.json',
+            f'modules/I/runs/{rid}/primary/I180_RESPONSE_GEOMETRY_BRANCH_FAMILY.json',
+            f'modules/I/runs/{rid}/primary/I180_EXPANSION_CLOCK_BRANCH_FAMILY.json',
+            f'modules/I/runs/{rid}/primary/I180_DISTANCE_CAUSAL_REACH_BRANCH_INTERFACE.json',
+            f'modules/I/runs/{rid}/primary/I180_CONSTRAINT_CONSERVATION_LEDGER.json',
+            f'modules/I/runs/{rid}/primary/I180_COVARIANCE_RESTART_BRANCH_FAMILY.json',
+            f'modules/I/runs/{rid}/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json',
+            f'modules/I/runs/{rid}/countermodels/I180_SEMANTIC_COUNTERMODELS.json',
+            f'modules/I/runs/{rid}/independent/INDEPENDENT_RECONSTRUCTION.json']
+          sh=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+          rows=[];ok=True
+          for rel in rels:
+            a,b=root/rel,rep/rel; ah,bh=sh(a),sh(b); m=ah==bh;ok &= m;rows.append({'path':rel,'primary_sha256':ah,'replay_sha256':bh,'match':m})
+          out={'run_id':rid,'result':'PASS' if ok else 'FAIL','clean_checkout':True,'preexecution_commit':'__RUNTIME_PRE_SHA__','artifact_hashes_match':bool(ok),'compared_artifacts':rows}
+          (root/f'modules/I/runs/{rid}/REPLAY_RECORD.json').write_text(json.dumps(out,indent=2)+'\n')
+          if not ok: raise SystemExit('I180 clean replay mismatch')
           PY
 
-          # The corrected I law reached FORMALIZED, but physical execution never began.
-          python tools/rfc.py promote-module I --to FORMALIZED --fidelity MINIMAL_SPINE --evidence "$R/PRE_EXECUTION_LOCK.json"
-          python tools/rfc.py close-run --run-id "$RUN" --result BLOCKED --closeout "$R/CLOSEOUT.md"
-
-          # Phase 2: move the sole active frontier upstream to G and preserve replay order G -> HU -> I.
-          python tools/repair_g160_i_interface.py route
-          python tools/rfc.py reopen-module G --fidelity PRODUCTION --evidence audit/G160_I_CHILD_INTERFACE_DEFECT_20260810.json
-
-          # Repository-controlled startup creates the new G run and active packet.
+          python tools/i180_parent_bound.py finalize
+          python tools/i180_parent_bound.py manifest
+          python tools/scientific_completion_guard.py --run "$R"
+          python tools/rfc.py promote-module I --to FORMALIZED --fidelity PRODUCTION --evidence "$R/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module I --to IMPLEMENTED --fidelity PRODUCTION --evidence "$R/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json"
+          python tools/rfc.py promote-module I --to VERIFIED --fidelity PRODUCTION --evidence "$R/GATE_RESULTS.json"
+          python tools/rfc.py promote-module I --to PHYSICALLY_EXECUTED --fidelity PRODUCTION --evidence "$R/PARENT_BOUND_EXECUTION_ATTESTATION.json"
+          python tools/rfc.py promote-module I --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "$R/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module I --to FROZEN --fidelity PRODUCTION --evidence modules/I/frozen/H_I_to_HI_v2.json
+          python tools/rfc.py close-run --run-id "$RID" --result PASS --closeout "$R/CLOSEOUT.md"
+          python tools/rfc.py record-claim --file audit/I180_CLAIM.json
+          python tools/rfc.py advance --task I-180 --result PASS --evidence "$R/CLOSEOUT.md"
           bash tools/start_work.sh
-
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          state=json.loads(Path('STATE.json').read_text())
-          queue=json.loads(Path('WORK_QUEUE.json').read_text())['items']
-          by={x['id']:x for x in queue}
-          assert state['active_work_unit']=='G-165', state
-          assert state['current_module']=='G', state
-          assert state['current_run'] and state['current_run'].startswith('G-165-'), state
-          assert state['modules']['G']['evidence_state']=='DESIGN', state['modules']['G']
-          assert state['modules']['G']['fidelity']=='PRODUCTION', state['modules']['G']
-          assert state['modules']['I']['evidence_state']=='FORMALIZED', state['modules']['I']
-          assert by['G-165']['status']=='ACTIVE'
-          assert by['HU-175']['status']=='BLOCKED' and by['HU-175']['depends_on']==['G-165']
-          assert by['I-180']['status']=='BLOCKED' and set(by['I-180']['depends_on'])=={'G-165','HU-175'}
-          if 'HI-190' in by:
-              assert set(by['HI-190']['depends_on'])=={'HU-170','I-180'}
-          packet=Path('work_packets/ACTIVE_WORK_PACKET.md').read_text()
-          assert 'G-165' in packet
-          run=Path('modules/G/runs')/state['current_run']
-          bind=json.loads((run/'binding_sheets/G_recombination_network.bindings.json').read_text())
-          assert all(x.get('value') is None for x in bind['bindings'])
-          print('ACTIVE_REPAIR_RUN='+state['current_run'])
-          PY
-
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
-
-      - name: Commit governed repair routing and repository-generated G run
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('STATE.json').read_text())
+          assert s['active_work_unit']=='HI-190', s
+          assert s['current_module']=='HI', s
+          assert s['current_run'] and s['current_run'].startswith('HI-190-'), s
+          print('NEXT_ACTIVE_RUN='+s['current_run'])
+          PY
+      - name: Commit I-180 and HI-190 startup
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Reroute repaired I lineage through route-resolved G replay'
+          git commit -m 'Execute repaired I response geometry and advance to HI'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-          printf 'G165_REPAIR_ROUTE_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          echo "I180_EXECUTION_COMMIT=$(git rev-parse HEAD)"
