@@ -1,1 +1,2 @@
 Trigger the repository-owned J hard-stop reroute into HU-176 and HI-191 replay. No scientific content is carried by this file.
+Retry: locked repository dependencies are installed before controller execution.
