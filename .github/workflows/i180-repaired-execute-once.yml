@@ -109,7 +109,6 @@ jobs:
           python tools/i180_execute_response_family.py manifest
           python tools/scientific_completion_guard.py --run "$R"
 
-          python tools/rfc.py promote-module I --to FORMALIZED --fidelity PRODUCTION --evidence "$R/FROZEN_DERIVATION_SPEC.json"
           python tools/rfc.py promote-module I --to IMPLEMENTED --fidelity PRODUCTION --evidence "$R/primary/I180_REALIZED_RESPONSE_GEOMETRY_STATE.json"
           python tools/rfc.py promote-module I --to VERIFIED --fidelity PRODUCTION --evidence "$R/GATE_RESULTS.json"
           python tools/rfc.py promote-module I --to PHYSICALLY_EXECUTED --fidelity PRODUCTION --evidence "$R/PARENT_BOUND_EXECUTION_ATTESTATION.json"
