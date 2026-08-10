@@ -1,1 +1,2 @@
 Trigger repository-governed J-200 source-scope repair.
+Synchronize after indexed workflow update.
