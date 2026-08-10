@@ -1,4 +1,4 @@
-name: I-180 corrected pre-execution freeze once
+name: I-180 governed Wolfram recording once
 
 on:
   pull_request:
@@ -6,18 +6,18 @@ on:
       - agent/frontier-050-execution
     types: [opened, synchronize, reopened]
     paths:
-      - 'ops/I180_PREEXECUTION_TRIGGER.txt'
+      - 'ops/I180_WOLFRAM_TRIGGER.txt'
 
 permissions:
   contents: write
 
 concurrency:
-  group: i180-corrected-preexecution-freeze-once
+  group: i180-governed-wolfram-recording-once
   cancel-in-progress: false
 
 jobs:
-  freeze-i180:
-    if: github.event.pull_request.head.ref == 'ops/i180-preexecution-20260810'
+  record-i180-wolfram:
+    if: github.event.pull_request.head.ref == 'ops/i180-wolfram-20260810'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,253 +28,65 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Freeze exact corrected I sources and law
+      - name: Record exact connected Wolfram outputs in frozen order
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          RUN='I-180-20260810T134326Z'
+          R="modules/I/runs/$RUN"
+          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['status'])")" = FROZEN
+          test "$(python -c "import json; print(json.load(open('$R/PRE_EXECUTION_LOCK.json'))['physical_execution_gate']['status'])")" = BLOCKED_PENDING_EXACT_PARENT_BINDING
+
+          cat > "$R/wolfram/I-WL-001/output.txt" <<'EOF'
+Symbol::undefined2: Warning: Global symbols "H, H, H" are undefined.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+FrontEndObject::notavail: A front end is not available; certain operations require a front end.
+General::stop: Further output of FrontEndObject::notavail will be suppressed during this calculation.
+General::messages: Messages were generated which may indicate errors.
+
+Out[1]= "<|\"call\" -> \"I-WL-001\", \"H\" -> \"(h + 2*q*t)/(1 + t*(h + q*t))\", \"horizon\" -> \"(-2*(ArcTan[h/Sqrt[-h^2 + 4*q]] - ArcTan[(h + 2*q*t)/Sqrt[-h^2 + 4*q]]))/Sqrt[-h^2 + 4*q]\", \"kinematicIdentity\" -> True|>"
+EOF
+
+          cat > "$R/wolfram/I-WL-002/output.txt" <<'EOF'
+Out[1]= "<|\"call\" -> \"I-WL-002\", \"constraintDerivative\" -> \"0\", \"preserved\" -> True|>"
+EOF
+
+          python tools/director.py wolfram-record --run "$RUN" --call I-WL-001 --output "$R/wolfram/I-WL-001/output.txt"
+          python tools/director.py wolfram-record --run "$RUN" --call I-WL-002 --output "$R/wolfram/I-WL-002/output.txt"
+          python tools/run_reference_checks.py --module I --output "$R/reference_checks.json"
+
           python - <<'PY'
-          import hashlib, json, platform, sys
-          from datetime import datetime, timezone
+          import json
           from pathlib import Path
-
-          state=json.loads(Path('STATE.json').read_text())
-          assert state['active_work_unit']=='I-180' and state['current_module']=='I', state
-          run=state['current_run']
-          assert run=='I-180-20260810T134326Z', run
-          R=Path('modules/I/runs')/run
-          spec_path=Path('modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json')
-          verify_path=Path('modules/I/repair/REPAIR_VERIFICATION.json')
-          spec=json.loads(spec_path.read_text())
-          verification=json.loads(verify_path.read_text())
-          assert verification['pass'] is True
-
-          def sha(path):
-              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
-          def rec(path, role):
-              p=Path(path)
-              return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size,'role':role}
-
-          for item in spec['exact_inputs']:
-              actual=sha(item['path'])
-              assert actual==item['sha256'], (item['path'],actual,item['sha256'])
-
-          authority_paths=[
-              'recipes/I/WORK_ORDER.md',
-              'recipes/I/recipe.json',
-              'recipes/I/gates.json',
-              'modules/I/spec.json',
-              'modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json',
-              'modules/I/repair/REPAIR_VERIFICATION.json',
-              'docs/08_EVIDENCE_AND_CLAIM_STATES.md',
-              'docs/09_DERIVATION_PROTOCOL.md',
-              'docs/10_EXECUTION_PROTOCOL.md',
-              'theory/DERIVATION_ATLAS.md',
-              'config/WOLFRAM_EXPECTATIONS.json',
-              'config/required_output_contracts.json',
-              'MODEL_OPERATOR_PROMPT.md',
-              'requirements-lock.txt',
-          ]
-          for p in authority_paths:
-              assert Path(p).is_file(), p
-
-          exact_parents=[]
-          admitted_sources=[]
-          for item in spec['exact_inputs']:
-              row=rec(item['path'],item['role'])
-              if item['role'] in {'DIRECT_PARENT','PHYSICAL_CARRIER_ANCESTRY'}:
-                  exact_parents.append(row)
-              else:
-                  admitted_sources.append(row)
-          admitted_sources += [
-              rec(str(spec_path),'CORRECTED_SCIENTIFIC_AUTHORITY'),
-              rec(str(verify_path),'SEMANTIC_CORROBORATION_MANUFACTURED_ONLY'),
-          ]
-
-          source_register={
-              'schema_version':'3.0',
-              'run_id':run,
-              'status':'FROZEN_BEFORE_PRIMARY_EXECUTION',
-              'generation_mode':'GENERATION_SEALED',
-              'exact_parents':exact_parents,
-              'admitted_sources':admitted_sources,
-              'imports':['hashlib','json','pathlib','numpy','scipy'],
-              'files':[rec(p,'RUN_AUTHORITY') for p in authority_paths],
-              'urls':[],
-              'constants':[],
-              'public_data_declaration':'NONE',
-              'network_policy':'DISABLED_DURING_GENERATION',
-              'source_scope_note':'No observed expansion history, LambdaCDM target, public H(z)/H0/BAO/SN/sound-horizon value, or manufactured physical branch is admitted.'
-          }
-          (R/'SOURCE_REGISTER.json').write_text(json.dumps(source_register,indent=2)+'\n')
-
-          pg=spec['primary_geometry']
-          rd=spec['response_distance']
-          ex=spec['expansion_without_scalar_collapse']
-          bp=spec['branch_policy']
-          peg=spec['physical_execution_gate']
-          cm=spec['semantic_countermodels_required']
-          cb=spec['claim_boundary']
-
-          lock={
-              'schema_version':'3.0',
-              'run_id':run,
-              'status':'FROZEN',
-              'frozen_utc':datetime.now(timezone.utc).isoformat(),
-              'frozen_before_primary_execution':True,
-              'generation_mode':'GENERATION_SEALED',
-              'authority_hashes':[sha(p) for p in authority_paths],
-              'parent_hashes':[x['sha256'] for x in exact_parents],
-              'definition_hashes':[sha(spec_path),sha(verify_path)]+[x['sha256'] for x in admitted_sources if x['role'] in {'RELATIONAL_BRANCH_POLICY_AUTHORITY','DERIVATION_PROTOCOL'}],
-              'candidate_classes':[
-                  'complete ancestry-compatible nonnegative process-to-edge incidence branch family M_b(e|r)',
-                  'connected positive weighted Dirichlet/Laplacian response operators on the inherited B relational carrier quotient',
-                  'full Green-response operators and lossless effective-resistance readouts',
-                  'principal response-length spectra with anisotropy retained',
-                  'derived volumetric geometric-mean scale summaries without universal scalar-collapse claims',
-                  'branchwise causal-reach functionals only after exact geometry/propagation binding',
-                  'explicit disconnected-component branches rather than hidden extra gauge zero modes'
-              ],
-              'equations_and_laws':[
-                  pg['event_pullback'], pg['operator'], pg['quotient'], pg['response_operator'], pg['claim'],
-                  rd['formula'], rd['no_loss_theorem'], rd['scope_of_uniqueness'],
-                  ex['principal_response_lengths'], ex['directional_rates'], ex['volumetric_scale'], ex['volumetric_rate'], ex['anisotropy_policy'], ex['homothetic_correspondence'],
-                  spec['clock'], spec['causal_reach']['rule'], bp['authority']
-              ],
-              'dimensions_units_frames_gauges_clocks':[
-                  'inherit the finite relational carrier and event-order origin from exact B/G ancestry; B pregeometry is not itself metric geometry',
-                  'constant graph mode is gauge and geometry lives on Q=1^perp',
-                  'use only inherited t_phys=t_B tau_B with t_B>0; recurrence depth is not time',
-                  'no imported FRW/Friedmann/Einstein frame, SI spacetime calibration, or observed expansion normalization',
-                  'retain full principal response spectrum unless homothety/isotropy is internally witnessed'
-              ],
-              'methods':[
-                  'exact parent/source SHA-256 verification',
-                  'ancestry-compatible branch enumeration rather than arbitrary tie-breaking',
-                  'I-WL-001 and I-WL-002 exact manufactured symbolic gates',
-                  'repository manufactured reference check as implementation-only evidence',
-                  'semantic countermodels from the corrected repair specification',
-                  'parent-bound response-operator construction only after exact Gamma and M binding',
-                  'convergence, restart, replay, covariance and independent reconstruction after lawful materialization',
-                  'clean-checkout replay before closeout'
-              ],
-              'tolerances':[
-                  'prebuilt transport implementation fixes rtol=1e-10 and atol=1e-12',
-                  'all other transport bindings/tolerances remain unbound until provenance-complete derivation; unresolved __BIND tokens are hard stops',
-                  'symbolic Wolfram identities require exact symbolic satisfaction where the frozen manufactured call specifies exact truth',
-                  'scientific branch selection has no numerical tie-break tolerance: indistinguishable lawful branches are retained'
-              ],
-              'stopping_rules':[
-                  'any exact corrected parent/source hash mismatch',
-                  'actual parent-generated Gamma_r^b(t), or an exact typed replacement, is not bound',
-                  'M_b(e|r) is negative, nonconservative, ancestry-incompatible, or incompletely represented',
-                  'weighted response operator is not symmetric PSD or violates the constant-mode gauge law',
-                  'connected positive branch has an unexplained extra zero mode',
-                  'a pairwise diagnostic replaces the full response operator and deletes recoverable information',
-                  'a unique scalar expansion/horizon is asserted on a nonhomothetic branch without internal witness',
-                  'observed H(z), H0, BAO, SN, sound-horizon or LambdaCDM target enters generation',
-                  'manufactured ODE/reference output is promoted to physical execution',
-                  'any unresolved __BIND token at attempted materialization',
-                  'clean replay mismatch'
-              ],
-              'expected_invariants':[
-                  'M>=0 with each route column summing to one',
-                  'event activity is conserved by process-to-edge pullback',
-                  'L=L^T>=0 and L1=0 with one constant gauge zero mode on connected positive branches',
-                  'complete resistance matrix reconstructs L^+ by double centering',
-                  'principal response lengths retain anisotropy',
-                  'a_vol is only a volumetric geometric-mean summary',
-                  'homothetic branches give common degree -1/2 relative scale',
-                  'inherited conservation/branch/memory ledgers remain no-loss',
-                  'all added covariance terms are PSD',
-                  'no public/observed expansion target enters generation'
-              ],
-              'tests':['I-WL-001','I-WL-002','manufactured I reference check']+cm+[
-                  'exact-parent Gamma/M derivability audit',
-                  'response-operator reconstruction',
-                  'triad/branch ablations',
-                  'convergence and restart after lawful materialization',
-                  'independent reconstruction',
-                  'clean replay'
-              ],
-              'gates':[
-                  'equation/constraint derivation',
-                  'gauge/frame consistency',
-                  'no observed expansion history used as target',
-                  'numerical convergence and independent reconstruction'
-              ],
-              'falsifiers':cm+bp['forbidden_selection']+[
-                  'physical execution attempted while exact-parent binding gate remains blocked',
-                  'arbitrary incidence/branch tie-break',
-                  'anisotropic spectrum erased without homothety/isotropy proof'
-              ],
-              'claim_boundary':'SUPPORTED: '+cb['strongest_supported']+' UNSUPPORTED: '+cb['strongest_unsupported'],
-              'independent_verifier_design':'Without reading GATE_RESULTS or CLOSEOUT, re-hash exact G/B/N-body/protocol authorities; reconstruct the corrected response-geometry law from the frozen spec; independently determine whether exact G ancestry supplies material Gamma and whether M is uniquely witnessed or must remain a complete branch family; verify no-loss L^+<->R reconstruction, spectrum/anisotropy policy, homothety rule, generation-input firewall, and refuse PHYSICALLY_EXECUTED status unless actual parent-bound geometry is executed and replayed.',
-              'allowed_implementation_only_corrections':['syntax/path/serialization/evaluator-backend/solver plumbing only; preserve failed attempt and rerun the full frozen matrix; do not change parents, sources, scientific law, branch policy, candidate classes, tests, tolerances, gates, falsifiers, physical-execution gate, or claim boundary'],
-              'physical_execution_gate':peg,
-              'corrected_spec_sha256':sha(spec_path),
-              'repair_verification_sha256':sha(verify_path)
-          }
-          (R/'PRE_EXECUTION_LOCK.json').write_text(json.dumps(lock,indent=2)+'\n')
-
-          env={
-              'schema_version':'3.0',
-              'run_id':run,
-              'status':'CAPTURED_PRE_EXECUTION',
-              'captured_utc':datetime.now(timezone.utc).isoformat(),
-              'operating_system':platform.platform(),
-              'hardware':{'machine':platform.machine(),'processor':platform.processor()},
-              'software':['python','numpy','scipy'],
-              'python':sys.version,
-              'imports':source_register['imports'],
-              'commands':['bash bootstrap.sh','bash tools/start_work.sh','python tools/rfc.py doctor','python tools/director.py doctor','python -m unittest discover -s tests -v','python tools/rfc.py firewall-scan'],
-              'network_policy':'DISABLED_DURING_GENERATION',
-              'random_seeds':[],
-              'hidden_defaults_audited':True,
-              'public_inputs_used':False
-          }
-          (R/'ENVIRONMENT.json').write_text(json.dumps(env,indent=2)+'\n')
-
-          failure_id='I180-PREEXEC-FIREWALL-PROTOCOL-WORDING'
-          failure_path=R/'FAILURES.jsonl'
-          existing=failure_path.read_text() if failure_path.exists() else ''
-          if failure_id not in existing:
-              failure={
-                  'failure_id':failure_id,
-                  'timestamp_utc':datetime.now(timezone.utc).isoformat(),
-                  'stage':'PRE_EXECUTION_FREEZE_VALIDATION',
-                  'result':'FAIL',
-                  'cause':'Mechanical firewall scanner matched the negative-control phrase public-data firewall inside independent-verifier prose.',
-                  'evidence':'GitHub Actions run 31394750160 job 93474785828',
-                  'disposition':'IMPLEMENTATION_ONLY_WORDING_CORRECTION_AND_FULL_PREEXECUTION_VALIDATION_RERUN',
-                  'science_changed':False,
-                  'parents_changed':False,
-                  'sources_changed':False,
-                  'law_changed':False,
-                  'tests_changed':False,
-                  'gates_changed':False,
-                  'claim_boundary_changed':False
-              }
-              with failure_path.open('a') as f:
-                  f.write(json.dumps(failure)+'\n')
-
-          assert json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
-          print('RUN='+run)
-          print('SOURCE_REGISTER_SHA256='+sha(R/'SOURCE_REGISTER.json'))
-          print('PRE_EXECUTION_LOCK_SHA256='+sha(R/'PRE_EXECUTION_LOCK.json'))
+          R=Path('modules/I/runs/I-180-20260810T134326Z')
+          for cid in ('I-WL-001','I-WL-002'):
+              gate=json.loads((R/'wolfram'/cid/'gate.json').read_text())
+              assert gate.get('result')=='PASS', (cid,gate)
+              rec=json.loads((R/'wolfram'/cid/'record.json').read_text())
+              assert rec['manufactured_gate_returncode']==0, (cid,rec)
+              assert rec['public_knowledge_used'] is False, rec
+          ref=json.loads((R/'reference_checks.json').read_text())
+          assert ref.get('result')=='PASS' or ref.get('overall')=='PASS' or ref.get('pass') is True, ref
+          lock=json.loads((R/'PRE_EXECUTION_LOCK.json').read_text())
+          assert lock['physical_execution_gate']['status']=='BLOCKED_PENDING_EXACT_PARENT_BINDING'
+          print('WOLFRAM_MANUFACTURED_GATES=PASS')
+          print('PHYSICAL_EXECUTION_GATE='+lock['physical_execution_gate']['status'])
           PY
+
           python tools/rfc.py doctor
           python tools/director.py doctor
           python -m unittest discover -s tests -v
           python tools/rfc.py firewall-scan
-      - name: Commit corrected pre-execution freeze
+      - name: Commit exact Wolfram records and manufactured reference check
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add modules/I/runs/I-180-20260810T134326Z/SOURCE_REGISTER.json modules/I/runs/I-180-20260810T134326Z/PRE_EXECUTION_LOCK.json modules/I/runs/I-180-20260810T134326Z/ENVIRONMENT.json modules/I/runs/I-180-20260810T134326Z/FAILURES.jsonl
-          git commit -m 'Freeze corrected I-180 pre-execution state'
+          git add modules/I/runs/I-180-20260810T134326Z/wolfram modules/I/runs/I-180-20260810T134326Z/reference_checks.json
+          git commit -m 'Record exact I-180 Wolfram manufactured gates'
           git pull --rebase origin agent/frontier-050-execution
           git push origin HEAD:agent/frontier-050-execution
-          printf 'I180_PREEXECUTION_COMMIT=%s\n' "$(git rev-parse HEAD)"
+          printf 'I180_WOLFRAM_COMMIT=%s\n' "$(git rev-parse HEAD)"
