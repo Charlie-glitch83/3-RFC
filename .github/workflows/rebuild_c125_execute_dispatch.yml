@@ -1,0 +1,32 @@
+name: Rebuild C-125 Source-Safe Execute Dispatcher
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - main
+    paths:
+      - '.github/c125-execute-trigger.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-c125-source-safe-execute
+  cancel-in-progress: false
+
+jobs:
+  execute-and-close-c125:
+    if: startsWith(github.event.pull_request.head.ref, 'ops/main-dispatch-c125-execute')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - run: bash tools/run_c125_source_safe_execute_v3.sh
