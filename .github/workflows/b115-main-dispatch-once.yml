@@ -1,0 +1,29 @@
+name: Main-dispatched B115 science-lineage closeout once
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: b115-main-dispatch-once
+  cancel-in-progress: false
+
+jobs:
+  close-b115:
+    if: github.event.pull_request.head.ref == 'ops/b115-main-dispatch-20260808'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Execute repository-authored governed B115 closeout
+        shell: bash
+        run: bash tools/run_b115_main_dispatch.sh
