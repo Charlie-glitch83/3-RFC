@@ -1,10 +1,10 @@
-# ACTIVE WORK PACKET — HU-175
+# ACTIVE WORK PACKET — HU-170
 
 **This is the only authorized work. Execute it in order.**
 
 - Module: `HU`
-- Objective: Reconstruct and freeze the universal linear tangent/transfer object against the superseding G route-resolved state so HI cannot consume a stale G-era HU parent.
-- Run workspace: `modules/HU/runs/HU-175-20260810T153330Z`
+- Objective: Derive and freeze the background-independent portion of the linear transfer machinery before instantiation on a realized geometry.
+- Run workspace: `not yet created`
 
 ## Exact sequence
 
@@ -16,13 +16,13 @@
    - `python tools/director.py wolfram-show --call HU-WL-001`
    - `python tools/director.py wolfram-show --call HU-WL-002`
 
-5. Run `python tools/run_reference_checks.py --module HU --output modules/HU/runs/HU-175-20260810T153330Z/reference_checks.json`.
+5. Run `python tools/run_reference_checks.py --module HU --output <RUN_DIR>/reference_checks.json`.
 6. Bind and run the prebuilt local engines listed below. Every `__BIND_` token is a hard stop:
 
-   - `python tools/director.py solver-copy --module HU --solver linear_transfer --destination modules/HU/runs/HU-175-20260810T153330Z`
+   - `python tools/director.py solver-copy --module HU --solver linear_transfer --destination <RUN_DIR>`
    - fill `configured_runs/binding_sheets/HU_linear_transfer.bindings.json` after it is copied into the run; every value requires an origin SHA-256
-   - `python tools/materialize_solver_config.py --template modules/HU/runs/HU-175-20260810T153330Z/solver_templates/HU_linear_transfer.template.json --binding-sheet modules/HU/runs/HU-175-20260810T153330Z/binding_sheets/HU_linear_transfer.bindings.json --output modules/HU/runs/HU-175-20260810T153330Z/solver_configs/HU_linear_transfer.json`
-   - `python tools/run_configured_solver.py --config modules/HU/runs/HU-175-20260810T153330Z/solver_configs/HU_linear_transfer.json --output-dir modules/HU/runs/HU-175-20260810T153330Z/solver_outputs/linear_transfer`
+   - `python tools/materialize_solver_config.py --template <RUN_DIR>/solver_templates/HU_linear_transfer.template.json --binding-sheet <RUN_DIR>/binding_sheets/HU_linear_transfer.bindings.json --output <RUN_DIR>/solver_configs/HU_linear_transfer.json`
+   - `python tools/run_configured_solver.py --config <RUN_DIR>/solver_configs/HU_linear_transfer.json --output-dir <RUN_DIR>/solver_outputs/linear_transfer`
 
 7. Execute any remaining parent-driven domain code named in the recipe. Manufactured checks and generic engines do not replace the physical result.
 8. Run countermodels, ablations, convergence, restart, replay, uncertainty/covariance, and independent reconstruction.
@@ -36,15 +36,15 @@
 - modules/HU/runs/<RUN_ID>/GATE_RESULTS.json
 - modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md
 - modules/HU/runs/<RUN_ID>/CLOSEOUT.md
-- versioned frozen child interface and artifact registry entries
+- frozen output packet and artifact registry entries
 
 ## Componentwise gates
 
-- exact superseding G parent hash
-- tangent/transfer reconstruction from repaired G without trusting historical HU summaries
-- covariance, restart and clean replay
-- no downstream I/J object imported into HU
+- no realized-background values smuggled into universal operator
+- linearity-domain proof
+- symbolic identity verification
+- hash freeze
 
 ## Commit message
 
-`Replay HU against repaired G state`
+`Close Module HU at its verified scientific scope`

@@ -1,4 +1,0 @@
-Symbol::undefined2: Warning: Global symbols "A, T, A, T, T, T, T, T, T, A" are undefined.
-General::messages: Messages were generated which may indicate errors.
-
-Out[1]= "<|\"call\" -> \"HU-WL-001\", \"semigroup\" -> True, \"superposition\" -> True, \"generatorEigenvalues\" -> {\"(-5 - Sqrt[3])/20\", \"(-5 + Sqrt[3])/20\"}|>"

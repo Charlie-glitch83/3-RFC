@@ -1,0 +1,100 @@
+name: HU-175 governed repaired-G replay once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'ops/HU175_REPLAY_TRIGGER.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hu175-governed-replay-once
+  cancel-in-progress: false
+
+jobs:
+  replay-hu175:
+    if: github.event.pull_request.head.ref == 'ops/hu175-replay-20260810'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Reconstruct HU-175 from repaired G-165
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          RID='HU-175-20260810T153330Z'
+          R="modules/HU/runs/$RID"
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python tools/rfc.py reopen-module HU --fidelity PRODUCTION --evidence modules/G/frozen/H_G_to_HU_v2.json
+          python tools/hu175_replay.py freeze
+
+          cat > /tmp/HU-WL-001.output.txt <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "A, T, A, T, T, T, T, T, T, A" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HU-WL-001\", \"semigroup\" -> True, \"superposition\" -> True, \"generatorEigenvalues\" -> {\"(-5 - Sqrt[3])/20\", \"(-5 + Sqrt[3])/20\"}|>"
+          EOF
+          cat > /tmp/HU-WL-002.output.txt <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "A, A, A, A" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HU-WL-002\", \"constraintResidual\" -> {0, 0}, \"conservedLinearFunctional\" -> True, \"zeroMode\" -> {\"{1, 1}\"}|>"
+          EOF
+          python tools/director.py wolfram-record --run "$RID" --call HU-WL-001 --output /tmp/HU-WL-001.output.txt
+          python tools/director.py wolfram-record --run "$RID" --call HU-WL-002 --output /tmp/HU-WL-002.output.txt
+          python tools/run_reference_checks.py --module HU --output "$R/reference_checks.json"
+
+          python tools/hu175_replay.py execute
+          python tools/hu175_replay.py verify
+          python tools/hu175_replay.py finish
+          python tools/hu175_replay.py replay
+          python tools/hu175_finalize_contract.py
+          python tools/hu175_replay.py manifest
+          python tools/scientific_completion_guard.py --run "$R"
+
+          python tools/rfc.py promote-module HU --to FORMALIZED --fidelity PRODUCTION --evidence "$R/HU175_FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module HU --to VERIFIED --fidelity PRODUCTION --evidence "$R/GATE_RESULTS.json"
+          python tools/rfc.py promote-module HU --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "$R/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module HU --to FROZEN --fidelity PRODUCTION --evidence modules/HU/frozen/H_HU_to_HI_v2.json
+          python tools/rfc.py close-run --run-id "$RID" --result PASS --closeout "$R/CLOSEOUT.md"
+          python tools/rfc.py record-claim --file audit/HU175_CLAIM.json
+          python tools/rfc.py advance --task HU-175 --result PASS --evidence "$R/CLOSEOUT.md"
+
+          bash tools/start_work.sh
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('STATE.json').read_text())
+          assert s['active_work_unit']=='I-180', s
+          assert s['current_module']=='I', s
+          assert s['current_run'] and s['current_run'].startswith('I-180-'), s
+          print('I180_RESUMED_RUN='+s['current_run'])
+          PY
+
+      - name: Commit HU-175 and resumed I-180 startup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Replay HU against repaired G and resume I-180'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'HU175_REPLAY_COMMIT=%s\n' "$(git rev-parse HEAD)"

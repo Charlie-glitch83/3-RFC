@@ -131,62 +131,6 @@
       }
     },
     {
-      "claim_id": "HU-170-UNIVERSAL-LINEAR-TRANSFER",
-      "text": "HU-170 derives and freezes the branch-indexed, constraint-preserving universal linear tangent propagator of the exact G recombination/radiation-surface dynamics, with explicit domain/codomain, gauge/frame contract, covariance pushforward, ancestry and immutable H_HU_to_HI interface, without realized I geometry or public transfer data.",
-      "owner": "HU",
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
-      "supported": true,
-      "evidence": [
-        "modules/HU/frozen/H_HU_to_HI.json",
-        "modules/HU/runs/HU-170-20260809T045528Z/GATE_RESULTS.json",
-        "modules/HU/runs/HU-170-20260809T045528Z/independent/INDEPENDENT_RECONSTRUCTION.json"
-      ],
-      "unsupported_boundary": "No realized geometry/expansion history, unique physical transfer coefficients, public Boltzmann-table equivalence, final spectra, observed CMB/LSS transfer function, or empirical agreement is claimed.",
-      "recorded_utc": "2026-08-09T05:05:19.457216+00:00",
-      "work_unit": "HU-170"
-    },
-    {
-      "claim_id": "I-180-FINITE-RELATIONAL-BACKGROUND",
-      "text": "I-180 derives and physically executes at MINIMAL_SPINE a finite-relational realized-background branch family from exact G event/clock state and inherited B no-loss relational support: nonnegative event activity induces a weighted Laplacian, its pseudoinverse induces a gauge-invariant resistance metric, its positive spectrum defines a relative scale/expansion history, and inherited radiative propagation defines a causal-reach functional, with constraints, covariance, restart and H_I_to_HI preserved without observed expansion targets.",
-      "owner": "I",
-      "evidence_state": "FROZEN",
-      "fidelity": "MINIMAL_SPINE",
-      "supported": false,
-      "evidence": [
-        "modules/I/frozen/H_I_to_HI.json",
-        "modules/I/runs/I-180-20260809T050839Z/GATE_RESULTS.json",
-        "modules/I/runs/I-180-20260809T050839Z/independent/INDEPENDENT_RECONSTRUCTION.json"
-      ],
-      "unsupported_boundary": "No unique process-to-edge incidence branch, unique SI spacetime metric, FRW/Friedmann/Einstein correspondence, measured H(z) or H0, LambdaCDM parameters, BAO/SN distance ladder, public sound horizon, continuum geometry limit, or empirical agreement is claimed.",
-      "recorded_utc": "2026-08-09T14:46:51.223277+00:00",
-      "work_unit": "I-180",
-      "current_authority": false,
-      "supersession": {
-        "reason": "Pre-execution uniqueness/branch-completeness was not established and numerical physical-background evidence was implementation-only.",
-        "audit": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json",
-        "replacement_claim_id": "I-180-CORRECTED-RESPONSE-GEOMETRY-FRONTIER"
-      }
-    },
-    {
-      "claim_id": "I-180-CORRECTED-RESPONSE-GEOMETRY-FRONTIER",
-      "text": "At the repaired Module-I frontier, exact G/B ancestry supports a corrected finite-relational response-geometry candidate law family: the weighted Dirichlet/Laplacian operator on the constant-mode quotient is retained as the primary geometry state; its Green response yields a lossless effective-resistance readout; its nonzero spectrum yields principal response lengths and a derived volumetric geometric-mean scale while retaining anisotropy and unresolved lawful branch coordinates.",
-      "owner": "I",
-      "evidence_state": "DESIGN",
-      "fidelity": "UNSTARTED",
-      "supported": true,
-      "current_authority": true,
-      "evidence": [
-        "modules/I/repair/I180_CORRECTED_DERIVATION_SPEC.json",
-        "modules/I/repair/REPAIR_VERIFICATION.json",
-        "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json"
-      ],
-      "strongest_unsupported_claim": "No unique process-to-edge realization, unique continuum/SI spacetime metric, unique scalar expansion history on nonhomothetic branches, physical H(z), empirical cosmology, or physically executed I branch is established until exact parent bindings and branch witnesses close the remaining I frontier.",
-      "recorded_utc": "2026-08-10T13:00:37.560209+00:00",
-      "work_unit": "I-180",
-      "authority_scope": "CORRECTED_PRE_EXECUTION_DERIVATION_ONLY"
-    },
-    {
       "claim_id": "G-165-ROUTE-RESOLVED-I-CHILD-REPAIR-FRONTIER",
       "text": "The current G repair frontier preserves the frozen F parent and requires a superseding G execution that derives route-resolved process activity and an ancestry-complete geometry-child interface before I can resume physical execution.",
       "owner": "G",

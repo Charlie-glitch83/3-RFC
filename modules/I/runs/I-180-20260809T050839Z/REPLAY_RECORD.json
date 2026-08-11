@@ -1,9 +1,0 @@
-{
-  "classification": "CLEAN_REPLAY_RECORD",
-  "pre_execution_commit": "dec86c41009a5b53b434a238241759a631bef61c",
-  "artifact_hashes_match": true,
-  "clean_checkout": true,
-  "run_id": "I-180-20260809T050839Z",
-  "pass": true,
-  "result": "PASS"
-}

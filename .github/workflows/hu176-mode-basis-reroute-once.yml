@@ -1,0 +1,176 @@
+name: Governed HU mode-basis reroute once
+
+on:
+  pull_request:
+    branches:
+      - agent/frontier-050-execution
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'ops/HU176_REROUTE_TRIGGER.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hu176-mode-basis-reroute-once
+  cancel-in-progress: false
+
+jobs:
+  reroute:
+    if: github.event.pull_request.head.ref == 'ops/hu176-mode-basis-reroute-20260810'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install locked repository dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+      - name: Close J hard stop and install superseding replay path
+        shell: bash
+        run: |
+          set -euo pipefail
+          RID='J-200-20260810T200114Z'
+          AUDIT="modules/J/runs/${RID}/J200_J1_MODE_BASIS_PARENT_INTERFACE_AUDIT.json"
+          CLOSE="modules/J/runs/${RID}/CLOSEOUT.md"
+          test -f "$AUDIT"
+          test -f "$CLOSE"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('STATE.json').read_text())
+          assert s['active_work_unit']=='J-200', s
+          assert s['current_module']=='J', s
+          assert s['current_run']=='J-200-20260810T200114Z', s
+          a=json.loads(Path('modules/J/runs/J-200-20260810T200114Z/J200_J1_MODE_BASIS_PARENT_INTERFACE_AUDIT.json').read_text())
+          assert a['result']=='BLOCKED_UPSTREAM_HU_HI_INTERFACE_DEFECT', a
+          assert a['triad_falsified'] is False and a['J_science_falsified'] is False, a
+          PY
+          python tools/rfc.py close-run --run-id "$RID" --result BLOCKED --closeout "$CLOSE"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          qpath=Path('WORK_QUEUE.json'); spath=Path('STATE.json')
+          q=json.loads(qpath.read_text()); s=json.loads(spath.read_text())
+          items=q['items']; by={x['id']:x for x in items}
+          assert by['J-200']['status']=='ACTIVE', by['J-200']
+          assert s['current_run'] is None, s
+          by['J-200']['status']='BLOCKED'
+          by['J-200']['depends_on']=['HI-191']
+          hu={
+            'id':'HU-176',
+            'title':'Supersede HU: Complete Regular Primordial Mode Basis for J',
+            'module':'HU',
+            'status':'ACTIVE',
+            'depends_on':['G-165'],
+            'objective':'Execute the already-planned H/HU regular primordial mode-basis constitution omitted from HU-175, while preserving the repaired G transfer law and producing a J-sufficient immutable mode registry.',
+            'steps':[
+              'Read the canonical Module H and Module J plans plus the J200 J.1 parent-interface audit before execution.',
+              'Use the exact repaired G-165 parent and frozen HU-175 operator as ancestry; do not alter the already-verified transfer law unless a parent-derived inconsistency requires it.',
+              'Execute the existing canonical H obligation to construct the complete regular physical mode basis: identifiers, sector/type, parity/helicity where applicable, gauge behavior, regularity, normalization, source/route ancestry, independence/equivalence witnesses, and allowed cross-correlations.',
+              'Freeze exact sources, definitions, candidate classes, laws, dimensions, expected outcomes, tolerances, gates, falsifiers, and J child contract before primary execution.',
+              'Run repository-prescribed Wolfram/reference checks, semantic countermodels, covariance/restart, clean replay, and independent reconstruction.',
+              'Freeze a versioned H_HU_to_HI superseding handoff only if the operator and complete mode-basis registry are both child-ready for HI/J.'
+            ],
+            'deliverables':[
+              'modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json',
+              'modules/HU/runs/<RUN_ID>/GATE_RESULTS.json',
+              'modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md',
+              'modules/HU/runs/<RUN_ID>/CLOSEOUT.md',
+              'complete regular primordial mode-basis registry',
+              'versioned superseding H_HU_to_HI handoff'
+            ],
+            'gates':[
+              'exact repaired G parent and HU-175 ancestry',
+              'complete physical mode-basis registry satisfies canonical H/J contract',
+              'mode normalization, independence/equivalence, gauge, regularity, sector/type and ancestry complete',
+              'no public primordial parameters or downstream J amplitudes imported',
+              'transfer law no-retune unless parent-derived correction is explicitly evidenced',
+              'clean replay and independent reconstruction'
+            ],
+            'commit_message':'Complete HU regular mode basis for J child sufficiency',
+            'required_evidence_state':'FROZEN',
+            'required_fidelity':'HYPER_REALISTIC'
+          }
+          hi={
+            'id':'HI-191',
+            'title':'Replay HI Against Mode-Complete HU',
+            'module':'HI',
+            'status':'BLOCKED',
+            'depends_on':['HU-176','I-180'],
+            'objective':'Replay immutable HU-on-I instantiation using the superseding mode-complete HU handoff so J receives the full regular mode registry without retuning HU or I.',
+            'steps':[
+              'Use only the superseding HU-176 handoff and frozen repaired I-180 background as direct parents.',
+              'Preserve the complete HU mode registry through instantiation; do not select amplitudes, phases, seeds, or J covariance.',
+              'Freeze parent hashes, compatibility/domain rules, gauge/frame mapping, covariance/restart, tolerances, gates, falsifiers and J child contract before execution.',
+              'Execute immutable composition, independent reconstruction and clean replay.',
+              'Freeze a versioned H_HI_to_J handoff only when the complete mode registry and transfer/background ancestry are child-ready.'
+            ],
+            'deliverables':[
+              'modules/HI/runs/<RUN_ID>/SOURCE_REGISTER.json',
+              'modules/HI/runs/<RUN_ID>/GATE_RESULTS.json',
+              'modules/HI/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md',
+              'modules/HI/runs/<RUN_ID>/CLOSEOUT.md',
+              'versioned superseding H_HI_to_J handoff carrying complete mode registry'
+            ],
+            'gates':[
+              'exact superseding HU and repaired I parent hashes',
+              'complete HU mode registry preserved losslessly into J interface',
+              'no retune of HU or I',
+              'operator-domain and gauge/frame compatibility',
+              'clean replay and independent reconstruction'
+            ],
+            'commit_message':'Replay HI with mode-complete HU parent',
+            'required_evidence_state':'FROZEN',
+            'required_fidelity':'HYPER_REALISTIC'
+          }
+          if 'HU-176' not in by or 'HI-191' not in by:
+              new=[]
+              for x in items:
+                  if x['id'] in {'HU-176','HI-191'}: continue
+                  if x['id']=='J-200': new.extend([hu,hi])
+                  new.append(x)
+              items=new
+          else:
+              for i,x in enumerate(items):
+                  if x['id']=='HU-176': items[i]=hu
+                  elif x['id']=='HI-191': items[i]=hi
+          q['items']=items
+          s['active_work_unit']='HU-176'; s['current_module']='HU'; s['current_run']=None; s['project_status']='ACTIVE'
+          qpath.write_text(json.dumps(q,indent=2,ensure_ascii=False)+'\n')
+          spath.write_text(json.dumps(s,indent=2,ensure_ascii=False)+'\n')
+          PY
+          python tools/rfc.py reopen-module HU --fidelity HYPER_REALISTIC --evidence "$AUDIT"
+          bash tools/start_work.sh
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('STATE.json').read_text())
+          assert s['active_work_unit']=='HU-176', s
+          assert s['current_module']=='HU', s
+          assert s['current_run'] and s['current_run'].startswith('HU-176-'), s
+          assert s['modules']['HU']['evidence_state']=='DESIGN', s['modules']['HU']
+          assert s['modules']['HU']['fidelity']=='HYPER_REALISTIC', s['modules']['HU']
+          print('ACTIVE_HU_REPAIR_RUN='+s['current_run'])
+          PY
+      - name: Commit governed reroute and HU startup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Reroute J mode-basis interface defect through HU and HI replay'
+          git pull --rebase origin agent/frontier-050-execution
+          git push origin HEAD:agent/frontier-050-execution
+          printf 'REROUTE_COMMIT=%s\n' "$(git rev-parse HEAD)"

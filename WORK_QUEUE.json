@@ -632,43 +632,6 @@
       "required_fidelity": "MINIMAL_SPINE"
     },
     {
-      "id": "HU-170",
-      "title": "Close Module HU: Frozen Universal Linear Transfer Operator",
-      "module": "HU",
-      "status": "PASS",
-      "depends_on": [
-        "G-160"
-      ],
-      "objective": "Derive and freeze the background-independent portion of the linear transfer machinery before instantiation on a realized geometry.",
-      "steps": [
-        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
-        "Create the governed run with tools/rfc.py new-run.",
-        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
-        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
-        "Implement and physically execute at the fidelity required by the module spec.",
-        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
-        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
-        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
-      ],
-      "deliverables": [
-        "modules/HU/runs/<RUN_ID>/RUN_PLAN.md",
-        "modules/HU/runs/<RUN_ID>/SOURCE_REGISTER.json",
-        "modules/HU/runs/<RUN_ID>/GATE_RESULTS.json",
-        "modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
-        "modules/HU/runs/<RUN_ID>/CLOSEOUT.md",
-        "frozen output packet and artifact registry entries"
-      ],
-      "gates": [
-        "no realized-background values smuggled into universal operator",
-        "linearity-domain proof",
-        "symbolic identity verification",
-        "hash freeze"
-      ],
-      "commit_message": "Close Module HU at its verified scientific scope",
-      "required_evidence_state": "FROZEN",
-      "required_fidelity": "MINIMAL_SPINE"
-    },
-    {
       "id": "G-165",
       "title": "Repair Module G: Route-Resolved Recombination State and Geometry-Child Interface",
       "module": "G",
@@ -705,21 +668,23 @@
       "required_fidelity": "PRODUCTION"
     },
     {
-      "id": "HU-175",
-      "title": "Replay Module HU Against the Superseding G State",
+      "id": "HU-170",
+      "title": "Close Module HU: Frozen Universal Linear Transfer Operator",
       "module": "HU",
       "status": "ACTIVE",
       "depends_on": [
         "G-165"
       ],
-      "objective": "Reconstruct and freeze the universal linear tangent/transfer object against the superseding G route-resolved state so HI cannot consume a stale G-era HU parent.",
+      "objective": "Derive and freeze the background-independent portion of the linear transfer machinery before instantiation on a realized geometry.",
       "steps": [
-        "Read the live module spec, recipe, work order, exact parents, derivation protocol, execution protocol, and the supersession audit named by this work unit.",
-        "Create the governed run through repository tooling; do not reuse a historical run directory as current authority.",
-        "Freeze exact sources, parents, branch variables, candidate classes, methods, tolerances, gates, falsifiers and claim boundary before primary execution.",
-        "Derive missing science from admitted parents and triadic laws. Preserve complete branch families or obstruction; do not promote manufactured/reference values.",
-        "Execute only parent-bound physical objects and run component gates, convergence, restart, replay, countermodels, ablations, covariance and independent reconstruction.",
-        "Finalize manifests after outputs stop changing, close with evidence-matched claims, commit, verify and allow only the next direct repair child."
+        "Read the module spec, active parents, derivation protocol, execution protocol, and relevant admitted sources.",
+        "Create the governed run with tools/rfc.py new-run.",
+        "Freeze exact parent bytes, definitions, candidate classes, witnesses, laws, dimensions, methods, tolerances, gates, falsifiers, and claim boundary before primary execution.",
+        "Derive missing science from the triad, enhanced kernel, and exact parent. When underdetermined, preserve a lawful branch family or obstruction instead of importing the expected answer.",
+        "Implement and physically execute at the fidelity required by the module spec.",
+        "Run semantic countermodels, componentwise gates, restart, replay, convergence/resolution, uncertainty/covariance, ablation, and independent reconstruction.",
+        "Preserve failures and correct only internally compelled defects; rerun the full frozen matrix after implementation-only correction.",
+        "Close with strongest supported and unsupported claims, freeze outputs, update registries/context, commit, and verify the GitHub SHA/diff."
       ],
       "deliverables": [
         "modules/HU/runs/<RUN_ID>/RUN_PLAN.md",
@@ -727,17 +692,17 @@
         "modules/HU/runs/<RUN_ID>/GATE_RESULTS.json",
         "modules/HU/runs/<RUN_ID>/INDEPENDENT_VERIFICATION.md",
         "modules/HU/runs/<RUN_ID>/CLOSEOUT.md",
-        "versioned frozen child interface and artifact registry entries"
+        "frozen output packet and artifact registry entries"
       ],
       "gates": [
-        "exact superseding G parent hash",
-        "tangent/transfer reconstruction from repaired G without trusting historical HU summaries",
-        "covariance, restart and clean replay",
-        "no downstream I/J object imported into HU"
+        "no realized-background values smuggled into universal operator",
+        "linearity-domain proof",
+        "symbolic identity verification",
+        "hash freeze"
       ],
-      "commit_message": "Replay HU against repaired G state",
+      "commit_message": "Close Module HU at its verified scientific scope",
       "required_evidence_state": "FROZEN",
-      "required_fidelity": "PRODUCTION"
+      "required_fidelity": "MINIMAL_SPINE"
     },
     {
       "id": "I-180",
@@ -745,8 +710,7 @@
       "module": "I",
       "status": "BLOCKED",
       "depends_on": [
-        "G-165",
-        "HU-175"
+        "G-165"
       ],
       "objective": "Generate the universe's realized geometry, expansion, clocks, horizons, and distance structure from the accumulated physical state.",
       "steps": [
@@ -775,8 +739,7 @@
       ],
       "commit_message": "Close Module I at its verified scientific scope",
       "required_evidence_state": "FROZEN",
-      "required_fidelity": "PRODUCTION",
-      "scientific_reset": "audit/I180_SCIENTIFIC_SUPERSESSION_20260810.json"
+      "required_fidelity": "MINIMAL_SPINE"
     },
     {
       "id": "HI-190",

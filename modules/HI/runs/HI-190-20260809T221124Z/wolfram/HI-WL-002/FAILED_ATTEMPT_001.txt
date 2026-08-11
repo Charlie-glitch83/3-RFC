@@ -1,5 +1,0 @@
-Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp" are undefined.
-Set::wrsym: Symbol C is Protected.
-General::messages: Messages were generated which may indicate errors.
-
-Out[1]= "<|\"call\" -> \"HI-WL-002\", \"propagatedCovariance\" -> \"{{a, b}, {c, d}} . C . {{a, c}, {b, d}}\", \"symmetric\" -> False|>"

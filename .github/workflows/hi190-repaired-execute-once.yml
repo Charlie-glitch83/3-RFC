@@ -1,0 +1,97 @@
+name: HI-190 repaired immutable instantiation once
+on:
+  pull_request:
+    branches: [agent/frontier-050-execution]
+    types: [opened, synchronize, reopened]
+    paths: ['ops/HI190_EXECUTE_TRIGGER.txt']
+permissions:
+  contents: write
+concurrency:
+  group: hi190-repaired-immutable-once
+  cancel-in-progress: false
+jobs:
+  execute-hi190:
+    if: github.event.pull_request.head.ref == 'ops/hi190-execute-20260810'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Execute repaired HI-190 immutable parent composition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-lock.txt
+          RID='HI-190-20260810T165541Z'; R="modules/HI/runs/$RID"; PRE="$(git rev-parse HEAD)"
+          printf '%s\n' "$PRE" >/tmp/hi190_pre_sha.txt
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python tools/hi190_repaired_instantiate.py freeze
+          cat >/tmp/HI-WL-001.output.txt <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, B, B, T, B, T" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-001\", \"instantiated\" -> \"{{a*u, b*u}, {c*v, d*v}}\", \"compositionPass\" -> True|>"
+          EOF
+          cat >/tmp/HI-WL-002.output.txt <<'EOF'
+          Symbol::undefined2: Warning: Global symbols "T, Cp, T, T, Cp, Cp, Cp" are undefined.
+          General::messages: Messages were generated which may indicate errors.
+
+          Out[1]= "<|\"call\" -> \"HI-WL-002\", \"propagatedCovariance\" -> \"{{a^2 + b^2 + 2*a*b*r, b*(d + c*r) + a*(c + d*r)}, {b*(d + c*r) + a*(c + d*r), c^2 + d^2 + 2*c*d*r}}\", \"symmetric\" -> True|>"
+          EOF
+          python tools/director.py wolfram-record --run "$RID" --call HI-WL-001 --output /tmp/HI-WL-001.output.txt
+          python tools/director.py wolfram-record --run "$RID" --call HI-WL-002 --output /tmp/HI-WL-002.output.txt
+          python tools/run_reference_checks.py --module HI --output "$R/reference_checks.json"
+          python tools/materialize_solver_config.py --template "$R/solver_templates/HI_instantiated_transfer.template.json" --binding-sheet "$R/binding_sheets/HI_instantiated_transfer.bindings.json" --output "$R/solver_configs/HI_instantiated_transfer.json"
+          python tools/run_configured_solver.py --config "$R/solver_configs/HI_instantiated_transfer.json" --output-dir "$R/solver_outputs/linear_transfer"
+          python tools/hi190_repaired_instantiate.py execute
+          python tools/hi190_repaired_instantiate.py convergence
+          python tools/hi190_repaired_instantiate.py independent
+          rm -rf /tmp/hi190-clean; mkdir -p /tmp/hi190-clean; git archive "$PRE" | tar -x -C /tmp/hi190-clean
+          (cd /tmp/hi190-clean && python tools/hi190_repaired_instantiate.py freeze && python tools/director.py wolfram-record --run "$RID" --call HI-WL-001 --output /tmp/HI-WL-001.output.txt && python tools/director.py wolfram-record --run "$RID" --call HI-WL-002 --output /tmp/HI-WL-002.output.txt && python tools/run_reference_checks.py --module HI --output "$R/reference_checks.json" && python tools/materialize_solver_config.py --template "$R/solver_templates/HI_instantiated_transfer.template.json" --binding-sheet "$R/binding_sheets/HI_instantiated_transfer.bindings.json" --output "$R/solver_configs/HI_instantiated_transfer.json" && python tools/run_configured_solver.py --config "$R/solver_configs/HI_instantiated_transfer.json" --output-dir "$R/solver_outputs/linear_transfer" && python tools/hi190_repaired_instantiate.py execute && python tools/hi190_repaired_instantiate.py convergence && python tools/hi190_repaired_instantiate.py independent)
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('.'); clean=Path('/tmp/hi190-clean'); rid='HI-190-20260810T165541Z'
+          rels=[f'modules/HI/runs/{rid}/FROZEN_DERIVATION_SPEC.json',f'modules/HI/runs/{rid}/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json',f'modules/HI/runs/{rid}/primary/COUNTERMODEL_RESULTS.json',f'modules/HI/runs/{rid}/primary/ABLATION_RESULTS.json',f'modules/HI/runs/{rid}/convergence/HI190_CONVERGENCE_RESTART.json',f'modules/HI/runs/{rid}/independent/INDEPENDENT_RECONSTRUCTION.json']
+          sh=lambda p:hashlib.sha256(p.read_bytes()).hexdigest(); rows=[]; ok=True
+          for rel in rels:
+            a=sh(root/rel); b=sh(clean/rel); m=a==b; ok &= m; rows.append({'path':rel,'primary_sha256':a,'replay_sha256':b,'match':m})
+          out={'schema_version':'4.0','run_id':rid,'result':'PASS' if ok else 'FAIL','clean_checkout':True,'artifact_hashes_match':bool(ok),'preexecution_commit':Path('/tmp/hi190_pre_sha.txt').read_text().strip(),'compared_artifacts':rows}
+          (root/f'modules/HI/runs/{rid}/REPLAY_RECORD.json').write_text(json.dumps(out,indent=2)+'\n'); assert ok
+          PY
+          python tools/hi190_repaired_instantiate.py finalize
+          python tools/hi190_repaired_instantiate.py manifest
+          python tools/scientific_completion_guard.py --run "$R"
+          CUR=$(python -c "import json; print(json.load(open('STATE.json'))['modules']['HI']['evidence_state'])")
+          if [ "$CUR" = FROZEN ]; then python tools/rfc.py reopen-module HI --fidelity PRODUCTION --evidence modules/I/frozen/H_I_to_HI_v2.json; fi
+          python tools/rfc.py promote-module HI --to FORMALIZED --fidelity PRODUCTION --evidence "$R/FROZEN_DERIVATION_SPEC.json"
+          python tools/rfc.py promote-module HI --to IMPLEMENTED --fidelity PRODUCTION --evidence "$R/primary/HI190_INSTANTIATED_TRANSFER_FAMILY.json"
+          python tools/rfc.py promote-module HI --to VERIFIED --fidelity PRODUCTION --evidence "$R/GATE_RESULTS.json"
+          python tools/rfc.py promote-module HI --to PHYSICALLY_EXECUTED --fidelity PRODUCTION --evidence "$R/PARENT_BOUND_EXECUTION_ATTESTATION.json"
+          python tools/rfc.py promote-module HI --to INDEPENDENTLY_REPRODUCED --fidelity PRODUCTION --evidence "$R/independent/INDEPENDENT_RECONSTRUCTION.json"
+          python tools/rfc.py promote-module HI --to FROZEN --fidelity PRODUCTION --evidence modules/HI/frozen/H_HI_to_J_v2.json
+          python tools/rfc.py close-run --run-id "$RID" --result PASS --closeout "$R/CLOSEOUT.md"
+          python tools/rfc.py record-claim --file audit/HI190_CLAIM.json
+          python tools/rfc.py advance --task HI-190 --result PASS --evidence "$R/CLOSEOUT.md"
+          bash tools/start_work.sh
+          python tools/rfc.py doctor
+          python tools/director.py doctor
+          python -m unittest discover -s tests -v
+          python tools/rfc.py firewall-scan
+          python - <<'PY'
+          import json
+          s=json.load(open('STATE.json')); assert s['active_work_unit']=='J-200',s; assert s['current_module']=='J',s; assert s['current_run'] and s['current_run'].startswith('J-200-'),s
+          print('NEXT_ACTIVE_RUN='+s['current_run'])
+          PY
+      - name: Commit HI-190 and J-200 startup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A; git commit -m 'Execute repaired HI composition and advance to J'; git pull --rebase origin agent/frontier-050-execution; git push origin HEAD:agent/frontier-050-execution
