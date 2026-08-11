@@ -1,0 +1,29 @@
+name: Main-dispatched C125 README startup once
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: c125-main-startup-once
+  cancel-in-progress: false
+
+jobs:
+  start-c125:
+    if: github.event.pull_request.head.ref == 'ops/c125-main-startup-20260808'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/frontier-050-execution
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Execute exact repository README startup for C125
+        shell: bash
+        run: bash tools/run_c125_startup_dispatch.sh
